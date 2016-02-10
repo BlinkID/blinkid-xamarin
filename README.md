@@ -1,0 +1,1 @@
+# BlinkID Xamarin component
