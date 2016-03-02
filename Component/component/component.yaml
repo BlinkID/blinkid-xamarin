@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+libraries:
+  ios: ../lib/ios/Awesome.dll
+icons:
+  - blinkid_128x128.png
+  - blinkid_512x512.png
+version: 0.0.1
+details: Details.md
+getting-started: GettingStarted.md
+samples:
+  iOS Sample: ../samples/AwesomeSample/AwesomeSample.sln
+id: blinkid
+summary: BlinkID Mobile SDK Xamarin iOS and Android component.
+publisher-url: http://microblink.com
+license: License.md
+screenshots:
+  - screenshots/screenshot1.png
+name: BlinkID SDK for ID scanning
+publisher: Microblink Ltd.
+...
