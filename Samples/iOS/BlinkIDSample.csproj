@@ -99,9 +99,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\Binding\iOS\BlinkIDBinding.csproj">
+    <ProjectReference Include="..\..\Binding\iOS\BlinkIDiOSBinding.csproj">
       <Project>{20BFD052-E54F-4504-A860-E6A18C8A15D8}</Project>
-      <Name>BlinkIDBinding</Name>
+      <Name>BlinkIDiOSBinding</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

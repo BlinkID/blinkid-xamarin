@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkIDBinding", "BlinkIDBinding.csproj", "{20BFD052-E54F-4504-A860-E6A18C8A15D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkIDiOSBinding", "BlinkIDiOSBinding.csproj", "{20BFD052-E54F-4504-A860-E6A18C8A15D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
