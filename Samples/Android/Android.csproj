@@ -55,10 +55,6 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
-    <None Include="lib\arm64-v8a\libBlinkID.so" />
-    <None Include="lib\armeabi-v7a\libBlinkID.so" />
-    <None Include="lib\x86\libBlinkID.so" />
-    <None Include="lib\x86_64\libBlinkID.so" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -71,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="lib\" />
     <Folder Include="Resources\drawable-hdpi-v4\" />
     <Folder Include="Resources\drawable-ldpi-v4\" />
     <Folder Include="Resources\drawable-mdpi-v4\" />
@@ -88,5 +83,11 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\microblink\device_list.json" />
     <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidNativeLibrary Include="lib\arm64-v8a\libBlinkID.so" />
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libBlinkID.so" />
+    <AndroidNativeLibrary Include="lib\x86\libBlinkID.so" />
+    <AndroidNativeLibrary Include="lib\x86_64\libBlinkID.so" />
   </ItemGroup>
 </Project>
