@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecognizerView"><attr format="enum" name="initialOrientation"><enum name="portrait" value="0"/><enum name="landscapeRight" value="1"/><enum name="inversePortrait" value="2"/><enum name="landscapeLeft" value="3"/></attr><attr format="boolean" name="animateRotation"/><attr format="integer" name="animationDuration"/><attr format="enum" name="aspectMode"><enum name="fit" value="0"/><enum name="fill" value="1"/></attr></declare-styleable>
+    <declare-styleable name="RecognizerView_LayoutParams"><attr format="boolean" name="rotatable"/></declare-styleable>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">LibWrapper</string>
+
+    <string name="error">Error</string>
+    <string name="errorDesc">There has been an error starting the scanner.</string>
+    <string name="btnOK">OK</string>
+
+    <string name="Align">Position the phone over the ID document</string>
+    <string name="mbHelp">Help</string>
+    <string name="mbLightOff">Light</string>
+    <string name="mbLightOn">Light</string>
+    <string name="mbHome">Back</string>
+
+
+
+
+</resources>

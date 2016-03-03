@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="statusForeground">#DDEEEEEE</color>
+    <color name="mbButtonForeground">#FF000000</color>
+    <color name="mbButtonBorder">#FF000000</color>
+    <color name="mbButtonBackgroundNormal">#99FFFFFF</color>
+    <color name="mbButtonBackgroundPressed">#FFFFFFFF</color>
+    <color name="mbButtonBackgroundDisabled">#22FFFFFF</color>
+    <color name="statusBackground">#BB000000</color>
+
+</resources>

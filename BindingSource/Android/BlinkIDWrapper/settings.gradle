@@ -1,1 +1,1 @@
-include ':SampleApp', 'LibWrapper'
+include 'LibWrapper'

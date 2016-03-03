@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BlinkIDWrapper.iml" filepath="$PROJECT_DIR$/BlinkIDWrapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../LibWrapper/LibWrapper.iml" filepath="$PROJECT_DIR$/../LibWrapper/LibWrapper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SampleApp/SampleApp.iml" filepath="$PROJECT_DIR$/SampleApp/SampleApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LibWrapper/LibWrapper.iml" filepath="$PROJECT_DIR$/LibWrapper/LibWrapper.iml" />
     </modules>
   </component>
 </project>
