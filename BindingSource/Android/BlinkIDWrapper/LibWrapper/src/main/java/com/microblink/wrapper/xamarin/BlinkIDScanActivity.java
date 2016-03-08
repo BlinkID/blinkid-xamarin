@@ -10,12 +10,14 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.microblink.hardware.SuccessCallback;
+import com.microblink.hardware.camera.CameraType;
 import com.microblink.hardware.orientation.Orientation;
 import com.microblink.metadata.Metadata;
 import com.microblink.metadata.MetadataListener;
@@ -24,7 +26,7 @@ import com.microblink.recognition.InvalidLicenceKeyException;
 import com.microblink.recognizers.RecognitionResults;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
-import com.microblink.util.Log;
+import com.microblink.util.*;
 import com.microblink.view.CameraAspectMode;
 import com.microblink.view.CameraEventsListener;
 import com.microblink.view.OnSizeChangedListener;
@@ -39,6 +41,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     public static final String EXTRAS_LICENSE_KEY = "EXTRAS_LICENSE_KEY";
     public static final String EXTRAS_RECOGNITION_SETTINGS = "EXTRAS_RECOGNITION_SETTINGS";
+    public static final String EXTRAS_USE_FRONTFACE_CAMERA = "EXTRAS_USE_FRONTFACE_CAMERA";
 
     private Handler mHandler = new Handler();
 
@@ -68,6 +71,11 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
      */
     private MediaPlayer mMediaPlayer = null;
 
+    /** CameraPermissionManager is provided helper class that can be used to obtain the permission to use camera.
+     * It is used on Android 6.0 (API level 23) or newer.
+     */
+    private CameraPermissionManager mCameraPermissionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +97,11 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
                 Log.e(this, e, "INVALID LICENCE KEY");
                 Toast.makeText(this, "Invalid licence key!", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+
+            boolean useFrontFaceCamera = extras.getBoolean(EXTRAS_USE_FRONTFACE_CAMERA, false);
+            if (useFrontFaceCamera) {
+                mRecognizerView.setCameraType(CameraType.CAMERA_FRONTFACE);
             }
 
             RecognitionSettings recognitionSettings = extras.getParcelable(EXTRAS_RECOGNITION_SETTINGS);
@@ -149,6 +162,16 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // set camera aspect mode to FILL - this will use the entire surface
         // for camera preview, instead of letterboxing it
         mRecognizerView.setAspectMode(CameraAspectMode.ASPECT_FILL);
+
+        // instantiate the camera permission manager
+        mCameraPermissionManager = new CameraPermissionManager(this);
+        // get the built in layout that should be displayed when camera permission is not given
+        View v = mCameraPermissionManager.getAskPermissionOverlay();
+        if (v != null) {
+            // add it to the current layout that contains the recognizer view
+            ViewGroup vg = (ViewGroup) findViewById(R.id.scan_root);
+            vg.addView(v);
+        }
 
         // create scanner (make sure scan settings and listeners were set prior calling create)
         mRecognizerView.create();
@@ -436,14 +459,19 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     @TargetApi(23)
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        // TODO
+        // on API level 23, request permission result should be passed to camera permission manager
+        mCameraPermissionManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     @Override
     @TargetApi(23)
     public void onCameraPermissionDenied() {
-        // TODO
-        Log.w(this, "CAMERA PERMISSION DENIED");
-        finish();
+        // this method is called on Android 6.0 and newer if camera permission was not given
+        // by user
+
+        // ask user to give a camera permission. Provided manager asks for
+        // permission only if it has not been already granted.
+        // on API level < 23, this method does nothing
+        mCameraPermissionManager.askForCameraPermission();
     }
 }

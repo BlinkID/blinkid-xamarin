@@ -1,4 +1,4 @@
-<FrameLayout    android:id="@+id/my_scan_root"
+<FrameLayout    android:id="@+id/scan_root"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 xmlns:custom="http://schemas.android.com/apk/res-auto"
