@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace Core
+namespace BlinkIDApp
 {
 	public class Application
 	{

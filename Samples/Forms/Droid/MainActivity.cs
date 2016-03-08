@@ -8,7 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace Core
+namespace BlinkIDApp
 {
 	[Activity (Label = "BlinkIDFormsSample.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
@@ -16,6 +16,9 @@ namespace Core
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+
+			// Set our view from the "main" layout resource
+			RequestedOrientation = ScreenOrientation.Portrait;
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 

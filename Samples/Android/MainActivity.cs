@@ -34,7 +34,9 @@ namespace Android
 				recognizers.Add(BlinkID.RecognizerType.Mrtd);
 				recognizers.Add(BlinkID.RecognizerType.Ukdl);
 
-				blinkId.Scan(recognizers, true);
+				bool useFrontCamera = false;
+
+				blinkId.Scan(recognizers, useFrontCamera);
 			};
 		}
 	
