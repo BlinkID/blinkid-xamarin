@@ -1,5 +1,5 @@
 ﻿<enum-field-mappings>
-	<!--
+<!--
   This example converts the constants Fragment_id, Fragment_name,
   and Fragment_tag from android.support.v4.app.FragmentActivity.FragmentTag
   to an enum called Android.Support.V4.App.FragmentTagType with values
@@ -14,5 +14,5 @@
   Notes:
   - An optional "bitfield" attribute marks the enum type with [Flags].
   - For Java interfaces, use "jni-interface" attribute instead of "jni-class" attribute.
-  -->
+-->
 </enum-field-mappings>

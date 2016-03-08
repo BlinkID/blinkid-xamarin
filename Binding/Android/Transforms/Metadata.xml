@@ -6,8 +6,4 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
 -->
-<!--	<remove-node path="/api/package[@name='com.microblink.secured']" />-->
-
-<!-- <attr path="/api/package[@name='com.microblink.secured']/*" name="obfuscated">true</attr>-->
-<!--	<attr path="/api/package[@name='com.microblink.wrapper.xamarin']/interface[@name='BlinkIdResultListener']" name="sender">true</attr>-->
 </metadata>
