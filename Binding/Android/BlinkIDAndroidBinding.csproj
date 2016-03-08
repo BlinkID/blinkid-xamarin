@@ -65,4 +65,13 @@
   <ItemGroup>
     <LibraryProjectZip Include="LibWrapper-release.aar" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libBlinkID.so" />
+  </ItemGroup>
 </Project>
