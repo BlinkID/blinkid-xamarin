@@ -22,6 +22,9 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[BlinkID alloc] init];
     });
+    
+    NSLog(@"Returning shared instance");
+    
     return sharedInstance;
 }
 
@@ -40,6 +43,8 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil, nil] show];
 
+        
+        
         return;
     }
 
@@ -49,9 +54,12 @@
     // allow rotation if VC is displayed as a modal view controller
     scanningViewController.autorotate = YES;
     scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAll;
-
-    UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [rootViewController presentViewController:scanningViewController animated:YES completion:nil];
+
+    NSLog(@"Presenting View Controller %p %@", rootViewController, rootViewController);
+    
 }
 
 #pragma mark - PPScanDelegate
@@ -182,6 +190,8 @@
     /** 4. Initialize the Scanning Coordinator object */
     
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
+    
+    NSLog(@"Returning coordinator");
     
     return coordinator;
 }

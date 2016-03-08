@@ -48,9 +48,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="BlinkID.a" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\MicroBlink.bundle\IDCard.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\IDCard%402x.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\Info.plist" />
@@ -65,5 +62,8 @@
     <BundleResource Include="Resources\MicroBlink.bundle\torchon%402x.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchon_pressed.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchon_pressed%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="BlinkID.a" />
   </ItemGroup>
 </Project>
