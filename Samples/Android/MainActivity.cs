@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Content.PM;
 
 using Com.Microblink.Wrapper.Xamarin;
+using System.Collections.Generic;
+using Android.Content;
 
 namespace Android
 {
@@ -22,45 +24,53 @@ namespace Android
 			SetContentView (Resource.Layout.Main);
 			RequestedOrientation = ScreenOrientation.Portrait;
 
-			// check if BlinkID is supported on the device
-//			RequestedCompatibilityStatus supportStatus = RecognizerCompatibility.
-
-//			Com.Microblink.Util.RecognizerCompatibilityStatus supportStatus = Com.Microblink.Util.RecognizerCompatibilityStatus.
-
-
-//			RecognizerCompatibilityStatus supportStatus = RecognizerCompatibility.
-
-
-//			Com.Microblink.Wrapper.Xamarin.
-
-
-			// Get our button from the layout resource,
-			// and attach an event to it
-
 			Button button = FindViewById<Button> (Resource.Id.startScanningButton);
 
 			button.Click += delegate {
 				BlinkID blinkId = BlinkID.Instance;
 				blinkId.SetContext(this);
 				blinkId.SetLicenseKey(LICENSE_KEY);
-				blinkId.SetResultListener(new MResultListener());
+				blinkId.SetResultListener(new MResultListener(this));
 				blinkId.Scan();
 			};
-
-//			Com.Microblink.Wrapper.
-
-//			Resource.Layout.
-
-//			Resource.Layout.
 		}
 	
 
 		private class MResultListener : BlinkIdResultListener 
 		{
-			#region implemented abstract members of BlinkIdResultListener
-			public override void OnResultsAvailable (System.Collections.Generic.IList<System.Collections.Generic.IDictionary<string, string>> p0)
+			Context context;
+
+			public MResultListener (Context context) 
 			{
-				throw new System.NotImplementedException ();
+				this.context = context;	
+			}
+
+			#region implemented abstract members of BlinkIdResultListener
+			public override void OnResultsAvailable (IList<IDictionary<string, string>> results)
+			{
+				AlertDialog.Builder alert = new AlertDialog.Builder (this.context);
+
+				alert.SetTitle ("BlinkID Results");
+
+				alert.SetPositiveButton ("OK", (senderAlert, args) => {
+					
+				} );
+
+				if (results [0] != null) {
+					string message = "";
+
+					foreach (var item in results[0]) {
+						if (item.Key == "SecondaryId" || item.Key == "PrimaryId") {
+							message += item.Value + " ";
+						}
+					}
+
+					alert.SetMessage (message);
+				} else {
+					alert.SetMessage ("Error!");
+				}
+
+				alert.Show ();
 			}
 			#endregion
 		}
