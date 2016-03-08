@@ -94,16 +94,19 @@ namespace Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int lightoff = 2130837504;
+			public const int camera_denied = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int lighton = 2130837505;
+			public const int lightoff = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int microblink_button = 2130837506;
+			public const int lighton = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int rounded_border = 2130837507;
+			public const int microblink_button = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int rounded_border = 2130837508;
 			
 			static Drawable()
 			{
@@ -118,17 +121,23 @@ namespace Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f08000c
-			public const int defaultBackButton = 2131230732;
-			
-			// aapt resource value: 0x7f08000a
-			public const int defaultStatusTextView = 2131230730;
-			
-			// aapt resource value: 0x7f08000b
-			public const int defaultTorchButton = 2131230731;
+			// aapt resource value: 0x7f080008
+			public const int camera_ask_main = 2131230728;
 			
 			// aapt resource value: 0x7f080009
-			public const int default_photopay_viewfinder = 2131230729;
+			public const int camera_ask_permission_button = 2131230729;
+			
+			// aapt resource value: 0x7f08000e
+			public const int defaultBackButton = 2131230734;
+			
+			// aapt resource value: 0x7f08000c
+			public const int defaultStatusTextView = 2131230732;
+			
+			// aapt resource value: 0x7f08000d
+			public const int defaultTorchButton = 2131230733;
+			
+			// aapt resource value: 0x7f08000b
+			public const int default_photopay_viewfinder = 2131230731;
 			
 			// aapt resource value: 0x7f080004
 			public const int fill = 2131230724;
@@ -145,17 +154,17 @@ namespace Android
 			// aapt resource value: 0x7f080002
 			public const int landscapeRight = 2131230722;
 			
-			// aapt resource value: 0x7f080006
-			public const int my_scan_root = 2131230726;
-			
 			// aapt resource value: 0x7f080003
 			public const int portrait = 2131230723;
 			
 			// aapt resource value: 0x7f080007
 			public const int recognizerView = 2131230727;
 			
-			// aapt resource value: 0x7f080008
-			public const int startScanningButton = 2131230728;
+			// aapt resource value: 0x7f080006
+			public const int scan_root = 2131230726;
+			
+			// aapt resource value: 0x7f08000a
+			public const int startScanningButton = 2131230730;
 			
 			static Id()
 			{
@@ -174,10 +183,13 @@ namespace Android
 			public const int activity_blinkid_scan = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int Main = 2130968577;
+			public const int camera_permission_overlay = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int overlay_blinkid_scan = 2130968578;
+			public const int Main = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int overlay_blinkid_scan = 2130968579;
 			
 			static Layout()
 			{
@@ -228,31 +240,55 @@ namespace Android
 			public const int Align = 2131165184;
 			
 			// aapt resource value: 0x7f070001
-			public const int app_name = 2131165185;
+			public const int AutofocusFail = 2131165185;
 			
 			// aapt resource value: 0x7f070002
-			public const int btnOK = 2131165186;
+			public const int CameraTooHigh = 2131165186;
 			
 			// aapt resource value: 0x7f070003
-			public const int error = 2131165187;
+			public const int PartialDetected = 2131165187;
 			
 			// aapt resource value: 0x7f070004
-			public const int errorDesc = 2131165188;
-			
-			// aapt resource value: 0x7f070009
-			public const int hello = 2131165193;
+			public const int Processing = 2131165188;
 			
 			// aapt resource value: 0x7f070005
-			public const int mbHelp = 2131165189;
+			public const int app_name = 2131165189;
 			
 			// aapt resource value: 0x7f070006
-			public const int mbHome = 2131165190;
+			public const int btnOK = 2131165190;
 			
 			// aapt resource value: 0x7f070007
-			public const int mbLightOff = 2131165191;
+			public const int error = 2131165191;
 			
 			// aapt resource value: 0x7f070008
-			public const int mbLightOn = 2131165192;
+			public const int errorDesc = 2131165192;
+			
+			// aapt resource value: 0x7f070011
+			public const int hello = 2131165201;
+			
+			// aapt resource value: 0x7f070009
+			public const int mbCameraPermissionRequired = 2131165193;
+			
+			// aapt resource value: 0x7f07000a
+			public const int mbEnableCamera = 2131165194;
+			
+			// aapt resource value: 0x7f07000b
+			public const int mbEnablePermissionHelp = 2131165195;
+			
+			// aapt resource value: 0x7f07000c
+			public const int mbHelp = 2131165196;
+			
+			// aapt resource value: 0x7f07000d
+			public const int mbHome = 2131165197;
+			
+			// aapt resource value: 0x7f07000e
+			public const int mbLightOff = 2131165198;
+			
+			// aapt resource value: 0x7f07000f
+			public const int mbLightOn = 2131165199;
+			
+			// aapt resource value: 0x7f070010
+			public const int mbWarningTitle = 2131165200;
 			
 			static String()
 			{

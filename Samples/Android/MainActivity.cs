@@ -31,7 +31,12 @@ namespace Android
 				blinkId.SetContext(this);
 				blinkId.SetLicenseKey(LICENSE_KEY);
 				blinkId.SetResultListener(new MResultListener(this));
-				blinkId.Scan();
+
+				List<BlinkID.RecognizerType> recognizers = new List<BlinkID.RecognizerType>();
+				recognizers.Add(BlinkID.RecognizerType.Mrtd);
+//				recognizers.Add(BlinkID.RecognizerType.Ukdl);
+
+				blinkId.Scan(recognizers, true);
 			};
 		}
 	
