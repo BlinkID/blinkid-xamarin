@@ -2,11 +2,7 @@ package com.microblink.wrapper.xamarin;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 
-import com.microblink.activity.ScanActivity;
-import com.microblink.activity.ScanCard;
-import com.microblink.activity.ShowOcrResultMode;
 import com.microblink.hardware.camera.CameraType;
 import com.microblink.recognizers.BaseRecognitionResult;
 import com.microblink.recognizers.IResultHolder;
@@ -18,6 +14,7 @@ import com.microblink.recognizers.blinkbarcode.pdf417.Pdf417RecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.pdf417.Pdf417ScanResult;
 import com.microblink.recognizers.blinkbarcode.usdl.USDLRecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.usdl.USDLScanResult;
+import com.microblink.recognizers.blinkbarcode.zxing.ZXingRecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.zxing.ZXingScanResult;
 import com.microblink.recognizers.blinkid.eudl.EUDLCountry;
 import com.microblink.recognizers.blinkid.eudl.EUDLRecognitionResult;
@@ -36,6 +33,7 @@ import com.microblink.util.RecognizerCompatibilityStatus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,6 +49,7 @@ public class BlinkID {
     public static final String BARCODE_TYPE_KEY = "Type";
     public static final String BARCODE_DATA_KEY = "Data";
     public static final String BARCODE_RAW_DATA_KEY = "Raw";
+    public static final String EUDL_COUNTRY_KEY = "country";
 
     // result types
     public static final String PDF417_RESULT_TYPE = "PDF417";
@@ -106,6 +105,62 @@ public class BlinkID {
         mContext = context;
     }
 
+
+    public Set<RecognizerType> filterOutUnsupportedRecognizers(Set<RecognizerType> recognizers) {
+        return filterOutUnsupportedRecognizers(recognizers, false);
+    }
+
+    /**
+     * Filters out unsupported recognizers (on current device and chosen camera) from given
+     * {@code recognizers} set.
+     * @param recognizers Set of recognizers that should be used in recognition. Set remains
+     *                    unchanged.
+     * @param useCameraFrontFace If set to {@code true} filters out recognizers that are unsupported
+     *                           on current phone's front-facing camera, otherwise do the same for
+     *                           default phone camera.
+     * @return Set of recognizers that are supported on current device and chosen camera.
+     */
+    public Set<RecognizerType> filterOutUnsupportedRecognizers(
+            Set<RecognizerType> recognizers, boolean useCameraFrontFace) {
+        RecognizerSettings[] settArray = buildRecognitionSettings(recognizers, useCameraFrontFace)
+                .getRecognizerSettingsArray();
+
+        CameraType cameraType = CameraType.CAMERA_DEFAULT;
+        if (useCameraFrontFace) {
+            cameraType = CameraType.CAMERA_FRONTFACE;
+        }
+        if(!RecognizerCompatibility.cameraHasAutofocus(cameraType, mContext)) {
+            settArray = RecognizerSettingsUtils.filterOutRecognizersThatRequireAutofocus(settArray);
+        }
+
+        Set<RecognizerType> filtered = new HashSet<>();
+        for (RecognizerSettings recognizerSettings : settArray) {
+            if (recognizerSettings instanceof Pdf417RecognizerSettings) {
+                filtered.add(RecognizerType.PDF417);
+            } else if (recognizerSettings instanceof  USDLRecognizerSettings) {
+                filtered.add(RecognizerType.USDL);
+            } else if (recognizerSettings instanceof  BarDecoderRecognizerSettings) {
+                filtered.add(RecognizerType.BARDECODER);
+            } else if (recognizerSettings instanceof  ZXingRecognizerSettings) {
+                filtered.add(RecognizerType.ZXING);
+            } else if (recognizerSettings instanceof  MRTDRecognizerSettings) {
+                filtered.add(RecognizerType.MRTD);
+            } else if (recognizerSettings instanceof  EUDLRecognizerSettings) {
+                switch (((EUDLRecognizerSettings) recognizerSettings).getCountry()) {
+                    case EUDL_COUNTRY_GERMANY:
+                        filtered.add(RecognizerType.DEDL);
+                        break;
+                    case EUDL_COUNTRY_UK:
+                        filtered.add(RecognizerType.UKDL);
+                        break;
+                }
+            } else if (recognizerSettings instanceof  MyKadRecognizerSettings) {
+                filtered.add(RecognizerType.MYKAD);
+            }
+        }
+        return filtered;
+    }
+
     /**
      * Defines the scan results listener that will obtain results when recognition is done.
      *
@@ -120,7 +175,8 @@ public class BlinkID {
      * have to be defined with setter methods.
      *
      * @param recognizers Recognizers that will be used to scan corresponding document types.
-     * @param useFrontFaceCamera If set to {@code true} frot-facing camera will be used.
+     * @param useFrontFaceCamera If set to {@code true} front-facing camera will be used,
+     *                           otherwise default phone camera will be used.
      *
      * @throws IllegalStateException If license key, context or result listener is not defined.
      */
@@ -137,7 +193,7 @@ public class BlinkID {
 
     /**
      * Starts the scan activity. Before scanning, license key, context and result listener
-     * have to be defined with setter methods. Uses default camra.
+     * have to be defined with setter methods. Uses default camera.
      *
      * @param recognizers Recognizers that will be used to scan corresponding document types.
      *
@@ -154,16 +210,7 @@ public class BlinkID {
 
         // first create intent for provided ScanCard activity
         final Intent intent = new Intent(mContext, BlinkIDScanActivity.class);
-
-        // optionally, if you want the beep sound to be played after a scan
-        // add a sound resource id as EXTRAS_BEEP_RESOURCE extra
-//        intent.putExtra(ScanActivity.EXTRAS_BEEP_RESOURCE, R.raw.beep);
-
-        // if we have help intent, we can pass it to scan activity so it can invoke
-        // it if user taps the help button. If we do not set the help intent,
-        // scan activity will hide the help button.
-//        intent.putExtra(ScanActivity.EXTRAS_HELP_INTENT, helpIntent);
-
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         // In order for scanning to work, you must enter a valid licence key. Without licence key,
         // scanning will not work. Licence key is bound the the package name of your app, so when
@@ -177,28 +224,6 @@ public class BlinkID {
         intent.putExtra(BlinkIDScanActivity.EXTRAS_LICENSE_KEY, mLicenseKey);
 
         intent.putExtra(BlinkIDScanActivity.EXTRAS_USE_FRONTFACE_CAMERA, useFrontFaceCamera);
-
-
-        // If you want, you can disable drawing of OCR results on scan activity. Drawing OCR results can be visually
-        // appealing and might entertain the user while waiting for scan to complete, but might introduce a small
-        // performance penalty.
-        // intent.putExtra(ScanActivity.EXTRAS_SHOW_OCR_RESULT, false);
-
-        /// If you want you can have scan activity display the focus rectangle whenever camera
-        // attempts to focus, similarly to various camera app's touch to focus effect.
-        // By default this is off, and you can turn this on by setting EXTRAS_SHOW_FOCUS_RECTANGLE
-        // extra to true.
-//        intent.putExtra(ScanActivity.EXTRAS_SHOW_FOCUS_RECTANGLE, true);
-
-        // If you want, you can enable the pinch to zoom feature of scan activity.
-        // By enabling this you allow the user to use the pinch gesture to zoom the camera.
-        // By default this is off and can be enabled by setting EXTRAS_ALLOW_PINCH_TO_ZOOM extra to true.
-//        intent.putExtra(ScanActivity.EXTRAS_ALLOW_PINCH_TO_ZOOM, true);
-
-        // Enable showing of OCR results as animated dots. This does not have effect if non-OCR recognizer like
-        // barcode recognizer is active.
-//        intent.putExtra(ScanCard.EXTRAS_SHOW_OCR_RESULT_MODE, (Parcelable) ShowOcrResultMode.ANIMATED_DOTS);
-
         intent.putExtra(BlinkIDScanActivity.EXTRAS_RECOGNITION_SETTINGS, mRecognitionSettings);
 
         return intent;
@@ -233,86 +258,46 @@ public class BlinkID {
 
         List<RecognizerSettings> settingsList = new ArrayList<>();
         if (recognizers.contains(RecognizerType.MRTD)) {
-            // To specify we want to perform MRTD (Machine Readable Travel Document) recognition,
-            // prepare settings for MRTD recognizer
-            MRTDRecognizerSettings mrtd = new MRTDRecognizerSettings();
-            settingsList.add(mrtd);
+            settingsList.add(buildMRTDRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.USDL)) {
-            // To specify we want to perform USDL (US Driver's License) recognition,
-            // prepare settings for USDL recognizer
-            USDLRecognizerSettings usdl = new USDLRecognizerSettings();
-            settingsList.add(usdl);
+            settingsList.add(buildUSDLRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.UKDL)) {
-            // To specify we want to perform EUDL (EU Driver's License) recognition,
-            // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-            // constructor. Here we choose UK.
-            EUDLRecognizerSettings ukdl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
-            settingsList.add(ukdl);
+            settingsList.add(buildUKDLRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.DEDL)) {
-            // To specify we want to perform EUDL (EU Driver's License) recognition,
-            // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-            // constructor. Here we choose Germany.
-            EUDLRecognizerSettings dedl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
-            settingsList.add(dedl);
+            settingsList.add(buildDEDLRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.MYKAD)) {
-            // To specify we want to perform MyKad (Malaysian MyKad ID document) recognition,
-            // prepare settings for MyKad recognizer
-            MyKadRecognizerSettings myKad = new MyKadRecognizerSettings();
-            settingsList.add(myKad);
+            settingsList.add(buildMyKadRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.PDF417)) {
-            // Pdf417RecognizerSettings define the settings for scanning plain PDF417 barcodes.
-            Pdf417RecognizerSettings pdf417RecognizerSettings = new Pdf417RecognizerSettings();
-            // Set this to true to scan barcodes which don't have quiet zone (white area) around it
-            // Use only if necessary because it drastically slows down the recognition process
-            pdf417RecognizerSettings.setNullQuietZoneAllowed(true);
-            // Set this to true to scan even barcode not compliant with standards
-            // For example, malformed PDF417 barcodes which were incorrectly encoded
-            // Use only if necessary because it slows down the recognition process
-            pdf417RecognizerSettings.setUncertainScanning(false);
-            settingsList.add(pdf417RecognizerSettings);
+            settingsList.add(buildPdf417RecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.BARDECODER)) {
-            // BarDecoderRecognizerSettings define settings for scanning 1D barcodes with algorithms
-            // implemented by Microblink team.
-            BarDecoderRecognizerSettings oneDimensionalRecognizerSettings = new BarDecoderRecognizerSettings();
+            settingsList.add(buildBardecoderRecognizerSettings());
+        }
 
-            oneDimensionalRecognizerSettings.setScanCode128(true);
-            oneDimensionalRecognizerSettings.setScanCode39(true);
-            // By setting this to true, you will enable scanning of barcodes with inverse
-            // intensity values (i.e. white barcodes on dark background). This option can
-            // significantly increase recognition time. Default is false
-            oneDimensionalRecognizerSettings.setInverseScanning(false);
-            settingsList.add(oneDimensionalRecognizerSettings);
+        if (recognizers.contains(RecognizerType.ZXING)) {
+            settingsList.add(buildZxingRecognizerSettings());
         }
 
 
         RecognizerSettings[] settingsArray = new RecognizerSettings[settingsList.size()];
         settingsArray = settingsList.toArray(settingsArray);
-        CameraType cameraType = CameraType.CAMERA_BACKFACE;
-        if (useFrontFaceCamera) {
-            cameraType = CameraType.CAMERA_FRONTFACE;
-        }
-        if(!RecognizerCompatibility.cameraHasAutofocus(cameraType, mContext)) {
-            settingsArray = RecognizerSettingsUtils.filterOutRecognizersThatRequireAutofocus(settingsArray);
-        }
 
         // Add array with recognizer settings so that scan activity will know
         // what do you want to scan. Setting recognizer settings array is mandatory.
         recognitionSettings.setRecognizerSettingsArray(settingsArray);
         return recognitionSettings;
     }
-
 
     /**
      * This method is called by scan activity when recognition is done.
@@ -348,6 +333,126 @@ public class BlinkID {
             mResultListener.onResultsAvailable(null);
         }
 
+    }
+
+    /**
+     * Builds {@link ZXingRecognizerSettings} which define settings for scanning various barcode
+     * types, enabled barcodes are: QR code, Aztec code, code 128, code 39, Data matrix, ean 13,
+     * ean 8, UPC A, UPC E
+     */
+    private ZXingRecognizerSettings buildZxingRecognizerSettings() {
+        // ZXingRecognizerSettings define settings for scanning various barcode types, by
+        // default all barcode types are disabled
+        ZXingRecognizerSettings zxingSettings = new ZXingRecognizerSettings();
+
+        // by default all barcode types are disabled
+        zxingSettings.setScanQRCode(true);
+        zxingSettings.setScanAztecCode(true);
+        zxingSettings.setScanCode128(true);
+        zxingSettings.setScanCode39(true);
+        zxingSettings.setScanDataMatrixCode(true);
+        zxingSettings.setScanEAN13Code(true);
+        zxingSettings.setScanEAN8Code(true);
+        zxingSettings.setScanITFCode(false);
+        zxingSettings.setScanUPCACode(true);
+        zxingSettings.setScanUPCECode(true);
+        // By setting this to true, you will enable scanning of barcodes with inverse
+        // intensity values (i.e. white barcodes on dark background). This option can
+        // significantly increase recognition time. Default is false
+        zxingSettings.setInverseScanning(false);
+        return zxingSettings;
+    }
+
+    /**
+     * Builds {@link BarDecoderRecognizerSettings} which define settings for scanning 1D barcodes
+     * with algorithms implemented by Microblink team. Enabled barcodes are: code 128 and code 39.
+     */
+    private BarDecoderRecognizerSettings buildBardecoderRecognizerSettings() {
+        // BarDecoderRecognizerSettings define settings for scanning 1D barcodes with algorithms
+        // implemented by Microblink team.
+        BarDecoderRecognizerSettings oneDimensionalRecognizerSettings = new BarDecoderRecognizerSettings();
+
+        oneDimensionalRecognizerSettings.setScanCode128(true);
+        oneDimensionalRecognizerSettings.setScanCode39(true);
+        // By setting this to true, you will enable scanning of barcodes with inverse
+        // intensity values (i.e. white barcodes on dark background). This option can
+        // significantly increase recognition time. Default is false
+        oneDimensionalRecognizerSettings.setInverseScanning(false);
+        return oneDimensionalRecognizerSettings;
+    }
+
+    /**
+     * Builds {@link MRTDRecognizerSettings} which define settings for scanning
+     * MRTD (Machine Readable Travel Documents).
+     */
+    private MRTDRecognizerSettings buildMRTDRecognizerSettings() {
+        // To specify we want to perform MRTD (Machine Readable Travel Document) recognition,
+        // prepare settings for MRTD recognizer
+        MRTDRecognizerSettings mrtd = new MRTDRecognizerSettings();
+        return mrtd;
+    }
+
+    /**
+     * Builds {@link USDLRecognizerSettings} which define settings for scanning
+     * USDL (US Driver's Licenses)
+     */
+    private USDLRecognizerSettings buildUSDLRecognizerSettings() {
+        // To specify we want to perform USDL (US Driver's License) recognition,
+        // prepare settings for USDL recognizer
+        USDLRecognizerSettings usdl = new USDLRecognizerSettings();
+        return usdl;
+    }
+
+    /**
+     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
+     * EUDL (EU Driver's License). Enabled driver licenses are <b>UK</b> driver's licenses.
+     */
+    private EUDLRecognizerSettings buildUKDLRecognizerSettings() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose UK.
+        EUDLRecognizerSettings ukdl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
+        return ukdl;
+    }
+
+    /**
+     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
+     * EUDL (EU Driver's License). Enabled driver licenses are <b>German</b> driver's licenses.
+     */
+    private EUDLRecognizerSettings buildDEDLRecognizerSettings() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose Germany.
+        EUDLRecognizerSettings dedl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
+        return dedl;
+    }
+
+    /**
+     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
+     * MyKad (Malaysian MyKad ID document).
+     */
+    private MyKadRecognizerSettings buildMyKadRecognizerSettings() {
+        // To specify we want to perform MyKad (Malaysian MyKad ID document) recognition,
+        // prepare settings for MyKad recognizer
+        MyKadRecognizerSettings myKad = new MyKadRecognizerSettings();
+        return myKad;
+    }
+
+    /**
+     * Builds {@link Pdf417RecognizerSettings} which define settings for scanning plain PDF417
+     * barcodes.
+     */
+    private Pdf417RecognizerSettings buildPdf417RecognizerSettings() {
+        // Pdf417RecognizerSettings define the settings for scanning plain PDF417 barcodes.
+        Pdf417RecognizerSettings pdf417RecognizerSettings = new Pdf417RecognizerSettings();
+        // Set this to true to scan barcodes which don't have quiet zone (white area) around it
+        // Use only if necessary because it drastically slows down the recognition process
+        pdf417RecognizerSettings.setNullQuietZoneAllowed(true);
+        // Set this to true to scan even barcode not compliant with standards
+        // For example, malformed PDF417 barcodes which were incorrectly encoded
+        // Use only if necessary because it slows down the recognition process
+        pdf417RecognizerSettings.setUncertainScanning(false);
+        return pdf417RecognizerSettings;
     }
 
     /**
@@ -421,7 +526,9 @@ public class BlinkID {
      * Builds result map for EUDL scan result.
      */
     private Map<String, String> buildEUDLResult(EUDLRecognitionResult res) {
-        return buildKeyValueResult(res, EUDL_RESULT_TYPE);
+        Map<String, String> resultMap = buildKeyValueResult(res, EUDL_RESULT_TYPE);
+        resultMap.put(EUDL_COUNTRY_KEY, res.getCountry().name());
+        return resultMap;
     }
 
     /**

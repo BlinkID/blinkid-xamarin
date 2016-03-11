@@ -159,6 +159,9 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // set initial orientation
         mRecognizerView.setInitialOrientation(Orientation.ORIENTATION_PORTRAIT);
 
+        // animate rotatable views on top of scanner view
+        mRecognizerView.setAnimateRotation(true);
+
         // set camera aspect mode to FILL - this will use the entire surface
         // for camera preview, instead of letterboxing it
         mRecognizerView.setAspectMode(CameraAspectMode.ASPECT_FILL);
