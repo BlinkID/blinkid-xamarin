@@ -1,5 +1,9 @@
 # Samples
 
+This application samples can be **starting point (boilerplate)** for **new Xamarin application** which should contains **BlinkID SDK** and also contains simple functionality which can be reused in **existing Xamarin application**.
+
+## Directory and files summary
+
 * `Android` - **Xamarin.Android** sample application
     - projects in solution [Android/Android.sln](Android/Android.sln):
         - Xamarin.Android application; [Android/BlinkIDSample.csproj](Android/BlinkIDSample.csproj) 
