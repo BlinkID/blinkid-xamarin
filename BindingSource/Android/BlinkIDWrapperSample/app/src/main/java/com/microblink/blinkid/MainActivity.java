@@ -11,8 +11,10 @@ import android.widget.Toast;
 import com.microblink.wrapper.xamarin.BlinkID;
 import com.microblink.wrapper.xamarin.BlinkIdResultListener;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
         // check if BlinkID is supported on the device
         Button btnScan = (Button) findViewById(R.id.btnScan);
 
-//        RecognizerCompatibilityStatus supportStatus = RecognizerCompatibility.getRecognizerCompatibilityStatus(this);
-//        if (supportStatus == RecognizerCompatibilityStatus.RECOGNIZER_SUPPORTED) {
-//            btnScan.setEnabled(true);
-//        } else {
-//            btnScan.setEnabled(false);
-//            Toast.makeText(this, "BlinkID is not supported! Reason: " + supportStatus.name(), Toast.LENGTH_LONG).show();
-//        }
+        if (BlinkID.getInstance().isBlinkIDSupportedOnDevice(this)) {
+            btnScan.setEnabled(true);
+        } else {
+            btnScan.setEnabled(false);
+            Toast.makeText(this, "BlinkID is not supported!", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void scanClickHandler(View view) {
@@ -43,9 +44,15 @@ public class MainActivity extends AppCompatActivity {
         blinkId.setContext(this);
         blinkId.setLicenseKey(LICENSE_KEY);
         blinkId.setResultListener(mResultListener);
-        blinkId.scan();
-        recognizers.add(BlinkID.RecognizerType.ZXING);
+        Set<BlinkID.RecognizerType> recognizers = new HashSet<>();
+        // recognize US Driver's Licenses
+        recognizers.add(BlinkID.RecognizerType.USDL);
+        // recognize UK Driver's Licenses
+        recognizers.add(BlinkID.RecognizerType.UKDL);
 
+        boolean useFrontFaceCamera = false;
+        recognizers = blinkId.filterOutUnsupportedRecognizers(recognizers, useFrontFaceCamera);
+        blinkId.scan(recognizers, useFrontFaceCamera);
     }
 
     BlinkIdResultListener mResultListener = new BlinkIdResultListener() {
