@@ -6,7 +6,7 @@
                  android:label="@string/app_name"
                  android:supportsRtl="true">
 
-        <activity android:name=".BlinkIDScanActivity"
+        <activity android:name=".scan.BlinkIDScanActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppTheme.FullScreen"/>
 

@@ -8,4 +8,10 @@
     <color name="mbButtonBackgroundDisabled">#22FFFFFF</color>
     <color name="statusBackground">#BB000000</color>
 
+    <!-- Color of the viewfinder in default position (usually red) -->
+    <color name="default_frame">#DDFFFFFF</color>
+    <!-- The color of viewfinder frame when the slip is detected on the image (usually green) -->
+    <color name="recognized_frame">#DDAAFFAA</color>
+
+
 </resources>

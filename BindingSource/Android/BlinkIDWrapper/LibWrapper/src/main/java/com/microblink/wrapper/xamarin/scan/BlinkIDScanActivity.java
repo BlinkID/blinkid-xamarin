@@ -1,4 +1,4 @@
-package com.microblink.wrapper.xamarin;
+package com.microblink.wrapper.xamarin.scan;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -16,17 +16,23 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.microblink.geometry.Point;
+import com.microblink.geometry.Quadrilateral;
 import com.microblink.hardware.SuccessCallback;
 import com.microblink.hardware.camera.CameraType;
 import com.microblink.hardware.orientation.Orientation;
 import com.microblink.metadata.Metadata;
 import com.microblink.metadata.MetadataListener;
 import com.microblink.metadata.MetadataSettings;
+import com.microblink.metadata.OcrMetadata;
+import com.microblink.metadata.detection.FailedDetectionMetadata;
+import com.microblink.metadata.detection.PointsDetectionMetadata;
+import com.microblink.metadata.detection.QuadrilateralDetectionMetadata;
 import com.microblink.recognition.InvalidLicenceKeyException;
 import com.microblink.recognizers.RecognitionResults;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
-import com.microblink.util.*;
+import com.microblink.util.Log;
 import com.microblink.view.CameraAspectMode;
 import com.microblink.view.CameraEventsListener;
 import com.microblink.view.OnSizeChangedListener;
@@ -34,6 +40,19 @@ import com.microblink.view.OrientationAllowedListener;
 import com.microblink.view.recognition.DetectionStatus;
 import com.microblink.view.recognition.RecognizerView;
 import com.microblink.view.recognition.ScanResultListener;
+import com.microblink.wrapper.xamarin.BlinkID;
+import com.microblink.wrapper.xamarin.R;
+import com.microblink.wrapper.xamarin.scan.dots.PointSetView;
+import com.microblink.wrapper.xamarin.scan.dots.PointSetWrapper;
+import com.microblink.wrapper.xamarin.scan.quadview.QuadView;
+import com.microblink.wrapper.xamarin.scan.quadview.QuadViewManager;
+import com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper;
+import com.microblink.wrapper.xamarin.scan.quadview.XPoint;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class BlinkIDScanActivity extends Activity implements ScanResultListener, CameraEventsListener, OnSizeChangedListener, MetadataListener {
 
@@ -48,7 +67,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     /**
      * This is a RecognizerView - it contains camera view and can contain camera overlays
      */
-    RecognizerView mRecognizerView;
+    private RecognizerView mRecognizerView;
 
     /**
      * This is a back button
@@ -75,13 +94,24 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
      * It is used on Android 6.0 (API level 23) or newer.
      */
     private CameraPermissionManager mCameraPermissionManager;
+    /**
+     * Actual viewfinder that draws animations.
+     */
+    protected QuadViewManager mQuadViewManager = null;
+    /**
+     * Draws points detection.
+     */
+    protected PointSetView mPointSetView = null;
+
+    boolean activityRunning = false;
+    private boolean mFinishing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blinkid_scan);
 
-        Log.w(this, "CREATE");
+        activityRunning = true;
 
         // obtain reference to RecognizerView
         mRecognizerView = (RecognizerView) findViewById(R.id.recognizerView);
@@ -167,7 +197,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         mRecognizerView.setAspectMode(CameraAspectMode.ASPECT_FILL);
 
         // instantiate the camera permission manager
-        mCameraPermissionManager = new CameraPermissionManager(this);
+        mCameraPermissionManager = new com.microblink.wrapper.xamarin.scan.CameraPermissionManager(this);
         // get the built in layout that should be displayed when camera permission is not given
         View v = mCameraPermissionManager.getAskPermissionOverlay();
         if (v != null) {
@@ -180,6 +210,12 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         mRecognizerView.create();
 
         // after scanner is created, you can add your views to it
+
+        // create quad view manager and add its quad view as a child of recognizer view
+        mQuadViewManager = createQuadViewManager(mRecognizerView);
+
+        mPointSetView = new PointSetView(this, null);
+        mRecognizerView.addChildView(mPointSetView, false);
 
         // initialize buttons and status view
         View view = getLayoutInflater().inflate(R.layout.overlay_blinkid_scan, null);
@@ -212,8 +248,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     protected void onResume() {
         super.onResume();
-        Log.w(this, "RESUME");
-
+        activityRunning = true;
         // all activity lifecycle events must be passed on to RecognizerView
         if (mRecognizerView != null) {
             mRecognizerView.resume();
@@ -224,7 +259,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     protected void onStart() {
         super.onStart();
-        Log.w(this, "START");
+        activityRunning = true;
         // all activity lifecycle events must be passed on to RecognizerView
         if (mRecognizerView != null) {
             mRecognizerView.start();
@@ -234,7 +269,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     protected void onPause() {
         super.onPause();
-        Log.w(this, "PAUSE");
+        activityRunning = false;
         // all activity lifecycle events must be passed on to RecognizerView
         if (mRecognizerView != null) {
             mRecognizerView.pause();
@@ -247,7 +282,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     protected void onStop() {
         super.onStop();
-        Log.w(this, "STOP");
+        activityRunning = false;
         // all activity lifecycle events must be passed on to RecognizerView
         if (mRecognizerView != null) {
             mRecognizerView.stop();
@@ -257,8 +292,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.w(this, "DESTROY");
-
+        activityRunning = false;
         // all activity lifecycle events must be passed on to RecognizerView
         if (mRecognizerView != null) {
             mRecognizerView.destroy();
@@ -286,10 +320,31 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     @Override
     public void onScanningDone(RecognitionResults results) {
-        soundNotification();
         mRecognizerView.pauseScanning();
         BlinkID.getInstance().onScanningDone(results);
-        finish();
+        soundNotification();
+        waitForAnimationAndFinish();
+    }
+
+    private void waitForAnimationAndFinish() {
+        if (mQuadViewManager == null && mPointSetView == null) {
+            super.finish();
+        } else {
+            mFinishing = true;
+            final Timer timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    if ((mQuadViewManager != null && mQuadViewManager.isAnimationInProgress()) || (mPointSetView != null && mPointSetView.isAnimationInProgress())) {
+                        Log.v(BlinkIDScanActivity.this, "Waiting for animations to end...");
+                    } else {
+                        timer.cancel();
+                        BlinkIDScanActivity.this.finish();
+                    }
+
+                }
+            }, 0, 100);
+        }
     }
 
 
@@ -342,29 +397,31 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // This method will be called when opening of camera resulted in exception or
         // recognition process encountered an error.
         // The error details will be given in ex parameter.
-        com.microblink.util.Log.e(this, ex, "Error");
+        Log.e(this, ex, "Error");
         handleError();
     }
 
     @SuppressWarnings("deprecation")
     private void handleError() {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle(getString(R.string.error));
-        alertDialog.setMessage(getString(R.string.errorDesc));
+        if (activityRunning && !mFinishing) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle(R.string.error);
+            alertDialog.setMessage(getString(R.string.errorDesc));
 
-        alertDialog.setButton(getString(R.string.btnOK), new DialogInterface.OnClickListener() {
+            alertDialog.setButton(getString(R.string.btnOK), new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (dialog != null) {
-                    dialog.dismiss();
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (dialog != null) {
+                        dialog.dismiss();
+                    }
+                    setResult(Activity.RESULT_CANCELED, null);
+                    finish();
                 }
-                setResult(Activity.RESULT_CANCELED, null);
-                finish();
-            }
-        });
-        alertDialog.setCancelable(false);
-        alertDialog.show();
+            });
+            alertDialog.setCancelable(false);
+            alertDialog.show();
+        }
     }
 
     private void displayText(final int textId) {
@@ -457,6 +514,31 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     @Override
     public void onMetadataAvailable(Metadata metadata) {
+        if (metadata instanceof FailedDetectionMetadata) {
+            if (mQuadViewManager != null) {
+                mQuadViewManager.animateQuadToDefaultPosition();
+            }
+            if (mPointSetView != null) {
+                mPointSetView.setPointSet(null);
+            }
+            displayDetectionStatus(DetectionStatus.FAIL);
+        } else if (mPointSetView != null && metadata instanceof PointsDetectionMetadata) {
+            List<Point> pointList = ((PointsDetectionMetadata) metadata).getPoints().getPoints();
+            List<XPoint> xPointList = new ArrayList<>();
+            for (Point p : pointList) {
+                xPointList.add(new XPoint(p.getX(), p.getY()));
+            }
+            mPointSetView.setPointSet(new PointSetWrapper(xPointList));
+        } else if (mQuadViewManager != null && metadata instanceof QuadrilateralDetectionMetadata) {
+            QuadrilateralDetectionMetadata quadMetaData = (QuadrilateralDetectionMetadata) metadata;
+            Log.i(this, "Quadrilateral available: {}", quadMetaData.getQuadrilateral());
+            boolean detectionSuccessful = quadMetaData.getDetectionStatus() == DetectionStatus.SUCCESS;
+            mQuadViewManager.animateQuadToDetectionPosition(quadToQuadWrapper(quadMetaData.getQuadrilateral()), detectionSuccessful);
+            displayDetectionStatus(quadMetaData.getDetectionStatus());
+            if (mPointSetView != null) {
+                mPointSetView.setPointSet(null);
+            }
+        }
     }
 
     @Override
@@ -476,5 +558,32 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // permission only if it has not been already granted.
         // on API level < 23, this method does nothing
         mCameraPermissionManager.askForCameraPermission();
+    }
+
+    /**
+     * Creates the quad view manager and adds its quad view as a child of given {@link RecognizerView}.
+     * @param recognizerView Parent of the quad view.
+     * @return Created quad view manager.
+     */
+    private QuadViewManager createQuadViewManager(RecognizerView recognizerView) {
+        QuadView qv = new QuadView(recognizerView.getContext(), null, 0.11, 0.11,
+                recognizerView.getHostScreenOrientation());
+        recognizerView.addChildView(qv, false, 0);
+        return new QuadViewManager(qv);
+    }
+
+
+    private QuadrilateralWrapper quadToQuadWrapper(Quadrilateral q) {
+        Point ul = q.getUpperLeft();
+        Point ur = q.getUpperRight();
+        Point ll = q.getLowerLeft();
+        Point lr = q.getLowerRight();
+        QuadrilateralWrapper qw = new QuadrilateralWrapper(new XPoint(ul.getX(), ul.getY()),
+                new XPoint(ur.getX(), ur.getY()), new XPoint(ll.getX(), ll.getY()),
+                new XPoint(lr.getX(), lr.getY()));
+        qw.setColor(q.getColor());
+        qw.setRealUpperLeftIndex(q.getRealUpperLeftIndex());
+        qw.setIsDefaultQuad(q.isDefaultQuad());
+        return qw;
     }
 }

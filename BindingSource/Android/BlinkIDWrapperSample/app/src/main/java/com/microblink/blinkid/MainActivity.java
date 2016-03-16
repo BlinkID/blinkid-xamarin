@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         blinkId.setLicenseKey(LICENSE_KEY);
         blinkId.setResultListener(mResultListener);
         blinkId.scan();
+        recognizers.add(BlinkID.RecognizerType.ZXING);
+
     }
 
     BlinkIdResultListener mResultListener = new BlinkIdResultListener() {

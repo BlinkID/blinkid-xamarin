@@ -1,4 +1,4 @@
-package com.microblink.wrapper.xamarin;
+package com.microblink.wrapper.xamarin.scan;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -16,6 +16,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
 import android.view.View;
+
+import com.microblink.wrapper.xamarin.R;
 
 /**
  * Helper class that shows the camera permission screen when user has denied camera permission

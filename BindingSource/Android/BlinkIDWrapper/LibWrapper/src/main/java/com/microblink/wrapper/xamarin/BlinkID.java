@@ -30,6 +30,7 @@ import com.microblink.results.barcode.BarcodeDetailedData;
 import com.microblink.util.Log;
 import com.microblink.util.RecognizerCompatibility;
 import com.microblink.util.RecognizerCompatibilityStatus;
+import com.microblink.wrapper.xamarin.scan.BlinkIDScanActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
