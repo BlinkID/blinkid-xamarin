@@ -63,9 +63,6 @@
     <EmbeddedReferenceJar Include="Jars\classes.jar" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="LibWrapper-release.aar" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
@@ -73,5 +70,8 @@
     <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libBlinkID.so" />
     <EmbeddedNativeLibrary Include="lib\x86\libBlinkID.so" />
     <EmbeddedNativeLibrary Include="lib\x86_64\libBlinkID.so" />
+  </ItemGroup>
+  <ItemGroup>
+    <LibraryProjectZip Include="LibWrapper-release.aar" />
   </ItemGroup>
 </Project>

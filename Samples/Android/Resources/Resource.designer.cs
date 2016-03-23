@@ -757,32 +757,32 @@ namespace Android
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c0041
-			public const int abc_background_cache_hint_selector_material_dark = 2131492929;
-			
-			// aapt resource value: 0x7f0c0042
-			public const int abc_background_cache_hint_selector_material_light = 2131492930;
-			
 			// aapt resource value: 0x7f0c0043
-			public const int abc_color_highlight_material = 2131492931;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492931;
+			
+			// aapt resource value: 0x7f0c0044
+			public const int abc_background_cache_hint_selector_material_light = 2131492932;
+			
+			// aapt resource value: 0x7f0c0045
+			public const int abc_color_highlight_material = 2131492933;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0044
-			public const int abc_primary_text_disable_only_material_dark = 2131492932;
-			
-			// aapt resource value: 0x7f0c0045
-			public const int abc_primary_text_disable_only_material_light = 2131492933;
-			
 			// aapt resource value: 0x7f0c0046
-			public const int abc_primary_text_material_dark = 2131492934;
+			public const int abc_primary_text_disable_only_material_dark = 2131492934;
 			
 			// aapt resource value: 0x7f0c0047
-			public const int abc_primary_text_material_light = 2131492935;
+			public const int abc_primary_text_disable_only_material_light = 2131492935;
 			
 			// aapt resource value: 0x7f0c0048
-			public const int abc_search_url_text = 2131492936;
+			public const int abc_primary_text_material_dark = 2131492936;
+			
+			// aapt resource value: 0x7f0c0049
+			public const int abc_primary_text_material_light = 2131492937;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int abc_search_url_text = 2131492938;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -793,11 +793,11 @@ namespace Android
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0049
-			public const int abc_secondary_text_material_dark = 2131492937;
+			// aapt resource value: 0x7f0c004b
+			public const int abc_secondary_text_material_dark = 2131492939;
 			
-			// aapt resource value: 0x7f0c004a
-			public const int abc_secondary_text_material_light = 2131492938;
+			// aapt resource value: 0x7f0c004c
+			public const int abc_secondary_text_material_light = 2131492940;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int accent_material_dark = 2131492868;
@@ -840,6 +840,9 @@ namespace Android
 			
 			// aapt resource value: 0x7f0c0011
 			public const int button_material_light = 2131492881;
+			
+			// aapt resource value: 0x7f0c003a
+			public const int default_frame = 2131492922;
 			
 			// aapt resource value: 0x7f0c0012
 			public const int dim_foreground_disabled_material_dark = 2131492882;
@@ -907,20 +910,20 @@ namespace Android
 			// aapt resource value: 0x7f0c0027
 			public const int material_grey_900 = 2131492903;
 			
-			// aapt resource value: 0x7f0c003a
-			public const int mbButtonBackgroundDisabled = 2131492922;
-			
 			// aapt resource value: 0x7f0c003b
-			public const int mbButtonBackgroundNormal = 2131492923;
+			public const int mbButtonBackgroundDisabled = 2131492923;
 			
 			// aapt resource value: 0x7f0c003c
-			public const int mbButtonBackgroundPressed = 2131492924;
+			public const int mbButtonBackgroundNormal = 2131492924;
 			
 			// aapt resource value: 0x7f0c003d
-			public const int mbButtonBorder = 2131492925;
+			public const int mbButtonBackgroundPressed = 2131492925;
 			
 			// aapt resource value: 0x7f0c003e
-			public const int mbButtonForeground = 2131492926;
+			public const int mbButtonBorder = 2131492926;
+			
+			// aapt resource value: 0x7f0c003f
+			public const int mbButtonForeground = 2131492927;
 			
 			// aapt resource value: 0x7f0c0028
 			public const int primary_dark_material_dark = 2131492904;
@@ -946,6 +949,9 @@ namespace Android
 			// aapt resource value: 0x7f0c002f
 			public const int primary_text_disabled_material_light = 2131492911;
 			
+			// aapt resource value: 0x7f0c0040
+			public const int recognized_frame = 2131492928;
+			
 			// aapt resource value: 0x7f0c0030
 			public const int ripple_material_dark = 2131492912;
 			
@@ -964,11 +970,11 @@ namespace Android
 			// aapt resource value: 0x7f0c0035
 			public const int secondary_text_disabled_material_light = 2131492917;
 			
-			// aapt resource value: 0x7f0c003f
-			public const int statusBackground = 2131492927;
+			// aapt resource value: 0x7f0c0041
+			public const int statusBackground = 2131492929;
 			
-			// aapt resource value: 0x7f0c0040
-			public const int statusForeground = 2131492928;
+			// aapt resource value: 0x7f0c0042
+			public const int statusForeground = 2131492930;
 			
 			// aapt resource value: 0x7f0c0036
 			public const int switch_thumb_disabled_material_dark = 2131492918;
@@ -976,11 +982,11 @@ namespace Android
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_disabled_material_light = 2131492919;
 			
-			// aapt resource value: 0x7f0c004b
-			public const int switch_thumb_material_dark = 2131492939;
+			// aapt resource value: 0x7f0c004d
+			public const int switch_thumb_material_dark = 2131492941;
 			
-			// aapt resource value: 0x7f0c004c
-			public const int switch_thumb_material_light = 2131492940;
+			// aapt resource value: 0x7f0c004e
+			public const int switch_thumb_material_light = 2131492942;
 			
 			// aapt resource value: 0x7f0c0038
 			public const int switch_thumb_normal_material_dark = 2131492920;
@@ -1450,19 +1456,22 @@ namespace Android
 			public const int camera_denied = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int lightoff = 2130837574;
+			public const int dot = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int lighton = 2130837575;
+			public const int lightoff = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int microblink_button = 2130837576;
-			
-			// aapt resource value: 0x7f02004a
-			public const int notification_template_icon_bg = 2130837578;
+			public const int lighton = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int rounded_border = 2130837577;
+			public const int microblink_button = 2130837577;
+			
+			// aapt resource value: 0x7f02004b
+			public const int notification_template_icon_bg = 2130837579;
+			
+			// aapt resource value: 0x7f02004a
+			public const int rounded_border = 2130837578;
 			
 			static Drawable()
 			{

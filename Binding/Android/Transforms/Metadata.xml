@@ -6,4 +6,15 @@
   This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
   <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
 -->
+
+	<attr
+        path="/api/package[@name='com.microblink.wrapper.xamarin.scan.quadview']/class[@name='QuadrangleEvaluator']/method[@name='evaluate' and count(parameter)=3 and parameter[1][@type='float'] and parameter[2][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper'] and parameter[3][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']]"
+        name="managedReturn"
+	>Java.Lang.Object</attr>
+
+	<attr
+        path="/api/package[@name='com.microblink.wrapper.xamarin.scan.quadview']/class[@name='QuadrangleEvaluator']/method[@name='evaluate' and count(parameter)=3 and parameter[1][@type='float'] and parameter[2][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper'] and parameter[3][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']]/parameter[@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']"
+        name="type"
+	>Java.Lang.Object</attr>
+
 </metadata>
