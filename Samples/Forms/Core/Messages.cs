@@ -9,7 +9,7 @@ namespace BlinkIDApp
 
 		public class BlinkIDResults
 		{
-			public IList<IDictionary<string, string>> Results { get; set; }
+			public List<Dictionary<string, string>> Results { get; set; }
 		}
 	}
 }

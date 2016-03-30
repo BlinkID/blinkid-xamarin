@@ -40,8 +40,21 @@ namespace BlinkIDApp.Droid
 			#region implemented abstract members of BlinkIdResultListener
 			public override void OnResultsAvailable (IList<IDictionary<string, string>> results)
 			{
+				// Transform results from IList<IDictionary<string, string>> to List<Dictionary<string, string>>
+				var transformedResults = new List<Dictionary<string, string>> ();
+
+				foreach (var result in results) {
+					var dict = new Dictionary<string, string> ();
+
+					foreach (var item in result) {
+						dict.Add (item.Key.ToString(), item.Value.ToString());
+					}
+
+					transformedResults.Add (dict);
+				}
+
 				MessagingCenter.Send<Messages.BlinkIDResults> (new Messages.BlinkIDResults {
-					Results = results
+					Results = transformedResults
 				}, Messages.BlinkIDResultsMessage);
 			}
 			#endregion
