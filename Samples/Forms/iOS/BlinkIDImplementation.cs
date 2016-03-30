@@ -26,7 +26,7 @@ namespace BlinkIDApp.iOS
 			public override void DidOutputResults (MicroBlink.BlinkID blinkid, NSDictionary[] results)
 			{
 				// Transform results from NSDictionary[] to List<Dictionary<string, string>>
-				var csResults = new List<Dictionary<string, string>> ();
+				var transformedResults = new List<Dictionary<string, string>> ();
 
 				foreach (var result in results) {
 					var dict = new Dictionary<string, string> ();
@@ -35,12 +35,12 @@ namespace BlinkIDApp.iOS
 						dict.Add (item.Key.ToString(), item.Value.ToString());
 					}
 
-					csResults.Add (dict);
+					transformedResults.Add (dict);
 				}
 
 				// Send results to subscribers
 				MessagingCenter.Send<Messages.BlinkIDResults> (new Messages.BlinkIDResults {
-					Results = csResults
+					Results = transformedResults
 				}, Messages.BlinkIDResultsMessage);
 			}
 
