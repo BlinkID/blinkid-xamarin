@@ -12,7 +12,7 @@ namespace BlinkIDApp.Droid
 {
 	public class BlinkIDImplementation : IBlinkID
 	{
-		public const string LICENSE_KEY = "MHUWB5IJ-OJPF6GZR-DUC6J4IA-UCNRAUMW-F3LAQILF-2HJBEEKF-WSJZIWEI-QCWB3RSN";
+		public const string LICENSE_KEY = "DLTBUL2B-FHCPH6CP-ETCJSTRC-6P4A6DF5-5NZZTNX5-EV7HWRXD-72M3N7JE-YHNITZGA";
 
 		BlinkID blinkId;
 		bool useFrontCamera;
