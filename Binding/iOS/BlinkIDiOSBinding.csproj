@@ -48,6 +48,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <ItemGroup>
+    <NativeReference Include="..\..\BindingSource\iOS\blinkid-ios\MicroBlink.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\MicroBlink.bundle\IDCard.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\IDCard%402x.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\Info.plist" />

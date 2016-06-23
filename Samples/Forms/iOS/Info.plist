@@ -40,5 +40,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
+	<key>CFBundleName</key>
+	<string>BlinkID Forms</string>
 </dict>
 </plist>

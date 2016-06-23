@@ -15,7 +15,7 @@ namespace BlinkIDApp.iOS
 		{
 			CustomDelegate customDelegate = new CustomDelegate ();
 
-			MicroBlink.BlinkID.Instance().LicenseKey = "7YV32QWG-VKEWRHTY-36HDZ6JL-PRMPFVN6-ED5OXMSY-6LK34IH2-5OZFR4WV-W2PE7JQL";
+			MicroBlink.BlinkID.Instance().LicenseKey = "UMGPSARL-P3ZZKNXF-36HDYAI5-A4SLTUAL-J5UJ4ODX-BRIIUIH2-5OZFQ4QQ-HSCSLD77";
 			MicroBlink.BlinkID.Instance().Delegate = customDelegate;
 		}
 
