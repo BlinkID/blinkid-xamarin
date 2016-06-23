@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String LICENSE_KEY = "NFRZVYWD-MCK7SSO7-TJ7ZWOC4-AT2AYDM7-JDHZQMHY-V3PZU4SX-54PGUFQM-AUX5RGYJ";
+    private static final String LICENSE_KEY = "BRVITPHC-YSYABCZD-CHKHMEC6-E3NNMLH2-LYTNVVRM-7JPCNWWW-FT5F4JW2-32QER7JS";
     ;
 
     @Override
@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         recognizers.add(BlinkID.RecognizerType.USDL);
         // recognize UK Driver's Licenses
         recognizers.add(BlinkID.RecognizerType.UKDL);
+//        recognizers.add(BlinkID.RecognizerType.PDF417);
+//        recognizers.add(BlinkID.RecognizerType.CRO_ID_FRONT);
+//        recognizers.add(BlinkID.RecognizerType.CRO_ID_BACK);
+
 
         boolean useFrontFaceCamera = false;
         recognizers = blinkId.filterOutUnsupportedRecognizers(recognizers, useFrontFaceCamera);
