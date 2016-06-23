@@ -24,6 +24,33 @@ This is BlinkID Xamarin implementation based on native [Objective-C](https://git
     * [Xamarin.Forms](Samples/Forms)
 3. More details about Samples [here](Samples)
 
+### Quick start with Existing app
+
+1. "Add Existing Project..." - Binding Library project(s) to your app's Solution
+  * [Android Binding Library](Binding/Android/BlinkIDAndroidBinding.csproj)  
+    ![Add Android Binding Library](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-existing-project-android-binding-library-project.png)  
+  * [iOS Binding Library](Binding/iOS/BlinkIDiOSBinding.csproj)  
+    ![Add iOS Binding Library](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-existing-project-ios-binding-library-project.png)  
+
+2. Add Binding Library project as Reference to platform specific project
+  * Android  
+  ![Add Android Binding Project as Reference](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-binding-android-project-as-reference.png)
+  * iOS  
+  ![Add iOS Binding Project as Reference](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-binding-ios-project-as-reference.png)
+
+3. Android specific
+  * Add `MicroBlink` assets
+  * ![Android Specific add assets](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-android-specific-add-microblink-assets.png)
+  * Use assets from the Sample application, find it [here](Samples/Android/Assets/microblink)
+  * In `AndroidManifest.xml` add `Camera` permission
+
+4. Change license key based on unique app ID
+  * Android - Package name 
+  * iOS - Bundle Identifier
+
+5. Feel free to use code from [Sample apps](Samples)
+
+
 ## How to update native wrappers and binding libraries?
 ### Android
 
