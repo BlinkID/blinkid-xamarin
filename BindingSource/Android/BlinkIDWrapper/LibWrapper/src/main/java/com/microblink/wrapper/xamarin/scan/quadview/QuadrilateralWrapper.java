@@ -6,7 +6,7 @@ import com.microblink.geometry.Quadrilateral;
 /**
  * Created by ivan on 3/16/16.
  */
-public class QuadrilateralWrapper{
+public class QuadrilateralWrapper {
 
     private Quadrilateral mQuadrilateral;
 
@@ -21,15 +21,6 @@ public class QuadrilateralWrapper{
     public QuadrilateralWrapper(XPoint uleft, XPoint uright, XPoint lleft, XPoint lright) {
         mQuadrilateral = new Quadrilateral(xPointToPoint(uleft), xPointToPoint(uright),
                 xPointToPoint(lleft), xPointToPoint(lright));
-    }
-
-    public QuadrilateralWrapper(float uleftx, float ulefty, float urightx, float urighty, float lleftx, float llefty, float lrightx, float lrighty, int uleftIndex) {
-        mQuadrilateral = new Quadrilateral(uleftx, ulefty, urightx, urighty, lleftx, llefty, lrightx, lrighty, uleftIndex);
-    }
-
-    public QuadrilateralWrapper(XPoint uleft, XPoint uright, XPoint lleft, XPoint lright, int uleftIndex) {
-        mQuadrilateral = new Quadrilateral(xPointToPoint(uleft), xPointToPoint(uright),
-                xPointToPoint(lleft), xPointToPoint(lright), uleftIndex);
     }
 
     public void setMargins(int top, int bottom, int left, int right, int hostActivityOrientation) {
@@ -50,21 +41,12 @@ public class QuadrilateralWrapper{
         return mQuadrilateral.toString();
     }
 
-    public static QuadrilateralWrapper fromPointsAndCanvasSize(XPoint uleft, XPoint uright, XPoint lleft, XPoint lright, final int canvasWidth, final int canvasHeight, int hostActivityOrientation, boolean mirrorXY) {
-        Quadrilateral quad = Quadrilateral.fromPointsAndCanvasSize(xPointToPoint(uleft), xPointToPoint(uright),
-                xPointToPoint(lleft), xPointToPoint(lright), canvasWidth, canvasHeight, hostActivityOrientation, mirrorXY);
-        QuadrilateralWrapper wrapper = new QuadrilateralWrapper();
-        wrapper.mQuadrilateral = quad;
-        return wrapper;
-    }
-
-
     public void mirror(final int canvasWidth, final int canvasHeight, int hostActivityOrientation) {
         mQuadrilateral.mirror(canvasWidth, canvasHeight, hostActivityOrientation);
     }
 
-    public QuadrilateralWrapper sortedQuad() {
-        Quadrilateral quad = mQuadrilateral.sortedQuad();
+    public QuadrilateralWrapper getSortedQuad() {
+        Quadrilateral quad = mQuadrilateral.getSortedQuad();
         QuadrilateralWrapper sorted = new QuadrilateralWrapper();
         sorted.mQuadrilateral = quad;
         return sorted;
@@ -74,32 +56,16 @@ public class QuadrilateralWrapper{
         return pointToXpoint(mQuadrilateral.getUpperLeft());
     }
 
-    public XPoint getRealUpperLeft() {
-        return pointToXpoint(mQuadrilateral.getRealUpperLeft());
-    }
-
     public XPoint getUpperRight() {
         return pointToXpoint(mQuadrilateral.getUpperRight());
-    }
-
-    public XPoint getRealUpperRight() {
-        return pointToXpoint(mQuadrilateral.getRealUpperRight());
     }
 
     public XPoint getLowerLeft() {
         return pointToXpoint(mQuadrilateral.getLowerLeft());
     }
 
-    public XPoint getRealLowerLeft() {
-        return pointToXpoint(mQuadrilateral.getRealLowerLeft());
-    }
-
     public XPoint getLowerRight() {
         return pointToXpoint(mQuadrilateral.getLowerRight());
-    }
-
-    public XPoint getRealLowerRight() {
-        return pointToXpoint(mQuadrilateral.getRealLowerRight());
     }
 
     public int getColor() {
@@ -108,14 +74,6 @@ public class QuadrilateralWrapper{
 
     public void setColor(int color) {
         mQuadrilateral.setColor(color);
-    }
-
-    public void setRealUpperLeftIndex(int realULeftIndex) {
-        mQuadrilateral.setRealUpperLeftIndex(realULeftIndex);
-    }
-
-    public int getRealUpperLeftIndex() {
-        return mQuadrilateral.getRealUpperLeftIndex();
     }
 
     public boolean isDefaultQuad() {

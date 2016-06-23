@@ -264,6 +264,14 @@ public class XPoint implements Parcelable {
         return mY;
     }
 
+    public void setX(float x) {
+        mX = x;
+    }
+
+    public void setY(float y) {
+        mY = y;
+    }
+
     @Override
     public int describeContents() {
         return 0;

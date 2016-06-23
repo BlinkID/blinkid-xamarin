@@ -10,7 +10,7 @@ public class QuadrangleEvaluator implements TypeEvaluator<QuadrilateralWrapper> 
 
     @Override
     public QuadrilateralWrapper evaluate(float fraction, QuadrilateralWrapper startValue,
-                                  QuadrilateralWrapper endValue) {
+                                         QuadrilateralWrapper endValue) {
 
         int color =
                 (Integer) mColorEval.evaluate(fraction, startValue.getColor(), endValue.getColor());
@@ -30,7 +30,6 @@ public class QuadrangleEvaluator implements TypeEvaluator<QuadrilateralWrapper> 
                 startValue.getLowerRight().operatorPlus(lrVec));
 
         mCurrentQuad.setColor(color);
-        mCurrentQuad.setRealUpperLeftIndex(endValue.getRealUpperLeftIndex());
         if (endValue.isDefaultQuad() && (fraction > 0.95 || startValue.isDefaultQuad())) {
             mCurrentQuad.setIsDefaultQuad(true);
         }

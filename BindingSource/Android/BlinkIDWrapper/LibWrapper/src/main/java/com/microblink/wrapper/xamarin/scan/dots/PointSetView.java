@@ -16,6 +16,9 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.microblink.util.Log;
 import com.microblink.wrapper.xamarin.R;
+import com.microblink.wrapper.xamarin.scan.quadview.XPoint;
+
+import java.util.List;
 
 /**
  * Created by dodo on 29/09/14.
@@ -78,10 +81,13 @@ public class PointSetView extends View implements ValueAnimator.AnimatorUpdateLi
         }
     }
 
-    public void setPointSet(PointSetWrapper pointSet) {
+    public void setTransformedPointSet(PointSetWrapper pointSet) {
         mDisappearingPointSet = mAppearingPointSet;
-        mAppearingPointSet = pointSet;
-
+        if (pointSet != null) {
+            mAppearingPointSet = convertToViewCoordinates(pointSet);
+        } else {
+            mAppearingPointSet = null;
+        }
         startAnimation();
     }
 
@@ -154,4 +160,16 @@ public class PointSetView extends View implements ValueAnimator.AnimatorUpdateLi
                 ((Integer)mEval.evaluate(fraction, Integer.valueOf(startValue.mColor2), Integer.valueOf(endValue.mColor2))).intValue());
         }
     }
+
+    private PointSetWrapper convertToViewCoordinates(PointSetWrapper unitPs) {
+        List<XPoint> points = unitPs.getPoints();
+        for (XPoint p : points) {
+            float oldX = p.getX();
+            float oldY = p.getY();
+            p.setX((1.f - oldY) * mWidth);
+            p.setY(oldX * mHeight);
+        }
+        return new PointSetWrapper(points);
+    }
+
 }

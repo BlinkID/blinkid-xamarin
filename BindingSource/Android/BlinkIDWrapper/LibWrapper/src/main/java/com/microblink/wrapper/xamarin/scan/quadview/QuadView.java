@@ -99,13 +99,8 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
     }
 
     public void setDefaultTarget() {
-        int uleftIndex = 0;
-        if (mTarget != null) {
-            uleftIndex = mTarget.getRealUpperLeftIndex();
-        }
         mTarget.setMargins(mTop, mBottom, mLeft, mRight, mHostActivityOrientation);
         mTarget.setIsDefaultQuad(true);
-        mTarget.setRealUpperLeftIndex(uleftIndex);
         if(mMirrored) {
             mTarget.mirror(mWidth, mHeight, mHostActivityOrientation);
         }
@@ -139,7 +134,7 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
 
     public void setNewTarget(QuadrilateralWrapper quad) {
         if (mMovableViewfinder) {
-            mTarget = quad;
+            mTarget = transformToViewCoordinates(quad.getSortedQuad());
         } else {
             mTarget = mCurrent.clone();
         }
@@ -316,8 +311,22 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
                 new Point(ur.getX(), ur.getY()), new Point(ll.getX(), ll.getY()),
                 new Point(lr.getX(), lr.getY()));
         quadrilateral.setColor(qw.getColor());
-        quadrilateral.setRealUpperLeftIndex(qw.getRealUpperLeftIndex());
         quadrilateral.setIsDefaultQuad(qw.isDefaultQuad());
         return quadrilateral;
+    }
+
+    private QuadrilateralWrapper transformToViewCoordinates(QuadrilateralWrapper unitQuad) {
+        Log.i(com.microblink.view.viewfinder.quadview.QuadViewManager.class, "Building quad from unit quad {} and view size ({}x{}) in host activity orientation {}.", unitQuad, mWidth, mHeight, mHostActivityOrientation);
+        // the points should already be corrected for mirror by transformation matrix
+        XPoint uleft = unitQuad.getUpperLeft();
+        XPoint uright = unitQuad.getUpperRight();
+        XPoint lleft = unitQuad.getLowerLeft();
+        XPoint lright = unitQuad.getLowerRight();
+
+        return new QuadrilateralWrapper(
+                new XPoint((1.f - uleft.getY()) * mWidth, uleft.getX() * mHeight),
+                new XPoint((1.f - uright.getY()) * mWidth, uright.getX() * mHeight),
+                new XPoint((1.f - lleft.getY()) * mWidth, lleft.getX() * mHeight),
+                new XPoint((1.f - lright.getY()) * mWidth, lright.getX() * mHeight));
     }
 }

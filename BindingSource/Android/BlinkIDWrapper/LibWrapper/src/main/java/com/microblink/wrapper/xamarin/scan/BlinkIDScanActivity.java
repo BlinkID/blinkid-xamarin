@@ -16,18 +16,18 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.microblink.detectors.DetectorResult;
+import com.microblink.detectors.points.PointsDetectorResult;
+import com.microblink.detectors.quad.QuadDetectorResult;
 import com.microblink.geometry.Point;
 import com.microblink.geometry.Quadrilateral;
 import com.microblink.hardware.SuccessCallback;
 import com.microblink.hardware.camera.CameraType;
 import com.microblink.hardware.orientation.Orientation;
+import com.microblink.metadata.DetectionMetadata;
 import com.microblink.metadata.Metadata;
 import com.microblink.metadata.MetadataListener;
 import com.microblink.metadata.MetadataSettings;
-import com.microblink.metadata.OcrMetadata;
-import com.microblink.metadata.detection.FailedDetectionMetadata;
-import com.microblink.metadata.detection.PointsDetectionMetadata;
-import com.microblink.metadata.detection.QuadrilateralDetectionMetadata;
 import com.microblink.recognition.InvalidLicenceKeyException;
 import com.microblink.recognizers.RecognitionResults;
 import com.microblink.recognizers.settings.RecognitionSettings;
@@ -514,29 +514,42 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     @Override
     public void onMetadataAvailable(Metadata metadata) {
-        if (metadata instanceof FailedDetectionMetadata) {
-            if (mQuadViewManager != null) {
-                mQuadViewManager.animateQuadToDefaultPosition();
-            }
-            if (mPointSetView != null) {
-                mPointSetView.setPointSet(null);
-            }
-            displayDetectionStatus(DetectionStatus.FAIL);
-        } else if (mPointSetView != null && metadata instanceof PointsDetectionMetadata) {
-            List<Point> pointList = ((PointsDetectionMetadata) metadata).getPoints().getPoints();
-            List<XPoint> xPointList = new ArrayList<>();
-            for (Point p : pointList) {
-                xPointList.add(new XPoint(p.getX(), p.getY()));
-            }
-            mPointSetView.setPointSet(new PointSetWrapper(xPointList));
-        } else if (mQuadViewManager != null && metadata instanceof QuadrilateralDetectionMetadata) {
-            QuadrilateralDetectionMetadata quadMetaData = (QuadrilateralDetectionMetadata) metadata;
-            Log.i(this, "Quadrilateral available: {}", quadMetaData.getQuadrilateral());
-            boolean detectionSuccessful = quadMetaData.getDetectionStatus() == DetectionStatus.SUCCESS;
-            mQuadViewManager.animateQuadToDetectionPosition(quadToQuadWrapper(quadMetaData.getQuadrilateral()), detectionSuccessful);
-            displayDetectionStatus(quadMetaData.getDetectionStatus());
-            if (mPointSetView != null) {
-                mPointSetView.setPointSet(null);
+        if (metadata instanceof DetectionMetadata) {
+            DetectorResult detectionResult = ((DetectionMetadata) metadata).getDetectionResult();
+            // DetectionMetadata contains DetectorResult which is null if object detection
+            // has failed and non-null otherwise
+            if (detectionResult == null) {
+                if (mQuadViewManager != null) {
+                    mQuadViewManager.animateQuadToDefaultPosition();
+                }
+                if (mPointSetView != null) {
+                    mPointSetView.setTransformedPointSet(null);
+                }
+                displayDetectionStatus(DetectionStatus.FAIL);
+            } else if (mPointSetView != null && detectionResult instanceof PointsDetectorResult) {
+                List<Point> pointList = ((PointsDetectorResult) detectionResult).getPointSet().getPoints();
+                List<XPoint> xPointList = new ArrayList<>();
+                for (Point p : pointList) {
+                    xPointList.add(new XPoint(p.getX(), p.getY()));
+                }
+                mPointSetView.setTransformedPointSet(new PointSetWrapper(xPointList));
+                displayDetectionStatus(detectionResult.getDetectionStatus());
+            } else if (detectionResult instanceof QuadDetectorResult) {
+                QuadDetectorResult quadResult = (QuadDetectorResult) detectionResult;
+                boolean detectionSuccessful = quadResult.getDetectionStatus() == DetectionStatus.SUCCESS;
+                Quadrilateral quad = quadResult.getTransformedDisplayLocation();
+                if (mQuadViewManager != null) {
+                    if (quad == null) {
+                        mQuadViewManager.animateQuadToDefaultPosition();
+                    } else {
+                        mQuadViewManager.animateQuadToDetectionPosition(
+                                quadToQuadWrapper(quad), detectionSuccessful);
+                    }
+                }
+                if (mPointSetView != null) {
+                    mPointSetView.setTransformedPointSet(null);
+                }
+                displayDetectionStatus(quadResult.getDetectionStatus());
             }
         }
     }
@@ -582,7 +595,6 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
                 new XPoint(ur.getX(), ur.getY()), new XPoint(ll.getX(), ll.getY()),
                 new XPoint(lr.getX(), lr.getY()));
         qw.setColor(q.getColor());
-        qw.setRealUpperLeftIndex(q.getRealUpperLeftIndex());
         qw.setIsDefaultQuad(q.isDefaultQuad());
         return qw;
     }

@@ -27,12 +27,16 @@ public class PointSetWrapper {
         mPointSet = new PointSet(pointsList);
     }
 
-    public PointSetWrapper(@Size(multiple = 2) float[] points, @IntRange(from=1) int width, @IntRange(from=1) int height, int hostActivityOrientation, boolean mirrorXY) {
-        mPointSet = new PointSet(points, width, height, hostActivityOrientation, mirrorXY);
+    public List<XPoint> getPoints() {
+        List<XPoint> pointsList = new ArrayList<>();
+        for (Point p : mPointSet.getPoints()) {
+            pointsList.add(new XPoint(p.getX(), p.getY()));
+        }
+        return pointsList;
     }
 
-    public void mirror(final int canvasWidth, final int canvasHeight, final int hostActivityOrientation) {
-        mPointSet.mirror(canvasWidth, canvasHeight, hostActivityOrientation);
+    public PointSetWrapper(@Size(multiple = 2) float[] points, @IntRange(from=1) int width, @IntRange(from=1) int height, int hostActivityOrientation, boolean mirrorXY) {
+        mPointSet = new PointSet(points, width, height, hostActivityOrientation, mirrorXY);
     }
 
     public void draw(Canvas canvas, Paint paint, int pointRadius) {
