@@ -25,9 +25,10 @@ import com.microblink.recognizers.blinkid.eudl.EUDLRecognitionResult;
 import com.microblink.recognizers.blinkid.eudl.EUDLRecognizerSettings;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
-import com.microblink.recognizers.blinkid.mrtd.MRTDDocumentClassifier;
 import com.microblink.recognizers.blinkid.mrtd.MRTDRecognitionResult;
 import com.microblink.recognizers.blinkid.mrtd.MRTDRecognizerSettings;
+import com.microblink.recognizers.blinkid.singapore.SingaporeIDRecognitionResult;
+import com.microblink.recognizers.blinkid.singapore.SingaporeIDRecognizerSettings;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
 import com.microblink.recognizers.settings.RecognizerSettingsUtils;
@@ -40,6 +41,7 @@ import com.microblink.wrapper.xamarin.scan.BlinkIDScanActivity;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -58,27 +60,31 @@ public class BlinkID {
     public static final String BARCODE_TYPE_KEY = "Type";
     public static final String BARCODE_DATA_KEY = "Data";
     public static final String BARCODE_RAW_DATA_KEY = "Raw";
-    public static final String EUDL_COUNTRY_KEY = "country";
+    public static final String EUDL_COUNTRY_KEY = "Country";
 
-    private static final String LAST_NAME_KEY = "LastName";
-    private static final String FIRST_NAME_KEY = "FirstName";
-    private static final String SEX_KEY = "Sex";
-    private static final String CITIZENSHIP_KEY = "Citizenship";
-    private static final String DATE_OF_BIRTH_KEY= "DateOfBirth";
-    private static final String DATE_OF_EXPIRY_KEY = "DateOfExpiry";
-    private static final String DATE_OF_ISSUE_KEY = "DateOfIssue";
-    private static final String DOCUMENT_NUMBER_KEY = "DocumentNumber";
-    private static final String ADDRESS_KEY = "Address";
-    private static final String ISSUING_AUTHORITY_KEY = "IssuingAuthority";
+    public static final String LAST_NAME_KEY = "LastName";
+    public static final String FIRST_NAME_KEY = "FirstName";
+    public static final String FULL_NAME_KEY = "FullName";
+    public static final String SEX_KEY = "Sex";
+    public static final String CITIZENSHIP_KEY = "Citizenship";
+    public static final String COUNTRY_OF_BIRTH_KEY = "CountryOfBirth";
+    public static final String DATE_OF_BIRTH_KEY= "DateOfBirth";
+    public static final String DATE_OF_EXPIRY_KEY = "DateOfExpiry";
+    public static final String DATE_OF_ISSUE_KEY = "DateOfIssue";
+    public static final String DOCUMENT_NUMBER_KEY = "DocumentNumber";
+    public static final String ADDRESS_KEY = "Address";
+    public static final String ISSUING_AUTHORITY_KEY = "IssuingAuthority";
+    public static final String BLOOD_GROUP_KEY = "BloodGroup";
+    public static final String RACE_KEY = "Race";
 
-    private static final String PRIMARY_ID_KEY = "PrimaryID";
-    private static final String SECONDARY_ID_KEY = "SecondaryID";
-    private static final String NATIONALITY_KEY = "Nationality";
-    private static final String DOCUMENT_CODE_KEY = "DocumentCode";
-    private static final String ISSUER_KEY = "Issuer";
-    private static final String OPT1_KEY = "Opt1";
-    private static final String OPT2_KEY = "Opt2";
-    private static final String MRZ_RAW_KEY = "MrzText";
+    public static final String PRIMARY_ID_KEY = "PrimaryID";
+    public static final String SECONDARY_ID_KEY = "SecondaryID";
+    public static final String NATIONALITY_KEY = "Nationality";
+    public static final String DOCUMENT_CODE_KEY = "DocumentCode";
+    public static final String ISSUER_KEY = "Issuer";
+    public static final String OPT1_KEY = "Opt1";
+    public static final String OPT2_KEY = "Opt2";
+    public static final String MRZ_RAW_KEY = "MrzText";
 
     // result types
     public static final String PDF417_RESULT_TYPE = "PDF417";
@@ -90,6 +96,8 @@ public class BlinkID {
     public static final String MYKAD_RESULT_TYPE = "MyKad";
     public static final String CRO_ID_FRONT_RESULT_TYPE = "CroIdFront";
     public static final String CRO_ID_BACK_RESULT_TYPE = "CroIdBack";
+    public static final String SINGAPORE_ID_FRONT_RESULT_TYPE = "SingaporeIdFront";
+    public static final String SINGAPORE_ID_BACK_RESULT_TYPE = "SingaporeIdBack";
 
     private static final String LOG_TAG = "BlinkId";
 
@@ -113,11 +121,7 @@ public class BlinkID {
      */
     public boolean isBlinkIDSupportedOnDevice(Context context) {
         RecognizerCompatibilityStatus status = RecognizerCompatibility.getRecognizerCompatibilityStatus(context);
-        if(status == RecognizerCompatibilityStatus.RECOGNIZER_SUPPORTED) {
-            return true;
-        } else {
-            return false;
-        }
+        return status == RecognizerCompatibilityStatus.RECOGNIZER_SUPPORTED;
     }
 
     /**
@@ -193,6 +197,8 @@ public class BlinkID {
                 filtered.add(RecognizerType.CRO_ID_FRONT);
             } else if (recognizerSettings instanceof CroatianIDBackSideRecognizerSettings) {
                 filtered.add(RecognizerType.CRO_ID_BACK);
+            } else if (recognizerSettings instanceof SingaporeIDRecognizerSettings) {
+                filtered.add(RecognizerType.SINGAPORE_ID);
             }
         }
         return filtered;
@@ -334,6 +340,10 @@ public class BlinkID {
             settingsList.add(buildCroatianIDFrontSideRecognizerSettings());
         }
 
+        if (recognizers.contains(RecognizerType.SINGAPORE_ID)) {
+            settingsList.add(buildSingaporeIDRecognizerSettings());
+        }
+
         RecognizerSettings[] settingsArray = new RecognizerSettings[settingsList.size()];
         settingsArray = settingsList.toArray(settingsArray);
 
@@ -356,7 +366,9 @@ public class BlinkID {
                 if (result instanceof CroatianIDFrontSideRecognitionResult) {
                     resultList.add(buildCroIdFrontResult((CroatianIDFrontSideRecognitionResult) result));
                 } else if (result instanceof CroatianIDBackSideRecognitionResult) {
-                     resultList.add(buildCroIdBackResult((CroatianIDBackSideRecognitionResult) result));
+                    resultList.add(buildCroIdBackResult((CroatianIDBackSideRecognitionResult) result));
+                } else if (result instanceof SingaporeIDRecognitionResult) {
+                    resultList.add(buildSingaporeIdResult((SingaporeIDRecognitionResult) result));
                 } else if (result instanceof USDLScanResult) {
                     resultList.add(buildUSDLResult((USDLScanResult) result));
                 } else if (result instanceof EUDLRecognitionResult) {
@@ -436,8 +448,7 @@ public class BlinkID {
     private MRTDRecognizerSettings buildMRTDRecognizerSettings() {
         // To specify we want to perform MRTD (Machine Readable Travel Document) recognition,
         // prepare settings for MRTD recognizer
-        MRTDRecognizerSettings mrtd = new MRTDRecognizerSettings();
-        return mrtd;
+        return new MRTDRecognizerSettings();
     }
 
     /**
@@ -447,8 +458,7 @@ public class BlinkID {
     private USDLRecognizerSettings buildUSDLRecognizerSettings() {
         // To specify we want to perform USDL (US Driver's License) recognition,
         // prepare settings for USDL recognizer
-        USDLRecognizerSettings usdl = new USDLRecognizerSettings();
-        return usdl;
+        return new USDLRecognizerSettings();
     }
 
     /**
@@ -459,8 +469,7 @@ public class BlinkID {
         // To specify we want to perform EUDL (EU Driver's License) recognition,
         // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
         // constructor. Here we choose UK.
-        EUDLRecognizerSettings ukdl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
-        return ukdl;
+        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
     }
 
     /**
@@ -471,8 +480,7 @@ public class BlinkID {
         // To specify we want to perform EUDL (EU Driver's License) recognition,
         // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
         // constructor. Here we choose Germany.
-        EUDLRecognizerSettings dedl = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
-        return dedl;
+        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
     }
 
     /**
@@ -482,8 +490,7 @@ public class BlinkID {
     private MyKadRecognizerSettings buildMyKadRecognizerSettings() {
         // To specify we want to perform MyKad (Malaysian MyKad ID document) recognition,
         // prepare settings for MyKad recognizer
-        MyKadRecognizerSettings myKad = new MyKadRecognizerSettings();
-        return myKad;
+        return new MyKadRecognizerSettings();
     }
 
     /**
@@ -511,7 +518,6 @@ public class BlinkID {
         CroatianIDBackSideRecognizerSettings croIDBackSettings = new CroatianIDBackSideRecognizerSettings();
         croIDBackSettings.setExtractIssuingAuthority(true);
         croIDBackSettings.setExtractDateOfIssue(true);
-        croIDBackSettings.setDisplayFullDocumentImage(true);
         return croIDBackSettings;
     }
 
@@ -525,12 +531,23 @@ public class BlinkID {
         croIDFrontSettings.setExtractCitizenship(true);
         croIDFrontSettings.setExtractDateOfBirth(true);
         croIDFrontSettings.setExtractDateOfExpiry(true);
-        croIDFrontSettings.setDisplayFaceImage(true);
-        croIDFrontSettings.setDisplayFullDocumentImage(true);
-        croIDFrontSettings.setDisplaySignatureImage(true);
         return croIDFrontSettings;
     }
 
+    /**
+     * Builds {@link SingaporeIDRecognizerSettings} which define settings for scanning
+     * front and back side of Singapore ID card.
+     */
+    private SingaporeIDRecognizerSettings buildSingaporeIDRecognizerSettings() {
+        SingaporeIDRecognizerSettings singaporeIDSettings = new SingaporeIDRecognizerSettings();
+        singaporeIDSettings.setExtractBloodGroup(true);
+        singaporeIDSettings.setExtractCountryOfBirth(true);
+        singaporeIDSettings.setExtractDateOfBirth(true);
+        singaporeIDSettings.setExtractDateOfIssue(true);
+        singaporeIDSettings.setExtractRace(true);
+        singaporeIDSettings.setExtractSex(true);
+        return singaporeIDSettings;
+    }
 
     /**
      * Builds result map for Pdf417 scan result.
@@ -639,9 +656,16 @@ public class BlinkID {
         resultMap.put(DOCUMENT_NUMBER_KEY, result.getIdentityCardNumber());
         resultMap.put(SEX_KEY, result.getSex());
         resultMap.put(CITIZENSHIP_KEY, result.getCitizenship());
-        resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(result.getDateOfBirth()));
-        resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(result.getDocumentDateOfExpiry()));
-        
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+        Date dateOfExpiry = result.getDocumentDateOfExpiry();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+
+        }
+
         return resultMap;
     }
 
@@ -650,8 +674,41 @@ public class BlinkID {
         resultMap.put(RESULT_TYPE_KEY, CRO_ID_BACK_RESULT_TYPE);
         resultMap.put(ADDRESS_KEY, result.getAddress());
         resultMap.put(ISSUING_AUTHORITY_KEY, result.getIssuingAuthority());
-        resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(result.getDocumentDateOfIssue()));
+        Date dateOfIssue = result.getDocumentDateOfIssue();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
 
+        }
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildSingaporeIdResult(SingaporeIDRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+
+        SingaporeIDRecognitionResult.SingaporeIDClassification classification =  result.getDocumentClassification();
+        if (classification == SingaporeIDRecognitionResult.SingaporeIDClassification.BACK_SIDE) {
+            resultMap.put(RESULT_TYPE_KEY, SINGAPORE_ID_BACK_RESULT_TYPE);
+
+            resultMap.put(BLOOD_GROUP_KEY, result.getBloodGroup());
+            Date dateOfIssue = result.getDocumentDateOfIssue();
+            if (dateOfIssue != null) {
+                resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+            }
+            resultMap.put(ADDRESS_KEY, result.getAddress());
+        } else {
+            resultMap.put(RESULT_TYPE_KEY, SINGAPORE_ID_FRONT_RESULT_TYPE);
+
+            resultMap.put(DOCUMENT_NUMBER_KEY, result.getCardNumber());
+            resultMap.put(FULL_NAME_KEY, result.getName());
+            resultMap.put(RACE_KEY, result.getRace());
+            Date dateOfBirth = result.getDateOfBirth();
+            if (dateOfBirth != null) {
+                resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+            }
+            resultMap.put(SEX_KEY, result.getSex());
+            resultMap.put(COUNTRY_OF_BIRTH_KEY, result.getCountryOfBirth());
+        }
 
         return resultMap;
     }
@@ -706,7 +763,9 @@ public class BlinkID {
         /** Croatian ID card front side recognizer */
         CRO_ID_FRONT,
         /** Croatian ID card back side recognizer */
-        CRO_ID_BACK
+        CRO_ID_BACK,
+        /** Singapore ID card recognizer */
+        SINGAPORE_ID
     }
 
 }

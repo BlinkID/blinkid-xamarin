@@ -49,9 +49,15 @@ public class MainActivity extends AppCompatActivity {
         recognizers.add(BlinkID.RecognizerType.USDL);
         // recognize UK Driver's Licenses
         recognizers.add(BlinkID.RecognizerType.UKDL);
+//        recognizers.add(BlinkID.RecognizerType.MRTD);
+//        recognizers.add(BlinkID.RecognizerType.SINGAPORE_ID);
 //        recognizers.add(BlinkID.RecognizerType.PDF417);
 //        recognizers.add(BlinkID.RecognizerType.CRO_ID_FRONT);
 //        recognizers.add(BlinkID.RecognizerType.CRO_ID_BACK);
+//        recognizers.add(BlinkID.RecognizerType.BARDECODER);
+//        recognizers.add(BlinkID.RecognizerType.DEDL);
+//        recognizers.add(BlinkID.RecognizerType.ZXING);
+//        recognizers.add(BlinkID.RecognizerType.MYKAD);
 
 
         boolean useFrontFaceCamera = false;
