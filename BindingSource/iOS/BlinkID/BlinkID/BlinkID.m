@@ -10,7 +10,11 @@
 
 #import <MicroBlink/MicroBlink.h>
 
-@interface BlinkID () <PPScanDelegate>
+@interface BlinkID () <PPScanningDelegate>
+
+@property (nonatomic) PPCameraType cameraType;
+
+@property (nonatomic) NSArray<NSNumber*> *recognizers;
 
 @end
 
@@ -28,11 +32,18 @@
     return sharedInstance;
 }
 
-- (void)scan {
+- (void)scan:(NSArray<NSNumber*> *)recognizers cameraType:(CameraType)cameraType {
+    
+    self.recognizers = recognizers;
+    if (cameraType == PPCameraTypeBack) {
+        self.cameraType = PPCameraTypeBack;
+    } else {
+        self.cameraType = PPCameraTypeFront;
+    }
 
     /** Instantiate the scanning coordinator */
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
 
     /** If scanning isn't supported, present an error */
     if (coordinator == nil) {
@@ -49,7 +60,7 @@
     }
 
     /** Allocate and present the scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
 
     // allow rotation if VC is displayed as a modal view controller
     scanningViewController.autorotate = YES;
@@ -103,8 +114,6 @@
                 [dict setObject:@"MyKad" forKey:resultTypeKey];
             } else if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
                 [dict setObject:@"USDL" forKey:resultTypeKey];
-            } else if ([result isKindOfClass:[PPUkdlRecognizerResult class]]) {
-                [dict setObject:@"UKDL" forKey:resultTypeKey];
             }
 
             [dictionaryResults addObject:dict];
@@ -117,6 +126,53 @@
     [scanningViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - recognizers
+
+- (void)addMrtdRecognizer:(PPSettings *)settings {
+    PPMrtdRecognizerSettings *mrtdRecognizerSettings = [[PPMrtdRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:mrtdRecognizerSettings];
+}
+
+- (void)addUsdlRecognizer:(PPSettings *)settings {
+    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+}
+
+- (void)addMyKadRecognizer:(PPSettings *)settings {
+    PPMyKadRecognizerSettings *myKadRecognizerSettings = [[PPMyKadRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:myKadRecognizerSettings];
+}
+
+- (void)addEudlRecognizer:(PPSettings *)settings {
+    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
+}
+
+- (void)addUkdlRecognizer:(PPSettings *)settings {
+    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryUnitedKingdom];
+    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
+}
+
+- (void)addDedlRecognizer:(PPSettings *)settings {
+    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryGermany];
+    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
+}
+
+- (void)addPdf417Recognizer:(PPSettings *)settings {
+    PPPdf417RecognizerSettings *recognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:recognizerSettings];
+}
+
+- (void)addBardecoderRecognizer:(PPSettings *)settings {
+    PPBarDecoderRecognizerSettings *recognizerSettings = [[PPBarDecoderRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:recognizerSettings];
+}
+
+- (void)addZxingRecognizer:(PPSettings *)settings {
+    PPZXingRecognizerSettings *recognizerSettings = [[PPZXingRecognizerSettings alloc] init];
+    [settings.scanSettings addRecognizerSettings:recognizerSettings];
+}
+
 #pragma mark - BlinkID specifics
 
 /**
@@ -127,11 +183,11 @@
  *
  *  @return initialized coordinator
  */
-- (PPCoordinator *)coordinatorWithError:(NSError**)error {
+- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
 
     /** 0. Check if scanning is supported */
 
-    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
+    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:self.cameraType error:error]) {
         return nil;
     }
 
@@ -140,6 +196,7 @@
 
     // Initialize the scanner settings object. This initialize settings with all default values.
     PPSettings *settings = [[PPSettings alloc] init];
+    settings.cameraSettings.cameraType = self.cameraType;
 
     // tell which metadata you want to receive. Metadata collection takes CPU time - so use it only if necessary!
     settings.metadataSettings.dewarpedImage = YES; // get dewarped image of ID documents
@@ -153,43 +210,34 @@
 
     /** 3. Set up what is being scanned. See detailed guides for specific use cases. */
 
-    { // Remove this if you're not using MRTD recognition
-
-        // To specify we want to perform MRTD (machine readable travel document) recognition, initialize the MRTD recognizer settings
-        PPMrtdRecognizerSettings *mrtdRecognizerSettings = [[PPMrtdRecognizerSettings alloc] init];
-
-        // tell the library to get full image of the document. Setting this to YES makes sense just if
-        // settings.metadataSettings.dewarpedImage = YES, otherwise it wastes CPU time.
-        mrtdRecognizerSettings.dewarpFullDocument = NO;
-
-        // Add MRTD Recognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:mrtdRecognizerSettings];
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeMRTD]]) {
+        [self addMrtdRecognizer:settings];
     }
-
-    { // Remove this if you're not using USDL recognition
-
-        // To specify we want to perform USDL (US Driver's license) recognition, initialize the USDL recognizer settings
-        PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
-
-        // Add USDL Recognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeUSDL]]) {
+        [self addUsdlRecognizer:settings];
     }
-
-    { // Remove this if you're not using UKDL recognition
-
-        // To specify we want to perform UKDL (UK Driver's license) recognition, initialize the UKDL recognizer settings
-        PPUkdlRecognizerSettings *ukdlRecognizerSettings = [[PPUkdlRecognizerSettings alloc] init];
-
-        // If you want to save the image of the UKDL, set this to YES
-        ukdlRecognizerSettings.showFullDocument = YES;
-
-        // Add UKDL Recognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:ukdlRecognizerSettings];
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeMYKAD]]) {
+        [self addMyKadRecognizer:settings];
+    }
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypePDF417]]) {
+        [self addPdf417Recognizer:settings];
+    }
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeBARDECODER]]) {
+        [self addBardecoderRecognizer:settings];
+    }
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeZXING]]) {
+        [self addZxingRecognizer:settings];
+    }
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeUKDL]]) {
+        [self addUkdlRecognizer:settings];
+    }
+    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeDEDL]]) {
+        [self addDedlRecognizer:settings];
     }
 
     /** 4. Initialize the Scanning Coordinator object */
     
-    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
+    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
     
     NSLog(@"Returning coordinator");
     
