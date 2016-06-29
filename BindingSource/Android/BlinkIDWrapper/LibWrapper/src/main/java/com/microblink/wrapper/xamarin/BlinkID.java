@@ -103,6 +103,7 @@ public class BlinkID {
 
     DateFormat mDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
+
     private RecognitionSettings mRecognitionSettings;
     private Context mContext;
     private String mLicenseKey;
@@ -185,10 +186,13 @@ public class BlinkID {
             } else if (recognizerSettings instanceof  EUDLRecognizerSettings) {
                 switch (((EUDLRecognizerSettings) recognizerSettings).getCountry()) {
                     case EUDL_COUNTRY_GERMANY:
-                        filtered.add(RecognizerType.DEDL);
+                        addEUDLRecognizerToFiltered(RecognizerType.DEDL, filtered);
                         break;
                     case EUDL_COUNTRY_UK:
-                        filtered.add(RecognizerType.UKDL);
+                        addEUDLRecognizerToFiltered(RecognizerType.UKDL, filtered);
+                        break;
+                    case EUDL_COUNTRY_AUTO:
+                        addEUDLRecognizerToFiltered(RecognizerType.EUDL, filtered);
                         break;
                 }
             } else if (recognizerSettings instanceof  MyKadRecognizerSettings) {
@@ -202,6 +206,30 @@ public class BlinkID {
             }
         }
         return filtered;
+    }
+
+    private void addEUDLRecognizerToFiltered(RecognizerType type, Set<RecognizerType> filtered) {
+        boolean hasDifferentEudl = false;
+        if (filtered.contains(RecognizerType.EUDL)) {
+            return;
+        }
+        RecognizerType[] mutuallyExclusive = new RecognizerType[]{
+                RecognizerType.DEDL,
+                RecognizerType.UKDL
+        };
+        for (RecognizerType meType : mutuallyExclusive) {
+            if (filtered.contains(meType)) {
+                if (type != meType) {
+                    filtered.remove(meType);
+                    hasDifferentEudl = true;
+                }
+            }
+        }
+        if (hasDifferentEudl) {
+            filtered.add(RecognizerType.EUDL);
+        } else {
+            filtered.add(type);
+        }
     }
 
     /**
@@ -314,6 +342,10 @@ public class BlinkID {
 
         if (recognizers.contains(RecognizerType.DEDL)) {
             settingsList.add(buildDEDLRecognizerSettings());
+        }
+
+        if (recognizers.contains(RecognizerType.EUDL)) {
+            settingsList.add(buildEUDLRecognizerSettings());
         }
 
         if (recognizers.contains(RecognizerType.MYKAD)) {
@@ -481,6 +513,17 @@ public class BlinkID {
         // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
         // constructor. Here we choose Germany.
         return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
+    }
+
+    /**
+     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
+     * EUDL (EU Driver's License). Enabled driver licenses are all supported EU licenses.
+     */
+    private EUDLRecognizerSettings buildEUDLRecognizerSettings() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose auto detection (one of supported licenses).
+        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_AUTO);
     }
 
     /**
@@ -758,6 +801,8 @@ public class BlinkID {
         DEDL,
         /** UK Driver's License recognizer */
         UKDL,
+        /** EU Driver's License recognizer, scans all supported EU Driver's Licenses */
+        EUDL,
         /** Malaysian MyKad ID document recognizer */
         MYKAD,
         /** Croatian ID card front side recognizer */

@@ -47,15 +47,20 @@ public class MainActivity extends AppCompatActivity {
         Set<BlinkID.RecognizerType> recognizers = new HashSet<>();
         // recognize US Driver's Licenses
         recognizers.add(BlinkID.RecognizerType.USDL);
+
+        // Following recognizers: UKDL, DEDL and EUDL should not be activated at the same time
         // recognize UK Driver's Licenses
         recognizers.add(BlinkID.RecognizerType.UKDL);
+        // DEDL - German driver's licenses
+//        recognizers.add(BlinkID.RecognizerType.DEDL);
+        // EUDL - all supported EU driver's licenses, automatic detection
+//        recognizers.add(BlinkID.RecognizerType.EUDL);
 //        recognizers.add(BlinkID.RecognizerType.MRTD);
 //        recognizers.add(BlinkID.RecognizerType.SINGAPORE_ID);
 //        recognizers.add(BlinkID.RecognizerType.PDF417);
 //        recognizers.add(BlinkID.RecognizerType.CRO_ID_FRONT);
 //        recognizers.add(BlinkID.RecognizerType.CRO_ID_BACK);
 //        recognizers.add(BlinkID.RecognizerType.BARDECODER);
-//        recognizers.add(BlinkID.RecognizerType.DEDL);
 //        recognizers.add(BlinkID.RecognizerType.ZXING);
 //        recognizers.add(BlinkID.RecognizerType.MYKAD);
 
