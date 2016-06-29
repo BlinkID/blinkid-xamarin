@@ -88,6 +88,7 @@
   <ItemGroup>
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\values\" />
+    <Folder Include="Assets\microblink\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -109,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\microblink\device_list.json" />
+    <AndroidAsset Include="Assets\microblink\face_detector_model.zzip" />
     <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
   </ItemGroup>
 </Project>

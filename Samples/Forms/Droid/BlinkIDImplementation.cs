@@ -17,6 +17,7 @@ namespace BlinkIDApp.Droid
 		BlinkID blinkId;
 		bool useFrontCamera;
 		List<BlinkID.RecognizerType> recognizers;
+		List<BlinkID.RecognizerType> filteredRecognizers;
 
 		public BlinkIDImplementation ()
 		{
@@ -27,9 +28,30 @@ namespace BlinkIDApp.Droid
 			blinkId.SetResultListener(new MResultListener());
 
 			// Define recognizers
-			recognizers = new List<BlinkID.RecognizerType>();
-			recognizers.Add(BlinkID.RecognizerType.Mrtd);
-			recognizers.Add(BlinkID.RecognizerType.Ukdl);
+			recognizers = new List<BlinkID.RecognizerType>();		
+
+			//recognizers.Add (BlinkID.RecognizerType.Mrtd);
+
+			recognizers.Add (BlinkID.RecognizerType.Usdl);
+
+			//recognizers.Add (BlinkID.RecognizerType.Ukdl);
+			recognizers.Add (BlinkID.RecognizerType.Dedl);
+
+			// NOTE: If you use UKDL and DEDL at the same time than it will fallback to EUDL and it will be same as
+			//recognizers.Add (BlinkID.RecognizerType.Eudl);
+			// and FilterOutUnsupportedRecognizers method is required
+
+			//recognizers.Add (BlinkID.RecognizerType.SingaporeId);
+			//recognizers.Add (BlinkID.RecognizerType.Mykad);
+			//recognizers.Add (BlinkID.RecognizerType.CroIdFront);
+			//recognizers.Add (BlinkID.RecognizerType.CroIdBack);
+
+			//recognizers.Add (BlinkID.RecognizerType.Pdf417);
+			//recognizers.Add (BlinkID.RecognizerType.Bardecoder);
+			//recognizers.Add (BlinkID.RecognizerType.Zxing);
+
+			// Always use this method to filter supported recognizers
+			filteredRecognizers = new List<BlinkID.RecognizerType> (blinkId.FilterOutUnsupportedRecognizers (recognizers));
 
 			// Use front camera for OCR true/false
 			useFrontCamera = false;
@@ -65,7 +87,7 @@ namespace BlinkIDApp.Droid
 		public void Scan ()
 		{
 			Debug.WriteLine ("Native Scan is started");
-			blinkId.Scan(recognizers, useFrontCamera);
+			blinkId.Scan(filteredRecognizers, useFrontCamera);
 		}
 
 		#endregion

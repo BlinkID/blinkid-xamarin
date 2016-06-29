@@ -57,11 +57,14 @@ This is BlinkID Xamarin implementation based on native [Objective-C](https://git
 1. Open project with Android Studio [BindingSource/Android/BlinkIDWrapper](BindingSource/Android/BlinkIDWrapper)
 2. Add/edit exposed functionality from Java to C#
 3. Build `LibWrapper-release.aar` with Gradle
-4. Replace [Binding/Android/LibWrapper-release.aar](Binding/Android/LibWrapper-release.aar) in project [Binding/Android/BlinkIDAndroidBinding.csproj](Binding/Android/BlinkIDAndroidBinding.csproj) with built `LibWrapper-release.aar`
+4. Replace [Binding/Android/LibWrapper-release.aar](Binding/Android/LibWrapper-release.aar) in project [Binding/Android/BlinkIDAndroidBinding.csproj](Binding/Android/BlinkIDAndroidBinding.csproj) with built `LibWrapper-release.aar`  
+Set `Build Action` to `LibraryProjectZip`
 5. Extract `classes.jar` from [github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar)
-6. Replace [Binding/Android/Jars/classes.jar](Binding/Android/Jars/classes.jar) with extracted `classes.jar`
-7. Extract native libraries from `LibWrapper-release.aar` - `*.so files`
-8. Replace native libraries [Binding/Android/lib/*](Binding/Android/lib) with extracted native libraries
+6. Replace [Binding/Android/Jars/classes.jar](Binding/Android/Jars/classes.jar) with extracted `classes.jar`  
+Set `Build Action` to `EmbeddedReferenceJar`
+7. Extract native libraries from `LibWrapper-release.aar` - `jni/**/*.so` files
+8. Replace native libraries [Binding/Android/lib/*](Binding/Android/lib) with extracted native libraries  
+Set `Build Action` to `EmbeddedNativeLibrary`
 9. Rebuild binding library project
 
 \* Steps from 5 to 8 are required only if you use newer version of `LibRecognizer.aar` from [github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar)

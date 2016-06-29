@@ -722,8 +722,7 @@
   },
   "zeroflte::SM-G920F": {
     "description": "Galaxy S6",
-    "minZoomLevel": 0.2,
-    "zeroCopyBufferAllowed": "*"
+    "minZoomLevel": 0.2
   },
   "chagalllte::SM-T805": {
     "description": "Samsung Galaxy Tab S",
@@ -735,5 +734,13 @@
       1280,
       720
     ]
+  },
+  "meliuslte::GT-I9205" : {
+    "description" : "Samsung Galaxy Mega",
+    "eglPbufferNotSupported" : "[4.2.2,4.2.2]"
+  },
+  "loganrelte::GT-S7275R" : {
+    "description" : "Samsung Galaxy Ace 3",
+    "eglPbufferNotSupported" : "[4.2.2,4.2.2]"
   }
 }

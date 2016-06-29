@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{957EF3DE-6B8E-402F-81F8-98B969173E81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>AndroidBinding</RootNamespace>
@@ -60,16 +60,16 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <EmbeddedReferenceJar Include="Jars\classes.jar" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libBlinkID.so" />
-    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libBlinkID.so" />
-    <EmbeddedNativeLibrary Include="lib\x86\libBlinkID.so" />
-    <EmbeddedNativeLibrary Include="lib\x86_64\libBlinkID.so" />
+    <EmbeddedReferenceJar Include="Jars\classes.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedNativeLibrary Include="lib\jni\arm64-v8a\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\jni\armeabi-v7a\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\jni\x86\libBlinkID.so" />
+    <EmbeddedNativeLibrary Include="lib\jni\x86_64\libBlinkID.so" />
   </ItemGroup>
   <ItemGroup>
     <LibraryProjectZip Include="LibWrapper-release.aar" />
