@@ -29,7 +29,7 @@
 }
 
 - (IBAction)didTapScan:(id)sender {
-    [[BlinkID instance] scan];
+    [[BlinkID instance] scan:@[@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD"] isFrontCamera:NO];
 }
 
 #pragma mark - BlinkIDDelegate

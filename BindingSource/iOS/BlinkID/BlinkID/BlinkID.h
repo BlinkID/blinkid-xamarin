@@ -8,39 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, RecognizerType) {
-    /** Pdf417 recognizer */
-    RecognizerTypePDF417,
-    /** US Driver's License recognizer */
-    RecognizerTypeUSDL,
-    /** Bardecoder recognizer */
-    RecognizerTypeBARDECODER,
-    /** Zxing recognizer */
-    RecognizerTypeZXING,
-    /** Machine Readable Travel Document recognizer */
-    RecognizerTypeMRTD,
-    /** German Driver's License recognizer */
-    RecognizerTypeDEDL,
-    /** UK Driver's License recognizer */
-    RecognizerTypeUKDL,
-    /** EU Driver's License recognizer, scans all supported EU Driver's Licenses */
-    RecognizerTypeEUDL,
-    /** Malaysian MyKad ID document recognizer */
-    RecognizerTypeMYKAD,
-    /** Croatian ID card front side recognizer */
-    RecognizerTypeCRO_ID_FRONT,
-    /** Croatian ID card back side recognizer */
-    RecognizerTypeCRO_ID_BACK,
-    /** Singapore ID card recognizer */
-    RecognizerTypeSINGAPORE_ID
-};
-
-typedef NS_ENUM(NSUInteger, CameraType) {
-    
-    CameraTypeFront,
-    CameraTypeBack,
-};
-
 @protocol BlinkIDDelegate;
 
 @interface BlinkID : NSObject
@@ -51,7 +18,43 @@ typedef NS_ENUM(NSUInteger, CameraType) {
 
 + (instancetype)instance;
 
-- (void)scan:(NSArray<NSNumber*> *)recognizers cameraType:(CameraType)cameraType;
+- (void)addMrtdRecognizer;
+
+- (void)addUsdlRecognizer;
+
+- (void)addUkdlRecognizer;
+
+- (void)addDedlRecognizer;
+
+- (void)addEudlRecognizer;
+
+- (void)addMyKadRecognizer;
+
+- (void)addPdf417Recognizer;
+
+- (void)addBarDecoderRecognizer;
+
+- (void)addZXingRecognizer;
+
+- (void)addRawParser:(NSString *)id;
+
+- (void)addAmountParser:(NSString *)id;
+
+- (void)addDateParser:(NSString *)id;
+
+- (void)addEmailParser:(NSString *)id;
+
+- (void)addIbanParser:(NSString *)id;
+
+- (void)addVinParser:(NSString *)id;
+
+- (void)addRegexParser:(NSString *)regex id:(NSString *)id;
+
+- (void)clearAllRecognizers;
+
+- (void)clearAllParsers;
+
+- (void)scan:(BOOL)isFrontCamera;
 
 @end
 

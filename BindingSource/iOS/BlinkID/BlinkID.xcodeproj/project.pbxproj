@@ -6,10 +6,35 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		31F4970D1D24009A00769639 /* BlinkID-Release */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 31F497101D24009A00769639 /* Build configuration list for PBXAggregateTarget "BlinkID-Release" */;
+			buildPhases = (
+				31F497131D2400A700769639 /* Build other platform */,
+			);
+			dependencies = (
+				31F497121D2400A300769639 /* PBXTargetDependency */,
+			);
+			name = "BlinkID-Release";
+			productName = "BlinkID-Release";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		182752901C7DD1830068C80C /* BlinkID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1827528F1C7DD1830068C80C /* BlinkID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182752A91C7DD1C90068C80C /* BlinkID.m in Sources */ = {isa = PBXBuildFile; fileRef = 182752A81C7DD1C90068C80C /* BlinkID.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31F497111D2400A300769639 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 182752831C7DD1830068C80C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1827528B1C7DD1830068C80C;
+			remoteInfo = BlinkID;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1827528C1C7DD1830068C80C /* BlinkID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlinkID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +135,9 @@
 					1827528B1C7DD1830068C80C = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
+					31F4970D1D24009A00769639 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 182752861C7DD1830068C80C /* Build configuration list for PBXProject "BlinkID" */;
@@ -125,6 +153,7 @@
 			projectRoot = "";
 			targets = (
 				1827528B1C7DD1830068C80C /* BlinkID */,
+				31F4970D1D24009A00769639 /* BlinkID-Release */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +168,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31F497131D2400A700769639 /* Build other platform */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build other platform";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\n${PROJROOT}/build_other_platform.sh \"BlinkID\" \"BlinkID\"\n\n${PROJROOT}/copy_folder.sh \"${BUILT_PRODUCTS_DIR}/BlinkID.framework\" \".\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		182752871C7DD1830068C80C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -149,6 +195,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31F497121D2400A300769639 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1827528B1C7DD1830068C80C /* BlinkID */;
+			targetProxy = 31F497111D2400A300769639 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		182752921C7DD1830068C80C /* Debug */ = {
@@ -289,6 +343,22 @@
 			};
 			name = Release;
 		};
+		31F4970E1D24009A00769639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROJROOT = "$(SRCROOT)/BlinkID";
+			};
+			name = Debug;
+		};
+		31F4970F1D24009A00769639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROJROOT = "$(SRCROOT)/BlinkID";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -309,6 +379,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		31F497101D24009A00769639 /* Build configuration list for PBXAggregateTarget "BlinkID-Release" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31F4970E1D24009A00769639 /* Debug */,
+				31F4970F1D24009A00769639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

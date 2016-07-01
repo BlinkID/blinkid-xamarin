@@ -14,11 +14,24 @@
 
 @property (nonatomic) PPCameraType cameraType;
 
-@property (nonatomic) NSArray<NSNumber*> *recognizers;
+@property (nonatomic) NSMutableArray<PPRecognizerSettings*> *recognizers;
+
+@property (nonatomic) NSMutableArray<PPOcrParserFactory*> *parsers;
+
+@property (nonatomic) NSMutableArray<NSString*> *parserNames;
 
 @end
 
 @implementation BlinkID
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _recognizers = [NSMutableArray<PPRecognizerSettings*> array];
+        _parsers = [NSMutableArray<PPOcrParserFactory*> array];
+        _parserNames = [NSMutableArray<NSString*> array];
+    }
+    return self;
+}
 
 + (instancetype)instance {
     static BlinkID *sharedInstance = nil;
@@ -26,16 +39,12 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[BlinkID alloc] init];
     });
-    
-    NSLog(@"Returning shared instance");
-    
     return sharedInstance;
 }
 
-- (void)scan:(NSArray<NSNumber*> *)recognizers cameraType:(CameraType)cameraType {
+- (void)scan:(BOOL)isFrontCamera {
     
-    self.recognizers = recognizers;
-    if (cameraType == PPCameraTypeBack) {
+    if (!isFrontCamera) {
         self.cameraType = PPCameraTypeBack;
     } else {
         self.cameraType = PPCameraTypeFront;
@@ -54,8 +63,6 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil, nil] show];
 
-        
-        
         return;
     }
 
@@ -68,9 +75,6 @@
     
     UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [rootViewController presentViewController:scanningViewController animated:YES completion:nil];
-
-    NSLog(@"Presenting View Controller %p %@", rootViewController, rootViewController);
-    
 }
 
 #pragma mark - PPScanDelegate
@@ -109,11 +113,34 @@
             NSMutableDictionary *dict = [[result getAllStringElements] mutableCopy];
 
             if ([result isKindOfClass:[PPMrtdRecognizerResult class]]) {
-                [dict setObject:@"MRTD" forKey:resultTypeKey];
+                [dict setObject:@"Mrtd" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
+                [dict setObject:@"Usdl" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
+                if (((PPEudlRecognizerResult *)result).country == PPEudlCountryUnitedKingdom) {
+                    [dict setObject:@"Ukdl" forKey:resultTypeKey];
+                }
+            } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
+                if (((PPEudlRecognizerResult *)result).country == PPEudlCountryGermany) {
+                    [dict setObject:@"Dedl" forKey:resultTypeKey];
+                }
+            } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
+                if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
+                    [dict setObject:@"Eudl" forKey:resultTypeKey];
+                }
             } else if ([result isKindOfClass:[PPMyKadRecognizerResult class]]) {
                 [dict setObject:@"MyKad" forKey:resultTypeKey];
-            } else if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
-                [dict setObject:@"USDL" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
+                [dict setObject:@"Pdf417" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
+                [dict setObject:@"BarDecoder" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
+                [dict setObject:@"ZXing" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
+                PPBlinkOcrRecognizerResult *ocrResult = (PPBlinkOcrRecognizerResult *)result;
+                for (NSString *parserName in self.parserNames) {
+                    [dict setObject:parserName forKey:[ocrResult parsedResultForName:parserName]];
+                }
             }
 
             [dictionaryResults addObject:dict];
@@ -209,39 +236,205 @@
 
 
     /** 3. Set up what is being scanned. See detailed guides for specific use cases. */
+    
+    /**
+     * Add all needed recognizers
+     */
+    for (PPRecognizerSettings *recognizer in self.recognizers) {
+        [settings.scanSettings addRecognizerSettings:recognizer];
+    }
+    
+    /**
+     * Add BlinkOCR if parsers exist
+     */
+    if (self.parsers.count > 0) {
+        PPBlinkOcrRecognizerSettings *recognizer = [[PPBlinkOcrRecognizerSettings alloc] init];
+        for (PPOcrParserFactory *parser in self.parsers) {
+            [recognizer addOcrParser:parser name:[self.parserNames objectAtIndex:[self.parsers indexOfObject:parser]]];
+        }
+        [settings.scanSettings addRecognizerSettings:recognizer];
+    }
 
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeMRTD]]) {
-        [self addMrtdRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeUSDL]]) {
-        [self addUsdlRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeMYKAD]]) {
-        [self addMyKadRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypePDF417]]) {
-        [self addPdf417Recognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeBARDECODER]]) {
-        [self addBardecoderRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeZXING]]) {
-        [self addZxingRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeUKDL]]) {
-        [self addUkdlRecognizer:settings];
-    }
-    if ([self.recognizers containsObject:[NSNumber numberWithInteger:RecognizerTypeDEDL]]) {
-        [self addDedlRecognizer:settings];
-    }
+
 
     /** 4. Initialize the Scanning Coordinator object */
     
     PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
     
-    NSLog(@"Returning coordinator");
-    
     return coordinator;
+}
+
+#pragma mark - recognizers
+
+- (BOOL)recognizerExists:(PPRecognizerSettings *)recognizer {
+    for(PPRecognizerSettings *temp in self.recognizers) {
+        if ([temp isKindOfClass:[recognizer class]]) {
+            if ([recognizer isKindOfClass:[PPEudlRecognizerSettings class]]) {
+                [self.recognizers removeObject:temp];
+                [self.recognizers addObject:[[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny]];
+            }
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)idExists:(NSString *)id {
+    BOOL found = [id isEqualToString:@"Mrtd"] || [id isEqualToString:@"Usdl"] || [id isEqualToString:@"Ukdl"] || [id isEqualToString:@"Dedl"] || [id isEqualToString:@"Eudl"] || [id isEqualToString:@"MyKad"] || [id isEqualToString:@"Pdf417"] || [id isEqualToString:@"BarDecoder"] || [id isEqualToString:@"ZXing"];
+    if (found) {
+        NSLog(@"Parser ID cannot have same ID (%@) as one of recognizers!\nPlease use different ID for a parser!",id);
+        return YES;
+    }
+    for (NSString *temp in self.parserNames) {
+        if ([temp isEqualToString:id]) {
+            NSLog(@"Parser ID with selected ID (%@) already exists!\nPlease use different ID!",id);
+            return YES;;
+        }
+    }
+    return NO;
+    
+}
+
+- (void)addMrtdRecognizer {
+    PPMrtdRecognizerSettings *recognizer = [[PPMrtdRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addUsdlRecognizer {
+    PPUsdlRecognizerSettings *recognizer = [[PPUsdlRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addUkdlRecognizer {
+    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryUnitedKingdom];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addDedlRecognizer {
+    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryGermany];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addEudlRecognizer {
+    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addMyKadRecognizer {
+    PPMyKadRecognizerSettings *recognizer = [[PPMyKadRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addPdf417Recognizer {
+    PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addBarDecoderRecognizer {
+    PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addZXingRecognizer {
+    PPZXingRecognizerSettings *recognizer = [[PPZXingRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addRawParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPRawOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addAmountParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPPriceOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addDateParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPDateOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addEmailParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPEmailOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addIbanParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPIbanOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addVinParser:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPVinOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)addRegexParser:(NSString *)regex id:(NSString *)id {
+    if ([self idExists:id]) {
+        return;
+    }
+    PPOcrParserFactory *factory = [[PPRegexOcrParserFactory alloc] initWithRegex:regex];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:id];
+}
+
+- (void)clearAllRecognizers {
+    [self.recognizers removeAllObjects];
+}
+
+- (void)clearAllParsers {
+    [self.recognizers removeAllObjects];
+    [self.parserNames removeAllObjects];
 }
 
 
