@@ -21,6 +21,8 @@
 
     [BlinkID instance].licenseKey = @"YMHPI7FD-F7QS7YSN-Z3YVTA6N-GI4VI4MI-B5T5RBUN-IG3P7PLY-CGAIJ7IA-LPLN67WS";
     [BlinkID instance].delegate = self;
+    [[BlinkID instance] addMrtdRecognizer];
+    [[BlinkID instance] addEudlRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,10 +31,10 @@
 }
 
 - (IBAction)didTapScan:(id)sender {
-    [[BlinkID instance] scan:@[@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD",@"MRTD"] isFrontCamera:NO];
+    [[BlinkID instance] scan:NO];
 }
 
-#pragma mark - BlinkIDDelegate
+#pragma mark - BlinkIDDelegate
 
 - (void)blinkID:(BlinkID *)blinkid didOutputResults:(NSArray<NSDictionary *> *)results {
 
