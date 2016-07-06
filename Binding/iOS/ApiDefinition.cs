@@ -23,13 +23,13 @@ namespace MicroBlink {
 		[Export ("instance")]
 		BlinkID Instance ();
 
-		// -(void)addAusIDBackRecognizerSettings;
-		[Export ("addAusIDBackRecognizerSettings")]
-		void AddAusIDBackRecognizerSettings ();
+		// -(void)addAusIDBackRecognizer;
+		[Export ("addAusIDBackRecognizer")]
+		void AddAusIDBackRecognizer ();
 
-		// -(void)addAusIDFrontRecognizerSettings;
-		[Export ("addAusIDFrontRecognizerSettings")]
-		void AddAusIDFrontRecognizerSettings ();
+		// -(void)addAusIDFrontRecognizer;
+		[Export ("addAusIDFrontRecognizer")]
+		void AddAusIDFrontRecognizer ();
 
 		// -(void)addBarDecoderRecognizer;
 		[Export ("addBarDecoderRecognizer")]
@@ -67,9 +67,9 @@ namespace MicroBlink {
 		[Export ("addPdf417Recognizer")]
 		void AddPdf417Recognizer ();
 
-		// -(void)addSingaporeIDRecognizerSettings;
-		[Export ("addSingaporeIDRecognizerSettings")]
-		void AddSingaporeIDRecognizerSettings ();
+		// -(void)addSingaporeIDRecognizer;
+		[Export ("addSingaporeIDRecognizer")]
+		void AddSingaporeIDRecognizer ();
 
 		// -(void)addUsdlRecognizer;
 		[Export ("addUsdlRecognizer")]
@@ -87,33 +87,33 @@ namespace MicroBlink {
 		[Export ("addZXingRecognizer")]
 		void AddZXingRecognizer ();
 
-		// -(void)addRawParser:(NSString *)id;
+		// -(void)addRawParser:(NSString *)identifier;
 		[Export ("addRawParser:")]
-		void AddRawParser (string id);
+		void AddRawParser (string identifier);
 
-		// -(void)addAmountParser:(NSString *)id;
+		// -(void)addAmountParser:(NSString *)identifier;
 		[Export ("addAmountParser:")]
-		void AddAmountParser (string id);
+		void AddAmountParser (string identifier);
 
-		// -(void)addDateParser:(NSString *)id;
+		// -(void)addDateParser:(NSString *)identifier;
 		[Export ("addDateParser:")]
-		void AddDateParser (string id);
+		void AddDateParser (string identifier);
 
-		// -(void)addEmailParser:(NSString *)id;
+		// -(void)addEmailParser:(NSString *)identifier;
 		[Export ("addEmailParser:")]
-		void AddEmailParser (string id);
+		void AddEmailParser (string identifier);
 
-		// -(void)addIbanParser:(NSString *)id;
+		// -(void)addIbanParser:(NSString *)identifier;
 		[Export ("addIbanParser:")]
-		void AddIbanParser (string id);
+		void AddIbanParser (string identifier);
 
-		// -(void)addVinParser:(NSString *)id;
+		// -(void)addVinParser:(NSString *)identifierd;
 		[Export ("addVinParser:")]
-		void AddVinParser (string id);
+		void AddVinParser (string identifierd);
 
-		// -(void)addRegexParser:(NSString *)regex id:(NSString *)id;
-		[Export ("addRegexParser:id:")]
-		void AddRegexParser (string regex, string id);
+		// -(void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
+		[Export ("addRegexParser:identifier:")]
+		void AddRegexParser (string regex, string identifier);
 
 		// -(void)addIdCardDetector;
 		[Export ("addIdCardDetector")]

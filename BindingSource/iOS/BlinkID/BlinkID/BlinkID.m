@@ -105,7 +105,11 @@
         UIImage *image = [imageMetadata image];
         NSString *name = [imageMetadata name];
 
+        NSLog(@"Will call didOutputImage");
+        
         [self.delegate blinkID:self didOutputImage:image name:name];
+        
+        NSLog(@"Is called didOutputImage");
     }
 }
 

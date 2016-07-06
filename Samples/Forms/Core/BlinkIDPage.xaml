@@ -8,11 +8,14 @@
 			<Editor x:Name="resultsEditor"
 				IsEnabled="true" 
 				Text="?"
-				HeightRequest="250" 
+				HeightRequest="150" 
 				TextColor="Black" 
 				BackgroundColor="White" 
 				FontSize="Medium" />
 			<Button x:Name="startScanningButton" Text="Start scanning" Clicked="StartScan" />
+			<Image x:Name="metadataImage" 
+				WidthRequest="200"
+				HeightRequest="150"  />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

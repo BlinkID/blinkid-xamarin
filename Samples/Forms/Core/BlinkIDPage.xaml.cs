@@ -12,20 +12,27 @@ namespace BlinkIDApp
 		{
 			InitializeComponent ();
 
+			// Display results in Editor
 			MessagingCenter.Subscribe<Messages.BlinkIDResults> (this, Messages.BlinkIDResultsMessage, (sender) => {
 				Debug.WriteLine (sender.Results);
 
 				string asString = "";
 
 				foreach (var result in sender.Results) {
-					asString += string.Join(";", result);
+					asString += string.Join (";", result);
 				}
 
 				resultsEditor.Text = asString;
 			});
+
+			// Display metadata image in Image
+			MessagingCenter.Subscribe<Messages.BlinkIDImage> (this, Messages.BlinkIDImageMessage, (sender) => {
+				metadataImage.Source = sender.Image;
+			});
 		}
 
-		void StartScan(object sender, EventArgs e) {
+		void StartScan (object sender, EventArgs e)
+		{
 			var blinkId = DependencyService.Get<IBlinkID> ();
 			blinkId.Scan ();
 		}
