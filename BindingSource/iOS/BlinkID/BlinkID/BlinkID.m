@@ -18,6 +18,8 @@
 
 @property (nonatomic) NSMutableArray<PPOcrParserFactory*> *parsers;
 
+@property (nonatomic) NSMutableArray<PPDetectorSettings*> *detectors;
+
 @property (nonatomic) NSMutableArray<NSString*> *parserNames;
 
 @end
@@ -28,6 +30,7 @@
     if (self = [super init]) {
         _recognizers = [NSMutableArray<PPRecognizerSettings*> array];
         _parsers = [NSMutableArray<PPOcrParserFactory*> array];
+        _detectors = [NSMutableArray<PPDetectorSettings*> array];
         _parserNames = [NSMutableArray<NSString*> array];
     }
     return self;
@@ -92,6 +95,18 @@
 
     // As scanning view controller is presented full screen and modally, dismiss it
     [scanningViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didOutputMetadata:(PPMetadata *)metadata {
+
+    if ([metadata isKindOfClass:[PPImageMetadata class]]) {
+        PPImageMetadata *imageMetadata = (PPImageMetadata *)metadata;
+
+        UIImage *image = [imageMetadata image];
+        NSString *name = [imageMetadata name];
+
+        [self.delegate blinkID:self didOutputImage:image name:name];
+    }
 }
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
@@ -255,7 +270,14 @@
         [settings.scanSettings addRecognizerSettings:recognizer];
     }
 
-
+    /**
+     * Add Detector recognizer
+     */
+    if (self.detectors.count > 0) {
+        PPMultiDetectorSettings *multiDetectorSettings = [[PPMultiDetectorSettings alloc] initWithSettingsArray:self.detectors];
+        PPDetectorRecognizerSettings *recognizer = [[PPDetectorRecognizerSettings alloc] initWithDetectorSettings:multiDetectorSettings];
+        [settings.scanSettings addRecognizerSettings:recognizer];
+    }
 
     /** 4. Initialize the Scanning Coordinator object */
     
@@ -264,7 +286,7 @@
     return coordinator;
 }
 
-#pragma mark - recognizers
+#pragma mark - Recognizers
 
 - (BOOL)recognizerExists:(PPRecognizerSettings *)recognizer {
     for(PPRecognizerSettings *temp in self.recognizers) {
@@ -295,8 +317,85 @@
     
 }
 
+- (void)addAusIDBackRecognizerSettings {
+    PPAusIDBackRecognizerSettings *recognizer = [[PPAusIDBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAusIDFrontRecognizerSettings {
+    PPAusIDFrontRecognizerSettings *recognizer = [[PPAusIDFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addBarDecoderRecognizer {
+    PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCroIdBackRecognizer {
+    PPCroIDBackRecognizerSettings *recognizer = [[PPCroIDBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCroIdFrontRecognizer {
+    PPCroIDFrontRecognizerSettings *recognizer = [[PPCroIDFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCzIDBackRecognizer {
+    PPCzIDBackRecognizerSettings *recognizer = [[PPCzIDBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCzIDFrontRecognizer {
+    PPCzIDFrontRecognizerSettings *recognizer = [[PPCzIDFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addEudlRecognizer {
+    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
 - (void)addMrtdRecognizer {
     PPMrtdRecognizerSettings *recognizer = [[PPMrtdRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addMyKadRecognizer {
+    PPMyKadRecognizerSettings *recognizer = [[PPMyKadRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addPdf417Recognizer {
+    PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSingaporeIDRecognizerSettings {
+    PPSingaporeIDRecognizerSettings *recognizer = [[PPSingaporeIDRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
@@ -323,40 +422,14 @@
     }
 }
 
-- (void)addEudlRecognizer {
-    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny];
-    if(![self recognizerExists:recognizer]) {
-        [self.recognizers addObject:recognizer];
-    }
-}
-
-- (void)addMyKadRecognizer {
-    PPMyKadRecognizerSettings *recognizer = [[PPMyKadRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
-        [self.recognizers addObject:recognizer];
-    }
-}
-
-- (void)addPdf417Recognizer {
-    PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
-        [self.recognizers addObject:recognizer];
-    }
-}
-
-- (void)addBarDecoderRecognizer {
-    PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
-        [self.recognizers addObject:recognizer];
-    }
-}
-
 - (void)addZXingRecognizer {
     PPZXingRecognizerSettings *recognizer = [[PPZXingRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
+
+#pragma mark - Parsers
 
 - (void)addRawParser:(NSString *)id {
     if ([self idExists:id]) {
@@ -428,6 +501,32 @@
     [self.parserNames addObject:id];
 }
 
+#pragma mark - Detectors
+
+- (BOOL)detectorExists:(PPDetectorSettings *)settings {
+    for (PPDetectorSettings *sett in self.detectors) {
+        if ([sett isKindOfClass:[settings class]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)addIdCardDetector {
+
+    PPDocumentDetectorSettings *detectorSettings = [[PPDocumentDetectorSettings alloc] initWithNumStableDetectionsThreshold:3];
+    PPDocumentSpecification *specification = [PPDocumentSpecification newFromPreset:PPDocumentPresetId1Card];
+    [detectorSettings setDocumentSpecifications:@[specification]];
+
+    if ([self detectorExists:detectorSettings]) {
+        return;
+    }
+
+    [self.detectors addObject:detectorSettings];
+}
+
+#pragma mark - Clearing
+
 - (void)clearAllRecognizers {
     [self.recognizers removeAllObjects];
 }
@@ -435,6 +534,10 @@
 - (void)clearAllParsers {
     [self.recognizers removeAllObjects];
     [self.parserNames removeAllObjects];
+}
+
+- (void)clearAllDetectors {
+    [self.detectors removeAllObjects];
 }
 
 

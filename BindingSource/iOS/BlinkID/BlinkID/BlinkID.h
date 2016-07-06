@@ -18,7 +18,31 @@
 
 + (instancetype)instance;
 
+// Recognizers
+
+- (void)addAusIDBackRecognizerSettings;
+
+- (void)addAusIDFrontRecognizerSettings;
+
+- (void)addBarDecoderRecognizer;
+
+- (void)addCroIdBackRecognizer;
+
+- (void)addCroIdFrontRecognizer;
+
+- (void)addCzIDBackRecognizer;
+
+- (void)addCzIDFrontRecognizer;
+
+- (void)addEudlRecognizer;
+
 - (void)addMrtdRecognizer;
+
+- (void)addMyKadRecognizer;
+
+- (void)addPdf417Recognizer;
+
+- (void)addSingaporeIDRecognizerSettings;
 
 - (void)addUsdlRecognizer;
 
@@ -26,15 +50,9 @@
 
 - (void)addDedlRecognizer;
 
-- (void)addEudlRecognizer;
-
-- (void)addMyKadRecognizer;
-
-- (void)addPdf417Recognizer;
-
-- (void)addBarDecoderRecognizer;
-
 - (void)addZXingRecognizer;
+
+// Parsers
 
 - (void)addRawParser:(NSString *)id;
 
@@ -50,9 +68,16 @@
 
 - (void)addRegexParser:(NSString *)regex id:(NSString *)id;
 
+// Detectors
+- (void)addIdCardDetector;
+
 - (void)clearAllRecognizers;
 
 - (void)clearAllParsers;
+
+- (void)clearAllDetectors;
+
+// Scan
 
 - (void)scan:(BOOL)isFrontCamera;
 
@@ -63,6 +88,10 @@
 
 - (void)blinkID:(BlinkID *)blinkid
 didOutputResults:(NSArray<NSDictionary *> *)results;
+
+- (void)blinkID:(BlinkID *)blinkid
+ didOutputImage:(UIImage *)image
+           name:(NSString *)name;
 
 @end
 
