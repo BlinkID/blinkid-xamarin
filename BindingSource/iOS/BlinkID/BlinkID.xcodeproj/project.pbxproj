@@ -181,7 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset +u\n\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\n${PROJROOT}/build_other_platform.sh \"BlinkID\" \"BlinkID\"\n\n${PROJROOT}/copy_folder.sh \"${BUILT_PRODUCTS_DIR}/BlinkID.framework\" \".\"";
+			shellScript = "set -e\nset +u\n\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\n${PROJROOT}/build_other_platform.sh \"BlinkID\" \"BlinkID\"\n\n${PROJROOT}/copy_folder.sh \"${BUILT_PRODUCTS_DIR}/BlinkID.framework/BlinkID\" \"../../../Binding/iOS/BlinkID.a\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
