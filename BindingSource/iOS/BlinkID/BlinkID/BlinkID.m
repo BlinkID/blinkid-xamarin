@@ -168,53 +168,6 @@
     [scanningViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - recognizers
-
-- (void)addMrtdRecognizer:(PPSettings *)settings {
-    PPMrtdRecognizerSettings *mrtdRecognizerSettings = [[PPMrtdRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:mrtdRecognizerSettings];
-}
-
-- (void)addUsdlRecognizer:(PPSettings *)settings {
-    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
-}
-
-- (void)addMyKadRecognizer:(PPSettings *)settings {
-    PPMyKadRecognizerSettings *myKadRecognizerSettings = [[PPMyKadRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:myKadRecognizerSettings];
-}
-
-- (void)addEudlRecognizer:(PPSettings *)settings {
-    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
-}
-
-- (void)addUkdlRecognizer:(PPSettings *)settings {
-    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryUnitedKingdom];
-    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
-}
-
-- (void)addDedlRecognizer:(PPSettings *)settings {
-    PPEudlRecognizerSettings *eudlRecognizerSettings = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryGermany];
-    [settings.scanSettings addRecognizerSettings:eudlRecognizerSettings];
-}
-
-- (void)addPdf417Recognizer:(PPSettings *)settings {
-    PPPdf417RecognizerSettings *recognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:recognizerSettings];
-}
-
-- (void)addBardecoderRecognizer:(PPSettings *)settings {
-    PPBarDecoderRecognizerSettings *recognizerSettings = [[PPBarDecoderRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:recognizerSettings];
-}
-
-- (void)addZxingRecognizer:(PPSettings *)settings {
-    PPZXingRecognizerSettings *recognizerSettings = [[PPZXingRecognizerSettings alloc] init];
-    [settings.scanSettings addRecognizerSettings:recognizerSettings];
-}
-
 #pragma mark - BlinkID specifics
 
 /**
@@ -317,14 +270,14 @@
     
 }
 
-- (void)addAusIDBackRecognizerSettings {
+- (void)addAusIDBackRecognizer {
     PPAusIDBackRecognizerSettings *recognizer = [[PPAusIDBackRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
-- (void)addAusIDFrontRecognizerSettings {
+- (void)addAusIDFrontRecognizer {
     PPAusIDFrontRecognizerSettings *recognizer = [[PPAusIDFrontRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
@@ -394,7 +347,7 @@
     }
 }
 
-- (void)addSingaporeIDRecognizerSettings {
+- (void)addSingaporeIDRecognizer {
     PPSingaporeIDRecognizerSettings *recognizer = [[PPSingaporeIDRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
@@ -431,74 +384,74 @@
 
 #pragma mark - Parsers
 
-- (void)addRawParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addRawParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPRawOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addAmountParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addAmountParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPPriceOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addDateParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addDateParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPDateOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addEmailParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addEmailParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPEmailOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addIbanParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addIbanParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPIbanOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addVinParser:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addVinParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPVinOcrParserFactory alloc] init];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
-- (void)addRegexParser:(NSString *)regex id:(NSString *)id {
-    if ([self idExists:id]) {
+- (void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier {
+    if ([self idExists:identifier]) {
         return;
     }
     PPOcrParserFactory *factory = [[PPRegexOcrParserFactory alloc] initWithRegex:regex];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
-    [self.parserNames addObject:id];
+    [self.parserNames addObject:identifier];
 }
 
 #pragma mark - Detectors

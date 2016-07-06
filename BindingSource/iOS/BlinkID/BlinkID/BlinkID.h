@@ -20,9 +20,9 @@
 
 // Recognizers
 
-- (void)addAusIDBackRecognizerSettings;
+- (void)addAusIDBackRecognizer;
 
-- (void)addAusIDFrontRecognizerSettings;
+- (void)addAusIDFrontRecognizer;
 
 - (void)addBarDecoderRecognizer;
 
@@ -42,7 +42,7 @@
 
 - (void)addPdf417Recognizer;
 
-- (void)addSingaporeIDRecognizerSettings;
+- (void)addSingaporeIDRecognizer;
 
 - (void)addUsdlRecognizer;
 
@@ -54,22 +54,24 @@
 
 // Parsers
 
-- (void)addRawParser:(NSString *)id;
+- (void)addRawParser:(NSString *)identifier;
 
-- (void)addAmountParser:(NSString *)id;
+- (void)addAmountParser:(NSString *)identifier;
 
-- (void)addDateParser:(NSString *)id;
+- (void)addDateParser:(NSString *)identifier;
 
-- (void)addEmailParser:(NSString *)id;
+- (void)addEmailParser:(NSString *)identifier;
 
-- (void)addIbanParser:(NSString *)id;
+- (void)addIbanParser:(NSString *)identifier;
 
-- (void)addVinParser:(NSString *)id;
+- (void)addVinParser:(NSString *)identifierd;
 
-- (void)addRegexParser:(NSString *)regex id:(NSString *)id;
+- (void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
 
 // Detectors
 - (void)addIdCardDetector;
+
+// Clearing
 
 - (void)clearAllRecognizers;
 
