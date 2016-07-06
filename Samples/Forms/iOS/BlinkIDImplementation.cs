@@ -11,12 +11,19 @@ namespace BlinkIDApp.iOS
 {
 	public class BlinkIDImplementation : IBlinkID
 	{
+		bool isFrontCamera;
+
 		public BlinkIDImplementation ()
 		{
 			CustomDelegate customDelegate = new CustomDelegate ();
 
 			MicroBlink.BlinkID.Instance().LicenseKey = "UMGPSARL-P3ZZKNXF-36HDYAI5-A4SLTUAL-J5UJ4ODX-BRIIUIH2-5OZFQ4QQ-HSCSLD77";
 			MicroBlink.BlinkID.Instance().Delegate = customDelegate;
+
+			isFrontCamera = false;
+
+			MicroBlink.BlinkID.Instance ().AddMrtdRecognizer ();
+			MicroBlink.BlinkID.Instance ().AddEudlRecognizer ();
 		}
 
 		class CustomDelegate : MicroBlink.BlinkIDDelegate
@@ -39,7 +46,7 @@ namespace BlinkIDApp.iOS
 				}
 
 				// Send results to subscribers
-				MessagingCenter.Send<Messages.BlinkIDResults> (new Messages.BlinkIDResults {
+				MessagingCenter.Send (new Messages.BlinkIDResults {
 					Results = transformedResults
 				}, Messages.BlinkIDResultsMessage);
 			}
@@ -52,7 +59,7 @@ namespace BlinkIDApp.iOS
 		public void Scan ()
 		{
 			Debug.WriteLine ("Native Scan is started");
-			MicroBlink.BlinkID.Instance ().Scan ();
+			MicroBlink.BlinkID.Instance ().Scan (isFrontCamera);
 		}
 
 		#endregion

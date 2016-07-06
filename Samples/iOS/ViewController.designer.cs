@@ -11,23 +11,42 @@ using UIKit;
 
 namespace iOS
 {
-	[Register ("ViewController")]
-	partial class ViewController
-	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton startScanningButton { get; set; }
+    [Register ("ViewController")]
+    partial class ViewController
+    {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView metadataImageView { get; set; }
 
-		[Action ("StartScanningButton_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void StartScanningButton_TouchUpInside (UIButton sender);
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView metadataTextView { get; set; }
 
-		void ReleaseDesignerOutlets ()
-		{
-			if (startScanningButton != null) {
-				startScanningButton.Dispose ();
-				startScanningButton = null;
-			}
-		}
-	}
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton startScanningButton { get; set; }
+
+
+        [Action ("StartScanningButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void StartScanningButton_TouchUpInside (UIButton sender);
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (metadataImageView != null) {
+                metadataImageView.Dispose ();
+                metadataImageView = null;
+            }
+
+            if (metadataTextView != null) {
+                metadataTextView.Dispose ();
+                metadataTextView = null;
+            }
+
+            if (startScanningButton != null) {
+                startScanningButton.Dispose ();
+                startScanningButton = null;
+            }
+        }
+    }
 }
