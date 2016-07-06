@@ -134,13 +134,9 @@
             } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
                 if (((PPEudlRecognizerResult *)result).country == PPEudlCountryUnitedKingdom) {
                     [dict setObject:@"Ukdl" forKey:resultTypeKey];
-                }
-            } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
-                if (((PPEudlRecognizerResult *)result).country == PPEudlCountryGermany) {
+                } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryGermany) {
                     [dict setObject:@"Dedl" forKey:resultTypeKey];
-                }
-            } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
-                if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
+                } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
                     [dict setObject:@"Eudl" forKey:resultTypeKey];
                 }
             } else if ([result isKindOfClass:[PPMyKadRecognizerResult class]]) {
