@@ -19,10 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [BlinkID instance].licenseKey = @"YMHPI7FD-F7QS7YSN-Z3YVTA6N-GI4VI4MI-B5T5RBUN-IG3P7PLY-CGAIJ7IA-LPLN67WS";
+    [BlinkID instance].licenseKey = @"6YYN5NIG-O32K2V7G-5KPDEQNW-766XQEMA-QT6QAW6W-VAD2ZSX7-XV4BDAEF-FD2M3PXF";
     [BlinkID instance].delegate = self;
-    [[BlinkID instance] addMrtdRecognizer];
-    [[BlinkID instance] addEudlRecognizer];
+    [[BlinkID instance] addIdCardDetector];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +40,10 @@
     for (NSDictionary *result in results) {
         NSLog(@"Result %@", result);
     }
+}
+
+- (void)blinkID:(BlinkID *)blinkid didOutputImage:(UIImage *)image name:(NSString *)name {
+    NSLog(@"Received image with name %@, size (%d, %d)", name, (int) image.size.width, (int) image.size.height);
 }
 
 
