@@ -89,5 +89,6 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\microblink\device_list.json" />
     <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
+    <AndroidAsset Include="Assets\microblink\face_detector_model.zzip" />
   </ItemGroup>
 </Project>
