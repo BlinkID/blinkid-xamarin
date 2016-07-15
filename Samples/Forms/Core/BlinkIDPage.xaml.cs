@@ -22,12 +22,17 @@ namespace BlinkIDApp
 					asString += string.Join (";", result);
 				}
 
-				resultsEditor.Text = asString;
+				Device.BeginInvokeOnMainThread (() => {
+					resultsEditor.Text = asString;
+				});
+
 			});
 
 			// Display metadata image in Image
 			MessagingCenter.Subscribe<Messages.BlinkIDImage> (this, Messages.BlinkIDImageMessage, (sender) => {
-				metadataImage.Source = sender.Image;
+				Device.BeginInvokeOnMainThread (() => {
+					metadataImage.Source = sender.Image;
+				});
 			});
 		}
 
