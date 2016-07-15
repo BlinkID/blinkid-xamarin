@@ -38,11 +38,18 @@ This is BlinkID Xamarin implementation based on native [Objective-C](https://git
   * iOS  
   ![Add iOS Binding Project as Reference](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-binding-ios-project-as-reference.png)
 
-3. Android specific
+3a. Android specific
   * Add `MicroBlink` assets
   * ![Android Specific add assets](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-android-specific-add-microblink-assets.png)
   * Use assets from the Sample application, find it [here](Samples/Android/Assets/microblink)
   * In `AndroidManifest.xml` add `Camera` permission
+
+3b. iOS specific
+  * Update git submodule [`blinkid-ios`](https://github.com/blinkid/blinkid-ios)
+```
+git submodule init  
+git submodule update --recursive
+```
 
 4. Change license key based on unique app ID
   * Android - Package name 
@@ -71,7 +78,11 @@ Set `Build Action` to `EmbeddedNativeLibrary`
 
 ### iOS
 
-1. Update submodule [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios) with `git submodule update --recursive`
+1. Update submodule [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios) with  
+```
+git submodule init  
+git submodule update --recursive
+```
 2. Open project with Xcode [BindingSource/iOS/BlinkID/BlinkID.xcodeproj](BindingSource/iOS/BlinkID/BlinkID.xcodeproj)
 3. Add/edit exposed functionallity from Objective-C to C#
 4. Build Release with Xcode
