@@ -30,12 +30,12 @@ namespace BlinkIDApp.Droid
 			// Define recognizers
 			recognizers = new List<BlinkID.RecognizerType>();		
 
-			//recognizers.Add (BlinkID.RecognizerType.Mrtd);
+			recognizers.Add (BlinkID.RecognizerType.Mrtd);
 
-			recognizers.Add (BlinkID.RecognizerType.Usdl);
+			//recognizers.Add (BlinkID.RecognizerType.Usdl);
 
 			//recognizers.Add (BlinkID.RecognizerType.Ukdl);
-			recognizers.Add (BlinkID.RecognizerType.Dedl);
+			//recognizers.Add (BlinkID.RecognizerType.Dedl);
 
 			// NOTE: If you use UKDL and DEDL at the same time than it will fallback to EUDL and it will be same as
 			//recognizers.Add (BlinkID.RecognizerType.Eudl);

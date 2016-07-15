@@ -86,7 +86,7 @@ namespace BlinkIDApp.iOS
 				MessagingCenter.Send (new Messages.BlinkIDImage {
 					Image = ImageSource.FromStream (() => image.AsPNG ().AsStream ())
 				}, Messages.BlinkIDImageMessage);
-			}
+			} 
 
 			#endregion
 		}
