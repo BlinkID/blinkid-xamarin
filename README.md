@@ -69,10 +69,16 @@ Set `Build Action` to `LibraryProjectZip`
 5. Extract `classes.jar` from [github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar)
 6. Replace [Binding/Android/Jars/classes.jar](Binding/Android/Jars/classes.jar) with extracted `classes.jar`  
 Set `Build Action` to `EmbeddedReferenceJar`
-7. Extract native libraries from `LibWrapper-release.aar` - `jni/**/*.so` files
+7. Extract native libraries from `LibRecognizer.aar` - `jni/**/*.so` files
 8. Replace native libraries [Binding/Android/lib/*](Binding/Android/lib) with extracted native libraries  
 Set `Build Action` to `EmbeddedNativeLibrary`
 9. Rebuild binding library project
+
+\* Steps from 5 to 8 could be automated with this Bash script [`updateAndroidBindingLibraryFromLibRecognizer.aar.sh`](BindingSource/Android/updateAndroidBindingLibraryFromLibRecognizer.aar.sh)  
+Example to run it from the repository root and fetch latest `LibRecognizer.aar` from master of `blinkid-android` repository:
+```
+./BindingSource/Android/updateAndroidBindingLibraryFromLibRecognizer.aar.sh ./Binding/Android/ https://github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar?raw=true
+```
 
 \* Steps from 5 to 8 are required only if you use newer version of `LibRecognizer.aar` from [github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibRecognizer.aar)
 
