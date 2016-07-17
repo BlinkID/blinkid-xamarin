@@ -2,33 +2,30 @@ package com.microblink.wrapper.xamarin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Parcelable;
 
 import com.microblink.hardware.camera.CameraType;
 import com.microblink.recognizers.BaseRecognitionResult;
 import com.microblink.recognizers.IResultHolder;
 import com.microblink.recognizers.RecognitionResults;
 import com.microblink.recognizers.blinkbarcode.BarcodeType;
-import com.microblink.recognizers.blinkbarcode.bardecoder.BarDecoderRecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.bardecoder.BarDecoderScanResult;
-import com.microblink.recognizers.blinkbarcode.pdf417.Pdf417RecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.pdf417.Pdf417ScanResult;
-import com.microblink.recognizers.blinkbarcode.usdl.USDLRecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.usdl.USDLScanResult;
-import com.microblink.recognizers.blinkbarcode.zxing.ZXingRecognizerSettings;
 import com.microblink.recognizers.blinkbarcode.zxing.ZXingScanResult;
+import com.microblink.recognizers.blinkid.austria.back.AustrianIDBackSideRecognitionResult;
+import com.microblink.recognizers.blinkid.austria.front.AustrianIDFrontSideRecognitionResult;
 import com.microblink.recognizers.blinkid.croatia.back.CroatianIDBackSideRecognitionResult;
-import com.microblink.recognizers.blinkid.croatia.back.CroatianIDBackSideRecognizerSettings;
 import com.microblink.recognizers.blinkid.croatia.front.CroatianIDFrontSideRecognitionResult;
-import com.microblink.recognizers.blinkid.croatia.front.CroatianIDFrontSideRecognizerSettings;
-import com.microblink.recognizers.blinkid.eudl.EUDLCountry;
+import com.microblink.recognizers.blinkid.czechia.back.CzechIDBackSideRecognitionResult;
+import com.microblink.recognizers.blinkid.czechia.front.CzechIDFrontSideRecognitionResult;
 import com.microblink.recognizers.blinkid.eudl.EUDLRecognitionResult;
-import com.microblink.recognizers.blinkid.eudl.EUDLRecognizerSettings;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
-import com.microblink.recognizers.blinkid.malaysia.MyKadRecognizerSettings;
 import com.microblink.recognizers.blinkid.mrtd.MRTDRecognitionResult;
-import com.microblink.recognizers.blinkid.mrtd.MRTDRecognizerSettings;
 import com.microblink.recognizers.blinkid.singapore.SingaporeIDRecognitionResult;
-import com.microblink.recognizers.blinkid.singapore.SingaporeIDRecognizerSettings;
+import com.microblink.recognizers.blinkocr.BlinkOCRRecognitionResult;
+import com.microblink.recognizers.detector.DetectorRecognitionResult;
 import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
 import com.microblink.recognizers.settings.RecognizerSettingsUtils;
@@ -43,19 +40,36 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by ivan on 2/29/16.
  */
 public class BlinkID {
 
-    // result data keys
-    public static final String PAYMENT_DATA_KEY = "PaymentDataType";
+    private static final String PAYMENT_DATA_KEY = "PaymentDataType";
 
+    // result types
+    public static final String PDF417_RESULT_TYPE = "PDF417";
+    public static final String USDL_RESULT_TYPE = "USDL";
+    public static final String BARDECODER_RESULT_TYPE = "Barcode";
+    public static final String ZXING_RESULT_TYPE = BARDECODER_RESULT_TYPE;
+    public static final String MRTD_RESULT_TYPE = "MRTD";
+    public static final String EUDL_RESULT_TYPE = "EUDL";
+    public static final String MYKAD_RESULT_TYPE = "MyKad";
+    public static final String AUS_ID_FRONT_RESULT_TYPE = "AusIdFront";
+    public static final String AUS_ID_BACK_RESULT_TYPE = "AusIdBack";
+    public static final String CRO_ID_FRONT_RESULT_TYPE = "CroIdFront";
+    public static final String CRO_ID_BACK_RESULT_TYPE = "CroIdBack";
+    public static final String CZ_ID_FRONT_RESULT_TYPE = "CzIdFront";
+    public static final String CZ_ID_BACK_RESULT_TYPE = "CzIdBack";
+    public static final String SINGAPORE_ID_FRONT_RESULT_TYPE = "SingaporeIdFront";
+    public static final String SINGAPORE_ID_BACK_RESULT_TYPE = "SingaporeIdBack";
+    public static final String OCR_RESULT_TYPE = "OcrResult";
+    public static final String ID_CARD_DETECTOR_RESULT_TYPE = "IdCardDetector";
+
+    // result data keys
     public static final String RESULT_TYPE_KEY = "ResultType";
     public static final String BARCODE_TYPE_KEY = "Type";
     public static final String BARCODE_DATA_KEY = "Data";
@@ -68,14 +82,19 @@ public class BlinkID {
     public static final String SEX_KEY = "Sex";
     public static final String CITIZENSHIP_KEY = "Citizenship";
     public static final String COUNTRY_OF_BIRTH_KEY = "CountryOfBirth";
+    public static final String PLACE_OF_BIRTH_KEY = "PlaceOfBirth";
     public static final String DATE_OF_BIRTH_KEY= "DateOfBirth";
     public static final String DATE_OF_EXPIRY_KEY = "DateOfExpiry";
     public static final String DATE_OF_ISSUE_KEY = "DateOfIssue";
+    public static final String PERSONAL_NUMBER_KEY = "PersonalNumber";
     public static final String DOCUMENT_NUMBER_KEY = "DocumentNumber";
     public static final String ADDRESS_KEY = "Address";
     public static final String ISSUING_AUTHORITY_KEY = "IssuingAuthority";
     public static final String BLOOD_GROUP_KEY = "BloodGroup";
     public static final String RACE_KEY = "Race";
+    public static final String EYE_COLOR_KEY = "EyeColor";
+    public static final String HEIGHT_KEY = "Height";
+    public static final String PRINCIPAL_RESIDENCE_AT_ISSUANCE_KEY = "PrincipalResidenceAtIssuance";
 
     public static final String PRIMARY_ID_KEY = "PrimaryID";
     public static final String SECONDARY_ID_KEY = "SecondaryID";
@@ -86,28 +105,15 @@ public class BlinkID {
     public static final String OPT2_KEY = "Opt2";
     public static final String MRZ_RAW_KEY = "MrzText";
 
-    // result types
-    public static final String PDF417_RESULT_TYPE = "PDF417";
-    public static final String USDL_RESULT_TYPE = "USDL";
-    public static final String BARDECODER_RESULT_TYPE = "Barcode";
-    public static final String ZXING_RESULT_TYPE = BARDECODER_RESULT_TYPE;
-    public static final String MRTD_RESULT_TYPE = "MRTD";
-    public static final String EUDL_RESULT_TYPE = "EUDL";
-    public static final String MYKAD_RESULT_TYPE = "MyKad";
-    public static final String CRO_ID_FRONT_RESULT_TYPE = "CroIdFront";
-    public static final String CRO_ID_BACK_RESULT_TYPE = "CroIdBack";
-    public static final String SINGAPORE_ID_FRONT_RESULT_TYPE = "SingaporeIdFront";
-    public static final String SINGAPORE_ID_BACK_RESULT_TYPE = "SingaporeIdBack";
-
     private static final String LOG_TAG = "BlinkId";
 
+    /** Date format for date results */
     DateFormat mDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-
-    private RecognitionSettings mRecognitionSettings;
     private Context mContext;
     private String mLicenseKey;
     private BlinkIdResultListener mResultListener;
+    private String[] mParserIdentifiers;
 
     private static BlinkID ourInstance = new BlinkID();
 
@@ -143,95 +149,6 @@ public class BlinkID {
         mContext = context;
     }
 
-
-    public Set<RecognizerType> filterOutUnsupportedRecognizers(Set<RecognizerType> recognizers) {
-        return filterOutUnsupportedRecognizers(recognizers, false);
-    }
-
-    /**
-     * Filters out unsupported recognizers (on current device and chosen camera) from given
-     * {@code recognizers} set.
-     * @param recognizers Set of recognizers that should be used in recognition. Set remains
-     *                    unchanged.
-     * @param useCameraFrontFace If set to {@code true} filters out recognizers that are unsupported
-     *                           on current phone's front-facing camera, otherwise do the same for
-     *                           default phone camera.
-     * @return Set of recognizers that are supported on current device and chosen camera.
-     */
-    public Set<RecognizerType> filterOutUnsupportedRecognizers(
-            Set<RecognizerType> recognizers, boolean useCameraFrontFace) {
-        RecognizerSettings[] settArray = buildRecognitionSettings(recognizers, useCameraFrontFace)
-                .getRecognizerSettingsArray();
-
-        CameraType cameraType = CameraType.CAMERA_DEFAULT;
-        if (useCameraFrontFace) {
-            cameraType = CameraType.CAMERA_FRONTFACE;
-        }
-        if(!RecognizerCompatibility.cameraHasAutofocus(cameraType, mContext)) {
-            settArray = RecognizerSettingsUtils.filterOutRecognizersThatRequireAutofocus(settArray);
-        }
-
-        Set<RecognizerType> filtered = new HashSet<>();
-        for (RecognizerSettings recognizerSettings : settArray) {
-            if (recognizerSettings instanceof Pdf417RecognizerSettings) {
-                filtered.add(RecognizerType.PDF417);
-            } else if (recognizerSettings instanceof  USDLRecognizerSettings) {
-                filtered.add(RecognizerType.USDL);
-            } else if (recognizerSettings instanceof  BarDecoderRecognizerSettings) {
-                filtered.add(RecognizerType.BARDECODER);
-            } else if (recognizerSettings instanceof  ZXingRecognizerSettings) {
-                filtered.add(RecognizerType.ZXING);
-            } else if (recognizerSettings instanceof  MRTDRecognizerSettings) {
-                filtered.add(RecognizerType.MRTD);
-            } else if (recognizerSettings instanceof  EUDLRecognizerSettings) {
-                switch (((EUDLRecognizerSettings) recognizerSettings).getCountry()) {
-                    case EUDL_COUNTRY_GERMANY:
-                        addEUDLRecognizerToFiltered(RecognizerType.DEDL, filtered);
-                        break;
-                    case EUDL_COUNTRY_UK:
-                        addEUDLRecognizerToFiltered(RecognizerType.UKDL, filtered);
-                        break;
-                    case EUDL_COUNTRY_AUTO:
-                        addEUDLRecognizerToFiltered(RecognizerType.EUDL, filtered);
-                        break;
-                }
-            } else if (recognizerSettings instanceof  MyKadRecognizerSettings) {
-                filtered.add(RecognizerType.MYKAD);
-            } else if (recognizerSettings instanceof CroatianIDFrontSideRecognizerSettings) {
-                filtered.add(RecognizerType.CRO_ID_FRONT);
-            } else if (recognizerSettings instanceof CroatianIDBackSideRecognizerSettings) {
-                filtered.add(RecognizerType.CRO_ID_BACK);
-            } else if (recognizerSettings instanceof SingaporeIDRecognizerSettings) {
-                filtered.add(RecognizerType.SINGAPORE_ID);
-            }
-        }
-        return filtered;
-    }
-
-    private void addEUDLRecognizerToFiltered(RecognizerType type, Set<RecognizerType> filtered) {
-        boolean hasDifferentEudl = false;
-        if (filtered.contains(RecognizerType.EUDL)) {
-            return;
-        }
-        RecognizerType[] mutuallyExclusive = new RecognizerType[]{
-                RecognizerType.DEDL,
-                RecognizerType.UKDL
-        };
-        for (RecognizerType meType : mutuallyExclusive) {
-            if (filtered.contains(meType)) {
-                if (type != meType) {
-                    filtered.remove(meType);
-                    hasDifferentEudl = true;
-                }
-            }
-        }
-        if (hasDifferentEudl) {
-            filtered.add(RecognizerType.EUDL);
-        } else {
-            filtered.add(type);
-        }
-    }
-
     /**
      * Defines the scan results listener that will obtain results when recognition is done.
      *
@@ -243,41 +160,42 @@ public class BlinkID {
 
     /**
      * Starts the scan activity. Before scanning, license key, context and result listener
-     * have to be defined with setter methods.
+     * have to be defined with setter methods: {@link #setLicenseKey(String)},
+     * {@link #setContext(Context)}, {@link #setResultListener(BlinkIdResultListener)}.
      *
-     * @param recognizers Recognizers that will be used to scan corresponding document types.
-     * @param useFrontFaceCamera If set to {@code true} front-facing camera will be used,
-     *                           otherwise default phone camera will be used.
+     * @param scanSettings Scan settings which define recognizers that will be used to scan
+     *                     corresponding document types and camera type that will be used.
      *
      * @throws IllegalStateException If license key, context or result listener is not defined.
+     * @throws IllegalScanSettingsException If scanSettings are not valid, scan settings are valid
+     *                                      if at least one recognizer or parser or detector is active.
      */
-    public void scan(Set<RecognizerType> recognizers, boolean useFrontFaceCamera) {
+    public void scan(BlinkIdScanSettings scanSettings) throws IllegalScanSettingsException {
         if (mLicenseKey == null || mContext == null || mResultListener == null) {
             throw new IllegalStateException("Before scanning, license key, context and result listener" +
                     " have to be defined.");
         }
-        mRecognitionSettings = buildRecognitionSettings(recognizers, useFrontFaceCamera);
-        Intent scanIntent = buildScanIntent(mRecognitionSettings, useFrontFaceCamera);
+        BlinkIdScanSettings.DeviceCameraType cam = scanSettings.getCameraType();
+        CameraType cameraType = CameraType.CAMERA_DEFAULT;
+        if (cam == BlinkIdScanSettings.DeviceCameraType.CAMERA_FRONTFACE) {
+            cameraType = CameraType.CAMERA_FRONTFACE;
+        } else if (cam == BlinkIdScanSettings.DeviceCameraType.CAMERA_BACKFACE) {
+            cameraType = CameraType.CAMERA_BACKFACE;
+        }
+        RecognitionSettings recognitionSettings = buildRecognitionSettings(scanSettings, cameraType);
+        if (recognitionSettings.getRecognizerSettingsArray().length == 0) {
+            throw new IllegalScanSettingsException("At least one recognizer/parser/detector must be active.");
+        }
+        mParserIdentifiers = scanSettings.getParserIdentifiers();
+        Intent scanIntent = buildScanIntent(recognitionSettings, cameraType);
         Log.i(this, "Starting scan intent");
         mContext.startActivity(scanIntent);
     }
 
     /**
-     * Starts the scan activity. Before scanning, license key, context and result listener
-     * have to be defined with setter methods. Uses default camera.
-     *
-     * @param recognizers Recognizers that will be used to scan corresponding document types.
-     *
-     * @throws IllegalStateException If license key, context or result listener is not defined.
-     */
-    public void scan(Set<RecognizerType> recognizers) {
-        scan(recognizers, false);
-    }
-
-    /**
      * This method builds scan intent for BlinkID.
      */
-    private Intent buildScanIntent(RecognitionSettings settings, boolean useFrontFaceCamera) {
+    private Intent buildScanIntent(RecognitionSettings settings, CameraType cameraType) {
 
         // first create intent for provided ScanCard activity
         final Intent intent = new Intent(mContext, BlinkIDScanActivity.class);
@@ -294,8 +212,8 @@ public class BlinkID {
         // about turning them off will be logged to ADB logcat.
         intent.putExtra(BlinkIDScanActivity.EXTRAS_LICENSE_KEY, mLicenseKey);
 
-        intent.putExtra(BlinkIDScanActivity.EXTRAS_USE_FRONTFACE_CAMERA, useFrontFaceCamera);
-        intent.putExtra(BlinkIDScanActivity.EXTRAS_RECOGNITION_SETTINGS, mRecognitionSettings);
+        intent.putExtra(BlinkIDScanActivity.EXTRAS_CAMERA_TYPE, (Parcelable) cameraType);
+        intent.putExtra(BlinkIDScanActivity.EXTRAS_RECOGNITION_SETTINGS, settings);
 
         return intent;
     }
@@ -303,11 +221,13 @@ public class BlinkID {
     /**
      * This method creates the recognition settings for scan activity.
      *
-     * @param recognizers Recognizers that will be used to scan corresponding document types.
+     * @param scanSettings Scan settings which define recognizers that will be used to scan
+     *                     corresponding document types.
      *
+     * @param cameraType Camera type that will be used.
      * @return Recognition settings for scan activity.
      */
-    protected RecognitionSettings buildRecognitionSettings(Set<RecognizerType> recognizers, boolean useFrontFaceCamera) {
+    protected RecognitionSettings buildRecognitionSettings(BlinkIdScanSettings scanSettings, CameraType cameraType) {
         // initialize scanning settings object
         RecognitionSettings recognitionSettings = new RecognitionSettings();
 
@@ -325,59 +245,13 @@ public class BlinkID {
         // from barcode and slip. If this is false (default), you will get the first valid result
         // (i.e. first result that contains all required data). Having this option turned off
         // creates better and faster user experience.
-//        recognitionSettings.setAllowMultipleScanResultsOnSingleImage(true);
+        recognitionSettings.setAllowMultipleScanResultsOnSingleImage(
+                scanSettings.shouldAllowMultipleScanResultsOnSingleImage());
 
-        List<RecognizerSettings> settingsList = new ArrayList<>();
-        if (recognizers.contains(RecognizerType.MRTD)) {
-            settingsList.add(buildMRTDRecognizerSettings());
+        RecognizerSettings[] settingsArray = scanSettings.createRecognizerSettingsArray();
+        if (!RecognizerCompatibility.cameraHasAutofocus(cameraType, mContext)) {
+            settingsArray = RecognizerSettingsUtils.filterOutRecognizersThatRequireAutofocus(settingsArray);
         }
-
-        if (recognizers.contains(RecognizerType.USDL)) {
-            settingsList.add(buildUSDLRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.UKDL)) {
-            settingsList.add(buildUKDLRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.DEDL)) {
-            settingsList.add(buildDEDLRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.EUDL)) {
-            settingsList.add(buildEUDLRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.MYKAD)) {
-            settingsList.add(buildMyKadRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.PDF417)) {
-            settingsList.add(buildPdf417RecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.BARDECODER)) {
-            settingsList.add(buildBardecoderRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.ZXING)) {
-            settingsList.add(buildZxingRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.CRO_ID_BACK)) {
-            settingsList.add(buildCroatianIDBackSideRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.CRO_ID_FRONT)) {
-            settingsList.add(buildCroatianIDFrontSideRecognizerSettings());
-        }
-
-        if (recognizers.contains(RecognizerType.SINGAPORE_ID)) {
-            settingsList.add(buildSingaporeIDRecognizerSettings());
-        }
-
-        RecognizerSettings[] settingsArray = new RecognizerSettings[settingsList.size()];
-        settingsArray = settingsList.toArray(settingsArray);
 
         // Add array with recognizer settings so that scan activity will know
         // what do you want to scan. Setting recognizer settings array is mandatory.
@@ -390,12 +264,20 @@ public class BlinkID {
      *
      * @param results Recognition results.
      */
-    public void onScanningDone(RecognitionResults results) {
+    public void onScanningDone(RecognitionResults results, Bitmap documentImage) {
         BaseRecognitionResult[] resultsArr = results.getRecognitionResults();
         if (resultsArr != null && resultsArr.length > 0) {
             List<Map<String, String>> resultList = new ArrayList<>();
             for (BaseRecognitionResult result : resultsArr) {
-                if (result instanceof CroatianIDFrontSideRecognitionResult) {
+                if (result instanceof AustrianIDFrontSideRecognitionResult) {
+                    resultList.add(buildAusIdFrontResult((AustrianIDFrontSideRecognitionResult) result));
+                } else if (result instanceof AustrianIDBackSideRecognitionResult) {
+                    resultList.add(buildAusIdBackResult((AustrianIDBackSideRecognitionResult) result));
+                } else if (result instanceof CzechIDFrontSideRecognitionResult) {
+                    resultList.add(buildCzIdFrontResult((CzechIDFrontSideRecognitionResult) result));
+                } else if (result instanceof CzechIDBackSideRecognitionResult) {
+                    resultList.add(buildCzIdBackResult((CzechIDBackSideRecognitionResult) result));
+                } else if (result instanceof CroatianIDFrontSideRecognitionResult) {
                     resultList.add(buildCroIdFrontResult((CroatianIDFrontSideRecognitionResult) result));
                 } else if (result instanceof CroatianIDBackSideRecognitionResult) {
                     resultList.add(buildCroIdBackResult((CroatianIDBackSideRecognitionResult) result));
@@ -413,183 +295,25 @@ public class BlinkID {
                     resultList.add(buildBarDecoderResult((BarDecoderScanResult) result));
                 } else if (result instanceof ZXingScanResult) {
                     resultList.add(buildZxingResult((ZXingScanResult) result));
+                } else if (result instanceof BlinkOCRRecognitionResult) {
+                    resultList.add(buildOcrResult((BlinkOCRRecognitionResult) result));
                 } else if (result instanceof MRTDRecognitionResult) {
                     resultList.add(buildMRTDResult((MRTDRecognitionResult) result));
+                } else if (result instanceof DetectorRecognitionResult) {
+                    resultList.add(buildIdCardDetectorResult((DetectorRecognitionResult) result));
                 } else {
                     throw new RuntimeException("Unknown result type: "
                             + result.getClass().toString() + " in result array.");
                 }
+            }
+            if (documentImage != null) {
+                mResultListener.onDocumentImageAvailable(documentImage);
             }
             mResultListener.onResultsAvailable(resultList);
         } else {
             mResultListener.onResultsAvailable(null);
         }
 
-    }
-
-    /**
-     * Builds {@link ZXingRecognizerSettings} which define settings for scanning various barcode
-     * types, enabled barcodes are: QR code, Aztec code, code 128, code 39, Data matrix, ean 13,
-     * ean 8, UPC A, UPC E
-     */
-    private ZXingRecognizerSettings buildZxingRecognizerSettings() {
-        // ZXingRecognizerSettings define settings for scanning various barcode types, by
-        // default all barcode types are disabled
-        ZXingRecognizerSettings zxingSettings = new ZXingRecognizerSettings();
-
-        // by default all barcode types are disabled
-        zxingSettings.setScanQRCode(true);
-        zxingSettings.setScanAztecCode(true);
-        zxingSettings.setScanCode128(true);
-        zxingSettings.setScanCode39(true);
-        zxingSettings.setScanDataMatrixCode(true);
-        zxingSettings.setScanEAN13Code(true);
-        zxingSettings.setScanEAN8Code(true);
-        zxingSettings.setScanITFCode(false);
-        zxingSettings.setScanUPCACode(true);
-        zxingSettings.setScanUPCECode(true);
-        // By setting this to true, you will enable scanning of barcodes with inverse
-        // intensity values (i.e. white barcodes on dark background). This option can
-        // significantly increase recognition time. Default is false
-        zxingSettings.setInverseScanning(false);
-        return zxingSettings;
-    }
-
-    /**
-     * Builds {@link BarDecoderRecognizerSettings} which define settings for scanning 1D barcodes
-     * with algorithms implemented by Microblink team. Enabled barcodes are: code 128 and code 39.
-     */
-    private BarDecoderRecognizerSettings buildBardecoderRecognizerSettings() {
-        // BarDecoderRecognizerSettings define settings for scanning 1D barcodes with algorithms
-        // implemented by Microblink team.
-        BarDecoderRecognizerSettings oneDimensionalRecognizerSettings = new BarDecoderRecognizerSettings();
-
-        oneDimensionalRecognizerSettings.setScanCode128(true);
-        oneDimensionalRecognizerSettings.setScanCode39(true);
-        // By setting this to true, you will enable scanning of barcodes with inverse
-        // intensity values (i.e. white barcodes on dark background). This option can
-        // significantly increase recognition time. Default is false
-        oneDimensionalRecognizerSettings.setInverseScanning(false);
-        return oneDimensionalRecognizerSettings;
-    }
-
-    /**
-     * Builds {@link MRTDRecognizerSettings} which define settings for scanning
-     * MRTD (Machine Readable Travel Documents).
-     */
-    private MRTDRecognizerSettings buildMRTDRecognizerSettings() {
-        // To specify we want to perform MRTD (Machine Readable Travel Document) recognition,
-        // prepare settings for MRTD recognizer
-        return new MRTDRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link USDLRecognizerSettings} which define settings for scanning
-     * USDL (US Driver's Licenses)
-     */
-    private USDLRecognizerSettings buildUSDLRecognizerSettings() {
-        // To specify we want to perform USDL (US Driver's License) recognition,
-        // prepare settings for USDL recognizer
-        return new USDLRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver licenses are <b>UK</b> driver's licenses.
-     */
-    private EUDLRecognizerSettings buildUKDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose UK.
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver licenses are <b>German</b> driver's licenses.
-     */
-    private EUDLRecognizerSettings buildDEDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose Germany.
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver licenses are all supported EU licenses.
-     */
-    private EUDLRecognizerSettings buildEUDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose auto detection (one of supported licenses).
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_AUTO);
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * MyKad (Malaysian MyKad ID document).
-     */
-    private MyKadRecognizerSettings buildMyKadRecognizerSettings() {
-        // To specify we want to perform MyKad (Malaysian MyKad ID document) recognition,
-        // prepare settings for MyKad recognizer
-        return new MyKadRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link Pdf417RecognizerSettings} which define settings for scanning plain PDF417
-     * barcodes.
-     */
-    private Pdf417RecognizerSettings buildPdf417RecognizerSettings() {
-        // Pdf417RecognizerSettings define the settings for scanning plain PDF417 barcodes.
-        Pdf417RecognizerSettings pdf417RecognizerSettings = new Pdf417RecognizerSettings();
-        // Set this to true to scan barcodes which don't have quiet zone (white area) around it
-        // Use only if necessary because it drastically slows down the recognition process
-        pdf417RecognizerSettings.setNullQuietZoneAllowed(true);
-        // Set this to true to scan even barcode not compliant with standards
-        // For example, malformed PDF417 barcodes which were incorrectly encoded
-        // Use only if necessary because it slows down the recognition process
-        pdf417RecognizerSettings.setUncertainScanning(false);
-        return pdf417RecognizerSettings;
-    }
-
-    /**
-     * Builds {@link CroatianIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Croatian ID card.
-     */
-    private CroatianIDBackSideRecognizerSettings buildCroatianIDBackSideRecognizerSettings() {
-        CroatianIDBackSideRecognizerSettings croIDBackSettings = new CroatianIDBackSideRecognizerSettings();
-        croIDBackSettings.setExtractIssuingAuthority(true);
-        croIDBackSettings.setExtractDateOfIssue(true);
-        return croIDBackSettings;
-    }
-
-    /**
-     * Builds {@link CroatianIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Croatian ID card.
-     */
-    private CroatianIDFrontSideRecognizerSettings buildCroatianIDFrontSideRecognizerSettings() {
-        CroatianIDFrontSideRecognizerSettings croIDFrontSettings = new CroatianIDFrontSideRecognizerSettings();
-        croIDFrontSettings.setExtractSex(true);
-        croIDFrontSettings.setExtractCitizenship(true);
-        croIDFrontSettings.setExtractDateOfBirth(true);
-        croIDFrontSettings.setExtractDateOfExpiry(true);
-        return croIDFrontSettings;
-    }
-
-    /**
-     * Builds {@link SingaporeIDRecognizerSettings} which define settings for scanning
-     * front and back side of Singapore ID card.
-     */
-    private SingaporeIDRecognizerSettings buildSingaporeIDRecognizerSettings() {
-        SingaporeIDRecognizerSettings singaporeIDSettings = new SingaporeIDRecognizerSettings();
-        singaporeIDSettings.setExtractBloodGroup(true);
-        singaporeIDSettings.setExtractCountryOfBirth(true);
-        singaporeIDSettings.setExtractDateOfBirth(true);
-        singaporeIDSettings.setExtractDateOfIssue(true);
-        singaporeIDSettings.setExtractRace(true);
-        singaporeIDSettings.setExtractSex(true);
-        return singaporeIDSettings;
     }
 
     /**
@@ -690,6 +414,81 @@ public class BlinkID {
         return resultMap;
     }
 
+    private Map<String, String> buildCzIdBackResult(CzechIDBackSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, CZ_ID_BACK_RESULT_TYPE);
+        resultMap.put(ADDRESS_KEY, result.getAddress());
+        resultMap.put(ISSUING_AUTHORITY_KEY, result.getAuthority());
+        resultMap.put(PERSONAL_NUMBER_KEY, result.getPersonalNumber());
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildCzIdFrontResult(CzechIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, CZ_ID_FRONT_RESULT_TYPE);
+
+        resultMap.put(FIRST_NAME_KEY, result.getFirstName());
+        resultMap.put(LAST_NAME_KEY, result.getLastName());
+        resultMap.put(DOCUMENT_NUMBER_KEY, result.getIdentityCardNumber());
+        resultMap.put(SEX_KEY, result.getSex());
+        resultMap.put(PLACE_OF_BIRTH_KEY, result.getPlaceOfBirth());
+
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+        Date dateOfIssue = result.getDateOfIssue();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+
+        }
+        Date dateOfExpiry = result.getDateOfExpiry();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+
+        }
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildAusIdBackResult(AustrianIDBackSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, AUS_ID_BACK_RESULT_TYPE);
+
+        resultMap.put(PLACE_OF_BIRTH_KEY, result.getPlaceOfBirth());
+        resultMap.put(EYE_COLOR_KEY, result.getEyeColour());
+        resultMap.put(ISSUING_AUTHORITY_KEY, result.getIssuingAuthority());
+        resultMap.put(PRINCIPAL_RESIDENCE_AT_ISSUANCE_KEY, result.getPrincipalResidenceAtIssuance());
+        resultMap.put(HEIGHT_KEY, Integer.toString(result.getHeight()));
+
+        Date dateOfIssue = result.getDateOfIssuance();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+
+        }
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildAusIdFrontResult(AustrianIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+
+        resultMap.put(RESULT_TYPE_KEY, AUS_ID_FRONT_RESULT_TYPE);
+
+        resultMap.put(FIRST_NAME_KEY, result.getFirstName());
+        resultMap.put(LAST_NAME_KEY, result.getLastName());
+        resultMap.put(DOCUMENT_NUMBER_KEY, result.getIdentityCardNumber());
+        resultMap.put(SEX_KEY, result.getSex());
+
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+
+        return resultMap;
+    }
+
     private Map<String,String> buildCroIdFrontResult(CroatianIDFrontSideRecognitionResult result) {
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put(RESULT_TYPE_KEY, CRO_ID_FRONT_RESULT_TYPE);
@@ -756,6 +555,28 @@ public class BlinkID {
         return resultMap;
     }
 
+    private Map<String, String> buildOcrResult(BlinkOCRRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, OCR_RESULT_TYPE);
+
+        for (String parserId: mParserIdentifiers) {
+            String parserRes = result.getParsedResult(parserId);
+            if (parserRes != null && !parserRes.isEmpty()) {
+                resultMap.put(parserId, parserRes);
+            }
+        }
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildIdCardDetectorResult(DetectorRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, ID_CARD_DETECTOR_RESULT_TYPE);
+
+        return resultMap;
+    }
+
+
     private Map<String, String> buildKeyValueResult(BaseRecognitionResult res, String resultType) {
         Map<String, String> resultMap = new HashMap<>();
         IResultHolder resultHolder = res.getResultHolder();
@@ -780,37 +601,6 @@ public class BlinkID {
             sb.append(String.format("%02x", b));
         }
         return sb.toString();
-    }
-
-
-    /**
-     * Supported recognizers.
-     */
-    public enum RecognizerType {
-        /** Pdf417 recognizer */
-        PDF417,
-        /** US Driver's License recognizer */
-        USDL,
-        /** Bardecoder recognizer */
-        BARDECODER,
-        /** Zxing recognizer */
-        ZXING,
-        /** Machine Readable Travel Document recognizer */
-        MRTD,
-        /** German Driver's License recognizer */
-        DEDL,
-        /** UK Driver's License recognizer */
-        UKDL,
-        /** EU Driver's License recognizer, scans all supported EU Driver's Licenses */
-        EUDL,
-        /** Malaysian MyKad ID document recognizer */
-        MYKAD,
-        /** Croatian ID card front side recognizer */
-        CRO_ID_FRONT,
-        /** Croatian ID card back side recognizer */
-        CRO_ID_BACK,
-        /** Singapore ID card recognizer */
-        SINGAPORE_ID
     }
 
 }

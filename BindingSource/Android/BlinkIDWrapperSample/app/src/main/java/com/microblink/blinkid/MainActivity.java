@@ -2,24 +2,26 @@ package com.microblink.blinkid;
 
 import android.app.AlertDialog;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.microblink.util.Log;
 import com.microblink.wrapper.xamarin.BlinkID;
 import com.microblink.wrapper.xamarin.BlinkIdResultListener;
+import com.microblink.wrapper.xamarin.BlinkIdScanSettings;
+import com.microblink.wrapper.xamarin.IllegalScanSettingsException;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String LICENSE_KEY = "BRVITPHC-YSYABCZD-CHKHMEC6-E3NNMLH2-LYTNVVRM-7JPCNWWW-FT5F4JW2-32QER7JS";
-    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,33 +43,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void scanClickHandler(View view) {
         BlinkID blinkId = BlinkID.getInstance();
+        // set context, license key and result listener
         blinkId.setContext(this);
         blinkId.setLicenseKey(LICENSE_KEY);
         blinkId.setResultListener(mResultListener);
-        Set<BlinkID.RecognizerType> recognizers = new HashSet<>();
-        // recognize US Driver's Licenses
-        recognizers.add(BlinkID.RecognizerType.USDL);
 
-        // Following recognizers: UKDL, DEDL and EUDL should not be activated at the same time
-        // recognize UK Driver's Licenses
-        recognizers.add(BlinkID.RecognizerType.UKDL);
-        // DEDL - German driver's licenses
-//        recognizers.add(BlinkID.RecognizerType.DEDL);
-        // EUDL - all supported EU driver's licenses, automatic detection
-//        recognizers.add(BlinkID.RecognizerType.EUDL);
-//        recognizers.add(BlinkID.RecognizerType.MRTD);
-//        recognizers.add(BlinkID.RecognizerType.SINGAPORE_ID);
-//        recognizers.add(BlinkID.RecognizerType.PDF417);
-//        recognizers.add(BlinkID.RecognizerType.CRO_ID_FRONT);
-//        recognizers.add(BlinkID.RecognizerType.CRO_ID_BACK);
-//        recognizers.add(BlinkID.RecognizerType.BARDECODER);
-//        recognizers.add(BlinkID.RecognizerType.ZXING);
-//        recognizers.add(BlinkID.RecognizerType.MYKAD);
+        // build scan settings for back facing camera
+        BlinkIdScanSettings scanSettings = new BlinkIdScanSettings(this, BlinkIdScanSettings.DeviceCameraType.CAMERA_BACKFACE);
+        // allow multiple scan results
+        scanSettings.setAllowMultipleScanResultsOnSingleImage(true);
 
+        if (!scanSettings.addRecognizerMRTD()) {
+            Log.w(this, "MRTD recognizer is not supported on current device and chosen camera type");
+        }
+        if (!scanSettings.addRecognizerPdf417()) {
+            Log.w(this, "PDF417 recognizer is not supported on current device and chosen camera type");
+        }
 
-        boolean useFrontFaceCamera = false;
-        recognizers = blinkId.filterOutUnsupportedRecognizers(recognizers, useFrontFaceCamera);
-        blinkId.scan(recognizers, useFrontFaceCamera);
+        // scan can throw IllegalScanSettingsException if scan settings are not valid, at least
+        // one recognizer or parser or detector must be active in scan settings
+        try {
+            blinkId.scan(scanSettings);
+        } catch (IllegalScanSettingsException e) {
+            Log.w(this, "ERROR: {}", e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     BlinkIdResultListener mResultListener = new BlinkIdResultListener() {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Nothing scanned.", Toast.LENGTH_LONG).show();
                 return;
             }
-            StringBuilder sb = new StringBuilder();
+            final StringBuilder sb = new StringBuilder();
             for (Map<String, String> resMap : results) {
                 sb.append(resMap.get(BlinkID.RESULT_TYPE_KEY)).append(" result:\n\n");
                 for (String key : resMap.keySet()) {
@@ -85,16 +85,26 @@ public class MainActivity extends AppCompatActivity {
                 }
                 sb.append("\n\n");
             }
-            final AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("Scan result")
-                    .setMessage(sb.toString())
-                    .setPositiveButton("OK", null)
-                    .setCancelable(false)
-                    .create();
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Scan result")
+                            .setMessage(sb.toString())
+                            .setPositiveButton("OK", null)
+                            .setCancelable(false)
+                            .create();
                     dialog.show();
+                }
+            });
+        }
+
+        @Override
+        public void onDocumentImageAvailable(@NonNull Bitmap bitmap) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(MainActivity.this, "Bitmap available", Toast.LENGTH_LONG).show();
                 }
             });
         }

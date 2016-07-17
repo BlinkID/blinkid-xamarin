@@ -720,10 +720,6 @@
     "description": "ZTE v72C tablet (a.k.a. Sprint Optik 2)",
     "naturalOrientationIsLandscapeLeft": "*"
   },
-  "zeroflte::SM-G920F": {
-    "description": "Galaxy S6",
-    "minZoomLevel": 0.2
-  },
   "chagalllte::SM-T805": {
     "description": "Samsung Galaxy Tab S",
     "displayOrientationNotWorking": "*"

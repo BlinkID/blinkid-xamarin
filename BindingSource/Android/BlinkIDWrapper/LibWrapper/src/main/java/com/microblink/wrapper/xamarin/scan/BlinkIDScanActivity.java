@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.microblink.detectors.DetectorResult;
+import com.microblink.detectors.multi.MultiDetectorResult;
 import com.microblink.detectors.points.PointsDetectorResult;
 import com.microblink.detectors.quad.QuadDetectorResult;
 import com.microblink.geometry.Point;
@@ -24,7 +25,10 @@ import com.microblink.geometry.Quadrilateral;
 import com.microblink.hardware.SuccessCallback;
 import com.microblink.hardware.camera.CameraType;
 import com.microblink.hardware.orientation.Orientation;
+import com.microblink.image.Image;
+import com.microblink.image.ImageType;
 import com.microblink.metadata.DetectionMetadata;
+import com.microblink.metadata.ImageMetadata;
 import com.microblink.metadata.Metadata;
 import com.microblink.metadata.MetadataListener;
 import com.microblink.metadata.MetadataSettings;
@@ -60,7 +64,10 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     public static final String EXTRAS_LICENSE_KEY = "EXTRAS_LICENSE_KEY";
     public static final String EXTRAS_RECOGNITION_SETTINGS = "EXTRAS_RECOGNITION_SETTINGS";
-    public static final String EXTRAS_USE_FRONTFACE_CAMERA = "EXTRAS_USE_FRONTFACE_CAMERA";
+    public static final String EXTRAS_CAMERA_TYPE = "EXTRAS_CAMERA_TYPE";
+
+    /** Name of the dewarped ID card image from document detector that will be accepted */
+    private static final String IMAGE_NAME = "DocumentDetector/IDCard";
 
     private Handler mHandler = new Handler();
 
@@ -106,6 +113,8 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     boolean activityRunning = false;
     private boolean mFinishing = false;
 
+    private Image mLastDewarpedImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,10 +138,8 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
                 finish();
             }
 
-            boolean useFrontFaceCamera = extras.getBoolean(EXTRAS_USE_FRONTFACE_CAMERA, false);
-            if (useFrontFaceCamera) {
-                mRecognizerView.setCameraType(CameraType.CAMERA_FRONTFACE);
-            }
+            CameraType cameraType = (CameraType) extras.getParcelable(EXTRAS_CAMERA_TYPE);
+            mRecognizerView.setCameraType(cameraType);
 
             RecognitionSettings recognitionSettings = extras.getParcelable(EXTRAS_RECOGNITION_SETTINGS);
             if (recognitionSettings == null) {
@@ -184,6 +191,12 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         metadataSettings.setDetectionMetadataAllowed(true);
         // set metadata listener and defined metadata settings
         // metadata listener will obtain selected metadata
+        // define which images should be available in MetadataListener
+        MetadataSettings.ImageMetadataSettings ims = new MetadataSettings.ImageMetadataSettings();
+        // enable dewarped images
+        ims.setDewarpedImageEnabled(true);
+
+        metadataSettings.setImageMetadataSettings(ims);
         mRecognizerView.setMetadataListener(this, metadataSettings);
 
         // set initial orientation
@@ -321,13 +334,12 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     @Override
     public void onScanningDone(RecognitionResults results) {
         mRecognizerView.pauseScanning();
-        BlinkID.getInstance().onScanningDone(results);
-        soundNotification();
-        waitForAnimationAndFinish();
+        waitForAnimationAndFinish(results);
     }
 
-    private void waitForAnimationAndFinish() {
+    private void waitForAnimationAndFinish(final RecognitionResults results) {
         if (mQuadViewManager == null && mPointSetView == null) {
+            setResults(results);
             super.finish();
         } else {
             mFinishing = true;
@@ -339,12 +351,19 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
                         Log.v(BlinkIDScanActivity.this, "Waiting for animations to end...");
                     } else {
                         timer.cancel();
+                        setResults(results);
                         BlinkIDScanActivity.this.finish();
                     }
 
                 }
             }, 0, 100);
         }
+    }
+
+    private void setResults(RecognitionResults results) {
+        BlinkID.getInstance().onScanningDone(results,
+                mLastDewarpedImage == null ? null : mLastDewarpedImage.convertToBitmap());
+        soundNotification();
     }
 
 
@@ -516,41 +535,62 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
     public void onMetadataAvailable(Metadata metadata) {
         if (metadata instanceof DetectionMetadata) {
             DetectorResult detectionResult = ((DetectionMetadata) metadata).getDetectionResult();
-            // DetectionMetadata contains DetectorResult which is null if object detection
-            // has failed and non-null otherwise
-            if (detectionResult == null) {
-                if (mQuadViewManager != null) {
-                    mQuadViewManager.animateQuadToDefaultPosition();
-                }
-                if (mPointSetView != null) {
-                    mPointSetView.setTransformedPointSet(null);
-                }
-                displayDetectionStatus(DetectionStatus.FAIL);
-            } else if (mPointSetView != null && detectionResult instanceof PointsDetectorResult) {
-                List<Point> pointList = ((PointsDetectorResult) detectionResult).getPointSet().getPoints();
-                List<XPoint> xPointList = new ArrayList<>();
-                for (Point p : pointList) {
-                    xPointList.add(new XPoint(p.getX(), p.getY()));
-                }
-                mPointSetView.setTransformedPointSet(new PointSetWrapper(xPointList));
-                displayDetectionStatus(detectionResult.getDetectionStatus());
-            } else if (detectionResult instanceof QuadDetectorResult) {
-                QuadDetectorResult quadResult = (QuadDetectorResult) detectionResult;
-                boolean detectionSuccessful = quadResult.getDetectionStatus() == DetectionStatus.SUCCESS;
-                Quadrilateral quad = quadResult.getTransformedDisplayLocation();
-                if (mQuadViewManager != null) {
-                    if (quad == null) {
-                        mQuadViewManager.animateQuadToDefaultPosition();
-                    } else {
-                        mQuadViewManager.animateQuadToDetectionPosition(
-                                quadToQuadWrapper(quad), detectionSuccessful);
+            if (detectionResult instanceof MultiDetectorResult) {
+                DetectorResult[] results = ((MultiDetectorResult) detectionResult).getDetectionResults();
+                if (results != null) {
+                    for (DetectorResult dr : results) {
+                        if (dr != null) {
+                            onDetectorResultAvailable(dr);
+                        }
                     }
                 }
-                if (mPointSetView != null) {
-                    mPointSetView.setTransformedPointSet(null);
-                }
-                displayDetectionStatus(quadResult.getDetectionStatus());
+            } else {
+                onDetectorResultAvailable(detectionResult);
             }
+        } else if (metadata instanceof ImageMetadata) {
+            // here we will get dewarped image
+            Image img = ((ImageMetadata) metadata).getImage();
+            if (img.getImageType() == ImageType.DEWARPED && img.getImageName().equals(IMAGE_NAME)) {
+                mLastDewarpedImage = ((ImageMetadata) metadata).getImage().clone();
+            }
+        }
+    }
+
+    private void onDetectorResultAvailable(DetectorResult detectorResult) {
+        // DetectionMetadata contains DetectorResult which is null if object detection
+        // has failed and non-null otherwise
+        if (detectorResult == null) {
+            if (mQuadViewManager != null) {
+                mQuadViewManager.animateQuadToDefaultPosition();
+            }
+            if (mPointSetView != null) {
+                mPointSetView.setTransformedPointSet(null);
+            }
+            displayDetectionStatus(DetectionStatus.FAIL);
+        } else if (mPointSetView != null && detectorResult instanceof PointsDetectorResult) {
+            List<Point> pointList = ((PointsDetectorResult) detectorResult).getPointSet().getPoints();
+            List<XPoint> xPointList = new ArrayList<>();
+            for (Point p : pointList) {
+                xPointList.add(new XPoint(p.getX(), p.getY()));
+            }
+            mPointSetView.setTransformedPointSet(new PointSetWrapper(xPointList));
+            displayDetectionStatus(detectorResult.getDetectionStatus());
+        } else if (detectorResult instanceof QuadDetectorResult) {
+            QuadDetectorResult quadResult = (QuadDetectorResult) detectorResult;
+            boolean detectionSuccessful = quadResult.getDetectionStatus() == DetectionStatus.SUCCESS;
+            Quadrilateral quad = quadResult.getTransformedDisplayLocation();
+            if (mQuadViewManager != null) {
+                if (quad == null) {
+                    mQuadViewManager.animateQuadToDefaultPosition();
+                } else {
+                    mQuadViewManager.animateQuadToDetectionPosition(
+                            quadToQuadWrapper(quad), detectionSuccessful);
+                }
+            }
+            if (mPointSetView != null) {
+                mPointSetView.setTransformedPointSet(null);
+            }
+            displayDetectionStatus(quadResult.getDetectionStatus());
         }
     }
 
