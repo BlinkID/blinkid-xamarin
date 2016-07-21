@@ -21,13 +21,18 @@ namespace BlinkIDApp.Droid
 		BlinkID blinkId;
 		BlinkIdScanSettings blinkIdScanSettings;
 
+		MResultListener mResultListener;
+
 		public BlinkIDImplementation ()
 		{
 			// Configure BlinkID
 			blinkId = BlinkID.Instance;
 			blinkId.SetContext(Android.App.Application.Context);
 			blinkId.SetLicenseKey(LICENSE_KEY);
-			blinkId.SetResultListener(new MResultListener());
+
+			mResultListener = new MResultListener ();
+
+			blinkId.SetResultListener(mResultListener);
 
 			// Init settings
 			blinkIdScanSettings = new BlinkIdScanSettings (Android.App.Application.Context, BlinkIdScanSettings.DeviceCameraType.CameraBackface);

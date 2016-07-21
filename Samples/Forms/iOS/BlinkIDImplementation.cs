@@ -12,20 +12,22 @@ namespace BlinkIDApp.iOS
 {
 	public class BlinkIDImplementation : IBlinkID
 	{
+		CustomDelegate customDelegate;
 		bool isFrontCamera;
 
 		public BlinkIDImplementation ()
 		{
-			CustomDelegate customDelegate = new CustomDelegate ();
+			customDelegate = new CustomDelegate ();
 
 			BlinkID.Instance ().LicenseKey = "UMGPSARL-P3ZZKNXF-36HDYAI5-A4SLTUAL-J5UJ4ODX-BRIIUIH2-5OZFQ4QQ-HSCSLD77";
 			BlinkID.Instance ().Delegate = customDelegate;
 
-			//BlinkID.Instance ().AddMrtdRecognizer ();
+			BlinkID.Instance ().AddMrtdRecognizer ();
+
 			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddCroIdFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdBackRecognizer ();
-			//BlinkID.Instance ().AddAusIDBackRecognizer ();
+			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
 			//BlinkID.Instance ().AddAusIDBackRecognizer ();
 			//BlinkID.Instance ().AddBarDecoderRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
@@ -39,15 +41,16 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddUsdlRecognizer ();
 			//BlinkID.Instance ().AddZXingRecognizer ();
 
-			//BlinkID.Instance ().AddVinParser ("");
-			//BlinkID.Instance ().AddRegexParser ("", "");
-			//BlinkID.Instance ().AddIbanParser ("");
-			//BlinkID.Instance ().AddEmailParser ("");
-			//BlinkID.Instance ().AddDateParser ("");
-			//BlinkID.Instance ().AddRawParser ("");
-			//BlinkID.Instance ().AddAmountParser ("");
+			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
 
-			BlinkID.Instance ().AddIdCardDetector ();
+			//BlinkID.Instance ().AddRegexParser ("Blink\\d\\d\\d", "REGEX_PARSER_ID");
+			//BlinkID.Instance ().AddIbanParser ("IBAN_PARSER_ID");
+			//BlinkID.Instance ().AddEmailParser ("EMAIL_PARSER_ID");
+			//BlinkID.Instance ().AddDateParser ("DATE_PARSER_ID");
+			//BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
+			//BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
+
+			//BlinkID.Instance ().AddIdCardDetector ();
 
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();
