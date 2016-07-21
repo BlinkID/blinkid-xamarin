@@ -485,7 +485,7 @@
 }
 
 - (void)clearAllParsers {
-    [self.recognizers removeAllObjects];
+    [self.parsers removeAllObjects];
     [self.parserNames removeAllObjects];
 }
 
