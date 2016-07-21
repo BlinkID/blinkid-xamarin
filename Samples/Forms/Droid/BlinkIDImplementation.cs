@@ -41,82 +41,81 @@ namespace BlinkIDApp.Droid
 
 			// Define recognizers
 			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
-				Debug.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
+				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
 			}
 			//if (!blinkIdScanSettings.AddRecognizerUSDL ()) {
-			//	Debug.WriteLine ("RecognizerUSDL is not supported");
+			//	Console.WriteLine ("RecognizerUSDL is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerUKDL ()) {
-			//	Debug.WriteLine ("RecognizerUKDL is not supported");
+			//	Console.WriteLine ("RecognizerUKDL is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerDEDL ()) {
-			//	Debug.WriteLine ("RecognizerDEDL is not supported");
+			//	Console.WriteLine ("RecognizerDEDL is not supported");
 			//}
 			//// NOTE: If you use UKDL and DEDL at the same time than it will fallback to EUDL and it will be same as
 			//if (!blinkIdScanSettings.AddRecognizerEUDL ()) {
-			//	Debug.WriteLine ("RecognizerEUDL is not supported");
+			//	Console.WriteLine ("RecognizerEUDL is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerSingaporeId ()) {
-			//	Debug.WriteLine ("RecognizerSingaporeId is not supported");
+			//	Console.WriteLine ("RecognizerSingaporeId is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerMyKad ()) {
-			//	Debug.WriteLine ("RecognizerMyKad is not supported");
+			//	Console.WriteLine ("RecognizerMyKad is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerCroatianIdFront ()) {
-			//	Debug.WriteLine ("RecognizerCroatianIdFront is not supported");
+			//	Console.WriteLine ("RecognizerCroatianIdFront is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerCroatianIdBack ()) {
-			//	Debug.WriteLine ("RecognizerCroatianIdBack is not supported");
+			//	Console.WriteLine ("RecognizerCroatianIdBack is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerAustrianIdFront ()) {
-			//	Debug.WriteLine ("RecognizerAustrianIdFront is not supported");
+			//	Console.WriteLine ("RecognizerAustrianIdFront is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerAustrianIdBack ()) {
-			//	Debug.WriteLine ("RecognizerAustrianIdBack is not supported");
+			//	Console.WriteLine ("RecognizerAustrianIdBack is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerCzechIdFront ()) {
-			//	Debug.WriteLine ("RecognizerCzechIdFront is not supported");
+			//	Console.WriteLine ("RecognizerCzechIdFront is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerCzechIdBack ()) {
-			//	Debug.WriteLine ("RecognizerCzechIdBack is not supported");
+			//	Console.WriteLine ("RecognizerCzechIdBack is not supported");
 			//}
 
 			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
-			//	Debug.WriteLine ("RecognizerPdf417 is not supported");
+			//	Console.WriteLine ("RecognizerPdf417 is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerBarDecoder ()) {
-			//	Debug.WriteLine ("RecognizerBarDecoder is not supported");
+			//	Console.WriteLine ("RecognizerBarDecoder is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerZxing ()) {
-			//	Debug.WriteLine ("RecognizerZxing is not supported");
+			//	Console.WriteLine ("RecognizerZxing is not supported");
 			//}
 
-			//if (!blinkIdScanSettings.AddParserAmount ("", true)) {
-			//	Debug.WriteLine ("ParserAmount is not supported");
+			//if (!blinkIdScanSettings.AddParserAmount ("AMOUNT_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserAmount is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserDate ("", true)) {
-			//	Debug.WriteLine ("ParserDate is not supported");
+			//if (!blinkIdScanSettings.AddParserDate ("DATE_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserDate is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserEmail ("", true)) {
-			//	Debug.WriteLine ("ParserEmail is not supported");
+			//if (!blinkIdScanSettings.AddParserEmail ("EMAIL_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserEmail is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserIBAN ("", true)) {
-			//	Debug.WriteLine ("ParserIBAN is not supported");
+			//if (!blinkIdScanSettings.AddParserIBAN ("IBAN_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserIBAN is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserRaw ("", true)) {
-			//	Debug.WriteLine ("ParserRaw is not supported");
+			//if (!blinkIdScanSettings.AddParserRaw ("RAW_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserRaw is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserRegex ("", "", true)) {
-			//	Debug.WriteLine ("ParserRegex is not supported");
+			//if (!blinkIdScanSettings.AddParserRegex ("REGEX_PARSER_ID", "Blink\\d\\d\\d", true)) {
+			//	Console.WriteLine ("ParserRegex is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserVIN ("", true)) {
-			//	Debug.WriteLine ("ParserVIN is not supported");
+			//if (!blinkIdScanSettings.AddParserVIN ("VIN_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserVIN is not supported");
 			//}
 
 			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {
-			//	Debug.WriteLine ("DetectorIdCard is not supported");
+			//	Console.WriteLine ("DetectorIdCard is not supported");
 			//}
-
 		}
 
 		private class MResultListener : BlinkIdResultListener 

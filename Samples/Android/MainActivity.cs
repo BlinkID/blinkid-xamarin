@@ -62,9 +62,9 @@ namespace Android
 			blinkIdScanSettings.SetAllowMultipleScanResultsOnSingleImage (false);
 
 			// Define recognizers
-			//if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
-			//	Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
-			//}
+			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
+				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
+			}
 			//if (!blinkIdScanSettings.AddRecognizerUSDL ()) {
 			//	Console.WriteLine ("RecognizerUSDL is not supported");
 			//}
@@ -113,31 +113,31 @@ namespace Android
 			//	Console.WriteLine ("RecognizerZxing is not supported");
 			//}
 
-			//if (!blinkIdScanSettings.AddParserAmount ("", true)) {
+			//if (!blinkIdScanSettings.AddParserAmount ("AMOUNT_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserAmount is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserDate ("", true)) {
+			//if (!blinkIdScanSettings.AddParserDate ("DATE_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserDate is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserEmail ("", true)) {
+			//if (!blinkIdScanSettings.AddParserEmail ("EMAIL_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserEmail is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserIBAN ("IBAN", true)) {
+			//if (!blinkIdScanSettings.AddParserIBAN ("IBAN_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserIBAN is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserRaw ("", true)) {
+			//if (!blinkIdScanSettings.AddParserRaw ("RAW_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserRaw is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserRegex ("", "", true)) {
+			//if (!blinkIdScanSettings.AddParserRegex ("REGEX_PARSER_ID", "Blink\\d\\d\\d", true)) {
 			//	Console.WriteLine ("ParserRegex is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddParserVIN ("", true)) {
+			//if (!blinkIdScanSettings.AddParserVIN ("VIN_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserVIN is not supported");
 			//}
 
-			if (!blinkIdScanSettings.AddDetectorIdCard ()) {
-				Console.WriteLine ("DetectorIdCard is not supported");
-			}
+			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {
+			//	Console.WriteLine ("DetectorIdCard is not supported");
+			//}
 		}
 	
 
