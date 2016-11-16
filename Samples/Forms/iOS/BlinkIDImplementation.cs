@@ -19,7 +19,7 @@ namespace BlinkIDApp.iOS
 		{
 			customDelegate = new CustomDelegate ();
 
-			BlinkID.Instance ().LicenseKey = "UMGPSARL-P3ZZKNXF-36HDYAI5-A4SLTUAL-J5UJ4ODX-BRIIUIH2-5OZFQ4QQ-HSCSLD77";
+			BlinkID.Instance ().LicenseKey = "5MYXRDEJ-O2CLWMIU-PRCSYAV4-ES45AC2P-NCPDQ5YM-KCFCB6XL-WJMPE5IO-F63JKM4H";
 			BlinkID.Instance ().Delegate = customDelegate;
 
 			BlinkID.Instance ().AddMrtdRecognizer ();
@@ -55,6 +55,8 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();
 			//BlinkID.Instance ().ClearAllRecognizers ();
+
+
 
 			isFrontCamera = false;
 		}

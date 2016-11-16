@@ -16,7 +16,7 @@ namespace BlinkIDApp.Droid
 {
 	public class BlinkIDImplementation : IBlinkID
 	{
-		public const string LICENSE_KEY = "DLTBUL2B-FHCPH6CP-ETCJSTRC-6P4A6DF5-5NZZTNX5-EV7HWRXD-72M3N7JE-YHNITZGA";
+		public const string LICENSE_KEY = "NOOGNXGH-27RBJQZX-QRB44LL2-MRD2Y2R5-3WFDYUMW-F3LAQILF-2HJBFMOZ-MPZY7R66";
 
 		BlinkID blinkId;
 		BlinkIdScanSettings blinkIdScanSettings;
@@ -113,9 +113,9 @@ namespace BlinkIDApp.Droid
 			//	Console.WriteLine ("ParserVIN is not supported");
 			//}
 
-			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {
-			//	Console.WriteLine ("DetectorIdCard is not supported");
-			//}
+			if (!blinkIdScanSettings.AddDetectorIdCard ()) {
+				Console.WriteLine ("DetectorIdCard is not supported");
+			}
 		}
 
 		private class MResultListener : BlinkIdResultListener 
