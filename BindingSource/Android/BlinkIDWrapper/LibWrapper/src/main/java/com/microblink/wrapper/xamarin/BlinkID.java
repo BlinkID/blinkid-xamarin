@@ -21,9 +21,18 @@ import com.microblink.recognizers.blinkid.croatia.front.CroatianIDFrontSideRecog
 import com.microblink.recognizers.blinkid.czechia.back.CzechIDBackSideRecognitionResult;
 import com.microblink.recognizers.blinkid.czechia.front.CzechIDFrontSideRecognitionResult;
 import com.microblink.recognizers.blinkid.eudl.EUDLRecognitionResult;
+import com.microblink.recognizers.blinkid.germany.front.GermanIDFrontSideRecognitionResult;
+import com.microblink.recognizers.blinkid.germany.mrz.GermanIDMRZSideRecognitionResult;
+import com.microblink.recognizers.blinkid.malaysia.IKadRecognitionResult;
 import com.microblink.recognizers.blinkid.malaysia.MyKadRecognitionResult;
 import com.microblink.recognizers.blinkid.mrtd.MRTDRecognitionResult;
+import com.microblink.recognizers.blinkid.serbia.back.SerbianIDBackSideRecognitionResult;
+import com.microblink.recognizers.blinkid.serbia.front.SerbianIDFrontSideRecognitionResult;
 import com.microblink.recognizers.blinkid.singapore.SingaporeIDRecognitionResult;
+import com.microblink.recognizers.blinkid.slovakia.back.SlovakIDBackSideRecognitionResult;
+import com.microblink.recognizers.blinkid.slovakia.front.SlovakIDFrontSideRecognitionResult;
+import com.microblink.recognizers.blinkid.slovenia.back.SlovenianIDBackSideRecognitionResult;
+import com.microblink.recognizers.blinkid.slovenia.front.SlovenianIDFrontSideRecognitionResult;
 import com.microblink.recognizers.blinkocr.BlinkOCRRecognitionResult;
 import com.microblink.recognizers.detector.DetectorRecognitionResult;
 import com.microblink.recognizers.settings.RecognitionSettings;
@@ -58,16 +67,26 @@ public class BlinkID {
     public static final String MRTD_RESULT_TYPE = "MRTD";
     public static final String EUDL_RESULT_TYPE = "EUDL";
     public static final String MYKAD_RESULT_TYPE = "MyKad";
-    public static final String AUS_ID_FRONT_RESULT_TYPE = "AusIdFront";
-    public static final String AUS_ID_BACK_RESULT_TYPE = "AusIdBack";
-    public static final String CRO_ID_FRONT_RESULT_TYPE = "CroIdFront";
-    public static final String CRO_ID_BACK_RESULT_TYPE = "CroIdBack";
-    public static final String CZ_ID_FRONT_RESULT_TYPE = "CzIdFront";
-    public static final String CZ_ID_BACK_RESULT_TYPE = "CzIdBack";
+    public static final String IKAD_RESULT_TYPE = "iKad";
+    public static final String AUT_ID_FRONT_RESULT_TYPE = "AustrianIdFront";
+    public static final String AUT_ID_BACK_RESULT_TYPE = "AustrianIdBack";
+    public static final String CRO_ID_FRONT_RESULT_TYPE = "CroatianIdFront";
+    public static final String CRO_ID_BACK_RESULT_TYPE = "CroatianIdBack";
+    public static final String CZ_ID_FRONT_RESULT_TYPE = "CzechIdFront";
+    public static final String CZ_ID_BACK_RESULT_TYPE = "CzechIdBack";
+    public static final String DE_ID_FRONT_RESULT_TYPE = "GermanIdFront";
+    public static final String DE_ID_MRZ_SIDE_RESULT_TYPE = "GermanIdMrzSide";
+    public static final String SRB_ID_FRONT_RESULT_TYPE = "SerbianIdFront";
+    public static final String SRB_ID_BACK_RESULT_TYPE = "SerbianIdBack";
+    public static final String SVK_ID_FRONT_RESULT_TYPE = "SlovakIdFront";
+    public static final String SVK_ID_BACK_RESULT_TYPE = "SlovakIdBack";
+    public static final String SVN_ID_FRONT_RESULT_TYPE = "SlovenianIdFront";
+    public static final String SVN_ID_BACK_RESULT_TYPE = "SlovenianIdBack";
     public static final String SINGAPORE_ID_FRONT_RESULT_TYPE = "SingaporeIdFront";
     public static final String SINGAPORE_ID_BACK_RESULT_TYPE = "SingaporeIdBack";
     public static final String OCR_RESULT_TYPE = "OcrResult";
     public static final String ID_CARD_DETECTOR_RESULT_TYPE = "IdCardDetector";
+    public static final String UNKNOWN_RESULT_TYPE = "Unknown";
 
     // result data keys
     public static final String RESULT_TYPE_KEY = "ResultType";
@@ -85,16 +104,24 @@ public class BlinkID {
     public static final String PLACE_OF_BIRTH_KEY = "PlaceOfBirth";
     public static final String DATE_OF_BIRTH_KEY= "DateOfBirth";
     public static final String DATE_OF_EXPIRY_KEY = "DateOfExpiry";
+    public static final String DATE_OF_BIRTH_RAW_KEY= "RawDateOfBirth";
+    public static final String DATE_OF_EXPIRY_RAW_KEY = "RawDateOfExpiry";
     public static final String DATE_OF_ISSUE_KEY = "DateOfIssue";
     public static final String PERSONAL_NUMBER_KEY = "PersonalNumber";
     public static final String DOCUMENT_NUMBER_KEY = "DocumentNumber";
     public static final String ADDRESS_KEY = "Address";
     public static final String ISSUING_AUTHORITY_KEY = "IssuingAuthority";
+    public static final String AUTHORITY_KEY = "Authority";
     public static final String BLOOD_GROUP_KEY = "BloodGroup";
     public static final String RACE_KEY = "Race";
     public static final String EYE_COLOR_KEY = "EyeColor";
     public static final String HEIGHT_KEY = "Height";
     public static final String PRINCIPAL_RESIDENCE_AT_ISSUANCE_KEY = "PrincipalResidenceAtIssuance";
+    public static final String SURNAME_AT_BIRTH_KEY = "SurnameAtBirth";
+    public static final String SPECIAL_REMARKS_KEY = "SpecialRemarks";
+    public static final String EMPLOYER_KEY = "Employer";
+    public static final String PASSPORT_NUMBER_KEY = "PassportNumber";
+    public static final String SECTOR_KEY = "Sector";
 
     public static final String PRIMARY_ID_KEY = "PrimaryID";
     public static final String SECONDARY_ID_KEY = "SecondaryID";
@@ -270,9 +297,9 @@ public class BlinkID {
             List<Map<String, String>> resultList = new ArrayList<>();
             for (BaseRecognitionResult result : resultsArr) {
                 if (result instanceof AustrianIDFrontSideRecognitionResult) {
-                    resultList.add(buildAusIdFrontResult((AustrianIDFrontSideRecognitionResult) result));
+                    resultList.add(buildAustrianIdFrontResult((AustrianIDFrontSideRecognitionResult) result));
                 } else if (result instanceof AustrianIDBackSideRecognitionResult) {
-                    resultList.add(buildAusIdBackResult((AustrianIDBackSideRecognitionResult) result));
+                    resultList.add(buildAustrianIdBackResult((AustrianIDBackSideRecognitionResult) result));
                 } else if (result instanceof CzechIDFrontSideRecognitionResult) {
                     resultList.add(buildCzIdFrontResult((CzechIDFrontSideRecognitionResult) result));
                 } else if (result instanceof CzechIDBackSideRecognitionResult) {
@@ -281,6 +308,22 @@ public class BlinkID {
                     resultList.add(buildCroIdFrontResult((CroatianIDFrontSideRecognitionResult) result));
                 } else if (result instanceof CroatianIDBackSideRecognitionResult) {
                     resultList.add(buildCroIdBackResult((CroatianIDBackSideRecognitionResult) result));
+                } else if (result instanceof GermanIDMRZSideRecognitionResult) {
+                    resultList.add(buildGermanIdMRZSideResult((GermanIDMRZSideRecognitionResult) result));
+                } else if (result instanceof GermanIDFrontSideRecognitionResult) {
+                    resultList.add(buildGermanIdFrontResult((GermanIDFrontSideRecognitionResult) result));
+                } else if (result instanceof SerbianIDBackSideRecognitionResult) {
+                    resultList.add(buildSerbianIdBackResult((SerbianIDBackSideRecognitionResult) result));
+                } else if (result instanceof SerbianIDFrontSideRecognitionResult) {
+                    resultList.add(buildSerbianIdFrontResult((SerbianIDFrontSideRecognitionResult) result));
+                } else if (result instanceof SlovakIDBackSideRecognitionResult) {
+                    resultList.add(buildSlovakIdBackResult((SlovakIDBackSideRecognitionResult) result));
+                } else if (result instanceof SlovakIDFrontSideRecognitionResult) {
+                    resultList.add(buildSlovakIdFrontResult((SlovakIDFrontSideRecognitionResult) result));
+                } else if (result instanceof SlovenianIDBackSideRecognitionResult) {
+                    resultList.add(buildSlovenianIdBackResult((SlovenianIDBackSideRecognitionResult) result));
+                } else if (result instanceof SlovenianIDFrontSideRecognitionResult) {
+                    resultList.add(buildSlovenianIdFrontResult((SlovenianIDFrontSideRecognitionResult) result));
                 } else if (result instanceof SingaporeIDRecognitionResult) {
                     resultList.add(buildSingaporeIdResult((SingaporeIDRecognitionResult) result));
                 } else if (result instanceof USDLScanResult) {
@@ -289,6 +332,8 @@ public class BlinkID {
                     resultList.add(buildEUDLResult((EUDLRecognitionResult) result));
                 } else if (result instanceof MyKadRecognitionResult) {
                     resultList.add(buildMyKadResult((MyKadRecognitionResult) result));
+                } else if (result instanceof IKadRecognitionResult) {
+                    resultList.add(buildIKadResult((IKadRecognitionResult) result));
                 } else if (result instanceof Pdf417ScanResult) {
                     resultList.add(buildPdf417Result((Pdf417ScanResult) result));
                 } else if (result instanceof BarDecoderScanResult) {
@@ -324,15 +369,19 @@ public class BlinkID {
         String barcodeData = res.getStringData();
         // getRawData getter will return the raw data information object of barcode contents
         BarcodeDetailedData rawData = res.getRawData();
-        // BarcodeDetailedData contains information about barcode's binary layout, if you
-        // are only interested in raw bytes, you can obtain them with getAllData getter
-        byte[] rawDataBuffer = rawData.getAllData();
 
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put(RESULT_TYPE_KEY, PDF417_RESULT_TYPE);
         resultMap.put(BARCODE_TYPE_KEY, "PDF417");
         resultMap.put(BARCODE_DATA_KEY, barcodeData);
-        resultMap.put(BARCODE_RAW_DATA_KEY, byteArrayToHex(rawDataBuffer));
+
+        // BarcodeDetailedData contains information about barcode's binary layout, if you
+        // are only interested in raw bytes, you can obtain them with getAllData getter
+        if (rawData != null) {
+            byte[] rawDataBuffer = rawData.getAllData();
+            resultMap.put(BARCODE_RAW_DATA_KEY, byteArrayToHex(rawDataBuffer));
+        }
+
         return resultMap;
     }
 
@@ -347,7 +396,8 @@ public class BlinkID {
 
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put(RESULT_TYPE_KEY, BARDECODER_RESULT_TYPE);
-        resultMap.put(BARCODE_TYPE_KEY, type.name());
+        String typeName = type != null ? type.name() : UNKNOWN_RESULT_TYPE;
+        resultMap.put(BARCODE_TYPE_KEY, typeName);
         resultMap.put(BARCODE_DATA_KEY, barcodeData);
         return resultMap;
     }
@@ -364,7 +414,8 @@ public class BlinkID {
 
         Map<String, String> resultMap = new HashMap<>();
         resultMap.put(RESULT_TYPE_KEY, ZXING_RESULT_TYPE);
-        resultMap.put(BARCODE_TYPE_KEY, type.name());
+        String typeName = type != null ? type.name() : UNKNOWN_RESULT_TYPE;
+        resultMap.put(BARCODE_TYPE_KEY, typeName);
         resultMap.put(BARCODE_DATA_KEY, barcodeData);
         return resultMap;
     }
@@ -384,6 +435,32 @@ public class BlinkID {
     }
 
     /**
+     * Builds result map for Malaysian iKad scan result.
+     */
+    private Map<String, String> buildIKadResult(IKadRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, IKAD_RESULT_TYPE);
+
+        resultMap.put(FULL_NAME_KEY, result.getFullName());
+        resultMap.put(ADDRESS_KEY, result.getAddress());
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+        resultMap.put(EMPLOYER_KEY, result.getEmployer());
+        Date dateOfExpiry = result.getExpiryDate();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+        }
+        resultMap.put(NATIONALITY_KEY, result.getNationality());
+        resultMap.put(PASSPORT_NUMBER_KEY, result.getPassportNumber());
+        resultMap.put(SECTOR_KEY, result.getSector());
+        resultMap.put(SEX_KEY, result.getSex());
+
+        return resultMap;
+    }
+
+    /**
      * Builds result map for EUDL scan result.
      */
     private Map<String, String> buildEUDLResult(EUDLRecognitionResult res) {
@@ -400,12 +477,14 @@ public class BlinkID {
         resultMap.put(RESULT_TYPE_KEY, MRTD_RESULT_TYPE);
         resultMap.put(PRIMARY_ID_KEY, res.getPrimaryId());
         resultMap.put(SECONDARY_ID_KEY, res.getSecondaryId());
-        resultMap.put(DATE_OF_BIRTH_KEY, res.getRawDateOfBirth());
+        resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(res.getDateOfBirth()));
+        resultMap.put(DATE_OF_BIRTH_RAW_KEY, res.getRawDateOfBirth());
         resultMap.put(SEX_KEY, res.getSex());
         resultMap.put(NATIONALITY_KEY, res.getNationality());
         resultMap.put(DOCUMENT_CODE_KEY, res.getDocumentCode());
         resultMap.put(ISSUER_KEY, res.getIssuer());
-        resultMap.put(DATE_OF_EXPIRY_KEY, res.getRawDateOfExpiry());
+        resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(res.getDateOfExpiry()));
+        resultMap.put(DATE_OF_EXPIRY_RAW_KEY, res.getRawDateOfExpiry());
         resultMap.put(OPT2_KEY, res.getOpt2());
         resultMap.put(OPT1_KEY, res.getOpt1());
         resultMap.put(DOCUMENT_NUMBER_KEY, res.getDocumentNumber());
@@ -417,6 +496,7 @@ public class BlinkID {
     private Map<String, String> buildCzIdBackResult(CzechIDBackSideRecognitionResult result) {
         Map<String, String> resultMap = buildMRTDResult(result);
         resultMap.put(RESULT_TYPE_KEY, CZ_ID_BACK_RESULT_TYPE);
+
         resultMap.put(ADDRESS_KEY, result.getAddress());
         resultMap.put(ISSUING_AUTHORITY_KEY, result.getAuthority());
         resultMap.put(PERSONAL_NUMBER_KEY, result.getPersonalNumber());
@@ -452,9 +532,9 @@ public class BlinkID {
         return resultMap;
     }
 
-    private Map<String, String> buildAusIdBackResult(AustrianIDBackSideRecognitionResult result) {
+    private Map<String, String> buildAustrianIdBackResult(AustrianIDBackSideRecognitionResult result) {
         Map<String, String> resultMap = buildMRTDResult(result);
-        resultMap.put(RESULT_TYPE_KEY, AUS_ID_BACK_RESULT_TYPE);
+        resultMap.put(RESULT_TYPE_KEY, AUT_ID_BACK_RESULT_TYPE);
 
         resultMap.put(PLACE_OF_BIRTH_KEY, result.getPlaceOfBirth());
         resultMap.put(EYE_COLOR_KEY, result.getEyeColour());
@@ -471,10 +551,10 @@ public class BlinkID {
         return resultMap;
     }
 
-    private Map<String, String> buildAusIdFrontResult(AustrianIDFrontSideRecognitionResult result) {
+    private Map<String, String> buildAustrianIdFrontResult(AustrianIDFrontSideRecognitionResult result) {
         Map<String, String> resultMap = new HashMap<>();
 
-        resultMap.put(RESULT_TYPE_KEY, AUS_ID_FRONT_RESULT_TYPE);
+        resultMap.put(RESULT_TYPE_KEY, AUT_ID_FRONT_RESULT_TYPE);
 
         resultMap.put(FIRST_NAME_KEY, result.getFirstName());
         resultMap.put(LAST_NAME_KEY, result.getLastName());
@@ -520,6 +600,160 @@ public class BlinkID {
         if (dateOfIssue != null) {
             resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
 
+        }
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildGermanIdFrontResult(GermanIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, DE_ID_FRONT_RESULT_TYPE);
+
+        resultMap.put(FIRST_NAME_KEY, result.getFirstName());
+        resultMap.put(LAST_NAME_KEY, result.getLastName());
+        resultMap.put(NATIONALITY_KEY, result.getNationality());
+        resultMap.put(PLACE_OF_BIRTH_KEY, result.getPlaceOfBirth());
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+        resultMap.put(DOCUMENT_NUMBER_KEY, result.getIdentityCardNumber());
+        Date dateOfExpiry = result.getDateOfExpiry();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+
+        }
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildGermanIdMRZSideResult(GermanIDMRZSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, DE_ID_MRZ_SIDE_RESULT_TYPE);
+
+        String address = result.getAddress();
+        if (address != null && !address.isEmpty()) {
+            resultMap.put(ADDRESS_KEY, address);
+        }
+
+        String authority = result.getAuthority();
+        if (authority != null && !authority.isEmpty()) {
+            resultMap.put(AUTHORITY_KEY, authority);
+        }
+
+        Date dateOfIssue = result.getDateOfIssue();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+        }
+
+        String eyeColor = result.getEyeColour();
+        if (eyeColor != null && !eyeColor.isEmpty()) {
+            resultMap.put(EYE_COLOR_KEY, eyeColor);
+        }
+
+        int height = result.getHeight();
+        if (height != 0) {
+            resultMap.put(HEIGHT_KEY, Integer.toString(height) + " cm");
+        }
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildSerbianIdFrontResult(SerbianIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, SRB_ID_FRONT_RESULT_TYPE);
+
+        Date dateOfIssue = result.getIssuingDate();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+
+        }
+        Date dateOfExpiry = result.getValidUntil();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+
+        }
+        resultMap.put(DOCUMENT_NUMBER_KEY, result.getDocumentNumber());
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildSerbianIdBackResult(SerbianIDBackSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, SRB_ID_BACK_RESULT_TYPE);
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildSlovakIdFrontResult(SlovakIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, SVK_ID_FRONT_RESULT_TYPE);
+
+        resultMap.put(FIRST_NAME_KEY, result.getFirstName());
+        resultMap.put(LAST_NAME_KEY, result.getLastName());
+        resultMap.put(NATIONALITY_KEY, result.getNationality());
+        resultMap.put(SEX_KEY, result.getSex());
+        resultMap.put(DOCUMENT_NUMBER_KEY, result.getIdentityCardNumber());
+        resultMap.put(ISSUING_AUTHORITY_KEY, result.getIssuingAuthority());
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+        }
+        resultMap.put(PERSONAL_NUMBER_KEY, result.getPersonalNumber());
+        Date dateOfExpiry = result.getDateOfExpiry();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+        }
+        Date dateOfIssue = result.getDateOfIssue();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
+        }
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildSlovakIdBackResult(SlovakIDBackSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, SVK_ID_BACK_RESULT_TYPE);
+
+        resultMap.put(ADDRESS_KEY, result.getAddress());
+        resultMap.put(SURNAME_AT_BIRTH_KEY, result.getSurnameAtBirth());
+        resultMap.put(PLACE_OF_BIRTH_KEY, result.getPlaceOfBirth());
+        resultMap.put(SPECIAL_REMARKS_KEY, result.getSpecialRemarks());
+
+        return resultMap;
+    }
+
+    private Map<String, String> buildSlovenianIdFrontResult(SlovenianIDFrontSideRecognitionResult result) {
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put(RESULT_TYPE_KEY, SVN_ID_FRONT_RESULT_TYPE);
+
+        resultMap.put(FIRST_NAME_KEY, result.getFirstName());
+        resultMap.put(LAST_NAME_KEY, result.getLastName());
+        resultMap.put(SEX_KEY, result.getSex());
+        resultMap.put(NATIONALITY_KEY, result.getNationality());
+        Date dateOfBirth = result.getDateOfBirth();
+        if (dateOfBirth != null) {
+            resultMap.put(DATE_OF_BIRTH_KEY, mDateFormat.format(dateOfBirth));
+
+        }
+        Date dateOfExpiry = result.getDateOfExpiry();
+        if (dateOfExpiry != null) {
+            resultMap.put(DATE_OF_EXPIRY_KEY, mDateFormat.format(dateOfExpiry));
+        }
+
+        return resultMap;
+    }
+
+    private Map<String,String> buildSlovenianIdBackResult(SlovenianIDBackSideRecognitionResult result) {
+        Map<String, String> resultMap = buildMRTDResult(result);
+        resultMap.put(RESULT_TYPE_KEY, SVN_ID_BACK_RESULT_TYPE);
+
+        resultMap.put(ADDRESS_KEY, result.getAddress());
+        resultMap.put(AUTHORITY_KEY, result.getAuthority());
+        Date dateOfIssue = result.getDateOfIssue();
+        if (dateOfIssue != null) {
+            resultMap.put(DATE_OF_ISSUE_KEY, mDateFormat.format(dateOfIssue));
         }
 
         return resultMap;
