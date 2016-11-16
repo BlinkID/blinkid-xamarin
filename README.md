@@ -6,7 +6,17 @@
 
 This is BlinkID Xamarin implementation based on native [Objective-C](https://github.com/BlinkID/blinkid-ios) and [Java](https://github.com/BlinkID/blinkid-android) BlinkID SDKs.
 
-**BlinkID SDK** is not available as **Xamarin Component** because it is much simpler to reuse C# Binding Library projects from this repository with resources included inside other than manual import of Android and iOS Resources from **Xamarin Component's Sample applications**. 
+NOTE: **BlinkID SDK** is not available as **Xamarin Component** because it is much simpler to reuse C# Binding Library projects from this repository with resources included inside other than manual import of Android and iOS Resources from **Xamarin Component's Sample applications**. 
+
+## Video tutorial
+Step by step guide how to start BlinkID Xamarin. Forms Sample application. A tutorial flows from git clone to successfully deployed demo application on Android and iOS device with real-time screen mirroring. Application demo contains simple use of MRTD recognizer with Croatian ID card.
+<p align="center" >
+  <a href="https://vimeo.com/191807117" target="_blank">
+    <img src="https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/1633ffcf080875f4a0ebe7abc8c6501373ba7281/Design/blinkid-xamarin-v1.0-tutorial.gif" alt="Video tutorial" />
+  </a>
+  <a href="https://vimeo.com/191807117" target="_blank">Watch on Vimeo</a>
+  <a href="https://youtu.be/Yg-jwqCo4mw" target="_blank">Watch on YouTube</a>
+</p>
 
 ## Directory and files summary
 
