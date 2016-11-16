@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile('com.microblink:blinkid:2.8.0@aar') {
+    compile('com.microblink:blinkid:3.2.0@aar') {
         transitive = true
     }
 }

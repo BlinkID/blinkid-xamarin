@@ -400,12 +400,12 @@ public class BlinkID {
         resultMap.put(RESULT_TYPE_KEY, MRTD_RESULT_TYPE);
         resultMap.put(PRIMARY_ID_KEY, res.getPrimaryId());
         resultMap.put(SECONDARY_ID_KEY, res.getSecondaryId());
-        resultMap.put(DATE_OF_BIRTH_KEY, res.getDateOfBirth());
+        resultMap.put(DATE_OF_BIRTH_KEY, res.getRawDateOfBirth());
         resultMap.put(SEX_KEY, res.getSex());
         resultMap.put(NATIONALITY_KEY, res.getNationality());
         resultMap.put(DOCUMENT_CODE_KEY, res.getDocumentCode());
         resultMap.put(ISSUER_KEY, res.getIssuer());
-        resultMap.put(DATE_OF_EXPIRY_KEY, res.getDateOfExpiry());
+        resultMap.put(DATE_OF_EXPIRY_KEY, res.getRawDateOfExpiry());
         resultMap.put(OPT2_KEY, res.getOpt2());
         resultMap.put(OPT1_KEY, res.getOpt1());
         resultMap.put(DOCUMENT_NUMBER_KEY, res.getDocumentNumber());

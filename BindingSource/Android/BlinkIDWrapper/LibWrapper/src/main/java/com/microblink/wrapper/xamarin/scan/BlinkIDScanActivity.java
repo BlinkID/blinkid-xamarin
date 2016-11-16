@@ -568,7 +568,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
             }
             displayDetectionStatus(DetectionStatus.FAIL);
         } else if (mPointSetView != null && detectorResult instanceof PointsDetectorResult) {
-            List<Point> pointList = ((PointsDetectorResult) detectorResult).getPointSet().getPoints();
+            List<Point> pointList = ((PointsDetectorResult) detectorResult).getTransformedPointSet().getPoints();
             List<XPoint> xPointList = new ArrayList<>();
             for (Point p : pointList) {
                 xPointList.add(new XPoint(p.getX(), p.getY()));
