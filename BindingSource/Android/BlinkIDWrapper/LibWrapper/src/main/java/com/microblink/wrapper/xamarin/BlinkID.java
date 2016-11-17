@@ -214,7 +214,8 @@ public class BlinkID {
             throw new IllegalScanSettingsException("At least one recognizer/parser/detector must be active.");
         }
         mParserIdentifiers = scanSettings.getParserIdentifiers();
-        Intent scanIntent = buildScanIntent(recognitionSettings, cameraType);
+
+        Intent scanIntent = buildScanIntent(recognitionSettings, scanSettings.getAcceptedImageNames(), cameraType);
         Log.i(this, "Starting scan intent");
         mContext.startActivity(scanIntent);
     }
@@ -222,7 +223,7 @@ public class BlinkID {
     /**
      * This method builds scan intent for BlinkID.
      */
-    private Intent buildScanIntent(RecognitionSettings settings, CameraType cameraType) {
+    private Intent buildScanIntent(RecognitionSettings settings, String[] acceptedImageNames, CameraType cameraType) {
 
         // first create intent for provided ScanCard activity
         final Intent intent = new Intent(mContext, BlinkIDScanActivity.class);
@@ -240,6 +241,7 @@ public class BlinkID {
         intent.putExtra(BlinkIDScanActivity.EXTRAS_LICENSE_KEY, mLicenseKey);
 
         intent.putExtra(BlinkIDScanActivity.EXTRAS_CAMERA_TYPE, (Parcelable) cameraType);
+        intent.putExtra(BlinkIDScanActivity.EXTRAS_ACCEPTED_IMAGE_NAMES_ARRAY, acceptedImageNames);
         intent.putExtra(BlinkIDScanActivity.EXTRAS_RECOGNITION_SETTINGS, settings);
 
         return intent;
@@ -295,45 +297,64 @@ public class BlinkID {
         BaseRecognitionResult[] resultsArr = results.getRecognitionResults();
         if (resultsArr != null && resultsArr.length > 0) {
             List<Map<String, String>> resultList = new ArrayList<>();
+            boolean shouldReturnImage = false;
             for (BaseRecognitionResult result : resultsArr) {
                 if (result instanceof AustrianIDFrontSideRecognitionResult) {
                     resultList.add(buildAustrianIdFrontResult((AustrianIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof AustrianIDBackSideRecognitionResult) {
                     resultList.add(buildAustrianIdBackResult((AustrianIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof CzechIDFrontSideRecognitionResult) {
                     resultList.add(buildCzIdFrontResult((CzechIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof CzechIDBackSideRecognitionResult) {
                     resultList.add(buildCzIdBackResult((CzechIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof CroatianIDFrontSideRecognitionResult) {
                     resultList.add(buildCroIdFrontResult((CroatianIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof CroatianIDBackSideRecognitionResult) {
                     resultList.add(buildCroIdBackResult((CroatianIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof GermanIDMRZSideRecognitionResult) {
                     resultList.add(buildGermanIdMRZSideResult((GermanIDMRZSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof GermanIDFrontSideRecognitionResult) {
                     resultList.add(buildGermanIdFrontResult((GermanIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SerbianIDBackSideRecognitionResult) {
                     resultList.add(buildSerbianIdBackResult((SerbianIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SerbianIDFrontSideRecognitionResult) {
                     resultList.add(buildSerbianIdFrontResult((SerbianIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SlovakIDBackSideRecognitionResult) {
                     resultList.add(buildSlovakIdBackResult((SlovakIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SlovakIDFrontSideRecognitionResult) {
                     resultList.add(buildSlovakIdFrontResult((SlovakIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SlovenianIDBackSideRecognitionResult) {
                     resultList.add(buildSlovenianIdBackResult((SlovenianIDBackSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SlovenianIDFrontSideRecognitionResult) {
                     resultList.add(buildSlovenianIdFrontResult((SlovenianIDFrontSideRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof SingaporeIDRecognitionResult) {
                     resultList.add(buildSingaporeIdResult((SingaporeIDRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof USDLScanResult) {
                     resultList.add(buildUSDLResult((USDLScanResult) result));
                 } else if (result instanceof EUDLRecognitionResult) {
                     resultList.add(buildEUDLResult((EUDLRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof MyKadRecognitionResult) {
                     resultList.add(buildMyKadResult((MyKadRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof IKadRecognitionResult) {
                     resultList.add(buildIKadResult((IKadRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof Pdf417ScanResult) {
                     resultList.add(buildPdf417Result((Pdf417ScanResult) result));
                 } else if (result instanceof BarDecoderScanResult) {
@@ -344,14 +365,16 @@ public class BlinkID {
                     resultList.add(buildOcrResult((BlinkOCRRecognitionResult) result));
                 } else if (result instanceof MRTDRecognitionResult) {
                     resultList.add(buildMRTDResult((MRTDRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else if (result instanceof DetectorRecognitionResult) {
                     resultList.add(buildIdCardDetectorResult((DetectorRecognitionResult) result));
+                    shouldReturnImage = true;
                 } else {
                     throw new RuntimeException("Unknown result type: "
                             + result.getClass().toString() + " in result array.");
                 }
             }
-            if (documentImage != null) {
+            if (documentImage != null && shouldReturnImage) {
                 mResultListener.onDocumentImageAvailable(documentImage);
             }
             mResultListener.onResultsAvailable(resultList);

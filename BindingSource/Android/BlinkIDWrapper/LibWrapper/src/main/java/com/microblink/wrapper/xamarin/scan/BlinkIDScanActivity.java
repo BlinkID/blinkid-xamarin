@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.StringRes;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -54,7 +55,9 @@ import com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper;
 import com.microblink.wrapper.xamarin.scan.quadview.XPoint;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -64,10 +67,12 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
     public static final String EXTRAS_LICENSE_KEY = "EXTRAS_LICENSE_KEY";
     public static final String EXTRAS_RECOGNITION_SETTINGS = "EXTRAS_RECOGNITION_SETTINGS";
+    public static final String EXTRAS_ACCEPTED_IMAGE_NAMES_ARRAY = "EXTRAS_ACCEPTED_IMAGE_NAMES_ARRAY";
     public static final String EXTRAS_CAMERA_TYPE = "EXTRAS_CAMERA_TYPE";
 
-    /** Name of the dewarped ID card image from document detector that will be accepted */
-    private static final String IMAGE_NAME = "DocumentDetector/IDCard";
+
+    /** Names of the dewarped images that will be accepted */
+    private Set<String> mAcceptedImageNames = new HashSet<>();
 
     private Handler mHandler = new Handler();
 
@@ -125,9 +130,10 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // obtain reference to RecognizerView
         mRecognizerView = (RecognizerView) findViewById(R.id.recognizerView);
 
+        mAcceptedImageNames.clear();
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-
         if (extras != null) {
             String licenseKey = extras.getString(EXTRAS_LICENSE_KEY);
             try {
@@ -140,6 +146,11 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
 
             CameraType cameraType = (CameraType) extras.getParcelable(EXTRAS_CAMERA_TYPE);
             mRecognizerView.setCameraType(cameraType);
+
+            String[] acceptedImageNamesArr = extras.getStringArray(EXTRAS_ACCEPTED_IMAGE_NAMES_ARRAY);
+            for (String imageName: acceptedImageNamesArr) {
+                mAcceptedImageNames.add(imageName);
+            }
 
             RecognitionSettings recognitionSettings = extras.getParcelable(EXTRAS_RECOGNITION_SETTINGS);
             if (recognitionSettings == null) {
@@ -189,14 +200,17 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         // detection metadata should be available in MetadataListener
         // detection metadata are all metadata objects from com.microblink.metadata.detection package
         metadataSettings.setDetectionMetadataAllowed(true);
-        // set metadata listener and defined metadata settings
-        // metadata listener will obtain selected metadata
-        // define which images should be available in MetadataListener
-        MetadataSettings.ImageMetadataSettings ims = new MetadataSettings.ImageMetadataSettings();
-        // enable dewarped images
-        ims.setDewarpedImageEnabled(true);
 
-        metadataSettings.setImageMetadataSettings(ims);
+        if (!mAcceptedImageNames.isEmpty()) {
+            // set metadata listener and defined metadata settings
+            // metadata listener will obtain selected metadata
+            // define which images should be available in MetadataListener
+            MetadataSettings.ImageMetadataSettings ims = new MetadataSettings.ImageMetadataSettings();
+            // enable dewarped images
+            ims.setDewarpedImageEnabled(true);
+            metadataSettings.setImageMetadataSettings(ims);
+        }
+
         mRecognizerView.setMetadataListener(this, metadataSettings);
 
         // set initial orientation
@@ -550,7 +564,7 @@ public class BlinkIDScanActivity extends Activity implements ScanResultListener,
         } else if (metadata instanceof ImageMetadata) {
             // here we will get dewarped image
             Image img = ((ImageMetadata) metadata).getImage();
-            if (img.getImageType() == ImageType.DEWARPED && img.getImageName().equals(IMAGE_NAME)) {
+            if (img.getImageType() == ImageType.DEWARPED && mAcceptedImageNames.contains(img.getImageName())) {
                 mLastDewarpedImage = ((ImageMetadata) metadata).getImage().clone();
             }
         }

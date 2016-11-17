@@ -1,6 +1,7 @@
 package com.microblink.wrapper.xamarin;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 
 import com.microblink.detectors.document.DocumentDetectorSettings;
 import com.microblink.detectors.document.DocumentSpecification;
@@ -47,8 +48,10 @@ import com.microblink.util.RecognizerCompatibility;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * BlinkID scan settings that define which camera type and which recognizers, parsers and detectors
@@ -56,10 +59,15 @@ import java.util.Map;
  */
 public class BlinkIdScanSettings {
 
+    private static final String EUDL_FULL_DOCUMENT_IMAGE_NAME = "EUDL";
+    private static final String MRTD_FULL_DOCUMENT_IMAGE_NAME = "MRTD";
+    private static final String ID_CARD_DETECTOR_IMAGE_NAME = "DocumentDetector/IDCard";
+
     private ArrayList<RecognizerSettings> mRecognizers;
     private Map<String, OcrParserSettings> mParsers;
     private DeviceCameraType mCameraType;
     private boolean mCameraHasAutofocus;
+    private Set<String> mAcceptedImageNames;
 
     private boolean mAllowMultipleScanResultsOnSingleImage;
 
@@ -72,6 +80,7 @@ public class BlinkIdScanSettings {
         mRecognizers = new ArrayList<>();
         mParsers = new HashMap<>();
         mCameraType = cameraType;
+        mAcceptedImageNames = new HashSet<>();
 
         // check whether chosen camera has autofocus
         CameraType camera = CameraType.CAMERA_DEFAULT;
@@ -94,13 +103,39 @@ public class BlinkIdScanSettings {
     }
 
     /**
+     * Sets whether or not outputting of multiple scan results from same image
+     * is allowed. If that is true, it is possible to return multiple
+     * recognition results from same image. If this option is false, the array
+     * of BaseRecognitionResults will contain at most 1 element. The upside of setting that option
+     * to false is the speed - if you enable lots of recognizers, as soon as the first recognizer
+     * succeeds in scanning, recognition chain will be terminated and other
+     * recognizers will not get a chance to analyze the image. The downside is
+     * that you are then unable to obtain multiple results from single image.
+     */
+    public void setAllowMultipleScanResultsOnSingleImage(boolean allowMultipleScanResultsOnSingleImage) {
+        mAllowMultipleScanResultsOnSingleImage = allowMultipleScanResultsOnSingleImage;
+    }
+
+    /**
+     * Returns true if multiple scan results can be obtained from single image. See
+     * {@link #setAllowMultipleScanResultsOnSingleImage} for details.
+     *
+     * @return true if multiple scan results can be obtained from single image.
+     */
+    public boolean shouldAllowMultipleScanResultsOnSingleImage() {
+        return mAllowMultipleScanResultsOnSingleImage;
+    }
+
+    /**
      * Adds recognizer for back side of the Austrian ID card if it is supported on current device
      * and chosen camera type.
      * @return returns {@code true} if recognizer is supported on current device and chosen
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerAustrianIdBack() {
-        return addRecognizer(buildAustrianIDBackSideRecognizerSettings());
+        AustrianIDBackSideRecognizerSettings ausIdBack = new AustrianIDBackSideRecognizerSettings();
+        ausIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(ausIdBack, AustrianIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -110,17 +145,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerAustrianIdFront() {
-        return addRecognizer(buildAustrianIDFrontSideRecognizerSettings());
-    }
-
-    /**
-     * Adds bardecoder recognizer if it is supported on current device and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise. BarDecoder recognizer defines settings for scanning 1D barcodes
-     * with algorithms implemented by Microblink team. Enabled barcodes are: code 128 and code 39.
-     */
-    public boolean addRecognizerBarDecoder() {
-        return addRecognizer(buildBardecoderRecognizerSettings());
+        AustrianIDFrontSideRecognizerSettings ausIdFront = new AustrianIDFrontSideRecognizerSettings();
+        ausIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(ausIdFront, AustrianIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -130,7 +157,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerCroatianIdBack() {
-        return addRecognizer(buildCroatianIDBackSideRecognizerSettings());
+        CroatianIDBackSideRecognizerSettings croIdBack = new CroatianIDBackSideRecognizerSettings();
+        croIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(croIdBack, CroatianIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -140,7 +169,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerCroatianIdFront() {
-        return addRecognizer(buildCroatianIDFrontSideRecognizerSettings());
+        CroatianIDFrontSideRecognizerSettings croIdFront = new CroatianIDFrontSideRecognizerSettings();
+        croIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(croIdFront, CroatianIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -150,7 +181,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerCzechIdBack() {
-        return addRecognizer(buildCzechIDBackSideRecognizerSettings());
+        CzechIDBackSideRecognizerSettings czIdBack = new CzechIDBackSideRecognizerSettings();
+        czIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(czIdBack, CzechIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -160,7 +193,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerCzechIdFront() {
-        return addRecognizer(buildCzechIDFrontSideRecognizerSettings());
+        CzechIDFrontSideRecognizerSettings czIdFront = new CzechIDFrontSideRecognizerSettings();
+        czIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(czIdFront, CzechIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -170,7 +205,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerGermanIdFront() {
-        return addRecognizer(buildGermanIDFrontSideRecognizerSettings());
+        GermanIDFrontSideRecognizerSettings deIdFront = new GermanIDFrontSideRecognizerSettings();
+        deIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(deIdFront, GermanIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -181,7 +218,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerGermanIdMrzSide() {
-        return addRecognizer(buildGermanIDMrzSideRecognizerSettings());
+        GermanIDMRZSideRecognizerSettings deIdMrz = new GermanIDMRZSideRecognizerSettings();
+        deIdMrz.setDisplayFullDocumentImage(true);
+        return addRecognizer(deIdMrz, GermanIDMRZSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -191,7 +230,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSerbianIdBack() {
-        return addRecognizer(buildSerbianIDBackSideRecognizerSettings());
+        SerbianIDBackSideRecognizerSettings srbIdBack = new SerbianIDBackSideRecognizerSettings();
+        srbIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(srbIdBack, SerbianIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -201,7 +242,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSerbianIdFront() {
-        return addRecognizer(buildSerbianIDFrontSideRecognizerSettings());
+        SerbianIDFrontSideRecognizerSettings srbIdFront = new SerbianIDFrontSideRecognizerSettings();
+        srbIdFront.setReturnFullDocumentPhoto(true);
+        return addRecognizer(srbIdFront, SerbianIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -211,7 +254,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSlovakIdBack() {
-        return addRecognizer(buildSlovakIDBackSideRecognizerSettings());
+        SlovakIDBackSideRecognizerSettings svkIdBack = new SlovakIDBackSideRecognizerSettings();
+        svkIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(svkIdBack, SlovakIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -221,7 +266,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSlovakIdFront() {
-        return addRecognizer(buildSlovakIDFrontSideRecognizerSettings());
+        SlovakIDFrontSideRecognizerSettings svkIdFront = new SlovakIDFrontSideRecognizerSettings();
+        svkIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(svkIdFront, SlovakIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -231,7 +278,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSlovenianIdBack() {
-        return addRecognizer(buildSlovenianIDBackSideRecognizerSettings());
+        SlovenianIDBackSideRecognizerSettings svnIdBack = new SlovenianIDBackSideRecognizerSettings();
+        svnIdBack.setDisplayFullDocumentImage(true);
+        return addRecognizer(svnIdBack, SlovenianIDBackSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
     }
 
     /**
@@ -241,7 +290,112 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerSlovenianIdFront() {
-        return addRecognizer(buildSlovenianIDFrontSideRecognizerSettings());
+        SlovenianIDFrontSideRecognizerSettings svnIdFront = new SlovenianIDFrontSideRecognizerSettings();
+        svnIdFront.setDisplayFullDocumentImage(true);
+        return addRecognizer(svnIdFront, SlovenianIDFrontSideRecognizerSettings.FULL_DOCUMENT_IMAGE);
+    }
+
+    /**
+     * Adds Singapore ID card recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerSingaporeId() {
+        SingaporeIDRecognizerSettings singaporeId = new SingaporeIDRecognizerSettings();
+        singaporeId.setDisplayFullDocumentImage(true);
+        return addRecognizer(singaporeId, SingaporeIDRecognizerSettings.FULL_DOCUMENT_IMAGE_NAME);
+    }
+
+    /**
+     * Adds Malaysian MyKad ID document recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerMyKad() {
+        MyKadRecognizerSettings myKad = new MyKadRecognizerSettings();
+        myKad.setShowFullDocument(true);
+        return addRecognizer(myKad, MyKadRecognizerSettings.FULL_DOCUMENT_IMAGE);
+    }
+
+    /**
+     * Adds Malaysian iKad document recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerIKad() {
+        IKadRecognizerSettings iKad = new IKadRecognizerSettings();
+        iKad.setShowFullDocumentImage(true);
+        return addRecognizer(iKad, IKadRecognizerSettings.FULL_DOCUMENT_IMAGE);
+    }
+
+    /**
+     * Adds MRTD(Machine Readable Travel Document) recognizer if it is supported on current device
+     * and chosen camera type. MRTD recognizer reads MRZ zone.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerMRTD() {
+        MRTDRecognizerSettings mrtd = new MRTDRecognizerSettings();
+        mrtd.setShowFullDocument(true);
+        return addRecognizer(mrtd, MRTD_FULL_DOCUMENT_IMAGE_NAME);
+    }
+
+    /**
+     * Adds USDL (US Driver's license) recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerUSDL() {
+        return addRecognizer(new USDLRecognizerSettings());
+    }
+
+    /**
+     * Adds Austrian DL (Austrian Driver's license) recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerAustrianDL() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose Austria.
+        EUDLRecognizerSettings ausDL = new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_AUSTRIA);
+        ausDL.setShowFullDocument(true);
+        return addRecognizer(ausDL, EUDL_FULL_DOCUMENT_IMAGE_NAME);
+    }
+
+    /**
+     * Adds UKDL (UK Driver's license) recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerUKDL() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose UK.
+        EUDLRecognizerSettings ukDL =  new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
+        ukDL.setShowFullDocument(true);
+        return addRecognizer(ukDL, EUDL_FULL_DOCUMENT_IMAGE_NAME);
+    }
+
+    /**
+     * Adds DEDL (German Driver's license) recognizer if it is supported on current device
+     * and chosen camera type.
+     * @return returns {@code true} if recognizer is supported on current device and chosen
+     * camera type, {@code false} otherwise.
+     */
+    public boolean addRecognizerDEDL() {
+        // To specify we want to perform EUDL (EU Driver's License) recognition,
+        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
+        // constructor. Here we choose Germany.
+        EUDLRecognizerSettings deDL =  new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
+        deDL.setShowFullDocument(true);
+        return addRecognizer(deDL, EUDL_FULL_DOCUMENT_IMAGE_NAME);
     }
 
     /**
@@ -252,37 +406,9 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise.
      */
     public boolean addRecognizerEUDL() {
-        return addRecognizer(buildEUDLRecognizerSettings());
-    }
-
-    /**
-     * Adds MRTD(Machine Readable Travel Document) recognizer if it is supported on current device
-     * and chosen camera type. MRTD recognizer reads MRZ zone.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerMRTD() {
-        return addRecognizer(buildMRTDRecognizerSettings());
-    }
-
-    /**
-     * Adds Malaysian MyKad ID document recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerMyKad() {
-        return addRecognizer(buildMyKadRecognizerSettings());
-    }
-
-    /**
-     * Adds Malaysian iKad document recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerIKad() {
-        return addRecognizer(buildIKadRecognizerSettings());
+        EUDLRecognizerSettings eudl = buildEUDLRecognizerSettings();
+        eudl.setShowFullDocument(true);
+        return addRecognizer(eudl, EUDL_FULL_DOCUMENT_IMAGE_NAME);
     }
 
     /**
@@ -296,53 +422,13 @@ public class BlinkIdScanSettings {
     }
 
     /**
-     * Adds Singapore ID card recognizer if it is supported on current device
-     * and chosen camera type.
+     * Adds bardecoder recognizer if it is supported on current device and chosen camera type.
      * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
+     * camera type, {@code false} otherwise. BarDecoder recognizer defines settings for scanning 1D barcodes
+     * with algorithms implemented by Microblink team. Enabled barcodes are: code 128 and code 39.
      */
-    public boolean addRecognizerSingaporeId() {
-        return addRecognizer(buildSingaporeIDRecognizerSettings());
-    }
-
-    /**
-     * Adds USDL (US Driver's license) recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerUSDL() {
-        return addRecognizer(buildUSDLRecognizerSettings());
-    }
-
-    /**
-     * Adds Austrian DL (Austrian Driver's license) recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerAustrianDL() {
-        return addRecognizer(buildAustrianDLRecognizerSettings());
-    }
-
-    /**
-     * Adds UKDL (UK Driver's license) recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerUKDL() {
-        return addRecognizer(buildUKDLRecognizerSettings());
-    }
-
-    /**
-     * Adds DEDL (German Driver's license) recognizer if it is supported on current device
-     * and chosen camera type.
-     * @return returns {@code true} if recognizer is supported on current device and chosen
-     * camera type, {@code false} otherwise.
-     */
-    public boolean addRecognizerDEDL() {
-        return addRecognizer(buildDEDLRecognizerSettings());
+    public boolean addRecognizerBarDecoder() {
+        return addRecognizer(buildBardecoderRecognizerSettings());
     }
 
     /**
@@ -475,7 +561,7 @@ public class BlinkIdScanSettings {
      * camera type, {@code false} otherwise. Detector returns document image.
      */
     public boolean addDetectorIdCard() {
-        return addRecognizer(buildIdCardDetectorRecognizerSettings());
+        return addRecognizer(buildIdCardDetectorRecognizerSettings(), ID_CARD_DETECTOR_IMAGE_NAME);
     }
 
 
@@ -537,58 +623,6 @@ public class BlinkIdScanSettings {
         return oneDimensionalRecognizerSettings;
     }
 
-    /**
-     * Builds {@link MRTDRecognizerSettings} which define settings for scanning
-     * MRTD (Machine Readable Travel Documents).
-     */
-    private MRTDRecognizerSettings buildMRTDRecognizerSettings() {
-        // To specify we want to perform MRTD (Machine Readable Travel Document) recognition,
-        // prepare settings for MRTD recognizer
-        return new MRTDRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link USDLRecognizerSettings} which define settings for scanning
-     * USDL (US Driver's Licenses)
-     */
-    private USDLRecognizerSettings buildUSDLRecognizerSettings() {
-        // To specify we want to perform USDL (US Driver's License) recognition,
-        // prepare settings for USDL recognizer
-        return new USDLRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver's license is <b>Austrian</b> driver's license.
-     */
-    private EUDLRecognizerSettings buildAustrianDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose Austria.
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_AUSTRIA);
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver license is <b>UK</b> driver's license.
-     */
-    private EUDLRecognizerSettings buildUKDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose UK.
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_UK);
-    }
-
-    /**
-     * Builds {@link EUDLRecognizerSettings} which define settings for scanning
-     * EUDL (EU Driver's License). Enabled driver license is <b>German</b> driver's license.
-     */
-    private EUDLRecognizerSettings buildDEDLRecognizerSettings() {
-        // To specify we want to perform EUDL (EU Driver's License) recognition,
-        // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
-        // constructor. Here we choose Germany.
-        return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_GERMANY);
-    }
 
     /**
      * Builds {@link EUDLRecognizerSettings} which define settings for scanning
@@ -599,24 +633,6 @@ public class BlinkIdScanSettings {
         // prepare settings for EUDL recognizer. Pass country as parameter to EUDLRecognizerSettings
         // constructor. Here we choose auto detection (one of supported licenses).
         return new EUDLRecognizerSettings(EUDLCountry.EUDL_COUNTRY_AUTO);
-    }
-
-    /**
-     * Builds {@link MyKadRecognizerSettings} which define settings for scanning
-     * MyKad (Malaysian MyKad ID document).
-     */
-    private MyKadRecognizerSettings buildMyKadRecognizerSettings() {
-        // To specify we want to perform MyKad (Malaysian MyKad ID document) recognition,
-        // prepare settings for MyKad recognizer
-        return new MyKadRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link IKadRecognizerSettings} which define settings for scanning
-     * MyKad (Malaysian iKad document).
-     */
-    private IKadRecognizerSettings buildIKadRecognizerSettings() {
-        return new IKadRecognizerSettings();
     }
 
     /**
@@ -636,143 +652,7 @@ public class BlinkIdScanSettings {
         return pdf417RecognizerSettings;
     }
 
-    /**
-     * Builds {@link AustrianIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Austrian ID card.
-     */
-    private AustrianIDBackSideRecognizerSettings buildAustrianIDBackSideRecognizerSettings() {
-        return new AustrianIDBackSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link AustrianIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Austrian ID card.
-     */
-    private AustrianIDFrontSideRecognizerSettings buildAustrianIDFrontSideRecognizerSettings() {
-        return new AustrianIDFrontSideRecognizerSettings();
-}
-
-    /**
-     * Builds {@link CroatianIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Croatian ID card.
-     */
-    private CroatianIDBackSideRecognizerSettings buildCroatianIDBackSideRecognizerSettings() {
-        CroatianIDBackSideRecognizerSettings croIDBackSettings = new CroatianIDBackSideRecognizerSettings();
-        croIDBackSettings.setExtractIssuingAuthority(true);
-        croIDBackSettings.setExtractDateOfIssue(true);
-        return croIDBackSettings;
-    }
-
-    /**
-     * Builds {@link CroatianIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Croatian ID card.
-     */
-    private CroatianIDFrontSideRecognizerSettings buildCroatianIDFrontSideRecognizerSettings() {
-        CroatianIDFrontSideRecognizerSettings croIDFrontSettings = new CroatianIDFrontSideRecognizerSettings();
-        croIDFrontSettings.setExtractSex(true);
-        croIDFrontSettings.setExtractCitizenship(true);
-        croIDFrontSettings.setExtractDateOfBirth(true);
-        croIDFrontSettings.setExtractDateOfExpiry(true);
-        return croIDFrontSettings;
-    }
-
-    /**
-     * Builds {@link CzechIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Czech ID card.
-     */
-    private CzechIDBackSideRecognizerSettings buildCzechIDBackSideRecognizerSettings() {
-        return new CzechIDBackSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link CzechIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Czech ID card.
-     */
-    private CzechIDFrontSideRecognizerSettings buildCzechIDFrontSideRecognizerSettings() {
-        return new CzechIDFrontSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link GermanIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of German ID card (new ID cards).
-     */
-    private GermanIDFrontSideRecognizerSettings buildGermanIDFrontSideRecognizerSettings() {
-        return new GermanIDFrontSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link GermanIDMRZSideRecognizerSettings} which define settings for scanning
-     * MRZ side of German ID card (on old ID cards MRZ side is the front side, on new ID cards MRZ side
-     * is the back side).
-     */
-    private GermanIDMRZSideRecognizerSettings buildGermanIDMrzSideRecognizerSettings() {
-        return new GermanIDMRZSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SerbianIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Serbian ID card.
-     */
-    private SerbianIDBackSideRecognizerSettings buildSerbianIDBackSideRecognizerSettings() {
-        return new SerbianIDBackSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SerbianIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Serbian ID card.
-     */
-    private SerbianIDFrontSideRecognizerSettings buildSerbianIDFrontSideRecognizerSettings() {
-        return new SerbianIDFrontSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SlovakIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Slovak ID card.
-     */
-    private SlovakIDBackSideRecognizerSettings buildSlovakIDBackSideRecognizerSettings() {
-        return new SlovakIDBackSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SlovakIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Slovak ID card.
-     */
-    private SlovakIDFrontSideRecognizerSettings buildSlovakIDFrontSideRecognizerSettings() {
-        return new SlovakIDFrontSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SlovenianIDBackSideRecognizerSettings} which define settings for scanning
-     * back side of Slovenian ID card.
-     */
-    private SlovenianIDBackSideRecognizerSettings buildSlovenianIDBackSideRecognizerSettings() {
-        return new SlovenianIDBackSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SlovenianIDFrontSideRecognizerSettings} which define settings for scanning
-     * front side of Slovenian ID card.
-     */
-    private SlovenianIDFrontSideRecognizerSettings buildSlovenianIDFrontSideRecognizerSettings() {
-        return new SlovenianIDFrontSideRecognizerSettings();
-    }
-
-    /**
-     * Builds {@link SingaporeIDRecognizerSettings} which define settings for scanning
-     * front and back side of Singapore ID card.
-     */
-    private SingaporeIDRecognizerSettings buildSingaporeIDRecognizerSettings() {
-        SingaporeIDRecognizerSettings singaporeIDSettings = new SingaporeIDRecognizerSettings();
-        singaporeIDSettings.setExtractBloodGroup(true);
-        singaporeIDSettings.setExtractCountryOfBirth(true);
-        singaporeIDSettings.setExtractDateOfBirth(true);
-        singaporeIDSettings.setExtractDateOfIssue(true);
-        singaporeIDSettings.setExtractRace(true);
-        singaporeIDSettings.setExtractSex(true);
-        return singaporeIDSettings;
-    }
-
-    private boolean addRecognizer(RecognizerSettings recognizerSettings) {
+    private boolean addRecognizer(RecognizerSettings recognizerSettings, @Nullable String fullDocumentImageName) {
         for (Iterator<RecognizerSettings> it = mRecognizers.iterator(); it.hasNext(); ) {
             RecognizerSettings curRec = it.next();
             if (recognizerSettings.getClass().equals(curRec.getClass())) {
@@ -789,9 +669,16 @@ public class BlinkIdScanSettings {
         }
         if (mCameraHasAutofocus || !recognizerSettings.requiresAutofocus()) {
             mRecognizers.add(recognizerSettings);
+            if (fullDocumentImageName != null) {
+                mAcceptedImageNames.add(fullDocumentImageName);
+            }
             return true;
         }
         return false;
+    }
+
+    private boolean addRecognizer(RecognizerSettings recognizerSettings) {
+        return addRecognizer(recognizerSettings, null);
     }
 
     private boolean addParser(String identifier, OcrParserSettings parserSettings, boolean required) {
@@ -823,16 +710,14 @@ public class BlinkIdScanSettings {
         return identifiers;
     }
 
+    String[] getAcceptedImageNames() {
+        String[] imageNamesArr = new String[mAcceptedImageNames.size()];
+        imageNamesArr = mAcceptedImageNames.toArray(imageNamesArr);
+        return imageNamesArr;
+    }
+
     DeviceCameraType getCameraType() {
         return mCameraType;
-    }
-
-    public boolean shouldAllowMultipleScanResultsOnSingleImage() {
-        return mAllowMultipleScanResultsOnSingleImage;
-    }
-
-    public void setAllowMultipleScanResultsOnSingleImage(boolean allowMultipleScanResultsOnSingleImage) {
-        mAllowMultipleScanResultsOnSingleImage = allowMultipleScanResultsOnSingleImage;
     }
 
     public enum DeviceCameraType {
