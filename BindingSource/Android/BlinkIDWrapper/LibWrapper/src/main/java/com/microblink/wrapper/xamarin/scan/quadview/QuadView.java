@@ -47,20 +47,9 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
     private ValueAnimator mAnimation = null;
 
     private int mHostActivityOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-
     private boolean mMirrored = false;
-
     private final Handler mHandler = new Handler();
-
     private boolean mMovableViewfinder = true;
-
-    private OnSizeChangedListener mOnSizeChangedListener;
-
-    private QuadViewAnimationListener mAnimationListener;
-
-    public void setMovable(boolean isMovable) {
-        mMovableViewfinder = isMovable;
-    }
 
     public QuadView(Context context, AttributeSet attrs, double horizontalMargin, double verticalMargin, int hostActivityOrientation) {
         super(context, attrs);
@@ -82,8 +71,25 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
         }
     }
 
+    public void setMovable(boolean isMovable) {
+        mMovableViewfinder = isMovable;
+    }
+
+    private boolean isConfigurationChanged(int hostActivityOrientation) {
+        return ((mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT || mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) &&
+                (hostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE || hostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE))
+                || ((mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE || mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) &&
+                (hostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT || hostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT));
+    }
+
     public void setHostActivityOrientation(int hostActivityOrientation) {
+        boolean shouldSwapMargins = isConfigurationChanged(hostActivityOrientation);
         mHostActivityOrientation = hostActivityOrientation;
+        if (shouldSwapMargins) {
+            double t = mVMargin;
+            mVMargin = mHMargin;
+            mHMargin = t;
+        }
     }
 
     public void setMirrored(boolean mirrored) {
@@ -91,11 +97,7 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
     }
 
     public boolean isAnimationInProgress() {
-        if (mAnimation != null) {
-            return mAnimation.isRunning();
-        } else {
-            return false;
-        }
+        return mAnimation != null && mAnimation.isRunning();
     }
 
     public void setDefaultTarget() {
@@ -122,7 +124,6 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
                 mAnimation.setDuration(mAnimationDuration);
                 mAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
                 mAnimation.addUpdateListener(QuadView.this);
-                mAnimation.addListener(mAnimatorListener);
                 mAnimation.start();
             }
         });
@@ -157,50 +158,8 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
         mWidth = this.getWidth();
         mHeight = this.getHeight();
         Log.d(this, "QuadView layouting to size: {}x{}", mWidth, mHeight);
-        if(mOnSizeChangedListener != null) {
-            mOnSizeChangedListener.onSizeChanged(mWidth, mHeight);
-        }
     }
 
-    public void animateToNewDefault(double hMargin, double vMargin) {
-        mHMargin = hMargin;
-        mVMargin = vMargin;
-
-        if (mTop != mBottom) {
-            // calculate new bounds only if they already exists because
-            // mTop != mBottom is check to see whether we can safely
-            // initialize animation without NPE (quads are created only
-            // after layout, whilst set(Default)Target/publishDetectionStatus
-            // or any other animation trigger may happen before
-            int effectiveWidth = (int) (mWidth * (1. - mHMargin));
-            int effectiveHeight = (int) (mHeight * (1. - mVMargin));
-
-            mTop = (mHeight - effectiveHeight) / 2;
-            mLeft = (mWidth - effectiveWidth) / 2;
-            mRight = mWidth - mLeft;
-            mBottom = mHeight - mTop;
-
-            if(mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE || mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
-                int tmp = mTop;
-                mTop = mBottom;
-                mBottom = tmp;
-
-                tmp = mLeft;
-                mLeft = mRight;
-                mRight = tmp;
-            }
-
-            mTarget.setMargins(mTop, mBottom, mLeft, mRight, mHostActivityOrientation);
-            mTarget.setIsDefaultQuad(true);
-            if(mMirrored) {
-                mTarget.mirror(mWidth, mHeight, mHostActivityOrientation);
-            }
-
-            mCurrent.setIsDefaultQuad(false);
-
-            startAnimation();
-        }
-    }
 
     @Override
     @SuppressWarnings("deprecation")
@@ -271,37 +230,6 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
         invalidate();
     }
 
-    private Animator.AnimatorListener mAnimatorListener = new Animator.AnimatorListener() {
-        @Override
-        public void onAnimationStart(Animator animation) {
-            if (mAnimationListener != null) {
-                mAnimationListener.onAnimationStart();
-            }
-        }
-
-        @Override
-        public void onAnimationEnd(Animator animation) {
-            if (mAnimationListener != null) {
-                mAnimationListener.onAnimationEnd();
-            }
-        }
-
-        @Override
-        public void onAnimationCancel(Animator animation) {
-            if (mAnimationListener != null) {
-                mAnimationListener.onAnimationEnd();
-            }
-        }
-
-        @Override
-        public void onAnimationRepeat(Animator animation) {
-            if (mAnimationListener != null) {
-                mAnimationListener.onAnimationEnd();
-                mAnimationListener.onAnimationStart();
-            }
-        }
-    };
-
     private Quadrilateral quadWrapperToQuad(QuadrilateralWrapper qw) {
         XPoint ul = qw.getUpperLeft();
         XPoint ur = qw.getUpperRight();
@@ -323,10 +251,26 @@ public class QuadView extends View implements ValueAnimator.AnimatorUpdateListen
         XPoint lleft = unitQuad.getLowerLeft();
         XPoint lright = unitQuad.getLowerRight();
 
-        return new QuadrilateralWrapper(
-                new XPoint((1.f - uleft.getY()) * mWidth, uleft.getX() * mHeight),
-                new XPoint((1.f - uright.getY()) * mWidth, uright.getX() * mHeight),
-                new XPoint((1.f - lleft.getY()) * mWidth, lleft.getX() * mHeight),
-                new XPoint((1.f - lright.getY()) * mWidth, lright.getX() * mHeight));
+        if(mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT || mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) {
+            uleft = uleft.mirrorXY(1.f, 1.f);
+            uright = uright.mirrorXY(1.f, 1.f);
+            lleft = lleft.mirrorXY(1.f, 1.f);
+            lright = lright.mirrorXY(1.f, 1.f);
+        }
+
+        if (mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT || mHostActivityOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
+            return new QuadrilateralWrapper(
+                    new XPoint((1.f - uleft.getY()) * mWidth, uleft.getX() * mHeight),
+                    new XPoint((1.f - uright.getY()) * mWidth, uright.getX() * mHeight),
+                    new XPoint((1.f - lleft.getY()) * mWidth, lleft.getX() * mHeight),
+                    new XPoint((1.f - lright.getY()) * mWidth, lright.getX() * mHeight));
+        } else {
+            return new QuadrilateralWrapper(
+                    new XPoint(uleft.getX() * mWidth, uleft.getY() * mHeight),
+                    new XPoint(uright.getX() * mWidth, uright.getY() * mHeight),
+                    new XPoint( lleft.getX() * mWidth, lleft.getY() * mHeight),
+                    new XPoint(lright.getX() * mWidth, lright.getY() * mHeight));
+        }
     }
+
 }

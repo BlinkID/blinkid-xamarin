@@ -8,6 +8,7 @@ import com.microblink.geometry.Quadrilateral;
  */
 public class QuadrilateralWrapper {
 
+    private static final double EPS_DISTANCE = 10e-6;
     private Quadrilateral mQuadrilateral;
 
     public QuadrilateralWrapper() {
@@ -34,6 +35,28 @@ public class QuadrilateralWrapper {
     public void setPoints(XPoint uleft, XPoint uright, XPoint lleft, XPoint lright) {
         mQuadrilateral.setPoints(xPointToPoint(uleft), xPointToPoint(uright),
                 xPointToPoint(lleft), xPointToPoint(lright));
+    }
+
+    /**
+     * Returns true if quadrilateral is empty, i.e. all 4 points are the same.
+     * @return true if quadrilateral is empty, i.e. all 4 points are the same.
+     */
+    public boolean isEmpty() {
+        Point upperLeft = mQuadrilateral.getUpperLeft();
+        Point upperRight = mQuadrilateral.getUpperRight();
+        Point lowerLeft = mQuadrilateral.getLowerLeft();
+        Point lowerRight = mQuadrilateral.getLowerRight();
+        if (Math.abs(upperLeft.getX() - upperRight.getX()) > EPS_DISTANCE ||
+                Math.abs(upperLeft.getX() - lowerLeft.getX()) > EPS_DISTANCE ||
+                Math.abs(upperLeft.getX() - lowerRight.getX()) > EPS_DISTANCE) {
+            return false;
+        }
+        if (Math.abs(upperLeft.getY() - upperRight.getY()) > EPS_DISTANCE ||
+                Math.abs(upperLeft.getY() - lowerLeft.getY()) > EPS_DISTANCE ||
+                Math.abs(upperLeft.getY() - lowerRight.getY()) > EPS_DISTANCE) {
+            return false;
+        }
+        return true;
     }
 
     @Override

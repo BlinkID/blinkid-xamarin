@@ -40,6 +40,14 @@ public class XPoint implements Parcelable {
     }
 
     /**
+     * Returns true if point has coordinates (0,0).
+     * @return true if point has coordinates (0,0).
+     */
+    public boolean isZero() {
+        return mX == 0.f && mY == 0.f;
+    }
+
+    /**
      * + operator on the point. Returned point is a new point.
      * For example: c = a + b &lt;==&gt; c = a.operatorPlus(b);
      * @param other Point to be added to current point

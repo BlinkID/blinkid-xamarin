@@ -4,13 +4,11 @@ package com.microblink.wrapper.xamarin.scan.quadview;
  * Class that manages animated quadrilateral view.
  */
 public class QuadViewManager {
-    protected QuadView mQuadView;
+    private QuadView mQuadView;
 
     public QuadViewManager(QuadView quadView) {
         mQuadView = quadView;
     }
-
-    public QuadViewManager() {}
 
     /**
      * Call this method to begin quadrilateral animation to its default position.
@@ -27,7 +25,9 @@ public class QuadViewManager {
      * @param detectionSuccessful Status of the detection (determines Quadrilateral color).
      */
     public void animateQuadToDetectionPosition(QuadrilateralWrapper detection, boolean detectionSuccessful) {
-        mQuadView.setNewTarget(detection);
+        if (!detection.isEmpty()) {
+            mQuadView.setNewTarget(detection);
+        }
         mQuadView.publishDetectionStatus(detectionSuccessful);
     }
 
