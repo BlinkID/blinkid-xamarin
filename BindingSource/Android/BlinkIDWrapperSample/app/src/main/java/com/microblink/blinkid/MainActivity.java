@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.microblink.util.Log;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if (!scanSettings.addRecognizerPdf417()) {
             Log.w(this, "PDF417 recognizer is not supported on current device and chosen camera type");
         }
-
+        
         // scan can throw IllegalScanSettingsException if scan settings are not valid, at least
         // one recognizer or parser or detector must be active in scan settings
         try {
@@ -100,10 +101,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onDocumentImageAvailable(@NonNull Bitmap bitmap) {
+        public void onDocumentImageAvailable(@NonNull final Bitmap bitmap) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    ImageView iv = new ImageView(MainActivity.this);
+                    iv.setImageBitmap(bitmap);
+                    AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Scan image")
+                            .setView(iv)
+                            .setPositiveButton("OK", null)
+                            .setCancelable(false)
+                            .create();
+                    dialog.show();
                     Toast.makeText(MainActivity.this, "Bitmap available", Toast.LENGTH_LONG).show();
                 }
             });
