@@ -15,7 +15,7 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AssemblyName>Android</AssemblyName>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,8 +87,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\microblink\cro_address_dictionary.zzip" />
+    <AndroidAsset Include="Assets\microblink\cro_id_confusions.zzip" />
+    <AndroidAsset Include="Assets\microblink\cro_name_dictionary.zzip" />
     <AndroidAsset Include="Assets\microblink\device_list.json" />
-    <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
     <AndroidAsset Include="Assets\microblink\face_detector_model.zzip" />
+    <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
   </ItemGroup>
 </Project>

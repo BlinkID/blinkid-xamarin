@@ -191,20 +191,14 @@ namespace Android
 			// aapt resource value: 0x7f010025
 			public const int allowStacking = 2130772005;
 			
-			// aapt resource value: 0x7f0100cf
-			public const int animateRotation = 2130772175;
-			
-			// aapt resource value: 0x7f0100d0
-			public const int animationDuration = 2130772176;
-			
 			// aapt resource value: 0x7f01002c
 			public const int arrowHeadLength = 2130772012;
 			
 			// aapt resource value: 0x7f01002d
 			public const int arrowShaftLength = 2130772013;
 			
-			// aapt resource value: 0x7f0100d1
-			public const int aspectMode = 2130772177;
+			// aapt resource value: 0x7f0100cf
+			public const int aspectMode = 2130772175;
 			
 			// aapt resource value: 0x7f0100af
 			public const int autoCompleteTextViewStyle = 2130772143;
@@ -523,9 +517,6 @@ namespace Android
 			
 			// aapt resource value: 0x7f0100b6
 			public const int ratingBarStyle = 2130772150;
-			
-			// aapt resource value: 0x7f0100d2
-			public const int rotatable = 2130772178;
 			
 			// aapt resource value: 0x7f010041
 			public const int searchHintIcon = 2130772033;
@@ -3292,6 +3283,17 @@ namespace Android
 			// aapt resource value: 1
 			public const int AppCompatTextView_textAllCaps = 1;
 			
+			public static int[] BaseCameraView = new int[]
+			{
+					2130772174,
+					2130772175};
+			
+			// aapt resource value: 1
+			public const int BaseCameraView_aspectMode = 1;
+			
+			// aapt resource value: 0
+			public const int BaseCameraView_initialOrientation = 0;
+			
 			public static int[] ButtonBarLayout = new int[]
 			{
 					2130772005};
@@ -3568,32 +3570,6 @@ namespace Android
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
-			
-			public static int[] RecognizerView = new int[]
-			{
-					2130772174,
-					2130772175,
-					2130772176,
-					2130772177};
-			
-			// aapt resource value: 1
-			public const int RecognizerView_animateRotation = 1;
-			
-			// aapt resource value: 2
-			public const int RecognizerView_animationDuration = 2;
-			
-			// aapt resource value: 3
-			public const int RecognizerView_aspectMode = 3;
-			
-			// aapt resource value: 0
-			public const int RecognizerView_initialOrientation = 0;
-			
-			public static int[] RecognizerView_LayoutParams = new int[]
-			{
-					2130772178};
-			
-			// aapt resource value: 0
-			public const int RecognizerView_LayoutParams_rotatable = 0;
 			
 			public static int[] SearchView = new int[]
 			{

@@ -17,7 +17,7 @@ namespace Android
 	[Activity (Label = "BlinkID Xamarin", MainLauncher = true, Icon = "@mipmap/icon")]
 	public class MainActivity : Activity
 	{
-		public const string LICENSE_KEY = "6XLKZUNU-YVHGTCUI-VNIHBRKN-ZNOY4TT7-CBPIOL7B-PZPIOL7B-PZPIPLYH-76ENZW4P";
+		public const string LICENSE_KEY = "YXYKNFI6-IL7BPDQO-LWJTJLN4-ZV7RAXUH-F7QX4XUH-F7QX4XUH-F7QX57QA-DY33G5LK";
 		BlinkID blinkId;
 		BlinkIdScanSettings blinkIdScanSettings;
 
@@ -61,41 +61,67 @@ namespace Android
 
 			blinkIdScanSettings.SetAllowMultipleScanResultsOnSingleImage (false);
 
-			// Define recognizers
+			/**
+			 * Define recognizers
+			 */
+			// MRTD(Machine Readable Travel Document)
 			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
 				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
 			}
+
+			// Driving licenses
+			// United States of America
 			//if (!blinkIdScanSettings.AddRecognizerUSDL ()) {
 			//	Console.WriteLine ("RecognizerUSDL is not supported");
 			//}
+			// United Kingdom
 			//if (!blinkIdScanSettings.AddRecognizerUKDL ()) {
 			//	Console.WriteLine ("RecognizerUKDL is not supported");
 			//}
+			// Germany
 			//if (!blinkIdScanSettings.AddRecognizerDEDL ()) {
 			//	Console.WriteLine ("RecognizerDEDL is not supported");
 			//}
+			// Austria
+			//if (!blinkIdScanSettings.AddRecognizerAustrianDL ()) {
+			//	Console.WriteLine ("RecognizerAustrianDL is not supported");
+			//}
+			// European Union
 			//// NOTE: If you use UKDL and DEDL at the same time than it will fallback to EUDL and it will be same as
 			//if (!blinkIdScanSettings.AddRecognizerEUDL ()) {
 			//	Console.WriteLine ("RecognizerEUDL is not supported");
 			//}
+
+			// Singapore
 			//if (!blinkIdScanSettings.AddRecognizerSingaporeId ()) {
 			//	Console.WriteLine ("RecognizerSingaporeId is not supported");
 			//}
+
+			// Malaysia
 			//if (!blinkIdScanSettings.AddRecognizerMyKad ()) {
 			//	Console.WriteLine ("RecognizerMyKad is not supported");
 			//}
+			//if (!blinkIdScanSettings.AddRecognizerIKad ()) {
+			//	Console.WriteLine ("RecognizerIKad is not supported");
+			//}
+
+			// Croatia
 			//if (!blinkIdScanSettings.AddRecognizerCroatianIdFront ()) {
 			//	Console.WriteLine ("RecognizerCroatianIdFront is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerCroatianIdBack ()) {
 			//	Console.WriteLine ("RecognizerCroatianIdBack is not supported");
 			//}
+
+			// Austria
 			//if (!blinkIdScanSettings.AddRecognizerAustrianIdFront ()) {
 			//	Console.WriteLine ("RecognizerAustrianIdFront is not supported");
 			//}
 			//if (!blinkIdScanSettings.AddRecognizerAustrianIdBack ()) {
 			//	Console.WriteLine ("RecognizerAustrianIdBack is not supported");
 			//}
+
+			// Cezch Republic
 			//if (!blinkIdScanSettings.AddRecognizerCzechIdFront ()) {
 			//	Console.WriteLine ("RecognizerCzechIdFront is not supported");
 			//}
@@ -103,6 +129,39 @@ namespace Android
 			//	Console.WriteLine ("RecognizerCzechIdBack is not supported");
 			//}
 
+			// Germany
+			//if (!blinkIdScanSettings.AddRecognizerGermanIdFront ()) {
+			//	Console.WriteLine ("RecognizerGermanIdFront is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddRecognizerGermanIdMrzSide ()) {
+			//	Console.WriteLine ("RecognizerGermanIdMrzSide is not supported");
+			//}
+
+			// Serbia
+			//if (!blinkIdScanSettings.AddRecognizerSerbianIdFront ()) {
+			//	Console.WriteLine ("RecognizerSerbianIdFront is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddRecognizerSerbianIdBack ()) {
+			//	Console.WriteLine ("RecognizerSerbianIdBack is not supported");
+			//}
+
+			// Slovakia
+			//if (!blinkIdScanSettings.AddRecognizerSlovakIdFront ()) {
+			//	Console.WriteLine ("RecognizerSlovakIdFront is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddRecognizerSlovakIdBack ()) {
+			//	Console.WriteLine ("RecognizerSlovakIdBack is not supported");
+			//}
+
+			// Slovenia
+			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdFront ()) {
+			//	Console.WriteLine ("RecognizerSlovenianIdFront is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
+			//	Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
+			//}
+
+			// Barcode regognizers
 			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
 			//	Console.WriteLine ("RecognizerPdf417 is not supported");
 			//}
@@ -113,6 +172,9 @@ namespace Android
 			//	Console.WriteLine ("RecognizerZxing is not supported");
 			//}
 
+			/**
+			 * Define parsers
+			 */
 			//if (!blinkIdScanSettings.AddParserAmount ("AMOUNT_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserAmount is not supported");
 			//}
@@ -133,6 +195,12 @@ namespace Android
 			//}
 			//if (!blinkIdScanSettings.AddParserVIN ("VIN_PARSER_ID", true)) {
 			//	Console.WriteLine ("ParserVIN is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddParserLicensePlates ("LICENSE_PLATES_PARSER_ID", true)) {
+			//	Console.WriteLine ("ParserLicensePlates is not supported");
+			//}
+			//if (!blinkIdScanSettings.AddParserMobileCoupons ("MOBILE_COUPONS_PARSER_ID", "123", 14, true)) {
+			//	Console.WriteLine ("ParserMobileCoupons is not supported");
 			//}
 
 			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {

@@ -121,21 +121,21 @@
   },
   "ST27i::ST27i": {
     "description": "Sony Xperia Go",
-    "previewSize": [
+    "backFacingPreviewSize": [
       480,
       320
     ]
   },
   "bravo::HTC Desire": {
     "description": "HTC Desire",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
     ]
   },
   "bravo::X06HT": {
     "description": "HTC Desire",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
     ]
@@ -167,6 +167,10 @@
   "goldenvess3g::GT-I8200Q": {
     "description" : "Samsung Galaxy S3 Mini VE",
     "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
+  "f6::LG-D505": {
+    "description": "LG Optimus F6",
+    "eglPbufferNotSupported": "[4.1.2,4.1.2]"
   },
   "falcon_cdma::XT1028": {
     "description": "Moto G",
@@ -230,14 +234,14 @@
   },
   "golfc::HTC Desire C": {
     "description": "HTC Desire C",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
     ]
   },
   "golfu::HTC Desire C": {
     "description": "HTC Desire C",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
     ]
@@ -429,6 +433,26 @@
     "description": "Galaxy S4 Google Play Edition",
     "zeroCopyBufferAllowed": "*"
   },
+  "k2cl::C525c": {
+    "description": "HTC One SV",
+    "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
+  "k2plccl::HTC One SV": {
+    "description": "HTC One SV",
+    "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
+  "k2plccl::HTC One SV BLK": {
+    "description": "HTC One SV BLK",
+    "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
+  "k2ul::HTC One SV": {
+    "description": "HTC One SV",
+    "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
+  "k2ul::HTC K2_UL": {
+    "description": "HTC One SV",
+    "eglPbufferNotSupported": "[4.2.2,4.2.2]"
+  },
   "k3g::SM-G900H": {
     "description": "Galaxy S5",
     "meteringNotWorking": "*",
@@ -613,7 +637,7 @@
   },
   "primods::HTC Desire V": {
     "description": "HTC Desire V",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
     ]
@@ -624,16 +648,23 @@
   },
   "roamer2::ZTE Kis Lite": {
     "description": "ZTE Kis Lite",
-    "pictureSize": [
+    "backFacingPictureSize": [
       1600,
       1200
     ]
   },
   "saga::HTC Desire S": {
     "description": "HTC Desire S",
-    "previewSize": [
+    "backFacingPreviewSize": [
       640,
       480
+    ]
+  },
+  "OnePlus3::ONEPLUS A3003" : {
+    "description" : "One Plus 3",
+    "backFacingPreviewSize": [
+      3840,
+      2160
     ]
   },
   "serrano3g::GT-I9190": {
@@ -714,7 +745,7 @@
   "shamu::Nexus 6": {
     "description": "Nexus 6",
     "minZoomLevel": 0.01,
-    "zeroCopyBufferAllowed": "*"
+    "zeroCopyBufferAllowed": "<*,7.0.0>"
   },
   "v72c::V72C": {
     "description": "ZTE v72C tablet (a.k.a. Sprint Optik 2)",
@@ -726,7 +757,7 @@
   },
   "manta::Nexus 10" : {
     "description" : "Nexus 10",
-    "previewSize": [
+    "backFacingPreviewSize": [
       1280,
       720
     ]
@@ -738,5 +769,45 @@
   "loganrelte::GT-S7275R" : {
     "description" : "Samsung Galaxy Ace 3",
     "eglPbufferNotSupported" : "[4.2.2,4.2.2]"
+  },
+  "poseidonlteatt::SAMSUNG-SM-G891A" : {
+    "description" : "Samsung Galaxy S7 Active (AT&T version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "hero2qlteatt::SAMSUNG-SM-G935A" : {
+    "description" : "Samsung Galaxy S7 Edge (AT&T version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "hero2qltespr::SM-G935P" : {
+    "description" : "Samsung Galaxy S7 Edge (Sprint version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "SCV33::SCV33" : {
+    "description" : "Samsung Galaxy S7 Edge (SCV33 version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "heroqlteatt::SAMSUNG-SM-G930A" : {
+    "description" : "Samsung Galaxy S7 (AT&T version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "heroqlteue::SM-G930U" : {
+    "description" : "Samsung Galaxy S7 (Unlocked)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "graceqltetmo::SM-N930T" : {
+    "description" : "Samsung Galaxy Note 7 (T-Mobile version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "graceqltevzw::SM-N930V" : {
+    "description" : "Samsung Galaxy Note 7 (Verizon version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "graceqltespr::SM-N930P" : {
+    "description" : "Samsung Galaxy Note 7 (Sprint version)",
+    "phaseAutoFocusNotSupported" : "*"
+  },
+  "graceqlteatt::SAMSUNG-SM-N930A" : {
+    "description" : "Samsung Galaxy Note 7 (AT&T version)",
+    "phaseAutoFocusNotSupported" : "*"
   }
 }
