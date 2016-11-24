@@ -213,20 +213,14 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0100ff
 			public const int allowStacking = 2130772223;
 			
-			// aapt resource value: 0x7f01013d
-			public const int animateRotation = 2130772285;
-			
-			// aapt resource value: 0x7f01013e
-			public const int animationDuration = 2130772286;
-			
 			// aapt resource value: 0x7f010106
 			public const int arrowHeadLength = 2130772230;
 			
 			// aapt resource value: 0x7f010107
 			public const int arrowShaftLength = 2130772231;
 			
-			// aapt resource value: 0x7f01013f
-			public const int aspectMode = 2130772287;
+			// aapt resource value: 0x7f01013d
+			public const int aspectMode = 2130772285;
 			
 			// aapt resource value: 0x7f0100f2
 			public const int autoCompleteTextViewStyle = 2130772210;
@@ -797,9 +791,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 0x7f01003f
 			public const int rippleColor = 2130772031;
-			
-			// aapt resource value: 0x7f010140
-			public const int rotatable = 2130772288;
 			
 			// aapt resource value: 0x7f01011b
 			public const int searchHintIcon = 2130772251;
@@ -5047,6 +5038,17 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 3
 			public const int AppCompatTheme_windowNoTitle = 3;
 			
+			public static int[] BaseCameraView = new int[]
+			{
+					2130772284,
+					2130772285};
+			
+			// aapt resource value: 1
+			public const int BaseCameraView_aspectMode = 1;
+			
+			// aapt resource value: 0
+			public const int BaseCameraView_initialOrientation = 0;
+			
 			public static int[] BottomSheetBehavior_Params = new int[]
 			{
 					2130772005,
@@ -5616,32 +5618,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
-			
-			public static int[] RecognizerView = new int[]
-			{
-					2130772284,
-					2130772285,
-					2130772286,
-					2130772287};
-			
-			// aapt resource value: 1
-			public const int RecognizerView_animateRotation = 1;
-			
-			// aapt resource value: 2
-			public const int RecognizerView_animationDuration = 2;
-			
-			// aapt resource value: 3
-			public const int RecognizerView_aspectMode = 3;
-			
-			// aapt resource value: 0
-			public const int RecognizerView_initialOrientation = 0;
-			
-			public static int[] RecognizerView_LayoutParams = new int[]
-			{
-					2130772288};
-			
-			// aapt resource value: 0
-			public const int RecognizerView_LayoutParams_rotatable = 0;
 			
 			public static int[] RecyclerView = new int[]
 			{
