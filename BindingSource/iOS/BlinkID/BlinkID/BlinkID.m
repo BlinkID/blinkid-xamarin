@@ -347,12 +347,21 @@
     }
 }
 
-- (void)addSingaporeIDRecognizer {
-    PPSingaporeIDRecognizerSettings *recognizer = [[PPSingaporeIDRecognizerSettings alloc] init];
+
+- (void)addSingaporeIDBackRecognizer {
+    PPSingaporeIDBackRecognizerSettings *recognizer = [[PPSingaporeIDBackRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
+
+- (void)addSingaporeIDFrontRecognizer {
+    PPSingaporeIDFrontRecognizerSettings *recognizer = [[PPSingaporeIDFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
 
 - (void)addUsdlRecognizer {
     PPUsdlRecognizerSettings *recognizer = [[PPUsdlRecognizerSettings alloc] init];

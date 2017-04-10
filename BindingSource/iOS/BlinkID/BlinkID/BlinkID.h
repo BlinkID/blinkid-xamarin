@@ -42,7 +42,9 @@
 
 - (void)addPdf417Recognizer;
 
-- (void)addSingaporeIDRecognizer;
+- (void)addSingaporeIDBackRecognizer;
+
+- (void)addSingaporeIDFrontRecognizer;
 
 - (void)addUsdlRecognizer;
 
