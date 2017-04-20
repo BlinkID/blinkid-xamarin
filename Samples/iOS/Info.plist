@@ -43,5 +43,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera nedded for scanning</string>
 </dict>
 </plist>

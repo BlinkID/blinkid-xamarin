@@ -43,9 +43,9 @@ namespace BlinkIDApp.Droid
 			 * Define recognizers
 			 */
 			// MRTD(Machine Readable Travel Document)
-			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
-				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
-			}
+			//if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
+			//	Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
+			//}
 
 			// Driving licenses
 			// United States of America
@@ -135,11 +135,11 @@ namespace BlinkIDApp.Droid
 			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdFront ()) {
 			//	Console.WriteLine ("RecognizerSlovenianIdFront is not supported");
 			//}
-			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
-			//	Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
-			//}
+			if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
+				Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
+			}
 
-			// Barcode regognizers
+			// Barcode recognizers
 			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
 			//	Console.WriteLine ("RecognizerPdf417 is not supported");
 			//}

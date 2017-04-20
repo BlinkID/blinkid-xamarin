@@ -161,7 +161,7 @@ namespace Android
 			//	Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
 			//}
 
-			// Barcode regognizers
+			// Barcode recognizers
 			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
 			//	Console.WriteLine ("RecognizerPdf417 is not supported");
 			//}
