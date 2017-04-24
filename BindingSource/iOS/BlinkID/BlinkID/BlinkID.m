@@ -326,6 +326,20 @@
     }
 }
 
+- (void)addGerMrzRecognizer {
+    PPGermanIdMrzRecognizerSettings *recognizer = [[PPGermanIdMrzRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addGerIDFrontRecognizer {
+    PPGermanIdFrontRecognizerSettings *recognizer = [[PPGermanIdFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
 - (void)addMrtdRecognizer {
     PPMrtdRecognizerSettings *recognizer = [[PPMrtdRecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
@@ -340,6 +354,14 @@
     }
 }
 
+- (void)addIKadRecognizer {
+    PPiKadRecognizerSettings *recognizer = [[PPiKadRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+    
+}
+
 - (void)addPdf417Recognizer {
     PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
     if(![self recognizerExists:recognizer]) {
@@ -347,6 +369,47 @@
     }
 }
 
+- (void)addSerbIDBackRecognizer {
+    PPSerbianIdBackRecognizerSettings *recognizer = [[PPSerbianIdBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSerbIDFrontRecognizer {
+    PPSerbianIdFrontRecognizerSettings *recognizer = [[PPSerbianIdFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovakIDBackRecognizer {
+    PPSlovakIdBackRecognizerSettings *recognizer = [[PPSlovakIdBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovakIDFrontRecognizer {
+    PPSlovakIdFrontRecognizerSettings *recognizer = [[PPSlovakIdFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovenianIDBackRecognizer {
+    PPSlovenianIdBackRecognizerSettings *recognizer = [[PPSlovenianIdBackRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovenianIDFrontRecognizer {
+    PPSlovenianIdFrontRecognizerSettings *recognizer = [[PPSlovenianIdFrontRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addSingaporeIDBackRecognizer {
     PPSingaporeIDBackRecognizerSettings *recognizer = [[PPSingaporeIDBackRecognizerSettings alloc] init];
@@ -365,6 +428,13 @@
 
 - (void)addUsdlRecognizer {
     PPUsdlRecognizerSettings *recognizer = [[PPUsdlRecognizerSettings alloc] init];
+    if(![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAusdlRecognizer {
+    PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAustria];
     if(![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
@@ -448,6 +518,26 @@
         return;
     }
     PPOcrParserFactory *factory = [[PPVinOcrParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:identifier];
+}
+
+- (void)addLicensePlatesParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
+        return;
+    }
+    PPLicensePlatesParserFactory *factory = [[PPLicensePlatesParserFactory alloc] init];
+    factory.isRequired = NO;
+    [self.parsers addObject:factory];
+    [self.parserNames addObject:identifier];
+}
+
+- (void)addTopUpOcrParser:(NSString *)identifier {
+    if ([self idExists:identifier]) {
+        return;
+    }
+    PPTopUpOcrParserFactory *factory = [[PPTopUpOcrParserFactory alloc] initWithTopUpPrefix:PPTopUpPrefixGeneric];
     factory.isRequired = NO;
     [self.parsers addObject:factory];
     [self.parserNames addObject:identifier];

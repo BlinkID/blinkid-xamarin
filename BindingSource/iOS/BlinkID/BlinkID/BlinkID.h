@@ -36,17 +36,37 @@
 
 - (void)addEudlRecognizer;
 
+- (void)addGerMrzRecognizer;
+
+- (void)addGerIDFrontRecognizer;
+
 - (void)addMrtdRecognizer;
 
 - (void)addMyKadRecognizer;
 
+- (void)addIKadRecognizer;
+
 - (void)addPdf417Recognizer;
+
+- (void)addSerbIDBackRecognizer;
+
+- (void)addSerbIDFrontRecognizer;
+
+- (void)addSlovakIDFrontRecognizer;
+
+- (void)addSlovakIDBackRecognizer;
+
+- (void)addSlovenianIDBackRecognizer;
+
+- (void)addSlovenianIDFrontRecognizer;
 
 - (void)addSingaporeIDBackRecognizer;
 
 - (void)addSingaporeIDFrontRecognizer;
 
 - (void)addUsdlRecognizer;
+
+- (void)addAusdlRecognizer;
 
 - (void)addUkdlRecognizer;
 
@@ -67,6 +87,10 @@
 - (void)addIbanParser:(NSString *)identifier;
 
 - (void)addVinParser:(NSString *)identifierd;
+
+- (void)addLicensePlatesParser:(NSString *)identifier;
+
+- (void)addTopUpOcrParser:(NSString *)identifier;
 
 - (void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
 
