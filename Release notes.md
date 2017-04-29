@@ -1,3 +1,6 @@
+## 1.0.1
+- update iOS SDK to [v2.7.1](https://github.com/BlinkID/blinkid-ios/releases/tag/v2.7.1)
+
 ## 1.0.0
 
 - First official version. 
