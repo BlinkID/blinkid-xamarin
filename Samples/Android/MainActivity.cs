@@ -14,7 +14,7 @@ using Java.Lang;
 
 namespace Android
 {
-	[Activity (Label = "BlinkID Xamarin", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity (Label = "BlinkID Xamarin", MainLauncher = true, Icon = "@mipmap/icon", HardwareAccelerated = true)]
 	public class MainActivity : Activity
 	{
 		public const string LICENSE_KEY = "YXYKNFI6-IL7BPDQO-LWJTJLN4-ZV7RAXUH-F7QX4XUH-F7QX4XUH-F7QX57QA-DY33G5LK";
