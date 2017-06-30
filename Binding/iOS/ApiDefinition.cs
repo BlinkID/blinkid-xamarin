@@ -55,6 +55,14 @@ namespace MicroBlink {
 		[Export ("addEudlRecognizer")]
 		void AddEudlRecognizer ();
 
+		// -(void)addGerMrzRecognizer;
+		[Export ("addGerMrzRecognizer")]
+		void AddGerMrzRecognizer ();
+
+		// -(void)addGerIDFrontRecognizer;
+		[Export ("addGerIDFrontRecognizer")]
+		void AddGerIDFrontRecognizer ();
+
 		// -(void)addMrtdRecognizer;
 		[Export ("addMrtdRecognizer")]
 		void AddMrtdRecognizer ();
@@ -63,17 +71,53 @@ namespace MicroBlink {
 		[Export ("addMyKadRecognizer")]
 		void AddMyKadRecognizer ();
 
+		// -(void)addIKadRecognizer;
+		[Export ("addIKadRecognizer")]
+		void AddIKadRecognizer ();
+
 		// -(void)addPdf417Recognizer;
 		[Export ("addPdf417Recognizer")]
 		void AddPdf417Recognizer ();
 
-		// -(void)addSingaporeIDRecognizer;
-		//[Export ("addSingaporeIDRecognizer")]
-		//void AddSingaporeIDRecognizer ();
+		// -(void)addSerbIDBackRecognizer;
+		[Export ("addSerbIDBackRecognizer")]
+		void AddSerbIDBackRecognizer ();
+
+		// -(void)addSerbIDFrontRecognizer;
+		[Export ("addSerbIDFrontRecognizer")]
+		void AddSerbIDFrontRecognizer ();
+
+		// -(void)addSlovakIDFrontRecognizer;
+		[Export ("addSlovakIDFrontRecognizer")]
+		void AddSlovakIDFrontRecognizer ();
+
+		// -(void)addSlovakIDBackRecognizer;
+		[Export ("addSlovakIDBackRecognizer")]
+		void AddSlovakIDBackRecognizer ();
+
+		// -(void)addSlovenianIDBackRecognizer;
+		[Export ("addSlovenianIDBackRecognizer")]
+		void AddSlovenianIDBackRecognizer ();
+
+		// -(void)addSlovenianIDFrontRecognizer;
+		[Export ("addSlovenianIDFrontRecognizer")]
+		void AddSlovenianIDFrontRecognizer ();
+
+		// -(void)addSingaporeIDBackRecognizer;
+		[Export ("addSingaporeIDBackRecognizer")]
+		void AddSingaporeIDBackRecognizer ();
+
+		// -(void)addSingaporeIDFrontRecognizer;
+		[Export ("addSingaporeIDFrontRecognizer")]
+		void AddSingaporeIDFrontRecognizer ();
 
 		// -(void)addUsdlRecognizer;
 		[Export ("addUsdlRecognizer")]
 		void AddUsdlRecognizer ();
+
+		// -(void)addAusdlRecognizer;
+		[Export ("addAusdlRecognizer")]
+		void AddAusdlRecognizer ();
 
 		// -(void)addUkdlRecognizer;
 		[Export ("addUkdlRecognizer")]
@@ -110,6 +154,14 @@ namespace MicroBlink {
 		// -(void)addVinParser:(NSString *)identifierd;
 		[Export ("addVinParser:")]
 		void AddVinParser (string identifierd);
+
+		// -(void)addLicensePlatesParser:(NSString *)identifier;
+		[Export ("addLicensePlatesParser:")]
+		void AddLicensePlatesParser (string identifier);
+
+		// -(void)addTopUpOcrParser:(NSString *)identifier;
+		[Export ("addTopUpOcrParser:")]
+		void AddTopUpOcrParser (string identifier);
 
 		// -(void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
 		[Export ("addRegexParser:identifier:")]

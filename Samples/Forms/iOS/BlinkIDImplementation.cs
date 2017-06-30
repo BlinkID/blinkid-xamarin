@@ -25,6 +25,8 @@ namespace BlinkIDApp.iOS
 			BlinkID.Instance ().AddMrtdRecognizer ();
 
 			//BlinkID.Instance ().AddEudlRecognizer ();
+			//BlinkID.Instance ().AddGerMrzRecognizer ();
+			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdBackRecognizer ();
 			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
@@ -35,14 +37,26 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddDedlRecognizer ();
 			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddMyKadRecognizer ();
+			//BlinkID.Instance ().AddIKadRecognizer ();
 			//BlinkID.Instance ().AddPdf417Recognizer ();
 			//BlinkID.Instance ().AddSingaporeIDRecognizer ();
 			//BlinkID.Instance ().AddUkdlRecognizer ();
+			//BlinkID.Instance ().AddSerbIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSerbIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSlovakIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
+			//BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
 			//BlinkID.Instance ().AddUsdlRecognizer ();
+			//BlinkID.Instance ().AddAusdlRecognizer ();
 			//BlinkID.Instance ().AddZXingRecognizer ();
 
 			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
+			//BlinkID.Instance ().AddLicensePlatesParser ("LICENSE_PLATES_PARSER_ID");
 
+			//BlinkID.Instance ().AddTopUpOcrParser ("TOP_UP_OCR_PARSER_ID");
 			//BlinkID.Instance ().AddRegexParser ("Blink\\d\\d\\d", "REGEX_PARSER_ID");
 			//BlinkID.Instance ().AddIbanParser ("IBAN_PARSER_ID");
 			//BlinkID.Instance ().AddEmailParser ("EMAIL_PARSER_ID");

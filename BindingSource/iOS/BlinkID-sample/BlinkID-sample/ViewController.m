@@ -21,7 +21,9 @@
 
     [BlinkID instance].licenseKey = @"JHUETMI2-Z5F4T3F5-PAGHBQ3P-TCM5FVCF-2CSYYOKU-OGEA6Z6Y-Q2GUCFXF-Q5QLOYOQ";
     [BlinkID instance].delegate = self;
-    [[BlinkID instance] addIdCardDetector];
+//    [[BlinkID instance] addIdCardDetector];
+    [[BlinkID instance] addGerMrzRecognizer];
+    
 }
 
 - (void)didReceiveMemoryWarning {

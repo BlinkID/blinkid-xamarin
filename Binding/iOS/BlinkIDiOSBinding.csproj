@@ -57,11 +57,24 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\MicroBlink.bundle\IDCard.png" />
-    <BundleResource Include="Resources\MicroBlink.bundle\IDCard%402x.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\Info.plist" />
+    <BundleResource Include="Resources\MicroBlink.bundle\NoCamera-100.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\PPbeep.wav" />
+    <BundleResource Include="Resources\MicroBlink.bundle\arrow.png" />
+    <BundleResource Include="Resources\MicroBlink.bundle\arrow%402x.png" />
+    <BundleResource Include="Resources\MicroBlink.bundle\arrow_pressed.png" />
+    <BundleResource Include="Resources\MicroBlink.bundle\arrow_pressed%402x.png" />
+    <BundleResource Include="Resources\MicroBlink.bundle\cro_address_dictionary.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\cro_authority_dictionary.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\cro_id_confusions.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\cro_name_dictionary.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\de_address_dictionary.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\de_confusions.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\de_id_confusions.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\de_name_dictionary.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\de_surname_dictionary.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\en.strings" />
+    <BundleResource Include="Resources\MicroBlink.bundle\face_detector_model.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\ocr_model.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchoff.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchoff%402x.png" />
