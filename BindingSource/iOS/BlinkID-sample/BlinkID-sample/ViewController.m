@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [BlinkID instance].licenseKey = @"6YYN5NIG-O32K2V7G-5KPDEQNW-766XQEMA-QT6QAW6W-VAD2ZSX7-XV4BDAEF-FD2M3PXF";
+    [BlinkID instance].licenseKey = @"JHUETMI2-Z5F4T3F5-PAGHBQ3P-TCM5FVCF-2CSYYOKU-OGEA6Z6Y-Q2GUCFXF-Q5QLOYOQ";
     [BlinkID instance].delegate = self;
     [[BlinkID instance] addIdCardDetector];
 }

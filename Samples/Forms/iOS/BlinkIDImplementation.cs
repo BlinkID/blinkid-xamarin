@@ -19,7 +19,7 @@ namespace BlinkIDApp.iOS
 		{
 			customDelegate = new CustomDelegate ();
 
-			BlinkID.Instance ().LicenseKey = "5MYXRDEJ-O2CLWMIU-PRCSYAV4-ES45AC2P-NCPDQ5YM-KCFCB6XL-WJMPE5IO-F63JKM4H";
+			BlinkID.Instance ().LicenseKey = "PYIECP3J-XHJMFSKH-XXPEIG62-R7634IH2-5OZFR4WV-XYQPV25S-LDZNKHXW-CLLJIJF5";
 			BlinkID.Instance ().Delegate = customDelegate;
 
 			BlinkID.Instance ().AddMrtdRecognizer ();

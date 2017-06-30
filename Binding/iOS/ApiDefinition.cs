@@ -68,8 +68,8 @@ namespace MicroBlink {
 		void AddPdf417Recognizer ();
 
 		// -(void)addSingaporeIDRecognizer;
-		[Export ("addSingaporeIDRecognizer")]
-		void AddSingaporeIDRecognizer ();
+		//[Export ("addSingaporeIDRecognizer")]
+		//void AddSingaporeIDRecognizer ();
 
 		// -(void)addUsdlRecognizer;
 		[Export ("addUsdlRecognizer")]
