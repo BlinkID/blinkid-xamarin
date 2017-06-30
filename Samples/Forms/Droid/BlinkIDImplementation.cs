@@ -43,9 +43,9 @@ namespace BlinkIDApp.Droid
 			 * Define recognizers
 			 */
 			// MRTD(Machine Readable Travel Document)
-			//if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
-			//	Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
-			//}
+			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
+				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
+			}
 
 			// Driving licenses
 			// United States of America
@@ -135,9 +135,9 @@ namespace BlinkIDApp.Droid
 			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdFront ()) {
 			//	Console.WriteLine ("RecognizerSlovenianIdFront is not supported");
 			//}
-			if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
-				Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
-			}
+			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
+			//	Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
+			//}
 
 			// Barcode recognizers
 			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
@@ -198,7 +198,11 @@ namespace BlinkIDApp.Droid
 					var dict = new Dictionary<string, string> ();
 
 					foreach (var item in result) {
-						dict.Add (item.Key.ToString(), item.Value.ToString());
+						if (item.Value != null) {
+							dict.Add (item.Key.ToString(), item.Value.ToString());
+						} else {
+							dict.Add (item.Key.ToString(), null);
+						}
 					}
 
 					transformedResults.Add (dict);

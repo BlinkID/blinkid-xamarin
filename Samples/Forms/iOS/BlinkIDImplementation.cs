@@ -71,7 +71,6 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().ClearAllRecognizers ();
 
 
-
 			isFrontCamera = false;
 		}
 
