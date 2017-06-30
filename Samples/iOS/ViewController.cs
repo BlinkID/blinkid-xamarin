@@ -24,36 +24,52 @@ namespace iOS
 
 			customDelegate = new CustomDelegate ();
 
-			BlinkID.Instance().LicenseKey = "VVBZXXL4-YIHNFMHI-V3RF6KDA-WPFHFFEX-5X72P6VO-55RZ66YJ-IYVFVAOY-MYETCD5W";
+			BlinkID.Instance().LicenseKey = "5NXBHL7Z-D2IXPPFK-SSFOGINA-NPBXL65S-OKKJP3P7-U75K533D-T55QTZRC-ZCTY3JVS";
 			BlinkID.Instance().Delegate = customDelegate;
 
-			//BlinkID.Instance ().AddMrtdRecognizer ();
+			BlinkID.Instance ().AddMrtdRecognizer ();
+
 			//BlinkID.Instance ().AddEudlRecognizer ();
+			//BlinkID.Instance ().AddGerMrzRecognizer ();
+			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdBackRecognizer ();
-			//BlinkID.Instance ().AddAusIDFrontRecognizerSettings ();
-			//BlinkID.Instance ().AddAusIDBackRecognizerSettings ();
+			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
+			//BlinkID.Instance ().AddAusIDBackRecognizer ();
 			//BlinkID.Instance ().AddBarDecoderRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
 			//BlinkID.Instance ().AddDedlRecognizer ();
 			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddMyKadRecognizer ();
+			//BlinkID.Instance ().AddIKadRecognizer ();
 			//BlinkID.Instance ().AddPdf417Recognizer ();
-			//BlinkID.Instance ().AddSingaporeIDRecognizerSettings ();
+			//BlinkID.Instance ().AddSingaporeIDRecognizer ();
 			//BlinkID.Instance ().AddUkdlRecognizer ();
+			//BlinkID.Instance ().AddSerbIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSerbIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSlovakIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
+			//BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
+			//BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
 			//BlinkID.Instance ().AddUsdlRecognizer ();
+			//BlinkID.Instance ().AddAusdlRecognizer ();
 			//BlinkID.Instance ().AddZXingRecognizer ();
 
-			//BlinkID.Instance ().AddVinParser ("");
-			//BlinkID.Instance ().AddRegexParser ("", "");
-			//BlinkID.Instance ().AddIbanParser ("");
-			//BlinkID.Instance ().AddEmailParser ("");
-			//BlinkID.Instance ().AddDateParser ("");
-			//BlinkID.Instance ().AddRawParser ("");
-			//BlinkID.Instance ().AddAmountParser ("");
+			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
+			//BlinkID.Instance ().AddLicensePlatesParser ("LICENSE_PLATES_PARSER_ID");
 
-			BlinkID.Instance ().AddIdCardDetector ();
+			//BlinkID.Instance ().AddTopUpOcrParser ("TOP_UP_OCR_PARSER_ID");
+			//BlinkID.Instance ().AddRegexParser ("Blink\\d\\d\\d", "REGEX_PARSER_ID");
+			//BlinkID.Instance ().AddIbanParser ("IBAN_PARSER_ID");
+			//BlinkID.Instance ().AddEmailParser ("EMAIL_PARSER_ID");
+			//BlinkID.Instance ().AddDateParser ("DATE_PARSER_ID");
+			//BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
+			//BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
+
+			//BlinkID.Instance ().AddIdCardDetector ();
 
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();

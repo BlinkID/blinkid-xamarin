@@ -19,3 +19,15 @@ This application samples can be **starting point (boilerplate)** for **new Xamar
     - projects in solution [iOS/iOS.sln](iOS/iOS.sln):
         - Xamarin.iOS application; [iOS/BlinkIDSample.csproj](iOS/BlinkIDSample.csproj) 
         - Xamarin Binding library for iOS; [../Binding/iOS/BlinkIDiOSBinding.csproj](../Binding/iOS/BlinkIDiOSBinding.csproj)   
+
+
+## Platform Specific
+
+### iOS
+
+Required `mtouch` arguments:
+```
+--linkskip=MicroBlink
+```
+To skip linking of MicroBlink assembly when `Linker behavior: Link Framework SDKs Only`.  
+More details: https://developer.xamarin.com/guides/ios/advanced_topics/linker/#Skipping_Assemblies   
