@@ -8,7 +8,16 @@ This is BlinkID Xamarin implementation based on native [Objective-C](https://git
 
 NOTE: **BlinkID SDK** is not available as **Xamarin Component** because it is much simpler to reuse C# Binding Library projects from this repository with resources included inside other than manual import of Android and iOS Resources from **Xamarin Component's Sample applications**. 
 
+## Getting started
+
+This is the open-source code which should be imported to your application's solution. Import existing C# Binding Library iOS and Android projects to solution and add reference to your iOS and Android platform specific projects.  
+
+## Requirements
+
+Recommended Xamarin.Forms version is >=2.3.4.247, older versions will produce error: "Error executing task XamlCTask: Could not find file MDB" if you use if with latest version of Xamarin in Xamarin Studio.
+
 ## Video tutorial
+
 Step by step guide how to start BlinkID Xamarin. Forms Sample application. A tutorial flows from git clone to successfully deployed demo application on Android and iOS device with real-time screen mirroring. Application demo contains simple use of MRTD recognizer with Croatian ID card.
 <p align="center" >
   <a href="https://vimeo.com/191807117" target="_blank">
