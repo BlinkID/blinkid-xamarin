@@ -14,13 +14,13 @@
 
 @property (nonatomic) PPCameraType cameraType;
 
-@property (nonatomic) NSMutableArray<PPRecognizerSettings*> *recognizers;
+@property (nonatomic) NSMutableArray<PPRecognizerSettings *> *recognizers;
 
-@property (nonatomic) NSMutableArray<PPOcrParserFactory*> *parsers;
+@property (nonatomic) NSMutableArray<PPOcrParserFactory *> *parsers;
 
-@property (nonatomic) NSMutableArray<PPDetectorSettings*> *detectors;
+@property (nonatomic) NSMutableArray<PPDetectorSettings *> *detectors;
 
-@property (nonatomic) NSMutableArray<NSString*> *parserNames;
+@property (nonatomic) NSMutableArray<NSString *> *parserNames;
 
 @end
 
@@ -28,10 +28,10 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _recognizers = [NSMutableArray<PPRecognizerSettings*> array];
-        _parsers = [NSMutableArray<PPOcrParserFactory*> array];
-        _detectors = [NSMutableArray<PPDetectorSettings*> array];
-        _parserNames = [NSMutableArray<NSString*> array];
+        _recognizers = [NSMutableArray<PPRecognizerSettings *> array];
+        _parsers = [NSMutableArray<PPOcrParserFactory *> array];
+        _detectors = [NSMutableArray<PPDetectorSettings *> array];
+        _parserNames = [NSMutableArray<NSString *> array];
     }
     return self;
 }
@@ -46,7 +46,7 @@
 }
 
 - (void)scan:(BOOL)isFrontCamera {
-    
+
     if (!isFrontCamera) {
         self.cameraType = PPCameraTypeBack;
     } else {
@@ -70,12 +70,13 @@
     }
 
     /** Allocate and present the scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
+    UIViewController<PPScanningViewController> *scanningViewController =
+        [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
 
     // allow rotation if VC is displayed as a modal view controller
     scanningViewController.autorotate = YES;
     scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAll;
-    
+
     UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [rootViewController presentViewController:scanningViewController animated:YES completion:nil];
 }
@@ -86,8 +87,7 @@
     // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
 }
 
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-                  didFindError:(NSError *)error {
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didFindError:(NSError *)error {
     // Can be ignored. See description of the method
 }
 
@@ -97,7 +97,8 @@
     [scanningViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didOutputMetadata:(PPMetadata *)metadata {
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
+             didOutputMetadata:(PPMetadata *)metadata {
 
     if ([metadata isKindOfClass:[PPImageMetadata class]]) {
         PPImageMetadata *imageMetadata = (PPImageMetadata *)metadata;
@@ -106,15 +107,14 @@
         NSString *name = [imageMetadata name];
 
         NSLog(@"Will call didOutputImage");
-        
+
         [self.delegate blinkID:self didOutputImage:image name:name];
-        
+
         NSLog(@"Is called didOutputImage");
     }
 }
 
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-              didOutputResults:(NSArray *)results {
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didOutputResults:(NSArray *)results {
 
     // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
 
@@ -149,8 +149,70 @@
                 [dict setObject:@"Pdf417" forKey:resultTypeKey];
             } else if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
                 [dict setObject:@"BarDecoder" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPBarcodeRecognizerResult class]]) {
+                [dict setObject:@"Barcode" forKey:resultTypeKey];
             } else if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
                 [dict setObject:@"ZXing" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPAusIDBackRecognizerResult class]]) {
+                [dict setObject:@"Austrian ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPAusIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Austrian ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPAusPassportRecognizerResult class]]) {
+                [dict setObject:@"Austrian Passport" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPAusIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Austrian Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCroIDBackRecognizerResult class]]) {
+                [dict setObject:@"Croatian ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCroIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Croatian ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCroIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Croatian Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCzIDBackRecognizerResult class]]) {
+                [dict setObject:@"Czech ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCzIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Czech ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPCzIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Czech Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPGermanIDBackRecognizerResult class]]) {
+                [dict setObject:@"German ID Back" forKey:resultTypeKey];
+            }  else if ([result isKindOfClass:[PPGermanIDFrontRecognizerResult class]]) {
+                [dict setObject:@"German ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPGermanOldIDRecognizerResult class]]) {
+                [dict setObject:@"German ID Old" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPGermanPassportRecognizerResult class]]) {
+                [dict setObject:@"German Passport" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPGermanIDCombinedRecognizerResult class]]){
+                [dict setObject:@"German Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSerbianIDBackRecognizerResult class]]) {
+                [dict setObject:@"Serbian ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSerbianIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Serbian ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSerbianIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Serbian Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovakIDBackRecognizerResult class]]) {
+                [dict setObject:@"Slovak ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovakIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Slovak ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovakIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Slovak Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovenianIDBackRecognizerResult class]]) {
+                [dict setObject:@"Slovenian ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovenianIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Slovenian ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSlovenianIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Slovenian Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSingaporeIDBackRecognizerResult class]]) {
+                [dict setObject:@"Singapore ID Back" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSingaporeIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Singapore ID Front" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSingaporeIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Singapore Combined" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPSwissPassportRecognizerResult class]]) {
+                [dict setObject:@"Swiss Passport" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPVinRecognizerResult class]]) {
+                [dict setObject:@"VIN" forKey:resultTypeKey];
+            } else if ([result isKindOfClass:[PPMrtdCombinedRecognizerResult class]]) {
+                [dict setObject:@"MRTD Combined" forKey:resultTypeKey];
             } else if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
                 PPBlinkOcrRecognizerResult *ocrResult = (PPBlinkOcrRecognizerResult *)result;
                 for (NSString *parserName in self.parserNames) {
@@ -178,7 +240,7 @@
  *
  *  @return initialized coordinator
  */
-- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
+- (PPCameraCoordinator *)coordinatorWithError:(NSError **)error {
 
     /** 0. Check if scanning is supported */
 
@@ -204,14 +266,14 @@
 
 
     /** 3. Set up what is being scanned. See detailed guides for specific use cases. */
-    
+
     /**
      * Add all needed recognizers
      */
     for (PPRecognizerSettings *recognizer in self.recognizers) {
         [settings.scanSettings addRecognizerSettings:recognizer];
     }
-    
+
     /**
      * Add BlinkOCR if parsers exist
      */
@@ -233,16 +295,16 @@
     }
 
     /** 4. Initialize the Scanning Coordinator object */
-    
+
     PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
-    
+
     return coordinator;
 }
 
 #pragma mark - Recognizers
 
 - (BOOL)recognizerExists:(PPRecognizerSettings *)recognizer {
-    for(PPRecognizerSettings *temp in self.recognizers) {
+    for (PPRecognizerSettings *temp in self.recognizers) {
         if ([temp isKindOfClass:[recognizer class]]) {
             if ([recognizer isKindOfClass:[PPEudlRecognizerSettings class]]) {
                 [self.recognizers removeObject:temp];
@@ -255,208 +317,313 @@
 }
 
 - (BOOL)idExists:(NSString *)id {
-    BOOL found = [id isEqualToString:@"Mrtd"] || [id isEqualToString:@"Usdl"] || [id isEqualToString:@"Ukdl"] || [id isEqualToString:@"Dedl"] || [id isEqualToString:@"Eudl"] || [id isEqualToString:@"MyKad"] || [id isEqualToString:@"Pdf417"] || [id isEqualToString:@"BarDecoder"] || [id isEqualToString:@"ZXing"];
+    BOOL found = [id isEqualToString:@"Mrtd"] || [id isEqualToString:@"Usdl"] || [id isEqualToString:@"Ukdl"] ||
+                 [id isEqualToString:@"Dedl"] || [id isEqualToString:@"Eudl"] || [id isEqualToString:@"MyKad"] ||
+                 [id isEqualToString:@"Pdf417"] || [id isEqualToString:@"BarDecoder"] || [id isEqualToString:@"ZXing"];
     if (found) {
-        NSLog(@"Parser ID cannot have same ID (%@) as one of recognizers!\nPlease use different ID for a parser!",id);
+        NSLog(@"Parser ID cannot have same ID (%@) as one of recognizers!\nPlease use different ID for a parser!", id);
         return YES;
     }
     for (NSString *temp in self.parserNames) {
         if ([temp isEqualToString:id]) {
-            NSLog(@"Parser ID with selected ID (%@) already exists!\nPlease use different ID!",id);
-            return YES;;
+            NSLog(@"Parser ID with selected ID (%@) already exists!\nPlease use different ID!", id);
+            return YES;
+            ;
         }
     }
     return NO;
-    
 }
 
 - (void)addAusIDBackRecognizer {
     PPAusIDBackRecognizerSettings *recognizer = [[PPAusIDBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addAusIDFrontRecognizer {
     PPAusIDFrontRecognizerSettings *recognizer = [[PPAusIDFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAusPassportRecognizer {
+    PPAusPassportRecognizerSettings *recognizer = [[PPAusPassportRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAusIDCombinedRecognizer {
+    PPAusIDCombinedRecognizerSettings *recognizer = [[PPAusIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addBarDecoderRecognizer {
     PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addBarcodeRecognizer {
+    PPBarcodeRecognizerSettings *recognizer = [[PPBarcodeRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addCroIdBackRecognizer {
     PPCroIDBackRecognizerSettings *recognizer = [[PPCroIDBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addCroIdFrontRecognizer {
     PPCroIDFrontRecognizerSettings *recognizer = [[PPCroIDFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCroCombinedRecognizer {
+    PPCroIDCombinedRecognizerSettings *recognizer = [[PPCroIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addCzIDBackRecognizer {
     PPCzIDBackRecognizerSettings *recognizer = [[PPCzIDBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addCzIDFrontRecognizer {
     PPCzIDFrontRecognizerSettings *recognizer = [[PPCzIDFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addCzCombinedRecognizer {
+    PPCzIDCombinedRecognizerSettings *recognizer = [[PPCzIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addEudlRecognizer {
     PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny];
-    if(![self recognizerExists:recognizer]) {
-        [self.recognizers addObject:recognizer];
-    }
-}
-
-- (void)addGerMrzRecognizer {
-    PPGermanIdMrzRecognizerSettings *recognizer = [[PPGermanIdMrzRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addGerIDFrontRecognizer {
-    PPGermanIdFrontRecognizerSettings *recognizer = [[PPGermanIdFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPGermanIDFrontRecognizerSettings *recognizer = [[PPGermanIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addGerIDBackRecognizer {
+    PPGermanIDBackRecognizerSettings *recognizer = [[PPGermanIDBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addGerIDOldRecognizer {
+    PPGermanOldIDRecognizerSettings *recognizer = [[PPGermanOldIDRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addGerPassportRecognizer {
+    PPGermanPassportRecognizerSettings *recognizer = [[PPGermanPassportRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addGerCombinedRecognizer {
+    PPGermanIDCombinedRecognizerSettings *recognizer = [[PPGermanIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addMrtdRecognizer {
     PPMrtdRecognizerSettings *recognizer = [[PPMrtdRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addMyKadRecognizer {
     PPMyKadRecognizerSettings *recognizer = [[PPMyKadRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addIKadRecognizer {
     PPiKadRecognizerSettings *recognizer = [[PPiKadRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
-    
 }
 
 - (void)addPdf417Recognizer {
     PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSerbIDBackRecognizer {
-    PPSerbianIdBackRecognizerSettings *recognizer = [[PPSerbianIdBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSerbianIDBackRecognizerSettings *recognizer = [[PPSerbianIDBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSerbIDFrontRecognizer {
-    PPSerbianIdFrontRecognizerSettings *recognizer = [[PPSerbianIdFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSerbianIDFrontRecognizerSettings *recognizer = [[PPSerbianIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSerbIDCombinedRecognizer {
+    PPSerbianIDCombinedRecognizerSettings *recognizer = [[PPSerbianIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSlovakIDBackRecognizer {
-    PPSlovakIdBackRecognizerSettings *recognizer = [[PPSlovakIdBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSlovakIDBackRecognizerSettings *recognizer = [[PPSlovakIDBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSlovakIDFrontRecognizer {
-    PPSlovakIdFrontRecognizerSettings *recognizer = [[PPSlovakIdFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSlovakIDFrontRecognizerSettings *recognizer = [[PPSlovakIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovakCombinedRecognizer {
+    PPSlovakIDCombinedRecognizerSettings *recognizer = [[PPSlovakIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSlovenianIDBackRecognizer {
-    PPSlovenianIdBackRecognizerSettings *recognizer = [[PPSlovenianIdBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSlovenianIDBackRecognizerSettings *recognizer = [[PPSlovenianIDBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSlovenianIDFrontRecognizer {
-    PPSlovenianIdFrontRecognizerSettings *recognizer = [[PPSlovenianIdFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    PPSlovenianIDFrontRecognizerSettings *recognizer = [[PPSlovenianIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSlovenianCombinedRecognizer {
+    PPSlovenianIDCombinedRecognizerSettings *recognizer = [[PPSlovenianIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSingaporeIDBackRecognizer {
     PPSingaporeIDBackRecognizerSettings *recognizer = [[PPSingaporeIDBackRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addSingaporeIDFrontRecognizer {
     PPSingaporeIDFrontRecognizerSettings *recognizer = [[PPSingaporeIDFrontRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
+- (void)addSingaporeCombinedRecognizer {
+    PPSingaporeIDCombinedRecognizerSettings *recognizer = [[PPSingaporeIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSwissPassportRecognizer {
+    PPSwissPassportRecognizerSettings *recognizer = [[PPSwissPassportRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addUsdlRecognizer {
     PPUsdlRecognizerSettings *recognizer = [[PPUsdlRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addAusdlRecognizer {
     PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAustria];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addUkdlRecognizer {
     PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryUnitedKingdom];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addDedlRecognizer {
     PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryGermany];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
 
 - (void)addZXingRecognizer {
     PPZXingRecognizerSettings *recognizer = [[PPZXingRecognizerSettings alloc] init];
-    if(![self recognizerExists:recognizer]) {
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addVinRecognizer {
+    PPVinRecognizerSettings *recognizer = [[PPVinRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addVinRecognizer {
+    PPMrtdCombinedRecognizerSettings *recognizer = [[PPMrtdCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
 }
@@ -568,7 +735,7 @@
 
     PPDocumentDetectorSettings *detectorSettings = [[PPDocumentDetectorSettings alloc] initWithNumStableDetectionsThreshold:3];
     PPDocumentSpecification *specification = [PPDocumentSpecification newFromPreset:PPDocumentPresetId1Card];
-    [detectorSettings setDocumentSpecifications:@[specification]];
+    [detectorSettings setDocumentSpecifications:@[ specification ]];
 
     if ([self detectorExists:detectorSettings]) {
         return;

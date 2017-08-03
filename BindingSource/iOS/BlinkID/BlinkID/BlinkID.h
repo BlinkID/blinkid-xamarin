@@ -24,21 +24,37 @@
 
 - (void)addAusIDFrontRecognizer;
 
+- (void)addAusPassportRecognizer;
+
+- (void)addAusIDCombinedRecognizer;
+
 - (void)addBarDecoderRecognizer;
+
+- (void)addBarcodeRecognizer;
 
 - (void)addCroIdBackRecognizer;
 
 - (void)addCroIdFrontRecognizer;
 
+- (void)addCroCombinedRecognizer;
+
 - (void)addCzIDBackRecognizer;
 
 - (void)addCzIDFrontRecognizer;
 
+- (void)addCzCombinedRecognizer;
+
 - (void)addEudlRecognizer;
 
-- (void)addGerMrzRecognizer;
-
 - (void)addGerIDFrontRecognizer;
+
+- (void)addGerIDBackRecognizer;
+
+- (void)addGerIDOldRecognizer;
+
+- (void)addGerPassportRecognizer;
+
+- (void)addGerCombinedRecognizer;
 
 - (void)addMrtdRecognizer;
 
@@ -52,17 +68,27 @@
 
 - (void)addSerbIDFrontRecognizer;
 
+- (void)addSerbIDCombinedRecognizer;
+
 - (void)addSlovakIDFrontRecognizer;
 
 - (void)addSlovakIDBackRecognizer;
+
+- (void)addSlovakCombinedRecognizer;
 
 - (void)addSlovenianIDBackRecognizer;
 
 - (void)addSlovenianIDFrontRecognizer;
 
+- (void)addSlovenianCombinedRecognizer;
+
 - (void)addSingaporeIDBackRecognizer;
 
 - (void)addSingaporeIDFrontRecognizer;
+
+- (void)addSingaporeCombinedRecognizer;
+
+- (void)addSwissPassportRecognizer;
 
 - (void)addUsdlRecognizer;
 
@@ -73,6 +99,10 @@
 - (void)addDedlRecognizer;
 
 - (void)addZXingRecognizer;
+
+- (void)addVinRecognizer;
+
+- (void)addMrtdCombinedRecognizer;
 
 // Parsers
 
