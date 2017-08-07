@@ -621,7 +621,7 @@
     }
 }
 
-- (void)addVinRecognizer {
+- (void)addMrtdCombinedRecognizer {
     PPMrtdCombinedRecognizerSettings *recognizer = [[PPMrtdCombinedRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
