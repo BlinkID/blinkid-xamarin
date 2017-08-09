@@ -24,6 +24,7 @@
 /* Begin PBXBuildFile section */
 		182752901C7DD1830068C80C /* BlinkID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1827528F1C7DD1830068C80C /* BlinkID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		182752A91C7DD1C90068C80C /* BlinkID.m in Sources */ = {isa = PBXBuildFile; fileRef = 182752A81C7DD1C90068C80C /* BlinkID.m */; };
+		A2240A401F3B033D005732B4 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182752AC1C7DD1FF0068C80C /* MicroBlink.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2240A401F3B033D005732B4 /* MicroBlink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,11 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [BlinkID instance].licenseKey = @"JHUETMI2-Z5F4T3F5-PAGHBQ3P-TCM5FVCF-2CSYYOKU-OGEA6Z6Y-Q2GUCFXF-Q5QLOYOQ";
+    // Valid until 2017-11-07
+    [BlinkID instance].licenseKey = @"7QA5M6VI-A6XYOHC2-WVEH4KCH-F7RE3TXQ-SMQ2SAVT-SYEE4GHL-JAAFW5XW-3XN67FPM";
     [BlinkID instance].delegate = self;
-//    [[BlinkID instance] addIdCardDetector];
-    [[BlinkID instance] addGerMrzRecognizer];
-    
+    [[BlinkID instance] addMrtdRecognizer];
+    [[BlinkID instance] addSwissPassportRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
