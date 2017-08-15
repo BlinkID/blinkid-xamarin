@@ -19,23 +19,32 @@ namespace BlinkIDApp.iOS
 		{
 			customDelegate = new CustomDelegate ();
 
-			BlinkID.Instance ().LicenseKey = "PYIECP3J-XHJMFSKH-XXPEIG62-R7634IH2-5OZFR4WV-XYQPV25S-LDZNKHXW-CLLJIJF5";
+			BlinkID.Instance ().LicenseKey = "MZEFTUGV-WPJ5HRA2-KCJUE4W6-JEOQOJFZ-2AFU62E6-HB3QYUEK-ED5OWEVL-HOT5T7ZP";
 			BlinkID.Instance ().Delegate = customDelegate;
 
 			BlinkID.Instance ().AddMrtdRecognizer ();
+			//BlinkID.Instance ().AddMrtdCombinedRecognizer ();
 
 			//BlinkID.Instance ().AddEudlRecognizer ();
-			//BlinkID.Instance ().AddGerMrzRecognizer ();
+			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0
+			//BlinkID.Instance ().AddGerIDOldRecognizer ();
 			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
+			//BlinkID.Instance ().AddGerIDBackRecognizer ();
+			//BlinkID.Instance ().AddGerPassportRecognizer ();
+			//BlinkID.Instance ().AddGerCombinedRecognizer ();
 			//BlinkID.Instance ().AddCroIdFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdBackRecognizer ();
+			//BlinkID.Instance ().AddCroCombinedRecognizer ();
 			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
 			//BlinkID.Instance ().AddAusIDBackRecognizer ();
-			//BlinkID.Instance ().AddBarDecoderRecognizer ();
+			//BlinkID.Instance ().AddAusPassportRecognizer ();
+			//BlinkID.Instance ().AddAusIDCombinedRecognizer ();
+			BlinkID.Instance ().AddBarDecoderRecognizer ();
+			//BlinkID.Instance ().AddBarcodeRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
-			//BlinkID.Instance ().AddDedlRecognizer ();
-			//BlinkID.Instance ().AddEudlRecognizer ();
+			//BlinkID.Instance ().AddCzCombinedRecognizer ();
+
 			//BlinkID.Instance ().AddMyKadRecognizer ();
 			//BlinkID.Instance ().AddIKadRecognizer ();
 			//BlinkID.Instance ().AddPdf417Recognizer ();
@@ -43,16 +52,25 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddUkdlRecognizer ();
 			//BlinkID.Instance ().AddSerbIDFrontRecognizer ();
 			//BlinkID.Instance ().AddSerbIDBackRecognizer ();
+			//BlinkID.Instance ().AddSerbIDCombinedRecognizer ();
 			//BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
 			//BlinkID.Instance ().AddSlovakIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovakCombinedRecognizer ();
 			//BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
 			//BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
+			//BlinkID.Instance ().AddSlovenianCombinedRecognizer ();
 			//BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
 			//BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
+			//BlinkID.Instance ().AddSingaporeCombinedRecognizer ();
+			//BlinkID.Instance ().AddSwissPassportRecognizer ();
+			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddUsdlRecognizer ();
 			//BlinkID.Instance ().AddAusdlRecognizer ();
+			//BlinkID.Instance ().AddDedlRecognizer ();
+
 			//BlinkID.Instance ().AddZXingRecognizer ();
 
+			//BlinkID.Instance ().AddVinRecognizer ();
 			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
 			//BlinkID.Instance ().AddLicensePlatesParser ("LICENSE_PLATES_PARSER_ID");
 
@@ -69,7 +87,6 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();
 			//BlinkID.Instance ().ClearAllRecognizers ();
-
 
 			isFrontCamera = false;
 		}

@@ -31,9 +31,22 @@ namespace MicroBlink {
 		[Export ("addAusIDFrontRecognizer")]
 		void AddAusIDFrontRecognizer ();
 
+		// -(void)addAusPassportRecognizer;
+		[Export ("addAusPassportRecognizer")]
+		void AddAusPassportRecognizer ();
+
+		// -(void)addAusIDCombinedRecognizer;
+		[Export ("addAusIDCombinedRecognizer")]
+		void AddAusIDCombinedRecognizer ();
+
 		// -(void)addBarDecoderRecognizer;
 		[Export ("addBarDecoderRecognizer")]
+		[Deprecated(PlatformName.iOS, PlatformArchitecture.All, "Use AddBarcodeRecognizer")]
 		void AddBarDecoderRecognizer ();
+
+		// -(void)addBarcodeRecognizer;
+		[Export ("addBarcodeRecognizer")]
+		void AddBarcodeRecognizer ();
 
 		// -(void)addCroIdBackRecognizer;
 		[Export ("addCroIdBackRecognizer")]
@@ -43,6 +56,10 @@ namespace MicroBlink {
 		[Export ("addCroIdFrontRecognizer")]
 		void AddCroIdFrontRecognizer ();
 
+		// -(void)addCroCombinedRecognizer;
+		[Export ("addCroCombinedRecognizer")]
+		void AddCroCombinedRecognizer ();
+
 		// -(void)addCzIDBackRecognizer;
 		[Export ("addCzIDBackRecognizer")]
 		void AddCzIDBackRecognizer ();
@@ -51,17 +68,33 @@ namespace MicroBlink {
 		[Export ("addCzIDFrontRecognizer")]
 		void AddCzIDFrontRecognizer ();
 
+		// -(void)addCzCombinedRecognizer;
+		[Export ("addCzCombinedRecognizer")]
+		void AddCzCombinedRecognizer ();
+
 		// -(void)addEudlRecognizer;
 		[Export ("addEudlRecognizer")]
 		void AddEudlRecognizer ();
 
-		// -(void)addGerMrzRecognizer;
-		[Export ("addGerMrzRecognizer")]
-		void AddGerMrzRecognizer ();
-
 		// -(void)addGerIDFrontRecognizer;
 		[Export ("addGerIDFrontRecognizer")]
 		void AddGerIDFrontRecognizer ();
+
+		// -(void)addGerIDBackRecognizer;
+		[Export ("addGerIDBackRecognizer")]
+		void AddGerIDBackRecognizer ();
+
+		// -(void)addGerIDOldRecognizer;
+		[Export ("addGerIDOldRecognizer")]
+		void AddGerIDOldRecognizer ();
+
+		// -(void)addGerPassportRecognizer;
+		[Export ("addGerPassportRecognizer")]
+		void AddGerPassportRecognizer ();
+
+		// -(void)addGerCombinedRecognizer;
+		[Export ("addGerCombinedRecognizer")]
+		void AddGerCombinedRecognizer ();
 
 		// -(void)addMrtdRecognizer;
 		[Export ("addMrtdRecognizer")]
@@ -87,6 +120,10 @@ namespace MicroBlink {
 		[Export ("addSerbIDFrontRecognizer")]
 		void AddSerbIDFrontRecognizer ();
 
+		// -(void)addSerbIDCombinedRecognizer;
+		[Export ("addSerbIDCombinedRecognizer")]
+		void AddSerbIDCombinedRecognizer ();
+
 		// -(void)addSlovakIDFrontRecognizer;
 		[Export ("addSlovakIDFrontRecognizer")]
 		void AddSlovakIDFrontRecognizer ();
@@ -94,6 +131,10 @@ namespace MicroBlink {
 		// -(void)addSlovakIDBackRecognizer;
 		[Export ("addSlovakIDBackRecognizer")]
 		void AddSlovakIDBackRecognizer ();
+
+		// -(void)addSlovakCombinedRecognizer;
+		[Export ("addSlovakCombinedRecognizer")]
+		void AddSlovakCombinedRecognizer ();
 
 		// -(void)addSlovenianIDBackRecognizer;
 		[Export ("addSlovenianIDBackRecognizer")]
@@ -103,6 +144,10 @@ namespace MicroBlink {
 		[Export ("addSlovenianIDFrontRecognizer")]
 		void AddSlovenianIDFrontRecognizer ();
 
+		// -(void)addSlovenianCombinedRecognizer;
+		[Export ("addSlovenianCombinedRecognizer")]
+		void AddSlovenianCombinedRecognizer ();
+
 		// -(void)addSingaporeIDBackRecognizer;
 		[Export ("addSingaporeIDBackRecognizer")]
 		void AddSingaporeIDBackRecognizer ();
@@ -110,6 +155,14 @@ namespace MicroBlink {
 		// -(void)addSingaporeIDFrontRecognizer;
 		[Export ("addSingaporeIDFrontRecognizer")]
 		void AddSingaporeIDFrontRecognizer ();
+
+		// -(void)addSingaporeCombinedRecognizer;
+		[Export ("addSingaporeCombinedRecognizer")]
+		void AddSingaporeCombinedRecognizer ();
+
+		// -(void)addSwissPassportRecognizer;
+		[Export ("addSwissPassportRecognizer")]
+		void AddSwissPassportRecognizer ();
 
 		// -(void)addUsdlRecognizer;
 		[Export ("addUsdlRecognizer")]
@@ -130,6 +183,14 @@ namespace MicroBlink {
 		// -(void)addZXingRecognizer;
 		[Export ("addZXingRecognizer")]
 		void AddZXingRecognizer ();
+
+		// -(void)addVinRecognizer;
+		[Export ("addVinRecognizer")]
+		void AddVinRecognizer ();
+
+		// -(void)addMrtdCombinedRecognizer;
+		[Export ("addMrtdCombinedRecognizer")]
+		void AddMrtdCombinedRecognizer ();
 
 		// -(void)addRawParser:(NSString *)identifier;
 		[Export ("addRawParser:")]
@@ -186,6 +247,7 @@ namespace MicroBlink {
 		// -(void)scan:(BOOL)isFrontCamera;
 		[Export ("scan:")]
 		void Scan (bool isFrontCamera);
+
 	}
 
 	// @protocol BlinkIDDelegate <NSObject>

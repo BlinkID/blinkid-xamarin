@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\MicroBlink.bundle\Info.plist" />
-    <BundleResource Include="Resources\MicroBlink.bundle\NoCamera-100.png" />
+    <BundleResource Include="Resources\MicroBlink.bundle\no_camera_100.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\PPbeep.wav" />
     <BundleResource Include="Resources\MicroBlink.bundle\arrow.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\arrow%402x.png" />
@@ -75,7 +75,12 @@
     <BundleResource Include="Resources\MicroBlink.bundle\de_surname_dictionary.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\en.strings" />
     <BundleResource Include="Resources\MicroBlink.bundle\face_detector_model.zzip" />
-    <BundleResource Include="Resources\MicroBlink.bundle\ocr_model.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_arabic.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_eudl.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_general_blink_ocr.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_malaysian.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_micr.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\model_mrtd.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchoff.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchoff%402x.png" />
     <BundleResource Include="Resources\MicroBlink.bundle\torchoff_pressed.png" />
