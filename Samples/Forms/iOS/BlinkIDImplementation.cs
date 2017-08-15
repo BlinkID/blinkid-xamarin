@@ -26,7 +26,7 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddMrtdCombinedRecognizer ();
 
 			//BlinkID.Instance ().AddEudlRecognizer ();
-			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0
+			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
 			//BlinkID.Instance ().AddGerIDOldRecognizer ();
 			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
 			//BlinkID.Instance ().AddGerIDBackRecognizer ();
@@ -39,7 +39,8 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddAusIDBackRecognizer ();
 			//BlinkID.Instance ().AddAusPassportRecognizer ();
 			//BlinkID.Instance ().AddAusIDCombinedRecognizer ();
-			BlinkID.Instance ().AddBarDecoderRecognizer ();
+			//BlinkID.Instance ().AddBarDecoderRecognizer (); - deprecated since iOS v2.11.0, use AddBarcodeRecognizer
+			//BlinkID.Instance ().AddZXingRecognizer (); - deprecated since iOS v2.11.0, use AddBarcodeRecognizer
 			//BlinkID.Instance ().AddBarcodeRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
@@ -67,8 +68,6 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddUsdlRecognizer ();
 			//BlinkID.Instance ().AddAusdlRecognizer ();
 			//BlinkID.Instance ().AddDedlRecognizer ();
-
-			//BlinkID.Instance ().AddZXingRecognizer ();
 
 			//BlinkID.Instance ().AddVinRecognizer ();
 			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
