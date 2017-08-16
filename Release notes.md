@@ -8,6 +8,10 @@
 - Deprecated: `AddBarDecoderRecognizer`, `AddZXingRecognizer`
 - Added: `AddAusPassportRecognizer`, `AddBarcodeRecognizer`, `AddGerIDOldRecognizer`, `AddGerPassportRecognizer`, `AddSwissPassportRecognizer`, `AddVinRecognizer`
 
+### Fixes
+
+- MRTD result - returned old items: `DateOfBirth` and `DateOfExpiry` as RAW OCR string
+
 ## 1.0
 
 - First official version. 
