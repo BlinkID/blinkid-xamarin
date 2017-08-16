@@ -1,6 +1,6 @@
 ## 1.1
 
-- iOS wrapper upgrade to blinkid-ios [2.10.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v2.10.0)
+- iOS wrapper upgrade to blinkid-ios [2.11.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v2.11.0)
 
 ### API changes
 
