@@ -24,6 +24,15 @@
 
 @end
 
+// result const key
+static NSString* const kResultType = @"ResultType";
+
+
+// recognizer MRTD result keys
+static NSString* const kRaw = @"raw";
+static NSString* const kMRTDDateOfBirth = @"DateOfBirth";
+static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
+
 @implementation BlinkID
 
 - (instancetype)init {
@@ -123,8 +132,6 @@
 
     NSMutableArray<NSDictionary *> *dictionaryResults = [[NSMutableArray alloc] init];
 
-    const NSString *resultTypeKey = @"ResultType";
-
     for (id obj in results) {
         if ([obj isKindOfClass:[PPRecognizerResult class]]) {
             PPRecognizerResult *result = (PPRecognizerResult *)obj;
@@ -132,87 +139,88 @@
             NSMutableDictionary *dict = [[result getAllStringElements] mutableCopy];
 
             if ([result isKindOfClass:[PPMrtdRecognizerResult class]]) {
-                [dict setObject:@"Mrtd" forKey:resultTypeKey];
+                PPMrtdRecognizerResult *mrtdDecoderResult = (PPMrtdRecognizerResult *)result;
+                [self setDictionary:dict withMrtdRecognizerResult:mrtdDecoderResult];
             } else if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
-                [dict setObject:@"Usdl" forKey:resultTypeKey];
+                [dict setObject:@"Usdl" forKey:kResultType];
             } else if ([result isKindOfClass:[PPEudlRecognizerResult class]]) {
                 if (((PPEudlRecognizerResult *)result).country == PPEudlCountryUnitedKingdom) {
-                    [dict setObject:@"Ukdl" forKey:resultTypeKey];
+                    [dict setObject:@"Ukdl" forKey:kResultType];
                 } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryGermany) {
-                    [dict setObject:@"Dedl" forKey:resultTypeKey];
+                    [dict setObject:@"Dedl" forKey:kResultType];
                 } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
-                    [dict setObject:@"Eudl" forKey:resultTypeKey];
+                    [dict setObject:@"Eudl" forKey:kResultType];
                 }
             } else if ([result isKindOfClass:[PPMyKadRecognizerResult class]]) {
-                [dict setObject:@"MyKad" forKey:resultTypeKey];
+                [dict setObject:@"MyKad" forKey:kResultType];
             } else if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
-                [dict setObject:@"Pdf417" forKey:resultTypeKey];
+                [dict setObject:@"Pdf417" forKey:kResultType];
             } else if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
-                [dict setObject:@"BarDecoder" forKey:resultTypeKey];
+                [dict setObject:@"BarDecoder" forKey:kResultType];
             } else if ([result isKindOfClass:[PPBarcodeRecognizerResult class]]) {
-                [dict setObject:@"Barcode" forKey:resultTypeKey];
+                [dict setObject:@"Barcode" forKey:kResultType];
             } else if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
-                [dict setObject:@"ZXing" forKey:resultTypeKey];
+                [dict setObject:@"ZXing" forKey:kResultType];
             } else if ([result isKindOfClass:[PPAusIDBackRecognizerResult class]]) {
-                [dict setObject:@"Austrian ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Austrian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPAusIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Austrian ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Austrian ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPAusPassportRecognizerResult class]]) {
-                [dict setObject:@"Austrian Passport" forKey:resultTypeKey];
+                [dict setObject:@"Austrian Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPAusIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Austrian Combined" forKey:resultTypeKey];
+                [dict setObject:@"Austrian Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCroIDBackRecognizerResult class]]) {
-                [dict setObject:@"Croatian ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Croatian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCroIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Croatian ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Croatian ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCroIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Croatian Combined" forKey:resultTypeKey];
+                [dict setObject:@"Croatian Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCzIDBackRecognizerResult class]]) {
-                [dict setObject:@"Czech ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Czech ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCzIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Czech ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Czech ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCzIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Czech Combined" forKey:resultTypeKey];
+                [dict setObject:@"Czech Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanIDBackRecognizerResult class]]) {
-                [dict setObject:@"German ID Back" forKey:resultTypeKey];
+                [dict setObject:@"German ID Back" forKey:kResultType];
             }  else if ([result isKindOfClass:[PPGermanIDFrontRecognizerResult class]]) {
-                [dict setObject:@"German ID Front" forKey:resultTypeKey];
+                [dict setObject:@"German ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanOldIDRecognizerResult class]]) {
-                [dict setObject:@"German ID Old" forKey:resultTypeKey];
+                [dict setObject:@"German ID Old" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanPassportRecognizerResult class]]) {
-                [dict setObject:@"German Passport" forKey:resultTypeKey];
+                [dict setObject:@"German Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanIDCombinedRecognizerResult class]]){
-                [dict setObject:@"German Combined" forKey:resultTypeKey];
+                [dict setObject:@"German Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSerbianIDBackRecognizerResult class]]) {
-                [dict setObject:@"Serbian ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Serbian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSerbianIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Serbian ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Serbian ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSerbianIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Serbian Combined" forKey:resultTypeKey];
+                [dict setObject:@"Serbian Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovakIDBackRecognizerResult class]]) {
-                [dict setObject:@"Slovak ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Slovak ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovakIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Slovak ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Slovak ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovakIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Slovak Combined" forKey:resultTypeKey];
+                [dict setObject:@"Slovak Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovenianIDBackRecognizerResult class]]) {
-                [dict setObject:@"Slovenian ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Slovenian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovenianIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Slovenian ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Slovenian ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSlovenianIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Slovenian Combined" forKey:resultTypeKey];
+                [dict setObject:@"Slovenian Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSingaporeIDBackRecognizerResult class]]) {
-                [dict setObject:@"Singapore ID Back" forKey:resultTypeKey];
+                [dict setObject:@"Singapore ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSingaporeIDFrontRecognizerResult class]]) {
-                [dict setObject:@"Singapore ID Front" forKey:resultTypeKey];
+                [dict setObject:@"Singapore ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSingaporeIDCombinedRecognizerResult class]]) {
-                [dict setObject:@"Singapore Combined" forKey:resultTypeKey];
+                [dict setObject:@"Singapore Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSwissPassportRecognizerResult class]]) {
-                [dict setObject:@"Swiss Passport" forKey:resultTypeKey];
+                [dict setObject:@"Swiss Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPVinRecognizerResult class]]) {
-                [dict setObject:@"VIN" forKey:resultTypeKey];
+                [dict setObject:@"VIN" forKey:kResultType];
             } else if ([result isKindOfClass:[PPMrtdCombinedRecognizerResult class]]) {
-                [dict setObject:@"MRTD Combined" forKey:resultTypeKey];
+                [dict setObject:@"MRTD Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
                 PPBlinkOcrRecognizerResult *ocrResult = (PPBlinkOcrRecognizerResult *)result;
                 for (NSString *parserName in self.parserNames) {
@@ -757,6 +765,13 @@
 
 - (void)clearAllDetectors {
     [self.detectors removeAllObjects];
+}
+
+#pragma mark - Utils
+- (void)setDictionary:(NSMutableDictionary *)dict withMrtdRecognizerResult:(PPMrtdRecognizerResult *)mrtdResult {
+    [dict setObject:[mrtdResult rawDateOfBirth] forKey:kMRTDDateOfBirth];
+    [dict setObject:[mrtdResult rawDateOfExpiry] forKey:kMRTDDateOExpiry];
+    [dict setObject:@"Mrtd" forKey:kResultType];
 }
 
 
