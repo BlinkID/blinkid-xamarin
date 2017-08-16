@@ -6,7 +6,7 @@
 
 - Removed: `AddGerMrzRecognizer`
 - Deprecated: `AddBarDecoderRecognizer`, `AddZXingRecognizer`
-- Added: `AddAusPassportRecognizer`, `AddAusIDCombinedRecognizer`, `AddBarcodeRecognizer`, `AddCroCombinedRecognizer`, `AddCzCombinedRecognizer`, `AddGerIDBackRecognizer`, `AddGerIDOldRecognizer`, `AddGerPassportRecognizer`, `AddGerCombinedRecognizer`, `AddSerbIDCombinedRecognizer`, `AddSlovakCombinedRecognizer`, `AddSlovenianCombinedRecognizer`, `AddSingaporeCombinedRecognizer`, `AddSwissPassportRecognizer`, `AddVinRecognizer`, `AddMrtdCombinedRecognizer`
+- Added: `AddAusPassportRecognizer`, `AddBarcodeRecognizer`, `AddGerIDOldRecognizer`, `AddGerPassportRecognizer`, `AddSwissPassportRecognizer`, `AddVinRecognizer`
 
 ## 1.0
 
