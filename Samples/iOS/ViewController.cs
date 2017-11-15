@@ -27,7 +27,7 @@ namespace iOS
 			BlinkID.Instance().LicenseKey = "2D667DHF-R4B46TOV-OXTF2CXJ-HYSLE4UU-S7W77J72-V3XWHH33-BFDCV6VP-USDCGSR3";
 			BlinkID.Instance().Delegate = customDelegate;
 
-			BlinkID.Instance ().AddMrtdRecognizer ();
+			//BlinkID.Instance ().AddMrtdRecognizer ();
 
 			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
@@ -40,9 +40,9 @@ namespace iOS
 			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
 			//BlinkID.Instance ().AddAusIDBackRecognizer ();
 			//BlinkID.Instance ().AddAusPassportRecognizer ();
-			//BlinkID.Instance ().AddBarDecoderRecognizer (); - deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			//BlinkID.Instance ().AddZXingRecognizer (); - deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			//BlinkID.Instance ().AddBarcodeRecognizer ();
+			//BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
+			//BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
+			BlinkID.Instance ().AddBarcodeRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
 
