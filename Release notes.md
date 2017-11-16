@@ -1,3 +1,11 @@
+## 1.2
+
+- iOS wrapper upgrade to blinkid-ios [2.13.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v2.13.0)
+
+### Fixes
+
+- Barcode recognizers: `BarDecoder`, `ZXing` and `Barcode` has settings for barcodes recognizing.
+
 ## 1.1
 
 - iOS wrapper upgrade to blinkid-ios [2.11.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v2.11.0)
