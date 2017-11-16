@@ -37,7 +37,7 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddAusPassportRecognizer ();
 			//BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
 			//BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			//BlinkID.Instance ().AddBarcodeRecognizer ();
+			BlinkID.Instance ().AddBarcodeRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
 
