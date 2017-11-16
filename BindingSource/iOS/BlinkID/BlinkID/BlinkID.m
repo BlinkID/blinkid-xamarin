@@ -372,6 +372,8 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addBarDecoderRecognizer {
     PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
+    recognizer.scanCode128 = YES;
+    recognizer.scanCode39 = YES;
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
@@ -379,6 +381,15 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addBarcodeRecognizer {
     PPBarcodeRecognizerSettings *recognizer = [[PPBarcodeRecognizerSettings alloc] init];
+    recognizer.scanQR = YES;
+    recognizer.scanITF = YES;
+    recognizer.scanEAN8 = YES;
+    recognizer.scanUPCA = YES;
+    recognizer.scanUPCE = YES;
+    recognizer.scanAztec = YES;
+    recognizer.scanEAN13 = YES;
+    recognizer.scanCode128 = YES;
+    recognizer.scanDataMatrix = YES;
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
@@ -617,6 +628,15 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addZXingRecognizer {
     PPZXingRecognizerSettings *recognizer = [[PPZXingRecognizerSettings alloc] init];
+    recognizer.scanQR = YES;
+    recognizer.scanITF = YES;
+    recognizer.scanEAN8 = YES;
+    recognizer.scanUPCA = YES;
+    recognizer.scanUPCE = YES;
+    recognizer.scanAztec = YES;
+    recognizer.scanEAN13 = YES;
+    recognizer.scanCode128 = YES;
+    recognizer.scanDataMatrix = YES;
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }

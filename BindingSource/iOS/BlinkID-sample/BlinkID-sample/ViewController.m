@@ -23,7 +23,7 @@
     [BlinkID instance].licenseKey = @"7QA5M6VI-A6XYOHC2-WVEH4KCH-F7RE3TXQ-SMQ2SAVT-SYEE4GHL-JAAFW5XW-3XN67FPM";
     [BlinkID instance].delegate = self;
     [[BlinkID instance] addMrtdRecognizer];
-    [[BlinkID instance] addSwissPassportRecognizer];
+    [[BlinkID instance] addBarcodeRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
