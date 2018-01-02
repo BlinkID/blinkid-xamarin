@@ -22,8 +22,8 @@
     // Valid until 2017-11-07
     [BlinkID instance].licenseKey = @"BQA5K5KV-QIIOETMO-Z5KA7H6Q-KYGA42QX-CQYQWFYU-GEFROFBR-BMLRJEIL-D6JVNCTE";
     [BlinkID instance].delegate = self;
-    [[BlinkID instance] addMrtdRecognizer];
-    [[BlinkID instance] addBarcodeRecognizer];
+    [[BlinkID instance] addIdCardDetector];
+//    [[BlinkID instance] addBarcodeRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {

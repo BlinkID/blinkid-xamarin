@@ -151,7 +151,7 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
                     [dict setObject:@"Eudl" forKey:kResultType];
                 }
-            } else if ([result isKindOfClass:[PPMyKadRecognizerResult class]]) {
+            } else if ([result isKindOfClass:[PPMyKadFrontRecognizerResult class]]) {
                 [dict setObject:@"MyKad" forKey:kResultType];
             } else if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
                 [dict setObject:@"Pdf417" forKey:kResultType];
@@ -487,7 +487,7 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 }
 
 - (void)addMyKadRecognizer {
-    PPMyKadRecognizerSettings *recognizer = [[PPMyKadRecognizerSettings alloc] init];
+    PPMyKadFrontRecognizerSettings *recognizer = [[PPMyKadFrontRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }

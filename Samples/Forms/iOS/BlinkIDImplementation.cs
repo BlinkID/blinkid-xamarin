@@ -22,7 +22,7 @@ namespace BlinkIDApp.iOS
 			BlinkID.Instance ().LicenseKey = "MZEFTUGV-WPJ5HRA2-KCJUE4W6-JEOQOJFZ-2AFU62E6-HB3QYUEK-ED5OWEVL-HOT5T7ZP";
 			BlinkID.Instance ().Delegate = customDelegate;
 
-			BlinkID.Instance ().AddMrtdRecognizer ();
+			//BlinkID.Instance ().AddMrtdRecognizer ();
 
 			//BlinkID.Instance ().AddEudlRecognizer ();
 			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
@@ -30,14 +30,14 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
 			//BlinkID.Instance ().AddGerIDBackRecognizer ();
 			//BlinkID.Instance ().AddGerPassportRecognizer ();
-			//BlinkID.Instance ().AddCroIdFrontRecognizer ();
+			BlinkID.Instance ().AddCroIdFrontRecognizer ();
 			//BlinkID.Instance ().AddCroIdBackRecognizer ();
 			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
 			//BlinkID.Instance ().AddAusIDBackRecognizer ();
 			//BlinkID.Instance ().AddAusPassportRecognizer ();
 			//BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
 			//BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			BlinkID.Instance ().AddBarcodeRecognizer ();
+			//BlinkID.Instance ().AddBarcodeRecognizer ();
 			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
 			//BlinkID.Instance ().AddCzIDBackRecognizer ();
 
@@ -72,7 +72,7 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
 			//BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
 
-			//BlinkID.Instance ().AddIdCardDetector ();
+			BlinkID.Instance ().AddIdCardDetector ();
 
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();
