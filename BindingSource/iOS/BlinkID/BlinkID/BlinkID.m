@@ -229,6 +229,10 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 [dict setObject:@"Singapore ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSingaporeIDCombinedRecognizerResult class]]) {
                 [dict setObject:@"Singapore Combined" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPSwissIDBackRecognizerSettings class]]) {
+                [dict setObject:@"Swiss ID Back" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPSwissIDFrontRecognizerSettings class]]) {
+                [dict setObject:@"Swiss ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSwissPassportRecognizerResult class]]) {
                 [dict setObject:@"Swiss Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPVinRecognizerResult class]]) {
@@ -649,6 +653,20 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addSingaporeCombinedRecognizer {
     PPSingaporeIDCombinedRecognizerSettings *recognizer = [[PPSingaporeIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSwissIDFrontRecognizer {
+    PPSwissIDFrontRecognizerSettings *recognizer = [[PPSwissIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addSwissIDBackRecognizer {
+    PPSwissIDBackRecognizerSettings *recognizer = [[PPSwissIDBackRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }

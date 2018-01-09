@@ -102,6 +102,10 @@
 
 - (void)addSingaporeCombinedRecognizer;
 
+- (void)addSwissIDFrontRecognizer;
+
+- (void)addSwissIDBackRecognizer;
+
 - (void)addSwissPassportRecognizer;
 
 - (void)addUsdlRecognizer;
