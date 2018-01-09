@@ -28,6 +28,10 @@
 
 - (void)addAusIDCombinedRecognizer;
 
+- (void)addAustraliaDLBackRecognizer;
+
+- (void)addAustraliaDLFrontRecognizer;
+
 - (void)addBarDecoderRecognizer;
 
 - (void)addBarcodeRecognizer;

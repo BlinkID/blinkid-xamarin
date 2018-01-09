@@ -169,7 +169,11 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 [dict setObject:@"Austrian Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPAusIDCombinedRecognizerResult class]]) {
                 [dict setObject:@"Austrian Combined" forKey:kResultType];
-            } else if ([result isKindOfClass:[PPCroIDBackRecognizerResult class]]) {
+            } else if ([result isKindOfClass:[PPAustraliaDLBackRecognizerResult class]]) {
+                [dict setObject:@"Australian DL Back" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPAustraliaDLFrontRecognizerResult class]]) {
+                [dict setObject:@"Australian DL Front" forKey:kResultType];
+            }else if ([result isKindOfClass:[PPCroIDBackRecognizerResult class]]) {
                 [dict setObject:@"Croatian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPCroIDFrontRecognizerResult class]]) {
                 [dict setObject:@"Croatian ID Front" forKey:kResultType];
@@ -364,6 +368,20 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addAusIDCombinedRecognizer {
     PPAusIDCombinedRecognizerSettings *recognizer = [[PPAusIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAustraliaDLBackRecognizer {
+    PPAustraliaDLBackRecognizerSettings *recognizer = [[PPAustraliaDLBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addAustraliaDLFrontRecognizer {
+    PPAustraliaDLFrontRecognizerSettings *recognizer = [[PPAustraliaDLFrontRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
