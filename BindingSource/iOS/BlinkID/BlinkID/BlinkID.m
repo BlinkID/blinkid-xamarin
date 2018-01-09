@@ -297,8 +297,7 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
      * Add Detector recognizer
      */
     if (self.detectors.count > 0) {
-        PPMultiDetectorSettings *multiDetectorSettings = [[PPMultiDetectorSettings alloc] initWithSettingsArray:self.detectors];
-        PPDetectorRecognizerSettings *recognizer = [[PPDetectorRecognizerSettings alloc] initWithDetectorSettings:multiDetectorSettings];
+        PPDetectorRecognizerSettings *recognizer = [[PPDetectorRecognizerSettings alloc] initWithDetectorSettings:self.detectors[0]];
         [settings.scanSettings addRecognizerSettings:recognizer];
     }
 
