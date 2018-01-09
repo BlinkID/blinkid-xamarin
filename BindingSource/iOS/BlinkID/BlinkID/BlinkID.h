@@ -66,6 +66,8 @@
 
 - (void)addIKadRecognizer;
 
+- (void)addIndonesianIDFrontRecognizer;
+
 - (void)addPdf417Recognizer;
 
 - (void)addPolishIDBackRecognizer;

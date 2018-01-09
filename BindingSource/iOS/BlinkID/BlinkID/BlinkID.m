@@ -195,6 +195,8 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 [dict setObject:@"German Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanIDCombinedRecognizerResult class]]){
                 [dict setObject:@"German Combined" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPIndonesianIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Indonesian ID Front" forKey:kResultType];
             } else if ([result isKindOfClass:[PPPolishIDBackRecognizerResult class]]) {
                 [dict setObject:@"Polish ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPPolishIDFrontRecognizerResult class]]) {
@@ -518,6 +520,13 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addIKadRecognizer {
     PPiKadRecognizerSettings *recognizer = [[PPiKadRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addIndonesianIDFrontRecognizer {
+    PPIndonesianIDFrontRecognizerSettings *recognizer = [[PPIndonesianIDFrontRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
