@@ -151,6 +151,8 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 } else if (((PPEudlRecognizerResult *)result).country == PPEudlCountryAny) {
                     [dict setObject:@"Eudl" forKey:kResultType];
                 }
+            } else if ([result isKindOfClass:[PPMyTenteraRecognizerResult class]]) {
+                [dict setObject:@"MYTentera" forKey:kResultType];
             } else if ([result isKindOfClass:[PPMyKadFrontRecognizerResult class]]) {
                 [dict setObject:@"MyKad" forKey:kResultType];
             } else if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
@@ -509,6 +511,14 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }
+}
+
+- (void)addMyTenteraRecognizer {
+    PPMyTenteraRecognizerSettings *recognizer = [[PPMyTenteraRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+
 }
 
 - (void)addMyKadRecognizer {

@@ -64,6 +64,8 @@
 
 - (void)addMyKadRecognizer;
 
+- (void)addMyTenteraRecognizer;
+
 - (void)addIKadRecognizer;
 
 - (void)addIndonesianIDFrontRecognizer;
