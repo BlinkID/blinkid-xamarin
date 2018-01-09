@@ -363,12 +363,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addAusIDCombinedRecognizer {
-//    PPAusIDCombinedRecognizerSettings *recognizer = [[PPAusIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addAusIDCombinedRecognizer {
+    PPAusIDCombinedRecognizerSettings *recognizer = [[PPAusIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addBarDecoderRecognizer {
     PPBarDecoderRecognizerSettings *recognizer = [[PPBarDecoderRecognizerSettings alloc] init];
@@ -409,12 +409,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addCroCombinedRecognizer {
-//    PPCroIDCombinedRecognizerSettings *recognizer = [[PPCroIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addCroCombinedRecognizer {
+    PPCroIDCombinedRecognizerSettings *recognizer = [[PPCroIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addCzIDBackRecognizer {
     PPCzIDBackRecognizerSettings *recognizer = [[PPCzIDBackRecognizerSettings alloc] init];
@@ -430,12 +430,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addCzCombinedRecognizer {
-//    PPCzIDCombinedRecognizerSettings *recognizer = [[PPCzIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addCzCombinedRecognizer {
+    PPCzIDCombinedRecognizerSettings *recognizer = [[PPCzIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addEudlRecognizer {
     PPEudlRecognizerSettings *recognizer = [[PPEudlRecognizerSettings alloc] initWithEudlCountry:PPEudlCountryAny];
@@ -472,12 +472,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addGerCombinedRecognizer {
-//    PPGermanIDCombinedRecognizerSettings *recognizer = [[PPGermanIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addGerCombinedRecognizer {
+    PPGermanIDCombinedRecognizerSettings *recognizer = [[PPGermanIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addMrtdRecognizer {
     PPMrtdRecognizerSettings *recognizer = [[PPMrtdRecognizerSettings alloc] init];
@@ -521,12 +521,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addSerbIDCombinedRecognizer {
-//    PPSerbianIDCombinedRecognizerSettings *recognizer = [[PPSerbianIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addSerbIDCombinedRecognizer {
+    PPSerbianIDCombinedRecognizerSettings *recognizer = [[PPSerbianIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addSlovakIDBackRecognizer {
     PPSlovakIDBackRecognizerSettings *recognizer = [[PPSlovakIDBackRecognizerSettings alloc] init];
@@ -542,12 +542,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addSlovakCombinedRecognizer {
-//    PPSlovakIDCombinedRecognizerSettings *recognizer = [[PPSlovakIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addSlovakCombinedRecognizer {
+    PPSlovakIDCombinedRecognizerSettings *recognizer = [[PPSlovakIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addSlovenianIDBackRecognizer {
     PPSlovenianIDBackRecognizerSettings *recognizer = [[PPSlovenianIDBackRecognizerSettings alloc] init];
@@ -563,12 +563,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addSlovenianCombinedRecognizer {
-//    PPSlovenianIDCombinedRecognizerSettings *recognizer = [[PPSlovenianIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addSlovenianCombinedRecognizer {
+    PPSlovenianIDCombinedRecognizerSettings *recognizer = [[PPSlovenianIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addSingaporeIDBackRecognizer {
     PPSingaporeIDBackRecognizerSettings *recognizer = [[PPSingaporeIDBackRecognizerSettings alloc] init];
@@ -584,12 +584,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addSingaporeCombinedRecognizer {
-//    PPSingaporeIDCombinedRecognizerSettings *recognizer = [[PPSingaporeIDCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addSingaporeCombinedRecognizer {
+    PPSingaporeIDCombinedRecognizerSettings *recognizer = [[PPSingaporeIDCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 - (void)addSwissPassportRecognizer {
     PPSwissPassportRecognizerSettings *recognizer = [[PPSwissPassportRecognizerSettings alloc] init];
@@ -649,12 +649,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
     }
 }
 
-//- (void)addMrtdCombinedRecognizer {
-//    PPMrtdCombinedRecognizerSettings *recognizer = [[PPMrtdCombinedRecognizerSettings alloc] init];
-//    if (![self recognizerExists:recognizer]) {
-//        [self.recognizers addObject:recognizer];
-//    }
-//}
+- (void)addMrtdCombinedRecognizer {
+    PPMrtdCombinedRecognizerSettings *recognizer = [[PPMrtdCombinedRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
 
 #pragma mark - Parsers
 
