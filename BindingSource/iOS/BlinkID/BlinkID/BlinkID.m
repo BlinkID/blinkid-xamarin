@@ -195,6 +195,12 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
                 [dict setObject:@"German Passport" forKey:kResultType];
             } else if ([result isKindOfClass:[PPGermanIDCombinedRecognizerResult class]]){
                 [dict setObject:@"German Combined" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPPolishIDBackRecognizerResult class]]) {
+                [dict setObject:@"Polish ID Back" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPPolishIDFrontRecognizerResult class]]) {
+                [dict setObject:@"Polish ID Front" forKey:kResultType];
+            } else if ([result isKindOfClass:[PPPolishIDCombinedRecognizerResult class]]) {
+                [dict setObject:@"Polish Combined" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSerbianIDBackRecognizerResult class]]) {
                 [dict setObject:@"Serbian ID Back" forKey:kResultType];
             } else if ([result isKindOfClass:[PPSerbianIDFrontRecognizerResult class]]) {
@@ -519,6 +525,27 @@ static NSString* const kMRTDDateOExpiry = @"DateOfExpiry";
 
 - (void)addPdf417Recognizer {
     PPPdf417RecognizerSettings *recognizer = [[PPPdf417RecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addPolishIDBackRecognizer {
+    PPPolishIDBackRecognizerSettings *recognizer = [[PPPolishIDBackRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addPolishIDFrontRecognizer {
+    PPPolishIDFrontRecognizerSettings *recognizer = [[PPPolishIDFrontRecognizerSettings alloc] init];
+    if (![self recognizerExists:recognizer]) {
+        [self.recognizers addObject:recognizer];
+    }
+}
+
+- (void)addPolishIDCombinedRecognizer {
+    PPPolishIDCombinedRecognizerSettings *recognizer = [[PPPolishIDCombinedRecognizerSettings alloc] init];
     if (![self recognizerExists:recognizer]) {
         [self.recognizers addObject:recognizer];
     }

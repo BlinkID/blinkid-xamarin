@@ -68,6 +68,12 @@
 
 - (void)addPdf417Recognizer;
 
+- (void)addPolishIDBackRecognizer;
+
+- (void)addPolishIDFrontRecognizer;
+
+- (void)addPolishIDCombinedRecognizer;
+
 - (void)addSerbIDBackRecognizer;
 
 - (void)addSerbIDFrontRecognizer;
