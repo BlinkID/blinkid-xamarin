@@ -90,7 +90,7 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
 			//BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
 
-			BlinkID.Instance ().AddIdCardDetector ();
+			//BlinkID.Instance ().AddIdCardDetector ();
 
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();

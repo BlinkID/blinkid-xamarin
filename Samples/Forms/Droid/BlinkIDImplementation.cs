@@ -181,9 +181,9 @@ namespace BlinkIDApp.Droid
 			//	Console.WriteLine ("ParserMobileCoupons is not supported");
 			//}
 
-			if (!blinkIdScanSettings.AddDetectorIdCard ()) {
-				Console.WriteLine ("DetectorIdCard is not supported");
-			}
+			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {
+			//	Console.WriteLine ("DetectorIdCard is not supported");
+			//}
 		}
 
 		private class MResultListener : BlinkIdResultListener 
