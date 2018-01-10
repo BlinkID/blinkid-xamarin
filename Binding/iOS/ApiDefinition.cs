@@ -7,210 +7,281 @@ namespace MicroBlink {
 	[BaseType (typeof(NSObject))]
 	interface BlinkID
 	{
-		[Wrap ("WeakDelegate")]
-		BlinkIDDelegate Delegate { get; set; }
+        [Wrap("WeakDelegate")]
+        BlinkIDDelegate Delegate { get; set; }
 
-		// @property (nonatomic, weak) id<BlinkIDDelegate> delegate;
-		[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
-		NSObject WeakDelegate { get; set; }
+        // @property (nonatomic, weak) id<BlinkIDDelegate> delegate;
+        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        NSObject WeakDelegate { get; set; }
 
-		// @property (nonatomic) NSString * licenseKey;
-		[Export ("licenseKey")]
-		string LicenseKey { get; set; }
+        // @property (nonatomic) NSString * licenseKey;
+        [Export("licenseKey")]
+        string LicenseKey { get; set; }
 
-		// +(instancetype)instance;
-		[Static]
-		[Export ("instance")]
-		BlinkID Instance ();
+        // +(instancetype)instance;
+        [Static]
+        [Export("instance")]
+        BlinkID Instance();
 
-		// -(void)addAusIDBackRecognizer;
-		[Export ("addAusIDBackRecognizer")]
-		void AddAusIDBackRecognizer ();
+        // -(void)addAusIDBackRecognizer;
+        [Export("addAusIDBackRecognizer")]
+        void AddAusIDBackRecognizer();
 
-		// -(void)addAusIDFrontRecognizer;
-		[Export ("addAusIDFrontRecognizer")]
-		void AddAusIDFrontRecognizer ();
+        // -(void)addAusIDFrontRecognizer;
+        [Export("addAusIDFrontRecognizer")]
+        void AddAusIDFrontRecognizer();
 
-		// -(void)addAusPassportRecognizer;
-		[Export ("addAusPassportRecognizer")]
-		void AddAusPassportRecognizer ();
+        // -(void)addAusPassportRecognizer;
+        [Export("addAusPassportRecognizer")]
+        void AddAusPassportRecognizer();
 
-		// -(void)addBarDecoderRecognizer;
-		[Export ("addBarDecoderRecognizer")]
-		void AddBarDecoderRecognizer ();
+        // -(void)addAusIDCombinedRecognizer;
+        [Export("addAusIDCombinedRecognizer")]
+        void AddAusIDCombinedRecognizer();
 
-		// -(void)addBarcodeRecognizer;
-		[Export ("addBarcodeRecognizer")]
-		void AddBarcodeRecognizer ();
+        // -(void)addAustraliaDLBackRecognizer;
+        [Export("addAustraliaDLBackRecognizer")]
+        void AddAustraliaDLBackRecognizer();
 
-		// -(void)addCroIdBackRecognizer;
-		[Export ("addCroIdBackRecognizer")]
-		void AddCroIdBackRecognizer ();
+        // -(void)addAustraliaDLFrontRecognizer;
+        [Export("addAustraliaDLFrontRecognizer")]
+        void AddAustraliaDLFrontRecognizer();
 
-		// -(void)addCroIdFrontRecognizer;
-		[Export ("addCroIdFrontRecognizer")]
-		void AddCroIdFrontRecognizer ();
+        // -(void)addBarDecoderRecognizer;
+        [Export("addBarDecoderRecognizer")]
+        void AddBarDecoderRecognizer();
 
-		// -(void)addCzIDBackRecognizer;
-		[Export ("addCzIDBackRecognizer")]
-		void AddCzIDBackRecognizer ();
+        // -(void)addBarcodeRecognizer;
+        [Export("addBarcodeRecognizer")]
+        void AddBarcodeRecognizer();
 
-		// -(void)addCzIDFrontRecognizer;
-		[Export ("addCzIDFrontRecognizer")]
-		void AddCzIDFrontRecognizer ();
+        // -(void)addCroIdBackRecognizer;
+        [Export("addCroIdBackRecognizer")]
+        void AddCroIdBackRecognizer();
 
-		// -(void)addEudlRecognizer;
-		[Export ("addEudlRecognizer")]
-		void AddEudlRecognizer ();
+        // -(void)addCroIdFrontRecognizer;
+        [Export("addCroIdFrontRecognizer")]
+        void AddCroIdFrontRecognizer();
 
-		// -(void)addGerIDFrontRecognizer;
-		[Export ("addGerIDFrontRecognizer")]
-		void AddGerIDFrontRecognizer ();
+        // -(void)addCroCombinedRecognizer;
+        [Export("addCroCombinedRecognizer")]
+        void AddCroCombinedRecognizer();
 
-		// -(void)addGerIDBackRecognizer;
-		[Export ("addGerIDBackRecognizer")]
-		void AddGerIDBackRecognizer ();
+        // -(void)addCzIDBackRecognizer;
+        [Export("addCzIDBackRecognizer")]
+        void AddCzIDBackRecognizer();
 
-		// -(void)addGerIDOldRecognizer;
-		[Export ("addGerIDOldRecognizer")]
-		void AddGerIDOldRecognizer ();
+        // -(void)addCzIDFrontRecognizer;
+        [Export("addCzIDFrontRecognizer")]
+        void AddCzIDFrontRecognizer();
 
-		// -(void)addGerPassportRecognizer;
-		[Export ("addGerPassportRecognizer")]
-		void AddGerPassportRecognizer ();
+        // -(void)addCzCombinedRecognizer;
+        [Export("addCzCombinedRecognizer")]
+        void AddCzCombinedRecognizer();
 
-		// -(void)addMrtdRecognizer;
-		[Export ("addMrtdRecognizer")]
-		void AddMrtdRecognizer ();
+        // -(void)addEudlRecognizer;
+        [Export("addEudlRecognizer")]
+        void AddEudlRecognizer();
 
-		// -(void)addMyKadRecognizer;
-		[Export ("addMyKadRecognizer")]
-		void AddMyKadRecognizer ();
+        // -(void)addGerIDFrontRecognizer;
+        [Export("addGerIDFrontRecognizer")]
+        void AddGerIDFrontRecognizer();
 
-		// -(void)addIKadRecognizer;
-		[Export ("addIKadRecognizer")]
-		void AddIKadRecognizer ();
+        // -(void)addGerIDBackRecognizer;
+        [Export("addGerIDBackRecognizer")]
+        void AddGerIDBackRecognizer();
 
-		// -(void)addPdf417Recognizer;
-		[Export ("addPdf417Recognizer")]
-		void AddPdf417Recognizer ();
+        // -(void)addGerIDOldRecognizer;
+        [Export("addGerIDOldRecognizer")]
+        void AddGerIDOldRecognizer();
 
-		// -(void)addSerbIDBackRecognizer;
-		[Export ("addSerbIDBackRecognizer")]
-		void AddSerbIDBackRecognizer ();
+        // -(void)addGerPassportRecognizer;
+        [Export("addGerPassportRecognizer")]
+        void AddGerPassportRecognizer();
 
-		// -(void)addSerbIDFrontRecognizer;
-		[Export ("addSerbIDFrontRecognizer")]
-		void AddSerbIDFrontRecognizer ();
+        // -(void)addGerCombinedRecognizer;
+        [Export("addGerCombinedRecognizer")]
+        void AddGerCombinedRecognizer();
 
-		// -(void)addSlovakIDFrontRecognizer;
-		[Export ("addSlovakIDFrontRecognizer")]
-		void AddSlovakIDFrontRecognizer ();
+        // -(void)addMrtdRecognizer;
+        [Export("addMrtdRecognizer")]
+        void AddMrtdRecognizer();
 
-		// -(void)addSlovakIDBackRecognizer;
-		[Export ("addSlovakIDBackRecognizer")]
-		void AddSlovakIDBackRecognizer ();
+        // -(void)addMyKadRecognizer;
+        [Export("addMyKadRecognizer")]
+        void AddMyKadRecognizer();
 
-		// -(void)addSlovenianIDBackRecognizer;
-		[Export ("addSlovenianIDBackRecognizer")]
-		void AddSlovenianIDBackRecognizer ();
+        // -(void)addMyTenteraRecognizer;
+        [Export("addMyTenteraRecognizer")]
+        void AddMyTenteraRecognizer();
 
-		// -(void)addSlovenianIDFrontRecognizer;
-		[Export ("addSlovenianIDFrontRecognizer")]
-		void AddSlovenianIDFrontRecognizer ();
+        // -(void)addIKadRecognizer;
+        [Export("addIKadRecognizer")]
+        void AddIKadRecognizer();
 
-		// -(void)addSingaporeIDBackRecognizer;
-		[Export ("addSingaporeIDBackRecognizer")]
-		void AddSingaporeIDBackRecognizer ();
+        // -(void)addIndonesianIDFrontRecognizer;
+        [Export("addIndonesianIDFrontRecognizer")]
+        void AddIndonesianIDFrontRecognizer();
 
-		// -(void)addSingaporeIDFrontRecognizer;
-		[Export ("addSingaporeIDFrontRecognizer")]
-		void AddSingaporeIDFrontRecognizer ();
+        // -(void)addPdf417Recognizer;
+        [Export("addPdf417Recognizer")]
+        void AddPdf417Recognizer();
 
-		// -(void)addSwissPassportRecognizer;
-		[Export ("addSwissPassportRecognizer")]
-		void AddSwissPassportRecognizer ();
+        // -(void)addPolishIDBackRecognizer;
+        [Export("addPolishIDBackRecognizer")]
+        void AddPolishIDBackRecognizer();
 
-		// -(void)addUsdlRecognizer;
-		[Export ("addUsdlRecognizer")]
-		void AddUsdlRecognizer ();
+        // -(void)addPolishIDFrontRecognizer;
+        [Export("addPolishIDFrontRecognizer")]
+        void AddPolishIDFrontRecognizer();
 
-		// -(void)addAusdlRecognizer;
-		[Export ("addAusdlRecognizer")]
-		void AddAusdlRecognizer ();
+        // -(void)addPolishIDCombinedRecognizer;
+        [Export("addPolishIDCombinedRecognizer")]
+        void AddPolishIDCombinedRecognizer();
 
-		// -(void)addUkdlRecognizer;
-		[Export ("addUkdlRecognizer")]
-		void AddUkdlRecognizer ();
+        // -(void)addSerbIDBackRecognizer;
+        [Export("addSerbIDBackRecognizer")]
+        void AddSerbIDBackRecognizer();
 
-		// -(void)addDedlRecognizer;
-		[Export ("addDedlRecognizer")]
-		void AddDedlRecognizer ();
+        // -(void)addSerbIDFrontRecognizer;
+        [Export("addSerbIDFrontRecognizer")]
+        void AddSerbIDFrontRecognizer();
 
-		// -(void)addZXingRecognizer;
-		[Export ("addZXingRecognizer")]
-		void AddZXingRecognizer ();
+        // -(void)addSerbIDCombinedRecognizer;
+        [Export("addSerbIDCombinedRecognizer")]
+        void AddSerbIDCombinedRecognizer();
 
-		// -(void)addVinRecognizer;
-		[Export ("addVinRecognizer")]
-		void AddVinRecognizer ();
+        // -(void)addSlovakIDFrontRecognizer;
+        [Export("addSlovakIDFrontRecognizer")]
+        void AddSlovakIDFrontRecognizer();
 
-		// -(void)addRawParser:(NSString *)identifier;
-		[Export ("addRawParser:")]
-		void AddRawParser (string identifier);
+        // -(void)addSlovakIDBackRecognizer;
+        [Export("addSlovakIDBackRecognizer")]
+        void AddSlovakIDBackRecognizer();
 
-		// -(void)addAmountParser:(NSString *)identifier;
-		[Export ("addAmountParser:")]
-		void AddAmountParser (string identifier);
+        // -(void)addSlovakCombinedRecognizer;
+        [Export("addSlovakCombinedRecognizer")]
+        void AddSlovakCombinedRecognizer();
 
-		// -(void)addDateParser:(NSString *)identifier;
-		[Export ("addDateParser:")]
-		void AddDateParser (string identifier);
+        // -(void)addSlovenianIDBackRecognizer;
+        [Export("addSlovenianIDBackRecognizer")]
+        void AddSlovenianIDBackRecognizer();
 
-		// -(void)addEmailParser:(NSString *)identifier;
-		[Export ("addEmailParser:")]
-		void AddEmailParser (string identifier);
+        // -(void)addSlovenianIDFrontRecognizer;
+        [Export("addSlovenianIDFrontRecognizer")]
+        void AddSlovenianIDFrontRecognizer();
 
-		// -(void)addIbanParser:(NSString *)identifier;
-		[Export ("addIbanParser:")]
-		void AddIbanParser (string identifier);
+        // -(void)addSlovenianCombinedRecognizer;
+        [Export("addSlovenianCombinedRecognizer")]
+        void AddSlovenianCombinedRecognizer();
 
-		// -(void)addVinParser:(NSString *)identifierd;
-		[Export ("addVinParser:")]
-		void AddVinParser (string identifierd);
+        // -(void)addSingaporeIDBackRecognizer;
+        [Export("addSingaporeIDBackRecognizer")]
+        void AddSingaporeIDBackRecognizer();
 
-		// -(void)addLicensePlatesParser:(NSString *)identifier;
-		[Export ("addLicensePlatesParser:")]
-		void AddLicensePlatesParser (string identifier);
+        // -(void)addSingaporeIDFrontRecognizer;
+        [Export("addSingaporeIDFrontRecognizer")]
+        void AddSingaporeIDFrontRecognizer();
 
-		// -(void)addTopUpOcrParser:(NSString *)identifier;
-		[Export ("addTopUpOcrParser:")]
-		void AddTopUpOcrParser (string identifier);
+        // -(void)addSingaporeCombinedRecognizer;
+        [Export("addSingaporeCombinedRecognizer")]
+        void AddSingaporeCombinedRecognizer();
 
-		// -(void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
-		[Export ("addRegexParser:identifier:")]
-		void AddRegexParser (string regex, string identifier);
+        // -(void)addSwissIDFrontRecognizer;
+        [Export("addSwissIDFrontRecognizer")]
+        void AddSwissIDFrontRecognizer();
 
-		// -(void)addIdCardDetector;
-		[Export ("addIdCardDetector")]
-		void AddIdCardDetector ();
+        // -(void)addSwissIDBackRecognizer;
+        [Export("addSwissIDBackRecognizer")]
+        void AddSwissIDBackRecognizer();
 
-		// -(void)clearAllRecognizers;
-		[Export ("clearAllRecognizers")]
-		void ClearAllRecognizers ();
+        // -(void)addSwissPassportRecognizer;
+        [Export("addSwissPassportRecognizer")]
+        void AddSwissPassportRecognizer();
 
-		// -(void)clearAllParsers;
-		[Export ("clearAllParsers")]
-		void ClearAllParsers ();
+        // -(void)addUsdlRecognizer;
+        [Export("addUsdlRecognizer")]
+        void AddUsdlRecognizer();
 
-		// -(void)clearAllDetectors;
-		[Export ("clearAllDetectors")]
-		void ClearAllDetectors ();
+        // -(void)addAusdlRecognizer;
+        [Export("addAusdlRecognizer")]
+        void AddAusdlRecognizer();
 
-		// -(void)scan:(BOOL)isFrontCamera;
-		[Export ("scan:")]
-		void Scan (bool isFrontCamera);
+        // -(void)addUkdlRecognizer;
+        [Export("addUkdlRecognizer")]
+        void AddUkdlRecognizer();
 
+        // -(void)addDedlRecognizer;
+        [Export("addDedlRecognizer")]
+        void AddDedlRecognizer();
+
+        // -(void)addZXingRecognizer;
+        [Export("addZXingRecognizer")]
+        void AddZXingRecognizer();
+
+        // -(void)addVinRecognizer;
+        [Export("addVinRecognizer")]
+        void AddVinRecognizer();
+
+        // -(void)addMrtdCombinedRecognizer;
+        [Export("addMrtdCombinedRecognizer")]
+        void AddMrtdCombinedRecognizer();
+
+        // -(void)addRawParser:(NSString *)identifier;
+        [Export("addRawParser:")]
+        void AddRawParser(string identifier);
+
+        // -(void)addAmountParser:(NSString *)identifier;
+        [Export("addAmountParser:")]
+        void AddAmountParser(string identifier);
+
+        // -(void)addDateParser:(NSString *)identifier;
+        [Export("addDateParser:")]
+        void AddDateParser(string identifier);
+
+        // -(void)addEmailParser:(NSString *)identifier;
+        [Export("addEmailParser:")]
+        void AddEmailParser(string identifier);
+
+        // -(void)addIbanParser:(NSString *)identifier;
+        [Export("addIbanParser:")]
+        void AddIbanParser(string identifier);
+
+        // -(void)addVinParser:(NSString *)identifierd;
+        [Export("addVinParser:")]
+        void AddVinParser(string identifierd);
+
+        // -(void)addLicensePlatesParser:(NSString *)identifier;
+        [Export("addLicensePlatesParser:")]
+        void AddLicensePlatesParser(string identifier);
+
+        // -(void)addTopUpOcrParser:(NSString *)identifier;
+        [Export("addTopUpOcrParser:")]
+        void AddTopUpOcrParser(string identifier);
+
+        // -(void)addRegexParser:(NSString *)regex identifier:(NSString *)identifier;
+        [Export("addRegexParser:identifier:")]
+        void AddRegexParser(string regex, string identifier);
+
+        // -(void)addIdCardDetector;
+        [Export("addIdCardDetector")]
+        void AddIdCardDetector();
+
+        // -(void)clearAllRecognizers;
+        [Export("clearAllRecognizers")]
+        void ClearAllRecognizers();
+
+        // -(void)clearAllParsers;
+        [Export("clearAllParsers")]
+        void ClearAllParsers();
+
+        // -(void)clearAllDetectors;
+        [Export("clearAllDetectors")]
+        void ClearAllDetectors();
+
+        // -(void)scan:(BOOL)isFrontCamera;
+        [Export("scan:")]
+        void Scan(bool isFrontCamera);
 	}
 
 	// @protocol BlinkIDDelegate <NSObject>

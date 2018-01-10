@@ -19,46 +19,64 @@ namespace BlinkIDApp.iOS
 		{
 			customDelegate = new CustomDelegate ();
 
-			BlinkID.Instance ().LicenseKey = "MZEFTUGV-WPJ5HRA2-KCJUE4W6-JEOQOJFZ-2AFU62E6-HB3QYUEK-ED5OWEVL-HOT5T7ZP";
+            BlinkID.Instance ().LicenseKey = "2GZV3LZ2-TKEHYWFS-LDV4ZV2Q-PGONQKPY-47SBFKUI-NOW4IWTE-XXBVPXEK-FDTZGQO6";
 			BlinkID.Instance ().Delegate = customDelegate;
 
-			//BlinkID.Instance ().AddMrtdRecognizer ();
+            BlinkID.Instance ().AddMrtdRecognizer ();
 
-			//BlinkID.Instance ().AddEudlRecognizer ();
-			//BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
-			//BlinkID.Instance ().AddGerIDOldRecognizer ();
-			//BlinkID.Instance ().AddGerIDFrontRecognizer ();
-			//BlinkID.Instance ().AddGerIDBackRecognizer ();
-			//BlinkID.Instance ().AddGerPassportRecognizer ();
-			BlinkID.Instance ().AddCroIdFrontRecognizer ();
-			//BlinkID.Instance ().AddCroIdBackRecognizer ();
-			//BlinkID.Instance ().AddAusIDFrontRecognizer ();
-			//BlinkID.Instance ().AddAusIDBackRecognizer ();
-			//BlinkID.Instance ().AddAusPassportRecognizer ();
-			//BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			//BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-			//BlinkID.Instance ().AddBarcodeRecognizer ();
-			//BlinkID.Instance ().AddCzIDFrontRecognizer ();
-			//BlinkID.Instance ().AddCzIDBackRecognizer ();
+            //BlinkID.Instance ().AddEudlRecognizer ();
+            //BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
+            //BlinkID.Instance ().AddGerIDOldRecognizer ();
+            //BlinkID.Instance ().AddGerIDFrontRecognizer ();
+            //BlinkID.Instance ().AddGerIDBackRecognizer ();
+            //BlinkID.Instance ().AddGerPassportRecognizer ();
+            //BlinkID.Instance ().AddCroIdFrontRecognizer ();
+            //BlinkID.Instance ().AddCroIdBackRecognizer ();
+            //BlinkID.Instance ().AddAusIDFrontRecognizer ();
+            //BlinkID.Instance ().AddAusIDBackRecognizer ();
+            //BlinkID.Instance ().AddAusPassportRecognizer ();
+            //BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
+            //BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
+            //BlinkID.Instance ().AddBarcodeRecognizer ();
+            //BlinkID.Instance ().AddCzIDFrontRecognizer ();
+            //BlinkID.Instance ().AddCzIDBackRecognizer ();
 
-			//BlinkID.Instance ().AddMyKadRecognizer ();
-			//BlinkID.Instance ().AddIKadRecognizer ();
-			//BlinkID.Instance ().AddPdf417Recognizer ();
-			//BlinkID.Instance ().AddSingaporeIDRecognizer ();
-			//BlinkID.Instance ().AddUkdlRecognizer ();
-			//BlinkID.Instance ().AddSerbIDFrontRecognizer ();
-			//BlinkID.Instance ().AddSerbIDBackRecognizer ();
-			//BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
-			//BlinkID.Instance ().AddSlovakIDBackRecognizer ();
-			//BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
-			//BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
-			//BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
-			//BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
-			//BlinkID.Instance ().AddSwissPassportRecognizer ();
-			//BlinkID.Instance ().AddEudlRecognizer ();
-			//BlinkID.Instance ().AddUsdlRecognizer ();
-			//BlinkID.Instance ().AddAusdlRecognizer ();
-			//BlinkID.Instance ().AddDedlRecognizer ();
+            //BlinkID.Instance ().AddMyKadRecognizer ();
+            //BlinkID.Instance ().AddIKadRecognizer ();
+            //BlinkID.Instance ().AddMyTenteraRecognizer();
+            //BlinkID.Instance ().AddPdf417Recognizer ();
+            //BlinkID.Instance ().AddSingaporeIDRecognizer ();
+            //BlinkID.Instance ().AddIndonesianIDFrontRecognizer();
+            //BlinkID.Instance ().AddUkdlRecognizer ();
+            //BlinkID.Instance ().AddSerbIDFrontRecognizer ();
+            //BlinkID.Instance ().AddSerbIDBackRecognizer ();
+            //BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
+            //BlinkID.Instance ().AddSlovakIDBackRecognizer ();
+            //BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
+            //BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
+            //BlinkID.Instance ().AddPolishIDFrontRecognizer();
+            //BlinkID.Instance ().AddPolishIDBackRecognizer();
+            //BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
+            //BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
+            //BlinkID.Instance ().AddSwissPassportRecognizer ();
+            //BlinkID.Instance ().AddEudlRecognizer ();
+            //BlinkID.Instance ().AddUsdlRecognizer ();
+            //BlinkID.Instance ().AddAusdlRecognizer ();
+            //BlinkID.Instance ().AddDedlRecognizer ();
+			//BlinkID.Instance ().AddAustraliaDLFrontRecognizer();
+            //BlinkID.Instance ().AddAustraliaDLBackRecognizer();
+
+            // NOTE: do not use multiple combined recognizers at the same time
+			//BlinkID.Instance ().AddMrtdCombinedRecognizer();
+            //BlinkID.Instance ().AddCroCombinedRecognizer();
+            //BlinkID.Instance ().AddCzCombinedRecognizer();
+            //BlinkID.Instance ().AddGerCombinedRecognizer();
+            //BlinkID.Instance ().AddAusIDCombinedRecognizer();
+            //BlinkID.Instance ().AddSerbIDCombinedRecognizer();
+            //BlinkID.Instance ().AddSlovakCombinedRecognizer();
+            //BlinkID.Instance ().AddPolishIDCombinedRecognizer();
+            //BlinkID.Instance ().AddSingaporeCombinedRecognizer();
+            //BlinkID.Instance ().AddSlovenianCombinedRecognizer();
 
 			//BlinkID.Instance ().AddVinRecognizer ();
 			//BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
@@ -72,7 +90,7 @@ namespace BlinkIDApp.iOS
 			//BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
 			//BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
 
-			BlinkID.Instance ().AddIdCardDetector ();
+			//BlinkID.Instance ().AddIdCardDetector ();
 
 			//BlinkID.Instance ().ClearAllDetectors ();
 			//BlinkID.Instance ().ClearAllParsers ();

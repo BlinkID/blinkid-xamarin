@@ -75,6 +75,8 @@
     <BundleResource Include="Resources\MicroBlink.bundle\de_surname_dictionary.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\en.strings" />
     <BundleResource Include="Resources\MicroBlink.bundle\face_detector_model.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\malaysian_confusions.zzip" />
+    <BundleResource Include="Resources\MicroBlink.bundle\malaysian_state_dictionary.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\model_arabic.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\model_eudl.zzip" />
     <BundleResource Include="Resources\MicroBlink.bundle\model_general_blink_ocr.zzip" />
