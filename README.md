@@ -110,18 +110,26 @@ git submodule update --recursive
 ```
 2. Open project with Xcode [BindingSource/iOS/BlinkID/BlinkID.xcodeproj](BindingSource/iOS/BlinkID/BlinkID.xcodeproj)
 3. Add/edit exposed functionallity from Objective-C to C#
-4. Build Release with Xcode
-5. Locate Product `BlinkID.framework` with Finder
-6. Extract `BlinkID` from `BlinkID.framework` and rename it to `BlinkID.a`
-7. Replace [Binding/iOS/BlinkID.a](Binding/iOS/BlinkID.a) with extracted `BlinkID.a`
-8. `BlinkID` Native Reference Properties  
+4. Build Release with Xcode with scheme `BlinkID-Release` which will include every architecture in the binary with post build script
+5. Check binary with `lipo`
+
+```bash
+$ lipo -info ./path-to/Release-iphoneos/BlinkID.framework/BlinkID
+Architectures in the fat file: ./path-to/Release-iphoneos/BlinkID.framework/BlinkID are: armv7 armv7s i386 x86_64 arm64
+```
+
+If some architectures are missing please check that `BlinkID-Release` is selected as build scheme!  
+6. Locate Product `BlinkID.framework` with Finder
+7. Extract `BlinkID` from `BlinkID.framework` and rename it to `BlinkID.a`
+8. Replace [Binding/iOS/BlinkID.a](Binding/iOS/BlinkID.a) with extracted `BlinkID.a`
+9. `BlinkID` Native Reference Properties  
 ![iOS Native Reference Properties](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-ios-native-reference-properties.png)
-9. Replace [Binding/iOS/Resources/MicroBlink.bundle](Binding/iOS/Resources/MicroBlink.bundle) with [BindingSource/iOS/blinkid-ios/MicroBlink.bundle](https://github.com/BlinkID/blinkid-ios/tree/master/MicroBlink.bundle)
-10. Generate new `ApiDefinition.cs` and `StructsAndEnums.cs` (optional) with [Objective Sharpie](https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/)
+10. Replace [Binding/iOS/Resources/MicroBlink.bundle](Binding/iOS/Resources/MicroBlink.bundle) with [BindingSource/iOS/blinkid-ios/MicroBlink.bundle](https://github.com/BlinkID/blinkid-ios/tree/master/MicroBlink.bundle)
+11. Generate new `ApiDefinition.cs` and `StructsAndEnums.cs` (optional) with [Objective Sharpie](https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/)
 Example: `sharpie bind -sdk iphoneos9.2 BlinkID.framework/Headers/BlinkID.h -scope BlinkID.framework/Headers -c -F .`  
 Note: Use latest iOS SDK!  
-11. Replace [Binding/iOS/ApiDefinition.cs](Binding/iOS/ApiDefinition.cs) and [Binding/iOS/StructsAndEnums.cs](Binding/iOS/StructsAndEnums.cs) with new generated files `ApiDefinition.cs` and `StructsAndEnums.cs`, edit generated files if it is necessary
-12. Rebuild binding library project
+12. Replace [Binding/iOS/ApiDefinition.cs](Binding/iOS/ApiDefinition.cs) and [Binding/iOS/StructsAndEnums.cs](Binding/iOS/StructsAndEnums.cs) with new generated files `ApiDefinition.cs` and `StructsAndEnums.cs`, edit generated files if it is necessary
+13. Rebuild binding library project
 
-\* Steps from 6 to 9 are required only if you use newer version of `MicroBlink.framework` from [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios)
+\* Steps from 7 to 10 are required only if you use newer version of `MicroBlink.framework` from [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios)
 
