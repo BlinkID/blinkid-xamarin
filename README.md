@@ -16,6 +16,26 @@ This is the open-source code which should be imported to your application's solu
 
 Recommended Xamarin.Forms version is >=2.3.4.247, older versions will produce error: "Error executing task XamlCTask: Could not find file MDB" if you use if with latest version of Xamarin in Xamarin Studio.
 
+## Dependencies
+MicroBlink.framework/MicroBlink file in iOS submodule exceeds GitHubs limited file size of 100MB.
+To correctly init the submodule Git LFS is needed. Git LFS can be installed with homebrew:
+
+```shell
+brew install git-lfs
+```
+
+After installation, don't forget to restart the terminal!
+
+## Clone or Download repository
+Downloading a repository just downloads the files from the most recent commit of the default branch but without all the dependencies which are in submodules. We recommend that you clone directory. With a clone option you will get a copy of the history and it’s functional git repository.
+
+To clone repository:
++ **Copy URL from the `Clone or download` button: https://github.com/BlinkID/blinkid-xamarin.git**
++ **Open terminal on Mac/Linux or [GitBash](https://git-for-windows.github.io/) on Windows.**
++ **cd into directory where you want the cloned directory to be made.**
++ **Type `git clone ` , than past URL**
++ **Press enter**
+
 ## Video tutorial
 
 Step by step guide how to start BlinkID Xamarin. Forms Sample application. A tutorial flows from git clone to successfully deployed demo application on Android and iOS device with real-time screen mirroring. Application demo contains simple use of MRTD recognizer with Croatian ID card.
