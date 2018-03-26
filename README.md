@@ -30,7 +30,7 @@ After installation, don't forget to restart the terminal!
 Downloading a repository just downloads the files from the most recent commit of the default branch but without all the dependencies which are in submodules. We recommend that you clone directory. With a clone option you will get a copy of the history and it’s functional git repository.
 
 To clone repository:
-+ **Copy URL from the `Clone or download` button: git@github.com:BlinkID/blinkid-xamarin.git**
++ **Copy URL from the `Clone or download` button: https://github.com/BlinkID/blinkid-xamarin.git**
 + **Open terminal on Mac/Linux or [GitBash](https://git-for-windows.github.io/) on Windows.**
 + **cd into directory where you want the cloned directory to be made.**
 + **Type `git clone ` , than past URL**
