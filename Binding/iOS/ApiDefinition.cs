@@ -11,7 +11,7 @@ using Microblink;
 namespace Microblink
 {
     // @interface MBMicroblinkApp : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBMicroblinkApp
     {
@@ -124,7 +124,7 @@ namespace Microblink
     }
 
     // @protocol MBOverlayContainerViewController <MBRecognizerRunnerViewController>
-    [Protocol, Model]
+    [Protocol]
     interface MBOverlayContainerViewController : MBRecognizerRunnerViewController
     {
         // @required -(void)overlayViewControllerWillCloseCamera:(MBOverlayViewController *)overlayViewController;
@@ -164,7 +164,7 @@ namespace Microblink
     }
 
     // @interface MBOverlayViewController : UIViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(UIViewController))]
     [DisableDefaultCtor]
     interface MBOverlayViewController
@@ -179,7 +179,7 @@ namespace Microblink
     }
 
     // @interface MBViewControllerFactory : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBViewControllerFactory
     {
@@ -190,7 +190,7 @@ namespace Microblink
     }
 
     // @interface MBMicroblinkSDK : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBMicroblinkSDK
     {
@@ -270,7 +270,7 @@ namespace Microblink
     }
 
     // @interface MBImage : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBImage
     {
@@ -314,7 +314,7 @@ namespace Microblink
     }
 
     // @interface MBCameraSettings : NSObject <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBCameraSettings : INSCopying
     {
@@ -427,7 +427,7 @@ namespace Microblink
     }
 
     // @interface MBRecognizerRunnerViewControllerMetadataDelegates : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerViewControllerMetadataDelegates
     {
@@ -509,7 +509,7 @@ namespace Microblink
     }
 
     // @interface MBRecognizerResult : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerResult
@@ -596,7 +596,7 @@ namespace Microblink
     }
 
     // @interface MBRecognizerRunnerMetadataDelegates : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerMetadataDelegates
     {
@@ -675,7 +675,7 @@ namespace Microblink
     }
 
     // @interface MBRecognizerRunner : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerRunner
@@ -739,14 +739,14 @@ namespace Microblink
     }
 
     // @interface MBEntity : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBEntity
     {
     }
 
     // @interface MBRecognizer : MBEntity
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBEntity))]
     interface MBRecognizer
     {
@@ -764,7 +764,7 @@ namespace Microblink
     }
 
     // @interface MBFrameGrabberRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBFrameGrabberRecognizer : INSCopying
@@ -794,7 +794,7 @@ namespace Microblink
     }
 
     // @interface MBSuccessFrameGrabberRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizerResult : INSCopying
@@ -805,7 +805,7 @@ namespace Microblink
     }
 
     // @interface MBSuccessFrameGrabberRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizer : INSCopying
@@ -825,7 +825,7 @@ namespace Microblink
     }
 
     // @interface MBPdf417RecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBPdf417RecognizerResult : INSCopying
@@ -848,7 +848,7 @@ namespace Microblink
     }
 
     // @interface MBPdf417Recognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBPdf417Recognizer : INSCopying
     {
@@ -870,7 +870,7 @@ namespace Microblink
     }
 
     // @interface MBSimNumberRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSimNumberRecognizerResult : INSCopying
@@ -881,7 +881,7 @@ namespace Microblink
     }
 
     // @interface MBSimNumberRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBSimNumberRecognizer : INSCopying
     {
@@ -891,7 +891,7 @@ namespace Microblink
     }
 
     // @interface MBVinRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBVinRecognizerResult : INSCopying
@@ -902,7 +902,7 @@ namespace Microblink
     }
 
     // @interface MBVinRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBVinRecognizer : INSCopying
     {
@@ -912,7 +912,7 @@ namespace Microblink
     }
 
     // @interface MBBarcodeRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBBarcodeRecognizerResult : INSCopying
@@ -940,7 +940,7 @@ namespace Microblink
     }
 
     // @interface MBBarcodeRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBBarcodeRecognizer : INSCopying
     {
@@ -1022,7 +1022,7 @@ namespace Microblink
     }
 
     // @interface MBDetectorResult : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBDetectorResult
     {
@@ -1036,7 +1036,7 @@ namespace Microblink
     }
 
     // @interface MBDetector : MBEntity
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBEntity))]
     interface MBDetector
     {
@@ -1046,7 +1046,7 @@ namespace Microblink
     }
 
     // @interface MBQuadrangle : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBQuadrangle
     {
@@ -1084,7 +1084,7 @@ namespace Microblink
     }
 
     // @interface MBQuadDetectorResult : MBDetectorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDetectorResult))]
     [DisableDefaultCtor]
     interface MBQuadDetectorResult : INSCopying
@@ -1095,7 +1095,7 @@ namespace Microblink
     }
 
     // @interface MBQuadDetector : MBDetector
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDetector))]
     [DisableDefaultCtor]
     interface MBQuadDetector
@@ -1106,7 +1106,7 @@ namespace Microblink
     }
 
     // @interface MBQuadWithSizeDetectorResult : MBQuadDetectorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadDetectorResult))]
     [DisableDefaultCtor]
     interface MBQuadWithSizeDetectorResult : INSCopying
@@ -1117,7 +1117,7 @@ namespace Microblink
     }
 
     // @interface MBQuadWithSizeDetector : MBQuadDetector
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadDetector))]
     [DisableDefaultCtor]
     interface MBQuadWithSizeDetector
@@ -1128,7 +1128,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdDetectorResult : MBQuadWithSizeDetectorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadWithSizeDetectorResult))]
     [DisableDefaultCtor]
     interface MBMrtdDetectorResult : INSCopying
@@ -1143,7 +1143,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdSpecification : NSObject <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBMrtdSpecification : INSCopying
@@ -1155,7 +1155,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdDetector : MBQuadWithSizeDetector <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadWithSizeDetector))]
     interface MBMrtdDetector : INSCopying
     {
@@ -1177,7 +1177,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentSpecification : NSObject <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDocumentSpecification : INSCopying
@@ -1225,7 +1225,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentDetectorResult : MBQuadWithSizeDetectorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadWithSizeDetectorResult))]
     [DisableDefaultCtor]
     interface MBDocumentDetectorResult : INSCopying
@@ -1236,7 +1236,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentDetector : MBQuadWithSizeDetector <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBQuadWithSizeDetector))]
     [DisableDefaultCtor]
     interface MBDocumentDetector : INSCopying
@@ -1260,7 +1260,7 @@ namespace Microblink
     }
 
     // @interface MBBlinkInputRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBBlinkInputRecognizerResult : INSCopying
@@ -1268,7 +1268,7 @@ namespace Microblink
     }
 
     // @interface MBBlinkInputRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBBlinkInputRecognizer : INSCopying
     {
@@ -1287,7 +1287,7 @@ namespace Microblink
     }
 
     // @interface MBParserResult : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBParserResult
@@ -1298,7 +1298,7 @@ namespace Microblink
     }
 
     // @interface MBParser : MBEntity
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBEntity))]
     interface MBParser
     {
@@ -1308,7 +1308,7 @@ namespace Microblink
     }
 
     // @interface MBVinParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBVinParserResult : INSCopying
@@ -1319,7 +1319,7 @@ namespace Microblink
     }
 
     // @interface MBVinParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBVinParser : INSCopying
     {
@@ -1329,7 +1329,7 @@ namespace Microblink
     }
 
     // @interface MBTopUpParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBTopUpParserResult : INSCopying
@@ -1340,7 +1340,7 @@ namespace Microblink
     }
 
     // @interface MBTopUpParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBTopUpParser : INSCopying
     {
@@ -1366,7 +1366,7 @@ namespace Microblink
     }
 
     // @interface MBEmailParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBEmailParserResult : INSCopying
@@ -1377,7 +1377,7 @@ namespace Microblink
     }
 
     // @interface MBEmailParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBEmailParser : INSCopying
     {
@@ -1387,7 +1387,7 @@ namespace Microblink
     }
 
     // @interface MBLicensePlatesParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBLicensePlatesParserResult : INSCopying
@@ -1398,7 +1398,7 @@ namespace Microblink
     }
 
     // @interface MBLicensePlatesParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBLicensePlatesParser : INSCopying
     {
@@ -1408,7 +1408,7 @@ namespace Microblink
     }
 
     // @interface MBAmountParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBAmountParserResult : INSCopying
@@ -1419,7 +1419,7 @@ namespace Microblink
     }
 
     // @interface MBAmountParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBAmountParser : INSCopying
     {
@@ -1445,7 +1445,7 @@ namespace Microblink
     }
 
     // @interface MBIbanParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBIbanParserResult : INSCopying
@@ -1456,7 +1456,7 @@ namespace Microblink
     }
 
     // @interface MBIbanParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBIbanParser : INSCopying
     {
@@ -1474,7 +1474,7 @@ namespace Microblink
     }
 
     // @protocol MBNativeResult
-    [Protocol, Model]
+    [Protocol]
     interface MBNativeResult
     {
         // @required -(NSObject * _Nullable)nativeResult;
@@ -1489,7 +1489,7 @@ namespace Microblink
     }
 
     // @interface MBDateResult : NSObject <MBNativeResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDateResult : MBNativeResult
@@ -1526,7 +1526,7 @@ namespace Microblink
     }
 
     // @interface MBDateParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBDateParserResult : INSCopying
@@ -1537,7 +1537,7 @@ namespace Microblink
     }
 
     // @interface MBDateParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBDateParser : INSCopying
     {
@@ -1555,7 +1555,7 @@ namespace Microblink
     }
 
     // @interface MBRawParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBRawParserResult : INSCopying
@@ -1566,7 +1566,7 @@ namespace Microblink
     }
 
     // @interface MBBaseOcrEngineOptions : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBBaseOcrEngineOptions
     {
@@ -1580,7 +1580,7 @@ namespace Microblink
     }
 
     // @interface MBRawParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     interface MBRawParser : INSCopying
     {
@@ -1598,7 +1598,7 @@ namespace Microblink
     }
 
     // @interface MBRegexParserResult : MBParserResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParserResult))]
     [DisableDefaultCtor]
     interface MBRegexParserResult : INSCopying
@@ -1609,7 +1609,7 @@ namespace Microblink
     }
 
     // @interface MBRegexParser : MBParser <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBParser))]
     [DisableDefaultCtor]
     interface MBRegexParser : INSCopying
@@ -1645,14 +1645,14 @@ namespace Microblink
     }
 
     // @interface MBDewarpPolicy : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBDewarpPolicy
     {
     }
 
     // @interface MBFixedDewarpPolicy : MBDewarpPolicy
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBFixedDewarpPolicy
     {
@@ -1667,7 +1667,7 @@ namespace Microblink
     }
 
     // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBDPIBasedDewarpPolicy
     {
@@ -1682,7 +1682,7 @@ namespace Microblink
     }
 
     // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBNoUpScalingDewarpPolicy
     {
@@ -1697,7 +1697,7 @@ namespace Microblink
     }
 
     // @interface MBDeepOcrEngineOptions : MBBaseOcrEngineOptions <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOcrEngineOptions))]
     interface MBDeepOcrEngineOptions : INSCopying
     {
@@ -1719,7 +1719,7 @@ namespace Microblink
     }
 
     // @interface MBOcrCharKey : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBOcrCharKey : INativeObject
     {
@@ -1742,7 +1742,7 @@ namespace Microblink
     }
 
     // @interface MBOcrEngineOptions : MBBaseOcrEngineOptions <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOcrEngineOptions))]
     interface MBOcrEngineOptions : INSCopying
     {
@@ -1768,7 +1768,7 @@ namespace Microblink
     }
 
     // @interface MBProcessorGroup : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBProcessorGroup
@@ -1784,7 +1784,7 @@ namespace Microblink
     }
 
     // @interface MBTemplatingClass : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBTemplatingClass
     {
@@ -1821,7 +1821,7 @@ namespace Microblink
     }
 
     // @interface MBTemplatingRecognizerResult : MBRecognizerResult
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizerResult
@@ -1832,7 +1832,7 @@ namespace Microblink
     }
 
     // @interface MBTemplatingRecognizer : MBRecognizer
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizer
@@ -1855,7 +1855,7 @@ namespace Microblink
     }
 
     // @interface MBDetectorRecognizerResult : MBTemplatingRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBTemplatingRecognizerResult))]
     [DisableDefaultCtor]
     interface MBDetectorRecognizerResult : INSCopying
@@ -1863,7 +1863,7 @@ namespace Microblink
     }
 
     // @interface MBDetectorRecognizer : MBTemplatingRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBTemplatingRecognizer))]
     [DisableDefaultCtor]
     interface MBDetectorRecognizer : INSCopying
@@ -1887,7 +1887,7 @@ namespace Microblink
     }
 
     // @interface MBProcessorResult : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBProcessorResult
@@ -1898,7 +1898,7 @@ namespace Microblink
     }
 
     // @interface MBProcessor : MBEntity
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBEntity))]
     interface MBProcessor
     {
@@ -1908,7 +1908,7 @@ namespace Microblink
     }
 
     // @interface MBOcrLayout : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrLayout
@@ -1952,7 +1952,7 @@ namespace Microblink
     }
 
     // @interface MBOcrBlock : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrBlock
@@ -1976,7 +1976,7 @@ namespace Microblink
     }
 
     // @interface MBOcrLine : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrLine
@@ -2000,7 +2000,7 @@ namespace Microblink
     }
 
     // @interface MBCharWithVariants : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBCharWithVariants
@@ -2020,7 +2020,7 @@ namespace Microblink
     }
 
     // @interface MBOcrChar : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrChar
@@ -2056,7 +2056,7 @@ namespace Microblink
     }
 
     // @interface MBPosition : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBPosition
@@ -2100,7 +2100,7 @@ namespace Microblink
     }
 
     // @interface MBParserGroupProcessorResult : MBProcessorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBProcessorResult))]
     [DisableDefaultCtor]
     interface MBParserGroupProcessorResult : INSCopying
@@ -2111,7 +2111,7 @@ namespace Microblink
     }
 
     // @interface MBParserGroupProcessor : MBProcessor <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBProcessor))]
     [DisableDefaultCtor]
     interface MBParserGroupProcessor : INSCopying
@@ -2135,7 +2135,7 @@ namespace Microblink
     }
 
     // @interface MBImageReturnProcessorResult : MBProcessorResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBProcessorResult))]
     [DisableDefaultCtor]
     interface MBImageReturnProcessorResult : INSCopying
@@ -2150,7 +2150,7 @@ namespace Microblink
     }
 
     // @interface MBImageReturnProcessor : MBProcessor <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBProcessor))]
     interface MBImageReturnProcessor : INSCopying
     {
@@ -2164,7 +2164,7 @@ namespace Microblink
     }
 
     // @interface MBLegacyRecognizer : MBRecognizer
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBLegacyRecognizer
@@ -2172,7 +2172,7 @@ namespace Microblink
     }
 
     // @interface MBLegacyRecognizerResult : MBRecognizerResult
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBLegacyRecognizerResult
@@ -2180,7 +2180,7 @@ namespace Microblink
     }
 
     // @protocol MBFaceImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBFaceImageResult
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable faceImage;
@@ -2190,7 +2190,7 @@ namespace Microblink
     }
 
     // @protocol MBSignatureImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBSignatureImageResult
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable signatureImage;
@@ -2200,7 +2200,7 @@ namespace Microblink
     }
 
     // @protocol MBFullDocumentImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBFullDocumentImageResult
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentImage;
@@ -2210,7 +2210,7 @@ namespace Microblink
     }
 
     // @interface MBAustraliaDlFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustraliaDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -2249,7 +2249,7 @@ namespace Microblink
     }
 
     // @protocol MBFaceImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBFaceImage
     {
         // @required @property (assign, nonatomic) BOOL returnFaceImage;
@@ -2259,7 +2259,7 @@ namespace Microblink
     }
 
     // @protocol MBSignatureImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBSignatureImage
     {
         // @required @property (assign, nonatomic) BOOL returnSignatureImage;
@@ -2269,7 +2269,7 @@ namespace Microblink
     }
 
     // @protocol MBFullDocumentImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBFullDocumentImage
     {
         // @required @property (assign, nonatomic) BOOL returnFullDocumentImage;
@@ -2279,7 +2279,7 @@ namespace Microblink
     }
 
     // @protocol MBFullDocumentImageDpi
-    [Protocol, Model]
+    [Protocol]
     interface IMBFullDocumentImageDpi
     {
         // @required @property (assign, nonatomic) NSUInteger fullDocumentImageDpi;
@@ -2289,7 +2289,7 @@ namespace Microblink
     }
 
     // @interface MBAustraliaDlFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBAustraliaDlFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBFullDocumentImageDpi
     {
@@ -2315,7 +2315,7 @@ namespace Microblink
     }
 
     // @interface MBAustraliaDlBackRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustraliaDlBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -2342,7 +2342,7 @@ namespace Microblink
     }
 
     // @interface MBAustraliaDlBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBAustraliaDlBackRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi
     {
@@ -2364,7 +2364,7 @@ namespace Microblink
     }
 
     // @interface MBMrzResult : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBMrzResult
@@ -2443,7 +2443,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustriaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -2482,7 +2482,7 @@ namespace Microblink
     }
 
     // @protocol MBGlareDetection
-    [Protocol, Model]
+    [Protocol]
     interface IMBGlareDetection
     {
         // @required @property (assign, nonatomic) BOOL detectGlare;
@@ -2492,7 +2492,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBAustriaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
@@ -2522,7 +2522,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodedFaceImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodedFaceImageResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFaceImage;
@@ -2532,7 +2532,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult, MBSignatureImageResult, MBEncodedFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustriaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult, IMBSignatureImageResult, IMBEncodedFaceImageResult
@@ -2559,7 +2559,7 @@ namespace Microblink
     }
 
     // @protocol MBFaceImageDpi
-    [Protocol, Model]
+    [Protocol]
     interface IMBFaceImageDpi
     {
         // @required @property (assign, nonatomic) NSUInteger faceImageDpi;
@@ -2569,7 +2569,7 @@ namespace Microblink
     }
 
     // @protocol MBSignatureImageDpi
-    [Protocol, Model]
+    [Protocol]
     interface IMBSignatureImageDpi
     {
         // @required @property (assign, nonatomic) NSUInteger signatureImageDpi;
@@ -2579,7 +2579,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodeFaceImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodeFaceImage
     {
         // @required @property (assign, nonatomic) BOOL encodeFaceImage;
@@ -2589,7 +2589,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBFaceImageDpi, MBSignatureImage, MBSignatureImageDpi, MBFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection, MBEncodeFaceImage>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBAustriaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBFaceImageDpi, IMBSignatureImage, IMBSignatureImageDpi, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection, IMBEncodeFaceImage
     {
@@ -2615,7 +2615,7 @@ namespace Microblink
     }
 
     // @protocol MBCombinedRecognizerResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBCombinedRecognizerResult
     {
         // @required @property (readonly, assign, nonatomic) BOOL documentDataMatch;
@@ -2630,7 +2630,7 @@ namespace Microblink
     }
 
     // @protocol MBDigitalSignatureResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBDigitalSignatureResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable digitalSignature;
@@ -2645,7 +2645,7 @@ namespace Microblink
     }
 
     // @protocol MBCombinedFullDocumentImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBCombinedFullDocumentImageResult
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentFrontImage;
@@ -2660,7 +2660,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodedSignatureImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodedSignatureImageResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedSignatureImage;
@@ -2670,7 +2670,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodedCombinedFullDocumentImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodedCombinedFullDocumentImageResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFullDocumentFrontImage;
@@ -2685,7 +2685,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustriaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -2748,7 +2748,7 @@ namespace Microblink
     }
 
     // @protocol MBCombinedRecognizer
-    [Protocol, Model]
+    [Protocol]
     interface IMBCombinedRecognizer
     {
         // @required @property (readonly, nonatomic) MBRecognizerResult<MBCombinedRecognizerResult> * combinedResult;
@@ -2758,7 +2758,7 @@ namespace Microblink
     }
 
     // @protocol MBDigitalSignature
-    [Protocol, Model]
+    [Protocol]
     interface IMBDigitalSignature
     {
         // @required @property (assign, nonatomic) BOOL signResult;
@@ -2768,7 +2768,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodeFullDocumentImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodeFullDocumentImage
     {
         // @required @property (assign, nonatomic) BOOL encodeFullDocumentImage;
@@ -2778,7 +2778,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodeSignatureImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodeSignatureImage
     {
         // @required @property (assign, nonatomic) BOOL encodeSignatureImage;
@@ -2788,7 +2788,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBSignatureImageDpi, MBFaceImage, MBFaceImageDpi, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBAustriaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBSignatureImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -2850,7 +2850,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaPassportRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBAustriaPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -2905,7 +2905,7 @@ namespace Microblink
     }
 
     // @interface MBAustriaPassportRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBSignatureImageDpi, MBFaceImage, MBFaceImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBAustriaPassportRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBSignatureImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBGlareDetection
     {
@@ -2959,7 +2959,7 @@ namespace Microblink
     }
 
     // @interface MBColombiaIdBackRecognizerResult : MBLegacyRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBColombiaIdBackRecognizerResult : INSCopying
@@ -2994,7 +2994,7 @@ namespace Microblink
     }
 
     // @interface MBColombiaIdBackRecognizer : MBLegacyRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBColombiaIdBackRecognizer : INSCopying
     {
@@ -3012,7 +3012,7 @@ namespace Microblink
     }
 
     // @interface MBColombiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBColombiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -3031,7 +3031,7 @@ namespace Microblink
     }
 
     // @interface MBColombiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBFaceImageDpi, MBSignatureImageDpi, MBFullDocumentImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBColombiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBFaceImageDpi, IMBSignatureImageDpi, IMBFullDocumentImageDpi, IMBGlareDetection
     {
@@ -3049,7 +3049,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult, MBSignatureImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCroatiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult, IMBSignatureImageResult
@@ -3100,7 +3100,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCroatiaIdFrontRecognizer : INSCopying, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage
     {
@@ -3126,7 +3126,7 @@ namespace Microblink
     }
 
     // @interface MBLegacyMRTDRecognizerResult : MBLegacyRecognizerResult
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBLegacyMRTDRecognizerResult
@@ -3197,7 +3197,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCroatiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -3224,7 +3224,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBGlareDetection, MBFullDocumentImage>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCroatiaIdBackRecognizer : INSCopying, IMBGlareDetection, IMBFullDocumentImage
     {
@@ -3242,7 +3242,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCroatiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -3309,7 +3309,7 @@ namespace Microblink
     }
 
     // @interface MBCroatiaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCroatiaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -3319,7 +3319,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCzechiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -3338,7 +3338,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCzechiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -3360,7 +3360,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCzechiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -3411,7 +3411,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCzechiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -3449,7 +3449,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCzechiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -3508,7 +3508,7 @@ namespace Microblink
     }
 
     // @interface MBCzechiaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBCzechiaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -3518,7 +3518,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentFaceRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBDocumentFaceRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -3533,7 +3533,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentFaceRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBDocumentFaceRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi
     {
@@ -3547,7 +3547,7 @@ namespace Microblink
     }
 
     // @interface MBEgyptIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBEgyptIdFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -3562,7 +3562,7 @@ namespace Microblink
     }
 
     // @interface MBEgyptIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBEgyptIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBGlareDetection
     {
@@ -3576,7 +3576,7 @@ namespace Microblink
     }
 
     // @interface MBEudlRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBEudlRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -3623,7 +3623,7 @@ namespace Microblink
     }
 
     // @interface MBEudlRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBEudlRecognizer : INSCopying, IMBFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBFullDocumentImageDpi
     {
@@ -3657,7 +3657,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBGermanyIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -3704,7 +3704,7 @@ namespace Microblink
     }
 
     // @protocol MBFullDocumentImageExtensionFactors
-    [Protocol, Model]
+    [Protocol]
     interface IMBFullDocumentImageExtensionFactors
     {
         // @required @property (assign, nonatomic) MBImageExtensionFactors fullDocumentImageExtensionFactors;
@@ -3714,7 +3714,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection, MBFullDocumentImageExtensionFactors>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBGermanyIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection, IMBFullDocumentImageExtensionFactors
     {
@@ -3744,7 +3744,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBGermanyIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -3791,7 +3791,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection, MBFullDocumentImageExtensionFactors>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBGermanyIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection, IMBFullDocumentImageExtensionFactors
     {
@@ -3829,7 +3829,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBGermanyCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -3896,7 +3896,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature, MBFullDocumentImageExtensionFactors>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBGermanyCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature, IMBFullDocumentImageExtensionFactors
     {
@@ -3910,7 +3910,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyPassportRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBGermanyPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -3941,7 +3941,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyPassportRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection, MBFullDocumentImageExtensionFactors>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBGermanyPassportRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection, IMBFullDocumentImageExtensionFactors
     {
@@ -3975,7 +3975,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyOldIdRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult, MBSignatureImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBGermanyOldIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBSignatureImageResult, IMBFaceImageResult
@@ -3986,7 +3986,7 @@ namespace Microblink
     }
 
     // @interface MBGermanyOldIdRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBSignatureImage, MBGlareDetection, MBFullDocumentImageExtensionFactors>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBGermanyOldIdRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBSignatureImage, IMBGlareDetection, IMBFullDocumentImageExtensionFactors
     {
@@ -4000,7 +4000,7 @@ namespace Microblink
     }
 
     // @interface MBHongKongIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBHongKongIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -4031,7 +4031,7 @@ namespace Microblink
     }
 
     // @interface MBHongKongIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBHongKongIdFrontRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -4061,7 +4061,7 @@ namespace Microblink
     }
 
     // @interface MBIndonesiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBIndonesiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -4156,7 +4156,7 @@ namespace Microblink
     }
 
     // @interface MBIndonesiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBIndonesiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -4222,7 +4222,7 @@ namespace Microblink
     }
 
     // @interface MBJordanIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBJordanIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -4230,7 +4230,7 @@ namespace Microblink
     }
 
     // @interface MBJordanIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBJordanIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -4240,7 +4240,7 @@ namespace Microblink
     }
 
     // @interface MBJordanIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBJordanIdFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -4263,7 +4263,7 @@ namespace Microblink
     }
 
     // @interface MBJordanIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBGlareDetection, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBJordanIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBGlareDetection, IMBFullDocumentImageDpi
     {
@@ -4285,7 +4285,7 @@ namespace Microblink
     }
 
     // @interface MBJordanCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBJordanCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -4328,7 +4328,7 @@ namespace Microblink
     }
 
     // @interface MBJordanCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBJordanCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
     {
@@ -4350,7 +4350,7 @@ namespace Microblink
     }
 
     // @interface MBMyKadBackRecognizerResult : MBRecognizerResult <NSCopying, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMyKadBackRecognizerResult : INSCopying, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -4373,7 +4373,7 @@ namespace Microblink
     }
 
     // @interface MBMyKadBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBSignatureImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBMyKadBackRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBSignatureImageDpi, IMBGlareDetection
     {
@@ -4383,7 +4383,7 @@ namespace Microblink
     }
 
     // @interface MBMyKadFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMyKadFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -4438,7 +4438,7 @@ namespace Microblink
     }
 
     // @interface MBMyKadFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBMyKadFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBFullDocumentImageDpi
     {
@@ -4452,7 +4452,7 @@ namespace Microblink
     }
 
     // @interface MBIkadRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBIkadRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -4507,7 +4507,7 @@ namespace Microblink
     }
 
     // @interface MBIkadRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBIkadRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection, IMBFullDocumentImageDpi
     {
@@ -4549,7 +4549,7 @@ namespace Microblink
     }
 
     // @interface MBMyTenteraRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMyTenteraRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -4604,7 +4604,7 @@ namespace Microblink
     }
 
     // @interface MBMyTenteraRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBMyTenteraRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection, IMBFullDocumentImageDpi
     {
@@ -4622,7 +4622,7 @@ namespace Microblink
     }
 
     // @interface MBMalaysiaDlFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMalaysiaDlFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -4673,7 +4673,7 @@ namespace Microblink
     }
 
     // @interface MBMalaysiaDlFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBGlareDetection, MBFullDocumentImageDpi>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBMalaysiaDlFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBGlareDetection, IMBFullDocumentImageDpi
     {
@@ -4707,7 +4707,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdRecognizerResult : MBTemplatingRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBTemplatingRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMrtdRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -4726,7 +4726,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdRecognizer : MBTemplatingRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBTemplatingRecognizer))]
     interface MBMrtdRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -4764,7 +4764,7 @@ namespace Microblink
     }
 
     // @protocol MBMrzFilter <NSObject>
-    [Protocol, Model]
+    [Protocol]
     [BaseType(typeof(NSObject))]
     interface MBMrzFilter
     {
@@ -4775,7 +4775,7 @@ namespace Microblink
     }
 
     // @protocol MBMrzImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBMrzImageResult
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable mrzImage;
@@ -4785,7 +4785,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodedMrzImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodedMrzImageResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedMrzImage;
@@ -4795,7 +4795,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult, MBMrzImageResult, MBEncodedMrzImageResult, MBDigitalSignatureResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMrtdCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBMrzImageResult, IMBEncodedMrzImageResult, IMBDigitalSignatureResult
@@ -4882,7 +4882,7 @@ namespace Microblink
     }
 
     // @protocol MBMrzImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBMrzImage
     {
         // @required @property (assign, nonatomic) BOOL returnMrzImage;
@@ -4892,7 +4892,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodeMrzImage
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodeMrzImage
     {
         // @required @property (assign, nonatomic) BOOL encodeMrzImage;
@@ -4902,7 +4902,7 @@ namespace Microblink
     }
 
     // @interface MBMrtdCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBFaceImage, MBMrzImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBMrtdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBFaceImage, IMBMrzImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
     {
@@ -4912,7 +4912,7 @@ namespace Microblink
     }
 
     // @interface MBNewZealandDlFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBNewZealandDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -4955,7 +4955,7 @@ namespace Microblink
     }
 
     // @interface MBNewZealandDlFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBNewZealandDlFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -4993,7 +4993,7 @@ namespace Microblink
     }
 
     // @interface MBPolandIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBPolandIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -5001,7 +5001,7 @@ namespace Microblink
     }
 
     // @interface MBPolandIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBPolandIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5011,7 +5011,7 @@ namespace Microblink
     }
 
     // @interface MBPolandIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBPolandIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -5046,7 +5046,7 @@ namespace Microblink
     }
 
     // @interface MBPolandIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBPolandIdFrontRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5080,7 +5080,7 @@ namespace Microblink
     }
 
     // @interface MBPolandCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBPolandCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -5135,7 +5135,7 @@ namespace Microblink
     }
 
     // @interface MBPolandCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBPolandCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
     {
@@ -5169,7 +5169,7 @@ namespace Microblink
     }
 
     // @interface MBRomaniaIdFrontRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBRomaniaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -5236,7 +5236,7 @@ namespace Microblink
     }
 
     // @interface MBRomaniaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBRomaniaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5278,7 +5278,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSerbiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -5286,7 +5286,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSerbiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5296,7 +5296,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSerbiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -5315,7 +5315,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSerbiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5333,7 +5333,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSerbiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -5384,7 +5384,7 @@ namespace Microblink
     }
 
     // @interface MBSerbiaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSerbiaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -5394,7 +5394,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeIdBackRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -5421,7 +5421,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSingaporeIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5439,7 +5439,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeIdFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -5470,7 +5470,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSingaporeIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBGlareDetection
     {
@@ -5496,7 +5496,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -5539,7 +5539,7 @@ namespace Microblink
     }
 
     // @interface MBSingaporeCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSingaporeCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
     {
@@ -5549,7 +5549,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSlovakiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -5572,7 +5572,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSlovakiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5594,7 +5594,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSlovakiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -5653,7 +5653,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSlovakiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5691,7 +5691,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSlovakiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -5758,7 +5758,7 @@ namespace Microblink
     }
 
     // @interface MBSlovakiaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSlovakiaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -5808,7 +5808,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSloveniaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -5831,7 +5831,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSloveniaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5849,7 +5849,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSloveniaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -5888,7 +5888,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSloveniaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -5914,7 +5914,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSloveniaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -5969,7 +5969,7 @@ namespace Microblink
     }
 
     // @interface MBSloveniaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSloveniaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
     {
@@ -5979,7 +5979,7 @@ namespace Microblink
     }
 
     // @interface MBSwedenDlFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult, MBSignatureImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSwedenDlFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult, IMBSignatureImageResult
@@ -6022,7 +6022,7 @@ namespace Microblink
     }
 
     // @interface MBSwedenDlFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBSignatureImage, MBFullDocumentImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSwedenDlFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
@@ -6064,7 +6064,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSwitzerlandIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -6103,7 +6103,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSwitzerlandIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -6137,7 +6137,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSwitzerlandIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
@@ -6160,7 +6160,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSwitzerlandIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -6178,7 +6178,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandPassportRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSwitzerlandPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -6225,7 +6225,7 @@ namespace Microblink
     }
 
     // @interface MBSwitzerlandPassportRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBFullDocumentImage, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBLegacyRecognizer))]
     interface MBSwitzerlandPassportRecognizer : INSCopying, IMBFaceImage, IMBFullDocumentImage, IMBGlareDetection
     {
@@ -6275,7 +6275,7 @@ namespace Microblink
     }
 
     // @interface MBUnitedArabEmiratesIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUnitedArabEmiratesIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
@@ -6286,7 +6286,7 @@ namespace Microblink
     }
 
     // @interface MBUnitedArabEmiratesIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBUnitedArabEmiratesIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
@@ -6296,7 +6296,7 @@ namespace Microblink
     }
 
     // @interface MBUnitedArabEmiratesIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUnitedArabEmiratesIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBFullDocumentImageResult
@@ -6315,7 +6315,7 @@ namespace Microblink
     }
 
     // @interface MBUnitedArabEmiratesIdFrontRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBGlareDetection>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBUnitedArabEmiratesIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBGlareDetection
     {
@@ -6333,7 +6333,7 @@ namespace Microblink
     }
 
     // @protocol MBEncodedFullDocumentImageResult
-    [Protocol, Model]
+    [Protocol]
     interface IMBEncodedFullDocumentImageResult
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFullDocumentImage;
@@ -6343,7 +6343,7 @@ namespace Microblink
     }
 
     // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUsdlCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult
@@ -6367,7 +6367,7 @@ namespace Microblink
     }
 
     // @interface MBUsdlCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBUsdlCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
     {
@@ -6389,7 +6389,7 @@ namespace Microblink
     }
 
     // @interface MBUsdlRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUsdlRecognizerResult : INSCopying
@@ -6413,7 +6413,7 @@ namespace Microblink
     }
 
     // @interface MBUsdlRecognizer : MBRecognizer <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBRecognizer))]
     interface MBUsdlRecognizer : INSCopying
     {
@@ -6431,14 +6431,14 @@ namespace Microblink
     }
 
     // @interface MBBaseOverlayViewController : MBOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBOverlayViewController))]
     interface MBBaseOverlayViewController
     {
     }
 
     // @interface MBRecognizerCollection : NSObject <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerCollection : INSCopying
@@ -6470,7 +6470,7 @@ namespace Microblink
     }
 
     // @interface MBOverlaySettings : NSObject <NSCopying>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBOverlaySettings : INSCopying
     {
@@ -6484,7 +6484,7 @@ namespace Microblink
     }
 
     // @interface MBBaseOverlaySettings : MBOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBOverlaySettings))]
     interface MBBaseOverlaySettings
     {
@@ -6514,7 +6514,7 @@ namespace Microblink
     }
 
     // @interface MBBarcodeOverlaySettings : MBBaseOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOverlaySettings))]
     interface MBBarcodeOverlaySettings
     {
@@ -6528,7 +6528,7 @@ namespace Microblink
     }
 
     // @interface MBBarcodeOverlayViewController : MBBaseOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBBarcodeOverlayViewController
     {
@@ -6566,7 +6566,7 @@ namespace Microblink
     }
 
     // @interface MBCustomOverlayViewController : MBOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBOverlayViewController))]
     interface MBCustomOverlayViewController
     {
@@ -6625,7 +6625,7 @@ namespace Microblink
     }
 
     // @interface MBSubview : UIView
-    [iOS(8, 0)]
+    
     [BaseType(typeof(UIView))]
     interface MBSubview
     {
@@ -6655,7 +6655,7 @@ namespace Microblink
     }
 
     // @interface MBDisplayableObject : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     interface MBDisplayableObject
     {
@@ -6665,7 +6665,7 @@ namespace Microblink
     }
 
     // @interface MBDisplayableDetection : MBDisplayableObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDisplayableObject))]
     [DisableDefaultCtor]
     interface MBDisplayableDetection
@@ -6681,7 +6681,7 @@ namespace Microblink
     }
 
     // @interface MBDisplayablePointsDetection : MBDisplayableDetection
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDisplayableDetection))]
     interface MBDisplayablePointsDetection
     {
@@ -6702,7 +6702,7 @@ namespace Microblink
     }
 
     // @interface MBDotsSubview : MBSubview <MBPointDetectorSubview>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBDotsSubview : IMBPointDetectorSubview
     {
@@ -6744,7 +6744,7 @@ namespace Microblink
     }
 
     // @interface MBDotsResultSubview : MBSubview <MBPointDetectorSubview, MBOcrLayoutSubview>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBDotsResultSubview : IMBPointDetectorSubview, IMBOcrLayoutSubview
     {
@@ -6770,7 +6770,7 @@ namespace Microblink
     }
 
     // @interface MBDisplayableQuadDetection : MBDisplayableDetection
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBDisplayableDetection))]
     interface MBDisplayableQuadDetection
     {
@@ -6791,7 +6791,7 @@ namespace Microblink
     }
 
     // @interface MBModernViewfinderSubview : MBSubview <MBQuadDetectorSubview>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBModernViewfinderSubview : IMBQuadDetectorSubview
     {
@@ -6813,7 +6813,7 @@ namespace Microblink
     }
 
     // @interface MBTapToFocusSubview : MBSubview
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBTapToFocusSubview
     {
@@ -6839,7 +6839,7 @@ namespace Microblink
     }
 
     // @interface MBGlareStatusSubview : MBSubview
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     [DisableDefaultCtor]
     interface MBGlareStatusSubview
@@ -6859,7 +6859,7 @@ namespace Microblink
     }
 
     // @interface MBScanElement : NSObject
-    [iOS(8, 0)]
+    
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBScanElement
@@ -6919,7 +6919,7 @@ namespace Microblink
     }
 
     // @interface MBFieldByFieldOverlaySettings : MBOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBOverlaySettings))]
     [DisableDefaultCtor]
     interface MBFieldByFieldOverlaySettings
@@ -6947,7 +6947,7 @@ namespace Microblink
     }
 
     // @interface MBFieldByFieldOverlayViewController : MBOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBOverlayViewController))]
     [DisableDefaultCtor]
     interface MBFieldByFieldOverlayViewController
@@ -6991,14 +6991,14 @@ namespace Microblink
     }
 
     // @interface MBOcrResultSubview : MBSubview <MBOcrLayoutSubview>
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBOcrResultSubview : IMBOcrLayoutSubview
     {
     }
 
     // @interface MBBaseOcrOverlaySettings : MBBaseOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOverlaySettings))]
     interface MBBaseOcrOverlaySettings
     {
@@ -7008,7 +7008,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentOverlaySettings : MBBaseOcrOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOcrOverlaySettings))]
     interface MBDocumentOverlaySettings
     {
@@ -7022,7 +7022,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentOverlayViewController : MBBaseOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBDocumentOverlayViewController
     {
@@ -7060,7 +7060,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOcrOverlaySettings))]
     interface MBDocumentVerificationOverlaySettings
     {
@@ -7098,7 +7098,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentVerificationOverlayViewController : MBBaseOverlayViewController
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBDocumentVerificationOverlayViewController
     {
@@ -7136,7 +7136,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentSubview : MBSubview
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBDocumentSubview
     {
@@ -7159,7 +7159,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentVerificationSubview : MBSubview
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBDocumentVerificationSubview
     {
@@ -7196,7 +7196,7 @@ namespace Microblink
     }
 
     // @interface MBDocumentVerificationInstructionsSubview : MBSubview
-    [iOS(8, 0)]
+    
     [BaseType(typeof(MBSubview))]
     interface MBDocumentVerificationInstructionsSubview
     {
