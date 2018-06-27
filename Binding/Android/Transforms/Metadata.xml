@@ -1,20 +1,31 @@
-﻿<metadata>
-<!--
-  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
-  
-  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
--->
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.secured')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.hardware')]/class[@name!='CameraSettings' and @extends!='java.lang.Enum']" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.ocr')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.detectors')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.geometry')]" />
+    <remove-node path="/api/package[@name='com.microblink.image']/class[@name!='Image']" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/class[@name!='RecognizerSuccessType']" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/interface" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.settings')]" />
+    <remove-node path="/api/package[@name='com.microblink.util']/class[not(starts-with(@name, 'RecognizerCompatibility') or @name='Log')]" />
+    <remove-node path="/api/package[@name='com.microblink.util']/interface" />
+    <remove-node path="/api/package[@name='com.microblink.activity']" />
 
-	<attr
-        path="/api/package[@name='com.microblink.wrapper.xamarin.scan.quadview']/class[@name='QuadrangleEvaluator']/method[@name='evaluate' and count(parameter)=3 and parameter[1][@type='float'] and parameter[2][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper'] and parameter[3][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']]"
-        name="managedReturn"
-	>Java.Lang.Object</attr>
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.view')]/class[@extends!='java.lang.Enum']" />
 
-	<attr
-        path="/api/package[@name='com.microblink.wrapper.xamarin.scan.quadview']/class[@name='QuadrangleEvaluator']/method[@name='evaluate' and count(parameter)=3 and parameter[1][@type='float'] and parameter[2][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper'] and parameter[3][@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']]/parameter[@type='com.microblink.wrapper.xamarin.scan.quadview.QuadrilateralWrapper']"
-        name="type"
-	>Java.Lang.Object</attr>
+    <remove-node path="//*[@visibility!='public']" />
 
+    <remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity']/method[@name!='writeToParcel' and @name!='describeContents' and @name!='getResult']" />
+    <remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity.Result']/method[@name!='writeToParcel' and @name!='describeContents']" />
+    
+    <remove-node path="/api/package[@name='com.microblink.entities.parsers']/class[@name='Parser']/method[@name='consumeResult']" />
+
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.fragment')]" />
+
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='consumeResultFrom']" />
+
+    <attr path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='clone']" name="managedName">Copy</attr>
 </metadata>

@@ -34,4 +34,3 @@ Set the build action for these jars in the properties page to "ReferenceJar".
 embedded in your dll. But at application build time, they are not included
 in the final apk, like ReferenceJar files.
 
-
