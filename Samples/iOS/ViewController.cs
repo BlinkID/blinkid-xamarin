@@ -18,7 +18,7 @@ namespace iOS
         // US Driver's licenses
         MBUsdlRecognizer usdlRecognizer;
 
-        // there is a plenty of recognizers available - see iOS documentation
+        // there are plenty of recognizers available - see iOS documentation
         // for more information: https://github.com/BlinkID/blinkid-ios/blob/master/README.md
 
         CustomDelegate customDelegate;
