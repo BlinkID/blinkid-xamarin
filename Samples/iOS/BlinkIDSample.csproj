@@ -112,9 +112,9 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\..\Binding\iOS\BlinkIDiOSBinding.csproj">
-      <Project>{20BFD052-E54F-4504-A860-E6A18C8A15D8}</Project>
-      <Name>BlinkIDiOSBinding</Name>
+    <ProjectReference Include="..\..\Binding\iOS\iOSBinding.csproj">
+      <Project>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</Project>
+      <Name>iOSBinding</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -1,17 +1,27 @@
 using System;
 
 using UIKit;
-using Foundation;
-using System.Diagnostics;
 
-using MicroBlink;
+using Microblink;
 
 namespace iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		bool isFrontCamera;
-		CustomDelegate customDelegate;
+        // MBMrtdRecognizer is used for scanning Machine Readable Travel Documents
+        MBMrtdRecognizer mrtdRecognizer;
+
+        // MBEudlRecognizer is used for scanning EU Driver's licenses
+        MBEudlRecognizer eudlRecognizer;
+
+        // MBUsdlRecognizer is used for scanning PDF417 barcode on back side of
+        // US Driver's licenses
+        MBUsdlRecognizer usdlRecognizer;
+
+        // there is a plenty of recognizers available - see iOS documentation
+        // for more information: https://github.com/BlinkID/blinkid-ios/blob/master/README.md
+
+        CustomDelegate customDelegate;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{
@@ -22,89 +32,14 @@ namespace iOS
 			base.ViewDidLoad ();
 			// Perform any additional setup after loading the view, typically from a nib.
 
-			customDelegate = new CustomDelegate ();
+            customDelegate = new CustomDelegate(this);
 
-            BlinkID.Instance().LicenseKey = "LCHGXFWP-LR6TFZTD-T5RFK2YM-3UVFVAOZ-ISQFRPZJ-KYDI2T72-V3XWGPYS-GM33XXV3";
-			BlinkID.Instance().Delegate = customDelegate;
+            // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
+            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAwxAdkXxaNOMEzJmfZ4hR21AVB8wknhBesyrlSBS0GhBEOmnINIQuUaYt5/35Ed6eOxOyXZeeSVl6eljzTY88HilqzAc4x4L1donsPivtU0wNm1Ew1efXkB4GIEzC4oHzkQDLiFegrSOXhZwxOTya1zIUw537gG/c52NSW67xV7k1ooTfaSK+JgADz3V4Sd4FAHXXNx47WwfV7qMe6cVal/9AtezVn5hocw==");
 
-            BlinkID.Instance().AddMrtdRecognizer();
-
-            //BlinkID.Instance ().AddEudlRecognizer ();
-            //BlinkID.Instance ().AddGerMrzRecognizer (); - Unavailable since iOS v2.11.0, use AddGerIDOldRecognizer
-            //BlinkID.Instance ().AddGerIDOldRecognizer ();
-            //BlinkID.Instance ().AddGerIDFrontRecognizer ();
-            //BlinkID.Instance ().AddGerIDBackRecognizer ();
-            //BlinkID.Instance ().AddGerPassportRecognizer ();
-            //BlinkID.Instance ().AddCroIdFrontRecognizer ();
-            //BlinkID.Instance ().AddCroIdBackRecognizer ();
-            //BlinkID.Instance ().AddAusIDFrontRecognizer ();
-            //BlinkID.Instance ().AddAusIDBackRecognizer ();
-            //BlinkID.Instance ().AddAusPassportRecognizer ();
-            //BlinkID.Instance ().AddBarDecoderRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-            //BlinkID.Instance ().AddZXingRecognizer (); //- deprecated since iOS v2.11.0, use AddBarcodeRecognizer
-            //BlinkID.Instance ().AddBarcodeRecognizer ();
-            //BlinkID.Instance ().AddCzIDFrontRecognizer ();
-            //BlinkID.Instance ().AddCzIDBackRecognizer ();
-
-            //BlinkID.Instance ().AddMyKadRecognizer ();
-            //BlinkID.Instance ().AddIKadRecognizer ();
-            //BlinkID.Instance ().AddMyTenteraRecognizer();
-            //BlinkID.Instance ().AddPdf417Recognizer ();
-            //BlinkID.Instance ().AddSingaporeIDRecognizer ();
-            //BlinkID.Instance ().AddIndonesianIDFrontRecognizer();
-            //BlinkID.Instance ().AddUkdlRecognizer ();
-            //BlinkID.Instance ().AddSerbIDFrontRecognizer ();
-            //BlinkID.Instance ().AddSerbIDBackRecognizer ();
-            //BlinkID.Instance ().AddSlovakIDFrontRecognizer ();
-            //BlinkID.Instance ().AddSlovakIDBackRecognizer ();
-            //BlinkID.Instance ().AddSlovenianIDFrontRecognizer ();
-            //BlinkID.Instance ().AddSlovenianIDBackRecognizer ();
-            //BlinkID.Instance ().AddPolishIDFrontRecognizer();
-            //BlinkID.Instance ().AddPolishIDBackRecognizer();
-            //BlinkID.Instance ().AddSingaporeIDFrontRecognizer ();
-            //BlinkID.Instance ().AddSingaporeIDBackRecognizer ();
-            //BlinkID.Instance ().AddSwissPassportRecognizer ();
-            //BlinkID.Instance ().AddEudlRecognizer ();
-            //BlinkID.Instance ().AddUsdlRecognizer ();
-            //BlinkID.Instance ().AddAusdlRecognizer ();
-            //BlinkID.Instance ().AddDedlRecognizer ();
-            //BlinkID.Instance ().AddAustraliaDLFrontRecognizer();
-            //BlinkID.Instance ().AddAustraliaDLBackRecognizer();
-
-            // NOTE: do not use multiple combined recognizers at the same time
-            //BlinkID.Instance ().AddMrtdCombinedRecognizer();
-            //BlinkID.Instance ().AddCroCombinedRecognizer();
-            //BlinkID.Instance ().AddCzCombinedRecognizer();
-            //BlinkID.Instance ().AddGerCombinedRecognizer();
-            //BlinkID.Instance ().AddAusIDCombinedRecognizer();
-            //BlinkID.Instance ().AddSerbIDCombinedRecognizer();
-            //BlinkID.Instance ().AddSlovakCombinedRecognizer();
-            //BlinkID.Instance ().AddPolishIDCombinedRecognizer();
-            //BlinkID.Instance ().AddSingaporeCombinedRecognizer();
-            //BlinkID.Instance ().AddSlovenianCombinedRecognizer();
-
-            //BlinkID.Instance ().AddVinRecognizer ();
-            //BlinkID.Instance ().AddVinParser ("VIN_PARSER_ID");
-            //BlinkID.Instance ().AddLicensePlatesParser ("LICENSE_PLATES_PARSER_ID");
-
-            //BlinkID.Instance ().AddTopUpOcrParser ("TOP_UP_OCR_PARSER_ID");
-            //BlinkID.Instance ().AddRegexParser ("Blink\\d\\d\\d", "REGEX_PARSER_ID");
-            //BlinkID.Instance ().AddIbanParser ("IBAN_PARSER_ID");
-            //BlinkID.Instance ().AddEmailParser ("EMAIL_PARSER_ID");
-            //BlinkID.Instance ().AddDateParser ("DATE_PARSER_ID");
-            //BlinkID.Instance ().AddRawParser ("RAW_PARSER_ID");
-            //BlinkID.Instance ().AddAmountParser ("AMOUNT_PARSER_ID");
-
-            BlinkID.Instance ().AddIdCardDetector ();
-
-            //BlinkID.Instance ().ClearAllDetectors ();
-            //BlinkID.Instance ().ClearAllParsers ();
-            //BlinkID.Instance ().ClearAllRecognizers ();
-
-			isFrontCamera = false;
-
-			customDelegate.MetadataImageView = metadataImageView;
-			customDelegate.MetadataTextView = metadataTextView;
+            mrtdRecognizer = new MBMrtdRecognizer();
+            usdlRecognizer = new MBUsdlRecognizer();
+            eudlRecognizer = new MBEudlRecognizer();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -115,38 +50,92 @@ namespace iOS
 
 		partial void StartScanningButton_TouchUpInside (UIButton sender)
 		{
-			BlinkID.Instance().Scan(isFrontCamera);
+            // create a collection of recognizers that will be used for scanning
+            var recognizerCollection = new MBRecognizerCollection(new MBRecognizer[] { mrtdRecognizer, eudlRecognizer, usdlRecognizer });
+
+            // create a settings object for overlay that will be used. For ID it's best to use DocumentOverlayViewController
+            // there are also other overlays available - check iOS documentation
+            var documentOverlaySettings = new MBDocumentOverlaySettings();
+            var documentOverlay = new MBDocumentOverlayViewController(documentOverlaySettings, recognizerCollection, customDelegate);
+
+            // finally, create a recognizerRunnerViewController
+            var recognizerRunnerViewController = MBViewControllerFactory.RecognizerRunnerViewControllerWithOverlayViewController(documentOverlay);
+
+            // in ObjC recognizerRunnerViewController would actually be of type UIViewController<MBRecognizerRunnerViewController>*, but this construct
+            // is not supported in C#, so we need to use Runtime.GetINativeObject to cast obtained IMBReocognizerRunnerViewController into UIViewController
+            // that can be presented
+            this.PresentViewController(ObjCRuntime.Runtime.GetINativeObject<UIViewController>(recognizerRunnerViewController.Handle, false), true, null);
 		}
 
-		class CustomDelegate : BlinkIDDelegate
-		{
-			public UIImageView MetadataImageView {
-				get; set;
-			}
+        class CustomDelegate : MBDocumentOverlayViewControllerDelegate
+        {
+            ViewController me;
 
-			public UITextView MetadataTextView {
-				get; set;
-			}
+            public CustomDelegate(ViewController me)
+            {
+                this.me = me;
+            }
 
-			#region implemented abstract members of BlinkIDDelegate
+            public override void DocumentOverlayViewControllerDidFinishScanning(MBDocumentOverlayViewController documentOverlayViewController, MBRecognizerResultState state)
+            {
+                // this method is called on background processing thread. The scanning will resume as soon
+                // as this method ends, so in order to have unchanged results at the time of displaying UIAlertView
+                // pause the scanning
+                documentOverlayViewController.RecognizerRunnerViewController.PauseScanning();
 
-			public override void DidOutputResults (BlinkID blinkid, NSDictionary[] results)
-			{
-				UIAlertView alert = new UIAlertView () { 
-					Title = "BlinkID results", Message = results[0].ToString()
-				};
-				alert.AddButton("OK");
-				alert.Show ();
-			}
+                var title = "Result";
+                var message = "";
 
-			public override void DidOutputImage (BlinkID blinkid, UIImage image, string name)
-			{
-				MetadataImageView.Image = image;
-				MetadataTextView.Text = name;
-			}
+                // each recognizer has Result property which contains recognized data after scanning has been finished
 
-			#endregion
-		}
+                // we can check ResultState property of the Result to see if the result contains scanned information
+                if (me.mrtdRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
+                    var mrtdResult = me.mrtdRecognizer.Result;
+                    message += "MRTD recognizer result:\n" +
+                        "PrimaryID: " + mrtdResult.MrzResult.PrimaryID + "\n" +
+                         "SecondaryID: " + mrtdResult.MrzResult.SecondaryID + "\n" +
+                         "Date of birth: " + mrtdResult.MrzResult.DateOfBirth.Day + "." +
+                                             mrtdResult.MrzResult.DateOfBirth.Month + "." +
+                                             mrtdResult.MrzResult.DateOfBirth.Year + ".\n";
+                }
+                if (me.eudlRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
+                    var eudlResult = me.eudlRecognizer.Result;
+                    message += "EUDL recognizer result:\n" +
+                       "First name: " + eudlResult.FirstName + "\n" +
+                       "Last name: " + eudlResult.LastName + "\n" +
+                       "Birth data: " + eudlResult.BirthData + "\n" +
+                       "Country: " + eudlResult.Country.ToString() + "\n";
+                }
+                if (me.usdlRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
+                    var usdlResult = me.usdlRecognizer.Result;
+                    message += "USDL recognizer result:\n" +
+                           "First name: " + usdlResult.GetField(MBUsdlKeys.CustomerFirstName) + "\n" +
+                           "Last name: " + usdlResult.GetField(MBUsdlKeys.CustomerFamilyName) + "\n" +
+                           "City: " + usdlResult.GetField(MBUsdlKeys.AddressCity) + "\n";
+                }
+
+                UIApplication.SharedApplication.InvokeOnMainThread(delegate
+                {
+                    UIAlertView alert = new UIAlertView()
+                    {
+                        Title = title,
+                        Message = message
+                    };
+                    alert.AddButton("OK");
+                    alert.Show();
+                    // after alert dialog is dismissed, you can either resume scanning with 
+                    // documentOverlayViewController.RecognizerRunnerViewController.ResumeScanningAndResetState(true)
+                    // or you can simply dismiss the RecognizerRunnerViewController
+                    alert.Dismissed += (sender, e) => me.DismissViewController(true, null);
+                });
+
+            }
+
+            public override void DocumentOverlayViewControllerDidTapClose(MBDocumentOverlayViewController documentOverlayViewController)
+            {
+                me.DismissViewController(true, null);
+            }
+        }
 	}
 }
 

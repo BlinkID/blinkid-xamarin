@@ -27,7 +27,7 @@ namespace Microblink
         // +(instancetype)instance;
         [Static]
         [Export("instance")]
-        MBMicroblinkApp Instance();
+        MBMicroblinkApp Instance { get; }
 
         // -(void)setDefaultLanguage;
         [Export("setDefaultLanguage")]
@@ -201,7 +201,7 @@ namespace Microblink
         // +(instancetype _Nonnull)sharedInstance;
         [Static]
         [Export("sharedInstance")]
-        MBMicroblinkSDK SharedInstance();
+        MBMicroblinkSDK SharedInstance { get; }
 
         // @property (assign, nonatomic) BOOL showLicenseKeyTimeLimitedWarning;
         [Export("showLicenseKeyTimeLimitedWarning")]
