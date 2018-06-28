@@ -7,6 +7,7 @@ using Foundation;
 using ObjCRuntime;
 using UIKit;
 using Microblink;
+using System.Runtime.InteropServices;
 
 namespace Microblink
 {
@@ -62,9 +63,10 @@ namespace Microblink
         NSBundle VerifyAndGetDefaultResourcesBundle();
     }
 
+    interface IMBRecognizerRunnerViewController {}
+
     // @protocol MBRecognizerRunnerViewController <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [Protocol]
     interface MBRecognizerRunnerViewController
     {
         // @required @property (nonatomic) BOOL autorotate;
@@ -163,6 +165,8 @@ namespace Microblink
         bool IsCameraAuthorized { get; }
     }
 
+    interface IMBOverlayContainerViewController {}
+
     // @interface MBOverlayViewController : UIViewController
     
     [BaseType(typeof(UIViewController))]
@@ -171,7 +175,7 @@ namespace Microblink
     {
         // @property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> * _Nullable recognizerRunnerViewController;
         [NullAllowed, Export("recognizerRunnerViewController", ArgumentSemantic.Weak)]
-        MBOverlayContainerViewController RecognizerRunnerViewController { get; set; }
+        IMBOverlayContainerViewController RecognizerRunnerViewController { get; set; }
 
         // @property (nonatomic, strong) UIView * _Nullable cameraPausedView;
         [NullAllowed, Export("cameraPausedView", ArgumentSemantic.Strong)]
@@ -186,7 +190,7 @@ namespace Microblink
         // +(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController * _Nonnull)overlayViewController;
         [Static]
         [Export("recognizerRunnerViewControllerWithOverlayViewController:")]
-        MBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
+        IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
     }
 
     // @interface MBMicroblinkSDK : NSObject
@@ -367,12 +371,12 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugImage:(MBImage * _Nonnull)image;
         [Abstract]
         [Export("recognizerRunnerViewController:didOutputDebugImage:")]
-        void DidOutputDebugImage(MBRecognizerRunnerViewController recognizerRunnerViewController, MBImage image);
+        void DidOutputDebugImage(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBImage image);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugText:(NSString * _Nonnull)text;
         [Abstract]
         [Export("recognizerRunnerViewController:didOutputDebugText:")]
-        void DidOutputDebugText(MBRecognizerRunnerViewController recognizerRunnerViewController, string text);
+        void DidOutputDebugText(IMBRecognizerRunnerViewController recognizerRunnerViewController, string text);
     }
 
     // @protocol MBDetectionRecognizerRunnerViewControllerDelegate <NSObject>
@@ -382,15 +386,15 @@ namespace Microblink
     {
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayableQuad:(MBDisplayableQuadDetection * _Nonnull)displayableQuad;
         [Export("recognizerRunnerViewController:didFinishDetectionWithDisplayableQuad:")]
-        void RecognizerRunnerViewController(MBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayableQuadDetection displayableQuad);
+        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayableQuadDetection displayableQuad);
 
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayablePoints:(MBDisplayablePointsDetection * _Nonnull)displayablePoints;
         [Export("recognizerRunnerViewController:didFinishDetectionWithDisplayablePoints:")]
-        void RecognizerRunnerViewController(MBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayablePointsDetection displayablePoints);
+        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayablePointsDetection displayablePoints);
 
         // @optional -(void)recognizerRunnerViewControllerDidFailDetection:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Export("recognizerRunnerViewControllerDidFailDetection:")]
-        void RecognizerRunnerViewControllerDidFailDetection(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidFailDetection(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @protocol MBOcrRecognizerRunnerViewControllerDelegate <NSObject>
@@ -401,7 +405,7 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didObtainOcrResult:(MBOcrLayout * _Nonnull)ocrResult withResultName:(NSString * _Nonnull)resultName;
         [Abstract]
         [Export("recognizerRunnerViewController:didObtainOcrResult:withResultName:")]
-        void DidObtainOcrResult(MBRecognizerRunnerViewController recognizerRunnerViewController, MBOcrLayout ocrResult, string resultName);
+        void DidObtainOcrResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBOcrLayout ocrResult, string resultName);
     }
 
     // @protocol MBGlareRecognizerRunnerViewControllerDelegate <NSObject>
@@ -412,7 +416,7 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishGlareDetectionWithResult:(BOOL)glareFound;
         [Abstract]
         [Export("recognizerRunnerViewController:didFinishGlareDetectionWithResult:")]
-        void DidFinishGlareDetectionWithResult(MBRecognizerRunnerViewController recognizerRunnerViewController, bool glareFound);
+        void DidFinishGlareDetectionWithResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, bool glareFound);
     }
 
     // @protocol MBFirstSideFinishedRecognizerRunnerViewControllerDelegate <NSObject>
@@ -423,7 +427,7 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:")]
-        void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @interface MBRecognizerRunnerViewControllerMetadataDelegates : NSObject
@@ -480,32 +484,32 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewControllerUnauthorizedCamera:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerUnauthorizedCamera:")]
-        void RecognizerRunnerViewControllerUnauthorizedCamera(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerUnauthorizedCamera(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFindError:(NSError * _Nonnull)error;
         [Abstract]
         [Export("recognizerRunnerViewController:didFindError:")]
-        void RecognizerRunnerViewController(MBRecognizerRunnerViewController recognizerRunnerViewController, NSError error);
+        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, NSError error);
 
         // @required -(void)recognizerRunnerViewControllerDidClose:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerDidClose:")]
-        void RecognizerRunnerViewControllerDidClose(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidClose(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerWillPresentHelp:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerWillPresentHelp:")]
-        void RecognizerRunnerViewControllerWillPresentHelp(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerWillPresentHelp(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidResumeScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerDidResumeScanning:")]
-        void RecognizerRunnerViewControllerDidResumeScanning(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidResumeScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidStopScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export("recognizerRunnerViewControllerDidStopScanning:")]
-        void RecognizerRunnerViewControllerDidStopScanning(MBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidStopScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @interface MBRecognizerResult : NSObject
@@ -527,7 +531,7 @@ namespace Microblink
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishScanningWithState:(MBRecognizerResultState)state;
         [Abstract]
         [Export("recognizerRunnerViewController:didFinishScanningWithState:")]
-        void DidFinishScanningWithState(MBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
+        void DidFinishScanningWithState(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
     }
 
     // @protocol MBDebugRecognizerRunnerDelegate <NSObject>
@@ -2615,8 +2619,8 @@ namespace Microblink
     }
 
     // @protocol MBCombinedRecognizerResult
-    [Protocol]
-    interface IMBCombinedRecognizerResult
+    [Protocol]   
+    interface MBCombinedRecognizerResult
     {
         // @required @property (readonly, assign, nonatomic) BOOL documentDataMatch;
         [Abstract]
@@ -2688,7 +2692,7 @@ namespace Microblink
     
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBAustriaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBAustriaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable givenName;
         [NullAllowed, Export("givenName")]
@@ -2746,6 +2750,8 @@ namespace Microblink
         [Export("mrtdVerified")]
         bool MrtdVerified { get; }
     }
+
+    interface IMBCombinedRecognizerResult {}
 
     // @protocol MBCombinedRecognizer
     [Protocol]
@@ -3245,7 +3251,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBCroatiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBCroatiaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export("firstName")]
@@ -3452,7 +3458,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBCzechiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBCzechiaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export("firstName")]
@@ -3832,7 +3838,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBGermanyCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBGermanyCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export("firstName")]
@@ -4288,7 +4294,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBJordanCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBJordanCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable name;
         [NullAllowed, Export("name")]
@@ -4798,7 +4804,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBMrtdCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBMrzImageResult, IMBEncodedMrzImageResult, IMBDigitalSignatureResult
+    interface MBMrtdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBMrzImageResult, IMBEncodedMrzImageResult, IMBDigitalSignatureResult
     {
         // @property (readonly, nonatomic) BOOL mrzParsed;
         [Export("mrzParsed")]
@@ -5083,7 +5089,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBPolandCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBPolandCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable givenNames;
         [NullAllowed, Export("givenNames")]
@@ -5336,7 +5342,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSerbiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBSerbiaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable identityCardNumber;
         [NullAllowed, Export("identityCardNumber")]
@@ -5499,7 +5505,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSingaporeCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBSingaporeCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable name;
         [NullAllowed, Export("name")]
@@ -5694,7 +5700,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSlovakiaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBSlovakiaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export("firstName")]
@@ -5917,7 +5923,7 @@ namespace Microblink
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSloveniaCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBSloveniaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export("firstName")]
@@ -6346,7 +6352,7 @@ namespace Microblink
     
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBUsdlCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult
+    interface MBUsdlCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult
     {
         // -(NSData * _Nullable)data;
         [NullAllowed, Export("data")]

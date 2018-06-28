@@ -35,13 +35,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-    <ObjcBindingApiDefinition Include="Structs.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <NativeReference Include="MicroBlink.framework">
       <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +115,12 @@
     <BundleResource Include="MicroBlink.bundle\uae_confusions.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_name_dictionary.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_nationality_dictionary.zzip" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
