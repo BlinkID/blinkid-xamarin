@@ -60,11 +60,12 @@ namespace BlinkIDApp.Droid
         public string IosLicenseKey { get => null; set {} }
 #pragma warning restore RECS0029 // Warns about property or indexer setters and event adders or removers that do not use the value parameter
 
-        public void Scan(IOverlaySettings overlaySettings, IRecognizerCollection recognizerCollection)
+        public void Scan(IOverlaySettings overlaySettings)
         {
             MainActivity.Instance.BlinkIDImplementation = this;
+            var aOverlaySettings = (OverlaySettings)overlaySettings;
             // assume given recognizerColelction was also used for constructing overlaySettings
-            recognizerBundle = ((RecognizerCollection)recognizerCollection).NativeRecognizerBundle;
+            recognizerBundle = ((RecognizerCollection)aOverlaySettings.RecognizerCollection).NativeRecognizerBundle;
             ActivityRunner.StartActivityForResult(MainActivity.Instance, REQUEST_CODE, ((OverlaySettings)overlaySettings).NativeUISettings);
         }
 

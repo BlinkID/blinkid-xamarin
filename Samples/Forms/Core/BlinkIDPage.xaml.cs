@@ -55,7 +55,7 @@ namespace BlinkIDApp
             var documentOverlaySettings = DependencyService.Get<IDocumentOverlaySettingsFactory>().CreateDocumentOverlaySettings(recognizerCollection);
 
 
-            blinkID.Scan(documentOverlaySettings, recognizerCollection);
+            blinkID.Scan(documentOverlaySettings);
 		}
 	}
 }

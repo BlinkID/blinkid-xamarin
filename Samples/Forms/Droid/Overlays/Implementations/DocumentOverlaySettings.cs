@@ -2,7 +2,6 @@
 using BlinkIDFormsSample.Droid.Recognizers;
 using BlinkIDFormsSample.Overlays;
 using BlinkIDFormsSample.Recognizers;
-using Com.Microblink.Entities.Recognizers;
 using Com.Microblink.Uisettings;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettings))]
@@ -13,7 +12,7 @@ namespace BlinkIDFormsSample.Droid.Overlays
     {
         DocumentUISettings nativeDocumentUISettings;
 
-        public DocumentOverlaySettings(RecognizerBundle recognizerBundle) : base(new DocumentUISettings(recognizerBundle))
+        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) : base(new DocumentUISettings(((RecognizerCollection)recognizerCollection).NativeRecognizerBundle), recognizerCollection)
         {
             nativeDocumentUISettings = (DocumentUISettings)NativeUISettings;
         }
@@ -23,7 +22,7 @@ namespace BlinkIDFormsSample.Droid.Overlays
     {
         public IDocumentOverlaySettings CreateDocumentOverlaySettings(IRecognizerCollection recognizerCollection)
         {
-            return new DocumentOverlaySettings(((RecognizerCollection)recognizerCollection).NativeRecognizerBundle);
+            return new DocumentOverlaySettings(recognizerCollection);
         }
     }
 }

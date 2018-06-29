@@ -1,5 +1,4 @@
 ﻿using BlinkIDFormsSample.Overlays;
-using BlinkIDFormsSample.Recognizers;
 
 namespace BlinkIDApp
 {
@@ -8,7 +7,7 @@ namespace BlinkIDApp
         string AndroidLicenseKey { get; set; }
         string IosLicenseKey { get; set; }
 
-        void Scan(IOverlaySettings overlaySettings, IRecognizerCollection recognizerCollection);
+        void Scan(IOverlaySettings overlaySettings);
 	}
 }
 
