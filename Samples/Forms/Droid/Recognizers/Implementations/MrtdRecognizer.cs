@@ -18,6 +18,8 @@ namespace BlinkIDFormsSample.Droid.Recognizers
             mrtdRecognizerResult = new MrtdRecognizerResult((Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer.Result)nativeMrtdRecognizer.GetResult());
         }
 
+        public override IRecognizerResult BaseResult => mrtdRecognizerResult;
+
         IMrtdRecognizerResult IMrtdRecognizer.Result => mrtdRecognizerResult;
 
         bool IMrtdRecognizer.AllowUnparsedResults { get => nativeMrtdRecognizer.AllowUnparsedResults; set => nativeMrtdRecognizer.AllowUnparsedResults = value; }

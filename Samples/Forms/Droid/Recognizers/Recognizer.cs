@@ -9,13 +9,12 @@ namespace BlinkIDFormsSample.Droid.Recognizers
     public abstract class Recognizer : IRecognizer
     {
         public Com.Microblink.Entities.Recognizers.Recognizer NativeRecognizer { get; }
+        public abstract IRecognizerResult BaseResult { get; }
 
         protected Recognizer(Com.Microblink.Entities.Recognizers.Recognizer nativeRecognizer)
         {
             NativeRecognizer = nativeRecognizer;
         }
-
-        public IRecognizerResult BaseResult => throw new NotImplementedException();
     }
 
     public abstract class RecognizerResult : IRecognizerResult
