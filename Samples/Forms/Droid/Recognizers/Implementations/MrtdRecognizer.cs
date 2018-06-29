@@ -24,7 +24,7 @@ namespace BlinkIDFormsSample.Droid.Recognizers
 
         bool IMrtdRecognizer.AllowUnparsedResults { get => nativeMrtdRecognizer.AllowUnparsedResults; set => nativeMrtdRecognizer.AllowUnparsedResults = value; }
         bool IMrtdRecognizer.AllowUnverifiedResults { get => nativeMrtdRecognizer.AllowUnverifiedResults; set => nativeMrtdRecognizer.AllowUnverifiedResults = value; }
-        bool IMrtdRecognizer.DetectGlare { get => nativeMrtdRecognizer.ShouldDetectGlare(); set => nativeMrtdRecognizer.SetDetectGlare(true); }
+        bool IMrtdRecognizer.DetectGlare { get => nativeMrtdRecognizer.ShouldDetectGlare(); set => nativeMrtdRecognizer.SetDetectGlare(value); }
         bool IMrtdRecognizer.ReturnFullDocumentImage { get => nativeMrtdRecognizer.ShouldReturnFullDocumentImage(); set => nativeMrtdRecognizer.SetReturnFullDocumentImage(value); }
         bool IMrtdRecognizer.ReturnMrzImage { get => nativeMrtdRecognizer.ShouldReturnMrzImage(); set => nativeMrtdRecognizer.SetReturnMrzImage(value); }
         int IMrtdRecognizer.SaveImageDPI { get => nativeMrtdRecognizer.SaveImageDPI; set => nativeMrtdRecognizer.SaveImageDPI = value; }

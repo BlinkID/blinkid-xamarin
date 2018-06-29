@@ -65,7 +65,6 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchExtraArgs>--linkskip=MicroBlink</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -108,6 +107,7 @@
     <Compile Include="Recognizers\Types\Date.cs" />
     <Compile Include="Recognizers\Types\MrzResult.cs" />
     <Compile Include="Recognizers\Utils.cs" />
+    <Compile Include="Overlays\OverlayVCDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

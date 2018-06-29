@@ -7,7 +7,7 @@ using Com.Microblink.Uisettings;
 [assembly: Xamarin.Forms.Dependency(typeof(OverlaySettings))]
 namespace BlinkIDFormsSample.Droid.Overlays
 {
-	public class OverlaySettings : IOverlaySettings
+    public abstract class OverlaySettings : IOverlaySettings
     {
         public UISettings NativeUISettings { get; }
 

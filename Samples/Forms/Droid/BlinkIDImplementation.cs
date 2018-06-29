@@ -44,7 +44,7 @@ namespace BlinkIDApp.Droid
 
         #region IBlinkID implementation
 
-        private string licenseKey;
+        string licenseKey;
 
         public string AndroidLicenseKey
         {

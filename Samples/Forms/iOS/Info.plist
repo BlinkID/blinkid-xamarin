@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>BlinkID Forms</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.microblink.blinkid.xamarin.forms.ios.sample</string>
+	<string>com.microblink.xamarin.blinkid</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -43,6 +43,6 @@
 	<key>CFBundleName</key>
 	<string>BlinkID Forms</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Camera needed for scanning</string>
+	<string>Camera permission is required in order to perform scanning.</string>
 </dict>
 </plist>
