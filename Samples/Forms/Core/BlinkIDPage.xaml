@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="BlinkIDApp.BlinkIDPage">
@@ -13,7 +13,7 @@
 				BackgroundColor="White" 
 				FontSize="Medium" />
 			<Button x:Name="startScanningButton" Text="Start scanning" Clicked="StartScan" />
-			<Image x:Name="metadataImage" 
+			<Image x:Name="fullDocumentImage" 
 				WidthRequest="200"
 				HeightRequest="150"  />
 		</StackLayout>

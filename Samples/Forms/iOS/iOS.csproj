@@ -107,9 +107,9 @@
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\iOS\BlinkIDiOSBinding.csproj">
-      <Project>{20BFD052-E54F-4504-A860-E6A18C8A15D8}</Project>
-      <Name>BlinkIDiOSBinding</Name>
+    <ProjectReference Include="..\..\..\Binding\iOS\iOSBinding.csproj">
+      <Project>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</Project>
+      <Name>iOSBinding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />

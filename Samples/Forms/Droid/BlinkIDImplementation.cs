@@ -1,257 +1,74 @@
-﻿using System;
-using BlinkIDApp;
-using BlinkIDApp.Droid;
-using Com.Microblink.Wrapper.Xamarin;
-using System.Collections.Generic;
-using Android.Content;
+﻿using BlinkIDApp.Droid;
 using Xamarin.Forms;
-using System.Diagnostics;
-using System.IO;
-using Android.Graphics;
-using Java.Nio;
-using Android.Runtime;
+using BlinkIDFormsSample.Overlays;
+using BlinkIDFormsSample.Recognizers;
+using Com.Microblink;
+using Com.Microblink.Uisettings;
+using BlinkIDFormsSample.Droid.Overlays;
+using Com.Microblink.Entities.Recognizers;
+using Android.App;
+using Android.Content;
+using BlinkIDFormsSample.Droid.Recognizers;
+using Com.Microblink.Intent;
 
 [assembly: Xamarin.Forms.Dependency (typeof (BlinkIDImplementation))]
 namespace BlinkIDApp.Droid
 {
 	public class BlinkIDImplementation : IBlinkID
 	{
-		public const string LICENSE_KEY = "NOOGNXGH-27RBJQZX-QRB44LL2-MRD2Y2R5-3WFDYUMW-F3LAQILF-2HJBFMOZ-MPZY7R66";
+        const int REQUEST_CODE = 101;
 
-		BlinkID blinkId;
-		BlinkIdScanSettings blinkIdScanSettings;
+        RecognizerBundle recognizerBundle;
 
-		MResultListener mResultListener;
+        public BlinkIDImplementation() 
+        {
+            MicroblinkSDK.IntentDataTransferMode = IntentDataTransferMode.PersistedOptimised;
+        }
 
-		public BlinkIDImplementation ()
-		{
-			// Configure BlinkID
-			blinkId = BlinkID.Instance;
-			blinkId.SetContext(Android.App.Application.Context);
-			blinkId.SetLicenseKey(LICENSE_KEY);
+        public void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            if (requestCode == REQUEST_CODE)
+            {
+                if (resultCode == Result.Ok) 
+                {
+                    recognizerBundle.LoadFromIntent(data);
+                    MessagingCenter.Send(new Messages.ScanningDoneMessage { ScanningCancelled = false }, Messages.ScanningDoneMessageId);
+                } 
+                else
+                {
+                    MessagingCenter.Send(new Messages.ScanningDoneMessage { ScanningCancelled = true }, Messages.ScanningDoneMessageId);
+                }
+            }
+            MainActivity.Instance.BlinkIDImplementation = null;
+        }
 
-			mResultListener = new MResultListener ();
+        #region IBlinkID implementation
 
-			blinkId.SetResultListener(mResultListener);
+        private string licenseKey;
 
-			// Init settings
-			blinkIdScanSettings = new BlinkIdScanSettings (Android.App.Application.Context, BlinkIdScanSettings.DeviceCameraType.CameraBackface);
+        public string AndroidLicenseKey
+        {
+            get => licenseKey;
+            set
+            {
+                licenseKey = value;
+                MicroblinkSDK.SetLicenseKey(licenseKey, MainActivity.Instance);
+            }
+        }
 
-			blinkIdScanSettings.SetAllowMultipleScanResultsOnSingleImage (false);
+#pragma warning disable RECS0029 // Warns about property or indexer setters and event adders or removers that do not use the value parameter
+        public string IosLicenseKey { get => null; set {} }
+#pragma warning restore RECS0029 // Warns about property or indexer setters and event adders or removers that do not use the value parameter
 
-			/**
-			 * Define recognizers
-			 */
-			//MRTD(Machine Readable Travel Document)
-			if (!blinkIdScanSettings.AddRecognizerMRTD ()) {
-				Console.WriteLine ("RecognizerMRTD is not supported on current device and camera settings");
-			}
+        public void Scan(IOverlaySettings overlaySettings, IRecognizerCollection recognizerCollection)
+        {
+            MainActivity.Instance.BlinkIDImplementation = this;
+            // assume given recognizerColelction was also used for constructing overlaySettings
+            recognizerBundle = ((RecognizerCollection)recognizerCollection).NativeRecognizerBundle;
+            ActivityRunner.StartActivityForResult(MainActivity.Instance, REQUEST_CODE, ((OverlaySettings)overlaySettings).NativeUISettings);
+        }
 
-			// Driving licenses
-			// United States of America
-			//if (!blinkIdScanSettings.AddRecognizerUSDL ()) {
-			//	Console.WriteLine ("RecognizerUSDL is not supported");
-			//}
-			// United Kingdom
-			//if (!blinkIdScanSettings.AddRecognizerUKDL ()) {
-			//	Console.WriteLine ("RecognizerUKDL is not supported");
-			//}
-			// Germany
-			//if (!blinkIdScanSettings.AddRecognizerDEDL ()) {
-			//	Console.WriteLine ("RecognizerDEDL is not supported");
-			//}
-			// Austria
-			//if (!blinkIdScanSettings.AddRecognizerAustrianDL ()) {
-			//	Console.WriteLine ("RecognizerAustrianDL is not supported");
-			//}
-			// European Union
-			//// NOTE: If you use UKDL and DEDL at the same time than it will fallback to EUDL and it will be same as
-			//if (!blinkIdScanSettings.AddRecognizerEUDL ()) {
-			//	Console.WriteLine ("RecognizerEUDL is not supported");
-			//}
-
-			// Singapore
-			//if (!blinkIdScanSettings.AddRecognizerSingaporeId ()) {
-			//	Console.WriteLine ("RecognizerSingaporeId is not supported");
-			//}
-
-			// Malaysia
-			//if (!blinkIdScanSettings.AddRecognizerMyKad ()) {
-			//	Console.WriteLine ("RecognizerMyKad is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerIKad ()) {
-			//	Console.WriteLine ("RecognizerIKad is not supported");
-			//}
-
-			// Croatia
-			//if (!blinkIdScanSettings.AddRecognizerCroatianIdFront ()) {
-			//	Console.WriteLine ("RecognizerCroatianIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerCroatianIdBack ()) {
-			//	Console.WriteLine ("RecognizerCroatianIdBack is not supported");
-			//}
-
-			// Austria
-			//if (!blinkIdScanSettings.AddRecognizerAustrianIdFront ()) {
-			//	Console.WriteLine ("RecognizerAustrianIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerAustrianIdBack ()) {
-			//	Console.WriteLine ("RecognizerAustrianIdBack is not supported");
-			//}
-
-			// Cezch Republic
-			//if (!blinkIdScanSettings.AddRecognizerCzechIdFront ()) {
-			//	Console.WriteLine ("RecognizerCzechIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerCzechIdBack ()) {
-			//	Console.WriteLine ("RecognizerCzechIdBack is not supported");
-			//}
-
-			// Germany
-			//if (!blinkIdScanSettings.AddRecognizerGermanIdFront ()) {
-			//	Console.WriteLine ("RecognizerGermanIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerGermanIdMrzSide ()) {
-			//	Console.WriteLine ("RecognizerGermanIdMrzSide is not supported");
-			//}
-
-			// Serbia
-			//if (!blinkIdScanSettings.AddRecognizerSerbianIdFront ()) {
-			//	Console.WriteLine ("RecognizerSerbianIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerSerbianIdBack ()) {
-			//	Console.WriteLine ("RecognizerSerbianIdBack is not supported");
-			//}
-
-			// Slovakia
-			//if (!blinkIdScanSettings.AddRecognizerSlovakIdFront ()) {
-			//	Console.WriteLine ("RecognizerSlovakIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerSlovakIdBack ()) {
-			//	Console.WriteLine ("RecognizerSlovakIdBack is not supported");
-			//}
-
-			// Slovenia
-			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdFront ()) {
-			//	Console.WriteLine ("RecognizerSlovenianIdFront is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerSlovenianIdBack ()) {
-			//	Console.WriteLine ("RecognizerSlovenianIdBack is not supported");
-			//}
-
-			// Barcode recognizers
-			//if (!blinkIdScanSettings.AddRecognizerPdf417 ()) {
-			//	Console.WriteLine ("RecognizerPdf417 is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerBarDecoder ()) {
-			//	Console.WriteLine ("RecognizerBarDecoder is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddRecognizerZxing ()) {
-			//	Console.WriteLine ("RecognizerZxing is not supported");
-			//}
-
-			/**
-			 * Define parsers
-			 */
-			//if (!blinkIdScanSettings.AddParserAmount ("AMOUNT_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserAmount is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserDate ("DATE_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserDate is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserEmail ("EMAIL_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserEmail is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserIBAN ("IBAN_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserIBAN is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserRaw ("RAW_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserRaw is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserRegex ("REGEX_PARSER_ID", "Blink\\d\\d\\d", true)) {
-			//	Console.WriteLine ("ParserRegex is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserVIN ("VIN_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserVIN is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserLicensePlates ("LICENSE_PLATES_PARSER_ID", true)) {
-			//	Console.WriteLine ("ParserLicensePlates is not supported");
-			//}
-			//if (!blinkIdScanSettings.AddParserMobileCoupons ("MOBILE_COUPONS_PARSER_ID", "123", 14, true)) {
-			//	Console.WriteLine ("ParserMobileCoupons is not supported");
-			//}
-
-			//if (!blinkIdScanSettings.AddDetectorIdCard ()) {
-			//	Console.WriteLine ("DetectorIdCard is not supported");
-			//}
-		}
-
-		private class MResultListener : BlinkIdResultListener 
-		{
-			#region implemented abstract members of BlinkIdResultListener
-			public override void OnResultsAvailable (IList<IDictionary<string, string>> results)
-			{
-				// Transform results from IList<IDictionary<string, string>> to List<Dictionary<string, string>>
-				var transformedResults = new List<Dictionary<string, string>> ();
-
-				foreach (var result in results) {
-					var dict = new Dictionary<string, string> ();
-
-					foreach (var item in result) {
-						if (item.Value != null) {
-							dict.Add (item.Key.ToString(), item.Value.ToString());
-						} else {
-							dict.Add (item.Key.ToString(), null);
-						}
-					}
-
-					transformedResults.Add (dict);
-				}
-
-				MessagingCenter.Send<Messages.BlinkIDResults> (new Messages.BlinkIDResults {
-					Results = transformedResults
-				}, Messages.BlinkIDResultsMessage);
-
-			}
-
-			public override void OnDocumentImageAvailable (Bitmap document)
-			{
-				Console.WriteLine ("OnDocumentImageAvailable started " + DateTime.Now.Second);
-
-				Bitmap bitmap = document;
-
-				byte [] bitmapData;
-				using (var stream = new MemoryStream ()) {
-					bitmap.Compress (Bitmap.CompressFormat.Jpeg, 100, stream);
-					Console.WriteLine ("OnDocumentImageAvailable compress finished " + DateTime.Now.Second);
-					bitmapData = stream.ToArray ();
-				}
-
-				Console.WriteLine ("OnDocumentImageAvailable stream to array finished " + DateTime.Now.Second);
-
-				MessagingCenter.Send (new Messages.BlinkIDImage {
-					Image = ImageSource.FromStream (() => new MemoryStream (bitmapData))
-				}, Messages.BlinkIDImageMessage);
-
-				Console.WriteLine ("OnDocumentImageAvailable finished " + DateTime.Now.Second);
-
-			}
-			#endregion
-		}
-
-		#region IBlinkID implementation
-
-		public void Scan ()
-		{
-			Debug.WriteLine ("Native Scan is started");
-			try {
-				blinkId.Scan (blinkIdScanSettings);
-			} catch (IllegalScanSettingsException ex) {
-				Debug.WriteLine (ex.Message);
-			}
-		}
-
-		#endregion
-	}
+        #endregion
+    }
 }
 

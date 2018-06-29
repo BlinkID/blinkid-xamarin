@@ -15,9 +15,9 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AssemblyName>BlinkIDFormsSample.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,6 +122,14 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BlinkIDImplementation.cs" />
+    <Compile Include="Recognizers\RecognizerCollection.cs" />
+    <Compile Include="Recognizers\Implementations\MrtdRecognizer.cs" />
+    <Compile Include="Recognizers\Recognizer.cs" />
+    <Compile Include="Recognizers\Utils.cs" />
+    <Compile Include="Recognizers\Types\MrzResult.cs" />
+    <Compile Include="Recognizers\Types\Date.cs" />
+    <Compile Include="Overlays\Implementations\DocumentOverlaySettings.cs" />
+    <Compile Include="Overlays\OverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -132,7 +140,11 @@
   <ItemGroup>
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\values\" />
-    <Folder Include="Assets\microblink\" />
+    <Folder Include="Overlays\" />
+    <Folder Include="Recognizers\" />
+    <Folder Include="Recognizers\Implementations\" />
+    <Folder Include="Recognizers\Types\" />
+    <Folder Include="Overlays\Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -146,20 +158,11 @@
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\Android\BlinkIDAndroidBinding.csproj">
-      <Project>{957EF3DE-6B8E-402F-81F8-98B969173E81}</Project>
-      <Name>BlinkIDAndroidBinding</Name>
+    <ProjectReference Include="..\..\..\Binding\Android\AndroidBinding.csproj">
+      <Project>{80F7D444-771D-4C21-A8AC-D575A7712E55}</Project>
+      <Name>AndroidBinding</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\microblink\cro_address_dictionary.zzip" />
-    <AndroidAsset Include="Assets\microblink\cro_id_confusions.zzip" />
-    <AndroidAsset Include="Assets\microblink\cro_name_dictionary.zzip" />
-    <AndroidAsset Include="Assets\microblink\device_list.json" />
-    <AndroidAsset Include="Assets\microblink\ocr_model.zzip" />
-    <AndroidAsset Include="Assets\microblink\face_detector_model.zzip" />
-  </ItemGroup>
-  <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />
   <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.0.0\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
   <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
@@ -179,5 +182,6 @@
   <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.AppCompat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.Design.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.MediaRouter.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />
 </Project>
