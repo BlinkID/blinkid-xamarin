@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +10,15 @@
     <RootNamespace>iOSBinding</RootNamespace>
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <PackageId>BlinkID.iOS.Binding</PackageId>
+    <PackageVersion>4.0.0</PackageVersion>
+    <Authors>Microblink</Authors>
+    <Owners>Microblink</Owners>
+    <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version of NuGet package for BlinkID iOS Binding project.</PackageReleaseNotes>
+    <Summary>A small, but powerful ID scanning library</Summary>
+    <Title>BlinkID</Title>
+    <Description>A small, but powerfull ID scanning library.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,6 +125,7 @@
     <BundleResource Include="MicroBlink.bundle\uae_confusions.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_name_dictionary.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_nationality_dictionary.zzip" />
+    <BundleResource Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -123,4 +134,5 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
 </Project>
