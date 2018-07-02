@@ -1,5 +1,5 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Shared.Recognizers;
+using Microblink.Forms.Core.Recognizers;
 using Microblink;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MrzResult))]

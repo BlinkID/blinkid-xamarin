@@ -1,6 +1,6 @@
-﻿using Microblink.Forms.Shared.Overlays;
+﻿using Microblink.Forms.Core.Overlays;
 
-namespace Microblink.Forms.Shared
+namespace Microblink.Forms.Core
 {
 	public interface IMicroblinkScanner
 	{

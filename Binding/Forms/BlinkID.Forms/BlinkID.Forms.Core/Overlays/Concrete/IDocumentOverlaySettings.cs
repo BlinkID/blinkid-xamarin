@@ -1,7 +1,7 @@
 ﻿using System;
-using Microblink.Forms.Shared.Recognizers;
+using Microblink.Forms.Core.Recognizers;
 
-namespace Microblink.Forms.Shared.Overlays
+namespace Microblink.Forms.Core.Overlays
 {
     public interface IDocumentOverlaySettings : IOverlaySettings
     {

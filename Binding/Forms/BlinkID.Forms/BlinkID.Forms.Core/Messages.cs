@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Microblink.Forms.Shared
+namespace Microblink.Forms.Core
 {
 	public class Messages
 	{

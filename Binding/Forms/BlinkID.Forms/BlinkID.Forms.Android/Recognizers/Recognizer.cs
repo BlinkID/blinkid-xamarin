@@ -1,6 +1,6 @@
 ﻿using System;
 using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Shared.Recognizers;
+using Microblink.Forms.Core.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Recognizer))]
 [assembly: Xamarin.Forms.Dependency(typeof(RecognizerResult))]

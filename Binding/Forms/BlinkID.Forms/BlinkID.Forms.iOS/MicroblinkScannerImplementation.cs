@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 using Microblink.Forms.iOS;
 using UIKit;
-using Microblink.Forms.Shared.Overlays;
+using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.iOS.Overlays;
-using Microblink.Forms.Shared;
+using Microblink.Forms.Core;
 
 [assembly: Xamarin.Forms.Dependency (typeof (MicroblinkScannerImplementation))]
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
@@ -41,14 +41,14 @@ namespace Microblink.Forms.iOS
             overlayViewController.RecognizerRunnerViewController.PauseScanning();
 
             UIApplication.SharedApplication.InvokeOnMainThread(delegate {
-                MessagingCenter.Send(new Microblink.Forms.Shared.Messages.ScanningDoneMessage { ScanningCancelled = false }, Microblink.Forms.Shared.Messages.ScanningDoneMessageId);
+                MessagingCenter.Send(new Microblink.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = false }, Microblink.Forms.Core.Messages.ScanningDoneMessageId);
                 overlayViewController.DismissViewController(true, null);
             });
         }
 
         public void CloseButtonTapped(MBOverlayViewController overlayViewController)
         {
-            MessagingCenter.Send(new Microblink.Forms.Shared.Messages.ScanningDoneMessage { ScanningCancelled = true }, Microblink.Forms.Shared.Messages.ScanningDoneMessageId);
+            MessagingCenter.Send(new Microblink.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = true }, Microblink.Forms.Core.Messages.ScanningDoneMessageId);
             overlayViewController.DismissViewController(true, null);
         }
 

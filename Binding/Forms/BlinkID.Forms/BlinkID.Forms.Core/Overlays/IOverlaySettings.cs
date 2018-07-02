@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Microblink.Forms.Shared.Overlays
+namespace Microblink.Forms.Core.Overlays
 {
     public interface IOverlaySettings
     {

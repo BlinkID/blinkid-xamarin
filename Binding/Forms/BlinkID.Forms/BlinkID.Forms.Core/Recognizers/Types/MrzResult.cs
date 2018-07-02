@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Microblink.Forms.Shared.Recognizers
+namespace Microblink.Forms.Core.Recognizers
 {
     public enum MrtdDocumentType
     {

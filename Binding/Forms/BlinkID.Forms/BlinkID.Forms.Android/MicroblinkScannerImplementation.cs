@@ -1,7 +1,7 @@
 ﻿using Microblink.Forms.Droid;
 using Xamarin.Forms;
-using Microblink.Forms.Shared;
-using Microblink.Forms.Shared.Overlays;
+using Microblink.Forms.Core;
+using Microblink.Forms.Core.Overlays;
 using Com.Microblink;
 using Com.Microblink.Uisettings;
 using Microblink.Forms.Droid.Overlays;
@@ -62,6 +62,7 @@ namespace Microblink.Forms.Droid
 
         public void Scan(IOverlaySettings overlaySettings)
         {
+            androidHostActivity.ScanningStarted(this);
             var aOverlaySettings = (OverlaySettings)overlaySettings;
             // assume given recognizerColelction was also used for constructing overlaySettings
             recognizerBundle = ((RecognizerCollection)aOverlaySettings.RecognizerCollection).NativeRecognizerBundle;

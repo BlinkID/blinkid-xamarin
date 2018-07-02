@@ -1,6 +1,6 @@
 ﻿using System;
 using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Shared.Recognizers;
+using Microblink.Forms.Core.Recognizers;
 using Microblink;
 using Xamarin.Forms;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace Microblink.Forms.Shared.Recognizers
+namespace Microblink.Forms.Core.Recognizers
 {
     public interface IMrtdRecognizer : IRecognizer
     {

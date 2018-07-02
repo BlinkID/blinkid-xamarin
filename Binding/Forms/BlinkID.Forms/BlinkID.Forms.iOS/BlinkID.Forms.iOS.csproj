@@ -49,9 +49,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="iOSBinding">
-      <HintPath>..\packages\BlinkID.iOS.Binding.4.0.0\lib\xamarinios10\iOSBinding.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -81,7 +78,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="..\BlinkID.Forms.Shared\BlinkID.Forms.Shared.projitems" Label="Shared" Condition="Exists('..\BlinkID.Forms.Shared\BlinkID.Forms.Shared.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\BlinkID.Forms.Core\BlinkID.Forms.Core.csproj">
+      <Project>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</Project>
+      <Name>BlinkID.Forms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iOS\iOSBinding.csproj">
+      <Project>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</Project>
+      <Name>iOSBinding</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
   <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />
