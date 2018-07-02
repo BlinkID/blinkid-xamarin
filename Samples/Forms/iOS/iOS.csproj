@@ -98,16 +98,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="BlinkIDImplementation.cs" />
-    <Compile Include="Overlays\Implementations\DocumentOverlaySettings.cs" />
-    <Compile Include="Overlays\OverlaySettings.cs" />
-    <Compile Include="Recognizers\Implementations\MrtdRecognizer.cs" />
-    <Compile Include="Recognizers\Recognizer.cs" />
-    <Compile Include="Recognizers\RecognizerCollection.cs" />
-    <Compile Include="Recognizers\Types\Date.cs" />
-    <Compile Include="Recognizers\Types\MrzResult.cs" />
-    <Compile Include="Recognizers\Utils.cs" />
-    <Compile Include="Overlays\OverlayVCDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -115,14 +105,10 @@
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\iOS\iOSBinding.csproj">
-      <Project>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</Project>
-      <Name>iOSBinding</Name>
+    <ProjectReference Include="..\..\..\Binding\Forms\BlinkID.Forms\BlinkID.Forms.iOS\BlinkID.Forms.iOS.csproj">
+      <Project>{900DCC9A-2218-440C-BD90-E8CF85C845F1}</Project>
+      <Name>BlinkID.Forms.iOS</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Overlays\" />
-    <Folder Include="Recognizers\" />
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />
 </Project>

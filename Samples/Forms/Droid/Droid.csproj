@@ -116,20 +116,12 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Java.Interop" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BlinkIDImplementation.cs" />
-    <Compile Include="Recognizers\RecognizerCollection.cs" />
-    <Compile Include="Recognizers\Implementations\MrtdRecognizer.cs" />
-    <Compile Include="Recognizers\Recognizer.cs" />
-    <Compile Include="Recognizers\Utils.cs" />
-    <Compile Include="Recognizers\Types\MrzResult.cs" />
-    <Compile Include="Recognizers\Types\Date.cs" />
-    <Compile Include="Overlays\Implementations\DocumentOverlaySettings.cs" />
-    <Compile Include="Overlays\OverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -140,11 +132,6 @@
   <ItemGroup>
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\values\" />
-    <Folder Include="Overlays\" />
-    <Folder Include="Recognizers\" />
-    <Folder Include="Recognizers\Implementations\" />
-    <Folder Include="Recognizers\Types\" />
-    <Folder Include="Overlays\Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -158,9 +145,9 @@
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\Android\AndroidBinding.csproj">
-      <Project>{80F7D444-771D-4C21-A8AC-D575A7712E55}</Project>
-      <Name>AndroidBinding</Name>
+    <ProjectReference Include="..\..\..\Binding\Forms\BlinkID.Forms\BlinkID.Forms.Android\BlinkID.Forms.Android.csproj">
+      <Project>{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}</Project>
+      <Name>BlinkID.Forms.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />

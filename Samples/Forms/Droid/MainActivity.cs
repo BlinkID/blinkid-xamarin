@@ -4,21 +4,24 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using BlinkIDApp.Droid;
+using Microblink.Forms.Droid;
 
 namespace BlinkIDApp
 {
 	[Activity (Label = "BlinkIDFormsSample.Droid", Icon = "@drawable/icon", HardwareAccelerated = true, MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, global::Microblink.Forms.Droid.IMicroblinkScannerAndroidHostActivity
 	{
-        public static MainActivity Instance { get; set; }
-        public BlinkIDImplementation BlinkIDImplementation { get; set; }
+        public MicroblinkScannerImplementation currentScannerImplementation;
 
-		protected override void OnCreate (Bundle bundle)
+        public Activity HostActivity => this;
+
+        public int ScanActivityRequestCode => 101;
+
+        protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-            Instance = this;
+            MicroblinkScannerFactoryImplementation.AndroidHostActivity = this;
 
 			// Set our view from the "main" layout resource
 			RequestedOrientation = ScreenOrientation.Portrait;
@@ -31,13 +34,17 @@ namespace BlinkIDApp
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            Instance = null;
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            BlinkIDImplementation.OnActivityResult(requestCode, resultCode, data);
+            currentScannerImplementation.OnActivityResult(requestCode, resultCode, data);
+        }
+
+        public void ScanningStarted(MicroblinkScannerImplementation implementation)
+        {
+            this.currentScannerImplementation = implementation;
         }
     }
 }

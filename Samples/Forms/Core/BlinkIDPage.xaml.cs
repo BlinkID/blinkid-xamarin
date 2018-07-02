@@ -1,6 +1,7 @@
 ﻿using System;
-using BlinkIDFormsSample.Recognizers;
-using BlinkIDFormsSample.Overlays;
+using Microblink.Forms.Core;
+using Microblink.Forms.Core.Overlays;
+using Microblink.Forms.Core.Recognizers;
 
 using Xamarin.Forms;
 
@@ -8,7 +9,7 @@ namespace BlinkIDApp
 {
 	public partial class BlinkIDPage : ContentPage
 	{
-        IBlinkID blinkID;
+        IMicroblinkScanner blinkID;
 
         IMrtdRecognizer mrtdRecognizer;
 
@@ -16,9 +17,20 @@ namespace BlinkIDApp
 		{
 			InitializeComponent ();
 
-            blinkID = DependencyService.Get<IBlinkID>();
-            blinkID.AndroidLicenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4oIhH4ywlU8/YH/8cm0jwA///VuPzhD+RzCIvUhrmq8qu2zEep/0tstNdNT74cwhbhHt6StRbB0eDF1A/f3TrMcZ7hQBLeml2T4349qxB2L9wMW1PBBm89B8grHAD66a38WEwXracWLmsdyZ2OQdNJTVlqXAhoE8uiSKQm+0DZTd2xKs3VyA/2QMLj9dUfs6csGHSwZsLFsuaxMgkHuv9z5Rg5oCDuAQ3EZYydnyZbq/9Q==";
-            blinkID.IosLicenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAwxAdkXxaNOMEzJmfZ4hR21AVB8wknhBesyrlSBS0GhBEOmnINIQuUaYt5/35Ed6eOxOyXZeeSVl6eljzTY88HilqzAc4x4L1donsPivtU0wNm1Ew1efXkB4GIEzC4oHzkQDLiFegrSOXhZwxOTya1zIUw537gG/c52NSW67xV7k1ooTfaSK+JgADz3V4Sd4FAHXXNx47WwfV7qMe6cVal/9AtezVn5hocw==";
+            var microblinkFactory = DependencyService.Get<IMicroblinkScannerFactory>();
+
+            string licenseKey;
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAwxAdkXxaNOMEzJmfZ4hR21AVB8wknhBesyrlSBS0GhBEOmnINIQuUaYt5/35Ed6eOxOyXZeeSVl6eljzTY88HilqzAc4x4L1donsPivtU0wNm1Ew1efXkB4GIEzC4oHzkQDLiFegrSOXhZwxOTya1zIUw537gG/c52NSW67xV7k1ooTfaSK+JgADz3V4Sd4FAHXXNx47WwfV7qMe6cVal/9AtezVn5hocw==";    
+            }
+            else
+            {
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4oIhH4ywlU8/YH/8cm0jwA///VuPzhD+RzCIvUhrmq8qu2zEep/0tstNdNT74cwhbhHt6StRbB0eDF1A/f3TrMcZ7hQBLeml2T4349qxB2L9wMW1PBBm89B8grHAD66a38WEwXracWLmsdyZ2OQdNJTVlqXAhoE8uiSKQm+0DZTd2xKs3VyA/2QMLj9dUfs6csGHSwZsLFsuaxMgkHuv9z5Rg5oCDuAQ3EZYydnyZbq/9Q==";
+            }
+
+            blinkID = microblinkFactory.CreateMicroblinkScanner(licenseKey);
+
 
             // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
             mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>();
