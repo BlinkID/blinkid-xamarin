@@ -8,17 +8,14 @@ using Com.Microblink.Uisettings;
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
 namespace Microblink.Forms.Droid.Overlays
 {
-    public class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
+    public sealed class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
     {
-        DocumentUISettings nativeDocumentUISettings;
-
-        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) : base(new DocumentUISettings(((RecognizerCollection)recognizerCollection).NativeRecognizerBundle), recognizerCollection)
-        {
-            nativeDocumentUISettings = (DocumentUISettings)NativeUISettings;
-        }
+        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) 
+            : base(new DocumentUISettings((recognizerCollection as RecognizerCollection).NativeRecognizerBundle), recognizerCollection)
+        {}
     }
 
-    public class DocumentOverlaySettingsFactory : IDocumentOverlaySettingsFactory
+    public sealed class DocumentOverlaySettingsFactory : IDocumentOverlaySettingsFactory
     {
         public IDocumentOverlaySettings CreateDocumentOverlaySettings(IRecognizerCollection recognizerCollection)
         {

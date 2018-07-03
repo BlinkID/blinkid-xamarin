@@ -8,26 +8,27 @@ using Microblink;
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays
 {
-    public class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
+    public sealed class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
     {
         readonly MBDocumentOverlaySettings nativeDocumentOverlaySettings;
 
         // this ensures GC does not collect delegate proxy while it is used by ObjC
         DocumentOverlayVCDelegate documentOverlayVCDelegate;
 
-        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) : base(new MBDocumentOverlaySettings(), recognizerCollection)
+        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) 
+            : base(new MBDocumentOverlaySettings(), recognizerCollection)
         {
-            nativeDocumentOverlaySettings = (MBDocumentOverlaySettings)NativeOverlaySettings;
+            nativeDocumentOverlaySettings = NativeOverlaySettings as MBDocumentOverlaySettings;
         }
 
         public override MBOverlayViewController CreateOverlayViewController(IOverlayVCDelegate overlayVCDelegate)
         {
             documentOverlayVCDelegate = new DocumentOverlayVCDelegate(overlayVCDelegate);
-            return new MBDocumentOverlayViewController(nativeDocumentOverlaySettings, ((RecognizerCollection)RecognizerCollection).NativeRecognizerCollection, documentOverlayVCDelegate);
+            return new MBDocumentOverlayViewController(nativeDocumentOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, documentOverlayVCDelegate);
         }
     }
 
-    public class DocumentOverlaySettingsFactory : IDocumentOverlaySettingsFactory
+    public sealed class DocumentOverlaySettingsFactory : IDocumentOverlaySettingsFactory
     {
         public IDocumentOverlaySettings CreateDocumentOverlaySettings(IRecognizerCollection recognizerCollection)
         {
@@ -35,7 +36,7 @@ namespace Microblink.Forms.iOS.Overlays
         }
     }
 
-    public class DocumentOverlayVCDelegate : MBDocumentOverlayViewControllerDelegate
+    public sealed class DocumentOverlayVCDelegate : MBDocumentOverlayViewControllerDelegate
     {
         readonly IOverlayVCDelegate overlayVCDelegate;
 

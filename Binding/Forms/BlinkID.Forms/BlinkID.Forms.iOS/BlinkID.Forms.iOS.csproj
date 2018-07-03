@@ -8,7 +8,7 @@
     <ProjectGuid>{900DCC9A-2218-440C-BD90-E8CF85C845F1}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>BlinkID</RootNamespace>
+    <RootNamespace>Microblink.Forms.iOS</RootNamespace>
     <AssemblyName>BlinkID</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.Forms.iOS</PackageId>
@@ -75,6 +75,7 @@
     <Compile Include="Recognizers\Types\Date.cs" />
     <Compile Include="Recognizers\Types\MrzResult.cs" />
     <Compile Include="MicroblinkScannerImplementation.cs" />
+    <Compile Include="Overlays\Implementations\BarcodeOverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

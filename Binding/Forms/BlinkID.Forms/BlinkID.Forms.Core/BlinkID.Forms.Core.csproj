@@ -6,7 +6,7 @@
     <ProjectGuid>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>BlinkID.Forms.Core</RootNamespace>
+    <RootNamespace>Microblink.Forms.Core</RootNamespace>
     <AssemblyName>BlinkID.Forms.Core</AssemblyName>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
     <PackageId>BlinkID.Forms.Core</PackageId>
@@ -45,6 +45,7 @@
     <Compile Include="Recognizers\Concrete\IMrtdRecognizer.cs" />
     <Compile Include="Recognizers\Types\IDate.cs" />
     <Compile Include="Recognizers\Types\MrzResult.cs" />
+    <Compile Include="Overlays\Concrete\IBarcodeOverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
