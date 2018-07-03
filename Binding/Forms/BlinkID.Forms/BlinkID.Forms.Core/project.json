@@ -1,0 +1,11 @@
+﻿{
+  "dependencies": {
+    "NuGet.Build.Packaging": "0.2.0",
+    "Xamarin.Forms": "3.1.0.583944",
+    "NETStandard.Library": "1.6.0",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1"
+  },
+  "frameworks": {
+    "netstandard1.0": {}
+  }
+}

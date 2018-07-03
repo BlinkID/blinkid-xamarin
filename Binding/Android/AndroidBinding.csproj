@@ -23,6 +23,7 @@
     <Summary>A small, but powerful ID scanning library.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library.</Description>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
