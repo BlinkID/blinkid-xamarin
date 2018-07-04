@@ -47,6 +47,7 @@
     <Compile Include="Recognizers\Types\BlinkIDTypes.cs" />
     <Compile Include="Overlays\Concrete\IBarcodeOverlaySettings.cs" />
     <Compile Include="Overlays\Concrete\IDocumentVerificationOverlaySettings.cs" />
+    <Compile Include="Recognizers\Concrete\ISuccessFrameGrabberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

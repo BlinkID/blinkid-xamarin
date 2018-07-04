@@ -136,6 +136,7 @@
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays\Implementations\BarcodeOverlaySettings.cs" />
     <Compile Include="Overlays\Implementations\DocumentVerificationOverlaySettings.cs" />
+    <Compile Include="Recognizers\Implementations\SuccessFrameGrabberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

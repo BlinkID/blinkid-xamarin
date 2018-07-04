@@ -5,28 +5,28 @@ using Xamarin.Forms;
 [assembly: Xamarin.Forms.Dependency(typeof(MrtdRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public class MrtdRecognizer : Recognizer, IMrtdRecognizer
+    public sealed class MrtdRecognizer : Recognizer, IMrtdRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer nativeMrtdRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer nativeRecognizer;
 
-        MrtdRecognizerResult mrtdRecognizerResult;
+        MrtdRecognizerResult result;
 
         public MrtdRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer())
         {
-            nativeMrtdRecognizer = (Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer)NativeRecognizer;
-            mrtdRecognizerResult = new MrtdRecognizerResult((Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer.Result)nativeMrtdRecognizer.GetResult());
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer;
+            result = new MrtdRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrtdRecognizer.Result);
         }
 
-        public override IRecognizerResult BaseResult => mrtdRecognizerResult;
+        public override IRecognizerResult BaseResult => result;
 
-        IMrtdRecognizerResult IMrtdRecognizer.Result => mrtdRecognizerResult;
+        IMrtdRecognizerResult IMrtdRecognizer.Result => result;
 
-        bool IMrtdRecognizer.AllowUnparsedResults { get => nativeMrtdRecognizer.AllowUnparsedResults; set => nativeMrtdRecognizer.AllowUnparsedResults = value; }
-        bool IMrtdRecognizer.AllowUnverifiedResults { get => nativeMrtdRecognizer.AllowUnverifiedResults; set => nativeMrtdRecognizer.AllowUnverifiedResults = value; }
-        bool IMrtdRecognizer.DetectGlare { get => nativeMrtdRecognizer.ShouldDetectGlare(); set => nativeMrtdRecognizer.SetDetectGlare(value); }
-        bool IMrtdRecognizer.ReturnFullDocumentImage { get => nativeMrtdRecognizer.ShouldReturnFullDocumentImage(); set => nativeMrtdRecognizer.SetReturnFullDocumentImage(value); }
-        bool IMrtdRecognizer.ReturnMrzImage { get => nativeMrtdRecognizer.ShouldReturnMrzImage(); set => nativeMrtdRecognizer.SetReturnMrzImage(value); }
-        int IMrtdRecognizer.SaveImageDPI { get => nativeMrtdRecognizer.SaveImageDPI; set => nativeMrtdRecognizer.SaveImageDPI = value; }
+        bool IMrtdRecognizer.AllowUnparsedResults { get => nativeRecognizer.AllowUnparsedResults; set => nativeRecognizer.AllowUnparsedResults = value; }
+        bool IMrtdRecognizer.AllowUnverifiedResults { get => nativeRecognizer.AllowUnverifiedResults; set => nativeRecognizer.AllowUnverifiedResults = value; }
+        bool IMrtdRecognizer.DetectGlare { get => nativeRecognizer.ShouldDetectGlare(); set => nativeRecognizer.SetDetectGlare(value); }
+        bool IMrtdRecognizer.ReturnFullDocumentImage { get => nativeRecognizer.ShouldReturnFullDocumentImage(); set => nativeRecognizer.SetReturnFullDocumentImage(value); }
+        bool IMrtdRecognizer.ReturnMrzImage { get => nativeRecognizer.ShouldReturnMrzImage(); set => nativeRecognizer.SetReturnMrzImage(value); }
+        int IMrtdRecognizer.SaveImageDPI { get => nativeRecognizer.SaveImageDPI; set => nativeRecognizer.SaveImageDPI = value; }
     }
 
     public class MrtdRecognizerResult : RecognizerResult, IMrtdRecognizerResult

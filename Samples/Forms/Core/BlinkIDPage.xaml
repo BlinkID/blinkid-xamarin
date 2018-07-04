@@ -7,7 +7,7 @@
 			<Label Text="BlinkID Results:" />
 			<Editor x:Name="resultsEditor"
 				IsEnabled="true" 
-				Text="?"
+				Text=""
 				HeightRequest="150" 
 				TextColor="Black" 
 				BackgroundColor="White" 
@@ -16,6 +16,12 @@
 			<Image x:Name="fullDocumentImage" 
 				WidthRequest="200"
 				HeightRequest="150"  />
+            <Image x:Name="successScanImage" 
+                WidthRequest="200"
+                HeightRequest="150"  />
+            <Image x:Name="faceImage" 
+                WidthRequest="200"
+                HeightRequest="150"  />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -9,26 +9,26 @@ namespace Microblink.Forms.iOS.Recognizers
 {
     public class MrtdRecognizer : Recognizer, IMrtdRecognizer
     {
-        MBMrtdRecognizer nativeMrtdRecognizer;
+        MBMrtdRecognizer nativeRecognizer;
 
-        MrtdRecognizerResult mrtdRecognizerResult;
+        MrtdRecognizerResult result;
 
         public MrtdRecognizer() : base(new MBMrtdRecognizer())
         {
-            nativeMrtdRecognizer = (MBMrtdRecognizer)NativeRecognizer;
-            mrtdRecognizerResult = new MrtdRecognizerResult(nativeMrtdRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBMrtdRecognizer;
+            result = new MrtdRecognizerResult(nativeRecognizer.Result);
         }
 
-        public override IRecognizerResult BaseResult => mrtdRecognizerResult;
+        public override IRecognizerResult BaseResult => result;
 
-        IMrtdRecognizerResult IMrtdRecognizer.Result => mrtdRecognizerResult;
+        IMrtdRecognizerResult IMrtdRecognizer.Result => result;
 
-        bool IMrtdRecognizer.AllowUnparsedResults { get => nativeMrtdRecognizer.AllowUnparsedResults; set => nativeMrtdRecognizer.AllowUnparsedResults = value; }
-        bool IMrtdRecognizer.AllowUnverifiedResults { get => nativeMrtdRecognizer.AllowUnverifiedResults; set => nativeMrtdRecognizer.AllowUnverifiedResults = value; }
-        bool IMrtdRecognizer.DetectGlare { get => nativeMrtdRecognizer.DetectGlare; set => nativeMrtdRecognizer.DetectGlare = value; }
-        bool IMrtdRecognizer.ReturnFullDocumentImage { get => nativeMrtdRecognizer.ReturnFullDocumentImage; set => nativeMrtdRecognizer.ReturnFullDocumentImage = value; }
-        bool IMrtdRecognizer.ReturnMrzImage { get => nativeMrtdRecognizer.ReturnMrzImage; set => nativeMrtdRecognizer.ReturnMrzImage = value; }
-        int IMrtdRecognizer.SaveImageDPI { get => (int) nativeMrtdRecognizer.SaveImageDPI; set => nativeMrtdRecognizer.SaveImageDPI = (nuint) value; }
+        bool IMrtdRecognizer.AllowUnparsedResults { get => nativeRecognizer.AllowUnparsedResults; set => nativeRecognizer.AllowUnparsedResults = value; }
+        bool IMrtdRecognizer.AllowUnverifiedResults { get => nativeRecognizer.AllowUnverifiedResults; set => nativeRecognizer.AllowUnverifiedResults = value; }
+        bool IMrtdRecognizer.DetectGlare { get => nativeRecognizer.DetectGlare; set => nativeRecognizer.DetectGlare = value; }
+        bool IMrtdRecognizer.ReturnFullDocumentImage { get => nativeRecognizer.ReturnFullDocumentImage; set => nativeRecognizer.ReturnFullDocumentImage = value; }
+        bool IMrtdRecognizer.ReturnMrzImage { get => nativeRecognizer.ReturnMrzImage; set => nativeRecognizer.ReturnMrzImage = value; }
+        int IMrtdRecognizer.SaveImageDPI { get => (int) nativeRecognizer.SaveImageDPI; set => nativeRecognizer.SaveImageDPI = (nuint) value; }
     }
 
     public class MrtdRecognizerResult : RecognizerResult, IMrtdRecognizerResult

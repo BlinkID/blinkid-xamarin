@@ -1,7 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
     public interface IMrtdRecognizer : IRecognizer
     {
@@ -16,8 +13,8 @@ namespace Microblink.Forms.Core.Recognizers
     }
 
     public interface IMrtdRecognizerResult : IRecognizerResult {
-        ImageSource FullDocumentImage { get; }
-        ImageSource MrzImage { get; }
+        Xamarin.Forms.ImageSource FullDocumentImage { get; }
+        Xamarin.Forms.ImageSource MrzImage { get; }
         IMrzResult MrzResult { get; }
     }
 }

@@ -13,6 +13,8 @@ namespace BlinkIDApp
 
         IMrtdRecognizer mrtdRecognizer;
 
+        ISuccessFrameGrabberRecognizer mrtdSuccessFrameGrabberRecognizer;
+
 		public BlinkIDPage ()
 		{
 			InitializeComponent ();
@@ -35,6 +37,8 @@ namespace BlinkIDApp
             mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>();
             mrtdRecognizer.ReturnFullDocumentImage = true;
 
+            mrtdSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(mrtdRecognizer);
+
 			// Display results in Editor
             MessagingCenter.Subscribe<Messages.ScanningDoneMessage> (this, Messages.ScanningDoneMessageId, (sender) => {
                 var result = mrtdRecognizer.Result;
@@ -55,6 +59,7 @@ namespace BlinkIDApp
 				Device.BeginInvokeOnMainThread (() => {
 					resultsEditor.Text = asString;
                     fullDocumentImage.Source = result.FullDocumentImage;
+                    successScanImage.Source = mrtdSuccessFrameGrabberRecognizer.Result.SuccessFrame;
 				});
 
 			});
@@ -62,7 +67,7 @@ namespace BlinkIDApp
 
 		void StartScan (object sender, EventArgs e)
 		{
-            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdRecognizer);
+            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdSuccessFrameGrabberRecognizer);
             var documentOverlaySettings = DependencyService.Get<IDocumentOverlaySettingsFactory>().CreateDocumentOverlaySettings(recognizerCollection);
 
 
