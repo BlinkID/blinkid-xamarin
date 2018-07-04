@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Microblink.Forms.Core.Overlays
 {
-    public interface IOverlaySettings
-    {
-    }
+    /// <summary>
+    /// Base interface for all Overlay settings classes.
+    /// </summary>
+    public interface IOverlaySettings {}
 }
