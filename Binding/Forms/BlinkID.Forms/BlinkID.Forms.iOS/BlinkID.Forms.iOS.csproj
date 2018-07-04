@@ -76,6 +76,7 @@
     <Compile Include="Recognizers\Types\MrzResult.cs" />
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays\Implementations\BarcodeOverlaySettings.cs" />
+    <Compile Include="Overlays\Implementations\DocumentVerificationOverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

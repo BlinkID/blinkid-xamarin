@@ -46,6 +46,7 @@
     <Compile Include="Recognizers\Types\IDate.cs" />
     <Compile Include="Recognizers\Types\MrzResult.cs" />
     <Compile Include="Overlays\Concrete\IBarcodeOverlaySettings.cs" />
+    <Compile Include="Overlays\Concrete\IDocumentVerificationOverlaySettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
