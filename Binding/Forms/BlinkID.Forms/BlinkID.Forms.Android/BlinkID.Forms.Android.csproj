@@ -131,8 +131,8 @@
     <Compile Include="Recognizers\RecognizerCollection.cs" />
     <Compile Include="Recognizers\Utils.cs" />
     <Compile Include="Recognizers\Implementations\MrtdRecognizer.cs" />
-    <Compile Include="Recognizers\Types\Date.cs" />
-    <Compile Include="Recognizers\Types\MrzResult.cs" />
+    <Compile Include="Recognizers\Types\CommonTypes.cs" />
+    <Compile Include="Recognizers\Types\BlinkIDTypes.cs" />
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays\Implementations\BarcodeOverlaySettings.cs" />
     <Compile Include="Overlays\Implementations\DocumentVerificationOverlaySettings.cs" />

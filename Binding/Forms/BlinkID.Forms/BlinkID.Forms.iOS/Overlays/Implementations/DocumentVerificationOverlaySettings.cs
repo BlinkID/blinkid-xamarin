@@ -4,7 +4,6 @@ using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.iOS.Overlays.Implementations;
 using Microblink.Forms.iOS.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(DocumentVerificationOverlaySettings))]
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentVerificationOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays.Implementations
 {

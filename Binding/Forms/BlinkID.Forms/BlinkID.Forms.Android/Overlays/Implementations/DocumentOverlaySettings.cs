@@ -4,7 +4,6 @@ using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.Core.Recognizers;
 using Com.Microblink.Uisettings;
 
-[assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettings))]
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
 namespace Microblink.Forms.Droid.Overlays
 {

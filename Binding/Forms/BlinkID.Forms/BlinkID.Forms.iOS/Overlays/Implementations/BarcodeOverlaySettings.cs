@@ -4,7 +4,6 @@ using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.iOS.Overlays.Implementations;
 using Microblink.Forms.iOS.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(BarcodeOverlaySettings))]
 [assembly: Xamarin.Forms.Dependency(typeof(BarcodeOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays.Implementations
 {

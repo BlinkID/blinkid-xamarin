@@ -12,7 +12,6 @@ using Microblink.Forms.Droid.Recognizers;
 using Com.Microblink.Intent;
 using System;
 
-[assembly: Xamarin.Forms.Dependency (typeof (MicroblinkScannerImplementation))]
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
 namespace Microblink.Forms.Droid
 {

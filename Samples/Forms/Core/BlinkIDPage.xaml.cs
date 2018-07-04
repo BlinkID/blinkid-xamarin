@@ -31,7 +31,6 @@ namespace BlinkIDApp
 
             blinkID = microblinkFactory.CreateMicroblinkScanner(licenseKey);
 
-
             // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
             mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>();
             mrtdRecognizer.ReturnFullDocumentImage = true;

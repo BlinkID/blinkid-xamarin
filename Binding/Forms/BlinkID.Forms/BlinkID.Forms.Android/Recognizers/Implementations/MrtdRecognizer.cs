@@ -3,7 +3,6 @@ using Microblink.Forms.Core.Recognizers;
 using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MrtdRecognizer))]
-[assembly: Xamarin.Forms.Dependency(typeof(MrtdRecognizerResult))]
 namespace Microblink.Forms.Droid.Recognizers
 {
     public class MrtdRecognizer : Recognizer, IMrtdRecognizer

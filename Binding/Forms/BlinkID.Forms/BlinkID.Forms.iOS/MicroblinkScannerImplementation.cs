@@ -5,7 +5,6 @@ using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.iOS.Overlays;
 using Microblink.Forms.Core;
 
-[assembly: Xamarin.Forms.Dependency (typeof (MicroblinkScannerImplementation))]
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
 namespace Microblink.Forms.iOS
 {

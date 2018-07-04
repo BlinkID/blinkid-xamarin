@@ -43,8 +43,8 @@
     <Compile Include="Recognizers\IRecognizer.cs" />
     <Compile Include="Recognizers\IRecognizerCollection.cs" />
     <Compile Include="Recognizers\Concrete\IMrtdRecognizer.cs" />
-    <Compile Include="Recognizers\Types\IDate.cs" />
-    <Compile Include="Recognizers\Types\MrzResult.cs" />
+    <Compile Include="Recognizers\Types\CommonTypes.cs" />
+    <Compile Include="Recognizers\Types\BlinkIDTypes.cs" />
     <Compile Include="Overlays\Concrete\IBarcodeOverlaySettings.cs" />
     <Compile Include="Overlays\Concrete\IDocumentVerificationOverlaySettings.cs" />
   </ItemGroup>

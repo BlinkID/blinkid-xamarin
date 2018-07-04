@@ -2,10 +2,10 @@
 using Microblink.Forms.Core.Recognizers;
 using Microblink;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MrzResult))]
+[assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-	public class MrzResult : IMrzResult
+	public sealed class MrzResult : IMrzResult
     {
         MBMrzResult nativeMrzResult;
 
@@ -49,5 +49,31 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool Parsed => nativeMrzResult.IsParsed;
 
         public bool Verified => nativeMrzResult.IsVerified;
+    }
+
+    public sealed class ImageExtensionFactors : IImageExtensionFactors
+    {
+        MBImageExtensionFactors nativeFactors;
+
+        public ImageExtensionFactors(MBImageExtensionFactors nativeFactors)
+        {
+            this.nativeFactors = nativeFactors;
+        }
+
+        public float UpFactor => (float)nativeFactors.top;
+
+        public float RightFactor => (float)nativeFactors.right;
+
+        public float DownFactor => (float)nativeFactors.bottom;
+
+        public float LeftFactor => (float)nativeFactors.left;
+    }
+
+    public sealed class ImageExtensionFactorsFactory : IImageExtensionFactorsFactory
+    {
+        public IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0, float downFactor = 0, float leftFactor = 0, float rightFactor = 0)
+        {
+            return new ImageExtensionFactors(new MBImageExtensionFactors { top = upFactor, bottom = downFactor, left = leftFactor, right = rightFactor });
+        }
     }
 }

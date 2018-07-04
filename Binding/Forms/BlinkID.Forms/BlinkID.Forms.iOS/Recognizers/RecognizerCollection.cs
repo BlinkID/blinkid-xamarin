@@ -2,7 +2,6 @@
 using Microblink.Forms.Core.Recognizers;
 using Microblink;
 
-[assembly: Xamarin.Forms.Dependency(typeof(RecognizerCollection))]
 [assembly: Xamarin.Forms.Dependency(typeof(RecognizerCollectionFactory))]
 namespace Microblink.Forms.iOS.Recognizers
 {

@@ -1,10 +1,10 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MrzResult))]
+[assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-	public class MrzResult : IMrzResult
+	public sealed class MrzResult : IMrzResult
     {
         Com.Microblink.Entities.Recognizers.Blinkid.Mrtd.MrzResult nativeMrzResult;
 
@@ -48,5 +48,28 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool Parsed => nativeMrzResult.IsMrzParsed;
 
         public bool Verified => nativeMrzResult.IsMrzVerified;
+    }
+
+    public sealed class ImageExtensionFactors : IImageExtensionFactors
+    {
+        Com.Microblink.Entities.Settings.Image.ImageExtensionFactors nativeImageExtensionFactors;
+
+        public ImageExtensionFactors(Com.Microblink.Entities.Settings.Image.ImageExtensionFactors nativeExtentionFactors)
+        {
+            nativeImageExtensionFactors = nativeExtentionFactors;
+        }
+
+        public float UpFactor => nativeImageExtensionFactors.UpFactor;
+        public float RightFactor => nativeImageExtensionFactors.RightFactor;
+        public float DownFactor => nativeImageExtensionFactors.DownFactor;
+        public float LeftFactor => nativeImageExtensionFactors.LeftFactor;
+    }
+
+    public sealed class ImageExtensionFactorsFactory : IImageExtensionFactorsFactory
+    {
+        public IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0, float downFactor = 0, float leftFactor = 0, float rightFactor = 0)
+        {
+            return new ImageExtensionFactors(new Com.Microblink.Entities.Settings.Image.ImageExtensionFactors(upFactor, downFactor, leftFactor, rightFactor));
+        }
     }
 }
