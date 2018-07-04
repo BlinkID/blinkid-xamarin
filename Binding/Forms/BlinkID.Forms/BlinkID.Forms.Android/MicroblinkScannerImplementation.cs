@@ -17,8 +17,26 @@ namespace Microblink.Forms.Droid
 {
     public interface IMicroblinkScannerAndroidHostActivity
     {
+        /// <summary>
+        /// Returns the host activity that is currently in use.
+        /// </summary>
+        /// <value>The host activity.</value>
         Activity HostActivity { get; }
+
+        /// <summary>
+        /// Gets the scan activity request code. You can define your custom request code
+        /// so that it will not interfere with request codes your app uses with other
+        /// activities.
+        /// </summary>
+        /// <value>The scan activity request code.</value>
         int ScanActivityRequestCode { get; }
+
+        /// <summary>
+        /// This method is called from Android's version of MicroblinkScannerImplementation at
+        /// the time when scanning will be started. You should save the implementation's object
+        /// reference here and use it in OnActivityResult method to forward that event to it.
+        /// </summary>
+        /// <param name="implementation">Implementation.</param>
         void ScanningStarted(MicroblinkScannerImplementation implementation);
     }
 

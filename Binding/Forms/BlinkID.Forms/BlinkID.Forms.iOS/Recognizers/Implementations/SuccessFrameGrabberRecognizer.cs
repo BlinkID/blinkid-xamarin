@@ -1,6 +1,5 @@
 ﻿using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.iOS.Recognizers;
-using Microblink;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SuccessFrameGrabberRecognizerFactory))]
@@ -10,7 +9,7 @@ namespace Microblink.Forms.iOS.Recognizers
     {
         MBSuccessFrameGrabberRecognizer nativeRecognizer;
         Recognizer slaveRecognizer;
-        SuccessFrameGrabberRecognizerResult result;
+        readonly SuccessFrameGrabberRecognizerResult result;
 
         public SuccessFrameGrabberRecognizer(Recognizer slaveRecognizer)
             : base(new MBSuccessFrameGrabberRecognizer(slaveRecognizer.NativeRecognizer))
@@ -29,7 +28,7 @@ namespace Microblink.Forms.iOS.Recognizers
 
     public sealed class SuccessFrameGrabberRecognizerResult : RecognizerResult, ISuccessFrameGrabberRecognizerResult
     {
-        MBSuccessFrameGrabberRecognizerResult nativeResult;
+        readonly MBSuccessFrameGrabberRecognizerResult nativeResult;
 
         internal SuccessFrameGrabberRecognizerResult(MBSuccessFrameGrabberRecognizerResult nativeResult) : base(nativeResult)
         {
