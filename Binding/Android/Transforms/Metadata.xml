@@ -5,7 +5,7 @@
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.ocr')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.detectors')]" />
-    <remove-node path="/api/package[starts-with(@name, 'com.microblink.geometry')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.geometry')]/class[@name!='Point' and @name!='Quadrilateral']" />
     <remove-node path="/api/package[@name='com.microblink.image']/class[@name!='Image']" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/class[@name!='RecognizerSuccessType']" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/interface" />
