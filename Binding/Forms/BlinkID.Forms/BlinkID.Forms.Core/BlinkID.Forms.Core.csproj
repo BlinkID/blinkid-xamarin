@@ -48,6 +48,8 @@
     <Compile Include="Overlays\Concrete\IBarcodeOverlaySettings.cs" />
     <Compile Include="Overlays\Concrete\IDocumentVerificationOverlaySettings.cs" />
     <Compile Include="Recognizers\Concrete\ISuccessFrameGrabberRecognizer.cs" />
+    <Compile Include="Recognizers\Concrete\IUsdlRecognizer.cs" />
+    <Compile Include="Recognizers\Concrete\UsdlKeys.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
