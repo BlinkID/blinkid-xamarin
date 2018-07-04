@@ -79,6 +79,7 @@
     <Compile Include="Overlays\Implementations\DocumentVerificationOverlaySettings.cs" />
     <Compile Include="Recognizers\Implementations\SuccessFrameGrabberRecognizer.cs" />
     <Compile Include="Recognizers\Implementations\UsdlRecognizer.cs" />
+    <Compile Include="Recognizers\Implementations\UsdlCombinedRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

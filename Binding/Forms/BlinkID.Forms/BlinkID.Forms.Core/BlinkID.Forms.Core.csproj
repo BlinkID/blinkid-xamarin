@@ -50,6 +50,7 @@
     <Compile Include="Recognizers\Concrete\ISuccessFrameGrabberRecognizer.cs" />
     <Compile Include="Recognizers\Concrete\IUsdlRecognizer.cs" />
     <Compile Include="Recognizers\Concrete\UsdlKeys.cs" />
+    <Compile Include="Recognizers\Concrete\IUsdlCombinedRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
