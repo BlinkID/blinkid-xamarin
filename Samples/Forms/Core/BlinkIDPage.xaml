@@ -15,13 +15,13 @@
 			<Button x:Name="startScanningButton" Text="Start scanning" Clicked="StartScan" />
 			<Image x:Name="fullDocumentImage" 
 				WidthRequest="200"
-				HeightRequest="150"  />
-            <Image x:Name="successScanImage" 
-                WidthRequest="200"
-                HeightRequest="150"  />
+				HeightRequest="100"  />
             <Image x:Name="faceImage" 
                 WidthRequest="200"
-                HeightRequest="150"  />
+                HeightRequest="100"  />
+            <Image x:Name="successScanImage" 
+                WidthRequest="200"
+                HeightRequest="100"  />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
