@@ -3,7 +3,8 @@
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.secured')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.hardware')]/class[@name!='CameraSettings' and @extends!='java.lang.Enum']" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.ocr')]" />
-    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]/class[@name!='BaseLegacyRecognizerWrapper' and @name!='BaseLegacyRecognizerWrapper.Result' and @name!='RecognizerSettings' and @name!='BaseRecognitionResult']" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]/interface[@name!='MRTDResult']" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.detectors')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.geometry')]/class[@name!='Point' and @name!='Quadrilateral']" />
     <remove-node path="/api/package[@name='com.microblink.image']/class[@name!='Image']" />
@@ -20,6 +21,9 @@
 
     <remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity']/method[@name!='writeToParcel' and @name!='describeContents' and @name!='getResult']" />
     <remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity.Result']/method[@name!='writeToParcel' and @name!='describeContents']" />
+
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class[substring(@name, string-length(@name) - string-length('.RecognizerCreator') + 1) = '.RecognizerCreator']" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/*/field[@name='CLASS_NAME']" />
     
     <remove-node path="/api/package[@name='com.microblink.entities.parsers']/class[@name='Parser']/method[@name='consumeResult']" />
 
