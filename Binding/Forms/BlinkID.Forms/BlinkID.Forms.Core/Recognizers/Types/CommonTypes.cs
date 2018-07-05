@@ -1,6 +1,71 @@
-﻿using System;
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Represents the type of scanned barcode
+    /// </summary>
+    public enum BarcodeType
+    {
+        /// <summary>
+        /// No barcode was scanned
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// QR code was scanned
+        /// </summary>
+        QRCode,
+
+        /// <summary>
+        /// Data Matrix 2D barcode was scanned
+        /// </summary>
+        DataMatrix,
+
+        /// <summary>
+        /// UPC E barcode was scanned
+        /// </summary>
+        UPCE,
+
+        /// <summary>
+        /// UPC A barcode was scanned
+        /// </summary>
+        UPCA,
+
+        /// <summary>
+        /// EAN 8 barcode was scanned
+        /// </summary>
+        EAN8,
+
+        /// <summary>
+        /// EAN 13 barcode was scanned
+        /// </summary>
+        EAN13,
+
+        /// <summary>
+        /// Code 128 barcode was scanned
+        /// </summary>
+        Code128,
+
+        /// <summary>
+        /// Code 39 barcode was scanned
+        /// </summary>
+        Code39,
+
+        /// <summary>
+        /// ITF barcode was scanned
+        /// </summary>
+        ITF,
+
+        /// <summary>
+        /// Aztec 2D barcode was scanned
+        /// </summary>
+        Aztec,
+
+        /// <summary>
+        /// PDF417 2D barcode was scanned
+        /// </summary>
+        PDF417
+    }
+
     /// <summary>
     /// Represents a date extracted from image.
     /// </summary>

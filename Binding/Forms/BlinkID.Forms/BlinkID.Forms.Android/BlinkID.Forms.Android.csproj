@@ -22,7 +22,6 @@
     <Summary>A small, but powerful ID scanning library</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library.</Description>
-    <PackOnBuild>true</PackOnBuild>
     <ReleaseVersion>4.0.0.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -125,21 +124,81 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Overlays\OverlaySettings.cs" />
-    <Compile Include="Overlays\Implementations\DocumentOverlaySettings.cs" />
-    <Compile Include="Recognizers\Recognizer.cs" />
-    <Compile Include="Recognizers\RecognizerCollection.cs" />
-    <Compile Include="Recognizers\Utils.cs" />
-    <Compile Include="Recognizers\Implementations\MrtdRecognizer.cs" />
-    <Compile Include="Recognizers\Types\CommonTypes.cs" />
-    <Compile Include="Recognizers\Types\BlinkIDTypes.cs" />
     <Compile Include="MicroblinkScannerImplementation.cs" />
-    <Compile Include="Overlays\Implementations\BarcodeOverlaySettings.cs" />
-    <Compile Include="Overlays\Implementations\DocumentVerificationOverlaySettings.cs" />
-    <Compile Include="Recognizers\Implementations\SuccessFrameGrabberRecognizer.cs" />
-    <Compile Include="Recognizers\Implementations\UsdlRecognizer.cs" />
-    <Compile Include="Recognizers\Implementations\UsdlCombinedRecognizer.cs" />
+    <Compile Include="Overlays/OverlaySettings.cs" />
+    <Compile Include="Overlays/Concrete/DocumentOverlaySettings.cs" />
+    <Compile Include="Overlays/Concrete/DocumentVerificationOverlaySettings.cs" />
+    <Compile Include="Overlays/Implementations/BarcodeOverlaySettings.cs" />
+    <Compile Include="Properties/AssemblyInfo.cs" />
+    <Compile Include="Recognizers/Recognizer.cs" />
+    <Compile Include="Recognizers/RecognizerCollection.cs" />
+    <Compile Include="Recognizers/Utils.cs" />
+    <Compile Include="Recognizers/Types/BlinkIDTypes.cs" />
+    <Compile Include="Recognizers/Types/CommonTypes.cs" />
+    <Compile Include="Recognizers/Implementations/MrtdCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/RomaniaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MrtdRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/Pdf417Recognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyKadBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SimNumberRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/IkadRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/HongKongIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyOldIdRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustraliaDlBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyKadFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/NewZealandDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UsdlCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/EgyptIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UsdlRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/ColombiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustraliaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/DocumentFaceRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BarcodeRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/ColombiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyTenteraRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SuccessFrameGrabberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

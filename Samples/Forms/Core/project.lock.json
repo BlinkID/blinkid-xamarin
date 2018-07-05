@@ -96,7 +96,7 @@
           "System.Xml.XDocument": "4.0.11"
         }
       },
-      "NuGet.Build.Packaging/0.2.0": {
+      "NuGet.Build.Packaging/0.2.2": {
         "type": "package",
         "build": {
           "build/_._": {}
@@ -367,8 +367,8 @@
         "framework": ".NETStandard,Version=v1.0",
         "dependencies": {
           "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-          "NETStandard.Library": "1.6.0",
-          "NuGet.Build.Packaging": "0.2.0",
+          "NETStandard.Library": "2.0.3",
+          "NuGet.Build.Packaging": "0.2.2",
           "Xamarin.Forms": "3.1.0.583944"
         }
       }
@@ -530,10 +530,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "NuGet.Build.Packaging/0.2.0": {
-      "sha512": "iqo7f9c+oA12IcelLjD232BMxdGR2Dzrqk00C8w7NiB1sbXa8YHsZGCJkt6CEQKR5XYqZ/8f3z0kHTBJ0Gua3Q==",
+    "NuGet.Build.Packaging/0.2.2": {
+      "sha512": "0NpDbrsJ+kTKtOEQH0RVbZmpsnCOBHkznA9Kov+u2xul+e2M10PCUO5a4ATZbuStOMcS/lSBYae/W/pCtJOL+Q==",
       "type": "package",
-      "path": "nuget.build.packaging/0.2.0",
+      "path": "nuget.build.packaging/0.2.2",
       "files": [
         "build/ApiIntersect.exe",
         "build/ApiIntersect.exe.config",
@@ -551,7 +551,6 @@
         "build/NuGet.Build.Packaging.Authoring.props",
         "build/NuGet.Build.Packaging.Authoring.targets",
         "build/NuGet.Build.Packaging.Compatibility.props",
-        "build/NuGet.Build.Packaging.CrossTargeting.targets",
         "build/NuGet.Build.Packaging.Inference.targets",
         "build/NuGet.Build.Packaging.Legacy.props",
         "build/NuGet.Build.Packaging.Legacy.targets",
@@ -561,7 +560,8 @@
         "build/NuGet.Build.Packaging.Version.props",
         "build/NuGet.Build.Packaging.props",
         "build/NuGet.Build.Packaging.targets",
-        "nuget.build.packaging.0.2.0.nupkg.sha512",
+        "buildMultiTargeting/NuGet.Build.Packaging.MultiTargeting.targets",
+        "nuget.build.packaging.0.2.2.nupkg.sha512",
         "nuget.build.packaging.nuspec"
       ]
     },
@@ -2290,5 +2290,17 @@
     "frameworks": {
       "netstandard1.0": {}
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: NETStandard.Library from 2.0.3 to 1.6.0. Reference the package directly from the project to select a different version. \n Core (>= 1.0.0) -> BlinkID.Forms.Core (>= 1.0.0) -> NETStandard.Library (>= 2.0.3) \n Core (>= 1.0.0) -> NETStandard.Library (>= 1.6.0)",
+      "libraryId": "NETStandard.Library",
+      "targetGraphs": [
+        ".NETStandard,Version=v1.0"
+      ]
+    }
+  ]
 }

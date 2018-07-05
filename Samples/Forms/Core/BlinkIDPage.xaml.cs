@@ -36,6 +36,17 @@ namespace BlinkIDApp
         /// </summary>
         ISuccessFrameGrabberRecognizer usdlSuccessFrameGrabberRecognizer;
 
+        /// <summary>
+        /// EUDL recognizer will be used for scanning front side of EU driver's licenses.
+        /// </summary>
+        IEudlRecognizer eudlRecognizer;
+
+        /// <summary>
+        /// This success frame grabber recognizer will wrap eudlRecognizer and will contain camera frame of the moment
+        /// when wrapped recognizer finished its recognition.
+        /// </summary>
+        ISuccessFrameGrabberRecognizer eudlSuccessFrameGrabberRecognizer;
+
 		public BlinkIDPage ()
 		{
 			InitializeComponent ();
@@ -80,6 +91,15 @@ namespace BlinkIDApp
             // success frame grabber recognizer must be constructed with reference to its slave recognizer,
             // so we need to use factory to avoid DependencyService's limitations
             usdlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(usdlRecognizer);
+
+            // the following code creates and sets up implementation of EudlRecognizer
+            eudlRecognizer = DependencyService.Get<IEudlRecognizer>();
+            eudlRecognizer.ReturnFaceImage = true;
+            eudlRecognizer.ReturnFullDocumentImage = true;
+
+            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
+            // so we need to use factory to avoid DependencyService's limitations
+            eudlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(eudlRecognizer);
 
             // subscribe to scanning done message
             MessagingCenter.Subscribe<Messages.ScanningDoneMessage> (this, Messages.ScanningDoneMessageId, (sender) => {
@@ -141,6 +161,20 @@ namespace BlinkIDApp
 
                         successFrameImageSource = usdlSuccessFrameGrabberRecognizer.Result.SuccessFrame;
                     }
+
+                    if (eudlRecognizer.Result.ResultState == RecognizerResultState.Valid)
+                    {
+                        var result = eudlRecognizer.Result;
+                        stringResult =
+                            "First name: " + result.FirstName + "\n" +
+                            "Last name: " + result.LastName + "\n" +
+                            "Address: " + result.Address + "\n" +
+                            "Personal number: " + result.PersonalNumber + "\n" +
+                            "Driver number: " + result.DriverNumber;
+                        successFrameImageSource = eudlSuccessFrameGrabberRecognizer.Result.SuccessFrame;
+                        faceImageSource = result.FaceImage;
+                        fullDocumentImageSource = result.FullDocumentImage;
+                    }
                 }
 
                 // updating the UI must be performed on main thread
@@ -163,7 +197,7 @@ namespace BlinkIDApp
         {
             // first create a recognizer collection from all recognizers that you want to use in recognition
             // if some recognizer is wrapped with SuccessFrameGrabberRecognizer, then you should use only the wrapped one
-            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdSuccessFrameGrabberRecognizer, usdlSuccessFrameGrabberRecognizer);
+            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdSuccessFrameGrabberRecognizer, usdlSuccessFrameGrabberRecognizer, eudlSuccessFrameGrabberRecognizer);
 
             // using recognizerCollection, create overlay settings that will define the UI that will be used
             // there are several available overlay settings classes in Microblink.Forms.Core.Overlays namespace

@@ -52,17 +52,17 @@ namespace Microblink.Forms.Droid.Recognizers
 
     public sealed class ImageExtensionFactors : IImageExtensionFactors
     {
-        Com.Microblink.Entities.Settings.Image.ImageExtensionFactors nativeImageExtensionFactors;
+        public Com.Microblink.Entities.Settings.Image.ImageExtensionFactors NativeImageExtensionFactors { get; }
 
         public ImageExtensionFactors(Com.Microblink.Entities.Settings.Image.ImageExtensionFactors nativeExtentionFactors)
         {
-            nativeImageExtensionFactors = nativeExtentionFactors;
+            NativeImageExtensionFactors = nativeExtentionFactors;
         }
 
-        public float UpFactor => nativeImageExtensionFactors.UpFactor;
-        public float RightFactor => nativeImageExtensionFactors.RightFactor;
-        public float DownFactor => nativeImageExtensionFactors.DownFactor;
-        public float LeftFactor => nativeImageExtensionFactors.LeftFactor;
+        public float UpFactor => NativeImageExtensionFactors.UpFactor;
+        public float RightFactor => NativeImageExtensionFactors.RightFactor;
+        public float DownFactor => NativeImageExtensionFactors.DownFactor;
+        public float LeftFactor => NativeImageExtensionFactors.LeftFactor;
     }
 
     public sealed class ImageExtensionFactorsFactory : IImageExtensionFactorsFactory

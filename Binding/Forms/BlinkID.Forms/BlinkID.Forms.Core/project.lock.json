@@ -2386,16 +2386,10 @@
       }
     },
     "dependencies": {
-      "Xamarin.Forms": "3.1.0.583944",
       "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-      "NuGet.Build.Packaging": {
-        "target": "Package",
-        "version": "[0.2.2, )"
-      },
-      "NETStandard.Library": {
-        "target": "Package",
-        "version": "[2.0.3, )"
-      }
+      "NETStandard.Library": "2.0.3",
+      "NuGet.Build.Packaging": "0.2.2",
+      "Xamarin.Forms": "3.1.0.583944"
     },
     "frameworks": {
       "netstandard1.0": {}
