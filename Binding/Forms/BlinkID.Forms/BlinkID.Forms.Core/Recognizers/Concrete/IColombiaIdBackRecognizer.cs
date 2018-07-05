@@ -4,14 +4,23 @@
     {
         
         /// <summary>
-        /// true if null quiet zone is allowed 
+        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool NullQuietZoneAllowed { get; set; }
         
         /// <summary>
-        /// true if should scan uncertain results 
+        /// Set this to true to scan even barcode not compliant with standards
+        /// For example, malformed PDF417 barcodes which were incorrectly encoded
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -27,37 +36,37 @@
     public interface IColombiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// owner blood type 
+        /// The blood group of the Colombian ID owner. 
         /// </summary>
         string BloodGroup { get; }
         
         /// <summary>
-        /// owner date of birth 
+        /// The date of birth of the Colombian ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// the Colombian ID document number number. 
+        /// The document number of the Colombian ID card. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// owner fingerprint 
+        /// The fingerprint of the Colombian ID owner. 
         /// </summary>
         byte[] Fingerprint { get; }
         
         /// <summary>
-        /// owner first name 
+        /// The first name of the Colombian ID owner. 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// owner first name 
+        /// The last name of the Colombian ID owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// owner sex 
+        /// The sex of the Colombian ID owner. 
         /// </summary>
         string Sex { get; }
         

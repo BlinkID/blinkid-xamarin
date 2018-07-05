@@ -4,147 +4,192 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Austrian ID owner should be extracted 
+        /// Defines if ownder's date of birth should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Austrian passport should be extracted 
+        /// Defines if date of expiry should be extracted from Austrian Passport
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issuance should be extracted 
+        /// Defines if date of issuance should be extracted from back side of Austrian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssuance { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Austrian passport should be extracted 
+        /// Defines if date of issue should be extracted from Austrian Passport
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if given name of Austrian ID owner should be extracted 
+        /// Defines if owner's given name should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractGivenName { get; set; }
         
         /// <summary>
-        /// Defines if height of Austrian ID owner should be extracted 
+        /// Defines if owner's height should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractHeight { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted 
+        /// Defines if issuing authority should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if nationality of Austrian passport owner should be extracted 
+        /// Defines if owner's nationality should be extracted from Austrian Passport
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if passport number of Austrian passport should be extracted 
+        /// Defines if passport number should be extracted from Austrian Passport
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPassportNumber { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of Austrian ID owner should be extracted 
+        /// Defines if owner's place of birth should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if principal residence of Austrian ID owner should be extracted 
+        /// Defines if owner's principal residence should be extracted from back side of Austrian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPrincipalResidence { get; set; }
         
         /// <summary>
-        /// Defines if sex of Austrian ID owner should be extracted 
+        /// Defines if owner's sex should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines if surname of Austrian ID owner should be extracted 
+        /// Defines if owner's surname should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
-        /// Defines whether or not recognition result should be signed. 
+        /// Whether or not recognition result should be signed.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool SignResult { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for signature image that should be returned. 
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -160,112 +205,116 @@
     public interface IAustriaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the date of birth of the document owner 
+        /// The date of birth of Austrian ID owner 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// the date of expiry of the document. 
+        /// The date of expiry of Austrian ID 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// the date of issuance of the document. 
+        /// The date of issuance of the Austrian ID 
         /// </summary>
         IDate DateOfIssuance { get; }
         
         /// <summary>
-        /// Defines digital signature of recognition results. 
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Defines digital signature version. 
+        /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
         /// <summary>
-        /// Defines {true} if data from scanned parts/sides of the document match, 
+        /// Returns true if data from scanned parts/sides of the document match,
+        /// false otherwise. For example if date of expiry is scanned from the front and back side
+        /// of the document and values do not match, this method will return false. Result will
+        /// be true only if scanned values for all fields that are compared are the same. 
         /// </summary>
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// the document number. 
+        /// The document number of the Austrian ID. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// the eye colour of the document holder. 
+        /// The eye eyeColour of Austrian ID owner. 
         /// </summary>
         string EyeColour { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        ///  back side image of the document 
+        /// back side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        ///  front side image of the document 
+        /// front side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// the given name of the document owner. 
+        /// The gien name of the Austrian ID owner. 
         /// </summary>
         string GivenName { get; }
         
         /// <summary>
-        /// the height of the document holder in centimeters. 
+        /// The height of Austrian ID owner. 
         /// </summary>
-        uint Height { get; }
+        string Height { get; }
         
         /// <summary>
-        /// the issuing authority of the document. 
+        /// The issuing authority of Austrian ID. 
         /// </summary>
         string IssuingAuthority { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise. 
+        /// Whether check digits in machine readable zone of the Austrian ID are OK. 
         /// </summary>
         bool MrtdVerified { get; }
         
         /// <summary>
-        /// nationality of the document owner. 
+        /// The nationaliy of the Austrian ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// the place of birth of the document holder. 
+        /// The place of birth of the Austrian ID owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// principal residence at issuance of the document holder. 
+        /// The principal residence of the Austrian ID owner. 
         /// </summary>
         string PrincipalResidence { get; }
         
         /// <summary>
-        ///  {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
+        /// false if it's still scanning first side. 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// sex of the document owner. 
+        /// The sex of the Austrian ID owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        ///  signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// the surname of the document owner. 
+        /// The surname of the Austrian ID owner. 
         /// </summary>
         string Surname { get; }
         

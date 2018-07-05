@@ -1,5 +1,6 @@
 ﻿using Microblink.Forms.Core.Recognizers;
 using CoreGraphics;
+using Foundation;
 
 namespace Microblink.Forms.iOS.Recognizers
 {
@@ -10,6 +11,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public Date(MBDateResult nativeDate)
         {
             this.nativeDate = nativeDate;
+        }
+
+        public Date(NSDate nsDate)
+        {
+            NSDateComponents components = NSCalendar.CurrentCalendar.Components(NSCalendarUnit.Day | NSCalendarUnit.Month | NSCalendarUnit.Year, nsDate);
+            nativeDate = new MBDateResult(components.Day, components.Month, components.Year, "");
         }
 
         public int Day => (int) nativeDate.Day;

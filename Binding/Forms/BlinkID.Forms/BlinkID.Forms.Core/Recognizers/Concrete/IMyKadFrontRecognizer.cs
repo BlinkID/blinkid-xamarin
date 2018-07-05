@@ -4,28 +4,37 @@
     {
         
         /// <summary>
-        /// true if army number of Malaysian MyTentera owner is being extracted 
+        /// Defines if army number should be extracted from MyTentera documents with MyKadRecognizer
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ExtractArmyNumber { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -41,67 +50,69 @@
     public interface IMyKadFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// owner army number if written on MyTentera 
+        /// Owner army number on MyTentera documents 
         /// </summary>
         string ArmyNumber { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// NRIC number (National Registration Identity Card Number) 
+        /// NRIC number (National Registration Identity Card Number)
+        /// 
+        ///  @see https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_.28NRIC.29 
         /// </summary>
         string NricNumber { get; }
         
         /// <summary>
-        /// full owner address. 
+        /// Owner address 
         /// </summary>
         string OwnerAddress { get; }
         
         /// <summary>
-        /// extracted city from the owner address. 
+        /// Owner address city. Determined from owner address. 
         /// </summary>
         string OwnerAddressCity { get; }
         
         /// <summary>
-        /// extracted state from the owner address. 
+        /// Owner address state. Determined from owner address. 
         /// </summary>
         string OwnerAddressState { get; }
         
         /// <summary>
-        /// extracted street from the owner address. 
+        /// Owner street. Determined from owner address. 
         /// </summary>
         string OwnerAddressStreet { get; }
         
         /// <summary>
-        /// extracted ZIP code from the owner address. 
+        /// Owner address Zip code. Determined from owner address. 
         /// </summary>
         string OwnerAddressZipCode { get; }
         
         /// <summary>
-        /// owner's date of birth if it is successfully converted to {Date} from date format: <code>YYMMDD</code>. 
+        /// Owner birth date converted in NSDate object 
         /// </summary>
         IDate OwnerBirthDate { get; }
         
         /// <summary>
-        /// owner full name 
+        /// Owner full name 
         /// </summary>
         string OwnerFullName { get; }
         
         /// <summary>
-        /// owner religion if written on MyKad 
+        /// Owner religion if written on MyKad 
         /// </summary>
         string OwnerReligion { get; }
         
         /// <summary>
-        /// owner sex (M for male, F for female) 
+        /// Owner sex (M for male, F for female) 
         /// </summary>
         string OwnerSex { get; }
         

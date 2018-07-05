@@ -4,35 +4,47 @@
     {
         
         /// <summary>
-        /// currently used detector type. 
+        /// Type of docment this recognizer will scan.
+        /// 
+        ///  
         ///
-        /// By default, this is set to 'IDENTITY_CARD_TD1'
+        /// By default, this is set to 'MBDocumentFaceDetectorTypeTD1'
         /// </summary>
         DocumentFaceDetectorType DetectorType { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -48,22 +60,22 @@
     public interface IDocumentFaceRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the location of document detection in coordinate system of full input frame. 
+        /// Quadrangle represeting corner points of the document within the input image. 
         /// </summary>
         IQuadrilateral DocumentLocation { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the location of face detection in coordinate system of cropped full document image. 
+        /// Quadrangle represeting corner points of the face image within the input image. 
         /// </summary>
         IQuadrilateral FaceLocation { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

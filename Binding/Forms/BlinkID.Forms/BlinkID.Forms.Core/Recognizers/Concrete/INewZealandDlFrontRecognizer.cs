@@ -4,77 +4,99 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if address of New Zealand DL owner is being extracted 
+        /// Defines if owner's address should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// true if date of birth on New Zealand DL is being extracted 
+        /// Defines if owner's date of birth should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// true if donor indicator of New Zealand DL owner is being extracted 
+        /// Defines if owner's donor indicator should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDonorIndicator { get; set; }
         
         /// <summary>
-        /// true if expiry date on New Zealand DL is being extracted 
+        /// Defines if card's expiry date should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractExpiryDate { get; set; }
         
         /// <summary>
-        /// true if first names of New Zealand DL owner is being extracted 
+        /// Defines if owner's first name should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFirstNames { get; set; }
         
         /// <summary>
-        /// true if issue date on New Zealand DL is being extracted 
+        /// Defines if card's issue date should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssueDate { get; set; }
         
         /// <summary>
-        /// true if surname of New Zealand DL owner is being extracted 
+        /// Defines if owner's last name should be extracted from New Zealand Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -90,62 +112,62 @@
     public interface INewZealandDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// address on New Zealand drivers license. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// card version on New Zealand drivers license. 
+        /// The card version of the New Zealand Driver License. 
         /// </summary>
         string CardVersion { get; }
         
         /// <summary>
-        /// date of birth on New Zealand drivers license. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// true if DONOR is on New Zealand drivers license else returns false. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         bool DonorIndicator { get; }
         
         /// <summary>
-        /// expiry date on New Zealand drivers license. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         IDate ExpiryDate { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// first names on New Zealand drivers license. 
+        /// The first name of the New Zealand Driver License owner. 
         /// </summary>
         string FirstNames { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// issue date on New Zealand drivers license. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// license number on New Zealand drivers license. 
+        /// The license number of the New Zealand Driver License. 
         /// </summary>
         string LicenseNumber { get; }
         
         /// <summary>
-        ///  signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// surname on New Zealand drivers license. 
+        /// The last name of the New Zealand Driver License owner. 
         /// </summary>
         string Surname { get; }
         

@@ -4,28 +4,36 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if blood group of Singapore ID owner is being extracted 
+        ///  Defines if blood group of Singapore ID owner should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractBloodGroup { get; set; }
         
         /// <summary>
-        /// true if date of issue is being extracted from Singapore ID 
+        ///  Defines if date of issue of Singapore ID owner should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -41,27 +49,27 @@
     public interface ISingaporeIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// address of the Singapore ID owner. 
+        /// The address of the Singapore ID owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// blood group of the Singapore ID owner. 
+        /// The blood group of the Singapore ID owner. 
         /// </summary>
         string BloodGroup { get; }
         
         /// <summary>
-        /// the card number of Singapore ID. 
+        /// The identity card number of the Singapore ID. 
         /// </summary>
         string CardNumber { get; }
         
         /// <summary>
-        /// the document date of issue of the Singapore ID 
+        /// The date of issue of the Singapore ID. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

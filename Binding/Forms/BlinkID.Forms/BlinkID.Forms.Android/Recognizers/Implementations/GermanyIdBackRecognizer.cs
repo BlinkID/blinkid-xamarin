@@ -92,7 +92,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string DocumentNumber => nativeResult.DocumentNumber;
         public string EyeColour => nativeResult.EyeColour;
         public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
-        public uint Height => (uint)nativeResult.Height;
+        public string Height => nativeResult.Height + "cm";
         public string Issuer => nativeResult.Issuer;
         public bool MrzParsed => nativeResult.IsMrzParsed;
         public string MrzText => nativeResult.MrzText;

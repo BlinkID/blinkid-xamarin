@@ -4,35 +4,46 @@
     {
         
         /// <summary>
-        /// true if address of Australian DL owner is being extracted 
+        ///  Defines if sex of Australian DL owner should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// true if date of expiry of Australian DL is being extracted 
+        /// Defines if date of expiry should be extracted from Australian DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// true if last name of Australian DL owner is being extracted 
+        ///  Defines if last name of Australian DL owner should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLastName { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -48,27 +59,27 @@
     public interface IAustraliaDlBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// address of the Australian DL owner. 
+        /// The address of the Australian DL owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// the date of expiry of Australian DL. 
+        /// The document date of expiry of the Australian DL 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// last name of the Australian DL owner. 
+        /// The last name of the Australian DL owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// the licence number of Australian DL. 
+        /// The licence number of the Australian DL owner. 
         /// </summary>
         string LicenceNumber { get; }
         

@@ -13,7 +13,7 @@
     public interface IVinRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// scanned VIN (Vehicle Identification Number). 
+        /// Returns the recognized VIN or empty string if recognition failed. 
         /// </summary>
         string Vin { get; }
         

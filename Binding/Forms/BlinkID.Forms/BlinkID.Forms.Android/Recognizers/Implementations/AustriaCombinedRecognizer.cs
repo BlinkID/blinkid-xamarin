@@ -169,7 +169,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public Xamarin.Forms.ImageSource FullDocumentBackImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap());
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap());
         public string GivenName => nativeResult.GivenName;
-        public uint Height => (uint)nativeResult.Height;
+        public string Height => nativeResult.Height + "cm";
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public bool MrtdVerified => nativeResult.IsMrtdVerified;
         public string Nationality => nativeResult.Nationality;

@@ -4,77 +4,100 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if address is being extracted from Romanian ID 
+        /// Defines if the owner's address should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// true if first name is being extracted from Romanian ID 
+        /// Defines if owner's first name should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// true if issuing authority is being extracted from Romanian ID 
+        /// Defines if the issued ny data should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuedBy { get; set; }
         
         /// <summary>
-        /// true if last name is being extracted from Romanian ID 
+        /// Defines if owner's last name should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLastName { get; set; }
         
         /// <summary>
-        /// true if sex field outside of the MRZ is being extracted from Romanian ID 
+        /// Defines if the owner's sex information should be extracted from the ID
+        /// from non-MRZ part of the ID.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNonMRZSex { get; set; }
         
         /// <summary>
-        /// true if place of birth is being extracted from Romanian ID 
+        /// Defines if the place of birth should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// true if valid from is being extracted from Romanian ID 
+        /// Defines if the valid from date should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidFrom { get; set; }
         
         /// <summary>
-        /// true if valid until is being extracted from Romanian ID 
+        /// Defines if the valid until date should be extracted from the ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidUntil { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -90,147 +113,175 @@
     public interface IRomaniaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// address of the Romanian ID owner. 
+        /// Address 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// the card number of Romanian ID. 
+        /// Card number 
         /// </summary>
         string CardNumber { get; }
         
         /// <summary>
-        /// the CNP of Romanian ID owner. 
+        /// CNP 
         /// </summary>
         string Cnp { get; }
         
         /// <summary>
-        /// Defines holder's date of birth if it is successfully converted to result from MRZ date format: <code>YYMMDD</code>. 
+        /// Holder's date of birth. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// Defines date of expiry if it is successfully converted to result from MRZ date format: <code>YYMMDD</code>. 
+        /// Date of expiry of the document. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Defines document code. Document code contains two characters. For MRTD the first character shall 
+        /// The document code. Document code contains two characters. For MRTD the first character
+        /// shall be A, C or I. The second character shall be discretion of the issuing State or organization
+        /// except that V shall not be used, and C shall not be used after A except in the crew member
+        /// certificate. On machine-readable passports (MRP) first character shall be P to designate an MRP.
+        /// One additional letter may be used, at the discretion of the issuing State or organization,
+        /// to designate a particular MRP. If the second character position is not used for this purpose, it
+        /// shall be filled by the filter character <. 
         /// </summary>
         string DocumentCode { get; }
         
         /// <summary>
-        /// Defines document number. Document number contains up to 9 characters. 
+        /// Unique number of the document. Document number contains up to 9 characters.
+        /// Element does not exist on US Green Card. To see which document was scanned use documentType property. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the first name of the Romanian ID owner. 
+        /// First name 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the identity card series of Romanian ID. 
+        /// ID series 
         /// </summary>
         string IdSeries { get; }
         
         /// <summary>
-        /// issuing authority the Romanian ID. 
+        /// Issued by 
         /// </summary>
         string IssuedBy { get; }
         
         /// <summary>
-        /// Defines three-letter or two-letter code which indicate the issuing State. Three-letter codes are based 
+        /// Three-letter code which indicate the issuing State.
+        /// Three-letter codes are based on Alpha-3 codes for entities specified in
+        /// ISO 3166-1, with extensions for certain States. 
         /// </summary>
         string Issuer { get; }
         
         /// <summary>
-        /// the last name of the Romanian ID owner. 
+        /// Last name 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// Defines true if Machine Readable Zone has been parsed, false otherwise. 
+        /// Boolean value which denotes that MRTD result is successfully parsed. When the result is parsed, all
+        /// properties below are present.
+        /// 
+        /// If in the PPMrtdRecognizerSettings you specified allowUnparsedResults = true, then it can happen that
+        /// MRTDRecognizerResult is not parsed. When this happens, this property will be equal to true.
+        /// 
+        /// In that case, you can use rawOcrResult property to obtain the raw result of the OCR process, so you can
+        /// implement MRTD parsing in your application.
+        /// 
+        ///  @return true if MRTD Recognizer result was successfully parsed and all the fields are extracted. false otherwise. 
         /// </summary>
         bool MrzParsed { get; }
         
         /// <summary>
-        /// Defines the entire Machine Readable Zone text from ID. This text is usually used for parsing 
+        /// The entire Machine Readable Zone text from ID. This text is usually used for parsing
+        /// other elements. 
         /// </summary>
         string MrzText { get; }
         
         /// <summary>
-        /// Defines true if all check digits inside MRZ are correct, false otherwise. 
+        /// true if all check digits inside MRZ are correct, false otherwise.
+        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// Defines nationality of the holder represented by a three-letter or two-letter code. Three-letter 
+        /// Nationality of the holder represented by a three-letter code. Three-letter codes are based
+        /// on Alpha-3 codes for entities specified in ISO 3166-1, with extensions for certain States. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// nationality of the Romanian ID owner which is extracted from the non MRZ field. 
+        /// Nationality - missing if parent names exists 
         /// </summary>
         string NonMRZNationality { get; }
         
         /// <summary>
-        /// sex of the Romanian ID owner which is extracted from the non MRZ field. 
+        /// Sex 
         /// </summary>
         string NonMRZSex { get; }
         
         /// <summary>
-        /// Defines first optional data.<code>null</code> or empty string if not available. 
+        /// First optional data. Returns nil or empty string if not available.
+        /// Element does not exist on US Green Card. To see which document was scanned use documentType property. 
         /// </summary>
         string Opt1 { get; }
         
         /// <summary>
-        /// Defines second optional data.<code>null</code> or empty string if not available. 
+        /// Second optional data. Returns nil or empty string if not available.
+        /// Element does not exist on Passports and Visas. To see which document was scanned use documentType property. 
         /// </summary>
         string Opt2 { get; }
         
         /// <summary>
-        /// the parent names of Romanian ID owner. 
+        /// Parent names - missing if nationality exists 
         /// </summary>
         string ParentNames { get; }
         
         /// <summary>
-        /// place of birth of the Romanian ID owner. 
+        /// Place of birth 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// Defines the primary indentifier. If there is more than one component, they are separated with space. 
+        /// Returns the primary indentifier. If there is more than one component, they are separated with space.
+        /// 
+        ///  @return primary id of a card holder. 
         /// </summary>
         string PrimaryId { get; }
         
         /// <summary>
-        /// Defines the secondary identifier. If there is more than one component, they are separated with space. 
+        /// Returns the secondary identifier. If there is more than one component, they are separated with space.
+        /// 
+        ///  @return secondary id of a card holder 
         /// </summary>
         string SecondaryId { get; }
         
         /// <summary>
-        /// Defines sex of the card holder. Sex is specified by use of the single initial, 
+        /// Sex of the card holder. Sex is specified by use of the single initial, capital
+        /// letter F for female, M for male or < for unspecified. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// the valid from date of Romanian ID. 
+        /// Valid from 
         /// </summary>
         IDate ValidFrom { get; }
         
         /// <summary>
-        /// the valid until date of Romanian ID. 
+        /// Valid until 
         /// </summary>
         IDate ValidUntil { get; }
         

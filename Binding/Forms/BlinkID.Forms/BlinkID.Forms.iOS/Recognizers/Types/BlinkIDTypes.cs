@@ -53,20 +53,17 @@ namespace Microblink.Forms.iOS.Recognizers
 
     public sealed class ImageExtensionFactors : IImageExtensionFactors
     {
-        MBImageExtensionFactors nativeFactors;
+        public MBImageExtensionFactors NativeFactors { get; }
 
         public ImageExtensionFactors(MBImageExtensionFactors nativeFactors)
         {
-            this.nativeFactors = nativeFactors;
+            NativeFactors = nativeFactors;
         }
 
-        public float UpFactor => (float)nativeFactors.top;
-
-        public float RightFactor => (float)nativeFactors.right;
-
-        public float DownFactor => (float)nativeFactors.bottom;
-
-        public float LeftFactor => (float)nativeFactors.left;
+        public float UpFactor => (float)NativeFactors.top;
+        public float RightFactor => (float)NativeFactors.right;
+        public float DownFactor => (float)NativeFactors.bottom;
+        public float LeftFactor => (float)NativeFactors.left;
     }
 
     public sealed class ImageExtensionFactorsFactory : IImageExtensionFactorsFactory
