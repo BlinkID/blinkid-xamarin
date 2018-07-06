@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>iOSBinding</RootNamespace>
+    <AssemblyName>iOSBinding</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <PackageId>BlinkID.iOS.Binding</PackageId>
+    <PackageVersion>4.0.0</PackageVersion>
+    <Authors>Microblink</Authors>
+    <Owners>Microblink</Owners>
+    <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version of NuGet package for BlinkID iOS Binding project.</PackageReleaseNotes>
+    <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
+    <Title>BlinkID</Title>
+    <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
+    <ReleaseVersion>4.0.0</ReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="MicroBlink.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="MicroBlink.bundle\Info.plist" />
+    <BundleResource Include="MicroBlink.bundle\No Camera-100.png" />
+    <BundleResource Include="MicroBlink.bundle\PPbeep.wav" />
+    <BundleResource Include="MicroBlink.bundle\arrow.png" />
+    <BundleResource Include="MicroBlink.bundle\arrow%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\arrow_pressed.png" />
+    <BundleResource Include="MicroBlink.bundle\arrow_pressed%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\cro_address_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\cro_authority_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\cro_id_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\cro_name_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\de_address_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\de_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\de_id_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\de_name_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\de_surname_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\en.strings" />
+    <BundleResource Include="MicroBlink.bundle\face_detector_model.zzip" />
+    <BundleResource Include="MicroBlink.bundle\icBackSide.png" />
+    <BundleResource Include="MicroBlink.bundle\icBackSide%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icBackSide%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\icFrontSide.png" />
+    <BundleResource Include="MicroBlink.bundle\icFrontSide%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icFrontSide%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-exit.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-exit%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-flashlight-selected.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-flashlight-selected%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-flashlight.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-flashlight%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-help.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-help%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-ok-big-selected.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-ok-big-selected%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-ok-big.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-ok-big%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-skip-selected.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-skip-selected%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-skip.png" />
+    <BundleResource Include="MicroBlink.bundle\icon-skip%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\id_back_wide.png" />
+    <BundleResource Include="MicroBlink.bundle\id_back_wide%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\id_back_wide%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\id_front_wide.png" />
+    <BundleResource Include="MicroBlink.bundle\id_front_wide%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\id_front_wide%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\malaysian_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\malaysian_state_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_arabic.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_eudl.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_general_blink_ocr.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_malaysian.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_micr.zzip" />
+    <BundleResource Include="MicroBlink.bundle\model_mrtd.zzip" />
+    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkIDOcr_production_4.1.1.zzip" />
+    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkInputOcr_production_4.1.0.zzip" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ll.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ll%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-lr.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-lr%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ul.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ul%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ur.png" />
+    <BundleResource Include="MicroBlink.bundle\scan-corner-ur%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\torchoff.png" />
+    <BundleResource Include="MicroBlink.bundle\torchoff%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\torchoff_pressed.png" />
+    <BundleResource Include="MicroBlink.bundle\torchoff_pressed%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\torchon.png" />
+    <BundleResource Include="MicroBlink.bundle\torchon%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\torchon_pressed.png" />
+    <BundleResource Include="MicroBlink.bundle\torchon_pressed%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\uae_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\uae_name_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\uae_nationality_dictionary.zzip" />
+    <BundleResource Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
+  <Import Project="..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
+</Project>

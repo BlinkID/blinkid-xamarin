@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkIDAndroidBinding", "..\..\Binding\Android\BlinkIDAndroidBinding.csproj", "{957EF3DE-6B8E-402F-81F8-98B969173E81}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkIDSample", "BlinkIDSample.csproj", "{C13CE96B-A36D-42EF-AC62-F96AA60B09F3}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{957EF3DE-6B8E-402F-81F8-98B969173E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957EF3DE-6B8E-402F-81F8-98B969173E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{957EF3DE-6B8E-402F-81F8-98B969173E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{957EF3DE-6B8E-402F-81F8-98B969173E81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C13CE96B-A36D-42EF-AC62-F96AA60B09F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C13CE96B-A36D-42EF-AC62-F96AA60B09F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C13CE96B-A36D-42EF-AC62-F96AA60B09F3}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microblink.Forms.Droid</RootNamespace>
+    <AssemblyName>BlinkID</AssemblyName>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <PackageId>BlinkID.Forms.Android</PackageId>
+    <PackageVersion>4.0.0</PackageVersion>
+    <Authors>Microblink</Authors>
+    <Owners>Microblink</Owners>
+    <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
+    <Summary>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Summary>
+    <Title>BlinkID</Title>
+    <Description>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Description>
+    <ReleaseVersion>4.0.0</ReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageReleaseNotes>Initial version of Android implementation for BlinkID for Xamarin Forms.</PackageReleaseNotes>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\BlinkID.xml</DocumentationFile>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.Annotations">
+      <HintPath>..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Core.Common">
+      <HintPath>..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Common">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Arch.Lifecycle.Runtime">
+      <HintPath>..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\lib\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Compat.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.UI">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.UI.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Core.Utils">
+      <HintPath>..\packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Core.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Fragment">
+      <HintPath>..\packages\Xamarin.Android.Support.Fragment.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Fragment.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Media.Compat">
+      <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Media.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Java.Interop" />
+    <Reference Include="Xamarin.Android.Support.Transition">
+      <HintPath>..\packages\Xamarin.Android.Support.Transition.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Transition.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.CardView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.CardView.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.CardView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.Palette">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.Palette.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.Palette.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsViewGroup">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.Android">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Platform.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MicroblinkScannerImplementation.cs" />
+    <Compile Include="Overlays/OverlaySettings.cs" />
+    <Compile Include="Overlays/Implementations/DocumentOverlaySettings.cs" />
+    <Compile Include="Overlays/Implementations/DocumentVerificationOverlaySettings.cs" />
+    <Compile Include="Overlays/Implementations/BarcodeOverlaySettings.cs" />
+    <Compile Include="Properties/AssemblyInfo.cs" />
+    <Compile Include="Recognizers/Recognizer.cs" />
+    <Compile Include="Recognizers/RecognizerCollection.cs" />
+    <Compile Include="Recognizers/Utils.cs" />
+    <Compile Include="Recognizers/Types/BlinkIDTypes.cs" />
+    <Compile Include="Recognizers/Types/CommonTypes.cs" />
+    <Compile Include="Recognizers/Implementations/MrtdCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/RomaniaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MrtdRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/Pdf417Recognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyKadBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SimNumberRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/IkadRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/HongKongIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyOldIdRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustraliaDlBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyKadFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SerbiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/NewZealandDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UsdlCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/EgyptIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UsdlRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/ColombiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustraliaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/DocumentFaceRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BarcodeRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/ColombiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MyTenteraRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/AustriaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SloveniaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/JordanIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SuccessFrameGrabberRecognizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlinkID.Forms.Core\BlinkID.Forms.Core.csproj">
+      <Project>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</Project>
+      <Name>BlinkID.Forms.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Android\AndroidBinding.csproj">
+      <Project>{80F7D444-771D-4C21-A8AC-D575A7712E55}</Project>
+      <Name>AndroidBinding</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\build\MonoAndroid80\Xamarin.Android.Arch.Core.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Common.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Common.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets" Condition="Exists('..\packages\Xamarin.Android.Arch.Lifecycle.Runtime.1.0.3.1\build\MonoAndroid80\Xamarin.Android.Arch.Lifecycle.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.UI.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.UI.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Core.Utils.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Core.Utils.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Fragment.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Fragment.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Media.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Media.Compat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Animated.Vector.Drawable.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Transition.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Transition.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Transition.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Transition.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v4.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v4.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v4.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v4.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.CardView.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.CardView.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.CardView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.Palette.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.Palette.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.Palette.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.Palette.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.RecyclerView.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.Design.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Design.targets')" />
+  <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.v7.MediaRouter.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
+</Project>

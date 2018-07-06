@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>BlinkID.Forms.Core</PackageId>
+    <PackageVersion>4.0.0</PackageVersion>
+    <Authors>Microblink</Authors>
+    <Owners>Microblink</Owners>
+    <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version of NuGet package of BlinkID for Xamarin Forms.</PackageReleaseNotes>
+    <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Summary>
+    <Title>BlinkID</Title>
+    <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Description>
+    <ReleaseVersion>4.0.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <DocumentationFile>bin\Release\netstandard1.0\BlinkID.Forms.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
+  </ItemGroup>
+</Project>

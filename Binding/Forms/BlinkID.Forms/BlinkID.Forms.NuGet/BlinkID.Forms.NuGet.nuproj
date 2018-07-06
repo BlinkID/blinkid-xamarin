@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36E524FC-AC6D-4614-96E8-B974F93609C9}</ProjectGuid>
+    <Description>BlinkID - a small, but powerful ID scanning library. Use this package in your Xamarin Forms project.</Description>
+    <PackageId>BlinkID.Forms</PackageId>
+    <PackageVersion>4.0.0</PackageVersion>
+    <Authors>Microblink</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BlinkID</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>BlinkID.Forms.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Owners>Microblink</Owners>
+    <Copyright>Microblink</Copyright>
+    <Title>BlinkID</Title>
+    <Summary>BlinkID - a small, but powerful ID scanning library. Use this package in your Xamarin Forms project.</Summary>
+    <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version of BlinkID for Xamarin Forms.</PackageReleaseNotes>
+    <ReleaseVersion>4.0.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlinkID.Forms.Android\BlinkID.Forms.Android.csproj">
+      <Project>{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}</Project>
+      <Name>BlinkID.Forms.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlinkID.Forms.iOS\BlinkID.Forms.iOS.csproj">
+      <Project>{900DCC9A-2218-440C-BD90-E8CF85C845F1}</Project>
+      <Name>BlinkID.Forms.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlinkID.Forms.Core\BlinkID.Forms.Core.csproj">
+      <Project>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</Project>
+      <Name>BlinkID.Forms.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.2</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>

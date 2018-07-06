@@ -1,0 +1,52 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkID.Forms.iOS", "BlinkID.Forms.iOS\BlinkID.Forms.iOS.csproj", "{900DCC9A-2218-440C-BD90-E8CF85C845F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkID.Forms.Android", "BlinkID.Forms.Android\BlinkID.Forms.Android.csproj", "{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}"
+EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "BlinkID.Forms.NuGet", "BlinkID.Forms.NuGet\BlinkID.Forms.NuGet.nuproj", "{36E524FC-AC6D-4614-96E8-B974F93609C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkID.Forms.Core", "BlinkID.Forms.Core\BlinkID.Forms.Core.csproj", "{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidBinding", "..\..\Android\AndroidBinding.csproj", "{80F7D444-771D-4C21-A8AC-D575A7712E55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSBinding", "..\..\iOS\iOSBinding.csproj", "{DE7ABFD3-59C1-4966-84CF-35064D54C98A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{900DCC9A-2218-440C-BD90-E8CF85C845F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900DCC9A-2218-440C-BD90-E8CF85C845F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900DCC9A-2218-440C-BD90-E8CF85C845F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900DCC9A-2218-440C-BD90-E8CF85C845F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E524FC-AC6D-4614-96E8-B974F93609C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E524FC-AC6D-4614-96E8-B974F93609C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E524FC-AC6D-4614-96E8-B974F93609C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E524FC-AC6D-4614-96E8-B974F93609C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F7D444-771D-4C21-A8AC-D575A7712E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F7D444-771D-4C21-A8AC-D575A7712E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F7D444-771D-4C21-A8AC-D575A7712E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F7D444-771D-4C21-A8AC-D575A7712E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.VersionControlPolicy = $1
+		version = 4.0.0
+	EndGlobalSection
+EndGlobal

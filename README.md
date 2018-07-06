@@ -2,166 +2,125 @@
   <img src="https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/logo-microblink-xamarin.png" alt="MicroBlink" title="MicroBlink">
 </p>
 
-# _BlinkID_ Xamarin SDK
+_BlinkID_ Xamarin SDK
+======================
 
-This is BlinkID Xamarin implementation based on native [Objective-C](https://github.com/BlinkID/blinkid-ios) and [Java](https://github.com/BlinkID/blinkid-android) BlinkID SDKs.
+This is BlinkID Xamarin implementation based on native [iOS](https://github.com/BlinkID/blinkid-ios) and [Android](https://github.com/BlinkID/blinkid-android) BlinkID SDKs.
 
-NOTE: **BlinkID SDK** is not available as **Xamarin Component** because it is much simpler to reuse C# Binding Library projects from this repository with resources included inside other than manual import of Android and iOS Resources from **Xamarin Component's Sample applications**. 
+# Integration into Xamarin Forms project
 
-## Getting started
+Steps for integrating BlinkID into your Xamarin Forms project:
 
-This is the open-source code which should be imported to your application's solution. Import existing C# Binding Library iOS and Android projects to solution and add reference to your iOS and Android platform specific projects.  
+1. In both your `Core`, `Droid` and `iOS` projects, add `BlinkID.Forms` NuGet package as a reference.
+2. In your `Droid` project, update your `MainActivity.cs` in a following way:
+    - update your `MainActivity` class so that it implements `Microblink.Forms.Droid.IMicroblinkScannerAndroidHostActivity`. This interface specifies 2 properties and 1 method that you must implement:
+        - `HostActivity` property must return reference to current host activity.
+        - `ScanActivityRequestCode` property must return integer that will be used as request code for Android's `StartActivityForResult` invocation
+        - `ScanningStarted` method will be called just before scanning starts. It will receive currently used `MicroblinkScannerImplementation` as a parameter. You should save a reference to this object because you will need it later in your implementation of `OnActivityResult`
+    - override `Activity's` method `OnActivityResult` and pass its parameters to reference of `MicroblinkScannerImplementation`
+3. Your `iOS` project does not need any modifications.
+4. In your `Core` project, obtain a reference to `IMicroblinkScannerFactory` using a `DependencyService`
+5. Use a factory to create an instance of `IMicroblinkScanner`.
+6. Use the dependency service to create recognizer you wish to use
+7. Subscribe to `Messages.ScanningDoneMessage` that will inform you whether the scanning has completed or was cancelled by end user
+8. Using on or more of recognizer objects obtained in step 6., create an instance `IRecognizerCollection` using `IRecognizerCollectionFactory` obtained via `DependencyService`
+9. Create a settings object for desired UI overlay
+10. Start scanning by invoking method `Scan` on instance of `IMicroblinkScanner`
 
-## Requirements
+## Xamarin Forms sample app
 
-Recommended Xamarin.Forms version is >=2.3.4.247, older versions will produce error: "Error executing task XamlCTask: Could not find file MDB" if you use if with latest version of Xamarin in Xamarin Studio.
+Xamarin Forms sample app is available [here](Samples/Forms).
 
-## Dependencies
-MicroBlink.framework/MicroBlink file in iOS submodule exceeds GitHubs limited file size of 100MB.
-To correctly init the submodule Git LFS is needed. Git LFS can be installed with homebrew:
+# Integration into native Android project
 
-```shell
-brew install git-lfs
-```
+In your native Android project, add reference to `BlinkID.Android.Binding` NuGet package and follow the integration instructions for [BlinkID Android SDK](https://github.com/blinkid/blinkid-android).
 
-After installation, don't forget to restart the terminal!
+## Native Android sample app
 
-## Clone or Download repository
-Downloading a repository just downloads the files from the most recent commit of the default branch but without all the dependencies which are in submodules. We recommend that you clone directory. With a clone option you will get a copy of the history and it’s functional git repository.
+Native Android sample app is available [here](Samples/Android).
 
-To clone repository:
-+ **Copy URL from the `Clone or download` button: https://github.com/BlinkID/blinkid-xamarin.git**
-+ **Open terminal on Mac/Linux or [GitBash](https://git-for-windows.github.io/) on Windows.**
-+ **cd into directory where you want the cloned directory to be made.**
-+ **Type `git clone ` , than past URL**
-+ **Press enter**
+# Integration into native iOS project
 
-## Video tutorial
+In your native iOS project, add reference to `BlinkID.iOS.Binding` NuGet package and follow the integration instructions for [BlinkID iOS SDK](https://github.com/BlinkID/blinkid-ios).
 
-Step by step guide how to start BlinkID Xamarin. Forms Sample application. A tutorial flows from git clone to successfully deployed demo application on Android and iOS device with real-time screen mirroring. Application demo contains simple use of MRTD recognizer with Croatian ID card.
-<p align="center" >
-  <a href="https://vimeo.com/191807117" target="_blank">
-    <img src="https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/1633ffcf080875f4a0ebe7abc8c6501373ba7281/Design/blinkid-xamarin-v1.0-tutorial.gif" alt="Video tutorial" />
-  </a>
-  <a href="https://vimeo.com/191807117" target="_blank">Watch on Vimeo</a>
-  <a href="https://youtu.be/Yg-jwqCo4mw" target="_blank">Watch on YouTube</a>
-</p>
+## Native iOS sample app
 
-## Directory and files summary
+Native iOS sample app is available [here](Samples/iOS).
 
-* `Binding` - Xamarin [iOS](https://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/) and [Android](https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/) Binding Libraries
-* `BidingSource` - Objective-C and Java wrappers source with Samples 
+# Integration via Binding projects
+
+If you do not wish to use BlinkID NuGet packages, you can directly reference binding projects in your solutions. Just make sure that following conditions are met:
+
+- all large binary files have been checked out
+    - to ensure that all files have been checked out, please make sure that you have installed [Git Large File Storage](https://git-lfs.github.com/) and that you have fetched all LFS files with `git lfs pull` command.
+- your solution has referenced all dependencies of the project that you are referencing
+
+# Directory and files summary
+
+* `Binding` - Xamarin [iOS](https://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/) and [Android](https://developer.xamarin.com/guides/android/advanced_topics/binding-a-java-library/) Binding Libraries and Xamarin Forms project from which all mentioned NuGet packages were built
 * `Samples` - [Xamarin.iOS](Samples/iOS), [Xamarin.Android](Samples/Android) and [Xamarin.Forms](Samples/Forms) sample applications
 
-## Quick start
-### Quick start with Sample app
 
-1. Open Xamarin Studio or Visual Studio
-2. Choose one of sample application's solution as starting point:
-    * [Xamarin.Android](Samples/Android)
-    * [Xamarin.iOS](Samples/iOS)
-    * [Xamarin.Forms](Samples/Forms)
-3. More details about Samples [here](Samples)
+# Advanced topics
 
-### Quick start with Existing app
+## Updating native binding libraries
 
-1. "Add Existing Project..." - Binding Library project(s) to your app's Solution
-  * [Android Binding Library](Binding/Android/BlinkIDAndroidBinding.csproj)  
-    ![Add Android Binding Library](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-existing-project-android-binding-library-project.png)  
-  * [iOS Binding Library](Binding/iOS/BlinkIDiOSBinding.csproj)  
-    ![Add iOS Binding Library](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-existing-project-ios-binding-library-project.png)  
-
-2. Add Binding Library project as Reference to platform specific project
-  * Android  
-  ![Add Android Binding Project as Reference](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-binding-android-project-as-reference.png)
-  * iOS  
-  ![Add iOS Binding Project as Reference](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-add-binding-ios-project-as-reference.png)
-
-3a. Android specific
-  * Add `MicroBlink` assets
-  * ![Android Specific add assets](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-android-specific-add-microblink-assets.png)
-  * Use assets from the Sample application, find it [here](Samples/Android/Assets/microblink)
-  * In `AndroidManifest.xml` add `Camera` permission
-
-3b. iOS specific
-  * Update git submodule [`blinkid-ios`](https://github.com/blinkid/blinkid-ios)
-```
-git submodule init  
-git submodule update --recursive
-```
-
-4. Change license key based on unique app ID
-  * Android - Package name 
-  * iOS - Bundle Identifier
-
-5. Feel free to use code from [Sample apps](Samples)
-
-
-## How to update native wrappers and binding libraries?
 ### Android
 
-1. Open project with Android Studio [BindingSource/Android/BlinkIDWrapper](BindingSource/Android/BlinkIDWrapper)
-2. Add/edit exposed functionality from Java to C#
-3. Build `LibWrapper-release.aar` with Gradle
-4. Replace [Binding/Android/LibWrapper-release.aar](Binding/Android/LibWrapper-release.aar) in project [Binding/Android/BlinkIDAndroidBinding.csproj](Binding/Android/BlinkIDAndroidBinding.csproj) with built `LibWrapper-release.aar`  
-Set `Build Action` to `LibraryProjectZip`
-5. Extract `classes.jar` from [github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar)
-6. Replace [Binding/Android/Jars/classes.jar](Binding/Android/Jars/classes.jar) with extracted `classes.jar`  
-Set `Build Action` to `EmbeddedReferenceJar`
-7. Extract native libraries from `LibBlinkID.aar` - `jni/**/*.so` files
-8. Replace native libraries [Binding/Android/lib/*](Binding/Android/lib) with extracted native libraries  
-Set `Build Action` to `EmbeddedNativeLibrary`
-9. Rebuild binding library project
-
-\* Steps from 5 to 8 could be automated with this Bash script [`updateAndroidBindingLibraryFromLibBlinkID.aar.sh`](BindingSource/Android/updateAndroidBindingLibraryFromLibBlinkID.aar.sh)  
-Example to run it from the repository root and fetch latest `LibBlinkID.aar` from master of `blinkid-android` repository:
-```
-./BindingSource/Android/updateAndroidBindingLibraryFromLibBlinkID.aar.sh ./Binding/Android/ https://github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar?raw=true
-```
-
-\* Steps from 5 to 8 are required only if you use newer version of `LibBlinkID.aar` from [github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar](https://github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar)
+1. Download latest AAR from [Android SDK repository](https://github.com/BlinkID/blinkid-android/blob/master/LibBlinkID.aar)
+2. Replace `Binding/Android/Jars/LibBlindID.aar` with latest AAR
+3. Open `Binding/Forms/BlinkID.Forms/BlinkID.Forms.sln` solution
+4. If needed, update `Transforms/Metadata.xml` in `AndroidBinding` project.
+5. Right-click the `AndroidBinding` project, select `Options`, under `NuGet Package` section select `Metadata`
+6. Update `Version` on tab `General`
+7. Update `Release notes` on tab `Details`
+8. Rebuild the `AndroidBinding` project
 
 ### iOS
 
-1. Update submodule [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios) with  
-```
-git submodule init  
-git submodule update --recursive
-```
+1. Download latest [MicroBlink.bundle](https://github.com/BlinkID/blinkid-ios/tree/master/MicroBlink.bundle) and [MicroBlink.framework](https://github.com/BlinkID/blinkid-ios/tree/master/MicroBlink.framework) from [iOS SDK repository](https://github.com/BlinkID/blinkid-ios)
+2. Replace `Binding/iOS/MicroBlink.bundle` and `Binding/iOS/MicroBlink.framework` with latest versions
+3. Generate new `ApiDefinitions.cs` and `StructsAndEnums.cs` with latest version of [Objective Sharpie](https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/objective-sharpie/get-started), but **DO NOT OVERWRITE existing `ApiDefiniton.cs` and `Structs.cs`**
+    - you can generate new `ApiDefinitions.cs` and `StructsAndEnums.cs` with following command (replace `iphoneos11.4` with latest SDK you have on your Mac):
 
-2. Open project with Xcode [BindingSource/iOS/BlinkID/BlinkID.xcodeproj](BindingSource/iOS/BlinkID/BlinkID.xcodeproj)
+    ```
+    cd Binding/iOS
+    sharpie bind -sdk iphoneos11.4 MicroBlink.framework/Headers/MicroBlink.h -scope MicroBlink.framework/Headers -namespace Microblink -c -F .
+    ```
+4. Manually merge new structures from generated `StructsAndEnums.cs` into existing `Structs.cs` while fixing compile errors
+    - `sharpie` generates enums with underlying types such as `nuint` or `nint` which are not supported by latest version of C# - you must replace those with `uint` or `int` types.
+5. Manually merge new API classes from generated `ApiDefinitions.cs` into existing `ApiDefinition.cs`
+    - note that diff between those two files may be quite large, as `ApiDefinition.cs` has been manually edited to ensure correct compilation and correct exposure of all native SDK features. Focus only on adding new recognizers and parsers. Usually it shuold not be necessary to add other classes.
+6. Open `Binding/Forms/BlinkID.Forms/BlinkID.Forms.sln` solution
+7. From `iOSBinding` project remove `MicroBlink.bundle` and re-add it back
+    - this will ensure that all new resources from new bundle are correctly added to the project
+    - also make sure that all resources within added `MicroBlink.bundle` have `BuildAction` set to `BundleResource`
+8. Right-click the `iOSBinding` project, select `Options`, under `NuGet Package` section select `Metadata`
+9. Update `Version` on tab `General`
+10. Update `Release notes` on tab `Details`
+11. Rebuild the `iOSBinding` project and fix any compile errors that may have been introduced in steps 4. and 5.
 
-3. Add/edit exposed functionallity from Objective-C to C#
+## Updating Xamarin Forms core and platform implementations
 
-4. Build Release with Xcode with scheme `BlinkID-Release` which will include every architecture in the binary with post build script
+1. Ensure that **both Android and iOS** native binding libraries have been updated as explained above
+2. Open `Binding/Forms/BlinkID.Forms/BlinkID.Forms.sln` solution
+3. Right-click the `BlinkID.Forms.Core` project, select `Options`, under `NuGet Package` section select `Metadata`
+4. Update `Version` on tab `General`
+5. Update `Release notes` on tab `Details`
+6. Do the same for `BlinkID.Forms.Android`, `BlinkID.Forms.iOS` and `BlinkID.Forms.NuGet` projects
+7. in `BlinkID.Forms.Core` add interfaces for new functionality (e.g. new recognizer)
+8. add implementation for those interfaces in `BlinkID.Forms.Android` and `BlinkID.Forms.iOS` projects
+9. rebuild both `BlinkID.Forms.Core`, `BlinkID.Forms.Android` and `BlinkID.Forms.iOS` projects
 
-5. Check binary with `lipo`
+## Creating updated NuGet packages
 
-```bash
-$ lipo -info ./path-to/Release-iphoneos/BlinkID.framework/BlinkID
-Architectures in the fat file: ./path-to/Release-iphoneos/BlinkID.framework/BlinkID are: armv7 armv7s i386 x86_64 arm64
-```
+1. Ensure that all projects have been updated as described above
+    - this includes Android and iOS native binding libraries **and** Xamarin Forms core and platform implementations libraries
+2. Open `Binding/Forms/BlinkID.Forms/BlinkID.Forms.sln` solution
+3. Make sure `Release` build type is selected in `Visual Studio`
+4. Right-click on `BlinkID.Forms.NuGet` project and select `Create NuGet package`
+    - all projects will be built and their respective NuGet packages will be created in their `bin/Release` folder
+5. Upload packages to [NuGet](https://www.nuget.org/)
 
-If some architectures are missing please check that `BlinkID-Release` is selected as build scheme!  
 
-6. Locate Product `BlinkID.framework` with Finder  
-
-7. Extract `BlinkID` from `BlinkID.framework` and rename it to `BlinkID.a`  
-
-8. Replace [Binding/iOS/BlinkID.a](Binding/iOS/BlinkID.a) with extracted `BlinkID.a`  
-
-9. `BlinkID` Native Reference Properties  
-![iOS Native Reference Properties](https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/blinkid-ios-native-reference-properties.png)  
-
-10. Replace [Binding/iOS/Resources/MicroBlink.bundle](Binding/iOS/Resources/MicroBlink.bundle) with [BindingSource/iOS/blinkid-ios/MicroBlink.bundle](https://github.com/BlinkID/blinkid-ios/tree/master/MicroBlink.bundle)  
-
-11. Generate new `ApiDefinition.cs` and `StructsAndEnums.cs` (optional) with [Objective Sharpie](https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/)
-Example: `sharpie bind -sdk iphoneos9.2 BlinkID.framework/Headers/BlinkID.h -scope BlinkID.framework/Headers -c -F .`  
-Note: Use latest iOS SDK!   
-
-12. Replace [Binding/iOS/ApiDefinition.cs](Binding/iOS/ApiDefinition.cs) and [Binding/iOS/StructsAndEnums.cs](Binding/iOS/StructsAndEnums.cs) with new generated files `ApiDefinition.cs` and `StructsAndEnums.cs`, edit generated files if it is necessary  
-
-13. Rebuild binding library project
-
-\* Steps from 7 to 10 are required only if you use newer version of `MicroBlink.framework` from [BindingSource/iOS/blinkid-ios](https://github.com/BlinkID/blinkid-ios)
 

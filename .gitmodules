@@ -1,3 +1,0 @@
-[submodule "BindingSource/iOS/blinkid-ios"]
-	path = BindingSource/iOS/blinkid-ios
-	url = git@github.com:BlinkID/blinkid-ios.git

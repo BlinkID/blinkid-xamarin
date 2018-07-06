@@ -89,6 +89,9 @@
     <Reference Include="Validation">
       <HintPath>packages\Validation.2.4.18\lib\netstandard1.3\Validation.dll</HintPath>
     </Reference>
+    <Reference Include="iOSBinding">
+      <HintPath>packages\BlinkID.iOS.Binding.4.0.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -111,10 +114,4 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <ItemGroup>
-    <ProjectReference Include="..\..\Binding\iOS\BlinkIDiOSBinding.csproj">
-      <Project>{20BFD052-E54F-4504-A860-E6A18C8A15D8}</Project>
-      <Name>BlinkIDiOSBinding</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

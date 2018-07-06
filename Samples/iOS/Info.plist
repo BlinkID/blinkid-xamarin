@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.microblink.blinkid.xamarin.ios.sample</string>
+	<string>com.microblink.xamarin.blinkid</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

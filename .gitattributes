@@ -1,0 +1,5 @@
+*.aar filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.zzip filter=lfs diff=lfs merge=lfs -text
+Binding/iOS/MicroBlink.framework/MicroBlink filter=lfs diff=lfs merge=lfs -text
