@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlinkIDSample", "BlinkIDSample.csproj", "{0724D23D-2AB8-42E9-AFA9-337D00C4ECA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iOSBinding", "..\..\Binding\iOS\iOSBinding.csproj", "{DE7ABFD3-59C1-4966-84CF-35064D54C98A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -21,13 +19,5 @@ Global
 		{0724D23D-2AB8-42E9-AFA9-337D00C4ECA0}.Release|iPhone.Build.0 = Release|iPhone
 		{0724D23D-2AB8-42E9-AFA9-337D00C4ECA0}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{0724D23D-2AB8-42E9-AFA9-337D00C4ECA0}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|iPhone.Build.0 = Release|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{DE7ABFD3-59C1-4966-84CF-35064D54C98A}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
