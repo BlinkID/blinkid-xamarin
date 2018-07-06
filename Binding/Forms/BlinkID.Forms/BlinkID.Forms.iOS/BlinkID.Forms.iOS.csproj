@@ -21,6 +21,7 @@
     <Description>A small, but powerful ID scanning library.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
+    <PackageReleaseNotes>Initial version of iOS implementation of BlinkID for Xamarin Forms.</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
