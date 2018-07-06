@@ -89,6 +89,11 @@ namespace Microblink.Forms.Droid
 
     public sealed class MicroblinkScannerFactoryImplementation : IMicroblinkScannerFactory
     {
+        /// <summary>
+        /// Set this to your implementation of IMicroblinkScannerAndroidHostActivity interface before
+        /// calling CreateMicroblinkScanner method.
+        /// </summary>
+        /// <value>The android host activity.</value>
         public static IMicroblinkScannerAndroidHostActivity AndroidHostActivity { get; set; }
 
         public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey)
