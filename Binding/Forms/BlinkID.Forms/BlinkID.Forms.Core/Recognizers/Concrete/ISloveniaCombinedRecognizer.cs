@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Slovenian ID Combined Recognizer.
+    /// 
+    /// Slovenian ID Combined recognizer is used for scanning both front and back side of Slovenian ID.
+    /// </summary>
     public interface ISloveniaCombinedRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ISloveniaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISloveniaCombinedRecognizer.
+    /// </summary>
     public interface ISloveniaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

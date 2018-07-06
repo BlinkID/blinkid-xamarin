@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring My Tentera Recognizer.
+    /// 
+    /// My Tentera recognizer is used for scanning My Tentera.
+    /// </summary>
     public interface IMyTenteraRecognizer : IRecognizer
     {
         
@@ -65,6 +70,9 @@
         IMyTenteraRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IMyTenteraRecognizer.
+    /// </summary>
     public interface IMyTenteraRecognizerResult : IRecognizerResult {
         
         /// <summary>

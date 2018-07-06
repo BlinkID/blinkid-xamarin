@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Singapore ID Back Recognizer.
+    /// 
+    /// Singapore ID Back recognizer is used for scanning back side of Singapore ID.
+    /// </summary>
     public interface ISingaporeIdBackRecognizer : IRecognizer
     {
         
@@ -46,6 +51,9 @@
         ISingaporeIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISingaporeIdBackRecognizer.
+    /// </summary>
     public interface ISingaporeIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

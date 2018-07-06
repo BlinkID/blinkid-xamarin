@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Indonesian ID Front Recognizer.
+    /// 
+    /// Indonesian ID Front recognizer is used for scanning front side of Indonesian ID.
+    /// </summary>
     public interface IIndonesiaIdFrontRecognizer : IRecognizer
     {
         
@@ -172,6 +177,9 @@
         IIndonesiaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IIndonesiaIdFrontRecognizer.
+    /// </summary>
     public interface IIndonesiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Romanian ID Front Recognizer.
+    /// 
+    /// Romanian ID Front recognizer is used for scanning front side of Romanian ID.
+    /// </summary>
     public interface IRomaniaIdFrontRecognizer : IRecognizer
     {
         
@@ -110,6 +115,9 @@
         IRomaniaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IRomaniaIdFrontRecognizer.
+    /// </summary>
     public interface IRomaniaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

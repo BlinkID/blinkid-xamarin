@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Document Face Recognizer Recognizer.
+    /// 
+    /// Document Face Recognizer recognizer is used for scanning documents containing face images.
+    /// </summary>
     public interface IDocumentFaceRecognizer : IRecognizer
     {
         
@@ -57,6 +62,9 @@
         IDocumentFaceRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IDocumentFaceRecognizer.
+    /// </summary>
     public interface IDocumentFaceRecognizerResult : IRecognizerResult {
         
         /// <summary>

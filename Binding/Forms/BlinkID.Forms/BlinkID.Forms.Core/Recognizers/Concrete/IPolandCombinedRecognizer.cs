@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Polish ID Combined Recognizer.
+    /// 
+    /// Polish ID Combined recognizer is used for scanning both front and back side of Polish ID.
+    /// </summary>
     public interface IPolandCombinedRecognizer : IRecognizer
     {
         
@@ -100,6 +105,9 @@
         IPolandCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IPolandCombinedRecognizer.
+    /// </summary>
     public interface IPolandCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

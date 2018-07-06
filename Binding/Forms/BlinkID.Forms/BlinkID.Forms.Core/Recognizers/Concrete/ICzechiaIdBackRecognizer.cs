@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Cz ID Back Recognizer.
+    /// 
+    /// Cz ID Back recognizer is used for scanning back side of Cz ID.
+    /// </summary>
     public interface ICzechiaIdBackRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ICzechiaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICzechiaIdBackRecognizer.
+    /// </summary>
     public interface ICzechiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

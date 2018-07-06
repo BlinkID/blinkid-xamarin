@@ -1,5 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// BarcodeRecognizer is used for scanning most of 1D barcode formats, and 2D format
+    /// such as Aztec, DataMatrix and QR code
+    /// </summary>
     public interface IBarcodeRecognizer : IRecognizer
     {
         
@@ -186,6 +190,9 @@
         IBarcodeRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IBarcodeRecognizer.
+    /// </summary>
     public interface IBarcodeRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring iKad Recognizer.
+    /// 
+    /// iKad recognizer is used for scanning iKad.
+    /// </summary>
     public interface IIkadRecognizer : IRecognizer
     {
         
@@ -119,6 +124,9 @@
         IIkadRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IIkadRecognizer.
+    /// </summary>
     public interface IIkadRecognizerResult : IRecognizerResult {
         
         /// <summary>

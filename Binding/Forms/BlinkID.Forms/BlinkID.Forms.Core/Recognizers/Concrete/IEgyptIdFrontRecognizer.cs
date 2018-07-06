@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Egypt ID Front Recognizer.
+    /// 
+    /// Egypt ID Front recognizer is used for scanning front side of Egypt ID.
+    /// </summary>
     public interface IEgyptIdFrontRecognizer : IRecognizer
     {
         
@@ -46,6 +51,9 @@
         IEgyptIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IEgyptIdFrontRecognizer.
+    /// </summary>
     public interface IEgyptIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

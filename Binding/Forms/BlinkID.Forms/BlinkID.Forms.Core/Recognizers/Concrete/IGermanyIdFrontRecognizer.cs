@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring German ID Front Recognizer.
+    /// 
+    /// German ID Front recognizer is used for scanning front side of German ID.
+    /// </summary>
     public interface IGermanyIdFrontRecognizer : IRecognizer
     {
         
@@ -119,6 +124,9 @@
         IGermanyIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IGermanyIdFrontRecognizer.
+    /// </summary>
     public interface IGermanyIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring United Arab Emirates ID Back Recognizer.
+    /// 
+    /// United Arab Emirates ID Back recognizer is used for scanning back side of United Arab Emirates ID.
+    /// </summary>
     public interface IUnitedArabEmiratesIdBackRecognizer : IRecognizer
     {
         
@@ -38,6 +43,9 @@
         IUnitedArabEmiratesIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IUnitedArabEmiratesIdBackRecognizer.
+    /// </summary>
     public interface IUnitedArabEmiratesIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

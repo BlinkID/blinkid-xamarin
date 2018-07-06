@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// MRTD Combined recognizer
+    /// 
+    /// MRTD Combined recognizer is used for scanning both front and back side of generic IDs.
+    /// </summary>
     public interface IMrtdCombinedRecognizer : IRecognizer
     {
         
@@ -46,6 +51,9 @@
         IMrtdCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IMrtdCombinedRecognizer.
+    /// </summary>
     public interface IMrtdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Czech ID Combined Recognizer.
+    /// 
+    /// Czech ID Combined recognizer is used for scanning both front and back side of Czech ID.
+    /// </summary>
     public interface ICzechiaCombinedRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ICzechiaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICzechiaCombinedRecognizer.
+    /// </summary>
     public interface ICzechiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

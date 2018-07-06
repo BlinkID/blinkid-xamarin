@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Australia DL Back Recognizer.
+    /// 
+    /// Australia DL Back recognizer is used for scanning back side of Australia DL.
+    /// </summary>
     public interface IAustraliaDlBackRecognizer : IRecognizer
     {
         
@@ -56,6 +61,9 @@
         IAustraliaDlBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustraliaDlBackRecognizer.
+    /// </summary>
     public interface IAustraliaDlBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

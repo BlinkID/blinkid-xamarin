@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Cz ID Front Recognizer.
+    /// 
+    /// Cz ID Front recognizer is used for scanning front side of Cz ID.
+    /// </summary>
     public interface ICzechiaIdFrontRecognizer : IRecognizer
     {
         
@@ -109,6 +114,9 @@
         ICzechiaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICzechiaIdFrontRecognizer.
+    /// </summary>
     public interface ICzechiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

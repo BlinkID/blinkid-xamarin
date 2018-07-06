@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Slovak ID Combined Recognizer.
+    /// 
+    /// Slovak ID Combined recognizer is used for scanning both front and back side of Slovak ID.
+    /// </summary>
     public interface ISlovakiaCombinedRecognizer : IRecognizer
     {
         
@@ -145,6 +150,9 @@
         ISlovakiaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISlovakiaCombinedRecognizer.
+    /// </summary>
     public interface ISlovakiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

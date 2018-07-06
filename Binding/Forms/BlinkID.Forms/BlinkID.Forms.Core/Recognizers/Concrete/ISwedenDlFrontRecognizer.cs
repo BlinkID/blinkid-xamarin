@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Sweden Dl Front Recognizer.
+    /// 
+    /// Sweden Dl Front recognizer is used for scanning front side of Sweden Dl.
+    /// </summary>
     public interface ISwedenDlFrontRecognizer : IRecognizer
     {
         
@@ -128,6 +133,9 @@
         ISwedenDlFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISwedenDlFrontRecognizer.
+    /// </summary>
     public interface ISwedenDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

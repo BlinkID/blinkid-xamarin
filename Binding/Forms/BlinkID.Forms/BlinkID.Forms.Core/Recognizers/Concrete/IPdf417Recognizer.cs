@@ -1,5 +1,8 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// A recognizer that can scan PDF417 2D barcodes.
+    /// </summary>
     public interface IPdf417Recognizer : IRecognizer
     {
         
@@ -45,6 +48,9 @@
         IPdf417RecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IPdf417Recognizer.
+    /// </summary>
     public interface IPdf417RecognizerResult : IRecognizerResult {
         
         /// <summary>

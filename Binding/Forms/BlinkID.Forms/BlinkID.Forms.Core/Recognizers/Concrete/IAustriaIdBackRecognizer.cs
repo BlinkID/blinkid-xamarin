@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Austrian ID Back Recognizer.
+    /// 
+    /// Austrian ID Back recognizer is used for scanning back side of Austrian ID.
+    /// </summary>
     public interface IAustriaIdBackRecognizer : IRecognizer
     {
         
@@ -83,6 +88,9 @@
         IAustriaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustriaIdBackRecognizer.
+    /// </summary>
     public interface IAustriaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

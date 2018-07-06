@@ -1,5 +1,8 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Recognizer that can perform recognition of barcodes on SIM packaging.
+    /// </summary>
     public interface ISimNumberRecognizer : IRecognizer
     {
         
@@ -10,6 +13,9 @@
         ISimNumberRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISimNumberRecognizer.
+    /// </summary>
     public interface ISimNumberRecognizerResult : IRecognizerResult {
         
         /// <summary>

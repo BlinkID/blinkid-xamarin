@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring My Kad Front Recognizer.
+    /// 
+    /// My Kad Front recognizer is used for scanning front side of My Kad.
+    /// </summary>
     public interface IMyKadFrontRecognizer : IRecognizer
     {
         
@@ -47,6 +52,9 @@
         IMyKadFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IMyKadFrontRecognizer.
+    /// </summary>
     public interface IMyKadFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

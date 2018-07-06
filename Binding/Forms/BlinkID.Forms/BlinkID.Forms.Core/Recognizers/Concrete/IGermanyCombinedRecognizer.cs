@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// German ID Combined Recognizer.
+    /// 
+    /// German ID Combined recognizer is used for scanning both front and back side of German ID.
+    /// </summary>
     public interface IGermanyCombinedRecognizer : IRecognizer
     {
         
@@ -74,6 +79,9 @@
         IGermanyCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IGermanyCombinedRecognizer.
+    /// </summary>
     public interface IGermanyCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

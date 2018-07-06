@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Polish ID Back Recognizer.
+    /// 
+    /// Polish ID Back recognizer is used for scanning back side of Polish ID.
+    /// </summary>
     public interface IPolandIdBackRecognizer : IRecognizer
     {
         
@@ -28,6 +33,9 @@
         IPolandIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IPolandIdBackRecognizer.
+    /// </summary>
     public interface IPolandIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

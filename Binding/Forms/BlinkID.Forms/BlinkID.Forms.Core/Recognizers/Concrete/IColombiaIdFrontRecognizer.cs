@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Colombia ID Front Recognizer.
+    /// 
+    /// Colombia ID Front recognizer is used for scanning front side of Colombia ID.
+    /// </summary>
     public interface IColombiaIdFrontRecognizer : IRecognizer
     {
         
@@ -94,6 +99,9 @@
         IColombiaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IColombiaIdFrontRecognizer.
+    /// </summary>
     public interface IColombiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

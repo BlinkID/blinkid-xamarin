@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Jordan ID Front Recognizer.
+    /// 
+    /// Jordan ID Front recognizer is used for scanning front side of Jordan ID.
+    /// </summary>
     public interface IJordanIdFrontRecognizer : IRecognizer
     {
         
@@ -74,6 +79,9 @@
         IJordanIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IJordanIdFrontRecognizer.
+    /// </summary>
     public interface IJordanIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

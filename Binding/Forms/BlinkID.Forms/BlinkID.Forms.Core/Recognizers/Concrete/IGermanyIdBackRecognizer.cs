@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring German ID Back Recognizer.
+    /// 
+    /// German ID Back recognizer is used for scanning back side of German ID.
+    /// </summary>
     public interface IGermanyIdBackRecognizer : IRecognizer
     {
         
@@ -83,6 +88,9 @@
         IGermanyIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IGermanyIdBackRecognizer.
+    /// </summary>
     public interface IGermanyIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

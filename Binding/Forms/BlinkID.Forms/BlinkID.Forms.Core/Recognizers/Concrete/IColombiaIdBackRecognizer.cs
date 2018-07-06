@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Colombia ID Back Recognizer.
+    /// 
+    /// Colombia ID Back recognizer is used for scanning back side of Colombia ID.
+    /// </summary>
     public interface IColombiaIdBackRecognizer : IRecognizer
     {
         
@@ -33,6 +38,9 @@
         IColombiaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IColombiaIdBackRecognizer.
+    /// </summary>
     public interface IColombiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

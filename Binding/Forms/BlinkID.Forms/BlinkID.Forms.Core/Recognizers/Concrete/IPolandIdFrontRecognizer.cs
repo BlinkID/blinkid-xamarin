@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Polish ID Front Recognizer.
+    /// 
+    /// Polish ID Front recognizer is used for scanning front side of Polish ID.
+    /// </summary>
     public interface IPolandIdFrontRecognizer : IRecognizer
     {
         
@@ -91,6 +96,9 @@
         IPolandIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IPolandIdFrontRecognizer.
+    /// </summary>
     public interface IPolandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

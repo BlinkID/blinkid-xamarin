@@ -1,5 +1,11 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Croatian ID Back Recognizer.
+    /// 
+    /// Croatian ID Back recognizer is used for scanning back side of Croatian ID. It always extracts
+    /// MRZ zone and address of ID holder while extracting other elements is optional.
+    /// </summary>
     public interface ICroatiaIdBackRecognizer : IRecognizer
     {
         
@@ -46,6 +52,9 @@
         ICroatiaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICroatiaIdBackRecognizer.
+    /// </summary>
     public interface ICroatiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

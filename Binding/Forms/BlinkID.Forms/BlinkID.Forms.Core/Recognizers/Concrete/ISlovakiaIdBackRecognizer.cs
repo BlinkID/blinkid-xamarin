@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Slovak ID Back Recognizer.
+    /// 
+    /// Slovak ID Back recognizer is used for scanning back side of Slovak ID.
+    /// </summary>
     public interface ISlovakiaIdBackRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ISlovakiaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISlovakiaIdBackRecognizer.
+    /// </summary>
     public interface ISlovakiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

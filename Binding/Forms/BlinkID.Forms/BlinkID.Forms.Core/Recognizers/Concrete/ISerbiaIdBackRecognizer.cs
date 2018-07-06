@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Serbian ID Back Recognizer.
+    /// 
+    /// Serbian ID Back recognizer is used for scanning back side of Serbian ID.
+    /// </summary>
     public interface ISerbiaIdBackRecognizer : IRecognizer
     {
         
@@ -28,6 +33,9 @@
         ISerbiaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISerbiaIdBackRecognizer.
+    /// </summary>
     public interface ISerbiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Swiss ID Front Recognizer.
+    /// 
+    /// Swiss ID Front recognizer is used for scanning front side of Swiss ID.
+    /// </summary>
     public interface ISwitzerlandIdFrontRecognizer : IRecognizer
     {
         
@@ -64,6 +69,9 @@
         ISwitzerlandIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISwitzerlandIdFrontRecognizer.
+    /// </summary>
     public interface ISwitzerlandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

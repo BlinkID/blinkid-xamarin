@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Hong Kong ID Front Recognizer.
+    /// 
+    /// Hong Kong ID Front recognizer is used for scanning front side of Hong Kong ID.
+    /// </summary>
     public interface IHongKongIdFrontRecognizer : IRecognizer
     {
         
@@ -82,6 +87,9 @@
         IHongKongIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IHongKongIdFrontRecognizer.
+    /// </summary>
     public interface IHongKongIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

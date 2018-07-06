@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Singapore ID Combined Recognizer.
+    /// 
+    /// Singapore ID Combined recognizer is used for scanning both front and back side of Singapore ID.
+    /// </summary>
     public interface ISingaporeCombinedRecognizer : IRecognizer
     {
         
@@ -46,6 +51,9 @@
         ISingaporeCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISingaporeCombinedRecognizer.
+    /// </summary>
     public interface ISingaporeCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

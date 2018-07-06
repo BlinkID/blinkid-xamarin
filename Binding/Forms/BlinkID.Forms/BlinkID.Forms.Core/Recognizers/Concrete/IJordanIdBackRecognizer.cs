@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Jordan ID Back Recognizer.
+    /// 
+    /// Jordan ID Back recognizer is used for scanning back side of Jordan ID.
+    /// </summary>
     public interface IJordanIdBackRecognizer : IRecognizer
     {
         
@@ -28,6 +33,9 @@
         IJordanIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IJordanIdBackRecognizer.
+    /// </summary>
     public interface IJordanIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

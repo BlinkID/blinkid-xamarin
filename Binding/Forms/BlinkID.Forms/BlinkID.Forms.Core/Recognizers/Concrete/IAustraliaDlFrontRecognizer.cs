@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Australia DL Front Recognizer.
+    /// 
+    /// Australia DL Front recognizer is used for scanning front side of Australia DL.
+    /// </summary>
     public interface IAustraliaDlFrontRecognizer : IRecognizer
     {
         
@@ -83,6 +88,9 @@
         IAustraliaDlFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustraliaDlFrontRecognizer.
+    /// </summary>
     public interface IAustraliaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

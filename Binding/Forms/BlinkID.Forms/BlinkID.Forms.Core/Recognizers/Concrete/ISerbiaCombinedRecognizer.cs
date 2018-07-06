@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Serbian ID Combined Recognizer.
+    /// 
+    /// Serbian ID Combined recognizer is used for scanning both front and back side of Serbian ID.
+    /// </summary>
     public interface ISerbiaCombinedRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ISerbiaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISerbiaCombinedRecognizer.
+    /// </summary>
     public interface ISerbiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

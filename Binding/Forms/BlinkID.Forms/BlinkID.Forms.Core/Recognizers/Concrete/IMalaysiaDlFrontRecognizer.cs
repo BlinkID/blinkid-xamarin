@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Malaysian DL Front Recognizer.
+    /// 
+    /// Malaysian DL Front recognizer is used for scanning front side of Malaysian DL.
+    /// </summary>
     public interface IMalaysiaDlFrontRecognizer : IRecognizer
     {
         
@@ -101,6 +106,9 @@
         IMalaysiaDlFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IMalaysiaDlFrontRecognizer.
+    /// </summary>
     public interface IMalaysiaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

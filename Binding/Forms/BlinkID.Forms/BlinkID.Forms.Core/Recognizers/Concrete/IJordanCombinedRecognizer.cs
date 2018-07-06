@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Jordan ID Combined Recognizer.
+    /// 
+    /// Jordan ID Combined recognizer is used for scanning both front and back side of Jordan ID.
+    /// </summary>
     public interface IJordanCombinedRecognizer : IRecognizer
     {
         
@@ -73,6 +78,9 @@
         IJordanCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IJordanCombinedRecognizer.
+    /// </summary>
     public interface IJordanCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

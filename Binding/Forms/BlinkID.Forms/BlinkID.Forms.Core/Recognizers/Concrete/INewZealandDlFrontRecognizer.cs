@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring New Zealand DL Front Recognizer.
+    /// 
+    /// New Zealand DL Front recognizer is used for scanning front side of New Zealand DL.
+    /// </summary>
     public interface INewZealandDlFrontRecognizer : IRecognizer
     {
         
@@ -109,6 +114,9 @@
         INewZealandDlFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for INewZealandDlFrontRecognizer.
+    /// </summary>
     public interface INewZealandDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

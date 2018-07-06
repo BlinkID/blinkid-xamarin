@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Singapore ID Front Recognizer.
+    /// 
+    /// Singapore ID Front recognizer is used for scanning front side of Singapore ID.
+    /// </summary>
     public interface ISingaporeIdFrontRecognizer : IRecognizer
     {
         
@@ -73,6 +78,9 @@
         ISingaporeIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISingaporeIdFrontRecognizer.
+    /// </summary>
     public interface ISingaporeIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

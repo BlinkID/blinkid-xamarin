@@ -1,5 +1,8 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Recognizer that scan 2D barcodes from United States Driver License.
+    /// </summary>
     public interface IUsdlRecognizer : IRecognizer
     {
 
@@ -29,6 +32,9 @@
         IUsdlRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IUsdlRecognizer.
+    /// </summary>
     public interface IUsdlRecognizerResult : IRecognizerResult
     {
 

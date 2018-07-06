@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Austrian Passport Recognizer.
+    /// 
+    /// Austrian Passport recognizer is used for scanning Austrian Passport.
+    /// </summary>
     public interface IAustriaPassportRecognizer : IRecognizer
     {
         
@@ -175,6 +180,9 @@
         IAustriaPassportRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustriaPassportRecognizer.
+    /// </summary>
     public interface IAustriaPassportRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Croatian ID Combined Recognizer.
+    /// 
+    /// Croatian ID Combined recognizer is used for scanning both front and back side of Croatian ID.
+    /// </summary>
     public interface ICroatiaCombinedRecognizer : IRecognizer
     {
         
@@ -55,6 +60,9 @@
         ICroatiaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICroatiaCombinedRecognizer.
+    /// </summary>
     public interface ICroatiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

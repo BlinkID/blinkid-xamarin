@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Austrian ID Combined Recognizer.
+    /// 
+    /// Austrian ID Combined recognizer is used for scanning both front and back side of Austrian ID.
+    /// </summary>
     public interface IAustriaCombinedRecognizer : IRecognizer
     {
         
@@ -202,6 +207,9 @@
         IAustriaCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustriaCombinedRecognizer.
+    /// </summary>
     public interface IAustriaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>

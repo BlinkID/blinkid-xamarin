@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring German Old ID Recognizer.
+    /// 
+    /// German Old ID recognizer is used for scanning German Old ID.
+    /// </summary>
     public interface IGermanyOldIdRecognizer : IRecognizer
     {
         
@@ -65,6 +70,9 @@
         IGermanyOldIdRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IGermanyOldIdRecognizer.
+    /// </summary>
     public interface IGermanyOldIdRecognizerResult : IRecognizerResult {
         
         /// <summary>

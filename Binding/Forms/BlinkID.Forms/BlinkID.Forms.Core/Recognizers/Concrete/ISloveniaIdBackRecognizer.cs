@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Slovenian ID Back Recognizer.
+    /// 
+    /// Slovenian ID Back recognizer is used for scanning back side of Slovenian ID.
+    /// </summary>
     public interface ISloveniaIdBackRecognizer : IRecognizer
     {
         
@@ -46,6 +51,9 @@
         ISloveniaIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISloveniaIdBackRecognizer.
+    /// </summary>
     public interface ISloveniaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,11 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Croatian ID Front Recognizer.
+    /// 
+    /// Croatian ID Front recognizer is used for scanning front side of Croatian ID. It always extracts
+    /// identity card number, first and last name of ID holder while extracting other elements is optional.
+    /// </summary>
     public interface ICroatiaIdFrontRecognizer : IRecognizer
     {
         
@@ -82,6 +88,9 @@
         ICroatiaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ICroatiaIdFrontRecognizer.
+    /// </summary>
     public interface ICroatiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

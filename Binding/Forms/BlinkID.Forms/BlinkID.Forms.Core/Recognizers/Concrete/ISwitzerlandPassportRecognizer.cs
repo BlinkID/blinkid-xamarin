@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Swiss Passport Recognizer.
+    /// 
+    /// Swiss Passport recognizer is used for scanning Swiss Passport.
+    /// </summary>
     public interface ISwitzerlandPassportRecognizer : IRecognizer
     {
         
@@ -127,6 +132,9 @@
         ISwitzerlandPassportRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISwitzerlandPassportRecognizer.
+    /// </summary>
     public interface ISwitzerlandPassportRecognizerResult : IRecognizerResult {
         
         /// <summary>

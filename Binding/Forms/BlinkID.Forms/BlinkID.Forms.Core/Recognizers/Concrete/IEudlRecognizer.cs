@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring EU Driver License Recognizer.
+    /// 
+    /// EU Driver License recognizer is used for scanning EU Driver License.
+    /// </summary>
     public interface IEudlRecognizer : IRecognizer
     {
         
@@ -102,6 +107,9 @@
         IEudlRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IEudlRecognizer.
+    /// </summary>
     public interface IEudlRecognizerResult : IRecognizerResult {
         
         /// <summary>

@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Slovak ID Front Recognizer.
+    /// 
+    /// Slovak ID Front recognizer is used for scanning front side of Slovak ID.
+    /// </summary>
     public interface ISlovakiaIdFrontRecognizer : IRecognizer
     {
         
@@ -109,6 +114,9 @@
         ISlovakiaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISlovakiaIdFrontRecognizer.
+    /// </summary>
     public interface ISlovakiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

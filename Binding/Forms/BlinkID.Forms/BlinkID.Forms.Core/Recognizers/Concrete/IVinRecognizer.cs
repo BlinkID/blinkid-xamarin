@@ -1,5 +1,8 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Recognizer that can perform recognition of VINs (Vehicle Identification Number).
+    /// </summary>
     public interface IVinRecognizer : IRecognizer
     {
         
@@ -10,6 +13,9 @@
         IVinRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IVinRecognizer.
+    /// </summary>
     public interface IVinRecognizerResult : IRecognizerResult {
         
         /// <summary>

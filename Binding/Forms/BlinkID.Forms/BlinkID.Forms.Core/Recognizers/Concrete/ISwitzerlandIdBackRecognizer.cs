@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Swiss ID Back Recognizer.
+    /// 
+    /// Swiss ID Back recognizer is used for scanning back side of Swiss ID.
+    /// </summary>
     public interface ISwitzerlandIdBackRecognizer : IRecognizer
     {
         
@@ -82,6 +87,9 @@
         ISwitzerlandIdBackRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISwitzerlandIdBackRecognizer.
+    /// </summary>
     public interface ISwitzerlandIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>

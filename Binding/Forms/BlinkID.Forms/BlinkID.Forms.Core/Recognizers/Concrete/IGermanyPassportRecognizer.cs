@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring German Passport Recognizer.
+    /// 
+    /// German Passport recognizer is used for scanning German Passport.
+    /// </summary>
     public interface IGermanyPassportRecognizer : IRecognizer
     {
         
@@ -110,6 +115,9 @@
         IGermanyPassportRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IGermanyPassportRecognizer.
+    /// </summary>
     public interface IGermanyPassportRecognizerResult : IRecognizerResult {
         
         /// <summary>

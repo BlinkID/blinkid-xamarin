@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Austrian ID Front Recognizer.
+    /// 
+    /// Aus ID Front recognizer is used for scanning front side of Austrian Id.
+    /// </summary>
     public interface IAustriaIdFrontRecognizer : IRecognizer
     {
         
@@ -112,6 +117,9 @@
         IAustriaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IAustriaIdFrontRecognizer.
+    /// </summary>
     public interface IAustriaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>

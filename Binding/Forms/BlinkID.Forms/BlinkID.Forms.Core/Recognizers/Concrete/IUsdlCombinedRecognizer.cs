@@ -1,6 +1,10 @@
-﻿using System;
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// USDL Combined Recognizer.
+    ///
+    /// USDL Combined recognizer is used for scanning both front and back side of US Driver's License.
+    /// </summary>
     public interface IUsdlCombinedRecognizer : IRecognizer
     {
         /// <summary>
@@ -44,6 +48,9 @@ namespace Microblink.Forms.Core.Recognizers
         IUsdlCombinedRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for IUsdlCombinedRecognizer.
+    /// </summary>
     public interface IUsdlCombinedRecognizerResult : IRecognizerResult
     {
         /// <summary>

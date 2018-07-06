@@ -1,5 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
+    /// <summary>
+    /// Class for configuring Slovenian ID Front Recognizer.
+    /// 
+    /// Slovenian ID Front recognizer is used for scanning front side of Slovenian ID.
+    /// </summary>
     public interface ISloveniaIdFrontRecognizer : IRecognizer
     {
         
@@ -82,6 +87,9 @@
         ISloveniaIdFrontRecognizerResult Result { get; }
     }
 
+    /// <summary>
+    /// Result object for ISloveniaIdFrontRecognizer.
+    /// </summary>
     public interface ISloveniaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
