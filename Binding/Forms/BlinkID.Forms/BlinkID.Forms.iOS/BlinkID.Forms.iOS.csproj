@@ -12,13 +12,14 @@
     <AssemblyName>BlinkID</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.Forms.iOS</PackageId>
-    <PackageVersion>4.0.0.1</PackageVersion>
+    <PackageVersion>4.0.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
     <Summary>A small, but powerful ID scanning library</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library.</Description>
+    <ReleaseVersion>4.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
