@@ -16,9 +16,9 @@
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
     <PackageReleaseNotes>Initial version of NuGet package for BlinkID iOS Binding project.</PackageReleaseNotes>
-    <Summary>A small, but powerful ID scanning library</Summary>
+    <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
     <Title>BlinkID</Title>
-    <Description>A small, but powerfull ID scanning library.</Description>
+    <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>

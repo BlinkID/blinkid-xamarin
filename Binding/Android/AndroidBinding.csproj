@@ -22,9 +22,9 @@
     <PackageReleaseNotes>Initial version of NuGet package for Android AAR binding project.
 
 - added classes that were missing and are required for Xamarin Forms integration project</PackageReleaseNotes>
-    <Summary>A small, but powerful ID scanning library.</Summary>
+    <Summary>A small, but powerful ID scanning library - native Android SDK binding package.</Summary>
     <Title>BlinkID</Title>
-    <Description>A small, but powerful ID scanning library.</Description>
+    <Description>A small, but powerful ID scanning library - native Android SDK binding package.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>

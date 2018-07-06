@@ -14,9 +14,9 @@
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <Summary>A small, but powerful ID scanning library.</Summary>
+    <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms project.</Summary>
     <Title>BlinkID</Title>
-    <Description>A small, but powerful ID scanning library.</Description>
+    <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms project.</Description>
     <PackOnBuild>true</PackOnBuild>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackageReleaseNotes>Initial version of BlinkID for Xamarin Forms.</PackageReleaseNotes>
