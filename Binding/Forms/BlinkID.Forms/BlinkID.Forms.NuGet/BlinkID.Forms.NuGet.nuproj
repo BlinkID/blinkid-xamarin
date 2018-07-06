@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{36E524FC-AC6D-4614-96E8-B974F93609C9}</ProjectGuid>
     <Description>BlinkID - a small, but powerful ID scanning library. Use this package in your Xamarin Forms project.</Description>
-    <PackageId>BlinkID</PackageId>
+    <PackageId>BlinkID.Forms</PackageId>
     <PackageVersion>4.0.0</PackageVersion>
     <Authors>Microblink</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
