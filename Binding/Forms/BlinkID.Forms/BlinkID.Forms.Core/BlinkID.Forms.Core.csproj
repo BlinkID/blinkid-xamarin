@@ -1,133 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Microblink.Forms.Core</RootNamespace>
-    <AssemblyName>BlinkID.Forms.Core</AssemblyName>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
     <PackageId>BlinkID.Forms.Core</PackageId>
     <PackageVersion>4.0.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms project.</Summary>
+    <PackageReleaseNotes>Initial version of NuGet package of BlinkID for Xamarin Forms.</PackageReleaseNotes>
+    <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Summary>
     <Title>BlinkID</Title>
-    <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms project.</Description>
-    <PackOnBuild>true</PackOnBuild>
+    <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
-    <PackageReleaseNotes>Initial version of BlinkID for Xamarin Forms.</PackageReleaseNotes>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\BlinkID.Forms.Core.xml</DocumentationFile>
+    <DebugType></DebugType>
+    <DocumentationFile>bin\Release\netstandard1.0\BlinkID.Forms.Core.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="IMicroblinkScanner.cs" />
-    <Compile Include="Messages.cs" />
-    <Compile Include="Overlays/IOverlaySettings.cs" />
-    <Compile Include="Overlays/Concrete/IDocumentOverlaySettings.cs" />
-    <Compile Include="Overlays/Concrete/IDocumentVerificationOverlaySettings.cs" />
-    <Compile Include="Overlays/Concrete/IBarcodeOverlaySettings.cs" />
-    <Compile Include="Properties/AssemblyInfo.cs" />
-    <Compile Include="Recognizers/IRecognizerCollection.cs" />
-    <Compile Include="Recognizers/IRecognizer.cs" />
-    <Compile Include="Recognizers/Types/BlinkIDTypes.cs" />
-    <Compile Include="Recognizers/Types/CommonTypes.cs" />
-    <Compile Include="Recognizers/Concrete/IAustraliaDlBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IHongKongIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICroatiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IPolandIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IAustriaPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISuccessFrameGrabberRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/UsdlKeys.cs" />
-    <Compile Include="Recognizers/Concrete/ISlovakiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMrtdRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IUsdlCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISlovakiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISerbiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IIkadRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IEgyptIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IRomaniaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMyTenteraRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICzechiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMalaysiaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IIndonesiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IDocumentFaceRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IVinRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICroatiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IGermanyPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IUnitedArabEmiratesIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICroatiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISloveniaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISwedenDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISwitzerlandIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IPdf417Recognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IEudlRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IBarcodeRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMrtdCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISimNumberRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMyKadBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IPolandCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IAustraliaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IAustriaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IColombiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IAustriaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/INewZealandDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IJordanIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IUsdlRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICzechiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISerbiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IPolandIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISlovakiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISerbiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISingaporeIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISwitzerlandIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IJordanIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IColombiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IGermanyCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISwitzerlandPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IAustriaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IJordanCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IMyKadFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IUnitedArabEmiratesIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IGermanyIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IGermanyIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISingaporeIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISloveniaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/IGermanyOldIdRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISingaporeCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ICzechiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Concrete/ISloveniaIdBackRecognizer.cs" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\netstandard1.0\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="project.json" />
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
