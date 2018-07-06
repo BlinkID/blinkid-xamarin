@@ -117,6 +117,17 @@
       <HintPath>..\packages\Xamarin.Forms.3.1.0.583944\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="BlinkIDAARBinding">
+      <HintPath>..\packages\BlinkID.Android.Binding.4.0.0.1\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkID.Forms.Core">
+      <HintPath>..\packages\BlinkID.Forms.Core.4.0.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkID">
+      <HintPath>..\packages\BlinkID.Forms.Android.4.0.0\lib\monoandroid81\BlinkID.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -144,10 +155,6 @@
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\Forms\BlinkID.Forms\BlinkID.Forms.Android\BlinkID.Forms.Android.csproj">
-      <Project>{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}</Project>
-      <Name>BlinkID.Forms.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />
