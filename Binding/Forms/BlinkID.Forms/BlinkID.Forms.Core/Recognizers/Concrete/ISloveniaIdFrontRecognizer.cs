@@ -1,80 +1,63 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Slovenian ID Front Recognizer.
+    ///  Recognizer which can scan the front side of Slovenian national ID cards.
     /// 
-    /// Slovenian ID Front recognizer is used for scanning front side of Slovenian ID.
     /// </summary>
     public interface ISloveniaIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        ///  Defines if date of birth of Slovenian ID owner should be extracted
-        /// 
-        ///   
+        /// true if date of birth of Slovenian ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        ///  Defines if date of expiry of Slovenian ID should be extracted
-        /// 
-        ///   
+        /// true if date of expiry is being extracted from Slovenian ID 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        ///  Defines if nationality of Slovenian ID owner should be extracted
-        /// 
-        ///   
+        /// true if nationality of Slovenian ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        ///  Defines if sex of Slovenian ID owner should be extracted
-        /// 
-        ///   
+        /// true if sex of Slovenian ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Sets whether signature image from ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether signature image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -93,47 +76,47 @@
     public interface ISloveniaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Slovenian ID owner. 
+        /// the date of birth of Slovenian ID owner 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Slovenian ID owner. 
+        /// the date of expiry of Slovenian ID owner 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Slovenian ID owner. 
+        /// the first name of the Slovenian ID owner. 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The last name of the Slovenian ID owner. 
+        /// the last name of the Slovenian ID owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The nationality of the Slovenian ID owner. 
+        /// nationality of the Slovenian ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The sex of the Slovenian ID owner. 
+        /// sex of the Slovenian ID owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// image of the signature if enabled with returnSignatureImage property. 
+        ///  signature image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         

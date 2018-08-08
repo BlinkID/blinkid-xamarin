@@ -1,81 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Austrian ID Back Recognizer.
-    /// 
-    /// Austrian ID Back recognizer is used for scanning back side of Austrian ID.
+    /// Recognizer which can scan back side of Austrian national ID cards.
     /// </summary>
     public interface IAustriaIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of issuance should be extracted from back side of Austrian ID
-        /// 
-        ///  
+        /// Defines if date of issuance should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssuance { get; set; }
         
         /// <summary>
-        /// Defines if owner's height should be extracted from back side of Austrian ID
-        /// 
-        ///  
+        /// Defines if height of Austrian ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractHeight { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from back side of Austrian ID
-        /// 
-        ///  
+        /// Defines if issuing authority should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if owner's place of birth should be extracted from back side of Austrian ID
-        /// 
-        ///  
+        /// Defines if place of birth of Austrian ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if owner's principal residence should be extracted from back side of Austrian ID
-        /// 
-        ///  
+        /// Defines if principal residence of Austrian ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPrincipalResidence { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -94,47 +75,47 @@
     public interface IAustriaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Date Of Issuance of Austrian ID. 
+        /// The date of issuance of the ID 
         /// </summary>
         IDate DateOfIssuance { get; }
         
         /// <summary>
-        /// The Document Number of Austrian ID. 
+        /// The document number of Austrian ID 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The Eye Colour of Austrian ID owner. 
+        /// The eye colour of the card holder. 
         /// </summary>
         string EyeColour { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The Height of Austrian ID owner. 
+        /// The height of the cardholder in centimeters 
         /// </summary>
         string Height { get; }
         
         /// <summary>
-        /// The Issuing Authority of Austrian ID. 
+        /// The issuing authority of Austrian ID 
         /// </summary>
         string IssuingAuthority { get; }
         
         /// <summary>
-        /// The mrz on the back side of Austrian ID. 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
         IMrzResult MrzResult { get; }
         
         /// <summary>
-        /// The Place Of Birth of Austrian ID owner. 
+        /// The place of birth of the card holder 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// The Principal Residence of Austrian ID owner. 
+        /// The principal residence at issuance of the card holder. 
         /// </summary>
         string PrincipalResidence { get; }
         

@@ -1,44 +1,35 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Egypt ID Front Recognizer.
+    ///  Recognizer for reading Egypt ID Front document.
     /// 
-    /// Egypt ID Front recognizer is used for scanning front side of Egypt ID.
     /// </summary>
     public interface IEgyptIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's national number should be extracted from Egypt ID
-        /// 
-        ///  
+        /// true if national number of Egypt ID Front owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationalNumber { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -57,22 +48,22 @@
     public interface IEgyptIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The document number of the Egypt ID. 
+        /// the Egypt ID document number. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The National Number of the Egypt ID owner. 
+        /// the Egypt ID card owner national number. 
         /// </summary>
         string NationalNumber { get; }
         

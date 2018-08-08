@@ -1,35 +1,31 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Colombia ID Back Recognizer.
-    /// 
-    /// Colombia ID Back recognizer is used for scanning back side of Colombia ID.
+    /// Recognizer which can scan back side of Colombian national ID cards.
     /// </summary>
     public interface IColombiaIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool NullQuietZoneAllowed { get; set; }
+        bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Set this to true to scan even barcode not compliant with standards
-        /// For example, malformed PDF417 barcodes which were incorrectly encoded
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to '250'
         /// </summary>
-        bool ScanUncertain { get; set; }
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Defines whether full document image will be available in result. 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnFullDocumentImage { get; set; }
         
 
         /// <summary>
@@ -44,37 +40,42 @@
     public interface IColombiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The blood group of the Colombian ID owner. 
+        /// owner’s date of birth 
+        /// </summary>
+        IDate BirthDate { get; }
+        
+        /// <summary>
+        /// owner’s blood group 
         /// </summary>
         string BloodGroup { get; }
         
         /// <summary>
-        /// The date of birth of the Colombian ID owner. 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The document number of the Colombian ID card. 
+        /// the Colombian ID document number number. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The fingerprint of the Colombian ID owner. 
+        /// owner’s encoded fingerprint 
         /// </summary>
         byte[] Fingerprint { get; }
         
         /// <summary>
-        /// The first name of the Colombian ID owner. 
+        /// owner’s first name 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// The last name of the Colombian ID owner. 
+        ///  image of the full document 
+        /// </summary>
+        Xamarin.Forms.ImageSource FullDocumentImage { get; }
+        
+        /// <summary>
+        /// owner’s last name 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The sex of the Colombian ID owner. 
+        /// owner’s sex 
         /// </summary>
         string Sex { get; }
         
