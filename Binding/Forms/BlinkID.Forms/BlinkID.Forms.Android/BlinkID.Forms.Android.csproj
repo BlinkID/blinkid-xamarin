@@ -15,7 +15,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <PackageId>BlinkID.Forms.Android</PackageId>
-    <PackageVersion>4.0.0</PackageVersion>
+    <PackageVersion>4.1.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -144,9 +144,11 @@
     <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SwitzerlandDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SwitzerlandPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdBackRecognizer.cs" />
@@ -174,7 +176,9 @@
     <Compile Include="Recognizers/Implementations/SingaporeIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MoroccoIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/MoroccoIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/NewZealandDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
@@ -182,6 +186,7 @@
     <Compile Include="Recognizers/Implementations/AustriaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/EgyptIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SingaporeChangiEmployeeIdRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SingaporeCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UsdlRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/ColombiaIdBackRecognizer.cs" />

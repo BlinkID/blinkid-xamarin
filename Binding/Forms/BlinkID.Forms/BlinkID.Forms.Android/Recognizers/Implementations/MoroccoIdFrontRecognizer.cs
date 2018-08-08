@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AustriaPassportRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MoroccoIdFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class AustriaPassportRecognizer : Recognizer, IAustriaPassportRecognizer
+    public sealed class MoroccoIdFrontRecognizer : Recognizer, IMoroccoIdFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer nativeRecognizer;
 
-        AustriaPassportRecognizerResult result;
+        MoroccoIdFrontRecognizerResult result;
 
-        public AustriaPassportRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer())
+        public MoroccoIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer;
-            result = new AustriaPassportRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer;
+            result = new MoroccoIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IAustriaPassportRecognizerResult Result => result;
+        public IMoroccoIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -39,40 +39,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfExpiry(value);
         }
         
-        public bool ExtractDateOfIssue 
+        public bool ExtractName 
         { 
-            get => nativeRecognizer.ShouldExtractDateOfIssue(); 
-            set => nativeRecognizer.SetExtractDateOfIssue(value);
-        }
-        
-        public bool ExtractGivenName 
-        { 
-            get => nativeRecognizer.ShouldExtractGivenName(); 
-            set => nativeRecognizer.SetExtractGivenName(value);
-        }
-        
-        public bool ExtractHeight 
-        { 
-            get => nativeRecognizer.ShouldExtractHeight(); 
-            set => nativeRecognizer.SetExtractHeight(value);
-        }
-        
-        public bool ExtractIssuingAuthority 
-        { 
-            get => nativeRecognizer.ShouldExtractIssuingAuthority(); 
-            set => nativeRecognizer.SetExtractIssuingAuthority(value);
-        }
-        
-        public bool ExtractNationality 
-        { 
-            get => nativeRecognizer.ShouldExtractNationality(); 
-            set => nativeRecognizer.SetExtractNationality(value);
-        }
-        
-        public bool ExtractPassportNumber 
-        { 
-            get => nativeRecognizer.ShouldExtractPassportNumber(); 
-            set => nativeRecognizer.SetExtractPassportNumber(value);
+            get => nativeRecognizer.ShouldExtractName(); 
+            set => nativeRecognizer.SetExtractName(value);
         }
         
         public bool ExtractPlaceOfBirth 
@@ -131,25 +101,20 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class AustriaPassportRecognizerResult : RecognizerResult, IAustriaPassportRecognizerResult
+    public sealed class MoroccoIdFrontRecognizerResult : RecognizerResult, IMoroccoIdFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer.Result nativeResult;
 
-        internal AustriaPassportRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult) : base(nativeResult)
+        internal MoroccoIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Morocco.MoroccoIdFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
-        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string GivenName => nativeResult.GivenName;
-        public string Height => nativeResult.Height;
-        public string IssuingAuthority => nativeResult.IssuingAuthority;
-        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
-        public string Nationality => nativeResult.Nationality;
-        public string PassportNumber => nativeResult.PassportNumber;
+        public string Name => nativeResult.Name;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;

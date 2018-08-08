@@ -47,7 +47,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public string DocumentCode => nativeResult.DocumentCode;
         public string DocumentNumber => nativeResult.DocumentNumber;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Issuer => nativeResult.Issuer;
         public bool MrzParsed => nativeResult.IsMrzParsed;
         public string MrzText => nativeResult.MrzText;

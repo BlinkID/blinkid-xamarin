@@ -165,11 +165,11 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public string EyeColour => nativeResult.EyeColour;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentBackImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentFrontImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
         public string GivenName => nativeResult.GivenName;
-        public string Height => nativeResult.Height + "cm";
+        public string Height => nativeResult.Height;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public bool MrtdVerified => nativeResult.IsMrtdVerified;
         public string Nationality => nativeResult.Nationality;
@@ -177,7 +177,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string PrincipalResidence => nativeResult.PrincipalResidence;
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
         public string Surname => nativeResult.Surname;
     }
 }

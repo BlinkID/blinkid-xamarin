@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AustriaPassportRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(SwitzerlandDlFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class AustriaPassportRecognizer : Recognizer, IAustriaPassportRecognizer
+    public sealed class SwitzerlandDlFrontRecognizer : Recognizer, ISwitzerlandDlFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer nativeRecognizer;
 
-        AustriaPassportRecognizerResult result;
+        SwitzerlandDlFrontRecognizerResult result;
 
-        public AustriaPassportRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer())
+        public SwitzerlandDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer;
-            result = new AustriaPassportRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer;
+            result = new SwitzerlandDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IAustriaPassportRecognizerResult Result => result;
+        public ISwitzerlandDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -45,16 +45,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfIssue(value);
         }
         
-        public bool ExtractGivenName 
+        public bool ExtractFirstName 
         { 
-            get => nativeRecognizer.ShouldExtractGivenName(); 
-            set => nativeRecognizer.SetExtractGivenName(value);
-        }
-        
-        public bool ExtractHeight 
-        { 
-            get => nativeRecognizer.ShouldExtractHeight(); 
-            set => nativeRecognizer.SetExtractHeight(value);
+            get => nativeRecognizer.ShouldExtractFirstName(); 
+            set => nativeRecognizer.SetExtractFirstName(value);
         }
         
         public bool ExtractIssuingAuthority 
@@ -63,16 +57,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractIssuingAuthority(value);
         }
         
-        public bool ExtractNationality 
+        public bool ExtractLastName 
         { 
-            get => nativeRecognizer.ShouldExtractNationality(); 
-            set => nativeRecognizer.SetExtractNationality(value);
-        }
-        
-        public bool ExtractPassportNumber 
-        { 
-            get => nativeRecognizer.ShouldExtractPassportNumber(); 
-            set => nativeRecognizer.SetExtractPassportNumber(value);
+            get => nativeRecognizer.ShouldExtractLastName(); 
+            set => nativeRecognizer.SetExtractLastName(value);
         }
         
         public bool ExtractPlaceOfBirth 
@@ -81,16 +69,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractPlaceOfBirth(value);
         }
         
-        public bool ExtractSex 
+        public bool ExtractVehicleCategories 
         { 
-            get => nativeRecognizer.ShouldExtractSex(); 
-            set => nativeRecognizer.SetExtractSex(value);
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ShouldExtractSurname(); 
-            set => nativeRecognizer.SetExtractSurname(value);
+            get => nativeRecognizer.ShouldExtractVehicleCategories(); 
+            set => nativeRecognizer.SetExtractVehicleCategories(value);
         }
         
         public uint FaceImageDpi 
@@ -131,28 +113,26 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class AustriaPassportRecognizerResult : RecognizerResult, IAustriaPassportRecognizerResult
+    public sealed class SwitzerlandDlFrontRecognizerResult : RecognizerResult, ISwitzerlandDlFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer.Result nativeResult;
 
-        internal AustriaPassportRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult) : base(nativeResult)
+        internal SwitzerlandDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandDlFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public bool ExpiryDatePermanent => nativeResult.IsExpiryDatePermanent;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string GivenName => nativeResult.GivenName;
-        public string Height => nativeResult.Height;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
-        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
-        public string Nationality => nativeResult.Nationality;
-        public string PassportNumber => nativeResult.PassportNumber;
+        public string LastName => nativeResult.LastName;
+        public string LicenseNumber => nativeResult.LicenseNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
-        public string Surname => nativeResult.Surname;
+        public string VehicleCategories => nativeResult.VehicleCategories;
     }
 }
