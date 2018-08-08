@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.secured')]" />
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.library')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.hardware')]/class[@name!='CameraSettings' and @extends!='java.lang.Enum']" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.ocr')]" />
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]/class[@name!='BaseLegacyRecognizerWrapper' and @name!='BaseLegacyRecognizerWrapper.Result' and @name!='RecognizerSettings' and @name!='BaseRecognitionResult']" />

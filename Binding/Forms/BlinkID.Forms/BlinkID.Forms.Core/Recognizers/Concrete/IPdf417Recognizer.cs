@@ -7,35 +7,21 @@
     {
         
         /// <summary>
-        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// Allow scanning PDF417 barcodes which don't have quiet zone 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool NullQuietZoneAllowed { get; set; }
         
         /// <summary>
-        /// Set this to true to allow scanning barcodes with inverted intensities
-        /// (i.e. white barcodes on black background)
-        /// 
-        /// falseTE: this options doubles the frame processing time
-        /// 
-        ///  
+        /// Enables scanning of barcodes with inverse intensity values (e.g. white barcode on black background) 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanInverse { get; set; }
         
         /// <summary>
-        /// Set this to true to scan even barcode not compliant with standards
-        /// For example, malformed PDF417 barcodes which were incorrectly encoded
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// Enable decoding of non-standard PDF417 barcodes, but without 
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -54,25 +40,22 @@
     public interface IPdf417RecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Type of the barcode scanned
-        /// 
-        ///  @return Type of the barcode 
+        /// The format of the scanned barcode. 
         /// </summary>
         BarcodeType BarcodeType { get; }
         
         /// <summary>
-        /// Byte array with result of the scan 
+        /// The raw bytes contained inside barcode. 
         /// </summary>
         byte[] RawData { get; }
         
         /// <summary>
-        /// Retrieves string content of scanned data 
+        /// String representation of data inside barcode. 
         /// </summary>
         string StringData { get; }
         
         /// <summary>
-        /// Flag indicating uncertain scanning data
-        /// E.g obtained from damaged barcode. 
+        /// True if returned result is uncertain, i.e. if scanned barcode was incomplete (i.e. 
         /// </summary>
         bool Uncertain { get; }
         

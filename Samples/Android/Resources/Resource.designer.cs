@@ -3017,62 +3017,62 @@ namespace Android
 			// aapt resource value: 0x7f06004f
 			public const int hello = 2131099727;
 			
+			// aapt resource value: 0x7f060023
+			public const int mb_action_torch = 2131099683;
+			
 			// aapt resource value: 0x7f060024
-			public const int mb_action_torch = 2131099684;
+			public const int mb_activity_title_step_back_side = 2131099684;
 			
 			// aapt resource value: 0x7f060025
-			public const int mb_activity_title_step_back_side = 2131099685;
+			public const int mb_activity_title_step_front_side = 2131099685;
 			
 			// aapt resource value: 0x7f060026
-			public const int mb_activity_title_step_front_side = 2131099686;
+			public const int mb_alert_title = 2131099686;
 			
 			// aapt resource value: 0x7f060027
-			public const int mb_alert_title = 2131099687;
+			public const int mb_align = 2131099687;
 			
 			// aapt resource value: 0x7f060028
-			public const int mb_align = 2131099688;
+			public const int mb_align_barcode = 2131099688;
 			
 			// aapt resource value: 0x7f060029
-			public const int mb_align_barcode = 2131099689;
+			public const int mb_align_ocr_line = 2131099689;
 			
 			// aapt resource value: 0x7f06002a
-			public const int mb_align_ocr_line = 2131099690;
+			public const int mb_autofocus_fail = 2131099690;
 			
 			// aapt resource value: 0x7f06002b
-			public const int mb_autofocus_fail = 2131099691;
+			public const int mb_camera_at_angle = 2131099691;
 			
 			// aapt resource value: 0x7f06002c
-			public const int mb_camera_at_angle = 2131099692;
+			public const int mb_camera_not_allowed = 2131099692;
 			
 			// aapt resource value: 0x7f06002d
-			public const int mb_camera_not_allowed = 2131099693;
-			
-			// aapt resource value: 0x7f06002e
-			public const int mb_camera_not_ready = 2131099694;
+			public const int mb_camera_not_ready = 2131099693;
 			
 			// aapt resource value: 0x7f06001f
 			public const int mb_camera_permission_required = 2131099679;
 			
+			// aapt resource value: 0x7f06002e
+			public const int mb_camera_too_high = 2131099694;
+			
 			// aapt resource value: 0x7f06002f
-			public const int mb_camera_too_high = 2131099695;
+			public const int mb_camera_too_near = 2131099695;
 			
 			// aapt resource value: 0x7f060030
-			public const int mb_camera_too_near = 2131099696;
+			public const int mb_cancel = 2131099696;
 			
 			// aapt resource value: 0x7f060031
-			public const int mb_cancel = 2131099697;
+			public const int mb_copied = 2131099697;
 			
 			// aapt resource value: 0x7f060032
-			public const int mb_copied = 2131099698;
+			public const int mb_copy = 2131099698;
 			
 			// aapt resource value: 0x7f060033
-			public const int mb_copy = 2131099699;
+			public const int mb_custom_ui_forbidden = 2131099699;
 			
 			// aapt resource value: 0x7f060034
-			public const int mb_custom_ui_forbidden = 2131099700;
-			
-			// aapt resource value: 0x7f060035
-			public const int mb_data_not_match_msg = 2131099701;
+			public const int mb_data_not_match_msg = 2131099700;
 			
 			// aapt resource value: 0x7f060020
 			public const int mb_enable_camera = 2131099680;
@@ -3080,38 +3080,38 @@ namespace Android
 			// aapt resource value: 0x7f060021
 			public const int mb_enable_permission_help = 2131099681;
 			
+			// aapt resource value: 0x7f060035
+			public const int mb_error_initializing = 2131099701;
+			
 			// aapt resource value: 0x7f060036
-			public const int mb_error_initializing = 2131099702;
+			public const int mb_feature_unsupported_android_version = 2131099702;
 			
 			// aapt resource value: 0x7f060037
-			public const int mb_feature_unsupported_android_version = 2131099703;
+			public const int mb_feature_unsupported_autofocus = 2131099703;
 			
 			// aapt resource value: 0x7f060038
-			public const int mb_feature_unsupported_autofocus = 2131099704;
+			public const int mb_feature_unsupported_device = 2131099704;
 			
 			// aapt resource value: 0x7f060039
-			public const int mb_feature_unsupported_device = 2131099705;
+			public const int mb_full_recognition = 2131099705;
 			
 			// aapt resource value: 0x7f06003a
-			public const int mb_full_recognition = 2131099706;
+			public const int mb_help = 2131099706;
 			
 			// aapt resource value: 0x7f06003b
-			public const int mb_help = 2131099707;
+			public const int mb_home = 2131099707;
 			
 			// aapt resource value: 0x7f06003c
-			public const int mb_home = 2131099708;
+			public const int mb_invalid_license = 2131099708;
 			
 			// aapt resource value: 0x7f06003d
-			public const int mb_invalid_license = 2131099709;
+			public const int mb_light_off = 2131099709;
 			
 			// aapt resource value: 0x7f06003e
-			public const int mb_light_off = 2131099710;
+			public const int mb_light_on = 2131099710;
 			
 			// aapt resource value: 0x7f06003f
-			public const int mb_light_on = 2131099711;
-			
-			// aapt resource value: 0x7f060022
-			public const int mb_loading = 2131099682;
+			public const int mb_loading = 2131099711;
 			
 			// aapt resource value: 0x7f060040
 			public const int mb_no_recognition = 2131099712;
@@ -3158,8 +3158,8 @@ namespace Android
 			// aapt resource value: 0x7f06004e
 			public const int mb_use = 2131099726;
 			
-			// aapt resource value: 0x7f060023
-			public const int mb_warning_title = 2131099683;
+			// aapt resource value: 0x7f060022
+			public const int mb_warning_title = 2131099682;
 			
 			// aapt resource value: 0x7f060011
 			public const int search_menu_title = 2131099665;

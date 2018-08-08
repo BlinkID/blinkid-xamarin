@@ -65,12 +65,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public MrtdDocumentType DocumentType => (MrtdDocumentType)nativeResult.DocumentType.Ordinal();
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentBackImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentFrontImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
         public string ImmigrantCaseNumber => nativeResult.ImmigrantCaseNumber;
         public string Issuer => nativeResult.Issuer;
-        public Xamarin.Forms.ImageSource MrzImage => Utils.ConvertAndroidBitmap(nativeResult.MrzImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource MrzImage => nativeResult.MrzImage != null ? Utils.ConvertAndroidBitmap(nativeResult.MrzImage.ConvertToBitmap()) : null;
         public bool MrzParsed => nativeResult.IsMrzParsed;
         public string MrzText => nativeResult.MrzText;
         public bool MrzVerified => nativeResult.IsMrzVerified;

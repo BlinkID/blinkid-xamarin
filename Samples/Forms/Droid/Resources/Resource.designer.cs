@@ -4552,62 +4552,62 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f090035
 			public const int character_counter_pattern = 2131296309;
 			
+			// aapt resource value: 0x7f090040
+			public const int mb_action_torch = 2131296320;
+			
 			// aapt resource value: 0x7f090041
-			public const int mb_action_torch = 2131296321;
+			public const int mb_activity_title_step_back_side = 2131296321;
 			
 			// aapt resource value: 0x7f090042
-			public const int mb_activity_title_step_back_side = 2131296322;
+			public const int mb_activity_title_step_front_side = 2131296322;
 			
 			// aapt resource value: 0x7f090043
-			public const int mb_activity_title_step_front_side = 2131296323;
+			public const int mb_alert_title = 2131296323;
 			
 			// aapt resource value: 0x7f090044
-			public const int mb_alert_title = 2131296324;
+			public const int mb_align = 2131296324;
 			
 			// aapt resource value: 0x7f090045
-			public const int mb_align = 2131296325;
+			public const int mb_align_barcode = 2131296325;
 			
 			// aapt resource value: 0x7f090046
-			public const int mb_align_barcode = 2131296326;
+			public const int mb_align_ocr_line = 2131296326;
 			
 			// aapt resource value: 0x7f090047
-			public const int mb_align_ocr_line = 2131296327;
+			public const int mb_autofocus_fail = 2131296327;
 			
 			// aapt resource value: 0x7f090048
-			public const int mb_autofocus_fail = 2131296328;
+			public const int mb_camera_at_angle = 2131296328;
 			
 			// aapt resource value: 0x7f090049
-			public const int mb_camera_at_angle = 2131296329;
+			public const int mb_camera_not_allowed = 2131296329;
 			
 			// aapt resource value: 0x7f09004a
-			public const int mb_camera_not_allowed = 2131296330;
-			
-			// aapt resource value: 0x7f09004b
-			public const int mb_camera_not_ready = 2131296331;
+			public const int mb_camera_not_ready = 2131296330;
 			
 			// aapt resource value: 0x7f09003c
 			public const int mb_camera_permission_required = 2131296316;
 			
+			// aapt resource value: 0x7f09004b
+			public const int mb_camera_too_high = 2131296331;
+			
 			// aapt resource value: 0x7f09004c
-			public const int mb_camera_too_high = 2131296332;
+			public const int mb_camera_too_near = 2131296332;
 			
 			// aapt resource value: 0x7f09004d
-			public const int mb_camera_too_near = 2131296333;
+			public const int mb_cancel = 2131296333;
 			
 			// aapt resource value: 0x7f09004e
-			public const int mb_cancel = 2131296334;
+			public const int mb_copied = 2131296334;
 			
 			// aapt resource value: 0x7f09004f
-			public const int mb_copied = 2131296335;
+			public const int mb_copy = 2131296335;
 			
 			// aapt resource value: 0x7f090050
-			public const int mb_copy = 2131296336;
+			public const int mb_custom_ui_forbidden = 2131296336;
 			
 			// aapt resource value: 0x7f090051
-			public const int mb_custom_ui_forbidden = 2131296337;
-			
-			// aapt resource value: 0x7f090052
-			public const int mb_data_not_match_msg = 2131296338;
+			public const int mb_data_not_match_msg = 2131296337;
 			
 			// aapt resource value: 0x7f09003d
 			public const int mb_enable_camera = 2131296317;
@@ -4615,38 +4615,38 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f09003e
 			public const int mb_enable_permission_help = 2131296318;
 			
+			// aapt resource value: 0x7f090052
+			public const int mb_error_initializing = 2131296338;
+			
 			// aapt resource value: 0x7f090053
-			public const int mb_error_initializing = 2131296339;
+			public const int mb_feature_unsupported_android_version = 2131296339;
 			
 			// aapt resource value: 0x7f090054
-			public const int mb_feature_unsupported_android_version = 2131296340;
+			public const int mb_feature_unsupported_autofocus = 2131296340;
 			
 			// aapt resource value: 0x7f090055
-			public const int mb_feature_unsupported_autofocus = 2131296341;
+			public const int mb_feature_unsupported_device = 2131296341;
 			
 			// aapt resource value: 0x7f090056
-			public const int mb_feature_unsupported_device = 2131296342;
+			public const int mb_full_recognition = 2131296342;
 			
 			// aapt resource value: 0x7f090057
-			public const int mb_full_recognition = 2131296343;
+			public const int mb_help = 2131296343;
 			
 			// aapt resource value: 0x7f090058
-			public const int mb_help = 2131296344;
+			public const int mb_home = 2131296344;
 			
 			// aapt resource value: 0x7f090059
-			public const int mb_home = 2131296345;
+			public const int mb_invalid_license = 2131296345;
 			
 			// aapt resource value: 0x7f09005a
-			public const int mb_invalid_license = 2131296346;
+			public const int mb_light_off = 2131296346;
 			
 			// aapt resource value: 0x7f09005b
-			public const int mb_light_off = 2131296347;
+			public const int mb_light_on = 2131296347;
 			
 			// aapt resource value: 0x7f09005c
-			public const int mb_light_on = 2131296348;
-			
-			// aapt resource value: 0x7f09003f
-			public const int mb_loading = 2131296319;
+			public const int mb_loading = 2131296348;
 			
 			// aapt resource value: 0x7f09005d
 			public const int mb_no_recognition = 2131296349;
@@ -4693,8 +4693,8 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f09006b
 			public const int mb_use = 2131296363;
 			
-			// aapt resource value: 0x7f090040
-			public const int mb_warning_title = 2131296320;
+			// aapt resource value: 0x7f09003f
+			public const int mb_warning_title = 2131296319;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;

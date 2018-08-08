@@ -1,71 +1,56 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Singapore ID Front Recognizer.
+    ///  Recognizer for front side of Singapore ID.
     /// 
-    /// Singapore ID Front recognizer is used for scanning front side of Singapore ID.
     /// </summary>
     public interface ISingaporeIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        ///  Defines if country of birth of Singapore ID owner should be extracted
-        /// 
-        ///   
+        /// true if country of birth of Singapore ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractCountryOfBirth { get; set; }
         
         /// <summary>
-        ///  Defines if date of birth of Singapore ID owner should be extracted
-        /// 
-        ///   
+        /// true if date of birth of Singapore ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        ///  Defines if race of Singapore ID owner should be extracted
-        /// 
-        ///   
+        /// true if race of Singapore ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractRace { get; set; }
         
         /// <summary>
-        ///  Defines if sex of Singapore ID owner should be extracted
-        /// 
-        ///   
+        /// true if sex of Singapore ID owner is being extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -84,42 +69,42 @@
     public interface ISingaporeIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The identity card number of the Singapore ID. 
+        /// the card number of Singapore ID. 
         /// </summary>
         string CardNumber { get; }
         
         /// <summary>
-        /// The country of birth of the Singapore ID owner. 
+        /// country of birth of the Singapore ID owner 
         /// </summary>
         string CountryOfBirth { get; }
         
         /// <summary>
-        /// The date of birth of the Singapore ID owner. 
+        /// the date of birth of Singapore ID owner 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The name of the Singapore ID owner. 
+        /// name of the Singapore ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The race of the Singapore ID owner. 
+        /// race of the Singapore ID owner. 
         /// </summary>
         string Race { get; }
         
         /// <summary>
-        /// The sex of the Singapore ID owner. 
+        /// sex of the Singapore ID owner. 
         /// </summary>
         string Sex { get; }
         

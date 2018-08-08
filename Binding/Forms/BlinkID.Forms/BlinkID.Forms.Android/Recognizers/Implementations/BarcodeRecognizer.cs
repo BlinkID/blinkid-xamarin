@@ -27,12 +27,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.AutoScaleDetection = value;
         }
         
-        public string ManateeLicenseKey 
-        { 
-            get => nativeRecognizer.ManateeLicenseKey; 
-            set => nativeRecognizer.ManateeLicenseKey = value;
-        }
-        
         public bool NullQuietZoneAllowed 
         { 
             get => nativeRecognizer.NullQuietZoneAllowed; 

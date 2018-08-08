@@ -63,7 +63,7 @@ namespace Microblink.Forms.Droid.Recognizers
         }
         public string Address => nativeResult.Address;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string LastName => nativeResult.LastName;
         public string LicenceNumber => nativeResult.LicenceNumber;
     }

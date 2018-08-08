@@ -21,16 +21,22 @@ namespace Microblink.Forms.Droid.Recognizers
         public IColombiaIdBackRecognizerResult Result => result;
 
         
-        public bool NullQuietZoneAllowed 
+        public bool DetectGlare 
         { 
-            get => nativeRecognizer.NullQuietZoneAllowed; 
-            set => nativeRecognizer.NullQuietZoneAllowed = value;
+            get => nativeRecognizer.ShouldDetectGlare(); 
+            set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ScanUncertain 
+        public uint FullDocumentImageDpi 
         { 
-            get => nativeRecognizer.ShouldScanUncertain(); 
-            set => nativeRecognizer.SetScanUncertain(value);
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public bool ReturnFullDocumentImage 
+        { 
+            get => nativeRecognizer.ShouldReturnFullDocumentImage(); 
+            set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
     }
@@ -43,11 +49,12 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
+        public IDate BirthDate => nativeResult.BirthDate.Date != null ? new Date(nativeResult.BirthDate.Date) : null;
         public string BloodGroup => nativeResult.BloodGroup;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public byte[] Fingerprint => nativeResult.GetFingerprint();
         public string FirstName => nativeResult.FirstName;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string LastName => nativeResult.LastName;
         public string Sex => nativeResult.Sex;
     }
