@@ -1,7 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Singapore driver's license card.
+    /// The Singapore Dl Front Recognizer is used for scanning front side of the Singapore Dl.
     /// </summary>
     public interface ISingaporeDlFrontRecognizer : IRecognizer
     {
@@ -42,6 +42,20 @@
         bool ExtractValidTill { get; set; }
         
         /// <summary>
+        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
         /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
@@ -68,7 +82,7 @@
     public interface ISingaporeDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the birth date of Singapore driver's owner. 
+        /// The birth date of Singapore driver's owner. 
         /// </summary>
         IDate BirthDate { get; }
         
@@ -83,22 +97,22 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the issue date of Singapore driver's licence. 
+        /// The issue date of Singapore driver's licence. 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// the licence number of Singapore driver's licence. 
+        /// The licence number of Singapore driver's licence. 
         /// </summary>
         string LicenceNumber { get; }
         
         /// <summary>
-        /// the (full) name of Singapore driver's licence owner. 
+        /// The (full) name of Singapore driver's licence owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// the valid till date of Singapore driver's licence. 
+        /// The valid till date of Singapore driver's licence. 
         /// </summary>
         IDate ValidTill { get; }
         

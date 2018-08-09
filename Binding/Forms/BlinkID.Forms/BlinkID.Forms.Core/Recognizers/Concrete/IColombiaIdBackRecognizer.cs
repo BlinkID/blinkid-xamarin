@@ -21,11 +21,25 @@
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
+        /// Allow scanning PDF417 barcodes which don't have quiet zone 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool NullQuietZoneAllowed { get; set; }
+        
+        /// <summary>
         /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
+        
+        /// <summary>
+        /// Enable decoding of non-standard PDF417 barcodes, but without 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ScanUncertain { get; set; }
         
 
         /// <summary>

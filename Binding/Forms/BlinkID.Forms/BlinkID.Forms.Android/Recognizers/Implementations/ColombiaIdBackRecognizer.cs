@@ -33,10 +33,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
+        public bool NullQuietZoneAllowed 
+        { 
+            get => nativeRecognizer.NullQuietZoneAllowed; 
+            set => nativeRecognizer.NullQuietZoneAllowed = value;
+        }
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ShouldReturnFullDocumentImage(); 
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
+        }
+        
+        public bool ScanUncertain 
+        { 
+            get => nativeRecognizer.ScanUncertain; 
+            set => nativeRecognizer.ScanUncertain = value;
         }
         
     }
