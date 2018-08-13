@@ -1,36 +1,30 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(CroatiaIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MoroccoIdFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class CroatiaIdFrontRecognizer : Recognizer, ICroatiaIdFrontRecognizer
+    public sealed class MoroccoIdFrontRecognizer : Recognizer, IMoroccoIdFrontRecognizer
     {
-        MBCroatiaIdFrontRecognizer nativeRecognizer;
+        MBMoroccoIdFrontRecognizer nativeRecognizer;
 
-        CroatiaIdFrontRecognizerResult result;
+        MoroccoIdFrontRecognizerResult result;
 
-        public CroatiaIdFrontRecognizer() : base(new MBCroatiaIdFrontRecognizer())
+        public MoroccoIdFrontRecognizer() : base(new MBMoroccoIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBCroatiaIdFrontRecognizer;
-            result = new CroatiaIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBMoroccoIdFrontRecognizer;
+            result = new MoroccoIdFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ICroatiaIdFrontRecognizerResult Result => result;
+        public IMoroccoIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
-        }
-        
-        public bool ExtractCitizenship 
-        { 
-            get => nativeRecognizer.ExtractCitizenship; 
-            set => nativeRecognizer.ExtractCitizenship = value;
         }
         
         public bool ExtractDateOfBirth 
@@ -45,22 +39,28 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfExpiry = value;
         }
         
-        public bool ExtractFirstName 
+        public bool ExtractName 
         { 
-            get => nativeRecognizer.ExtractFirstName; 
-            set => nativeRecognizer.ExtractFirstName = value;
+            get => nativeRecognizer.ExtractName; 
+            set => nativeRecognizer.ExtractName = value;
         }
         
-        public bool ExtractLastName 
+        public bool ExtractPlaceOfBirth 
         { 
-            get => nativeRecognizer.ExtractLastName; 
-            set => nativeRecognizer.ExtractLastName = value;
+            get => nativeRecognizer.ExtractPlaceOfBirth; 
+            set => nativeRecognizer.ExtractPlaceOfBirth = value;
         }
         
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
+        }
+        
+        public bool ExtractSurname 
+        { 
+            get => nativeRecognizer.ExtractSurname; 
+            set => nativeRecognizer.ExtractSurname = value;
         }
         
         public uint FaceImageDpi 
@@ -101,25 +101,23 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class CroatiaIdFrontRecognizerResult : RecognizerResult, ICroatiaIdFrontRecognizerResult
+    public sealed class MoroccoIdFrontRecognizerResult : RecognizerResult, IMoroccoIdFrontRecognizerResult
     {
-        MBCroatiaIdFrontRecognizerResult nativeResult;
+        MBMoroccoIdFrontRecognizerResult nativeResult;
 
-        internal CroatiaIdFrontRecognizerResult(MBCroatiaIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal MoroccoIdFrontRecognizerResult(MBMoroccoIdFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string Citizenship => nativeResult.Citizenship;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
-        public bool DocumentBilingual => nativeResult.DocumentBilingual;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
-        public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string LastName => nativeResult.LastName;
+        public string Name => nativeResult.Name;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
+        public string Surname => nativeResult.Surname;
     }
 }
