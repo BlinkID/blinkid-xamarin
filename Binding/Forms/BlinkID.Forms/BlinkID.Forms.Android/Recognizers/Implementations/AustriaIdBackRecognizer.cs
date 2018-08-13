@@ -82,8 +82,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfIssuance => nativeResult.DateOfIssuance.Date != null ? new Date(nativeResult.DateOfIssuance.Date) : null;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public string EyeColour => nativeResult.EyeColour;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
-        public string Height => nativeResult.Height + "cm";
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
+        public string Height => nativeResult.Height;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;

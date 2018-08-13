@@ -54,6 +54,15 @@
         bool ExtractFullName { get; set; }
         
         /// <summary>
+        /// Defines if card's residential status should be extracted from Hong Kong ID
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractResidentialStatus { get; set; }
+        
+        /// <summary>
         /// Defines if owner's sex should be extracted from Hong Kong ID
         /// 
         ///  
@@ -61,6 +70,26 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -126,6 +155,11 @@
         /// The full name of the Hong Kong ID owner. 
         /// </summary>
         string FullName { get; }
+        
+        /// <summary>
+        /// The residential status of the Hong Kong ID. 
+        /// </summary>
+        string ResidentialStatus { get; }
         
         /// <summary>
         /// The sex of the Hong Kong ID owner. 

@@ -27,16 +27,34 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractBloodGroup 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ExtractBloodGroup; 
-            set => nativeRecognizer.ExtractBloodGroup = value;
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
+        }
+        
+        public bool ExtractAddressChangeDate 
+        { 
+            get => nativeRecognizer.ExtractAddressChangeDate; 
+            set => nativeRecognizer.ExtractAddressChangeDate = value;
+        }
+        
+        public bool ExtractBloodType 
+        { 
+            get => nativeRecognizer.ExtractBloodType; 
+            set => nativeRecognizer.ExtractBloodType = value;
         }
         
         public bool ExtractDateOfIssue 
         { 
             get => nativeRecognizer.ExtractDateOfIssue; 
             set => nativeRecognizer.ExtractDateOfIssue = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
         public bool ReturnFullDocumentImage 
@@ -56,7 +74,8 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public string BloodGroup => nativeResult.BloodGroup;
+        public IDate AddressChangeDate => nativeResult.AddressChangeDate != null ? new Date(nativeResult.AddressChangeDate) : null;
+        public string BloodType => nativeResult.BloodType;
         public string CardNumber => nativeResult.CardNumber;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;

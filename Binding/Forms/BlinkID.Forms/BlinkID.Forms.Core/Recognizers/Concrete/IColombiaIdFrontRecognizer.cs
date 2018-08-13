@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Colombia ID Front Recognizer.
+    /// Class for configuring Colombia Id Front Recognizer.
     /// 
-    /// Colombia ID Front recognizer is used for scanning front side of Colombia ID.
+    /// Colombia Id Front recognizer is used for scanning front side of the Colombia Id.
     /// </summary>
     public interface IColombiaIdFrontRecognizer : IRecognizer
     {
@@ -18,7 +18,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's first name should be extracted from Colombian ID
+        /// Defines if owner's first name should be extracted from front side of the Colombia Id
         /// 
         ///  
         ///
@@ -27,7 +27,7 @@
         bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// Defines if owner's last name should be extracted from Colombian ID
+        /// Defines if owner's last name should be extracted from front side of the Colombia Id
         /// 
         ///  
         ///
@@ -105,7 +105,7 @@
     public interface IColombiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The document number of the Colombian ID card. 
+        /// The document Number of the Colombia Id. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -115,7 +115,7 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Colombian ID owner. 
+        /// The first Name of the Colombia Id owner. 
         /// </summary>
         string FirstName { get; }
         
@@ -125,7 +125,7 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The last name of the Colombian ID owner. 
+        /// The last Name of the Colombia Id owner. 
         /// </summary>
         string LastName { get; }
         

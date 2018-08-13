@@ -22,15 +22,6 @@
         bool AutoScaleDetection { get; set; }
         
         /// <summary>
-        /// Set manatee license key and unlock the aztec scanning feature.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to ''
-        /// </summary>
-        string ManateeLicenseKey { get; set; }
-        
-        /// <summary>
         /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
         /// 
         /// Use only if necessary because it slows down the recognition process

@@ -147,8 +147,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public string District => nativeResult.District;
         public string DocumentClassifier => nativeResult.DocumentClassifier;
         public string DocumentNumber => nativeResult.DocumentNumber;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string KelDesa => nativeResult.KelDesa;
         public string MaritalStatus => nativeResult.MaritalStatus;
         public string Name => nativeResult.Name;
@@ -159,7 +159,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string Rt => nativeResult.Rt;
         public string Rw => nativeResult.Rw;
         public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
         public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
         public bool ValidUntilPermanent => nativeResult.ValidUntilPermanent;
     }

@@ -51,10 +51,28 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractFullName = value;
         }
         
+        public bool ExtractResidentialStatus 
+        { 
+            get => nativeRecognizer.ExtractResidentialStatus; 
+            set => nativeRecognizer.ExtractResidentialStatus = value;
+        }
+        
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
         public bool ReturnFaceImage 
@@ -86,6 +104,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string FullName => nativeResult.FullName;
+        public string ResidentialStatus => nativeResult.ResidentialStatus;
         public string Sex => nativeResult.Sex;
     }
 }

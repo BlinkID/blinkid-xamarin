@@ -85,10 +85,10 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.27.0.2.1\lib\MonoAndroid81\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
-    <Reference Include="BlinkIDAARBinding">
-      <HintPath>packages\BlinkID.Android.Binding.4.0.0.1\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
-    </Reference>
     <Reference Include="Java.Interop" />
+    <Reference Include="BlinkIDAARBinding">
+      <HintPath>packages\BlinkID.Android.Binding.4.1.0\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

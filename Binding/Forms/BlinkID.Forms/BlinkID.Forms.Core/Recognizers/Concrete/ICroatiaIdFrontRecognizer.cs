@@ -46,6 +46,24 @@
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
+        ///  Defines if first name of Croatian ID owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractFirstName { get; set; }
+        
+        /// <summary>
+        ///  Defines if last name of Croatian ID owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLastName { get; set; }
+        
+        /// <summary>
         ///  Defines if sex of Croatian ID owner should be extracted
         /// 
         ///   
@@ -53,6 +71,26 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -80,6 +118,16 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
         
 
         /// <summary>
@@ -119,6 +167,11 @@
         bool DocumentBilingual { get; }
         
         /// <summary>
+        /// The document number of the Croatian ID. 
+        /// </summary>
+        string DocumentNumber { get; }
+        
+        /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
@@ -132,11 +185,6 @@
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
-        
-        /// <summary>
-        /// The identity card number of Croatian ID. 
-        /// </summary>
-        string IdentityCardNumber { get; }
         
         /// <summary>
         /// The last name of the Croatian ID owner. 

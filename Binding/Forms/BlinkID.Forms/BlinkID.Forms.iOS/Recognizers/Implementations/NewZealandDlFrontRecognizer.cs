@@ -39,16 +39,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfBirth = value;
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ExtractDateOfExpiry; 
+            set => nativeRecognizer.ExtractDateOfExpiry = value;
+        }
+        
+        public bool ExtractDateOfIssue 
+        { 
+            get => nativeRecognizer.ExtractDateOfIssue; 
+            set => nativeRecognizer.ExtractDateOfIssue = value;
+        }
+        
         public bool ExtractDonorIndicator 
         { 
             get => nativeRecognizer.ExtractDonorIndicator; 
             set => nativeRecognizer.ExtractDonorIndicator = value;
-        }
-        
-        public bool ExtractExpiryDate 
-        { 
-            get => nativeRecognizer.ExtractExpiryDate; 
-            set => nativeRecognizer.ExtractExpiryDate = value;
         }
         
         public bool ExtractFirstNames 
@@ -57,16 +63,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractFirstNames = value;
         }
         
-        public bool ExtractIssueDate 
-        { 
-            get => nativeRecognizer.ExtractIssueDate; 
-            set => nativeRecognizer.ExtractIssueDate = value;
-        }
-        
         public bool ExtractSurname 
         { 
             get => nativeRecognizer.ExtractSurname; 
             set => nativeRecognizer.ExtractSurname = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
         public bool ReturnFaceImage 
@@ -87,6 +99,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
     public sealed class NewZealandDlFrontRecognizerResult : RecognizerResult, INewZealandDlFrontRecognizerResult
@@ -100,12 +118,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Address => nativeResult.Address;
         public string CardVersion => nativeResult.CardVersion;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public bool DonorIndicator => nativeResult.DonorIndicator;
-        public IDate ExpiryDate => nativeResult.ExpiryDate != null ? new Date(nativeResult.ExpiryDate) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstNames => nativeResult.FirstNames;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public IDate IssueDate => nativeResult.IssueDate != null ? new Date(nativeResult.IssueDate) : null;
         public string LicenseNumber => nativeResult.LicenseNumber;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
         public string Surname => nativeResult.Surname;

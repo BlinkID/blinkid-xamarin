@@ -39,16 +39,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfBirth(value);
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
+            set => nativeRecognizer.SetExtractDateOfExpiry(value);
+        }
+        
+        public bool ExtractDateOfIssue 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfIssue(); 
+            set => nativeRecognizer.SetExtractDateOfIssue(value);
+        }
+        
         public bool ExtractDonorIndicator 
         { 
             get => nativeRecognizer.ShouldExtractDonorIndicator(); 
             set => nativeRecognizer.SetExtractDonorIndicator(value);
-        }
-        
-        public bool ExtractExpiryDate 
-        { 
-            get => nativeRecognizer.ShouldExtractExpiryDate(); 
-            set => nativeRecognizer.SetExtractExpiryDate(value);
         }
         
         public bool ExtractFirstNames 
@@ -57,16 +63,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractFirstNames(value);
         }
         
-        public bool ExtractIssueDate 
-        { 
-            get => nativeRecognizer.ShouldExtractIssueDate(); 
-            set => nativeRecognizer.SetExtractIssueDate(value);
-        }
-        
         public bool ExtractSurname 
         { 
             get => nativeRecognizer.ShouldExtractSurname(); 
             set => nativeRecognizer.SetExtractSurname(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
         public bool ReturnFaceImage 
@@ -87,6 +99,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class NewZealandDlFrontRecognizerResult : RecognizerResult, INewZealandDlFrontRecognizerResult
@@ -99,15 +117,15 @@ namespace Microblink.Forms.Droid.Recognizers
         }
         public string Address => nativeResult.Address;
         public string CardVersion => nativeResult.CardVersion;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public bool DonorIndicator => nativeResult.DonorIndicator;
-        public IDate ExpiryDate => nativeResult.ExpiryDate != null ? new Date(nativeResult.ExpiryDate) : null;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public bool DonorIndicator => nativeResult.IsDonorIndicator;
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstNames => nativeResult.FirstNames;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
-        public IDate IssueDate => nativeResult.IssueDate != null ? new Date(nativeResult.IssueDate) : null;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string LicenseNumber => nativeResult.LicenseNumber;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
         public string Surname => nativeResult.Surname;
     }
 }

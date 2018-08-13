@@ -36,6 +36,24 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
+        /// Defines if card's expiry date should be extracted from New Zealand Driver License
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if card's issue date should be extracted from New Zealand Driver License
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
         /// Defines if owner's donor indicator should be extracted from New Zealand Driver License
         /// 
         ///  
@@ -43,15 +61,6 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDonorIndicator { get; set; }
-        
-        /// <summary>
-        /// Defines if card's expiry date should be extracted from New Zealand Driver License
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractExpiryDate { get; set; }
         
         /// <summary>
         /// Defines if owner's first name should be extracted from New Zealand Driver License
@@ -63,15 +72,6 @@
         bool ExtractFirstNames { get; set; }
         
         /// <summary>
-        /// Defines if card's issue date should be extracted from New Zealand Driver License
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractIssueDate { get; set; }
-        
-        /// <summary>
         /// Defines if owner's last name should be extracted from New Zealand Driver License
         /// 
         ///  
@@ -79,6 +79,26 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -106,6 +126,16 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
         
 
         /// <summary>
@@ -137,12 +167,17 @@
         /// <summary>
         /// The last name of the New Zealand Driver License owner. 
         /// </summary>
-        bool DonorIndicator { get; }
+        IDate DateOfExpiry { get; }
         
         /// <summary>
         /// The last name of the New Zealand Driver License owner. 
         /// </summary>
-        IDate ExpiryDate { get; }
+        IDate DateOfIssue { get; }
+        
+        /// <summary>
+        /// The last name of the New Zealand Driver License owner. 
+        /// </summary>
+        bool DonorIndicator { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
@@ -158,11 +193,6 @@
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
-        
-        /// <summary>
-        /// The last name of the New Zealand Driver License owner. 
-        /// </summary>
-        IDate IssueDate { get; }
         
         /// <summary>
         /// The license number of the New Zealand Driver License. 

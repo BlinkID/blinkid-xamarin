@@ -27,6 +27,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractOldNric 
+        { 
+            get => nativeRecognizer.ExtractOldNric; 
+            set => nativeRecognizer.ExtractOldNric = value;
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
@@ -65,6 +71,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string ExtendedNric => nativeResult.ExtendedNric;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string Nric => nativeResult.Nric;
+        public string OldNric => nativeResult.OldNric;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
     }

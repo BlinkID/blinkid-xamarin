@@ -27,16 +27,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractBloodGroup 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ShouldExtractBloodGroup(); 
-            set => nativeRecognizer.SetExtractBloodGroup(value);
+            get => nativeRecognizer.ShouldExtractAddress(); 
+            set => nativeRecognizer.SetExtractAddress(value);
+        }
+        
+        public bool ExtractAddressChangeDate 
+        { 
+            get => nativeRecognizer.ShouldExtractAddressChangeDate(); 
+            set => nativeRecognizer.SetExtractAddressChangeDate(value);
+        }
+        
+        public bool ExtractBloodType 
+        { 
+            get => nativeRecognizer.ShouldExtractBloodType(); 
+            set => nativeRecognizer.SetExtractBloodType(value);
         }
         
         public bool ExtractDateOfIssue 
         { 
             get => nativeRecognizer.ShouldExtractDateOfIssue(); 
             set => nativeRecognizer.SetExtractDateOfIssue(value);
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
         public bool ReturnFullDocumentImage 
@@ -56,9 +74,10 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public string BloodGroup => nativeResult.BloodGroup;
+        public IDate AddressChangeDate => nativeResult.AddressChangeDate.Date != null ? new Date(nativeResult.AddressChangeDate.Date) : null;
+        public string BloodType => nativeResult.BloodType;
         public string CardNumber => nativeResult.CardNumber;
-        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
     }
 }

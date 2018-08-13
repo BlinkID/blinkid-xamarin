@@ -45,10 +45,34 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfExpiry = value;
         }
         
+        public bool ExtractFirstName 
+        { 
+            get => nativeRecognizer.ExtractFirstName; 
+            set => nativeRecognizer.ExtractFirstName = value;
+        }
+        
+        public bool ExtractLastName 
+        { 
+            get => nativeRecognizer.ExtractLastName; 
+            set => nativeRecognizer.ExtractLastName = value;
+        }
+        
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
         public bool ReturnFaceImage 
@@ -69,6 +93,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
     public sealed class CroatiaIdFrontRecognizerResult : RecognizerResult, ICroatiaIdFrontRecognizerResult
@@ -84,10 +114,10 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public bool DocumentBilingual => nativeResult.DocumentBilingual;
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string IdentityCardNumber => nativeResult.IdentityCardNumber;
         public string LastName => nativeResult.LastName;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;

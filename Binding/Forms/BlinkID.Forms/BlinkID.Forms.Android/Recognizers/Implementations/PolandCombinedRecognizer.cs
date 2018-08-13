@@ -97,10 +97,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FamilyName => nativeResult.FamilyName;
-        public Xamarin.Forms.ImageSource FullDocumentBackImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentFrontImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
         public string GivenNames => nativeResult.GivenNames;
         public string Issuer => nativeResult.Issuer;
         public bool MrzVerified => nativeResult.IsMrzVerified;

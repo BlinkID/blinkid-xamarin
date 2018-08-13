@@ -71,8 +71,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public string DocumentCode => nativeResult.DocumentCode;
         public string DocumentNumber => nativeResult.DocumentNumber;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Issuer => nativeResult.Issuer;
         public bool MrzParsed => nativeResult.IsMrzParsed;
         public string MrzText => nativeResult.MrzText;
@@ -84,6 +84,6 @@ namespace Microblink.Forms.Droid.Recognizers
         public string PrimaryId => nativeResult.PrimaryId;
         public string SecondaryId => nativeResult.SecondaryId;
         public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
     }
 }

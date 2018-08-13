@@ -11,11 +11,13 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>4.0.0</PackageVersion>
+    <PackageVersion>4.1.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Initial version of NuGet package for BlinkID iOS Binding project.</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.1.0:
+
+https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
@@ -52,6 +54,7 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="packages.config" />
     <BundleResource Include="MicroBlink.bundle\Info.plist" />
     <BundleResource Include="MicroBlink.bundle\No Camera-100.png" />
     <BundleResource Include="MicroBlink.bundle\PPbeep.wav" />
@@ -106,7 +109,9 @@
     <BundleResource Include="MicroBlink.bundle\model_malaysian.zzip" />
     <BundleResource Include="MicroBlink.bundle\model_micr.zzip" />
     <BundleResource Include="MicroBlink.bundle\model_mrtd.zzip" />
-    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkIDOcr_production_4.1.1.zzip" />
+    <BundleResource Include="MicroBlink.bundle\morocco_id_confusions.zzip" />
+    <BundleResource Include="MicroBlink.bundle\morocco_places_dictionary.zzip" />
+    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkIDOcr_production_4.1.2.zzip" />
     <BundleResource Include="MicroBlink.bundle\nn_model_BlinkInputOcr_production_4.1.0.zzip" />
     <BundleResource Include="MicroBlink.bundle\scan-corner-ll.png" />
     <BundleResource Include="MicroBlink.bundle\scan-corner-ll%402x.png" />
@@ -127,7 +132,6 @@
     <BundleResource Include="MicroBlink.bundle\uae_confusions.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_name_dictionary.zzip" />
     <BundleResource Include="MicroBlink.bundle\uae_nationality_dictionary.zzip" />
-    <BundleResource Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />

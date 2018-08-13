@@ -129,10 +129,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstName => nativeResult.FirstName;
-        public Xamarin.Forms.ImageSource FullDocumentBackImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap());
-        public Xamarin.Forms.ImageSource FullDocumentFrontImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
+        public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
         public bool MrzVerified => nativeResult.IsMrzVerified;
@@ -141,7 +141,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
         public string SpecialRemarks => nativeResult.SpecialRemarks;
         public string SurnameAtBirth => nativeResult.SurnameAtBirth;
     }

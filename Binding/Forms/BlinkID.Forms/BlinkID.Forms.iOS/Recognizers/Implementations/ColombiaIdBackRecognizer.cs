@@ -21,10 +21,28 @@ namespace Microblink.Forms.iOS.Recognizers
         public IColombiaIdBackRecognizerResult Result => result;
 
         
+        public bool DetectGlare 
+        { 
+            get => nativeRecognizer.DetectGlare; 
+            set => nativeRecognizer.DetectGlare = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
         public bool NullQuietZoneAllowed 
         { 
             get => nativeRecognizer.NullQuietZoneAllowed; 
             set => nativeRecognizer.NullQuietZoneAllowed = value;
+        }
+        
+        public bool ReturnFullDocumentImage 
+        { 
+            get => nativeRecognizer.ReturnFullDocumentImage; 
+            set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
         public bool ScanUncertain 
@@ -43,11 +61,12 @@ namespace Microblink.Forms.iOS.Recognizers
         {
             this.nativeResult = nativeResult;
         }
+        public IDate BirthDate => nativeResult.BirthDate != null ? new Date(nativeResult.BirthDate) : null;
         public string BloodGroup => nativeResult.BloodGroup;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public byte[] Fingerprint => nativeResult.Fingerprint != null ? nativeResult.Fingerprint.ToArray() : null;
         public string FirstName => nativeResult.FirstName;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string LastName => nativeResult.LastName;
         public string Sex => nativeResult.Sex;
     }

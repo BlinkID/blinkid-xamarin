@@ -45,10 +45,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfExpiry(value);
         }
         
+        public bool ExtractFirstName 
+        { 
+            get => nativeRecognizer.ShouldExtractFirstName(); 
+            set => nativeRecognizer.SetExtractFirstName(value);
+        }
+        
+        public bool ExtractLastName 
+        { 
+            get => nativeRecognizer.ShouldExtractLastName(); 
+            set => nativeRecognizer.SetExtractLastName(value);
+        }
+        
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ShouldExtractSex(); 
             set => nativeRecognizer.SetExtractSex(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
         public bool ReturnFaceImage 
@@ -69,6 +93,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class CroatiaIdFrontRecognizerResult : RecognizerResult, ICroatiaIdFrontRecognizerResult
@@ -80,16 +110,16 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Citizenship => nativeResult.Citizenship;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public bool DocumentBilingual => nativeResult.IsDocumentBilingual;
-        public Xamarin.Forms.ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
+        public string DocumentNumber => nativeResult.DocumentNumber;
+        public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstName => nativeResult.FirstName;
-        public Xamarin.Forms.ImageSource FullDocumentImage => Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap());
-        public string IdentityCardNumber => nativeResult.IdentityCardNumber;
+        public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string LastName => nativeResult.LastName;
         public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap());
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
     }
 }
