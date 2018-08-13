@@ -1,91 +1,117 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for reading Malaysian iKad.
+    /// Class for configuring iKad Recognizer.
     /// 
+    /// iKad recognizer is used for scanning iKad.
     /// </summary>
     public interface IIkadRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if address is being extracted 
+        /// Defines if owner's address should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// true if employer is being extracted 
+        /// Defines if owner's employer should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractEmployer { get; set; }
         
         /// <summary>
-        /// true if expiry date is being extracted 
+        /// Defines if expiry date should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractExpiryDate { get; set; }
         
         /// <summary>
-        /// true if faculty address is being extracted 
+        /// Defines if owner's faculty address should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFacultyAddress { get; set; }
         
         /// <summary>
-        /// true if nationality is being extracted 
+        /// Defines if date of expiry should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// true if passport number is being extracted 
+        /// Defines if owner's passport number should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPassportNumber { get; set; }
         
         /// <summary>
-        /// true if sector is being extracted 
+        /// Defines if owner's sector should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSector { get; set; }
         
         /// <summary>
-        /// true if sex is being extracted 
+        /// Defines if owner's sex should be extracted from iKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -104,62 +130,62 @@
     public interface IIkadRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// personal address of the Malaysian iKad owner. 
+        /// The address of the iKad owner 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// the date of birth of Malaysian iKad owner 
+        /// The date of birth of iKad owner, parsed in NSDate object 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// employer of the Malaysian iKad owner. 
+        /// The employer of the iKad owner 
         /// </summary>
         string Employer { get; }
         
         /// <summary>
-        /// the expiry date of the Malaysian iKad 
+        /// The expiry date of the iKad, parsed in NSDate object 
         /// </summary>
         IDate ExpiryDate { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// faculty address of the Malaysian iKad owner. 
+        /// The faculty address of the iKad owner 
         /// </summary>
         string FacultyAddress { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the name of the Malaysian iKad owner. 
+        /// The name of the iKad owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// the nationality of the Malaysian iKad owner. 
+        /// The nationality of the iKad owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// the passport number of Malaysian iKad. 
+        /// The passport number of the iKad owner. 
         /// </summary>
         string PassportNumber { get; }
         
         /// <summary>
-        /// the sector of Malaysian iKad. 
+        /// The sector of the iKad owner 
         /// </summary>
         string Sector { get; }
         
         /// <summary>
-        /// sex of the Malaysian iKad owner. 
+        /// The sex of the iKad owner 
         /// </summary>
         string Sex { get; }
         

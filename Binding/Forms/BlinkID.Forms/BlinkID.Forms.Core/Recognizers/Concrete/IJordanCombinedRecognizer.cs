@@ -1,56 +1,71 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for combined reading of both front and back side of Jordan ID.
+    /// Jordan ID Combined Recognizer.
     /// 
+    /// Jordan ID Combined recognizer is used for scanning both front and back side of Jordan ID.
     /// </summary>
     public interface IJordanCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if date of birth of Jordan owner is being extracted 
+        /// Defines if owner's date of birth should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// true if name of Jordan ID owner is being extracted 
+        /// Defines if owner's name should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// true if sex of Jordan owner is being extracted 
+        /// Defines if owner's sex should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether or not recognition result should be signed. 
+        /// Whether or not recognition result should be signed.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -69,82 +84,87 @@
     public interface IJordanCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the date of birth of Jordan ID owner. 
+        /// The Date Of Birth of the Jordan ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// the document date of expiry of the Jordan ID. 
+        /// The Date of expiry of the Jordan ID. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Defines digital signature of recognition results. 
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Defines digital signature version. 
+        /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
         /// <summary>
-        /// Defines {true} if data from scanned parts/sides of the document match, 
+        /// Returns true if data from scanned parts/sides of the document match,
+        /// false otherwise. For example if date of expiry is scanned from the front and back side
+        /// of the document and values do not match, this method will return false. Result will
+        /// be true only if scanned values for all fields that are compared are the same. 
         /// </summary>
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// the document number of Jordan ID. 
+        /// The Document Number of the Jordan ID. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        ///  back side image of the document 
+        /// back side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        ///  front side image of the document 
+        /// front side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// the issuer of Jordan ID. 
+        /// The issuer of the Jordan ID. 
         /// </summary>
         string Issuer { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise. 
+        /// true if all check digits inside MRZ are correct, false otherwise.
+        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// the name of the Jordan ID owner. 
+        /// The Name of the Jordan ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// the national number of Jordan ID owner. 
+        /// The Document Number of the Jordan ID. 
         /// </summary>
         string NationalNumber { get; }
         
         /// <summary>
-        /// nationality of the Jordan ID owner. 
+        /// The nationality of the Jordan ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        ///  {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
+        /// false if it's still scanning first side. 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// sex of the Jordan ID owner. 
+        /// The Sex of the Jordan ID owner. 
         /// </summary>
         string Sex { get; }
         

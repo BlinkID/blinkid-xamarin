@@ -1,76 +1,100 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer for scanning driver's licence of several european countries
+    /// Class for configuring EU Driver License Recognizer.
+    /// 
+    /// EU Driver License recognizer is used for scanning EU Driver License.
     /// </summary>
     public interface IEudlRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// currently used country. 
+        /// Country of scanning Eudl. The default value of EudlCountryAny will scan all supported driver's licenses.
+        /// 
+        ///  
         ///
-        /// By default, this is set to 'EUDL_COUNTRY_AUTO'
+        /// By default, this is set to 'MBEudlCountryAny'
         /// </summary>
         EudlCountry Country { get; set; }
         
         /// <summary>
-        /// Defines if address should be extracted from EU driver's license 
+        /// Defines if owner's address should be extracted from EU Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if expiry date should be extracted from EU driver's license 
+        /// Defines if owner's date of expiry should be extracted from EU Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if issue date should be extracted from EU driver's license 
+        /// Defines if owner's date of issue should be extracted from EU Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from EU driver's license 
+        /// Defines if owner's issuing authority should be extracted from EU Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if personal number should be extracted from EU driver's license 
+        /// Defines if owner's personal number should be extracted from EU Driver License
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPersonalNumber { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -89,62 +113,62 @@
     public interface IEudlRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the address of the Driver's Licence owner. 
+        /// The address of the EU Driver License owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// birth date and birth place of Driver's Licence owner 
+        /// The birth Data of the EU Driver License owner. 
         /// </summary>
         string BirthData { get; }
         
         /// <summary>
-        /// the country where the driver's license has been issued. 
+        /// The country of the EU Driver License owner. 
         /// </summary>
         EudlCountry Country { get; }
         
         /// <summary>
-        /// the driver number. 
+        /// The driver Number of the EU Driver License owner. 
         /// </summary>
         string DriverNumber { get; }
         
         /// <summary>
-        /// the expiry date of the Driver's Licence 
+        /// The expiry Date of the EU Driver License owner. 
         /// </summary>
         IDate ExpiryDate { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the first name of the Driver's Licence owner. 
+        /// The first Name of the EU Driver License owner. 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the issue date of the Driver's Licence 
+        /// The issue Date of the EU Driver License owner. 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// document issuing authority. 
+        /// The issuing Authority of the EU Driver License owner. 
         /// </summary>
         string IssuingAuthority { get; }
         
         /// <summary>
-        /// the last name of the Driver's Licence owner. 
+        /// The last Name of the EU Driver License owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// the personal number of the Driver's Licence owner. 
+        /// The personal Number of the EU Driver License owner. 
         /// </summary>
         string PersonalNumber { get; }
         

@@ -1,48 +1,64 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer for reading back side of Malaysian MyKad.
+    /// Class for configuring Kad Back Recognizer.
+    /// 
+    /// MyKadBack recognizer is used for scanning back side of MyKad.
     /// </summary>
     public interface IMyKadBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if old NRIC (National Registration Identity Card Number) of MyKad 
+        /// Defines if old NRIC should be extracted from back side of the MyKad
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractOldNric { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for signature image that should be returned. 
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -61,37 +77,37 @@
     public interface IMyKadBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// date of birth of MyKad owner. 
+        /// The Date Of Birth of the MyKad owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// extended NRIC (National Registration Identity Card Number) of MyKad. 
+        /// The Extended NRIC of the MyKad owner. 
         /// </summary>
         string ExtendedNric { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// NRIC (National Registration Identity Card Number) of MyKad. 
+        /// The NRIC of the MyKad owner. 
         /// </summary>
         string Nric { get; }
         
         /// <summary>
-        /// old NRIC (National Registration Identity Card Number) of MyKad. 
+        /// The old NRIC of the MyKad owner. 
         /// </summary>
         string OldNric { get; }
         
         /// <summary>
-        /// sex of MyKad owner. 
+        /// The Sex of the MyKad owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        ///  signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
