@@ -21,7 +21,7 @@
     <Description>A small, but powerful ID scanning library - iOS implementation for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>Updatd for BlinkID iOS SDK v4.1.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.1.0:
 
 https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
   </PropertyGroup>

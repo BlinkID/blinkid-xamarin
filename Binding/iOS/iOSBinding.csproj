@@ -15,7 +15,7 @@
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updatd for BlinkID iOS SDK v4.1.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.1.0:
 
 https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
