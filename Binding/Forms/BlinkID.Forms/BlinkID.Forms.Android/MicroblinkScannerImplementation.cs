@@ -46,9 +46,10 @@ namespace Microblink.Forms.Droid
 
         RecognizerBundle recognizerBundle;
 
-        public MicroblinkScannerImplementation(string licenseKey, string licensee, IMicroblinkScannerAndroidHostActivity androidHostActivity) 
+        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning, IMicroblinkScannerAndroidHostActivity androidHostActivity) 
         {
             this.androidHostActivity = androidHostActivity;
+            MicroblinkSDK.SetShowTimeLimitedLicenseWarning(showTimeLimitedLicenseWarning);
             if (licensee == null)
             {
                 MicroblinkSDK.SetLicenseKey(licenseKey, androidHostActivity.HostActivity);
@@ -96,21 +97,21 @@ namespace Microblink.Forms.Droid
         /// <value>The android host activity.</value>
         public static IMicroblinkScannerAndroidHostActivity AndroidHostActivity { get; set; }
 
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTimeLimitedLicenseWarning)
         {
             if (AndroidHostActivity == null) {
                 throw new NullReferenceException("Please set AndroidHostActivity implementation in your Droid project.");
             }
-            return new MicroblinkScannerImplementation(licenseKey, null, AndroidHostActivity);
+            return new MicroblinkScannerImplementation(licenseKey, null, showTimeLimitedLicenseWarning, AndroidHostActivity);
         }
 
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
             if (AndroidHostActivity == null)
             {
                 throw new NullReferenceException("Please set AndroidHostActivity implementation in your Droid project.");
             }
-            return new MicroblinkScannerImplementation(licenseKey, licensee, AndroidHostActivity);
+            return new MicroblinkScannerImplementation(licenseKey, licensee, showTimeLimitedLicenseWarning, AndroidHostActivity);
         }
     }
 }
