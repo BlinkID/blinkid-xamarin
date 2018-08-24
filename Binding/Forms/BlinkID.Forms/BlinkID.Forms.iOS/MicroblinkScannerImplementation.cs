@@ -13,8 +13,9 @@ namespace Microblink.Forms.iOS
         // ensure RecognizerRunnerVC does not get GC-ed while it is required for ObjC code
         IMBRecognizerRunnerViewController recognizerRunnerViewController;
 
-        public MicroblinkScannerImplementation(string licenseKey, string licensee)
+        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
+            MBMicroblinkSDK.SharedInstance.ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
             if (licensee == null) 
             {
                 MBMicroblinkSDK.SharedInstance.SetLicenseKey(licenseKey);
@@ -55,14 +56,14 @@ namespace Microblink.Forms.iOS
 
     public sealed class MicroblinkScannerFactoryImplementation : IMicroblinkScannerFactory
     {
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTimeLimitedLicenseWarning)
         {
-            return new MicroblinkScannerImplementation(licenseKey, null);
+            return new MicroblinkScannerImplementation(licenseKey, null, showTimeLimitedLicenseWarning);
         }
 
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
-            return new MicroblinkScannerImplementation(licenseKey, licensee);
+            return new MicroblinkScannerImplementation(licenseKey, licensee, showTimeLimitedLicenseWarning);
         }
     }
 }
