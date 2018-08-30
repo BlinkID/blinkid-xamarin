@@ -5,14 +5,14 @@ namespace Microblink.Forms.Core
     /// <summary>
     /// A main scanner object that will be used for performing the scan.
     /// </summary>
-	public interface IMicroblinkScanner
-	{
+    public interface IMicroblinkScanner
+    {
         /// <summary>
         /// Perform the scanning using overlay specified by given IOverlaySettings.
         /// </summary>
         /// <param name="overlaySettings">Overlay settings that specify the UI overlay that will be used for scanning.</param>
         void Scan(IOverlaySettings overlaySettings);
-	}
+    }
 
     /// <summary>
     /// Microblink scanner factory is needed for creating an instance of IMicroblinkScanner.
@@ -34,7 +34,7 @@ namespace Microblink.Forms.Core
         /// </summary>
         /// <returns>The microblink scanner.</returns>
         /// <param name="licenseKey">License key for unlocking the scanning feature</param>
-        /// <param name="licensee">Licensee to which provided <paramref name="licenseKey"/> is bound.
+        /// <param name="licensee">Licensee to which provided <paramref name="licenseKey"/> is bound.</param>
         /// <param name="showTimeLimitedLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
         IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning = true);
     }
