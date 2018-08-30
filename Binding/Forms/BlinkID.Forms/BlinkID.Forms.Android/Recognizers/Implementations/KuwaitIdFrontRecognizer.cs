@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SingaporeIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(KuwaitIdFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class SingaporeIdFrontRecognizer : Recognizer, ISingaporeIdFrontRecognizer
+    public sealed class KuwaitIdFrontRecognizer : Recognizer, IKuwaitIdFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer nativeRecognizer;
 
-        SingaporeIdFrontRecognizerResult result;
+        KuwaitIdFrontRecognizerResult result;
 
-        public SingaporeIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer())
+        public KuwaitIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer;
-            result = new SingaporeIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer;
+            result = new KuwaitIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ISingaporeIdFrontRecognizerResult Result => result;
+        public IKuwaitIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,16 +27,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractCountryOfBirth 
+        public bool ExtractBirthDate 
         { 
-            get => nativeRecognizer.ShouldExtractCountryOfBirth(); 
-            set => nativeRecognizer.SetExtractCountryOfBirth(value);
-        }
-        
-        public bool ExtractDateOfBirth 
-        { 
-            get => nativeRecognizer.ShouldExtractDateOfBirth(); 
-            set => nativeRecognizer.SetExtractDateOfBirth(value);
+            get => nativeRecognizer.ShouldExtractBirthDate(); 
+            set => nativeRecognizer.SetExtractBirthDate(value);
         }
         
         public bool ExtractName 
@@ -45,10 +39,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractName(value);
         }
         
-        public bool ExtractRace 
+        public bool ExtractNationality 
         { 
-            get => nativeRecognizer.ShouldExtractRace(); 
-            set => nativeRecognizer.SetExtractRace(value);
+            get => nativeRecognizer.ShouldExtractNationality(); 
+            set => nativeRecognizer.SetExtractNationality(value);
         }
         
         public bool ExtractSex 
@@ -83,21 +77,21 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class SingaporeIdFrontRecognizerResult : RecognizerResult, ISingaporeIdFrontRecognizerResult
+    public sealed class KuwaitIdFrontRecognizerResult : RecognizerResult, IKuwaitIdFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer.Result nativeResult;
 
-        internal SingaporeIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Singapore.SingaporeIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal KuwaitIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Kuwait.KuwaitIdFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string CountryOfBirth => nativeResult.CountryOfBirth;
-        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate BirthDate => nativeResult.BirthDate.Date != null ? new Date(nativeResult.BirthDate.Date) : null;
+        public string CivilIdNumber => nativeResult.CivilIdNumber;
+        public IDate ExpiryDate => nativeResult.ExpiryDate.Date != null ? new Date(nativeResult.ExpiryDate.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string IdentityCardNumber => nativeResult.IdentityCardNumber;
         public string Name => nativeResult.Name;
-        public string Race => nativeResult.Race;
+        public string Nationality => nativeResult.Nationality;
         public string Sex => nativeResult.Sex;
     }
 }
