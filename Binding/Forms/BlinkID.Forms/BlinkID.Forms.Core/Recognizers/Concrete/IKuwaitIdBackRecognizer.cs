@@ -1,10 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for reading Egypt ID Front document.
-    /// 
+    /// Recognizer which can scan back side of Kuwait national ID cards.
     /// </summary>
-    public interface IEgyptIdFrontRecognizer : IRecognizer
+    public interface IKuwaitIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -15,18 +14,18 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if national number of Egypt ID Front owner is being extracted 
+        /// Defines if serial number of Kuwait ID should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractNationalNumber { get; set; }
+        bool ExtractSerialNo { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to '250'
         /// </summary>
-        bool ReturnFaceImage { get; set; }
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Defines whether full document image will be available in result. 
@@ -39,23 +38,13 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IEgyptIdFrontRecognizerResult Result { get; }
+        IKuwaitIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IEgyptIdFrontRecognizer.
+    /// Result object for IKuwaitIdBackRecognizer.
     /// </summary>
-    public interface IEgyptIdFrontRecognizerResult : IRecognizerResult {
-        
-        /// <summary>
-        /// the Egypt ID document number. 
-        /// </summary>
-        string DocumentNumber { get; }
-        
-        /// <summary>
-        ///  face image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource FaceImage { get; }
+    public interface IKuwaitIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
         ///  image of the full document 
@@ -63,9 +52,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the Egypt ID card owner national number. 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string NationalNumber { get; }
+        IMrzResult MrzResult { get; }
+        
+        /// <summary>
+        /// The serial number of Kuwait ID. 
+        /// </summary>
+        string SerialNo { get; }
         
     }
 }

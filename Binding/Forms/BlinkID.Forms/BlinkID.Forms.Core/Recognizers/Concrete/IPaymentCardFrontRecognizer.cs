@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of United Arab Emirates national ID cards.
+    /// Recognizer used for scanning the front side of credit/debit cards
     /// </summary>
-    public interface IUnitedArabEmiratesIdBackRecognizer : IRecognizer
+    public interface IPaymentCardFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -12,6 +12,20 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
+        
+        /// <summary>
+        /// Should extract the card owner information 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractOwner { get; set; }
+        
+        /// <summary>
+        /// Should extract the payment card's month of expiry 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractValidThru { get; set; }
         
         /// <summary>
         /// the DPI (Dots Per Inch) for full document image that should be returned. 
@@ -31,13 +45,18 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IUnitedArabEmiratesIdBackRecognizerResult Result { get; }
+        IPaymentCardFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IUnitedArabEmiratesIdBackRecognizer.
+    /// Result object for IPaymentCardFrontRecognizer.
     /// </summary>
-    public interface IUnitedArabEmiratesIdBackRecognizerResult : IRecognizerResult {
+    public interface IPaymentCardFrontRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The payment card number. 
+        /// </summary>
+        string CardNumber { get; }
         
         /// <summary>
         ///  image of the full document 
@@ -45,9 +64,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// Information about the payment card owner (name, company, etc.) 
         /// </summary>
-        IMrzResult MrzResult { get; }
+        string Owner { get; }
+        
+        /// <summary>
+        /// The payment card's last month of validity. 
+        /// </summary>
+        IDate ValidThru { get; }
         
     }
 }

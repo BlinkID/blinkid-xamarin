@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Austrian national ID cards.
+    /// Recognizer which can scan front side of Cyprus national ID cards.
     /// </summary>
-    public interface IAustriaIdFrontRecognizer : IRecognizer
+    public interface ICyprusIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,28 +14,21 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Austrian ID owner should be extracted 
+        /// Defines if document number of Cyprus ID card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
+        bool ExtractDocumentNumber { get; set; }
         
         /// <summary>
-        /// Defines if given name of Austrian ID owner should be extracted 
+        /// Defines if name of Cyprus ID card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractGivenName { get; set; }
+        bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if sex of Austrian ID owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSex { get; set; }
-        
-        /// <summary>
-        /// Defines if surname of Austrian ID owner should be extracted 
+        /// Defines if surname of Cyprus ID card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -69,39 +62,20 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// the DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustriaIdFrontRecognizerResult Result { get; }
+        ICyprusIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustriaIdFrontRecognizer.
+    /// Result object for ICyprusIdFrontRecognizer.
     /// </summary>
-    public interface IAustriaIdFrontRecognizerResult : IRecognizerResult {
+    public interface ICyprusIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of Austrian ID owner 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The document number of Austrian ID 
+        /// The document number of Cyprus ID card. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -116,22 +90,17 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The given name of the Austrian ID owner 
+        /// The ID number of the Cyprus ID card. 
         /// </summary>
-        string GivenName { get; }
+        string IdNumber { get; }
         
         /// <summary>
-        /// The sex of the Austrian ID owner 
+        /// The name of Cyprus ID card owner. 
         /// </summary>
-        string Sex { get; }
+        string Name { get; }
         
         /// <summary>
-        ///  signature image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
-        
-        /// <summary>
-        /// The surname of the Austrian ID owner. 
+        /// The surname of Cyprus ID card owner. 
         /// </summary>
         string Surname { get; }
         

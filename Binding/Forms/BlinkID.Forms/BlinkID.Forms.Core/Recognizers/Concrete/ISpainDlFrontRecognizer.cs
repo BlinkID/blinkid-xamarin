@@ -1,10 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer settings for reading front side of Sweden DL
-    /// 
+    /// Recognizer which can scan front side of Spain national DL cards
     /// </summary>
-    public interface ISwedenDlFrontRecognizer : IRecognizer
+    public interface ISpainDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -15,63 +14,70 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if date of birth of Sweden DL owner is being extracted 
+        /// Defines if date of birth of Spain DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// true if date of expiry of Sweden DL is being extracted 
+        /// Defines if first name of Spain DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfExpiry { get; set; }
+        bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// true if date of issue of Sweden DL is being extracted 
+        /// Defines if issuing authority of Spain DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfIssue { get; set; }
+        bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// true if issuing agency of Sweden DL is being extracted 
+        /// Defines if licence categories of Spain DL should be extracted 
         ///
         /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractIssuingAgency { get; set; }
-        
-        /// <summary>
-        /// true if licence categories of Sweden DL is being extracted 
-        ///
-        /// By default, this is set to 'false'
         /// </summary>
         bool ExtractLicenceCategories { get; set; }
         
         /// <summary>
-        /// true if name of Sweden DL owner is being extracted 
+        /// Defines if place of birth of Spain DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractName { get; set; }
+        bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// true if reference number of Sweden DL is being extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractReferenceNumber { get; set; }
-        
-        /// <summary>
-        /// true if surname of Sweden DL owner is being extracted 
+        /// Defines if surname of Spain DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Defines if date of issue of Spain DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractValidFrom { get; set; }
+        
+        /// <summary>
+        /// Defines if date of expiry of Spain DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractValidUntil { get; set; }
+        
+        /// <summary>
+        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -98,32 +104,29 @@
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
+        /// <summary>
+        /// the DPI (Dots Per Inch) for signature image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISwedenDlFrontRecognizerResult Result { get; }
+        ISpainDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISwedenDlFrontRecognizer.
+    /// Result object for ISpainDlFrontRecognizer.
     /// </summary>
-    public interface ISwedenDlFrontRecognizerResult : IRecognizerResult {
+    public interface ISpainDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// date of birth of Sweden DL owner. 
+        /// The date of birth of Spain DL owner 
         /// </summary>
         IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// date of expiry of Sweden DL. 
-        /// </summary>
-        IDate DateOfExpiry { get; }
-        
-        /// <summary>
-        /// date of issue of Sweden DL. 
-        /// </summary>
-        IDate DateOfIssue { get; }
         
         /// <summary>
         ///  face image from the document 
@@ -131,34 +134,34 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The first name of the Spain DL owner 
+        /// </summary>
+        string FirstName { get; }
+        
+        /// <summary>
         ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// issuing agency of Sweden DL card. 
+        /// The issuing authority of the Spain DL 
         /// </summary>
-        string IssuingAgency { get; }
+        string IssuingAuthority { get; }
         
         /// <summary>
-        /// licence categories of Sweden DL. 
+        /// The licence categories of the Spain DL 
         /// </summary>
         string LicenceCategories { get; }
         
         /// <summary>
-        /// the licence number of Sweden DL card owner. 
+        /// The licence number of the Spain DL 
         /// </summary>
-        string LicenceNumber { get; }
+        string Number { get; }
         
         /// <summary>
-        /// name of Sweden DL owner. 
+        /// The date of birth of Spain DL owner 
         /// </summary>
-        string Name { get; }
-        
-        /// <summary>
-        /// reference number of Sweden DL card. 
-        /// </summary>
-        string ReferenceNumber { get; }
+        string PlaceOfBirth { get; }
         
         /// <summary>
         ///  signature image from the document 
@@ -166,9 +169,19 @@
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// surname of Sweden DL owner. 
+        /// The surname of the Spain DL owner. 
         /// </summary>
         string Surname { get; }
+        
+        /// <summary>
+        /// The date of issue of Spain DL 
+        /// </summary>
+        IDate ValidFrom { get; }
+        
+        /// <summary>
+        /// The date of expiry of Spain DL 
+        /// </summary>
+        IDate ValidUntil { get; }
         
     }
 }

@@ -1,91 +1,69 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Singapore Dl Front Recognizer.
-    /// 
-    /// Singapore Dl Front recognizer is used for scanning front side of the Singapore Driver's license..
+    /// The Singapore Dl Front Recognizer is used for scanning front side of the Singapore Dl.
     /// </summary>
     public interface ISingaporeDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's birth date should be extracted from front side of the Singapore DL
-        /// 
-        ///  
+        /// Defines if birth date of Singapore driver's license owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractBirthDate { get; set; }
         
         /// <summary>
-        /// Defines if the issue date should be extracted from front side of the Singapore DL
-        /// 
-        ///  
+        /// Defines if issue date of Singapore driver's license should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssueDate { get; set; }
         
         /// <summary>
-        /// Defines if owner's name should be extracted from front side of the Singapore DL
-        /// 
-        ///  
+        /// Defines if name of Singapore driver's license owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if valid till should be extracted from front side of the Singapore DL
-        /// 
-        ///  
+        /// Defines if valid till date of Singapore driver's license should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidTill { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -104,37 +82,37 @@
     public interface ISingaporeDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The birth Date of the Singapore DL owner. 
+        /// The birth date of Singapore driver's owner. 
         /// </summary>
         IDate BirthDate { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issue date of the Singapore DL. 
+        /// The issue date of Singapore driver's licence. 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// The licence Number of the Singapore DL. 
+        /// The licence number of Singapore driver's licence. 
         /// </summary>
         string LicenceNumber { get; }
         
         /// <summary>
-        /// The name of the Singapore DL owner. 
+        /// The (full) name of Singapore driver's licence owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The valid till of the Singapore DL. 
+        /// The valid till date of Singapore driver's licence. 
         /// </summary>
         IDate ValidTill { get; }
         

@@ -1,59 +1,41 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Colombia Id Back Recognizer.
-    /// 
-    /// Colombia Id Back recognizer is used for scanning back side of the Colombia Id.
+    /// Recognizer which can scan back side of Colombian national ID cards.
     /// </summary>
     public interface IColombiaIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// Allow scanning PDF417 barcodes which don't have quiet zone 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool NullQuietZoneAllowed { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Set this to true to scan even barcode not compliant with standards
-        /// For example, malformed PDF417 barcodes which were incorrectly encoded
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
+        /// Enable decoding of non-standard PDF417 barcodes, but without 
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -72,42 +54,42 @@
     public interface IColombiaIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The birth Date of the Colombia Id owner. 
+        /// owner’s date of birth 
         /// </summary>
         IDate BirthDate { get; }
         
         /// <summary>
-        /// The blood Group of the Colombia Id owner. 
+        /// owner’s blood group 
         /// </summary>
         string BloodGroup { get; }
         
         /// <summary>
-        /// The document Number Colombia Id owner. 
+        /// the Colombian ID document number number. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The fingerprint of the Colombian ID owner. 
+        /// owner’s encoded fingerprint 
         /// </summary>
         byte[] Fingerprint { get; }
         
         /// <summary>
-        /// The first Name of the Colombia Id owner. 
+        /// owner’s first name 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The last Name of the Colombia Id owner. 
+        /// owner’s last name 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The sex of the Colombia Id owner. 
+        /// owner’s sex 
         /// </summary>
         string Sex { get; }
         

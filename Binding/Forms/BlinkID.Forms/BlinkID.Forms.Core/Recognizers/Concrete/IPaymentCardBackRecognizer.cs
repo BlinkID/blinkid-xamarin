@@ -1,10 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for reading Egypt ID Front document.
-    /// 
+    /// Recognizer used for scanning the back side of credit/debit cards
     /// </summary>
-    public interface IEgyptIdFrontRecognizer : IRecognizer
+    public interface IPaymentCardBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -15,18 +14,18 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if national number of Egypt ID Front owner is being extracted 
+        /// Should extract the card's inventory number 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractNationalNumber { get; set; }
+        bool ExtractInventoryNumber { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to '250'
         /// </summary>
-        bool ReturnFaceImage { get; set; }
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Defines whether full document image will be available in result. 
@@ -39,23 +38,18 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IEgyptIdFrontRecognizerResult Result { get; }
+        IPaymentCardBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IEgyptIdFrontRecognizer.
+    /// Result object for IPaymentCardBackRecognizer.
     /// </summary>
-    public interface IEgyptIdFrontRecognizerResult : IRecognizerResult {
+    public interface IPaymentCardBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the Egypt ID document number. 
+        /// Payment card's security code/value. 
         /// </summary>
-        string DocumentNumber { get; }
-        
-        /// <summary>
-        ///  face image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource FaceImage { get; }
+        string Cvv { get; }
         
         /// <summary>
         ///  image of the full document 
@@ -63,9 +57,9 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the Egypt ID card owner national number. 
+        /// Payment card's inventory number. 
         /// </summary>
-        string NationalNumber { get; }
+        string InventoryNumber { get; }
         
     }
 }

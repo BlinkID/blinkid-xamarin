@@ -1,10 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for combined reading of both front and back side of Jordan ID.
-    /// 
+    /// Recognizer used for scanning both sides of payment cards.
     /// </summary>
-    public interface IJordanCombinedRecognizer : IRecognizer
+    public interface IPaymentCardCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -15,32 +14,32 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if date of birth of Jordan owner is being extracted 
+        /// Should extract the card's inventory number 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
+        bool ExtractInventoryNumber { get; set; }
         
         /// <summary>
-        /// true if name of Jordan ID owner is being extracted 
+        /// Should extract the card owner information 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractName { get; set; }
+        bool ExtractOwner { get; set; }
         
         /// <summary>
-        /// true if sex of Jordan owner is being extracted 
+        /// Should extract the payment card's month of expiry 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSex { get; set; }
+        bool ExtractValidThru { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to '250'
         /// </summary>
-        bool ReturnFaceImage { get; set; }
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Defines whether full document image will be available in result. 
@@ -60,23 +59,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IJordanCombinedRecognizerResult Result { get; }
+        IPaymentCardCombinedRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IJordanCombinedRecognizer.
+    /// Result object for IPaymentCardCombinedRecognizer.
     /// </summary>
-    public interface IJordanCombinedRecognizerResult : IRecognizerResult {
+    public interface IPaymentCardCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the date of birth of Jordan ID owner. 
+        /// The payment card number. 
         /// </summary>
-        IDate DateOfBirth { get; }
+        string CardNumber { get; }
         
         /// <summary>
-        /// the document date of expiry of the Jordan ID. 
+        /// Payment card's security code/value. 
         /// </summary>
-        IDate DateOfExpiry { get; }
+        string Cvv { get; }
         
         /// <summary>
         /// Defines digital signature of recognition results. 
@@ -94,16 +93,6 @@
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// the document number of Jordan ID. 
-        /// </summary>
-        string DocumentNumber { get; }
-        
-        /// <summary>
-        ///  face image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource FaceImage { get; }
-        
-        /// <summary>
         ///  back side image of the document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
@@ -114,29 +103,14 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// the issuer of Jordan ID. 
+        /// Payment card's inventory number. 
         /// </summary>
-        string Issuer { get; }
+        string InventoryNumber { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise. 
+        /// Information about the payment card owner (name, company, etc.) 
         /// </summary>
-        bool MrzVerified { get; }
-        
-        /// <summary>
-        /// the name of the Jordan ID owner. 
-        /// </summary>
-        string Name { get; }
-        
-        /// <summary>
-        /// the national number of Jordan ID owner. 
-        /// </summary>
-        string NationalNumber { get; }
-        
-        /// <summary>
-        /// nationality of the Jordan ID owner. 
-        /// </summary>
-        string Nationality { get; }
+        string Owner { get; }
         
         /// <summary>
         ///  {true} if recognizer has finished scanning first side and is now scanning back side, 
@@ -144,9 +118,9 @@
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// sex of the Jordan ID owner. 
+        /// The payment card's last month of validity. 
         /// </summary>
-        string Sex { get; }
+        IDate ValidThru { get; }
         
     }
 }

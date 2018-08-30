@@ -1,44 +1,111 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Singapore ID Combined Recognizer.
-    /// 
-    /// Singapore ID Combined recognizer is used for scanning both front and back side of Singapore ID.
+    /// Recognizer for combined reading of both front and back side of Singapore ID.
     /// </summary>
     public interface ISingaporeCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines if Singapore ID owner's address should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if Singapore ID owner's address change date on sticker should be extracted 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ExtractAddressChangeDate { get; set; }
+        
+        /// <summary>
+        /// Defines if Singapore ID owner's blood type should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractBloodType { get; set; }
+        
+        /// <summary>
+        /// Defines if country of birth of Singaporean ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractCountryOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if date of birth of Singaporean ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if Singapore ID's date of issue should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if name of Singaporean ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractName { get; set; }
+        
+        /// <summary>
+        /// Defines if race of Singaporean ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractRace { get; set; }
+        
+        /// <summary>
+        /// Defines if sex of Singaporean ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Whether or not recognition result should be signed.
-        /// 
-        ///  
+        /// Defines whether or not recognition result should be signed. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -57,86 +124,87 @@
     public interface ISingaporeCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The name of the Singapore ID owner. 
+        /// The Singapore ID owner's address 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The blood group of the Singapore ID owner. 
+        /// The Singapore ID owner's address change date, present if the address is on a sticker 
         /// </summary>
-        string BloodGroup { get; }
+        IDate AddressChangeDate { get; }
         
         /// <summary>
-        /// The identity card number of Singapore ID. 
+        /// The Singapore ID owner's blood type 
         /// </summary>
-        string CardNumber { get; }
+        string BloodType { get; }
         
         /// <summary>
-        /// The country of birth of the Singapore ID owner. 
+        /// The country/place of birth of the Singaporean ID card owner. 
         /// </summary>
         string CountryOfBirth { get; }
         
         /// <summary>
-        /// The date of birth of Singapore ID owner 
+        /// The date of birth of the Singaporean ID card owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of issue of Singapore ID owner 
+        /// The Singapore ID's date of issue 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
+        /// Defines digital signature of recognition results. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Version of the digital signature. Available only if enabled with signResult property. 
+        /// Defines digital signature version. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
         /// <summary>
-        /// Returns true if data from scanned parts/sides of the document match,
-        /// false otherwise. For example if date of expiry is scanned from the front and back side
-        /// of the document and values do not match, this method will return false. Result will
-        /// be true only if scanned values for all fields that are compared are the same. 
+        /// Defines {true} if data from scanned parts/sides of the document match, 
         /// </summary>
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// back side image of the document if enabled with returnFullDocumentImage property. 
+        ///  back side image of the document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        /// front side image of the document if enabled with returnFullDocumentImage property. 
+        ///  front side image of the document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The first name of the Singapore ID owner. 
+        /// The identity card number of the Singaporean ID card. 
+        /// </summary>
+        string IdentityCardNumber { get; }
+        
+        /// <summary>
+        /// The name of the Singaporean ID card owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The race of the Singapore ID owner. 
+        /// The race of the Singaporean ID card owner. 
         /// </summary>
         string Race { get; }
         
         /// <summary>
-        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
-        /// false if it's still scanning first side. 
+        ///  {true} if recognizer has finished scanning first side and is now scanning back side, 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The sex of the Singapore ID owner. 
+        /// The sex of the Singaporean ID card owner. 
         /// </summary>
         string Sex { get; }
         

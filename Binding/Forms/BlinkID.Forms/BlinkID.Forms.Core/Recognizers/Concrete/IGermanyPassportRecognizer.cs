@@ -1,108 +1,84 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring German Passport Recognizer.
+    ///  Recognizer which scans German passports.
     /// 
-    /// German Passport recognizer is used for scanning German Passport.
     /// </summary>
     public interface IGermanyPassportRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if authority should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if the authority is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAuthority { get; set; }
         
         /// <summary>
-        /// Defines if date of issue should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if the date of issue is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if owner's name should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if name is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if owner's nationality should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if nationality is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if owner's place of birth should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if the place of birth is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if owner's surname should be extracted from German ID
-        /// 
-        ///  
+        /// {true} if surname is being extracted, {false} otherwise. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// Defines the extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Sets whether signature image from ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether signature image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -121,140 +97,112 @@
     public interface IGermanyPassportRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Issuing authority of the Passport 
+        /// the authority of German passport. 
         /// </summary>
         string Authority { get; }
         
         /// <summary>
-        /// Holder's date of birth. 
+        /// Defines holder's date of birth if it is successfully converted to result from MRZ date format: <code>YYMMDD</code>. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// Date of expiry of the document. 
+        /// Defines date of expiry if it is successfully converted to result from MRZ date format: <code>YYMMDD</code>. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Date of issue in NSDate object 
+        /// the date of issue of German passport. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// The document code. Document code contains two characters. For MRTD the first character
-        /// shall be A, C or I. The second character shall be discretion of the issuing State or organization
-        /// except that V shall not be used, and C shall not be used after A except in the crew member
-        /// certificate. On machine-readable passports (MRP) first character shall be P to designate an MRP.
-        /// One additional letter may be used, at the discretion of the issuing State or organization,
-        /// to designate a particular MRP. If the second character position is not used for this purpose, it
-        /// shall be filled by the filter character <. 
+        /// Defines document code. Document code contains two characters. For MRTD the first character shall 
         /// </summary>
         string DocumentCode { get; }
         
         /// <summary>
-        /// Unique number of the document. Document number contains up to 9 characters.
-        /// Element does not exist on US Green Card. To see which document was scanned use documentType property. 
+        /// Defines document number. Document number contains up to 9 characters. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Three-letter code which indicate the issuing State.
-        /// Three-letter codes are based on Alpha-3 codes for entities specified in
-        /// ISO 3166-1, with extensions for certain States. 
+        /// Defines three-letter or two-letter code which indicate the issuing State. Three-letter codes are based 
         /// </summary>
         string Issuer { get; }
         
         /// <summary>
-        /// Boolean value which denotes that MRTD result is successfully parsed. When the result is parsed, all
-        /// properties below are present.
-        /// 
-        /// If in the PPMrtdRecognizerSettings you specified allowUnparsedResults = true, then it can happen that
-        /// MRTDRecognizerResult is not parsed. When this happens, this property will be equal to true.
-        /// 
-        /// In that case, you can use rawOcrResult property to obtain the raw result of the OCR process, so you can
-        /// implement MRTD parsing in your application.
-        /// 
-        ///  @return true if MRTD Recognizer result was successfully parsed and all the fields are extracted. false otherwise. 
+        /// Defines true if Machine Readable Zone has been parsed, false otherwise. 
         /// </summary>
         bool MrzParsed { get; }
         
         /// <summary>
-        /// The entire Machine Readable Zone text from ID. This text is usually used for parsing
-        /// other elements. 
+        /// Defines the entire Machine Readable Zone text from ID. This text is usually used for parsing 
         /// </summary>
         string MrzText { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Defines true if all check digits inside MRZ are correct, false otherwise. 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// The name of the German Passport owner. 
+        /// the name of the German passport owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// Nationality of the holder represented by a three-letter code. Three-letter codes are based
-        /// on Alpha-3 codes for entities specified in ISO 3166-1, with extensions for certain States. 
+        /// Defines nationality of the holder represented by a three-letter or two-letter code. Three-letter 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// First optional data. Returns nil or empty string if not available.
-        /// Element does not exist on US Green Card. To see which document was scanned use documentType property. 
+        /// Defines first optional data.<code>null</code> or empty string if not available. 
         /// </summary>
         string Opt1 { get; }
         
         /// <summary>
-        /// Second optional data. Returns nil or empty string if not available.
-        /// Element does not exist on Passports and Visas. To see which document was scanned use documentType property. 
+        /// Defines second optional data.<code>null</code> or empty string if not available. 
         /// </summary>
         string Opt2 { get; }
         
         /// <summary>
-        /// The place of birth of the German Passport owner 
+        /// the place of birth of the German passport owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// Returns the primary indentifier. If there is more than one component, they are separated with space.
-        /// 
-        ///  @return primary id of a card holder. 
+        /// Defines the primary indentifier. If there is more than one component, they are separated with space. 
         /// </summary>
         string PrimaryId { get; }
         
         /// <summary>
-        /// Returns the secondary identifier. If there is more than one component, they are separated with space.
-        /// 
-        ///  @return secondary id of a card holder 
+        /// Defines the secondary identifier. If there is more than one component, they are separated with space. 
         /// </summary>
         string SecondaryId { get; }
         
         /// <summary>
-        /// Sex of the card holder. Sex is specified by use of the single initial, capital
-        /// letter F for female, M for male or < for unspecified. 
+        /// Defines sex of the card holder. Sex is specified by use of the single initial, 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// image of the signature if enabled with returnSignatureImage property. 
+        ///  signature image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The surname of the German Passport owner. 
+        /// the surname of the German passport owner. 
         /// </summary>
         string Surname { get; }
         

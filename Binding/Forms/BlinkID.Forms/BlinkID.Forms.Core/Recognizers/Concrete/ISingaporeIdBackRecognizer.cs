@@ -1,72 +1,55 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Singapore Id Back Recognizer.
-    /// 
-    /// Singapore Id Back recognizer is used for scanning back side of the Singapore Id.
+    /// Recognizer used for scanning the back side of Singapore IDs
     /// </summary>
     public interface ISingaporeIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's address should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if Singapore ID owner's address should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if owner's address change date should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if Singapore ID owner's address change date on sticker should be extracted 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ExtractAddressChangeDate { get; set; }
         
         /// <summary>
-        /// Defines if owner's blood type should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if Singapore ID owner's blood type should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractBloodType { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of issue should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if Singapore ID's date of issue should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -85,32 +68,32 @@
     public interface ISingaporeIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the back side of the Singapore Id owner. 
+        /// The Singapore ID owner's address 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The address Change Date of the back side of the Singapore Id owner. 
+        /// The Singapore ID owner's address change date, present if the address is on a sticker 
         /// </summary>
         IDate AddressChangeDate { get; }
         
         /// <summary>
-        /// The blood Type of the back side of the Singapore Id owner. 
+        /// The Singapore ID owner's blood type 
         /// </summary>
         string BloodType { get; }
         
         /// <summary>
-        /// The card Number of the back side of the Singapore Id owner. 
+        /// The Singapore ID card number 
         /// </summary>
         string CardNumber { get; }
         
         /// <summary>
-        /// The date Of Issue of the back side of the Singapore Id owner. 
+        /// The Singapore ID's date of issue 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

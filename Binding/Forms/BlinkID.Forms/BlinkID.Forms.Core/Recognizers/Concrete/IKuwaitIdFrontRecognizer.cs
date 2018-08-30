@@ -1,52 +1,45 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer for scanning driver's licence of several european countries
+    /// Recognizer which can scan front side of Kuwait national ID cards.
     /// </summary>
-    public interface IEudlRecognizer : IRecognizer
+    public interface IKuwaitIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// currently used country. 
-        ///
-        /// By default, this is set to 'EUDL_COUNTRY_AUTO'
-        /// </summary>
-        EudlCountry Country { get; set; }
-        
-        /// <summary>
-        /// Defines if address should be extracted from EU driver's license 
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
+        bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if expiry date should be extracted from EU driver's license 
+        /// Defines if date of birth of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfExpiry { get; set; }
+        bool ExtractBirthDate { get; set; }
         
         /// <summary>
-        /// Defines if issue date should be extracted from EU driver's license 
+        /// Defines if name of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfIssue { get; set; }
+        bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from EU driver's license 
+        /// Defines if nationality of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractIssuingAuthority { get; set; }
+        bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if personal number should be extracted from EU driver's license 
+        /// Defines if sex of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractPersonalNumber { get; set; }
+        bool ExtractSex { get; set; }
         
         /// <summary>
         /// the DPI (Dots Per Inch) for face image that should be returned. 
@@ -80,36 +73,26 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IEudlRecognizerResult Result { get; }
+        IKuwaitIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IEudlRecognizer.
+    /// Result object for IKuwaitIdFrontRecognizer.
     /// </summary>
-    public interface IEudlRecognizerResult : IRecognizerResult {
+    public interface IKuwaitIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the address of the Driver's Licence owner. 
+        /// The birth date of the Kuwait ID owner. 
         /// </summary>
-        string Address { get; }
+        IDate BirthDate { get; }
         
         /// <summary>
-        /// birth date and birth place of Driver's Licence owner 
+        /// The civil ID number of the Kuwait ID owner. 
         /// </summary>
-        string BirthData { get; }
+        string CivilIdNumber { get; }
         
         /// <summary>
-        /// the country where the driver's license has been issued. 
-        /// </summary>
-        EudlCountry Country { get; }
-        
-        /// <summary>
-        /// the driver number. 
-        /// </summary>
-        string DriverNumber { get; }
-        
-        /// <summary>
-        /// the expiry date of the Driver's Licence 
+        /// The expiry date of the Kuwait ID. 
         /// </summary>
         IDate ExpiryDate { get; }
         
@@ -119,34 +102,24 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the first name of the Driver's Licence owner. 
-        /// </summary>
-        string FirstName { get; }
-        
-        /// <summary>
         ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the issue date of the Driver's Licence 
+        /// The name of the Kuwait ID owner. 
         /// </summary>
-        IDate IssueDate { get; }
+        string Name { get; }
         
         /// <summary>
-        /// document issuing authority. 
+        /// The nationality of the Kuwait ID owner. 
         /// </summary>
-        string IssuingAuthority { get; }
+        string Nationality { get; }
         
         /// <summary>
-        /// the last name of the Driver's Licence owner. 
+        /// The sex of the Kuwait ID owner. 
         /// </summary>
-        string LastName { get; }
-        
-        /// <summary>
-        /// the personal number of the Driver's Licence owner. 
-        /// </summary>
-        string PersonalNumber { get; }
+        string Sex { get; }
         
     }
 }

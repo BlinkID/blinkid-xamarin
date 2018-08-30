@@ -1,52 +1,66 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer for scanning driver's licence of several european countries
+    /// Recognizer which can scan front side of UAE drivers license.
     /// </summary>
-    public interface IEudlRecognizer : IRecognizer
+    public interface IUnitedArabEmiratesDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// currently used country. 
-        ///
-        /// By default, this is set to 'EUDL_COUNTRY_AUTO'
-        /// </summary>
-        EudlCountry Country { get; set; }
-        
-        /// <summary>
-        /// Defines if address should be extracted from EU driver's license 
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
+        bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if expiry date should be extracted from EU driver's license 
+        /// Defines if date of birth of UAE DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfExpiry { get; set; }
+        bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if issue date should be extracted from EU driver's license 
+        /// Defines if issue date of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfIssue { get; set; }
+        bool ExtractIssueDate { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from EU driver's license 
+        /// Defines if license number of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractIssuingAuthority { get; set; }
+        bool ExtractLicenseNumber { get; set; }
         
         /// <summary>
-        /// Defines if personal number should be extracted from EU driver's license 
+        /// Defines if licensing authority code of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractPersonalNumber { get; set; }
+        bool ExtractLicensingAuthority { get; set; }
+        
+        /// <summary>
+        /// Defines if name of UAE DL owner should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractName { get; set; }
+        
+        /// <summary>
+        /// Defines if nationality of UAE DL owner should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractNationality { get; set; }
+        
+        /// <summary>
+        /// Defines if place of issue of UAE DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPlaceOfIssue { get; set; }
         
         /// <summary>
         /// the DPI (Dots Per Inch) for face image that should be returned. 
@@ -80,36 +94,21 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IEudlRecognizerResult Result { get; }
+        IUnitedArabEmiratesDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IEudlRecognizer.
+    /// Result object for IUnitedArabEmiratesDlFrontRecognizer.
     /// </summary>
-    public interface IEudlRecognizerResult : IRecognizerResult {
+    public interface IUnitedArabEmiratesDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the address of the Driver's Licence owner. 
+        /// The date of birth of UAE DL owner 
         /// </summary>
-        string Address { get; }
+        IDate DateOfBirth { get; }
         
         /// <summary>
-        /// birth date and birth place of Driver's Licence owner 
-        /// </summary>
-        string BirthData { get; }
-        
-        /// <summary>
-        /// the country where the driver's license has been issued. 
-        /// </summary>
-        EudlCountry Country { get; }
-        
-        /// <summary>
-        /// the driver number. 
-        /// </summary>
-        string DriverNumber { get; }
-        
-        /// <summary>
-        /// the expiry date of the Driver's Licence 
+        /// The expiry date of UAE DL 
         /// </summary>
         IDate ExpiryDate { get; }
         
@@ -119,34 +118,39 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the first name of the Driver's Licence owner. 
-        /// </summary>
-        string FirstName { get; }
-        
-        /// <summary>
         ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the issue date of the Driver's Licence 
+        /// The issue date of UAE DL 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// document issuing authority. 
+        /// The license number of UAE DL 
         /// </summary>
-        string IssuingAuthority { get; }
+        string LicenseNumber { get; }
         
         /// <summary>
-        /// the last name of the Driver's Licence owner. 
+        /// The licensing authority code of UAE DL 
         /// </summary>
-        string LastName { get; }
+        string LicensingAuthority { get; }
         
         /// <summary>
-        /// the personal number of the Driver's Licence owner. 
+        /// The name of UAE DL owner 
         /// </summary>
-        string PersonalNumber { get; }
+        string Name { get; }
+        
+        /// <summary>
+        /// The nationality of UAE DL owner 
+        /// </summary>
+        string Nationality { get; }
+        
+        /// <summary>
+        /// The place of issue of UAE DL 
+        /// </summary>
+        string PlaceOfIssue { get; }
         
     }
 }

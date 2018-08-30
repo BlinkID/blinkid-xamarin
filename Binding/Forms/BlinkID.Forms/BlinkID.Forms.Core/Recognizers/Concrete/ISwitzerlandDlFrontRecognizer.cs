@@ -1,146 +1,111 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Switzerland DL Front Recognizer.
-    /// 
-    /// Switzerland DL Front recognizer is used for scanning front side of the Switzerland DL.
+    /// The Switzerland DL Front Recognizer is used for scanning front side of the Switzerland DL.
     /// </summary>
     public interface ISwitzerlandDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of birth should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether date of birth should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether date of expiry should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issue should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether date of issue should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if owner's first name should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether first name should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether issuing authority should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if owner's last name should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether last name should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLastName { get; set; }
         
         /// <summary>
-        /// Defines if owner's place of birth should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether place of birth should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if vehicle categories should be extracted from front side of the Switzerland DL
-        /// 
-        ///  
+        /// Defines whether vehicle categories should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractVehicleCategories { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Sets whether signature image from ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether signature image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for signature images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for signature image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -159,67 +124,67 @@
     public interface ISwitzerlandDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Switzerland DL owner. 
+        /// The date of birth 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of rxpiry of the Switzerland DL. 
+        /// The date of expiry 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of the Switzerland DL. 
+        /// The date of issue 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// If true, then this Switzerland DL will never expire. 
+        /// The expiry date permanent 
         /// </summary>
         bool ExpiryDatePermanent { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        ///  face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Switzerland DL owner. 
+        /// The first name 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issuing authority of the Switzerland DL. 
+        /// The issuing authority 
         /// </summary>
         string IssuingAuthority { get; }
         
         /// <summary>
-        /// The last name of the Switzerland DL owner. 
+        /// The last name 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The license number of the Switzerland DL. 
+        /// The license number 
         /// </summary>
         string LicenseNumber { get; }
         
         /// <summary>
-        /// The place of birth of the Switzerland DL owner. 
+        /// The place of birth 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// image of the signature if enabled with returnSignatureImage property. 
+        ///  signature image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The vehicle categories of the Switzerland DL. 
+        /// The vehicle categories 
         /// </summary>
         string VehicleCategories { get; }
         

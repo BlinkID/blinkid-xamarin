@@ -1,90 +1,69 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Morocco ID Back Recognizer.
-    /// 
-    /// Morocco ID Back recognizer is used for scanning Back side of the Morocco ID.
+    /// Recognizer which can scan back side of Moroccan national ID cards.
     /// </summary>
     public interface IMoroccoIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's address should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if address of the Moroccan ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if owner's civil status number should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if civil status number of the Moroccan ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractCivilStatusNumber { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if date of expiry of the Moroccan ID should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if father's name should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if father's name of the Moroccan ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFathersName { get; set; }
         
         /// <summary>
-        /// Defines if mother's name should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if mother's name of the Moroccan ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractMothersName { get; set; }
         
         /// <summary>
-        /// Defines if owner's sex should be extracted from Back side of the Morocco ID
-        /// 
-        ///  
+        /// Defines if sex of the Moroccan ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// the DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -103,42 +82,42 @@
     public interface IMoroccoIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Morocco ID owner. 
+        /// The address of the Moroccan ID owner 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The civil status number of the Morocco ID owner. 
+        /// The civil status number of the Moroccan ID owner 
         /// </summary>
         string CivilStatusNumber { get; }
         
         /// <summary>
-        /// The date of expiry of the Morocco ID. 
+        /// The date of expiry of the Moroccan ID 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The document number of the Morocco ID. 
+        /// The document number of the Moroccan ID 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The father's name of the Morocco ID owner. 
+        /// The father's name of the Moroccan ID owner 
         /// </summary>
         string FathersName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        ///  image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The mother's name of the Morocco ID owner. 
+        /// The mother's name of the Moroccan ID owner 
         /// </summary>
         string MothersName { get; }
         
         /// <summary>
-        /// The sex of the Morocco ID owner. 
+        /// The sex of the Moroccan ID owner 
         /// </summary>
         string Sex { get; }
         

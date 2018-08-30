@@ -1,7 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer that can perform recognition of VINs (Vehicle Identification Number).
+    /// Recognizer that can scan VIN (Vehicle Identification Number) barcode.
     /// </summary>
     public interface IVinRecognizer : IRecognizer
     {
@@ -19,7 +19,7 @@
     public interface IVinRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Returns the recognized VIN or empty string if recognition failed. 
+        /// scanned VIN (Vehicle Identification Number). 
         /// </summary>
         string Vin { get; }
         
