@@ -27,6 +27,60 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
+        }
+        
+        public bool ExtractAddressChangeDate 
+        { 
+            get => nativeRecognizer.ExtractAddressChangeDate; 
+            set => nativeRecognizer.ExtractAddressChangeDate = value;
+        }
+        
+        public bool ExtractBloodType 
+        { 
+            get => nativeRecognizer.ExtractBloodType; 
+            set => nativeRecognizer.ExtractBloodType = value;
+        }
+        
+        public bool ExtractCountryOfBirth 
+        { 
+            get => nativeRecognizer.ExtractCountryOfBirth; 
+            set => nativeRecognizer.ExtractCountryOfBirth = value;
+        }
+        
+        public bool ExtractDateOfBirth 
+        { 
+            get => nativeRecognizer.ExtractDateOfBirth; 
+            set => nativeRecognizer.ExtractDateOfBirth = value;
+        }
+        
+        public bool ExtractDateOfIssue 
+        { 
+            get => nativeRecognizer.ExtractDateOfIssue; 
+            set => nativeRecognizer.ExtractDateOfIssue = value;
+        }
+        
+        public bool ExtractName 
+        { 
+            get => nativeRecognizer.ExtractName; 
+            set => nativeRecognizer.ExtractName = value;
+        }
+        
+        public bool ExtractRace 
+        { 
+            get => nativeRecognizer.ExtractRace; 
+            set => nativeRecognizer.ExtractRace = value;
+        }
+        
+        public bool ExtractSex 
+        { 
+            get => nativeRecognizer.ExtractSex; 
+            set => nativeRecognizer.ExtractSex = value;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -56,8 +110,8 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public string BloodGroup => nativeResult.BloodGroup;
-        public string CardNumber => nativeResult.CardNumber;
+        public IDate AddressChangeDate => nativeResult.AddressChangeDate != null ? new Date(nativeResult.AddressChangeDate) : null;
+        public string BloodType => nativeResult.BloodType;
         public string CountryOfBirth => nativeResult.CountryOfBirth;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
@@ -67,6 +121,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
+        public string IdentityCardNumber => nativeResult.IdentityCardNumber;
         public string Name => nativeResult.Name;
         public string Race => nativeResult.Race;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;

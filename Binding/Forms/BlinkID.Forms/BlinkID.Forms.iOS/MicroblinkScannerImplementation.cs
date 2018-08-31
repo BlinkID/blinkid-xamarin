@@ -8,8 +8,8 @@ using Microblink.Forms.Core;
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
 namespace Microblink.Forms.iOS
 {
-	public sealed class MicroblinkScannerImplementation : IMicroblinkScanner, IOverlayVCDelegate
-	{
+    public sealed class MicroblinkScannerImplementation : IMicroblinkScanner, IOverlayVCDelegate
+    {
         // ensure RecognizerRunnerVC does not get GC-ed while it is required for ObjC code
         IMBRecognizerRunnerViewController recognizerRunnerViewController;
 
