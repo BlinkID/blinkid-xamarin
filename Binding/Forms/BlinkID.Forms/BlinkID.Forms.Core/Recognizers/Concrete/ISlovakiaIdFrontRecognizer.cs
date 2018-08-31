@@ -1,84 +1,107 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer which can scan front side of slovak national ID cards.
+    /// Class for configuring Slovak ID Front Recognizer.
     /// 
+    /// Slovak ID Front recognizer is used for scanning front side of Slovak ID.
     /// </summary>
     public interface ISlovakiaIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// true if date of birth is being extracted from ID 
+        /// Defines if owner's date of birth should be extracted from Slovakian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// true if date of expiry is being extracted from ID 
+        /// Defines if ID's date of expiry should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// true if date of issue is being extracted from ID 
+        /// Defines if ID's date of issue should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// true if document number is being extracted from ID 
+        /// Defines if issuing document number should be extracted from Slovakian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDocumentNumber { get; set; }
         
         /// <summary>
-        /// true if issuer is being extracted from ID 
+        /// Defines if issuing authority should be extracted from Slovakian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuedBy { get; set; }
         
         /// <summary>
-        /// true if nationality is being extracted from ID 
+        /// Defines if owner's nationality should be extracted from Slovakian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// true if sex is being extracted from ID 
+        /// Defines if owner's sex should be extracted from Slovakian ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -97,67 +120,67 @@
     public interface ISlovakiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// the date of birth of Slovak ID owner 
+        /// The date of birth of the Slovakian ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// the date of expiry of Slovak ID 
+        /// The date of expiry of the Slovakian ID. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// the date of issue of Slovak ID 
+        /// The date of issue of the Slovakian ID. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// the identity card number of Slovak ID. 
+        /// The document number of the Slovakian ID. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// the first name of the Slovak ID owner. 
+        /// The first name of the Slovakian ID owner. 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the issuer of the Slovak ID. 
+        /// The issuing authority of the ID. 
         /// </summary>
         string IssuedBy { get; }
         
         /// <summary>
-        /// the last name of the Slovak ID owner. 
+        /// The last name of the Slovakian ID owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// the nationality of the Slovak ID owner. 
+        /// The nationality of the Slovakian ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// the personal number of the Slovak ID owner. 
+        /// The personal number of the Slovakian ID owner. 
         /// </summary>
         string PersonalNumber { get; }
         
         /// <summary>
-        /// sex of the Slovak ID owner. 
+        /// The sex of the Slovakian ID owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        ///  signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         

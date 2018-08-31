@@ -1,55 +1,73 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of United Arab Emirates national ID cards.
+    /// Class for configuring United Arab Emirates ID Front Recognizer.
+    /// 
+    /// United Arab Emirates ID Front recognizer is used for scanning front side of United Arab Emirates ID.
     /// </summary>
     public interface IUnitedArabEmiratesIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if name of United Arab Emirates ID owner should be extracted 
+        /// Defines if owner's name should be extracted from front side of United Arab Emirates ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if nationality of United Arab Emirates ID owner should be extracted 
+        /// Defines if owner's nationality should be extracted from front side of United Arab Emirates ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in result. 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -68,27 +86,27 @@
     public interface IUnitedArabEmiratesIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        ///  face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        ///  image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// the idNumber of the United Arab Emirates ID owner. 
+        /// The id Number of the front side of United Arab Emirates ID owner. 
         /// </summary>
         string IdNumber { get; }
         
         /// <summary>
-        /// the name of the United Arab Emirates ID owner. 
+        /// The name of the front side of United Arab Emirates ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// the nationality of the United Arab Emirates ID owner. 
+        /// The nationality of the front side of United Arab Emirates ID owner. 
         /// </summary>
         string Nationality { get; }
         
