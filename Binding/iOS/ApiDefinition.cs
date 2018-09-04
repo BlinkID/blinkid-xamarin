@@ -67,7 +67,7 @@ namespace Microblink
 
 // @protocol MBRecognizerRunnerViewController <NSObject>
     [Protocol, Model]
-    [BaseType (typeof(NSObject))]
+    [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerViewController
     {
         // @required @property (nonatomic) BOOL autorotate;
@@ -77,7 +77,7 @@ namespace Microblink
 
         // @required @property (nonatomic) UIInterfaceOrientationMask supportedOrientations;
         [Abstract]
-        [Export ("supportedOrientations", ArgumentSemantic.Assign)]
+        [Export("supportedOrientations", ArgumentSemantic.Assign)]
         UIInterfaceOrientationMask SupportedOrientations { get; set; }
 
         // @required -(BOOL)pauseScanning;
@@ -244,6 +244,11 @@ namespace Microblink
         [Static]
         [Export("buildVersionString")]
         string BuildVersionString { get; }
+
+        // +(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error;
+        [Static]
+        [Export("isScanningUnsupportedForCameraType:error:")]
+        bool IsScanningUnsupportedForCameraType (MBCameraType type, [NullAllowed] out NSError error);
     }
 
     [Static]
@@ -324,47 +329,47 @@ namespace Microblink
 
    // @interface MBCameraSettings : NSObject <NSCopying>
     [iOS (8,0)]
-    [BaseType (typeof(NSObject))]
+    [BaseType(typeof(NSObject))]
     interface MBCameraSettings : INSCopying
     {
         // @property (assign, nonatomic) MBCameraPreset cameraPreset;
-        [Export ("cameraPreset", ArgumentSemantic.Assign)]
+        [Export("cameraPreset", ArgumentSemantic.Assign)]
         MBCameraPreset CameraPreset { get; set; }
 
         // @property (assign, nonatomic) MBCameraType cameraType;
-        [Export ("cameraType", ArgumentSemantic.Assign)]
+        [Export("cameraType", ArgumentSemantic.Assign)]
         MBCameraType CameraType { get; set; }
 
         // @property (assign, nonatomic) NSTimeInterval autofocusInterval;
-        [Export ("autofocusInterval")]
+        [Export("autofocusInterval")]
         double AutofocusInterval { get; set; }
 
         // @property (assign, nonatomic) MBCameraAutofocusRestriction cameraAutofocusRestriction;
-        [Export ("cameraAutofocusRestriction", ArgumentSemantic.Assign)]
+        [Export("cameraAutofocusRestriction", ArgumentSemantic.Assign)]
         MBCameraAutofocusRestriction CameraAutofocusRestriction { get; set; }
 
         // @property (nonatomic, weak) NSString * videoGravity;
-        [Export ("videoGravity", ArgumentSemantic.Weak)]
+        [Export("videoGravity", ArgumentSemantic.Weak)]
         string VideoGravity { get; set; }
 
         // @property (assign, nonatomic) CGPoint focusPoint;
-        [Export ("focusPoint", ArgumentSemantic.Assign)]
+        [Export("focusPoint", ArgumentSemantic.Assign)]
         CGPoint FocusPoint { get; set; }
 
         // @property (nonatomic) BOOL cameraMirroredHorizontally;
-        [Export ("cameraMirroredHorizontally")]
+        [Export("cameraMirroredHorizontally")]
         bool CameraMirroredHorizontally { get; set; }
 
         // @property (nonatomic) BOOL cameraMirroredVertically;
-        [Export ("cameraMirroredVertically")]
+        [Export("cameraMirroredVertically")]
         bool CameraMirroredVertically { get; set; }
 
         // -(NSString *)calcSessionPreset;
-        [Export ("calcSessionPreset")]
+        [Export("calcSessionPreset")]
         string CalcSessionPreset { get; }
 
         // -(AVCaptureAutoFocusRangeRestriction)calcAutofocusRangeRestriction;
-        [Export ("calcAutofocusRangeRestriction")]
+        [Export("calcAutofocusRangeRestriction")]
         AVCaptureAutoFocusRangeRestriction CalcAutofocusRangeRestriction { get; }
     }
 
@@ -2624,21 +2629,6 @@ namespace Microblink
         bool ExtractDateOfBirth { get; set; }
     }
 
-    // @protocol MBCombinedRecognizerResult
-    [Protocol]   
-    interface MBCombinedRecognizerResult
-    {
-        // @required @property (readonly, assign, nonatomic) BOOL documentDataMatch;
-        [Abstract]
-        [Export("documentDataMatch")]
-        bool DocumentDataMatch { get; }
-
-        // @required @property (readonly, assign, nonatomic) BOOL scanningFirstSideDone;
-        [Abstract]
-        [Export("scanningFirstSideDone")]
-        bool ScanningFirstSideDone { get; }
-    }
-
     // @protocol MBDigitalSignatureResult
     [Protocol]
     interface IMBDigitalSignatureResult
@@ -2757,7 +2747,22 @@ namespace Microblink
         bool MrtdVerified { get; }
     }
 
-    interface IMBCombinedRecognizerResult {}
+     interface IMBCombinedRecognizerResult {}
+
+    // @protocol MBCombinedRecognizerResult
+    [Protocol]   
+    interface MBCombinedRecognizerResult
+    {
+        // @required @property (readonly, assign, nonatomic) BOOL documentDataMatch;
+        [Abstract]
+        [Export("documentDataMatch")]
+        bool DocumentDataMatch { get; }
+
+        // @required @property (readonly, assign, nonatomic) BOOL scanningFirstSideDone;
+        [Abstract]
+        [Export("scanningFirstSideDone")]
+        bool ScanningFirstSideDone { get; }
+    }
 
     // @protocol MBCombinedRecognizer
     [Protocol]
@@ -2973,168 +2978,168 @@ namespace Microblink
    
     // @interface MBColombiaIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBColombiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBDateResult * _Nonnull birthDate;
-        [Export ("birthDate")]
+        [Export("birthDate")]
         MBDateResult BirthDate { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull bloodGroup;
-        [Export ("bloodGroup")]
+        [Export("bloodGroup")]
         string BloodGroup { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        [Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull firstName;
-        [Export ("firstName")]
+        [Export("firstName")]
         string FirstName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull lastName;
-        [Export ("lastName")]
+        [Export("lastName")]
         string LastName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull sex;
-        [Export ("sex")]
+        [Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) NSData * _Nullable fingerprint;
-        [NullAllowed, Export ("fingerprint")]
+        [NullAllowed, Export("fingerprint")]
         NSData Fingerprint { get; }
     }
 
     // @interface MBColombiaIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBColombiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBColombiaIdBackRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBColombiaIdBackRecognizerResult Result { get; }
 
         // @property (nonatomic) BOOL scanUncertain;
-        [Export ("scanUncertain")]
+        [Export("scanUncertain")]
         bool ScanUncertain { get; set; }
 
         // @property (nonatomic) BOOL nullQuietZoneAllowed;
-        [Export ("nullQuietZoneAllowed")]
+        [Export("nullQuietZoneAllowed")]
         bool NullQuietZoneAllowed { get; set; }
     }
 
     // @interface MBColombiaIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBColombiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        [Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull firstName;
-        [Export ("firstName")]
+        [Export("firstName")]
         string FirstName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull lastName;
-        [Export ("lastName")]
+        [Export("lastName")]
         string LastName { get; }
     }
 
     // @interface MBColombiaIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBColombiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBColombiaIdFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBColombiaIdFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractFirstName;
-        [Export ("extractFirstName")]
+        [Export("extractFirstName")]
         bool ExtractFirstName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractLastName;
-        [Export ("extractLastName")]
+        [Export("extractLastName")]
         bool ExtractLastName { get; set; }
     }
    
     // @interface MBCroatiaIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBCroatiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
-        [NullAllowed, Export ("firstName")]
+        [NullAllowed, Export("firstName")]
         string FirstName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable lastName;
-        [NullAllowed, Export ("lastName")]
+        [NullAllowed, Export("lastName")]
         string LastName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
-        [NullAllowed, Export ("documentNumber")]
+        [NullAllowed, Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable sex;
-        [NullAllowed, Export ("sex")]
+        [NullAllowed, Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable citizenship;
-        [NullAllowed, Export ("citizenship")]
+        [NullAllowed, Export("citizenship")]
         string Citizenship { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
-        [NullAllowed, Export ("dateOfBirth")]
+        [NullAllowed, Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfExpiry;
-        [NullAllowed, Export ("dateOfExpiry")]
+        [NullAllowed, Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, nonatomic) BOOL dateOfExpiryPermanent;
-        [Export ("dateOfExpiryPermanent")]
+        [Export("dateOfExpiryPermanent")]
         bool DateOfExpiryPermanent { get; }
 
         // @property (readonly, nonatomic) BOOL documentBilingual;
-        [Export ("documentBilingual")]
+        [Export("documentBilingual")]
         bool DocumentBilingual { get; }
     }
 
     // @interface MBCroatiaIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBCroatiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBCroatiaIdFrontRecognizerResult * result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBCroatiaIdFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractFirstName;
-        [Export ("extractFirstName")]
+        [Export("extractFirstName")]
         bool ExtractFirstName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractLastName;
-        [Export ("extractLastName")]
+        [Export("extractLastName")]
         bool ExtractLastName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSex;
-        [Export ("extractSex")]
+        [Export("extractSex")]
         bool ExtractSex { get; set; }
 
         // @property (assign, nonatomic) BOOL extractCitizenship;
-        [Export ("extractCitizenship")]
+        [Export("extractCitizenship")]
         bool ExtractCitizenship { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfBirth;
-        [Export ("extractDateOfBirth")]
+        [Export("extractDateOfBirth")]
         bool ExtractDateOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
     }
 
@@ -3210,45 +3215,53 @@ namespace Microblink
         bool MrzVerified { get; }
     }
 
-    // @interface MBCroatiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    
-    [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
+// @interface MBCroatiaIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBCroatiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
+    interface MBCroatiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
-        // @property (readonly, nonatomic) NSString * _Nullable address;
-        [NullAllowed, Export("address")]
-        string Address { get; }
+        // @property (readonly, nonatomic) NSString * _Nullable residence;
+        [NullAllowed, Export("residence")]
+        string Residence { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
-        [NullAllowed, Export("issuingAuthority")]
-        string IssuingAuthority { get; }
+        // @property (readonly, nonatomic) NSString * _Nullable issuedBy;
+        [NullAllowed, Export("issuedBy")]
+        string IssuedBy { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nullable rawDocumentDateOfIssue;
-        [NullAllowed, Export("rawDocumentDateOfIssue")]
-        string RawDocumentDateOfIssue { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfIssue;
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfIssue;
         [NullAllowed, Export("dateOfIssue")]
-        NSDate DateOfIssue { get; }
+        MBDateResult DateOfIssue { get; }
+
+        // @property (readonly, nonatomic) BOOL documentForNonResident;
+        [Export("documentForNonResident")]
+        bool DocumentForNonResident { get; }
 
         // @property (readonly, nonatomic) BOOL dateOfExpiryPermanent;
         [Export("dateOfExpiryPermanent")]
         bool DateOfExpiryPermanent { get; }
+
+        // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
+        [Export("mrzResult")]
+        MBMrzResult MrzResult { get; }
     }
 
-    // @interface MBCroatiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBGlareDetection, MBFullDocumentImage>
-    
-    [BaseType(typeof(MBLegacyRecognizer))]
-    interface MBCroatiaIdBackRecognizer : INSCopying, IMBGlareDetection, IMBFullDocumentImage
+    // @interface MBCroatiaIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBCroatiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBCroatiaIdBackRecognizerResult * result;
         [Export("result", ArgumentSemantic.Strong)]
         MBCroatiaIdBackRecognizerResult Result { get; }
 
-        // @property (assign, nonatomic) BOOL extractIssuingAuthority;
-        [Export("extractIssuingAuthority")]
-        bool ExtractIssuingAuthority { get; set; }
+        // @property (assign, nonatomic) BOOL extractResidence;
+        [Export("extractResidence")]
+        bool ExtractResidence { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractIssuedBy;
+        [Export("extractIssuedBy")]
+        bool ExtractIssuedBy { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfIssue;
         [Export("extractDateOfIssue")]
@@ -3330,6 +3343,80 @@ namespace Microblink
         // @property (readonly, nonatomic, strong) MBCroatiaCombinedRecognizerResult * result;
         [Export("result", ArgumentSemantic.Strong)]
         MBCroatiaCombinedRecognizerResult Result { get; }
+    }
+
+    // @interface MBCyprusIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBCyprusIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
+        [Export("documentNumber")]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull idNumber;
+        [Export("idNumber")]
+        string IdNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull name;
+        [Export("name")]
+        string Name { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull surname;
+        [Export("surname")]
+        string Surname { get; }
+    }
+
+    // @interface MBCyprusIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBCyprusIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBCyprusIdFrontRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBCyprusIdFrontRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractDocumentNumber;
+        [Export("extractDocumentNumber")]
+        bool ExtractDocumentNumber { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractName;
+        [Export("extractName")]
+        bool ExtractName { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractSurname;
+        [Export("extractSurname")]
+        bool ExtractSurname { get; set; }
+    }
+
+    // @interface MBCyprusIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBCyprusIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
+        [Export("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull sex;
+        [Export("sex")]
+        string Sex { get; }
+    }
+
+    // @interface MBCyprusIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBCyprusIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBCyprusIdBackRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBCyprusIdBackRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractSex;
+        [Export("extractSex")]
+        bool ExtractSex { get; set; }
     }
 
     // @interface MBCzechiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
@@ -4015,70 +4102,70 @@ namespace Microblink
 
   // @interface MBHongKongIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBHongKongIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable fullName;
-        [NullAllowed, Export ("fullName")]
+        [NullAllowed, Export("fullName")]
         string FullName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable commercialCode;
-        [NullAllowed, Export ("commercialCode")]
+        [NullAllowed, Export("commercialCode")]
         string CommercialCode { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
-        [NullAllowed, Export ("dateOfBirth")]
+        [NullAllowed, Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable sex;
-        [NullAllowed, Export ("sex")]
+        [NullAllowed, Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfIssue;
-        [NullAllowed, Export ("dateOfIssue")]
+        [NullAllowed, Export("dateOfIssue")]
         MBDateResult DateOfIssue { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
-        [NullAllowed, Export ("documentNumber")]
+        [NullAllowed, Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable residentialStatus;
-        [NullAllowed, Export ("residentialStatus")]
+        [NullAllowed, Export("residentialStatus")]
         string ResidentialStatus { get; }
     }
 
     // @interface MBHongKongIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBHongKongIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBHongKongIdFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBHongKongIdFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractFullName;
-        [Export ("extractFullName")]
+        [Export("extractFullName")]
         bool ExtractFullName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractCommercialCode;
-        [Export ("extractCommercialCode")]
+        [Export("extractCommercialCode")]
         bool ExtractCommercialCode { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfBirth;
-        [Export ("extractDateOfBirth")]
+        [Export("extractDateOfBirth")]
         bool ExtractDateOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractResidentialStatus;
-        [Export ("extractResidentialStatus")]
+        [Export("extractResidentialStatus")]
         bool ExtractResidentialStatus { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSex;
-        [Export ("extractSex")]
+        [Export("extractSex")]
         bool ExtractSex { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfIssue;
-        [Export ("extractDateOfIssue")]
+        [Export("extractDateOfIssue")]
         bool ExtractDateOfIssue { get; set; }
     }
 
@@ -4243,6 +4330,92 @@ namespace Microblink
         bool ExtractValidUntil { get; set; }
     }
 
+        // @interface MBKuwaitIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBKuwaitIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull birthDate;
+        [Export("birthDate")]
+        MBDateResult BirthDate { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull civilIdNumber;
+        [Export("civilIdNumber")]
+        string CivilIdNumber { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull expiryDate;
+        [Export("expiryDate")]
+        MBDateResult ExpiryDate { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull name;
+        [Export("name")]
+        string Name { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull nationality;
+        [Export("nationality")]
+        string Nationality { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull sex;
+        [Export("sex")]
+        string Sex { get; }
+    }
+
+    // @interface MBKuwaitIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBKuwaitIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBKuwaitIdFrontRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBKuwaitIdFrontRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractBirthDate;
+        [Export("extractBirthDate")]
+        bool ExtractBirthDate { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractName;
+        [Export("extractName")]
+        bool ExtractName { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractNationality;
+        [Export("extractNationality")]
+        bool ExtractNationality { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractSex;
+        [Export("extractSex")]
+        bool ExtractSex { get; set; }
+    }
+
+    // @interface MBKuwaitIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBKuwaitIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
+        [Export("mrzResult")]
+        MBMrzResult MrzResult { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull serialNo;
+        [Export("serialNo")]
+        string SerialNo { get; }
+    }
+
+    // @interface MBKuwaitIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBKuwaitIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBKuwaitIdBackRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBKuwaitIdBackRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractSerialNo;
+        [Export("extractSerialNo")]
+        bool ExtractSerialNo { get; set; }
+    }
+
     // @interface MBJordanIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
     
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
@@ -4373,42 +4546,42 @@ namespace Microblink
 
     // @interface MBMyKadBackRecognizerResult : MBRecognizerResult <NSCopying, MBSignatureImageResult, MBFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMyKadBackRecognizerResult : INSCopying, IMBSignatureImageResult, IMBFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nonnull extendedNric;
-        [Export ("extendedNric")]
+        [Export("extendedNric")]
         string ExtendedNric { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull nric;
-        [Export ("nric")]
+        [Export("nric")]
         string Nric { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull oldNric;
-        [Export ("oldNric")]
+        [Export("oldNric")]
         string OldNric { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull sex;
-        [Export ("sex")]
+        [Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
-        [Export ("dateOfBirth")]
+        [Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
     }
 
     // @interface MBMyKadBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBSignatureImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBMyKadBackRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBSignatureImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBMyKadBackRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBMyKadBackRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractOldNric;
-        [Export ("extractOldNric")]
+        [Export("extractOldNric")]
         bool ExtractOldNric { get; set; }
     }
 
@@ -4738,139 +4911,139 @@ namespace Microblink
 
         // @interface MBMoroccoIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMoroccoIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
-        [Export ("dateOfBirth")]
+        [Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfExpiry;
-        [Export ("dateOfExpiry")]
+        [Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        [Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull name;
-        [Export ("name")]
+        [Export("name")]
         string Name { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
-        [Export ("placeOfBirth")]
+        [Export("placeOfBirth")]
         string PlaceOfBirth { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull sex;
-        [Export ("sex")]
+        [Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull surname;
-        [Export ("surname")]
+        [Export("surname")]
         string Surname { get; }
     }
 
     // @interface MBMoroccoIdFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBMoroccoIdFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBMoroccoIdFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBMoroccoIdFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractDateOfBirth;
-        [Export ("extractDateOfBirth")]
+        [Export("extractDateOfBirth")]
         bool ExtractDateOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
 
         // @property (assign, nonatomic) BOOL extractName;
-        [Export ("extractName")]
+        [Export("extractName")]
         bool ExtractName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractPlaceOfBirth;
-        [Export ("extractPlaceOfBirth")]
+        [Export("extractPlaceOfBirth")]
         bool ExtractPlaceOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSex;
-        [Export ("extractSex")]
+        [Export("extractSex")]
         bool ExtractSex { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSurname;
-        [Export ("extractSurname")]
+        [Export("extractSurname")]
         bool ExtractSurname { get; set; }
     }
 
     // @interface MBMoroccoIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMoroccoIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfExpiry;
-        [Export ("dateOfExpiry")]
+        [Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        [Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull fathersName;
-        [Export ("fathersName")]
+        [Export("fathersName")]
         string FathersName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull mothersName;
-        [Export ("mothersName")]
+        [Export("mothersName")]
         string MothersName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull sex;
-        [Export ("sex")]
+        [Export("sex")]
         string Sex { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull address;
-        [Export ("address")]
+        [Export("address")]
         string Address { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull civilStatusNumber;
-        [Export ("civilStatusNumber")]
+        [Export("civilStatusNumber")]
         string CivilStatusNumber { get; }
     }
 
     // @interface MBMoroccoIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBMoroccoIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBMoroccoIdBackRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBMoroccoIdBackRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractAddress;
-        [Export ("extractAddress")]
+        [Export("extractAddress")]
         bool ExtractAddress { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
 
         // @property (assign, nonatomic) BOOL extractFathersName;
-        [Export ("extractFathersName")]
+        [Export("extractFathersName")]
         bool ExtractFathersName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractMothersName;
-        [Export ("extractMothersName")]
+        [Export("extractMothersName")]
         bool ExtractMothersName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSex;
-        [Export ("extractSex")]
+        [Export("extractSex")]
         bool ExtractSex { get; set; }
 
         // @property (assign, nonatomic) BOOL extractCivilStatusNumber;
-        [Export ("extractCivilStatusNumber")]
+        [Export("extractCivilStatusNumber")]
         bool ExtractCivilStatusNumber { get; set; }
     }
 
@@ -5080,85 +5253,199 @@ namespace Microblink
     }
 // @interface MBNewZealandDlFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBNewZealandDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstNames;
-        [NullAllowed, Export ("firstNames")]
+        [NullAllowed, Export("firstNames")]
         string FirstNames { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable surname;
-        [NullAllowed, Export ("surname")]
+        [NullAllowed, Export("surname")]
         string Surname { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
-        [NullAllowed, Export ("dateOfBirth")]
+        [NullAllowed, Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfIssue;
-        [NullAllowed, Export ("dateOfIssue")]
+        [NullAllowed, Export("dateOfIssue")]
         MBDateResult DateOfIssue { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfExpiry;
-        [NullAllowed, Export ("dateOfExpiry")]
+        [NullAllowed, Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, assign, nonatomic) BOOL donorIndicator;
-        [Export ("donorIndicator")]
+        [Export("donorIndicator")]
         bool DonorIndicator { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable address;
-        [NullAllowed, Export ("address")]
+        [NullAllowed, Export("address")]
         string Address { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable licenseNumber;
-        [NullAllowed, Export ("licenseNumber")]
+        [NullAllowed, Export("licenseNumber")]
         string LicenseNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable cardVersion;
-        [NullAllowed, Export ("cardVersion")]
+        [NullAllowed, Export("cardVersion")]
         string CardVersion { get; }
     }
 
     // @interface MBNewZealandDlFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBNewZealandDlFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBNewZealandDlFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBNewZealandDlFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractFirstNames;
-        [Export ("extractFirstNames")]
+        [Export("extractFirstNames")]
         bool ExtractFirstNames { get; set; }
 
         // @property (assign, nonatomic) BOOL extractSurname;
-        [Export ("extractSurname")]
+        [Export("extractSurname")]
         bool ExtractSurname { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfBirth;
-        [Export ("extractDateOfBirth")]
+        [Export("extractDateOfBirth")]
         bool ExtractDateOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfIssue;
-        [Export ("extractDateOfIssue")]
+        [Export("extractDateOfIssue")]
         bool ExtractDateOfIssue { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDonorIndicator;
-        [Export ("extractDonorIndicator")]
+        [Export("extractDonorIndicator")]
         bool ExtractDonorIndicator { get; set; }
 
         // @property (assign, nonatomic) BOOL extractAddress;
-        [Export ("extractAddress")]
+        [Export("extractAddress")]
         bool ExtractAddress { get; set; }
     }
 
+   // @interface MBPaymentCardBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBPaymentCardBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nonnull cvv;
+        [Export("cvv")]
+        string Cvv { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull inventoryNumber;
+        [Export("inventoryNumber")]
+        string InventoryNumber { get; }
+    }
+
+    // @interface MBPaymentCardBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBPaymentCardBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBPaymentCardBackRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBPaymentCardBackRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractInventoryNumber;
+        [Export ("extractInventoryNumber")]
+        bool ExtractInventoryNumber { get; set; }
+    }
+
+    // @interface MBPaymentCardFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBPaymentCardFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nonnull cardNumber;
+        [Export("cardNumber")]
+        string CardNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull owner;
+        [Export("owner")]
+        string Owner { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull validThru;
+        [Export("validThru")]
+        MBDateResult ValidThru { get; }
+    }
+
+    // @interface MBPaymentCardFrontRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBPaymentCardFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBPaymentCardFrontRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBPaymentCardFrontRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractOwner;
+        [Export("extractOwner")]
+        bool ExtractOwner { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractValidThru;
+        [Export("extractValidThru")]
+        bool ExtractValidThru { get; set; }
+    }
+
+    // @interface MBPaymentCardCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBPaymentCardCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nonnull cardNumber;
+        [Export("cardNumber")]
+        string CardNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull owner;
+        [Export("owner")]
+        string Owner { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull validThru;
+        [Export("validThru")]
+        MBDateResult ValidThru { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull cvv;
+        [Export("cvv")]
+        string Cvv { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull inventoryNumber;
+        [Export("inventoryNumber")]
+        string InventoryNumber { get; }
+    }
+
+    // @interface MBPaymentCardCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection, MBDigitalSignature>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBPaymentCardCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection, IMBDigitalSignature
+    {
+        // @property (readonly, nonatomic, strong) MBPaymentCardCombinedRecognizerResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBPaymentCardCombinedRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractOwner;
+        [Export("extractOwner")]
+        bool ExtractOwner { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractValidThru;
+        [Export("extractValidThru")]
+        bool ExtractValidThru { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractInventoryNumber;
+        [Export("extractInventoryNumber")]
+        bool ExtractInventoryNumber { get; set; }
+    }
     // @interface MBPolandIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
     
     [BaseType(typeof(MBLegacyMRTDRecognizerResult))]
@@ -5562,66 +5849,65 @@ namespace Microblink
 
    // @interface MBSingaporeIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nonnull address;
-        [Export ("address")]
+        [Export("address")]
         string Address { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull addressChangeDate;
-        [Export ("addressChangeDate")]
+        [Export("addressChangeDate")]
         MBDateResult AddressChangeDate { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull bloodType;
-        [Export ("bloodType")]
+        [Export("bloodType")]
         string BloodType { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull cardNumber;
-        [Export ("cardNumber")]
+        [Export("cardNumber")]
         string CardNumber { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfIssue;
-        [Export ("dateOfIssue")]
+        [Export("dateOfIssue")]
         MBDateResult DateOfIssue { get; }
     }
 
     // @interface MBSingaporeIdBackRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBSingaporeIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBSingaporeIdBackRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBSingaporeIdBackRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractAddress;
-        [Export ("extractAddress")]
+        [Export("extractAddress")]
         bool ExtractAddress { get; set; }
 
         // @property (assign, nonatomic) BOOL extractAddressChangeDate;
-        [Export ("extractAddressChangeDate")]
+        [Export("extractAddressChangeDate")]
         bool ExtractAddressChangeDate { get; set; }
 
         // @property (assign, nonatomic) BOOL extractBloodType;
-        [Export ("extractBloodType")]
+        [Export("extractBloodType")]
         bool ExtractBloodType { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfIssue;
-        [Export ("extractDateOfIssue")]
+        [Export("extractDateOfIssue")]
         bool ExtractDateOfIssue { get; set; }
     }
-
-    // @interface MBSingaporeIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    
-    [BaseType(typeof(MBLegacyRecognizerResult))]
+// @interface MBSingaporeIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSingaporeIdFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
+    interface MBSingaporeIdFrontRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult
     {
-        // @property (readonly, nonatomic) NSString * _Nullable cardNumber;
-        [NullAllowed, Export("cardNumber")]
-        string CardNumber { get; }
+        // @property (readonly, nonatomic) NSString * _Nullable identityCardNumber;
+        [NullAllowed, Export("identityCardNumber")]
+        string IdentityCardNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable name;
         [NullAllowed, Export("name")]
@@ -5635,23 +5921,27 @@ namespace Microblink
         [NullAllowed, Export("sex")]
         string Sex { get; }
 
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfBirth;
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
         [NullAllowed, Export("dateOfBirth")]
-        NSDate DateOfBirth { get; }
+        MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable countryOfBirth;
         [NullAllowed, Export("countryOfBirth")]
         string CountryOfBirth { get; }
     }
 
-    // @interface MBSingaporeIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBFaceImage, MBGlareDetection>
-    
-    [BaseType(typeof(MBLegacyRecognizer))]
-    interface MBSingaporeIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBFaceImage, IMBGlareDetection
+    // @interface MBSingaporeIdFrontRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBSingaporeIdFrontRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBSingaporeIdFrontRecognizerResult * _Nonnull result;
         [Export("result", ArgumentSemantic.Strong)]
         MBSingaporeIdFrontRecognizerResult Result { get; }
+
+        // @property (nonatomic) BOOL extractName;
+        [Export("extractName")]
+        bool ExtractName { get; set; }
 
         // @property (nonatomic) BOOL extractRace;
         [Export("extractRace")]
@@ -5670,154 +5960,196 @@ namespace Microblink
         bool ExtractCountryOfBirth { get; set; }
     }
 
-    // @interface MBSingaporeCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
-    
-    [BaseType(typeof(MBLegacyRecognizerResult))]
+
+    // @interface MBSingaporeCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBSingaporeCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBSingaporeCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult
     {
+        // @property (readonly, nonatomic) NSString * _Nullable identityCardNumber;
+        [NullAllowed, Export("identityCardNumber")]
+        string IdentityCardNumber { get; }
+
         // @property (readonly, nonatomic) NSString * _Nullable name;
         [NullAllowed, Export("name")]
         string Name { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable address;
-        [NullAllowed, Export("address")]
-        string Address { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable bloodGroup;
-        [NullAllowed, Export("bloodGroup")]
-        string BloodGroup { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable sex;
-        [NullAllowed, Export("sex")]
-        string Sex { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable countryOfBirth;
-        [NullAllowed, Export("countryOfBirth")]
-        string CountryOfBirth { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable race;
         [NullAllowed, Export("race")]
         string Race { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nullable cardNumber;
-        [NullAllowed, Export("cardNumber")]
-        string CardNumber { get; }
+        // @property (readonly, nonatomic) NSString * _Nullable sex;
+        [NullAllowed, Export("sex")]
+        string Sex { get; }
 
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfBirth;
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
         [NullAllowed, Export("dateOfBirth")]
-        NSDate DateOfBirth { get; }
+        MBDateResult DateOfBirth { get; }
 
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfIssue;
-        [NullAllowed, Export("dateOfIssue")]
-        NSDate DateOfIssue { get; }
+        // @property (readonly, nonatomic) NSString * _Nullable countryOfBirth;
+        [NullAllowed, Export("countryOfBirth")]
+        string CountryOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull address;
+        [Export("address")]
+        string Address { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull addressChangeDate;
+        [Export("addressChangeDate")]
+        MBDateResult AddressChangeDate { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull bloodType;
+        [Export("bloodType")]
+        string BloodType { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfIssue;
+        [Export("dateOfIssue")]
+        MBDateResult DateOfIssue { get; }
     }
 
-    // @interface MBSingaporeCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature>
-    
-    [BaseType(typeof(MBLegacyRecognizer))]
-    interface MBSingaporeCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature
+    // @interface MBSingaporeCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFaceImage, MBEncodeFaceImage, MBGlareDetection, MBDigitalSignature>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBSingaporeCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFaceImage, IMBEncodeFaceImage, IMBGlareDetection, IMBDigitalSignature
     {
         // @property (readonly, nonatomic, strong) MBSingaporeCombinedRecognizerResult * result;
         [Export("result", ArgumentSemantic.Strong)]
         MBSingaporeCombinedRecognizerResult Result { get; }
+
+        // @property (nonatomic) BOOL extractName;
+        [Export("extractName")]
+        bool ExtractName { get; set; }
+
+        // @property (nonatomic) BOOL extractRace;
+        [Export("extractRace")]
+        bool ExtractRace { get; set; }
+
+        // @property (nonatomic) BOOL extractDateOfBirth;
+        [Export("extractDateOfBirth")]
+        bool ExtractDateOfBirth { get; set; }
+
+        // @property (nonatomic) BOOL extractSex;
+        [Export("extractSex")]
+        bool ExtractSex { get; set; }
+
+        // @property (nonatomic) BOOL extractCountryOfBirth;
+        [Export("extractCountryOfBirth")]
+        bool ExtractCountryOfBirth { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractAddress;
+        [Export("extractAddress")]
+        bool ExtractAddress { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractAddressChangeDate;
+        [Export("extractAddressChangeDate")]
+        bool ExtractAddressChangeDate { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractBloodType;
+        [Export("extractBloodType")]
+        bool ExtractBloodType { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractDateOfIssue;
+        [Export("extractDateOfIssue")]
+        bool ExtractDateOfIssue { get; set; }
     }
+
 
         // @interface MBSingaporeDlFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBDateResult * _Nonnull birthDate;
-        [Export ("birthDate")]
+        [Export("birthDate")]
         MBDateResult BirthDate { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull issueDate;
-        [Export ("issueDate")]
+        [Export("issueDate")]
         MBDateResult IssueDate { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull licenceNumber;
-        [Export ("licenceNumber")]
+        [Export("licenceNumber")]
         string LicenceNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull name;
-        [Export ("name")]
+        [Export("name")]
         string Name { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull validTill;
-        [Export ("validTill")]
+        [Export("validTill")]
         MBDateResult ValidTill { get; }
     }
 
     // @interface MBSingaporeDlFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBSingaporeDlFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBSingaporeDlFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBSingaporeDlFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractBirthDate;
-        [Export ("extractBirthDate")]
+        [Export("extractBirthDate")]
         bool ExtractBirthDate { get; set; }
 
         // @property (assign, nonatomic) BOOL extractIssueDate;
-        [Export ("extractIssueDate")]
+        [Export("extractIssueDate")]
         bool ExtractIssueDate { get; set; }
 
         // @property (assign, nonatomic) BOOL extractName;
-        [Export ("extractName")]
+        [Export("extractName")]
         bool ExtractName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractValidTill;
-        [Export ("extractValidTill")]
+        [Export("extractValidTill")]
         bool ExtractValidTill { get; set; }
     }
 
     // @interface MBSingaporeChangiEmployeeIdRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSingaporeChangiEmployeeIdRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBDateResfetchult * _Nonnull dateOfExpiry;
-        [Export ("dateOfExpiry")]
+        [Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
-        [Export ("documentNumber")]
+        [Export("documentNumber")]
         string DocumentNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull name;
-        [Export ("name")]
+        [Export("name")]
         string Name { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull companyName;
-        [Export ("companyName")]
+        [Export("companyName")]
         string CompanyName { get; }
     }
 
     // @interface MBSingaporeChangiEmployeeIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBSingaporeChangiEmployeeIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBSingaporeChangiEmployeeIdRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBSingaporeChangiEmployeeIdRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractName;
-        [Export ("extractName")]
+        [Export("extractName")]
         bool ExtractName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractCompanyName;
-        [Export ("extractCompanyName")]
+        [Export("extractCompanyName")]
         bool ExtractCompanyName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
     }
 
@@ -6251,6 +6583,92 @@ namespace Microblink
         MBSloveniaCombinedRecognizerResult Result { get; }
     }
 
+    // @interface MBSpainDlFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBSpainDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nullable firstName;
+        [NullAllowed, Export("firstName")]
+        string FirstName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable surname;
+        [NullAllowed, Export("surname")]
+        string Surname { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable number;
+        [NullAllowed, Export("number")]
+        string Number { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export("placeOfBirth")]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
+        [NullAllowed, Export("issuingAuthority")]
+        string IssuingAuthority { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable licenceCategories;
+        [NullAllowed, Export("licenceCategories")]
+        string LicenceCategories { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
+        [NullAllowed, Export("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable validFrom;
+        [NullAllowed, Export("validFrom")]
+        MBDateResult ValidFrom { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable validUntil;
+        [NullAllowed, Export("validUntil")]
+        MBDateResult ValidUntil { get; }
+    }
+
+    // @interface MBSpainDlFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBSpainDlFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBSpainDlFrontRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBSpainDlFrontRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractFirstName;
+        [Export("extractFirstName")]
+        bool ExtractFirstName { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractSurname;
+        [Export("extractSurname")]
+        bool ExtractSurname { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractDateOfBirth;
+        [Export("extractDateOfBirth")]
+        bool ExtractDateOfBirth { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractPlaceOfBirth;
+        [Export("extractPlaceOfBirth")]
+        bool ExtractPlaceOfBirth { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractValidFrom;
+        [Export("extractValidFrom")]
+        bool ExtractValidFrom { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractValidUntil;
+        [Export("extractValidUntil")]
+        bool ExtractValidUntil { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractIssuingAuthority;
+        [Export("extractIssuingAuthority")]
+        bool ExtractIssuingAuthority { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractLicenceCategories;
+        [Export("extractLicenceCategories")]
+        bool ExtractLicenceCategories { get; set; }
+    }
+
+
     // @interface MBSwedenDlFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult, MBSignatureImageResult>
     
     [BaseType(typeof(MBLegacyRecognizerResult))]
@@ -6549,90 +6967,90 @@ namespace Microblink
 
         // @interface MBSwitzerlandDlFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizerResult))]
+    [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSwitzerlandDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
     {
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
-        [Export ("dateOfBirth")]
+        [Export("dateOfBirth")]
         MBDateResult DateOfBirth { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfExpiry;
-        [Export ("dateOfExpiry")]
+        [Export("dateOfExpiry")]
         MBDateResult DateOfExpiry { get; }
 
         // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfIssue;
-        [Export ("dateOfIssue")]
+        [Export("dateOfIssue")]
         MBDateResult DateOfIssue { get; }
 
         // @property (readonly, nonatomic) BOOL expiryDatePermanent;
-        [Export ("expiryDatePermanent")]
+        [Export("expiryDatePermanent")]
         bool ExpiryDatePermanent { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull firstName;
-        [Export ("firstName")]
+        [Export("firstName")]
         string FirstName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull issuingAuthority;
-        [Export ("issuingAuthority")]
+        [Export("issuingAuthority")]
         string IssuingAuthority { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull lastName;
-        [Export ("lastName")]
+        [Export("lastName")]
         string LastName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull licenseNumber;
-        [Export ("licenseNumber")]
+        [Export("licenseNumber")]
         string LicenseNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
-        [Export ("placeOfBirth")]
+        [Export("placeOfBirth")]
         string PlaceOfBirth { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull vehicleCategories;
-        [Export ("vehicleCategories")]
+        [Export("vehicleCategories")]
         string VehicleCategories { get; }
     }
 
     // @interface MBSwitzerlandDlFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBSignatureImage, MBEncodeSignatureImage, MBSignatureImageDpi, MBGlareDetection>
     [iOS (8,0)]
-    [BaseType (typeof(MBRecognizer))]
+    [BaseType(typeof(MBRecognizer))]
     interface MBSwitzerlandDlFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBSignatureImage, IMBEncodeSignatureImage, IMBSignatureImageDpi, IMBGlareDetection
     {
         // @property (readonly, nonatomic, strong) MBSwitzerlandDlFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
+        [Export("result", ArgumentSemantic.Strong)]
         MBSwitzerlandDlFrontRecognizerResult Result { get; }
 
         // @property (assign, nonatomic) BOOL extractDateOfBirth;
-        [Export ("extractDateOfBirth")]
+        [Export("extractDateOfBirth")]
         bool ExtractDateOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfExpiry;
-        [Export ("extractDateOfExpiry")]
+        [Export("extractDateOfExpiry")]
         bool ExtractDateOfExpiry { get; set; }
 
         // @property (assign, nonatomic) BOOL extractDateOfIssue;
-        [Export ("extractDateOfIssue")]
+        [Export("extractDateOfIssue")]
         bool ExtractDateOfIssue { get; set; }
 
         // @property (assign, nonatomic) BOOL extractFirstName;
-        [Export ("extractFirstName")]
+        [Export("extractFirstName")]
         bool ExtractFirstName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractIssuingAuthority;
-        [Export ("extractIssuingAuthority")]
+        [Export("extractIssuingAuthority")]
         bool ExtractIssuingAuthority { get; set; }
 
         // @property (assign, nonatomic) BOOL extractLastName;
-        [Export ("extractLastName")]
+        [Export("extractLastName")]
         bool ExtractLastName { get; set; }
 
         // @property (assign, nonatomic) BOOL extractPlaceOfBirth;
-        [Export ("extractPlaceOfBirth")]
+        [Export("extractPlaceOfBirth")]
         bool ExtractPlaceOfBirth { get; set; }
 
         // @property (assign, nonatomic) BOOL extractVehicleCategories;
-        [Export ("extractVehicleCategories")]
+        [Export("extractVehicleCategories")]
         bool ExtractVehicleCategories { get; set; }
     }
 
@@ -6692,6 +7110,83 @@ namespace Microblink
         // @property (assign, nonatomic) BOOL extractNationality;
         [Export("extractNationality")]
         bool ExtractNationality { get; set; }
+    }
+
+    // @interface MBUnitedArabEmiratesDlFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBUnitedArabEmiratesDlFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
+        [Export("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull expiryDate;
+        [Export("expiryDate")]
+        MBDateResult ExpiryDate { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull issueDate;
+        [Export("issueDate")]
+        MBDateResult IssueDate { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull licenseNumber;
+        [Export("licenseNumber")]
+        string LicenseNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull licensingAuthority;
+        [Export("licensingAuthority")]
+        string LicensingAuthority { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull name;
+        [Export("name")]
+        string Name { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull nationality;
+        [Export("nationality")]
+        string Nationality { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull placeOfIssue;
+        [Export("placeOfIssue")]
+        string PlaceOfIssue { get; }
+    }
+
+    // @interface MBUnitedArabEmiratesDlFrontRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection>
+    [iOS (8,0)]
+    [BaseType(typeof(MBRecognizer))]
+    interface MBUnitedArabEmiratesDlFrontRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBGlareDetection
+    {
+        // @property (readonly, nonatomic, strong) MBUnitedArabEmiratesDlFrontRecognizerResult * _Nonnull result;
+        [Export("result", ArgumentSemantic.Strong)]
+        MBUnitedArabEmiratesDlFrontRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL extractDateOfBirth;
+        [Export("extractDateOfBirth")]
+        bool ExtractDateOfBirth { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractIssueDate;
+        [Export("extractIssueDate")]
+        bool ExtractIssueDate { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractLicenseNumber;
+        [Export("extractLicenseNumber")]
+        bool ExtractLicenseNumber { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractLicensingAuthority;
+        [Export("extractLicensingAuthority")]
+        bool ExtractLicensingAuthority { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractName;
+        [Export("extractName")]
+        bool ExtractName { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractNationality;
+        [Export("extractNationality")]
+        bool ExtractNationality { get; set; }
+
+        // @property (assign, nonatomic) BOOL extractPlaceOfIssue;
+        [Export("extractPlaceOfIssue")]
+        bool ExtractPlaceOfIssue { get; set; }
     }
 
     // @protocol MBEncodedFullDocumentImageResult
@@ -7489,12 +7984,16 @@ namespace Microblink
         // @required -(void)documentVerificationOverlayViewControllerDidFinishScanning:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
         [Export("documentVerificationOverlayViewControllerDidFinishScanning:state:")]
-        void DocumentVerificationOverlayViewControllerDidFinishScanning(MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state);
+        void DocumentVerificationOverlayViewControllerDidFinishScanning (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state);
 
         // @required -(void)documentVerificationOverlayViewControllerDidTapClose:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
         [Abstract]
         [Export("documentVerificationOverlayViewControllerDidTapClose:")]
-        void DocumentVerificationOverlayViewControllerDidTapClose(MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
+        void DocumentVerificationOverlayViewControllerDidTapClose (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
+
+        // @optional -(void)documentVerificationOverlayViewControllerDidFinishScanningFirstSide:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
+        [Export("documentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
+        void DocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
     }
 
     // @interface MBDocumentSubview : MBSubview
