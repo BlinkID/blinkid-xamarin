@@ -16,7 +16,7 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AssemblyName>Android</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,7 +87,7 @@
     </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>packages\BlinkID.Android.Binding.4.1.0\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.Android.Binding.4.2.0\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

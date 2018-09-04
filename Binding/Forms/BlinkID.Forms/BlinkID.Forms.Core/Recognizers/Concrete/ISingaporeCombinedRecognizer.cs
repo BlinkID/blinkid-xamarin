@@ -18,6 +18,87 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
+        /// Defines if owner's address should be extracted from back side of the Singapore Id
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if owner's address change date should be extracted from back side of the Singapore Id
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ExtractAddressChangeDate { get; set; }
+        
+        /// <summary>
+        /// Defines if owner's blood type should be extracted from back side of the Singapore Id
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractBloodType { get; set; }
+        
+        /// <summary>
+        ///  Defines if country/place of birth of Singaporean ID card owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractCountryOfBirth { get; set; }
+        
+        /// <summary>
+        ///  Defines if date of birth of Singaporean ID card owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if owner's date of issue should be extracted from back side of the Singapore Id
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        ///  Defines if name of Singaporean ID card owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractName { get; set; }
+        
+        /// <summary>
+        ///  Defines if race of Singaporean ID card owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractRace { get; set; }
+        
+        /// <summary>
+        ///  Defines if sex of Singaporean ID card owner should be extracted
+        /// 
+        ///   
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  
@@ -57,32 +138,32 @@
     public interface ISingaporeCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The name of the Singapore ID owner. 
+        /// The address of the back side of the Singapore Id owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The blood group of the Singapore ID owner. 
+        /// The address Change Date of the back side of the Singapore Id owner. 
         /// </summary>
-        string BloodGroup { get; }
+        IDate AddressChangeDate { get; }
         
         /// <summary>
-        /// The identity card number of Singapore ID. 
+        /// The blood Type of the back side of the Singapore Id owner. 
         /// </summary>
-        string CardNumber { get; }
+        string BloodType { get; }
         
         /// <summary>
-        /// The country of birth of the Singapore ID owner. 
+        /// The country/place of birth of the Singaporean ID card owner. 
         /// </summary>
         string CountryOfBirth { get; }
         
         /// <summary>
-        /// The date of birth of Singapore ID owner 
+        /// The date of birth of the Singaporean ID card owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of issue of Singapore ID owner 
+        /// The date Of Issue of the back side of the Singapore Id owner. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -120,12 +201,17 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The first name of the Singapore ID owner. 
+        /// The identity card number of the Singaporean ID card. 
+        /// </summary>
+        string IdentityCardNumber { get; }
+        
+        /// <summary>
+        /// The name of the Singaporean ID card owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The race of the Singapore ID owner. 
+        /// The race of the Singaporean ID card owner. 
         /// </summary>
         string Race { get; }
         
@@ -136,7 +222,7 @@
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The sex of the Singapore ID owner. 
+        /// The sex of the Singaporean ID card owner. 
         /// </summary>
         string Sex { get; }
         

@@ -12,7 +12,7 @@
     <AssemblyName>BlinkID</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.Forms.iOS</PackageId>
-    <PackageVersion>4.1.0</PackageVersion>
+    <PackageVersion>4.2.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -21,9 +21,9 @@
     <Description>A small, but powerful ID scanning library - iOS implementation for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.1.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.2.0:
 
-https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-ios/releases/tag/v4.2.0</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,12 +84,15 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CyprusIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SwitzerlandDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SwitzerlandPassportRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/CyprusIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SingaporeDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
@@ -102,6 +105,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/MyKadBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SimNumberRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/IkadRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PaymentCardCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
@@ -111,6 +115,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/HongKongIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyOldIdRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PaymentCardBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustraliaDlBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MyKadFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustriaPassportRecognizer.cs" />
@@ -119,6 +124,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MoroccoIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PaymentCardFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SerbiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MoroccoIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
@@ -126,6 +132,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UsdlCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustriaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/KuwaitIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/EgyptIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SingaporeChangiEmployeeIdRecognizer.cs" />
@@ -133,6 +140,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/UsdlRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/ColombiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustraliaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/KuwaitIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/DocumentFaceRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustriaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanCombinedRecognizer.cs" />
@@ -148,6 +156,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.1.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/SwitzerlandIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SloveniaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/SpainDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SuccessFrameGrabberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AssemblyName>BlinkIDFormsSample.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,15 +104,6 @@
     <Reference Include="Java.Interop" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="BlinkIDAARBinding">
-      <HintPath>..\packages\BlinkID.Android.Binding.4.1.0\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
-    </Reference>
-    <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.4.1.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.4.1.0\lib\monoandroid81\BlinkID.dll</HintPath>
-    </Reference>
     <Reference Include="FormsViewGroup">
       <HintPath>..\packages\Xamarin.Forms.3.1.0.697729\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>
@@ -127,6 +118,15 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.3.1.0.697729\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkIDAARBinding">
+      <HintPath>..\packages\BlinkID.Android.Binding.4.2.0\lib\monoandroid81\BlinkIDAARBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkID.Forms.Core">
+      <HintPath>..\packages\BlinkID.Forms.Core.4.2.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkID">
+      <HintPath>..\packages\BlinkID.Forms.Android.4.2.0\lib\monoandroid81\BlinkID.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
