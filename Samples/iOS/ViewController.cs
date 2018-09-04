@@ -35,7 +35,7 @@ namespace iOS
             customDelegate = new CustomDelegate(this);
 
             // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
-            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAx5h89osjSFXqQRtWjes0WSEXe3rubgFApHsFdSF2oJZL0MhSL18AgbaLmPiOT3RFu+lqtKtpsjqRfxEVmc9cU98GnjciEeAOC331OUeT5R1p7zKqsenX/3IytQJuMG4ruEaRXc5746y/Kv8ch0XDgv/nRu4siNlvpkjsUjkeyokbUUwi+uzL6t2G4V/sX0SXTMWPjG7zjtW4ovwpGs6fct/dpBJQfzRQNCn9kg==");
+            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAwejcWTxoCKNlXOJE1DxNgmWddFxJEbrI8e4+CiL7dh6G7SCW+25bUyaVqDrheTBMQ2MmDuYHZaVhpDHhPnS1NkI8nxlKXCOGiMqNeFQL3K/IAGgewGg7wlaMaF5OK6xo3pnSJDpPYW6JgpAYT0SdZ3B+6LqSITk5iYU7jlfxOvxK9zrX5nfFRw/I8eApLCFacXqpHR+iUWNl52ljwbxyZWYi3ABpgZcdjHmhkw==");
 
             mrtdRecognizer = new MBMrtdRecognizer();
             usdlRecognizer = new MBUsdlRecognizer();
