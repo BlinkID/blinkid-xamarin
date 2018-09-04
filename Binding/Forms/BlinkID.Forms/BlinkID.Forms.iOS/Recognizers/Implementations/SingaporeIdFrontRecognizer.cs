@@ -57,6 +57,18 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSex = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
