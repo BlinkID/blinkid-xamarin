@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Kuwait national ID cards.
+    /// Recognizer used for scanning the back side of elite payment cards.
     /// </summary>
-    public interface IKuwaitIdBackRecognizer : IRecognizer
+    public interface IElitePaymentCardBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,11 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if serial number of Kuwait ID should be extracted. 
+        /// Should extract the card's security code/value 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSerialNo { get; set; }
+        bool ExtractCvv { get; set; }
+        
+        /// <summary>
+        /// Should extract the card's inventory number 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractInventoryNumber { get; set; }
+        
+        /// <summary>
+        /// Should extract the payment card's month of expiry 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractValidThru { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -45,13 +59,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IKuwaitIdBackRecognizerResult Result { get; }
+        IElitePaymentCardBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IKuwaitIdBackRecognizer.
+    /// Result object for IElitePaymentCardBackRecognizer.
     /// </summary>
-    public interface IKuwaitIdBackRecognizerResult : IRecognizerResult {
+    public interface IElitePaymentCardBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The payment card number. 
+        /// </summary>
+        string CardNumber { get; }
+        
+        /// <summary>
+        /// Payment card's security code/value. 
+        /// </summary>
+        string Cvv { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -59,14 +83,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// Payment card's inventory number. 
         /// </summary>
-        IMrzResult MrzResult { get; }
+        string InventoryNumber { get; }
         
         /// <summary>
-        /// The serial number of Kuwait ID. 
+        /// The payment card's last month of validity. 
         /// </summary>
-        string SerialNo { get; }
+        IDate ValidThru { get; }
         
     }
 }

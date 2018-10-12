@@ -1,72 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Singapore Id Back Recognizer.
-    /// 
-    /// Singapore Id Back recognizer is used for scanning back side of the Singapore Id.
+    /// Recognizer which can scan back side of Singapore national ID cards.
     /// </summary>
     public interface ISingaporeIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's address should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if address of Singapore ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if owner's address change date should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if adress change date, present on sticker, of Singapore ID owner should be extracted. 
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddressChangeDate { get; set; }
         
         /// <summary>
-        /// Defines if owner's blood type should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if blood group of Singapore ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractBloodType { get; set; }
+        bool ExtractBloodGroup { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of issue should be extracted from back side of the Singapore Id
-        /// 
-        ///  
+        /// Defines if date of issue of Singapore ID should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -85,32 +75,32 @@
     public interface ISingaporeIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the back side of the Singapore Id owner. 
+        /// The address of Singapore ID owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The address Change Date of the back side of the Singapore Id owner. 
+        /// The address change date, present if the address is on a sticker, of Singapore ID owner. 
         /// </summary>
         IDate AddressChangeDate { get; }
         
         /// <summary>
-        /// The blood Type of the back side of the Singapore Id owner. 
+        /// The blood group of Singapore ID owner. 
         /// </summary>
-        string BloodType { get; }
+        string BloodGroup { get; }
         
         /// <summary>
-        /// The card Number of the back side of the Singapore Id owner. 
+        /// The card number of Singapore ID. 
         /// </summary>
         string CardNumber { get; }
         
         /// <summary>
-        /// The date Of Issue of the back side of the Singapore Id owner. 
+        /// The date of issue of Singapore ID. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

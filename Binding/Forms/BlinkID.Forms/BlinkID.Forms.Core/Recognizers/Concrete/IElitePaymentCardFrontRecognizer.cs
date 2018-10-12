@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Kuwait national ID cards.
+    /// Recognizer used for scanning the front side of elite credit/debit cards.
     /// </summary>
-    public interface IKuwaitIdBackRecognizer : IRecognizer
+    public interface IElitePaymentCardFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,11 +14,11 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if serial number of Kuwait ID should be extracted. 
+        /// Should extract the card owner information 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSerialNo { get; set; }
+        bool ExtractOwner { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -45,13 +45,13 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IKuwaitIdBackRecognizerResult Result { get; }
+        IElitePaymentCardFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IKuwaitIdBackRecognizer.
+    /// Result object for IElitePaymentCardFrontRecognizer.
     /// </summary>
-    public interface IKuwaitIdBackRecognizerResult : IRecognizerResult {
+    public interface IElitePaymentCardFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
         /// Image of the full document 
@@ -59,14 +59,9 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// Information about the payment card owner (name, company, etc.). 
         /// </summary>
-        IMrzResult MrzResult { get; }
-        
-        /// <summary>
-        /// The serial number of Kuwait ID. 
-        /// </summary>
-        string SerialNo { get; }
+        string Owner { get; }
         
     }
 }

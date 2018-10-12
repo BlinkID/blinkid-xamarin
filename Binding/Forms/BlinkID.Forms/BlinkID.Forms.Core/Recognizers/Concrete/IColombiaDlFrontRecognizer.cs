@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Singaporean national ID card.
+    /// Recognizer which can scan front side of Colombia drivers licence.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizer : IRecognizer
+    public interface IColombiaDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,39 +14,32 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if country/place of birth of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractCountryOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if date of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if the date of birth of the Colombia Dl owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if name of Singaporean ID card owner should be extracted. 
+        /// Defines if the driver restrictions of the Colombia Dl owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDriverRestrictions { get; set; }
+        
+        /// <summary>
+        /// Defines if the issuing agency of the Colombia Dl card should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractIssuingAgency { get; set; }
+        
+        /// <summary>
+        /// Defines if the name of the Colombia Dl owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
-        
-        /// <summary>
-        /// Defines if race of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractRace { get; set; }
-        
-        /// <summary>
-        /// Defines if sex of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSex { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -87,23 +80,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISingaporeIdFrontRecognizerResult Result { get; }
+        IColombiaDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISingaporeIdFrontRecognizer.
+    /// Result object for IColombiaDlFrontRecognizer.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizerResult : IRecognizerResult {
+    public interface IColombiaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The country/place of birth of the Singaporean ID card owner. 
-        /// </summary>
-        string CountryOfBirth { get; }
-        
-        /// <summary>
-        /// The date of birth of the Singaporean ID card owner. 
+        /// The date of birth of the Colombia Dl card owner. 
         /// </summary>
         IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The date of issue of the Colombia Dl card. 
+        /// </summary>
+        IDate DateOfIssue { get; }
+        
+        /// <summary>
+        /// The driver restrictions of the Colombia Dl card owner. 
+        /// </summary>
+        string DriverRestrictions { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -116,24 +114,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity card number of the Singaporean ID card. 
+        /// The issuing agency of the Colombia Dl card. 
         /// </summary>
-        string IdentityCardNumber { get; }
+        string IssuingAgency { get; }
         
         /// <summary>
-        /// The name of the Singaporean ID card owner. 
+        /// The licence number of the Colombia Dl card. 
+        /// </summary>
+        string LicenceNumber { get; }
+        
+        /// <summary>
+        /// The name of the Colombia Dl card owner. 
         /// </summary>
         string Name { get; }
-        
-        /// <summary>
-        /// The race of the Singaporean ID card owner. 
-        /// </summary>
-        string Race { get; }
-        
-        /// <summary>
-        /// The sex of the Singaporean ID card owner. 
-        /// </summary>
-        string Sex { get; }
         
     }
 }

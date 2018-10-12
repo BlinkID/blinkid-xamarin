@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer for combined reading of both front and back side of Singapore ID.
+    /// Recognizer which can scan front side of Ireland drivers license.
     /// </summary>
-    public interface ISingaporeCombinedRecognizer : IRecognizer
+    public interface IIrelandDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,67 +14,74 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if Singapore ID owner's address should be extracted 
+        /// Defines if address of Ireland DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if Singapore ID owner's address change date on sticker should be extracted 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ExtractAddressChangeDate { get; set; }
-        
-        /// <summary>
-        /// Defines if Singapore ID owner's blood group should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractBloodGroup { get; set; }
-        
-        /// <summary>
-        /// Defines if country of birth of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractCountryOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if date of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if date of birth of Ireland DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if Singapore ID's date of issue should be extracted 
+        /// Defines if date of expiry of Ireland DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if date of issue of Ireland DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if name of Singaporean ID card owner should be extracted. 
+        /// Defines if first name of Ireland DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractName { get; set; }
+        bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// Defines if race of Singaporean ID card owner should be extracted. 
+        /// Defines if issuing authority of Ireland DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractRace { get; set; }
+        bool ExtractIssuedBy { get; set; }
         
         /// <summary>
-        /// Defines if sex of Singaporean ID card owner should be extracted. 
+        /// Defines if licence categories of Ireland DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSex { get; set; }
+        bool ExtractLicenceCategories { get; set; }
+        
+        /// <summary>
+        /// Defines if licence number of Ireland DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLicenceNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if place of birth of Ireland DL owner should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPlaceOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if surname of Ireland DL owner should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSurname { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -112,68 +119,55 @@
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether or not recognition result should be signed. 
+        /// Defines whether signature image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
-        bool SignResult { get; set; }
+        bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for signature image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
         
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISingaporeCombinedRecognizerResult Result { get; }
+        IIrelandDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISingaporeCombinedRecognizer.
+    /// Result object for IIrelandDlFrontRecognizer.
     /// </summary>
-    public interface ISingaporeCombinedRecognizerResult : IRecognizerResult {
+    public interface IIrelandDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Singapore ID owner's address 
+        /// The address of Ireland DL owner 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The Singapore ID owner's address change date, present if the address is on a sticker 
-        /// </summary>
-        IDate AddressChangeDate { get; }
-        
-        /// <summary>
-        /// The Singapore ID owner's blood group 
-        /// </summary>
-        string BloodGroup { get; }
-        
-        /// <summary>
-        /// The country/place of birth of the Singaporean ID card owner. 
-        /// </summary>
-        string CountryOfBirth { get; }
-        
-        /// <summary>
-        /// The date of birth of the Singaporean ID card owner. 
+        /// The date of birth of Ireland DL owner 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The Singapore ID's date of issue 
+        /// The date of expiry of Ireland DL 
+        /// </summary>
+        IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// The date of issue of Ireland DL 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Defines digital signature of recognition results. 
+        /// The driver number of Ireland DL owner 
         /// </summary>
-        byte[] DigitalSignature { get; }
-        
-        /// <summary>
-        /// Defines digital signature version. 
-        /// </summary>
-        uint DigitalSignatureVersion { get; }
-        
-        /// <summary>
-        /// Defines {true} if data from scanned parts/sides of the document match, 
-        /// </summary>
-        bool DocumentDataMatch { get; }
+        string DriverNumber { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -181,39 +175,44 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Back side image of the document 
+        /// The first name of Ireland DL owner 
         /// </summary>
-        Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
+        string FirstName { get; }
         
         /// <summary>
-        /// Front side image of the document 
+        /// Image of the full document 
         /// </summary>
-        Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
+        Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity card number of the Singaporean ID card. 
+        /// The issuing authority of Ireland DL 
         /// </summary>
-        string IdentityCardNumber { get; }
+        string IssuedBy { get; }
         
         /// <summary>
-        /// The name of the Singaporean ID card owner. 
+        /// The licence categories of Ireland DL 
         /// </summary>
-        string Name { get; }
+        string LicenceCategories { get; }
         
         /// <summary>
-        /// The race of the Singaporean ID card owner. 
+        /// The licence number of Ireland DL 
         /// </summary>
-        string Race { get; }
+        string LicenceNumber { get; }
         
         /// <summary>
-        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// The place of birth of Ireland DL owner 
         /// </summary>
-        bool ScanningFirstSideDone { get; }
+        string PlaceOfBirth { get; }
         
         /// <summary>
-        /// The sex of the Singaporean ID card owner. 
+        /// Signature image from the document 
         /// </summary>
-        string Sex { get; }
+        Xamarin.Forms.ImageSource SignatureImage { get; }
+        
+        /// <summary>
+        /// The surname of Ireland DL owner 
+        /// </summary>
+        string Surname { get; }
         
     }
 }

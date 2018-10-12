@@ -7,37 +7,35 @@
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if sex of Cyprus ID card owner should be extracted.
-        /// 
-        ///  
+        /// Defines if sex of Cyprus ID card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -56,17 +54,17 @@
     public interface ICyprusIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date Of Birth of the back side of the Cyprus Id owner. 
+        /// The date of birth of the Cyprus ID card owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The sex of the back side of the Cyprus Id owner. 
+        /// The sex of the Cyprus ID card owner. 
         /// </summary>
         string Sex { get; }
         

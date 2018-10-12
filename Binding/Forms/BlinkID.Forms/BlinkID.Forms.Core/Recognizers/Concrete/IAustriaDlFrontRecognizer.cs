@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Moroccan national ID cards.
+    /// Recognizer which can scan front side of Austrian national DL cards.
     /// </summary>
-    public interface IMoroccoIdFrontRecognizer : IRecognizer
+    public interface IAustriaDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,46 +14,60 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of the Moroccan ID owner should be extracted 
+        /// Defines if date of birth of Austrian DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of the Moroccan ID should be extracted 
+        /// Defines if date of expiry of Austrian DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if name of the Moroccan ID owner should be extracted 
+        /// Defines if date of issue of Austrian DL should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if first name of Austrian DL owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractFirstName { get; set; }
+        
+        /// <summary>
+        /// Defines if issuing authority of Austrian DL should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractIssuingAuthority { get; set; }
+        
+        /// <summary>
+        /// Defines if name of Austrian DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of the Moroccan ID owner should be extracted 
+        /// Defines if place of birth of Austrian DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if sex of the Moroccan ID owner should be extracted 
+        /// Defines if vehicle categories of Austrian DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSex { get; set; }
-        
-        /// <summary>
-        /// Defines if surname of the Moroccan ID owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSurname { get; set; }
+        bool ExtractVehicleCategories { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -108,28 +122,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMoroccoIdFrontRecognizerResult Result { get; }
+        IAustriaDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMoroccoIdFrontRecognizer.
+    /// Result object for IAustriaDlFrontRecognizer.
     /// </summary>
-    public interface IMoroccoIdFrontRecognizerResult : IRecognizerResult {
+    public interface IAustriaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Moroccan ID owner 
+        /// The date of birth of the Austrian DL owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Moroccan ID 
+        /// The date of expiry of the Austrian DL. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The document number of the Moroccan ID 
+        /// The date of issue of the Austrian DL. 
         /// </summary>
-        string DocumentNumber { get; }
+        IDate DateOfIssue { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -137,24 +151,34 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The first name of the Austrian DL owner. 
+        /// </summary>
+        string FirstName { get; }
+        
+        /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The name of the Moroccan ID owner 
+        /// The issuing authority of the Austrian DL. 
+        /// </summary>
+        string IssuingAuthority { get; }
+        
+        /// <summary>
+        /// The licence number of the Austrian DL. 
+        /// </summary>
+        string LicenceNumber { get; }
+        
+        /// <summary>
+        /// The name of the Austrian DL owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The place of birth of the Moroccan ID owner 
+        /// The place of birth of the Austrian DL owner. 
         /// </summary>
         string PlaceOfBirth { get; }
-        
-        /// <summary>
-        /// The sex of the Moroccan ID owner 
-        /// </summary>
-        string Sex { get; }
         
         /// <summary>
         /// Signature image from the document 
@@ -162,9 +186,9 @@
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The surname of the Moroccan ID owner 
+        /// The vehicle categories of the Austrian DL. 
         /// </summary>
-        string Surname { get; }
+        string VehicleCategories { get; }
         
     }
 }

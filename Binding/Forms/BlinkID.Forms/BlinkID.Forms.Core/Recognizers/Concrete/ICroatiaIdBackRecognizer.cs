@@ -1,64 +1,55 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Croatian ID Back Recognizer.
-    /// 
-    /// Croatian ID Back recognizer is used for scanning back side of Croatian ID. It always extracts
-    /// MRZ zone and address of ID holder while extracting other elements is optional.
+    /// Recognizer which can scan back side of Croatian national ID cards.
     /// </summary>
     public interface ICroatiaIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Croatian ID should be extracted
-        /// 
-        ///  
+        /// Defines if date of issue of Croatian ID should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if issuer of Croatian ID should be extracted
-        /// 
-        ///  
+        /// Defines if issuer of Croatian ID should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuedBy { get; set; }
         
         /// <summary>
-        /// Defines if residence of Croatian ID owner should be extracted
-        /// 
-        ///  
+        /// Defines if residence of Croatian ID owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractResidence { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -92,7 +83,7 @@
         bool DocumentForNonResident { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
@@ -102,7 +93,7 @@
         string IssuedBy { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
         IMrzResult MrzResult { get; }
         

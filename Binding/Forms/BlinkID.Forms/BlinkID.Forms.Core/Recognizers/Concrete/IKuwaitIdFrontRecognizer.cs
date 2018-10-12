@@ -7,83 +7,70 @@
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Kuwait ID owner should be extracted.
-        /// 
-        ///  
+        /// Defines if date of birth of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractBirthDate { get; set; }
         
         /// <summary>
-        /// Defines if name of Kuwait ID owner should be extracted.
-        /// 
-        ///  
+        /// Defines if name of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if nationality of Kuwait ID owner should be extracted.
-        /// 
-        ///  
+        /// Defines if nationality of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if sex of Kuwait ID owner should be extracted.
-        /// 
-        ///  
+        /// Defines if sex of Kuwait ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -102,42 +89,42 @@
     public interface IKuwaitIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The birth Date of the front side of the Kuroom wait Id owner. 
+        /// The birth date of the Kuwait ID owner. 
         /// </summary>
         IDate BirthDate { get; }
         
         /// <summary>
-        /// The civil Id Number of the front side of the Kuwait Id owner. 
+        /// The civil ID number of the Kuwait ID owner. 
         /// </summary>
         string CivilIdNumber { get; }
         
         /// <summary>
-        /// The expiry Date of the front side of the Kuwait Id owner. 
+        /// The expiry date of the Kuwait ID. 
         /// </summary>
         IDate ExpiryDate { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The name of the front side of the Kuwait Id owner. 
+        /// The name of the Kuwait ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The nationality of the front side of the Kuwait Id owner. 
+        /// The nationality of the Kuwait ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The sex of the front side of the Kuwait Id owner. 
+        /// The sex of the Kuwait ID owner. 
         /// </summary>
         string Sex { get; }
         
