@@ -1,30 +1,36 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AustriaPassportRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ItalyDlFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class AustriaPassportRecognizer : Recognizer, IAustriaPassportRecognizer
+    public sealed class ItalyDlFrontRecognizer : Recognizer, IItalyDlFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer nativeRecognizer;
 
-        AustriaPassportRecognizerResult result;
+        ItalyDlFrontRecognizerResult result;
 
-        public AustriaPassportRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer())
+        public ItalyDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer;
-            result = new AustriaPassportRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer;
+            result = new ItalyDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IAustriaPassportRecognizerResult Result => result;
+        public IItalyDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
             set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ShouldExtractAddress(); 
+            set => nativeRecognizer.SetExtractAddress(value);
         }
         
         public bool ExtractDateOfBirth 
@@ -51,40 +57,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractGivenName(value);
         }
         
-        public bool ExtractHeight 
-        { 
-            get => nativeRecognizer.ShouldExtractHeight(); 
-            set => nativeRecognizer.SetExtractHeight(value);
-        }
-        
         public bool ExtractIssuingAuthority 
         { 
             get => nativeRecognizer.ShouldExtractIssuingAuthority(); 
             set => nativeRecognizer.SetExtractIssuingAuthority(value);
         }
         
-        public bool ExtractNationality 
+        public bool ExtractLicenceCategories 
         { 
-            get => nativeRecognizer.ShouldExtractNationality(); 
-            set => nativeRecognizer.SetExtractNationality(value);
-        }
-        
-        public bool ExtractPassportNumber 
-        { 
-            get => nativeRecognizer.ShouldExtractPassportNumber(); 
-            set => nativeRecognizer.SetExtractPassportNumber(value);
+            get => nativeRecognizer.ShouldExtractLicenceCategories(); 
+            set => nativeRecognizer.SetExtractLicenceCategories(value);
         }
         
         public bool ExtractPlaceOfBirth 
         { 
             get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
             set => nativeRecognizer.SetExtractPlaceOfBirth(value);
-        }
-        
-        public bool ExtractSex 
-        { 
-            get => nativeRecognizer.ShouldExtractSex(); 
-            set => nativeRecognizer.SetExtractSex(value);
         }
         
         public bool ExtractSurname 
@@ -137,27 +125,25 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class AustriaPassportRecognizerResult : RecognizerResult, IAustriaPassportRecognizerResult
+    public sealed class ItalyDlFrontRecognizerResult : RecognizerResult, IItalyDlFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer.Result nativeResult;
 
-        internal AustriaPassportRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Austria.AustriaPassportRecognizer.Result nativeResult) : base(nativeResult)
+        internal ItalyDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Italy.ItalyDlFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string Address => nativeResult.Address;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string GivenName => nativeResult.GivenName;
-        public string Height => nativeResult.Height;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
-        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
-        public string Nationality => nativeResult.Nationality;
-        public string PassportNumber => nativeResult.PassportNumber;
+        public string LicenceCategories => nativeResult.LicenceCategories;
+        public string LicenceNumber => nativeResult.LicenceNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
         public string Surname => nativeResult.Surname;
     }

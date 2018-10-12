@@ -39,10 +39,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractAddressChangeDate(value);
         }
         
-        public bool ExtractBloodType 
+        public bool ExtractBloodGroup 
         { 
-            get => nativeRecognizer.ShouldExtractBloodType(); 
-            set => nativeRecognizer.SetExtractBloodType(value);
+            get => nativeRecognizer.ShouldExtractBloodGroup(); 
+            set => nativeRecognizer.SetExtractBloodGroup(value);
         }
         
         public bool ExtractCountryOfBirth 
@@ -93,6 +93,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ShouldReturnFaceImage(); 
@@ -123,7 +129,7 @@ namespace Microblink.Forms.Droid.Recognizers
         }
         public string Address => nativeResult.Address;
         public IDate AddressChangeDate => nativeResult.AddressChangeDate.Date != null ? new Date(nativeResult.AddressChangeDate.Date) : null;
-        public string BloodType => nativeResult.BloodType;
+        public string BloodGroup => nativeResult.BloodGroup;
         public string CountryOfBirth => nativeResult.CountryOfBirth;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;

@@ -25,6 +25,11 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool ReturnFaceImage { get => nativeRecognizer.ShouldReturnFaceImage(); set => nativeRecognizer.SetReturnFaceImage(value); }
         public uint FullDocumentImageDpi { get => (uint)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = (int)value; }
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ShouldReturnFullDocumentImage(); set => nativeRecognizer.SetReturnFullDocumentImage(value); }
+        public uint NumStableDetectionsThreshold 
+        { 
+            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
+        }
         public bool SignResult { get => nativeRecognizer.ShouldSignResult(); set => nativeRecognizer.SetSignResult(value); }
     }
 
@@ -48,7 +53,7 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
 
-        public int DigitalSignatureVersion => nativeResult.DigitalSignatureVersion;
+        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
 
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
 

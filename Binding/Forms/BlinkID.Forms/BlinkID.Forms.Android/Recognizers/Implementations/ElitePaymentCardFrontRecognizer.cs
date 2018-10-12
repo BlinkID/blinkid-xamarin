@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PaymentCardFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ElitePaymentCardFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class PaymentCardFrontRecognizer : Recognizer, IPaymentCardFrontRecognizer
+    public sealed class ElitePaymentCardFrontRecognizer : Recognizer, IElitePaymentCardFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer nativeRecognizer;
 
-        PaymentCardFrontRecognizerResult result;
+        ElitePaymentCardFrontRecognizerResult result;
 
-        public PaymentCardFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer())
+        public ElitePaymentCardFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer;
-            result = new PaymentCardFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer;
+            result = new ElitePaymentCardFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPaymentCardFrontRecognizerResult Result => result;
+        public IElitePaymentCardFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -31,12 +31,6 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldExtractOwner(); 
             set => nativeRecognizer.SetExtractOwner(value);
-        }
-        
-        public bool ExtractValidThru 
-        { 
-            get => nativeRecognizer.ShouldExtractValidThru(); 
-            set => nativeRecognizer.SetExtractValidThru(value);
         }
         
         public uint FullDocumentImageDpi 
@@ -59,17 +53,15 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class PaymentCardFrontRecognizerResult : RecognizerResult, IPaymentCardFrontRecognizerResult
+    public sealed class ElitePaymentCardFrontRecognizerResult : RecognizerResult, IElitePaymentCardFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer.Result nativeResult;
 
-        internal PaymentCardFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal ElitePaymentCardFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string CardNumber => nativeResult.CardNumber;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Owner => nativeResult.Owner;
-        public IDate ValidThru => nativeResult.ValidThru.Date != null ? new Date(nativeResult.ValidThru.Date) : null;
     }
 }

@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(HongKongIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ColombiaDlFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class HongKongIdFrontRecognizer : Recognizer, IHongKongIdFrontRecognizer
+    public sealed class ColombiaDlFrontRecognizer : Recognizer, IColombiaDlFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer nativeRecognizer;
 
-        HongKongIdFrontRecognizerResult result;
+        ColombiaDlFrontRecognizerResult result;
 
-        public HongKongIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer())
+        public ColombiaDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer;
-            result = new HongKongIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer;
+            result = new ColombiaDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IHongKongIdFrontRecognizerResult Result => result;
+        public IColombiaDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,40 +27,28 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractCommercialCode 
-        { 
-            get => nativeRecognizer.ShouldExtractCommercialCode(); 
-            set => nativeRecognizer.SetExtractCommercialCode(value);
-        }
-        
         public bool ExtractDateOfBirth 
         { 
             get => nativeRecognizer.ShouldExtractDateOfBirth(); 
             set => nativeRecognizer.SetExtractDateOfBirth(value);
         }
         
-        public bool ExtractDateOfIssue 
+        public bool ExtractDriverRestrictions 
         { 
-            get => nativeRecognizer.ShouldExtractDateOfIssue(); 
-            set => nativeRecognizer.SetExtractDateOfIssue(value);
+            get => nativeRecognizer.ShouldExtractDriverRestrictions(); 
+            set => nativeRecognizer.SetExtractDriverRestrictions(value);
         }
         
-        public bool ExtractFullName 
+        public bool ExtractIssuingAgency 
         { 
-            get => nativeRecognizer.ShouldExtractFullName(); 
-            set => nativeRecognizer.SetExtractFullName(value);
+            get => nativeRecognizer.ShouldExtractIssuingAgency(); 
+            set => nativeRecognizer.SetExtractIssuingAgency(value);
         }
         
-        public bool ExtractResidentialStatus 
+        public bool ExtractName 
         { 
-            get => nativeRecognizer.ShouldExtractResidentialStatus(); 
-            set => nativeRecognizer.SetExtractResidentialStatus(value);
-        }
-        
-        public bool ExtractSex 
-        { 
-            get => nativeRecognizer.ShouldExtractSex(); 
-            set => nativeRecognizer.SetExtractSex(value);
+            get => nativeRecognizer.ShouldExtractName(); 
+            set => nativeRecognizer.SetExtractName(value);
         }
         
         public uint FaceImageDpi 
@@ -95,22 +83,21 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class HongKongIdFrontRecognizerResult : RecognizerResult, IHongKongIdFrontRecognizerResult
+    public sealed class ColombiaDlFrontRecognizerResult : RecognizerResult, IColombiaDlFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer.Result nativeResult;
 
-        internal HongKongIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Hongkong.HongKongIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal ColombiaDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Colombia.ColombiaDlFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string CommercialCode => nativeResult.CommercialCode;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public string DriverRestrictions => nativeResult.DriverRestrictions;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string FullName => nativeResult.FullName;
-        public string ResidentialStatus => nativeResult.ResidentialStatus;
-        public string Sex => nativeResult.Sex;
+        public string IssuingAgency => nativeResult.IssuingAgency;
+        public string LicenceNumber => nativeResult.LicenceNumber;
+        public string Name => nativeResult.Name;
     }
 }

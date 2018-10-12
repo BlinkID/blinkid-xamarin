@@ -27,16 +27,16 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractDlClass 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ShouldExtractDlClass(); 
-            set => nativeRecognizer.SetExtractDlClass(value);
+            get => nativeRecognizer.ShouldExtractAddress(); 
+            set => nativeRecognizer.SetExtractAddress(value);
         }
         
-        public bool ExtractFullAddress 
+        public bool ExtractClass 
         { 
-            get => nativeRecognizer.ShouldExtractFullAddress(); 
-            set => nativeRecognizer.SetExtractFullAddress(value);
+            get => nativeRecognizer.ShouldExtractClass(); 
+            set => nativeRecognizer.SetExtractClass(value);
         }
         
         public bool ExtractName 
@@ -63,10 +63,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractValidUntil(value);
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -99,10 +111,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public string IdentityNumber => nativeResult.IdentityNumber;
         public string Name => nativeResult.Name;
         public string Nationality => nativeResult.Nationality;
-        public string State => nativeResult.State;
+        public string OwnerState => nativeResult.OwnerState;
         public string Street => nativeResult.Street;
-        public IDate ValidFrom => nativeResult.ValidFrom != null ? new Date(nativeResult.ValidFrom) : null;
-        public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
-        public string ZipCode => nativeResult.ZipCode;
+        public IDate ValidFrom => nativeResult.ValidFrom.Date != null ? new Date(nativeResult.ValidFrom.Date) : null;
+        public IDate ValidUntil => nativeResult.ValidUntil.Date != null ? new Date(nativeResult.ValidUntil.Date) : null;
+        public string Zipcode => nativeResult.Zipcode;
     }
 }

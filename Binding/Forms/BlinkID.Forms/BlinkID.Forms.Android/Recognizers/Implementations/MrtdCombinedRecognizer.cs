@@ -21,6 +21,24 @@ namespace Microblink.Forms.Droid.Recognizers
         public IMrtdCombinedRecognizerResult Result => result;
 
         
+        public bool AllowUnparsedResults 
+        { 
+            get => nativeRecognizer.AllowUnparsedResults; 
+            set => nativeRecognizer.AllowUnparsedResults = value;
+        }
+        
+        public bool AllowUnverifiedResults 
+        { 
+            get => nativeRecognizer.AllowUnverifiedResults; 
+            set => nativeRecognizer.AllowUnverifiedResults = value;
+        }
+        
+        public uint NumStableDetectionsThreshold 
+        { 
+            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ShouldReturnFaceImage(); 
