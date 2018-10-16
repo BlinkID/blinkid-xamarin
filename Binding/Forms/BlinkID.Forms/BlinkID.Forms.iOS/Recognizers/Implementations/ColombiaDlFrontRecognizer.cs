@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(KuwaitIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ColombiaDlFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class KuwaitIdFrontRecognizer : Recognizer, IKuwaitIdFrontRecognizer
+    public sealed class ColombiaDlFrontRecognizer : Recognizer, IColombiaDlFrontRecognizer
     {
-        MBKuwaitIdFrontRecognizer nativeRecognizer;
+        MBColombiaDlFrontRecognizer nativeRecognizer;
 
-        KuwaitIdFrontRecognizerResult result;
+        ColombiaDlFrontRecognizerResult result;
 
-        public KuwaitIdFrontRecognizer() : base(new MBKuwaitIdFrontRecognizer())
+        public ColombiaDlFrontRecognizer() : base(new MBColombiaDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBKuwaitIdFrontRecognizer;
-            result = new KuwaitIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBColombiaDlFrontRecognizer;
+            result = new ColombiaDlFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IKuwaitIdFrontRecognizerResult Result => result;
+        public IColombiaDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,28 +27,28 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractBirthDate 
+        public bool ExtractDateOfBirth 
         { 
-            get => nativeRecognizer.ExtractBirthDate; 
-            set => nativeRecognizer.ExtractBirthDate = value;
+            get => nativeRecognizer.ExtractDateOfBirth; 
+            set => nativeRecognizer.ExtractDateOfBirth = value;
+        }
+        
+        public bool ExtractDriverRestrictions 
+        { 
+            get => nativeRecognizer.ExtractDriverRestrictions; 
+            set => nativeRecognizer.ExtractDriverRestrictions = value;
+        }
+        
+        public bool ExtractIssuingAgency 
+        { 
+            get => nativeRecognizer.ExtractIssuingAgency; 
+            set => nativeRecognizer.ExtractIssuingAgency = value;
         }
         
         public bool ExtractName 
         { 
             get => nativeRecognizer.ExtractName; 
             set => nativeRecognizer.ExtractName = value;
-        }
-        
-        public bool ExtractNationality 
-        { 
-            get => nativeRecognizer.ExtractNationality; 
-            set => nativeRecognizer.ExtractNationality = value;
-        }
-        
-        public bool ExtractSex 
-        { 
-            get => nativeRecognizer.ExtractSex; 
-            set => nativeRecognizer.ExtractSex = value;
         }
         
         public uint FaceImageDpi 
@@ -83,21 +83,21 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class KuwaitIdFrontRecognizerResult : RecognizerResult, IKuwaitIdFrontRecognizerResult
+    public sealed class ColombiaDlFrontRecognizerResult : RecognizerResult, IColombiaDlFrontRecognizerResult
     {
-        MBKuwaitIdFrontRecognizerResult nativeResult;
+        MBColombiaDlFrontRecognizerResult nativeResult;
 
-        internal KuwaitIdFrontRecognizerResult(MBKuwaitIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal ColombiaDlFrontRecognizerResult(MBColombiaDlFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public IDate BirthDate => nativeResult.BirthDate != null ? new Date(nativeResult.BirthDate) : null;
-        public string CivilIdNumber => nativeResult.CivilIdNumber;
-        public IDate ExpiryDate => nativeResult.ExpiryDate != null ? new Date(nativeResult.ExpiryDate) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
+        public string DriverRestrictions => nativeResult.DriverRestrictions;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
+        public string IssuingAgency => nativeResult.IssuingAgency;
+        public string LicenceNumber => nativeResult.LicenceNumber;
         public string Name => nativeResult.Name;
-        public string Nationality => nativeResult.Nationality;
-        public string Sex => nativeResult.Sex;
     }
 }

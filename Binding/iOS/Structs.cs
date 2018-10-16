@@ -448,6 +448,18 @@ namespace Microblink
 		GreenCard
 	}
 
+	[StructLayout (LayoutKind.Sequential)]
+	public struct MBImageExtensionFactors
+	{
+		public nfloat top;
+
+		public nfloat right;
+
+		public nfloat bottom;
+
+		public nfloat left;
+	}
+
 	[Native]
 	public enum MBDocumentFaceDetectorType : ulong
 	{
@@ -463,18 +475,6 @@ namespace Microblink
 		Germany,
 		Austria,
 		Any
-	}
-
-	[StructLayout (LayoutKind.Sequential)]
-	public struct MBImageExtensionFactors
-	{
-		public nfloat top;
-
-		public nfloat right;
-
-		public nfloat bottom;
-
-		public nfloat left;
 	}
 
 	[Native]

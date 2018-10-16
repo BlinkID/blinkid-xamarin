@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(KuwaitIdBackRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ElitePaymentCardFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class KuwaitIdBackRecognizer : Recognizer, IKuwaitIdBackRecognizer
+    public sealed class ElitePaymentCardFrontRecognizer : Recognizer, IElitePaymentCardFrontRecognizer
     {
-        MBKuwaitIdBackRecognizer nativeRecognizer;
+        MBElitePaymentCardFrontRecognizer nativeRecognizer;
 
-        KuwaitIdBackRecognizerResult result;
+        ElitePaymentCardFrontRecognizerResult result;
 
-        public KuwaitIdBackRecognizer() : base(new MBKuwaitIdBackRecognizer())
+        public ElitePaymentCardFrontRecognizer() : base(new MBElitePaymentCardFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBKuwaitIdBackRecognizer;
-            result = new KuwaitIdBackRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBElitePaymentCardFrontRecognizer;
+            result = new ElitePaymentCardFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IKuwaitIdBackRecognizerResult Result => result;
+        public IElitePaymentCardFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,10 +27,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractSerialNo 
+        public bool ExtractOwner 
         { 
-            get => nativeRecognizer.ExtractSerialNo; 
-            set => nativeRecognizer.ExtractSerialNo = value;
+            get => nativeRecognizer.ExtractOwner; 
+            set => nativeRecognizer.ExtractOwner = value;
         }
         
         public uint FullDocumentImageDpi 
@@ -53,16 +53,15 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class KuwaitIdBackRecognizerResult : RecognizerResult, IKuwaitIdBackRecognizerResult
+    public sealed class ElitePaymentCardFrontRecognizerResult : RecognizerResult, IElitePaymentCardFrontRecognizerResult
     {
-        MBKuwaitIdBackRecognizerResult nativeResult;
+        MBElitePaymentCardFrontRecognizerResult nativeResult;
 
-        internal KuwaitIdBackRecognizerResult(MBKuwaitIdBackRecognizerResult nativeResult) : base(nativeResult)
+        internal ElitePaymentCardFrontRecognizerResult(MBElitePaymentCardFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
-        public string SerialNo => nativeResult.SerialNo;
+        public string Owner => nativeResult.Owner;
     }
 }

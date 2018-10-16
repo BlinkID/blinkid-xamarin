@@ -39,10 +39,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractAddressChangeDate = value;
         }
         
-        public bool ExtractBloodType 
+        public bool ExtractBloodGroup 
         { 
-            get => nativeRecognizer.ExtractBloodType; 
-            set => nativeRecognizer.ExtractBloodType = value;
+            get => nativeRecognizer.ExtractBloodGroup; 
+            set => nativeRecognizer.ExtractBloodGroup = value;
         }
         
         public bool ExtractDateOfIssue 
@@ -55,6 +55,12 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFullDocumentImage 
@@ -75,7 +81,7 @@ namespace Microblink.Forms.iOS.Recognizers
         }
         public string Address => nativeResult.Address;
         public IDate AddressChangeDate => nativeResult.AddressChangeDate != null ? new Date(nativeResult.AddressChangeDate) : null;
-        public string BloodType => nativeResult.BloodType;
+        public string BloodGroup => nativeResult.BloodGroup;
         public string CardNumber => nativeResult.CardNumber;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;

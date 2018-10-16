@@ -26,6 +26,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public uint FullDocumentImageDpi { get => (uint)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = value; }
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ReturnFullDocumentImage; set => nativeRecognizer.ReturnFullDocumentImage = value; }
         public bool SignResult { get => nativeRecognizer.SignResult; set => nativeRecognizer.SignResult = value; }
+        public uint NumStableDetectionsThreshold { get => (uint)nativeRecognizer.NumStableDetectionsThreshold; set => nativeRecognizer.NumStableDetectionsThreshold = value; }
     }
 
     public sealed class UsdlCombinedRecognizerResult : RecognizerResult, IUsdlCombinedRecognizerResult
@@ -48,7 +49,7 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public byte[] DigitalSignature => nativeResult.DigitalSignature.ToArray();
 
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
+        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
 
         public bool DocumentDataMatch => nativeResult.DocumentDataMatch;
 

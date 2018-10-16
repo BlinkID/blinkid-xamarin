@@ -1,30 +1,36 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PaymentCardCombinedRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(ElitePaymentCardCombinedRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class PaymentCardCombinedRecognizer : Recognizer, IPaymentCardCombinedRecognizer
+    public sealed class ElitePaymentCardCombinedRecognizer : Recognizer, IElitePaymentCardCombinedRecognizer
     {
-        MBPaymentCardCombinedRecognizer nativeRecognizer;
+        MBElitePaymentCardCombinedRecognizer nativeRecognizer;
 
-        PaymentCardCombinedRecognizerResult result;
+        ElitePaymentCardCombinedRecognizerResult result;
 
-        public PaymentCardCombinedRecognizer() : base(new MBPaymentCardCombinedRecognizer())
+        public ElitePaymentCardCombinedRecognizer() : base(new MBElitePaymentCardCombinedRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBPaymentCardCombinedRecognizer;
-            result = new PaymentCardCombinedRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBElitePaymentCardCombinedRecognizer;
+            result = new ElitePaymentCardCombinedRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPaymentCardCombinedRecognizerResult Result => result;
+        public IElitePaymentCardCombinedRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
+        }
+        
+        public bool ExtractCvv 
+        { 
+            get => nativeRecognizer.ExtractCvv; 
+            set => nativeRecognizer.ExtractCvv = value;
         }
         
         public bool ExtractInventoryNumber 
@@ -71,11 +77,11 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class PaymentCardCombinedRecognizerResult : RecognizerResult, IPaymentCardCombinedRecognizerResult
+    public sealed class ElitePaymentCardCombinedRecognizerResult : RecognizerResult, IElitePaymentCardCombinedRecognizerResult
     {
-        MBPaymentCardCombinedRecognizerResult nativeResult;
+        MBElitePaymentCardCombinedRecognizerResult nativeResult;
 
-        internal PaymentCardCombinedRecognizerResult(MBPaymentCardCombinedRecognizerResult nativeResult) : base(nativeResult)
+        internal ElitePaymentCardCombinedRecognizerResult(MBElitePaymentCardCombinedRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }

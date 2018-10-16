@@ -51,6 +51,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractCity = value;
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ExtractDateOfExpiry; 
+            set => nativeRecognizer.ExtractDateOfExpiry = value;
+        }
+        
         public bool ExtractDistrict 
         { 
             get => nativeRecognizer.ExtractDistrict; 
@@ -105,10 +111,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractRw = value;
         }
         
-        public bool ExtractValidUntil 
+        public uint FaceImageDpi 
         { 
-            get => nativeRecognizer.ExtractValidUntil; 
-            set => nativeRecognizer.ExtractValidUntil = value;
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -129,6 +147,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
     public sealed class IndonesiaIdFrontRecognizerResult : RecognizerResult, IIndonesiaIdFrontRecognizerResult
@@ -144,8 +168,9 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Citizenship => nativeResult.Citizenship;
         public string City => nativeResult.City;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public string District => nativeResult.District;
-        public string DocumentClassifier => nativeResult.DocumentClassifier;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
@@ -160,7 +185,5 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Rw => nativeResult.Rw;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
-        public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
-        public bool ValidUntilPermanent => nativeResult.ValidUntilPermanent;
     }
 }
