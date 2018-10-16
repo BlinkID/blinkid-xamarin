@@ -1,49 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer which can scan the front side of Swiss national ID cards.
+    /// Class for configuring Swiss ID Front Recognizer.
     /// 
+    /// Swiss ID Front recognizer is used for scanning front side of Swiss ID.
     /// </summary>
     public interface ISwitzerlandIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// True if given name of Swiss ID owner is being extracted 
+        /// Defines if owner's first name should be extracted from Swiss ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractGivenName { get; set; }
         
         /// <summary>
-        /// True if surname of Swiss ID owner is being extracted 
+        /// Defines if owner's last name should be extracted from Swiss ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -62,32 +75,32 @@
     public interface ISwitzerlandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of Swiss ID owner 
+        /// The date of birth of the Swiss ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The given name of the Swiss ID owner. 
+        /// The first name of the Swiss ID owner. 
         /// </summary>
         string GivenName { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The surname of the Swiss ID owner. 
+        /// The last name of the Swiss ID owner. 
         /// </summary>
         string Surname { get; }
         

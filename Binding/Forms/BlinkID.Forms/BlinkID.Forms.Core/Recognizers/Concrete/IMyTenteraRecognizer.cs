@@ -1,49 +1,63 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for reading Malaysian MyTentera document.
+    /// Class for configuring My Tentera Recognizer.
     /// 
+    /// My Tentera recognizer is used for scanning My Tentera.
     /// </summary>
     public interface IMyTenteraRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// True if full address of Malaysian MyTentera owner is being extracted 
+        /// Defines if full name and address should be extracted from MyTentera
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFullNameAndAddress { get; set; }
         
         /// <summary>
-        /// True if religion of Malaysian MyTentera owner is being extracted 
+        /// Defines if religion should be extracted from MyTentera
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractReligion { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -62,52 +76,54 @@
     public interface IMyTenteraRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Malaysian tentra number. 
+        /// Owner army number 
         /// </summary>
         string ArmyNumber { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// NRIC number (National Registration Identity Card Number) 
+        /// NRIC number (National Registration Identity Card Number)
+        /// 
+        ///  @see https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_.28NRIC.29 
         /// </summary>
         string NricNumber { get; }
         
         /// <summary>
-        /// Full owner address. 
+        /// Owner address 
         /// </summary>
         string OwnerAddress { get; }
         
         /// <summary>
-        /// Extracted city from the owner address. 
+        /// Owner address city. Determined from owner address. 
         /// </summary>
         string OwnerAddressCity { get; }
         
         /// <summary>
-        /// Extracted state from the owner address. 
+        /// Owner address state. Determined from owner address. 
         /// </summary>
         string OwnerAddressState { get; }
         
         /// <summary>
-        /// Extracted street from the owner address. 
+        /// Owner street. Determined from owner address. 
         /// </summary>
         string OwnerAddressStreet { get; }
         
         /// <summary>
-        /// Extracted ZIP code from the owner address. 
+        /// Owner address Zip code. Determined from owner address. 
         /// </summary>
         string OwnerAddressZipCode { get; }
         
         /// <summary>
-        /// Owner's date of birth if it is successfully converted to {Date} from date format: <code>YYMMDD</code>. 
+        /// Owner birth date converted in NSDate object 
         /// </summary>
         IDate OwnerBirthDate { get; }
         
@@ -117,7 +133,7 @@
         string OwnerFullName { get; }
         
         /// <summary>
-        /// Owner religion if written on MyTentera 
+        /// Owner religion if written on MyKad 
         /// </summary>
         string OwnerReligion { get; }
         

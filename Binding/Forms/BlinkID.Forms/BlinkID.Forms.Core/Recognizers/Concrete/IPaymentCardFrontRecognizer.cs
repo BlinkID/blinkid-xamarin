@@ -1,48 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer used for scanning the front side of credit/debit cards
+    /// Recognizer used for scanning the front side of credit/debit cards.
     /// </summary>
     public interface IPaymentCardFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Should extract the card owner information 
+        /// Should extract the card owner information
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractOwner { get; set; }
         
         /// <summary>
-        /// Should extract the payment card's month of expiry 
+        /// Should extract the payment card's month of expiry
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidThru { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// The extension factors for full document image. 
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
         ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -66,12 +80,12 @@
         string CardNumber { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Information about the payment card owner (name, company, etc.) 
+        /// Information about the payment card owner (name, company, etc.). 
         /// </summary>
         string Owner { get; }
         
