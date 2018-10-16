@@ -42,7 +42,7 @@
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractBloodType { get; set; }
+        bool ExtractBloodGroup { get; set; }
         
         /// <summary>
         ///  Defines if country/place of birth of Singaporean ID card owner should be extracted
@@ -99,6 +99,36 @@
         bool ExtractSex { get; set; }
         
         /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  
@@ -150,7 +180,7 @@
         /// <summary>
         /// The blood Type of the back side of the Singapore Id owner. 
         /// </summary>
-        string BloodType { get; }
+        string BloodGroup { get; }
         
         /// <summary>
         /// The country/place of birth of the Singaporean ID card owner. 

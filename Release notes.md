@@ -1,5 +1,15 @@
 # Release notes
 
+## 4.3.0
+
+- Updated to [Android SDK v4.3.0](https://github.com/BlinkID/blinkid-android/releases/tag/v4.3.0)
+- Updated to [iOS SDK v4.3.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v4.3.0)
+
+## 4.2.0
+
+- Updated to [Android SDK v4.2.0](https://github.com/BlinkID/blinkid-android/releases/tag/v4.2.0)
+- Updated to [iOS SDK v4.2.0](https://github.com/BlinkID/blinkid-ios/releases/tag/v4.2.0)
+
 ## 4.1.0
 
 - Updated to [Android SDK v4.1.0](https://github.com/BlinkID/blinkid-android/releases/tag/v4.1.0)

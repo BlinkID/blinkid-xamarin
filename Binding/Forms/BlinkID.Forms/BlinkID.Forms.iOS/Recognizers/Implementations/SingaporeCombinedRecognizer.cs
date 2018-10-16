@@ -39,10 +39,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractAddressChangeDate = value;
         }
         
-        public bool ExtractBloodType 
+        public bool ExtractBloodGroup 
         { 
-            get => nativeRecognizer.ExtractBloodType; 
-            set => nativeRecognizer.ExtractBloodType = value;
+            get => nativeRecognizer.ExtractBloodGroup; 
+            set => nativeRecognizer.ExtractBloodGroup = value;
         }
         
         public bool ExtractCountryOfBirth 
@@ -81,6 +81,24 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSex = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -111,7 +129,7 @@ namespace Microblink.Forms.iOS.Recognizers
         }
         public string Address => nativeResult.Address;
         public IDate AddressChangeDate => nativeResult.AddressChangeDate != null ? new Date(nativeResult.AddressChangeDate) : null;
-        public string BloodType => nativeResult.BloodType;
+        public string BloodGroup => nativeResult.BloodGroup;
         public string CountryOfBirth => nativeResult.CountryOfBirth;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;

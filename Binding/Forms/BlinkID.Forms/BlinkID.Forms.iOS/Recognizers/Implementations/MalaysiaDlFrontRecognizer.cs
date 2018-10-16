@@ -27,16 +27,16 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractDlClass 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ExtractDlClass; 
-            set => nativeRecognizer.ExtractDlClass = value;
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
         }
         
-        public bool ExtractFullAddress 
+        public bool ExtractClass 
         { 
-            get => nativeRecognizer.ExtractFullAddress; 
-            set => nativeRecognizer.ExtractFullAddress = value;
+            get => nativeRecognizer.ExtractClass; 
+            set => nativeRecognizer.ExtractClass = value;
         }
         
         public bool ExtractName 
@@ -63,10 +63,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractValidUntil = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -99,10 +111,10 @@ namespace Microblink.Forms.iOS.Recognizers
         public string IdentityNumber => nativeResult.IdentityNumber;
         public string Name => nativeResult.Name;
         public string Nationality => nativeResult.Nationality;
-        public string State => nativeResult.State;
+        public string OwnerState => nativeResult.OwnerState;
         public string Street => nativeResult.Street;
         public IDate ValidFrom => nativeResult.ValidFrom != null ? new Date(nativeResult.ValidFrom) : null;
         public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
-        public string ZipCode => nativeResult.ZipCode;
+        public string Zipcode => nativeResult.Zipcode;
     }
 }

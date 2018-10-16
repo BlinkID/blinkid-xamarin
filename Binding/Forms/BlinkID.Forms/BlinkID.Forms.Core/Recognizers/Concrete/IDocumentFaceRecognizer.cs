@@ -38,6 +38,28 @@
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines how many times the same document should be detected before the detector
+        /// returns this document as a result of the deteciton
+        /// 
+        /// Higher number means more reliable detection, but slower processing
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '6'
+        /// </summary>
+        uint NumStableDetectionsThreshold { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  

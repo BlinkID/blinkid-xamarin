@@ -51,6 +51,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractCity(value);
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
+            set => nativeRecognizer.SetExtractDateOfExpiry(value);
+        }
+        
         public bool ExtractDistrict 
         { 
             get => nativeRecognizer.ShouldExtractDistrict(); 
@@ -105,10 +111,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractRw(value);
         }
         
-        public bool ExtractValidUntil 
+        public uint FaceImageDpi 
         { 
-            get => nativeRecognizer.ShouldExtractValidUntil(); 
-            set => nativeRecognizer.SetExtractValidUntil(value);
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -129,6 +147,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class IndonesiaIdFrontRecognizerResult : RecognizerResult, IIndonesiaIdFrontRecognizerResult
@@ -143,9 +167,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public string BloodType => nativeResult.BloodType;
         public string Citizenship => nativeResult.Citizenship;
         public string City => nativeResult.City;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public string District => nativeResult.District;
-        public string DocumentClassifier => nativeResult.DocumentClassifier;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
@@ -160,7 +185,5 @@ namespace Microblink.Forms.Droid.Recognizers
         public string Rw => nativeResult.Rw;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
-        public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
-        public bool ValidUntilPermanent => nativeResult.ValidUntilPermanent;
     }
 }

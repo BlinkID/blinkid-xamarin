@@ -39,12 +39,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfExpiry(value);
         }
         
-        public bool ExtractLicenceNumber 
-        { 
-            get => nativeRecognizer.ShouldExtractLicenceNumber(); 
-            set => nativeRecognizer.SetExtractLicenceNumber(value);
-        }
-        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 

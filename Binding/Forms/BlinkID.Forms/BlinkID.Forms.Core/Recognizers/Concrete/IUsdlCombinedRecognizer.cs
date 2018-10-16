@@ -29,6 +29,12 @@
         uint FullDocumentImageDpi { get; set; }
 
         /// <summary>
+        /// Gets or sets the minimum number of stable detections required for detection to be successful.
+        /// Default value is <c>6</c>
+        /// </summary>
+        uint NumStableDetectionsThreshold { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether full document image of ID card should be extracted
         /// Default value is <c>false</c>
         /// </summary>
@@ -63,7 +69,7 @@
         /// Gets the version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         /// <value>The digital signature version.</value>
-        int DigitalSignatureVersion { get; }
+        uint DigitalSignatureVersion { get; }
 
         /// <summary>
         /// Returns true if data from scanned parts/sides of the document match,

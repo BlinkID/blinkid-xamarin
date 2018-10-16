@@ -36,15 +36,6 @@
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if citizenship of Australian DL owner should be extracted
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractLicenceNumber { get; set; }
-        
-        /// <summary>
         /// Property for setting DPI for full document images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 

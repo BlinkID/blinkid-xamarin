@@ -35,6 +35,16 @@
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
         /// Sets whether full document image of ID card should be extracted.
         /// 
         ///  

@@ -39,12 +39,6 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfExpiry = value;
         }
         
-        public bool ExtractLicenceNumber 
-        { 
-            get => nativeRecognizer.ExtractLicenceNumber; 
-            set => nativeRecognizer.ExtractLicenceNumber = value;
-        }
-        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 

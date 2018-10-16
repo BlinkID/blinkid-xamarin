@@ -42,7 +42,7 @@
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractBloodType { get; set; }
+        bool ExtractBloodGroup { get; set; }
         
         /// <summary>
         /// Defines if owner's date of issue should be extracted from back side of the Singapore Id
@@ -62,6 +62,16 @@
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether full document image of ID card should be extracted.
@@ -97,7 +107,7 @@
         /// <summary>
         /// The blood Type of the back side of the Singapore Id owner. 
         /// </summary>
-        string BloodType { get; }
+        string BloodGroup { get; }
         
         /// <summary>
         /// The card Number of the back side of the Singapore Id owner. 

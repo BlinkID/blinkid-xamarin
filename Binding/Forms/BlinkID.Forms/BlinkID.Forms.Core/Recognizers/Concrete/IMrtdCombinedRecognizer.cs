@@ -9,6 +9,37 @@
     {
         
         /// <summary>
+        /// Whether returning of unparsed results is allowed
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowUnparsedResults { get; set; }
+        
+        /// <summary>
+        /// Whether returning of unverified results is allowed
+        /// Unverified result is result that is parsed, but check digits are incorrect.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowUnverifiedResults { get; set; }
+        
+        /// <summary>
+        /// Defines how many times the same document should be detected before the detector
+        /// returns this document as a result of the deteciton
+        /// 
+        /// Higher number means more reliable detection, but slower processing
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '6'
+        /// </summary>
+        uint NumStableDetectionsThreshold { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  

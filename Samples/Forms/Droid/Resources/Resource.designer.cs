@@ -760,42 +760,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f01010a
 			public const int maxButtonHeight = 2130772234;
 			
-			// aapt resource value: 0x7f010176
-			public const int mb_animateRotation = 2130772342;
-			
-			// aapt resource value: 0x7f010177
-			public const int mb_animationDuration = 2130772343;
-			
-			// aapt resource value: 0x7f010175
-			public const int mb_aspectMode = 2130772341;
-			
-			// aapt resource value: 0x7f010173
-			public const int mb_aspectRatio = 2130772339;
-			
-			// aapt resource value: 0x7f01017b
-			public const int mb_borderColor = 2130772347;
-			
-			// aapt resource value: 0x7f01017c
-			public const int mb_borderWidth = 2130772348;
-			
-			// aapt resource value: 0x7f01017d
-			public const int mb_cornerRadius = 2130772349;
-			
-			// aapt resource value: 0x7f010174
-			public const int mb_initialOrientation = 2130772340;
-			
-			// aapt resource value: 0x7f010179
-			public const int mb_innerColor = 2130772345;
-			
-			// aapt resource value: 0x7f01017a
-			public const int mb_outerColor = 2130772346;
-			
-			// aapt resource value: 0x7f010178
-			public const int mb_rotatable = 2130772344;
-			
-			// aapt resource value: 0x7f01017e
-			public const int mb_shapeType = 2130772350;
-			
 			// aapt resource value: 0x7f0100d7
 			public const int measureWithLargestChild = 2130772183;
 			
@@ -1299,44 +1263,44 @@ namespace BlinkIDFormsSample.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c006f
-			public const int abc_background_cache_hint_selector_material_dark = 2131492975;
+			// aapt resource value: 0x7f0c004b
+			public const int abc_background_cache_hint_selector_material_dark = 2131492939;
 			
-			// aapt resource value: 0x7f0c0070
-			public const int abc_background_cache_hint_selector_material_light = 2131492976;
+			// aapt resource value: 0x7f0c004c
+			public const int abc_background_cache_hint_selector_material_light = 2131492940;
 			
-			// aapt resource value: 0x7f0c0071
-			public const int abc_btn_colored_borderless_text_material = 2131492977;
+			// aapt resource value: 0x7f0c004d
+			public const int abc_btn_colored_borderless_text_material = 2131492941;
 			
-			// aapt resource value: 0x7f0c0072
-			public const int abc_btn_colored_text_material = 2131492978;
+			// aapt resource value: 0x7f0c004e
+			public const int abc_btn_colored_text_material = 2131492942;
 			
-			// aapt resource value: 0x7f0c0073
-			public const int abc_color_highlight_material = 2131492979;
+			// aapt resource value: 0x7f0c004f
+			public const int abc_color_highlight_material = 2131492943;
 			
-			// aapt resource value: 0x7f0c0074
-			public const int abc_hint_foreground_material_dark = 2131492980;
+			// aapt resource value: 0x7f0c0050
+			public const int abc_hint_foreground_material_dark = 2131492944;
 			
-			// aapt resource value: 0x7f0c0075
-			public const int abc_hint_foreground_material_light = 2131492981;
+			// aapt resource value: 0x7f0c0051
+			public const int abc_hint_foreground_material_light = 2131492945;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int abc_input_method_navigation_guard = 2131492868;
 			
-			// aapt resource value: 0x7f0c0076
-			public const int abc_primary_text_disable_only_material_dark = 2131492982;
+			// aapt resource value: 0x7f0c0052
+			public const int abc_primary_text_disable_only_material_dark = 2131492946;
 			
-			// aapt resource value: 0x7f0c0077
-			public const int abc_primary_text_disable_only_material_light = 2131492983;
+			// aapt resource value: 0x7f0c0053
+			public const int abc_primary_text_disable_only_material_light = 2131492947;
 			
-			// aapt resource value: 0x7f0c0078
-			public const int abc_primary_text_material_dark = 2131492984;
+			// aapt resource value: 0x7f0c0054
+			public const int abc_primary_text_material_dark = 2131492948;
 			
-			// aapt resource value: 0x7f0c0079
-			public const int abc_primary_text_material_light = 2131492985;
+			// aapt resource value: 0x7f0c0055
+			public const int abc_primary_text_material_light = 2131492949;
 			
-			// aapt resource value: 0x7f0c007a
-			public const int abc_search_url_text = 2131492986;
+			// aapt resource value: 0x7f0c0056
+			public const int abc_search_url_text = 2131492950;
 			
 			// aapt resource value: 0x7f0c0005
 			public const int abc_search_url_text_normal = 2131492869;
@@ -1347,29 +1311,29 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0c0007
 			public const int abc_search_url_text_selected = 2131492871;
 			
-			// aapt resource value: 0x7f0c007b
-			public const int abc_secondary_text_material_dark = 2131492987;
+			// aapt resource value: 0x7f0c0057
+			public const int abc_secondary_text_material_dark = 2131492951;
 			
-			// aapt resource value: 0x7f0c007c
-			public const int abc_secondary_text_material_light = 2131492988;
+			// aapt resource value: 0x7f0c0058
+			public const int abc_secondary_text_material_light = 2131492952;
 			
-			// aapt resource value: 0x7f0c007d
-			public const int abc_tint_btn_checkable = 2131492989;
+			// aapt resource value: 0x7f0c0059
+			public const int abc_tint_btn_checkable = 2131492953;
 			
-			// aapt resource value: 0x7f0c007e
-			public const int abc_tint_default = 2131492990;
+			// aapt resource value: 0x7f0c005a
+			public const int abc_tint_default = 2131492954;
 			
-			// aapt resource value: 0x7f0c007f
-			public const int abc_tint_edittext = 2131492991;
+			// aapt resource value: 0x7f0c005b
+			public const int abc_tint_edittext = 2131492955;
 			
-			// aapt resource value: 0x7f0c0080
-			public const int abc_tint_seek_thumb = 2131492992;
+			// aapt resource value: 0x7f0c005c
+			public const int abc_tint_seek_thumb = 2131492956;
 			
-			// aapt resource value: 0x7f0c0081
-			public const int abc_tint_spinner = 2131492993;
+			// aapt resource value: 0x7f0c005d
+			public const int abc_tint_spinner = 2131492957;
 			
-			// aapt resource value: 0x7f0c0082
-			public const int abc_tint_switch_track = 2131492994;
+			// aapt resource value: 0x7f0c005e
+			public const int abc_tint_switch_track = 2131492958;
 			
 			// aapt resource value: 0x7f0c0008
 			public const int accent_material_dark = 2131492872;
@@ -1428,8 +1392,8 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0c0040
 			public const int design_bottom_navigation_shadow_color = 2131492928;
 			
-			// aapt resource value: 0x7f0c0083
-			public const int design_error = 2131492995;
+			// aapt resource value: 0x7f0c005f
+			public const int design_error = 2131492959;
 			
 			// aapt resource value: 0x7f0c0041
 			public const int design_fab_shadow_end_color = 2131492929;
@@ -1455,8 +1419,8 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0c0048
 			public const int design_snackbar_background_color = 2131492936;
 			
-			// aapt resource value: 0x7f0c0084
-			public const int design_tint_password_toggle = 2131492996;
+			// aapt resource value: 0x7f0c0060
+			public const int design_tint_password_toggle = 2131492960;
 			
 			// aapt resource value: 0x7f0c0016
 			public const int dim_foreground_disabled_material_dark = 2131492886;
@@ -1521,114 +1485,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0c002a
 			public const int material_grey_900 = 2131492906;
 			
-			// aapt resource value: 0x7f0c004b
-			public const int mb_background = 2131492939;
-			
-			// aapt resource value: 0x7f0c004c
-			public const int mb_bg_status_message = 2131492940;
-			
-			// aapt resource value: 0x7f0c004d
-			public const int mb_button_background_disabled = 2131492941;
-			
-			// aapt resource value: 0x7f0c004e
-			public const int mb_button_background_normal = 2131492942;
-			
-			// aapt resource value: 0x7f0c004f
-			public const int mb_button_background_pressed = 2131492943;
-			
-			// aapt resource value: 0x7f0c0050
-			public const int mb_button_border = 2131492944;
-			
-			// aapt resource value: 0x7f0c0051
-			public const int mb_button_foreground = 2131492945;
-			
-			// aapt resource value: 0x7f0c0052
-			public const int mb_default_frame = 2131492946;
-			
-			// aapt resource value: 0x7f0c0053
-			public const int mb_default_selfie_overlay_shape_border_color = 2131492947;
-			
-			// aapt resource value: 0x7f0c0054
-			public const int mb_default_selfie_overlay_shape_inner_color = 2131492948;
-			
-			// aapt resource value: 0x7f0c0055
-			public const int mb_default_selfie_overlay_shape_outer_color = 2131492949;
-			
-			// aapt resource value: 0x7f0c0056
-			public const int mb_formDetect_frame = 2131492950;
-			
-			// aapt resource value: 0x7f0c0057
-			public const int mb_greenlight = 2131492951;
-			
-			// aapt resource value: 0x7f0c0058
-			public const int mb_help_background_blink_ocr = 2131492952;
-			
-			// aapt resource value: 0x7f0c0059
-			public const int mb_help_button_background_disabled = 2131492953;
-			
-			// aapt resource value: 0x7f0c005a
-			public const int mb_help_button_background_normal = 2131492954;
-			
-			// aapt resource value: 0x7f0c005b
-			public const int mb_help_button_background_pressed = 2131492955;
-			
-			// aapt resource value: 0x7f0c005c
-			public const int mb_max_quality_ocr_color = 2131492956;
-			
-			// aapt resource value: 0x7f0c005d
-			public const int mb_med_quality_ocr_color = 2131492957;
-			
-			// aapt resource value: 0x7f0c005e
-			public const int mb_min_quality_ocr_color = 2131492958;
-			
-			// aapt resource value: 0x7f0c005f
-			public const int mb_mrz_point_color = 2131492959;
-			
-			// aapt resource value: 0x7f0c0060
-			public const int mb_ocr_line_background = 2131492960;
-			
-			// aapt resource value: 0x7f0c0061
-			public const int mb_ocr_line_help_background = 2131492961;
-			
-			// aapt resource value: 0x7f0c0062
-			public const int mb_overlay_background_blink_ocr = 2131492962;
-			
-			// aapt resource value: 0x7f0c0063
-			public const int mb_overlay_camera_translucent = 2131492963;
-			
-			// aapt resource value: 0x7f0c0064
-			public const int mb_recognized_frame = 2131492964;
-			
-			// aapt resource value: 0x7f0c0065
-			public const int mb_result_background_blink_ocr = 2131492965;
-			
-			// aapt resource value: 0x7f0c0066
-			public const int mb_status_background = 2131492966;
-			
-			// aapt resource value: 0x7f0c0067
-			public const int mb_status_foreground = 2131492967;
-			
-			// aapt resource value: 0x7f0c0068
-			public const int mb_text_color_dark_gray = 2131492968;
-			
-			// aapt resource value: 0x7f0c0069
-			public const int mb_text_gray_blink_ocr = 2131492969;
-			
-			// aapt resource value: 0x7f0c006a
-			public const int mb_text_white_blink_ocr = 2131492970;
-			
-			// aapt resource value: 0x7f0c006b
-			public const int mb_textback = 2131492971;
-			
-			// aapt resource value: 0x7f0c006c
-			public const int mb_transparent = 2131492972;
-			
-			// aapt resource value: 0x7f0c006d
-			public const int mb_viewfinder_inner_splash = 2131492973;
-			
-			// aapt resource value: 0x7f0c006e
-			public const int mb_viewfinder_inner_transparent = 2131492974;
-			
 			// aapt resource value: 0x7f0c0049
 			public const int notification_action_color_filter = 2131492937;
 			
@@ -1686,11 +1542,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f0c003a
 			public const int switch_thumb_disabled_material_light = 2131492922;
 			
-			// aapt resource value: 0x7f0c0085
-			public const int switch_thumb_material_dark = 2131492997;
+			// aapt resource value: 0x7f0c0061
+			public const int switch_thumb_material_dark = 2131492961;
 			
-			// aapt resource value: 0x7f0c0086
-			public const int switch_thumb_material_light = 2131492998;
+			// aapt resource value: 0x7f0c0062
+			public const int switch_thumb_material_light = 2131492962;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int switch_thumb_normal_material_dark = 2131492923;
@@ -2122,51 +1978,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f070005
 			public const int item_touch_helper_swipe_escape_velocity = 2131165189;
 			
-			// aapt resource value: 0x7f0700a7
-			public const int mb_activity_horizontal_margin_blink_ocr = 2131165351;
-			
-			// aapt resource value: 0x7f0700a8
-			public const int mb_activity_horizontal_margin_verification_flow = 2131165352;
-			
-			// aapt resource value: 0x7f0700a9
-			public const int mb_activity_vertical_margin_blink_ocr = 2131165353;
-			
-			// aapt resource value: 0x7f0700aa
-			public const int mb_activity_vertical_margin_verification_flow = 2131165354;
-			
-			// aapt resource value: 0x7f0700ab
-			public const int mb_default_selfie_overlay_shape_border_width = 2131165355;
-			
-			// aapt resource value: 0x7f0700ac
-			public const int mb_default_selfie_overlay_shape_corner_radius = 2131165356;
-			
-			// aapt resource value: 0x7f0700ad
-			public const int mb_diameter_circle_button = 2131165357;
-			
-			// aapt resource value: 0x7f0700a6
-			public const int mb_loading_text_size = 2131165350;
-			
-			// aapt resource value: 0x7f0700ae
-			public const int mb_margin_bottom_blink_ocr_activity_buttons = 2131165358;
-			
-			// aapt resource value: 0x7f0700af
-			public const int mb_margin_tooltip = 2131165359;
-			
-			// aapt resource value: 0x7f0700b0
-			public const int mb_margin_torch_button = 2131165360;
-			
-			// aapt resource value: 0x7f0700b1
-			public const int mb_padding_tooltip = 2131165361;
-			
-			// aapt resource value: 0x7f0700a4
-			public const int mb_result_horizontal_margin_blink_ocr = 2131165348;
-			
-			// aapt resource value: 0x7f0700a5
-			public const int mb_result_vertical_margin_blink_ocr = 2131165349;
-			
-			// aapt resource value: 0x7f0700b2
-			public const int mb_text_size_blink_ocr = 2131165362;
-			
 			// aapt resource value: 0x7f070006
 			public const int mr_controller_volume_group_list_item_height = 2131165190;
 			
@@ -2519,26 +2330,26 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020151
-			public const int avd_hide_password_1 = 2130837841;
+			// aapt resource value: 0x7f020130
+			public const int avd_hide_password_1 = 2130837808;
 			
-			// aapt resource value: 0x7f020152
-			public const int avd_hide_password_2 = 2130837842;
+			// aapt resource value: 0x7f020131
+			public const int avd_hide_password_2 = 2130837809;
 			
-			// aapt resource value: 0x7f020153
-			public const int avd_hide_password_3 = 2130837843;
+			// aapt resource value: 0x7f020132
+			public const int avd_hide_password_3 = 2130837810;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020154
-			public const int avd_show_password_1 = 2130837844;
+			// aapt resource value: 0x7f020133
+			public const int avd_show_password_1 = 2130837811;
 			
-			// aapt resource value: 0x7f020155
-			public const int avd_show_password_2 = 2130837845;
+			// aapt resource value: 0x7f020134
+			public const int avd_show_password_2 = 2130837812;
 			
-			// aapt resource value: 0x7f020156
-			public const int avd_show_password_3 = 2130837846;
+			// aapt resource value: 0x7f020135
+			public const int avd_show_password_3 = 2130837813;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -3093,208 +2904,109 @@ namespace BlinkIDFormsSample.Droid
 			public const int icon = 2130837772;
 			
 			// aapt resource value: 0x7f02010d
-			public const int mb_backid_white = 2130837773;
+			public const int mr_button_connected_dark = 2130837773;
 			
 			// aapt resource value: 0x7f02010e
-			public const int mb_bg_circle_button = 2130837774;
+			public const int mr_button_connected_light = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int mb_bg_status_msg_verification_flow = 2130837775;
+			public const int mr_button_connecting_dark = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int mb_button = 2130837776;
+			public const int mr_button_connecting_light = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int mb_camera_denied = 2130837777;
+			public const int mr_button_dark = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int mb_dot = 2130837778;
+			public const int mr_button_light = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int mb_exit_blink_ocr = 2130837779;
+			public const int mr_dialog_close_dark = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int mb_flashlight_blink_ocr = 2130837780;
+			public const int mr_dialog_close_light = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int mb_flashlight_inverse_blink_ocr = 2130837781;
+			public const int mr_dialog_material_background_dark = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int mb_frontid_white = 2130837782;
+			public const int mr_dialog_material_background_light = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int mb_help_blink_ocr = 2130837783;
+			public const int mr_group_collapse = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int mb_ic_flash_off_24dp = 2130837784;
+			public const int mr_group_expand = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int mb_ic_flash_on_24dp = 2130837785;
+			public const int mr_media_pause_dark = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int mb_icon_exit_blink_ocr = 2130837786;
+			public const int mr_media_pause_light = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mb_icon_exit_selected_blink_ocr = 2130837787;
+			public const int mr_media_play_dark = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mb_icon_flashlight_blink_ocr = 2130837788;
+			public const int mr_media_play_light = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mb_icon_flashlight_selected_blink_ocr = 2130837789;
+			public const int mr_media_stop_dark = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mb_icon_help_blink_ocr = 2130837790;
+			public const int mr_media_stop_light = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mb_icon_help_selected_blink_ocr = 2130837791;
+			public const int mr_vol_type_audiotrack_dark = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mb_icon_ok_big_blink_ocr = 2130837792;
+			public const int mr_vol_type_audiotrack_light = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mb_icon_ok_big_selected_blink_ocr = 2130837793;
+			public const int navigation_empty_icon = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mb_icon_skip_blink_ocr = 2130837794;
+			public const int notification_action_background = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mb_icon_skip_selected_blink_ocr = 2130837795;
+			public const int notification_bg = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mb_lightoff = 2130837796;
+			public const int notification_bg_low = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int mb_lighton = 2130837797;
+			public const int notification_bg_low_normal = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int mb_ok_big_blink_ocr = 2130837798;
+			public const int notification_bg_low_pressed = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int mb_rounded_border = 2130837799;
+			public const int notification_bg_normal = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int mb_scan_corner_ll_blink_ocr = 2130837800;
+			public const int notification_bg_normal_pressed = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int mb_scan_corner_lr_blink_ocr = 2130837801;
-			
-			// aapt resource value: 0x7f02012a
-			public const int mb_scan_corner_ul_blink_ocr = 2130837802;
-			
-			// aapt resource value: 0x7f02012b
-			public const int mb_scan_corner_ur_blink_ocr = 2130837803;
-			
-			// aapt resource value: 0x7f02012c
-			public const int mb_skip_blink_ocr = 2130837804;
-			
-			// aapt resource value: 0x7f02012d
-			public const int mb_vct_microblink = 2130837805;
+			public const int notification_icon_background = 2130837801;
 			
 			// aapt resource value: 0x7f02012e
-			public const int mr_button_connected_dark = 2130837806;
+			public const int notification_template_icon_bg = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int mr_button_connected_light = 2130837807;
+			public const int notification_template_icon_low_bg = 2130837807;
 			
-			// aapt resource value: 0x7f020130
-			public const int mr_button_connecting_dark = 2130837808;
+			// aapt resource value: 0x7f02012a
+			public const int notification_tile_bg = 2130837802;
 			
-			// aapt resource value: 0x7f020131
-			public const int mr_button_connecting_light = 2130837809;
+			// aapt resource value: 0x7f02012b
+			public const int notify_panel_notification_icon_bg = 2130837803;
 			
-			// aapt resource value: 0x7f020132
-			public const int mr_button_dark = 2130837810;
+			// aapt resource value: 0x7f02012c
+			public const int tooltip_frame_dark = 2130837804;
 			
-			// aapt resource value: 0x7f020133
-			public const int mr_button_light = 2130837811;
-			
-			// aapt resource value: 0x7f020134
-			public const int mr_dialog_close_dark = 2130837812;
-			
-			// aapt resource value: 0x7f020135
-			public const int mr_dialog_close_light = 2130837813;
-			
-			// aapt resource value: 0x7f020136
-			public const int mr_dialog_material_background_dark = 2130837814;
-			
-			// aapt resource value: 0x7f020137
-			public const int mr_dialog_material_background_light = 2130837815;
-			
-			// aapt resource value: 0x7f020138
-			public const int mr_group_collapse = 2130837816;
-			
-			// aapt resource value: 0x7f020139
-			public const int mr_group_expand = 2130837817;
-			
-			// aapt resource value: 0x7f02013a
-			public const int mr_media_pause_dark = 2130837818;
-			
-			// aapt resource value: 0x7f02013b
-			public const int mr_media_pause_light = 2130837819;
-			
-			// aapt resource value: 0x7f02013c
-			public const int mr_media_play_dark = 2130837820;
-			
-			// aapt resource value: 0x7f02013d
-			public const int mr_media_play_light = 2130837821;
-			
-			// aapt resource value: 0x7f02013e
-			public const int mr_media_stop_dark = 2130837822;
-			
-			// aapt resource value: 0x7f02013f
-			public const int mr_media_stop_light = 2130837823;
-			
-			// aapt resource value: 0x7f020140
-			public const int mr_vol_type_audiotrack_dark = 2130837824;
-			
-			// aapt resource value: 0x7f020141
-			public const int mr_vol_type_audiotrack_light = 2130837825;
-			
-			// aapt resource value: 0x7f020142
-			public const int navigation_empty_icon = 2130837826;
-			
-			// aapt resource value: 0x7f020143
-			public const int notification_action_background = 2130837827;
-			
-			// aapt resource value: 0x7f020144
-			public const int notification_bg = 2130837828;
-			
-			// aapt resource value: 0x7f020145
-			public const int notification_bg_low = 2130837829;
-			
-			// aapt resource value: 0x7f020146
-			public const int notification_bg_low_normal = 2130837830;
-			
-			// aapt resource value: 0x7f020147
-			public const int notification_bg_low_pressed = 2130837831;
-			
-			// aapt resource value: 0x7f020148
-			public const int notification_bg_normal = 2130837832;
-			
-			// aapt resource value: 0x7f020149
-			public const int notification_bg_normal_pressed = 2130837833;
-			
-			// aapt resource value: 0x7f02014a
-			public const int notification_icon_background = 2130837834;
-			
-			// aapt resource value: 0x7f02014f
-			public const int notification_template_icon_bg = 2130837839;
-			
-			// aapt resource value: 0x7f020150
-			public const int notification_template_icon_low_bg = 2130837840;
-			
-			// aapt resource value: 0x7f02014b
-			public const int notification_tile_bg = 2130837835;
-			
-			// aapt resource value: 0x7f02014c
-			public const int notify_panel_notification_icon_bg = 2130837836;
-			
-			// aapt resource value: 0x7f02014d
-			public const int tooltip_frame_dark = 2130837837;
-			
-			// aapt resource value: 0x7f02014e
-			public const int tooltip_frame_light = 2130837838;
+			// aapt resource value: 0x7f02012d
+			public const int tooltip_frame_light = 2130837805;
 			
 			static Drawable()
 			{
@@ -3327,41 +3039,41 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800fa
-			public const int action0 = 2131230970;
+			// aapt resource value: 0x7f0800b6
+			public const int action0 = 2131230902;
 			
-			// aapt resource value: 0x7f080083
-			public const int action_bar = 2131230851;
+			// aapt resource value: 0x7f08007c
+			public const int action_bar = 2131230844;
 			
 			// aapt resource value: 0x7f080001
 			public const int action_bar_activity_content = 2131230721;
 			
-			// aapt resource value: 0x7f080082
-			public const int action_bar_container = 2131230850;
+			// aapt resource value: 0x7f08007b
+			public const int action_bar_container = 2131230843;
 			
-			// aapt resource value: 0x7f08007e
-			public const int action_bar_root = 2131230846;
+			// aapt resource value: 0x7f080077
+			public const int action_bar_root = 2131230839;
 			
 			// aapt resource value: 0x7f080002
 			public const int action_bar_spinner = 2131230722;
 			
-			// aapt resource value: 0x7f080062
-			public const int action_bar_subtitle = 2131230818;
+			// aapt resource value: 0x7f08005b
+			public const int action_bar_subtitle = 2131230811;
 			
-			// aapt resource value: 0x7f080061
-			public const int action_bar_title = 2131230817;
+			// aapt resource value: 0x7f08005a
+			public const int action_bar_title = 2131230810;
 			
-			// aapt resource value: 0x7f0800f7
-			public const int action_container = 2131230967;
+			// aapt resource value: 0x7f0800b3
+			public const int action_container = 2131230899;
 			
-			// aapt resource value: 0x7f080084
-			public const int action_context_bar = 2131230852;
+			// aapt resource value: 0x7f08007d
+			public const int action_context_bar = 2131230845;
 			
-			// aapt resource value: 0x7f0800fe
-			public const int action_divider = 2131230974;
+			// aapt resource value: 0x7f0800ba
+			public const int action_divider = 2131230906;
 			
-			// aapt resource value: 0x7f0800f8
-			public const int action_image = 2131230968;
+			// aapt resource value: 0x7f0800b4
+			public const int action_image = 2131230900;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -3369,38 +3081,35 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080004
 			public const int action_menu_presenter = 2131230724;
 			
-			// aapt resource value: 0x7f080080
-			public const int action_mode_bar = 2131230848;
+			// aapt resource value: 0x7f080079
+			public const int action_mode_bar = 2131230841;
 			
-			// aapt resource value: 0x7f08007f
-			public const int action_mode_bar_stub = 2131230847;
+			// aapt resource value: 0x7f080078
+			public const int action_mode_bar_stub = 2131230840;
 			
-			// aapt resource value: 0x7f080063
-			public const int action_mode_close_button = 2131230819;
+			// aapt resource value: 0x7f08005c
+			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800f9
-			public const int action_text = 2131230969;
+			// aapt resource value: 0x7f0800b5
+			public const int action_text = 2131230901;
 			
-			// aapt resource value: 0x7f080107
-			public const int actions = 2131230983;
+			// aapt resource value: 0x7f0800c3
+			public const int actions = 2131230915;
 			
-			// aapt resource value: 0x7f080064
-			public const int activity_chooser_view_content = 2131230820;
+			// aapt resource value: 0x7f08005d
+			public const int activity_chooser_view_content = 2131230813;
 			
 			// aapt resource value: 0x7f080027
 			public const int add = 2131230759;
 			
-			// aapt resource value: 0x7f080077
-			public const int alertTitle = 2131230839;
+			// aapt resource value: 0x7f080070
+			public const int alertTitle = 2131230832;
 			
 			// aapt resource value: 0x7f080052
 			public const int all = 2131230802;
 			
 			// aapt resource value: 0x7f080038
 			public const int always = 2131230776;
-			
-			// aapt resource value: 0x7f0800a0
-			public const int appBarContainer = 2131230880;
 			
 			// aapt resource value: 0x7f080056
 			public const int async = 2131230806;
@@ -3417,38 +3126,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int bottomBoundary = 2131230923;
+			// aapt resource value: 0x7f080063
+			public const int buttonPanel = 2131230819;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int bottom_space_holder = 2131230909;
-			
-			// aapt resource value: 0x7f0800c9
-			public const int btnAccept = 2131230921;
-			
-			// aapt resource value: 0x7f0800b2
-			public const int btnExit = 2131230898;
-			
-			// aapt resource value: 0x7f0800b4
-			public const int btnFlash = 2131230900;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int btnHelp = 2131230899;
-			
-			// aapt resource value: 0x7f0800b1
-			public const int btnSkip = 2131230897;
-			
-			// aapt resource value: 0x7f08006a
-			public const int buttonPanel = 2131230826;
-			
-			// aapt resource value: 0x7f0800a3
-			public const int camera_ask_main = 2131230883;
-			
-			// aapt resource value: 0x7f0800a4
-			public const int camera_ask_permission_button = 2131230884;
-			
-			// aapt resource value: 0x7f0800fb
-			public const int cancel_action = 2131230971;
+			// aapt resource value: 0x7f0800b7
+			public const int cancel_action = 2131230903;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -3459,14 +3141,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080047
 			public const int center_vertical = 2131230791;
 			
-			// aapt resource value: 0x7f08007a
-			public const int checkbox = 2131230842;
+			// aapt resource value: 0x7f080073
+			public const int checkbox = 2131230835;
 			
-			// aapt resource value: 0x7f080103
-			public const int chronometer = 2131230979;
-			
-			// aapt resource value: 0x7f08005f
-			public const int circle = 2131230815;
+			// aapt resource value: 0x7f0800bf
+			public const int chronometer = 2131230911;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -3477,68 +3156,53 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080039
 			public const int collapseActionView = 2131230777;
 			
-			// aapt resource value: 0x7f080094
-			public const int container = 2131230868;
+			// aapt resource value: 0x7f08008d
+			public const int container = 2131230861;
+			
+			// aapt resource value: 0x7f080066
+			public const int contentPanel = 2131230822;
+			
+			// aapt resource value: 0x7f08008e
+			public const int coordinator = 2131230862;
 			
 			// aapt resource value: 0x7f08006d
-			public const int contentPanel = 2131230829;
+			public const int custom = 2131230829;
 			
-			// aapt resource value: 0x7f080095
-			public const int coordinator = 2131230869;
+			// aapt resource value: 0x7f08006c
+			public const int customPanel = 2131230828;
 			
-			// aapt resource value: 0x7f080074
-			public const int custom = 2131230836;
+			// aapt resource value: 0x7f08007a
+			public const int decor_content_parent = 2131230842;
 			
-			// aapt resource value: 0x7f080073
-			public const int customPanel = 2131230835;
+			// aapt resource value: 0x7f080060
+			public const int default_activity_button = 2131230816;
 			
-			// aapt resource value: 0x7f080081
-			public const int decor_content_parent = 2131230849;
-			
-			// aapt resource value: 0x7f0800a8
-			public const int defaultBackButton = 2131230888;
-			
-			// aapt resource value: 0x7f0800ac
-			public const int defaultHelpButton = 2131230892;
-			
-			// aapt resource value: 0x7f0800ab
-			public const int defaultStatusTextView = 2131230891;
-			
-			// aapt resource value: 0x7f0800a9
-			public const int defaultTorchButton = 2131230889;
-			
-			// aapt resource value: 0x7f080067
-			public const int default_activity_button = 2131230823;
-			
-			// aapt resource value: 0x7f0800aa
-			public const int default_photopay_viewfinder = 2131230890;
+			// aapt resource value: 0x7f080090
+			public const int design_bottom_sheet = 2131230864;
 			
 			// aapt resource value: 0x7f080097
-			public const int design_bottom_sheet = 2131230871;
+			public const int design_menu_item_action_area = 2131230871;
 			
-			// aapt resource value: 0x7f08009e
-			public const int design_menu_item_action_area = 2131230878;
+			// aapt resource value: 0x7f080096
+			public const int design_menu_item_action_area_stub = 2131230870;
 			
-			// aapt resource value: 0x7f08009d
-			public const int design_menu_item_action_area_stub = 2131230877;
+			// aapt resource value: 0x7f080095
+			public const int design_menu_item_text = 2131230869;
 			
-			// aapt resource value: 0x7f08009c
-			public const int design_menu_item_text = 2131230876;
-			
-			// aapt resource value: 0x7f08009b
-			public const int design_navigation_view = 2131230875;
+			// aapt resource value: 0x7f080094
+			public const int design_navigation_view = 2131230868;
 			
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
 			
-			// aapt resource value: 0x7f080085
-			public const int edit_query = 2131230853;
+			// aapt resource value: 0x7f08007e
+			public const int edit_query = 2131230846;
 			
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f080109
-			public const int end_padder = 2131230985;
+			// aapt resource value: 0x7f0800c5
+			public const int end_padder = 2131230917;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -3549,11 +3213,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080041
 			public const int exitUntilCollapsed = 2131230785;
 			
-			// aapt resource value: 0x7f080065
-			public const int expand_activities_button = 2131230821;
+			// aapt resource value: 0x7f08005e
+			public const int expand_activities_button = 2131230814;
 			
-			// aapt resource value: 0x7f080079
-			public const int expanded_menu = 2131230841;
+			// aapt resource value: 0x7f080072
+			public const int expanded_menu = 2131230834;
 			
 			// aapt resource value: 0x7f080050
 			public const int fill = 2131230800;
@@ -3564,17 +3228,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080048
 			public const int fill_vertical = 2131230792;
 			
-			// aapt resource value: 0x7f08005e
-			public const int fit = 2131230814;
-			
 			// aapt resource value: 0x7f080054
 			public const int @fixed = 2131230804;
 			
 			// aapt resource value: 0x7f080058
 			public const int forever = 2131230808;
-			
-			// aapt resource value: 0x7f0800a2
-			public const int fullScreenOverlayContainer = 2131230882;
 			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
@@ -3585,44 +3243,20 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080021
 			public const int homeAsUp = 2131230753;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int horizontal_container = 2131230905;
+			// aapt resource value: 0x7f080062
+			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f080069
-			public const int icon = 2131230825;
-			
-			// aapt resource value: 0x7f080108
-			public const int icon_group = 2131230984;
+			// aapt resource value: 0x7f0800c4
+			public const int icon_group = 2131230916;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
 			
-			// aapt resource value: 0x7f080066
-			public const int image = 2131230822;
+			// aapt resource value: 0x7f08005f
+			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int imageView1 = 2131230885;
-			
-			// aapt resource value: 0x7f0800db
-			public const int imgLL = 2131230939;
-			
-			// aapt resource value: 0x7f0800dc
-			public const int imgLR = 2131230940;
-			
-			// aapt resource value: 0x7f0800d9
-			public const int imgUL = 2131230937;
-			
-			// aapt resource value: 0x7f0800da
-			public const int imgUR = 2131230938;
-			
-			// aapt resource value: 0x7f0800b5
-			public const int indicator = 2131230901;
-			
-			// aapt resource value: 0x7f080104
-			public const int info = 2131230980;
-			
-			// aapt resource value: 0x7f08005a
-			public const int inversePortrait = 2131230810;
+			// aapt resource value: 0x7f0800c0
+			public const int info = 2131230912;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -3630,35 +3264,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int ivCardIcon = 2131230930;
-			
-			// aapt resource value: 0x7f0800d8
-			public const int ivStatusImg = 2131230936;
-			
-			// aapt resource value: 0x7f0800b0
-			public const int label_btn_skip = 2131230896;
-			
-			// aapt resource value: 0x7f08005b
-			public const int landscapeLeft = 2131230811;
-			
-			// aapt resource value: 0x7f08005c
-			public const int landscapeRight = 2131230812;
-			
-			// aapt resource value: 0x7f080093
-			public const int largeLabel = 2131230867;
-			
-			// aapt resource value: 0x7f0800c8
-			public const int layResult = 2131230920;
-			
-			// aapt resource value: 0x7f0800af
-			public const int laySkip = 2131230895;
+			// aapt resource value: 0x7f08008c
+			public const int largeLabel = 2131230860;
 			
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
-			
-			// aapt resource value: 0x7f0800ba
-			public const int left_space_holder = 2131230906;
 			
 			// aapt resource value: 0x7f080017
 			public const int line1 = 2131230743;
@@ -3669,17 +3279,17 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08001d
 			public const int listMode = 2131230749;
 			
-			// aapt resource value: 0x7f080068
-			public const int list_item = 2131230824;
+			// aapt resource value: 0x7f080061
+			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f08010c
-			public const int masked = 2131230988;
+			// aapt resource value: 0x7f0800c8
+			public const int masked = 2131230920;
 			
-			// aapt resource value: 0x7f0800fd
-			public const int media_actions = 2131230973;
+			// aapt resource value: 0x7f0800b9
+			public const int media_actions = 2131230905;
 			
-			// aapt resource value: 0x7f08010a
-			public const int message = 2131230986;
+			// aapt resource value: 0x7f0800c6
+			public const int message = 2131230918;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -3687,86 +3297,86 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080053
 			public const int mini = 2131230803;
 			
-			// aapt resource value: 0x7f0800e9
-			public const int mr_art = 2131230953;
+			// aapt resource value: 0x7f0800a5
+			public const int mr_art = 2131230885;
 			
-			// aapt resource value: 0x7f0800de
-			public const int mr_chooser_list = 2131230942;
+			// aapt resource value: 0x7f08009a
+			public const int mr_chooser_list = 2131230874;
 			
-			// aapt resource value: 0x7f0800e1
-			public const int mr_chooser_route_desc = 2131230945;
+			// aapt resource value: 0x7f08009d
+			public const int mr_chooser_route_desc = 2131230877;
 			
-			// aapt resource value: 0x7f0800df
-			public const int mr_chooser_route_icon = 2131230943;
+			// aapt resource value: 0x7f08009b
+			public const int mr_chooser_route_icon = 2131230875;
 			
-			// aapt resource value: 0x7f0800e0
-			public const int mr_chooser_route_name = 2131230944;
+			// aapt resource value: 0x7f08009c
+			public const int mr_chooser_route_name = 2131230876;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int mr_chooser_title = 2131230941;
+			// aapt resource value: 0x7f080099
+			public const int mr_chooser_title = 2131230873;
 			
-			// aapt resource value: 0x7f0800e6
-			public const int mr_close = 2131230950;
+			// aapt resource value: 0x7f0800a2
+			public const int mr_close = 2131230882;
 			
-			// aapt resource value: 0x7f0800ec
-			public const int mr_control_divider = 2131230956;
+			// aapt resource value: 0x7f0800a8
+			public const int mr_control_divider = 2131230888;
 			
-			// aapt resource value: 0x7f0800f2
-			public const int mr_control_playback_ctrl = 2131230962;
+			// aapt resource value: 0x7f0800ae
+			public const int mr_control_playback_ctrl = 2131230894;
 			
-			// aapt resource value: 0x7f0800f5
-			public const int mr_control_subtitle = 2131230965;
+			// aapt resource value: 0x7f0800b1
+			public const int mr_control_subtitle = 2131230897;
 			
-			// aapt resource value: 0x7f0800f4
-			public const int mr_control_title = 2131230964;
+			// aapt resource value: 0x7f0800b0
+			public const int mr_control_title = 2131230896;
 			
-			// aapt resource value: 0x7f0800f3
-			public const int mr_control_title_container = 2131230963;
+			// aapt resource value: 0x7f0800af
+			public const int mr_control_title_container = 2131230895;
 			
-			// aapt resource value: 0x7f0800e7
-			public const int mr_custom_control = 2131230951;
+			// aapt resource value: 0x7f0800a3
+			public const int mr_custom_control = 2131230883;
 			
-			// aapt resource value: 0x7f0800e8
-			public const int mr_default_control = 2131230952;
+			// aapt resource value: 0x7f0800a4
+			public const int mr_default_control = 2131230884;
 			
-			// aapt resource value: 0x7f0800e3
-			public const int mr_dialog_area = 2131230947;
+			// aapt resource value: 0x7f08009f
+			public const int mr_dialog_area = 2131230879;
 			
-			// aapt resource value: 0x7f0800e2
-			public const int mr_expandable_area = 2131230946;
+			// aapt resource value: 0x7f08009e
+			public const int mr_expandable_area = 2131230878;
 			
-			// aapt resource value: 0x7f0800f6
-			public const int mr_group_expand_collapse = 2131230966;
+			// aapt resource value: 0x7f0800b2
+			public const int mr_group_expand_collapse = 2131230898;
 			
-			// aapt resource value: 0x7f0800ea
-			public const int mr_media_main_control = 2131230954;
+			// aapt resource value: 0x7f0800a6
+			public const int mr_media_main_control = 2131230886;
 			
-			// aapt resource value: 0x7f0800e5
-			public const int mr_name = 2131230949;
+			// aapt resource value: 0x7f0800a1
+			public const int mr_name = 2131230881;
 			
-			// aapt resource value: 0x7f0800eb
-			public const int mr_playback_control = 2131230955;
+			// aapt resource value: 0x7f0800a7
+			public const int mr_playback_control = 2131230887;
 			
-			// aapt resource value: 0x7f0800e4
-			public const int mr_title_bar = 2131230948;
+			// aapt resource value: 0x7f0800a0
+			public const int mr_title_bar = 2131230880;
 			
-			// aapt resource value: 0x7f0800ed
-			public const int mr_volume_control = 2131230957;
+			// aapt resource value: 0x7f0800a9
+			public const int mr_volume_control = 2131230889;
 			
-			// aapt resource value: 0x7f0800ee
-			public const int mr_volume_group_list = 2131230958;
+			// aapt resource value: 0x7f0800aa
+			public const int mr_volume_group_list = 2131230890;
 			
-			// aapt resource value: 0x7f0800f0
-			public const int mr_volume_item_icon = 2131230960;
+			// aapt resource value: 0x7f0800ac
+			public const int mr_volume_item_icon = 2131230892;
 			
-			// aapt resource value: 0x7f0800f1
-			public const int mr_volume_slider = 2131230961;
+			// aapt resource value: 0x7f0800ad
+			public const int mr_volume_slider = 2131230893;
 			
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f08009a
-			public const int navigation_header_container = 2131230874;
+			// aapt resource value: 0x7f080093
+			public const int navigation_header_container = 2131230867;
 			
 			// aapt resource value: 0x7f08003b
 			public const int never = 2131230779;
@@ -3777,23 +3387,20 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f080106
-			public const int notification_background = 2131230982;
+			// aapt resource value: 0x7f0800c2
+			public const int notification_background = 2131230914;
 			
-			// aapt resource value: 0x7f080100
-			public const int notification_main_column = 2131230976;
+			// aapt resource value: 0x7f0800bc
+			public const int notification_main_column = 2131230908;
 			
-			// aapt resource value: 0x7f0800ff
-			public const int notification_main_column_container = 2131230975;
-			
-			// aapt resource value: 0x7f0800ae
-			public const int overlayContainer = 2131230894;
+			// aapt resource value: 0x7f0800bb
+			public const int notification_main_column_container = 2131230907;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
 			
-			// aapt resource value: 0x7f08006c
-			public const int parentPanel = 2131230828;
+			// aapt resource value: 0x7f080065
+			public const int parentPanel = 2131230821;
 			
 			// aapt resource value: 0x7f08000b
 			public const int parent_matrix = 2131230731;
@@ -3801,41 +3408,23 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08004d
 			public const int pin = 2131230797;
 			
-			// aapt resource value: 0x7f08005d
-			public const int portrait = 2131230813;
-			
 			// aapt resource value: 0x7f080006
 			public const int progress_circular = 2131230726;
 			
 			// aapt resource value: 0x7f080007
 			public const int progress_horizontal = 2131230727;
 			
-			// aapt resource value: 0x7f08007c
-			public const int radio = 2131230844;
-			
-			// aapt resource value: 0x7f0800a1
-			public const int recognizer_runner_view_container = 2131230881;
-			
-			// aapt resource value: 0x7f080060
-			public const int rectangle = 2131230816;
+			// aapt resource value: 0x7f080075
+			public const int radio = 2131230837;
 			
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f080105
-			public const int right_icon = 2131230981;
+			// aapt resource value: 0x7f0800c1
+			public const int right_icon = 2131230913;
 			
-			// aapt resource value: 0x7f080101
-			public const int right_side = 2131230977;
-			
-			// aapt resource value: 0x7f0800bc
-			public const int right_space_holder = 2131230908;
-			
-			// aapt resource value: 0x7f0800ad
-			public const int roi_overlay = 2131230893;
-			
-			// aapt resource value: 0x7f0800bb
-			public const int roi_window = 2131230907;
+			// aapt resource value: 0x7f0800bd
+			public const int right_side = 2131230909;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -3846,77 +3435,59 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08000e
 			public const int save_scale_type = 2131230734;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int scanOcr = 2131230887;
-			
-			// aapt resource value: 0x7f0800c0
-			public const int scan_message_holder = 2131230912;
-			
-			// aapt resource value: 0x7f0800bf
-			public const int scan_message_left_space_holder = 2131230911;
-			
-			// aapt resource value: 0x7f0800c2
-			public const int scan_message_right_space_holder = 2131230914;
-			
 			// aapt resource value: 0x7f080029
 			public const int screen = 2131230761;
 			
 			// aapt resource value: 0x7f080042
 			public const int scroll = 2131230786;
 			
-			// aapt resource value: 0x7f080072
-			public const int scrollIndicatorDown = 2131230834;
+			// aapt resource value: 0x7f08006b
+			public const int scrollIndicatorDown = 2131230827;
 			
-			// aapt resource value: 0x7f08006e
-			public const int scrollIndicatorUp = 2131230830;
+			// aapt resource value: 0x7f080067
+			public const int scrollIndicatorUp = 2131230823;
 			
-			// aapt resource value: 0x7f08006f
-			public const int scrollView = 2131230831;
+			// aapt resource value: 0x7f080068
+			public const int scrollView = 2131230824;
 			
 			// aapt resource value: 0x7f080055
 			public const int scrollable = 2131230805;
 			
-			// aapt resource value: 0x7f080087
-			public const int search_badge = 2131230855;
+			// aapt resource value: 0x7f080080
+			public const int search_badge = 2131230848;
+			
+			// aapt resource value: 0x7f08007f
+			public const int search_bar = 2131230847;
+			
+			// aapt resource value: 0x7f080081
+			public const int search_button = 2131230849;
 			
 			// aapt resource value: 0x7f080086
-			public const int search_bar = 2131230854;
+			public const int search_close_btn = 2131230854;
+			
+			// aapt resource value: 0x7f080082
+			public const int search_edit_frame = 2131230850;
 			
 			// aapt resource value: 0x7f080088
-			public const int search_button = 2131230856;
+			public const int search_go_btn = 2131230856;
 			
-			// aapt resource value: 0x7f08008d
-			public const int search_close_btn = 2131230861;
+			// aapt resource value: 0x7f080083
+			public const int search_mag_icon = 2131230851;
+			
+			// aapt resource value: 0x7f080084
+			public const int search_plate = 2131230852;
+			
+			// aapt resource value: 0x7f080085
+			public const int search_src_text = 2131230853;
 			
 			// aapt resource value: 0x7f080089
-			public const int search_edit_frame = 2131230857;
-			
-			// aapt resource value: 0x7f08008f
-			public const int search_go_btn = 2131230863;
+			public const int search_voice_btn = 2131230857;
 			
 			// aapt resource value: 0x7f08008a
-			public const int search_mag_icon = 2131230858;
+			public const int select_dialog_listview = 2131230858;
 			
-			// aapt resource value: 0x7f08008b
-			public const int search_plate = 2131230859;
-			
-			// aapt resource value: 0x7f08008c
-			public const int search_src_text = 2131230860;
-			
-			// aapt resource value: 0x7f080090
-			public const int search_voice_btn = 2131230864;
-			
-			// aapt resource value: 0x7f080091
-			public const int select_dialog_listview = 2131230865;
-			
-			// aapt resource value: 0x7f0800d3
-			public const int shadowLeft = 2131230931;
-			
-			// aapt resource value: 0x7f0800d4
-			public const int shadowRight = 2131230932;
-			
-			// aapt resource value: 0x7f08007b
-			public const int shortcut = 2131230843;
+			// aapt resource value: 0x7f080074
+			public const int shortcut = 2131230836;
 			
 			// aapt resource value: 0x7f080023
 			public const int showCustom = 2131230755;
@@ -3927,20 +3498,20 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080025
 			public const int showTitle = 2131230757;
 			
+			// aapt resource value: 0x7f08008b
+			public const int smallLabel = 2131230859;
+			
 			// aapt resource value: 0x7f080092
-			public const int smallLabel = 2131230866;
+			public const int snackbar_action = 2131230866;
 			
-			// aapt resource value: 0x7f080099
-			public const int snackbar_action = 2131230873;
-			
-			// aapt resource value: 0x7f080098
-			public const int snackbar_text = 2131230872;
+			// aapt resource value: 0x7f080091
+			public const int snackbar_text = 2131230865;
 			
 			// aapt resource value: 0x7f080043
 			public const int snap = 2131230787;
 			
-			// aapt resource value: 0x7f08006b
-			public const int spacer = 2131230827;
+			// aapt resource value: 0x7f080064
+			public const int spacer = 2131230820;
 			
 			// aapt resource value: 0x7f080008
 			public const int split_action_bar = 2131230728;
@@ -3957,17 +3528,14 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800d6
-			public const int statusOverlay = 2131230934;
+			// aapt resource value: 0x7f0800b8
+			public const int status_bar_latest_event_content = 2131230904;
 			
-			// aapt resource value: 0x7f0800fc
-			public const int status_bar_latest_event_content = 2131230972;
+			// aapt resource value: 0x7f080076
+			public const int submenuarrow = 2131230838;
 			
-			// aapt resource value: 0x7f08007d
-			public const int submenuarrow = 2131230845;
-			
-			// aapt resource value: 0x7f08008e
-			public const int submit_area = 2131230862;
+			// aapt resource value: 0x7f080087
+			public const int submit_area = 2131230855;
 			
 			// aapt resource value: 0x7f08001f
 			public const int tabMode = 2131230751;
@@ -3981,17 +3549,14 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
-			// aapt resource value: 0x7f080071
-			public const int textSpacerNoButtons = 2131230833;
+			// aapt resource value: 0x7f08006a
+			public const int textSpacerNoButtons = 2131230826;
 			
-			// aapt resource value: 0x7f080070
-			public const int textSpacerNoTitle = 2131230832;
+			// aapt resource value: 0x7f080069
+			public const int textSpacerNoTitle = 2131230825;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int textView1 = 2131230886;
-			
-			// aapt resource value: 0x7f08009f
-			public const int text_input_password_toggle = 2131230879;
+			// aapt resource value: 0x7f080098
+			public const int text_input_password_toggle = 2131230872;
 			
 			// aapt resource value: 0x7f080014
 			public const int textinput_counter = 2131230740;
@@ -3999,35 +3564,26 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f080102
-			public const int time = 2131230978;
+			// aapt resource value: 0x7f0800be
+			public const int time = 2131230910;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
 			
-			// aapt resource value: 0x7f080078
-			public const int titleDividerNoCustom = 2131230840;
+			// aapt resource value: 0x7f080071
+			public const int titleDividerNoCustom = 2131230833;
 			
-			// aapt resource value: 0x7f080076
-			public const int title_template = 2131230838;
+			// aapt resource value: 0x7f08006f
+			public const int title_template = 2131230831;
 			
 			// aapt resource value: 0x7f08003e
 			public const int top = 2131230782;
 			
-			// aapt resource value: 0x7f080075
-			public const int topPanel = 2131230837;
+			// aapt resource value: 0x7f08006e
+			public const int topPanel = 2131230830;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int top_space_holder = 2131230904;
-			
-			// aapt resource value: 0x7f0800cd
-			public const int torchButton = 2131230925;
-			
-			// aapt resource value: 0x7f0800cc
-			public const int torchContainer = 2131230924;
-			
-			// aapt resource value: 0x7f080096
-			public const int touch_outside = 2131230870;
+			// aapt resource value: 0x7f08008f
+			public const int touch_outside = 2131230863;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -4044,24 +3600,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080013
 			public const int transition_transform = 2131230739;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int tvCardMessage = 2131230929;
-			
-			// aapt resource value: 0x7f0800d5
-			public const int tvGlareMessage = 2131230933;
-			
-			// aapt resource value: 0x7f0800d7
-			public const int tvStatusMsg = 2131230935;
-			
-			// aapt resource value: 0x7f0800c1
-			public const int txtMessage = 2131230913;
-			
-			// aapt resource value: 0x7f0800ca
-			public const int txtResult = 2131230922;
-			
-			// aapt resource value: 0x7f0800b7
-			public const int txtTitle = 2131230903;
-			
 			// aapt resource value: 0x7f08002d
 			public const int uniform = 2131230765;
 			
@@ -4074,41 +3612,11 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int viewfinder = 2131230917;
-			
-			// aapt resource value: 0x7f0800cf
-			public const int viewfinderContainer = 2131230927;
-			
-			// aapt resource value: 0x7f0800ce
-			public const int viewfinderMarginTop = 2131230926;
-			
-			// aapt resource value: 0x7f0800d0
-			public const int viewfinderRectangle = 2131230928;
-			
 			// aapt resource value: 0x7f0800c7
-			public const int viewfinder_bottom_space_holder = 2131230919;
+			public const int visible = 2131230919;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int viewfinder_horizontal_container = 2131230915;
-			
-			// aapt resource value: 0x7f0800c4
-			public const int viewfinder_left_space_holder = 2131230916;
-			
-			// aapt resource value: 0x7f0800c6
-			public const int viewfinder_right_space_holder = 2131230918;
-			
-			// aapt resource value: 0x7f0800be
-			public const int viewfinder_top_space_holder = 2131230910;
-			
-			// aapt resource value: 0x7f0800b6
-			public const int viewpager = 2131230902;
-			
-			// aapt resource value: 0x7f08010b
-			public const int visible = 2131230987;
-			
-			// aapt resource value: 0x7f0800ef
-			public const int volume_item_container = 2131230959;
+			// aapt resource value: 0x7f0800ab
+			public const int volume_item_container = 2131230891;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -4152,9 +3660,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 0x7f0a000a
 			public const int hide_password_duration = 2131361802;
-			
-			// aapt resource value: 0x7f0a000d
-			public const int mb_default_shape_type = 2131361805;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int mr_controller_volume_group_list_animation_duration_ms = 2131361792;
@@ -4324,124 +3829,82 @@ namespace BlinkIDFormsSample.Droid
 			public const int design_text_input_password_icon = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int mb_activity_document_verification = 2130903080;
+			public const int mr_chooser_dialog = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int mb_activity_scan = 2130903081;
+			public const int mr_chooser_list_item = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int mb_camera_permission_overlay = 2130903082;
+			public const int mr_controller_material_dialog_b = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int mb_camera_splash = 2130903083;
+			public const int mr_controller_volume_item = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int mb_default_barcode_camera_overlay = 2130903084;
+			public const int mr_playback_control = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int mb_default_viewfinder = 2130903085;
+			public const int mr_volume_control = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int mb_overlay_segment_scan = 2130903086;
+			public const int notification_action = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int mb_overlay_segment_scan_below_roi = 2130903087;
+			public const int notification_action_tombstone = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int mb_overlay_segment_scan_content = 2130903088;
+			public const int notification_media_action = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int mb_page_element_blink_ocr = 2130903089;
+			public const int notification_media_cancel_action = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int mb_roi_overlay = 2130903090;
+			public const int notification_template_big_media = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int mb_segment_scan_result = 2130903091;
+			public const int notification_template_big_media_custom = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int mb_verification_document_camera_overlay = 2130903092;
+			public const int notification_template_big_media_narrow = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int mb_viewfinder_blink_ocr = 2130903093;
+			public const int notification_template_big_media_narrow_custom = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int mr_chooser_dialog = 2130903094;
+			public const int notification_template_custom_big = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int mr_chooser_list_item = 2130903095;
+			public const int notification_template_icon_group = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int mr_controller_material_dialog_b = 2130903096;
+			public const int notification_template_lines_media = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int mr_controller_volume_item = 2130903097;
+			public const int notification_template_media = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int mr_playback_control = 2130903098;
+			public const int notification_template_media_custom = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int mr_volume_control = 2130903099;
+			public const int notification_template_part_chronometer = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_action = 2130903100;
+			public const int notification_template_part_time = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_action_tombstone = 2130903101;
+			public const int select_dialog_item_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int notification_media_action = 2130903102;
+			public const int select_dialog_multichoice_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int notification_media_cancel_action = 2130903103;
+			public const int select_dialog_singlechoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int notification_template_big_media = 2130903104;
+			public const int support_simple_spinner_dropdown_item = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int notification_template_big_media_custom = 2130903105;
-			
-			// aapt resource value: 0x7f030042
-			public const int notification_template_big_media_narrow = 2130903106;
-			
-			// aapt resource value: 0x7f030043
-			public const int notification_template_big_media_narrow_custom = 2130903107;
-			
-			// aapt resource value: 0x7f030044
-			public const int notification_template_custom_big = 2130903108;
-			
-			// aapt resource value: 0x7f030045
-			public const int notification_template_icon_group = 2130903109;
-			
-			// aapt resource value: 0x7f030046
-			public const int notification_template_lines_media = 2130903110;
-			
-			// aapt resource value: 0x7f030047
-			public const int notification_template_media = 2130903111;
-			
-			// aapt resource value: 0x7f030048
-			public const int notification_template_media_custom = 2130903112;
-			
-			// aapt resource value: 0x7f030049
-			public const int notification_template_part_chronometer = 2130903113;
-			
-			// aapt resource value: 0x7f03004a
-			public const int notification_template_part_time = 2130903114;
-			
-			// aapt resource value: 0x7f03004b
-			public const int select_dialog_item_material = 2130903115;
-			
-			// aapt resource value: 0x7f03004c
-			public const int select_dialog_multichoice_material = 2130903116;
-			
-			// aapt resource value: 0x7f03004d
-			public const int select_dialog_singlechoice_material = 2130903117;
-			
-			// aapt resource value: 0x7f03004e
-			public const int support_simple_spinner_dropdown_item = 2130903118;
-			
-			// aapt resource value: 0x7f03004f
-			public const int tooltip = 2130903119;
+			public const int tooltip = 2130903105;
 			
 			static Layout()
 			{
@@ -4551,150 +4014,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 0x7f090035
 			public const int character_counter_pattern = 2131296309;
-			
-			// aapt resource value: 0x7f090040
-			public const int mb_action_torch = 2131296320;
-			
-			// aapt resource value: 0x7f090041
-			public const int mb_activity_title_step_back_side = 2131296321;
-			
-			// aapt resource value: 0x7f090042
-			public const int mb_activity_title_step_front_side = 2131296322;
-			
-			// aapt resource value: 0x7f090043
-			public const int mb_alert_title = 2131296323;
-			
-			// aapt resource value: 0x7f090044
-			public const int mb_align = 2131296324;
-			
-			// aapt resource value: 0x7f090045
-			public const int mb_align_barcode = 2131296325;
-			
-			// aapt resource value: 0x7f090046
-			public const int mb_align_ocr_line = 2131296326;
-			
-			// aapt resource value: 0x7f090047
-			public const int mb_autofocus_fail = 2131296327;
-			
-			// aapt resource value: 0x7f090048
-			public const int mb_camera_at_angle = 2131296328;
-			
-			// aapt resource value: 0x7f090049
-			public const int mb_camera_not_allowed = 2131296329;
-			
-			// aapt resource value: 0x7f09004a
-			public const int mb_camera_not_ready = 2131296330;
-			
-			// aapt resource value: 0x7f09003c
-			public const int mb_camera_permission_required = 2131296316;
-			
-			// aapt resource value: 0x7f09004b
-			public const int mb_camera_too_high = 2131296331;
-			
-			// aapt resource value: 0x7f09004c
-			public const int mb_camera_too_near = 2131296332;
-			
-			// aapt resource value: 0x7f09004d
-			public const int mb_cancel = 2131296333;
-			
-			// aapt resource value: 0x7f09004e
-			public const int mb_copied = 2131296334;
-			
-			// aapt resource value: 0x7f09004f
-			public const int mb_copy = 2131296335;
-			
-			// aapt resource value: 0x7f090050
-			public const int mb_custom_ui_forbidden = 2131296336;
-			
-			// aapt resource value: 0x7f090051
-			public const int mb_data_not_match_msg = 2131296337;
-			
-			// aapt resource value: 0x7f09003d
-			public const int mb_enable_camera = 2131296317;
-			
-			// aapt resource value: 0x7f09003e
-			public const int mb_enable_permission_help = 2131296318;
-			
-			// aapt resource value: 0x7f090052
-			public const int mb_error_initializing = 2131296338;
-			
-			// aapt resource value: 0x7f090053
-			public const int mb_feature_unsupported_android_version = 2131296339;
-			
-			// aapt resource value: 0x7f090054
-			public const int mb_feature_unsupported_autofocus = 2131296340;
-			
-			// aapt resource value: 0x7f090055
-			public const int mb_feature_unsupported_device = 2131296341;
-			
-			// aapt resource value: 0x7f090056
-			public const int mb_full_recognition = 2131296342;
-			
-			// aapt resource value: 0x7f090057
-			public const int mb_help = 2131296343;
-			
-			// aapt resource value: 0x7f090058
-			public const int mb_home = 2131296344;
-			
-			// aapt resource value: 0x7f090059
-			public const int mb_invalid_license = 2131296345;
-			
-			// aapt resource value: 0x7f09005a
-			public const int mb_light_off = 2131296346;
-			
-			// aapt resource value: 0x7f09005b
-			public const int mb_light_on = 2131296347;
-			
-			// aapt resource value: 0x7f09005c
-			public const int mb_loading = 2131296348;
-			
-			// aapt resource value: 0x7f09005d
-			public const int mb_no_recognition = 2131296349;
-			
-			// aapt resource value: 0x7f09005e
-			public const int mb_ocr_line_help_message = 2131296350;
-			
-			// aapt resource value: 0x7f09005f
-			public const int mb_ok = 2131296351;
-			
-			// aapt resource value: 0x7f090060
-			public const int mb_partial_detected = 2131296352;
-			
-			// aapt resource value: 0x7f090061
-			public const int mb_partial_recognition = 2131296353;
-			
-			// aapt resource value: 0x7f090062
-			public const int mb_processing = 2131296354;
-			
-			// aapt resource value: 0x7f090063
-			public const int mb_result_list = 2131296355;
-			
-			// aapt resource value: 0x7f090064
-			public const int mb_scan_again = 2131296356;
-			
-			// aapt resource value: 0x7f090065
-			public const int mb_skip = 2131296357;
-			
-			// aapt resource value: 0x7f090066
-			public const int mb_splash_msg_id_back = 2131296358;
-			
-			// aapt resource value: 0x7f090067
-			public const int mb_splash_msg_id_front = 2131296359;
-			
-			// aapt resource value: 0x7f090068
-			public const int mb_tooltip_back_id = 2131296360;
-			
-			// aapt resource value: 0x7f090069
-			public const int mb_tooltip_front_id = 2131296361;
-			
-			// aapt resource value: 0x7f09006a
-			public const int mb_tooltip_glare = 2131296362;
-			
-			// aapt resource value: 0x7f09006b
-			public const int mb_use = 2131296363;
-			
-			// aapt resource value: 0x7f09003f
-			public const int mb_warning_title = 2131296319;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;
@@ -6821,22 +6140,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 3
 			public const int AppCompatTheme_windowNoTitle = 3;
 			
-			public static int[] AspectRatioFrameLayout = new int[] {
-					2130772339};
-			
-			// aapt resource value: 0
-			public const int AspectRatioFrameLayout_mb_aspectRatio = 0;
-			
-			public static int[] BaseCameraView = new int[] {
-					2130772340,
-					2130772341};
-			
-			// aapt resource value: 1
-			public const int BaseCameraView_mb_aspectMode = 1;
-			
-			// aapt resource value: 0
-			public const int BaseCameraView_mb_initialOrientation = 0;
-			
 			public static int[] BottomNavigationView = new int[] {
 					2130772030,
 					2130772291,
@@ -6878,22 +6181,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 0
 			public const int ButtonBarLayout_allowStacking = 0;
-			
-			public static int[] CameraViewGroup = new int[] {
-					2130772342,
-					2130772343};
-			
-			// aapt resource value: 0
-			public const int CameraViewGroup_mb_animateRotation = 0;
-			
-			// aapt resource value: 1
-			public const int CameraViewGroup_mb_animationDuration = 1;
-			
-			public static int[] CameraViewGroup_LayoutParams = new int[] {
-					2130772344};
-			
-			// aapt resource value: 0
-			public const int CameraViewGroup_LayoutParams_mb_rotatable = 0;
 			
 			public static int[] CardView = new int[] {
 					16843071,
@@ -8150,32 +7437,6 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 1
 			public const int ViewStubCompat_android_layout = 1;
-			
-			public static int[] ViewfinderShapeView = new int[] {
-					2130772345,
-					2130772346,
-					2130772347,
-					2130772348,
-					2130772349,
-					2130772350};
-			
-			// aapt resource value: 2
-			public const int ViewfinderShapeView_mb_borderColor = 2;
-			
-			// aapt resource value: 3
-			public const int ViewfinderShapeView_mb_borderWidth = 3;
-			
-			// aapt resource value: 4
-			public const int ViewfinderShapeView_mb_cornerRadius = 4;
-			
-			// aapt resource value: 0
-			public const int ViewfinderShapeView_mb_innerColor = 0;
-			
-			// aapt resource value: 1
-			public const int ViewfinderShapeView_mb_outerColor = 1;
-			
-			// aapt resource value: 5
-			public const int ViewfinderShapeView_mb_shapeType = 5;
 			
 			static Styleable()
 			{

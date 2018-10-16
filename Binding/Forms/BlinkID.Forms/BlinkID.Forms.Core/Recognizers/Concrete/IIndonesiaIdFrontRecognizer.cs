@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Indonesian ID Front Recognizer.
-    /// 
-    /// Indonesian ID Front recognizer is used for scanning front side of Indonesian ID.
+    /// Recognizer which can scan front side of Indonesian national ID cards.
     /// </summary>
     public interface IIndonesiaIdFrontRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address should be extracted from Indonesian ID
+        /// Defines if address of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,7 +25,7 @@
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if blood type should be extracted from Indonesian ID
+        /// Defines if blood type of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -36,7 +34,7 @@
         bool ExtractBloodType { get; set; }
         
         /// <summary>
-        /// Defines if citizenship should be extracted from Indonesian ID
+        /// Defines if citizenship of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -45,16 +43,25 @@
         bool ExtractCitizenship { get; set; }
         
         /// <summary>
-        ///  Defines if city of Indonesian ID owner should be extracted
+        /// Defines if city of Indonesian ID owner should be extracted.
         /// 
-        ///   
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractCity { get; set; }
         
         /// <summary>
-        /// Defines if district should be extracted from Indonesian ID
+        /// Defines if date of expiry of Indonesian ID card should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if district of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -63,7 +70,7 @@
         bool ExtractDistrict { get; set; }
         
         /// <summary>
-        /// Defines if keldesa should be extracted from Indonesian ID
+        /// Defines if Kel/Desa of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -72,7 +79,7 @@
         bool ExtractKelDesa { get; set; }
         
         /// <summary>
-        /// Defines if marital status should be extracted from Indonesian ID
+        /// Defines if marital status of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -81,7 +88,7 @@
         bool ExtractMaritalStatus { get; set; }
         
         /// <summary>
-        /// Defines if name of Indonesian ID owner should be extracted
+        /// Defines if name of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -90,7 +97,7 @@
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if occupation should be extracted from Indonesian ID
+        /// Defines if occupation of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -99,7 +106,7 @@
         bool ExtractOccupation { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of Indonesian ID owner should be extracted
+        /// Defines if place of birth of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -108,7 +115,7 @@
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if religion should be extracted from Indonesian ID
+        /// Defines if religion of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -117,7 +124,7 @@
         bool ExtractReligion { get; set; }
         
         /// <summary>
-        /// Defines if rt should be extracted from Indonesian ID
+        /// Defines if RT number of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -126,7 +133,7 @@
         bool ExtractRt { get; set; }
         
         /// <summary>
-        /// Defines if rw should be extracted from Indonesian ID
+        /// Defines if RW number of Indonesian ID owner should be extracted.
         /// 
         ///  
         ///
@@ -135,13 +142,34 @@
         bool ExtractRw { get; set; }
         
         /// <summary>
-        /// Defines if valid until should be extracted from Indonesian ID
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
         ///  
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to '250'
         /// </summary>
-        bool ExtractValidUntil { get; set; }
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -170,6 +198,16 @@
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -183,42 +221,47 @@
     public interface IIndonesiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Indonesian ID owner. 
+        /// The address of the front side of the Indonesia Id owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The blood type of the Indonesian ID owner. 
+        /// The blood Type of the front side of the Indonesia Id owner. 
         /// </summary>
         string BloodType { get; }
         
         /// <summary>
-        /// The occupation of the Indonesian ID owner. 
+        /// The citizenship of the front side of the Indonesia Id owner. 
         /// </summary>
         string Citizenship { get; }
         
         /// <summary>
-        /// The city of the Indonesian ID owner. 
+        /// The city of the front side of the Indonesia Id owner. 
         /// </summary>
         string City { get; }
         
         /// <summary>
-        /// The date of birth of Indonesian ID owner 
+        /// The date Of Birth of the front side of the Indonesia Id owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The district of the Indonesian ID owner. 
+        /// The date Of Expiry of the front side of the Indonesia Id owner. 
+        /// </summary>
+        IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// The date Of Expiry Permanent of the front side of the Indonesia Id owner. 
+        /// </summary>
+        bool DateOfExpiryPermanent { get; }
+        
+        /// <summary>
+        /// The district of the front side of the Indonesia Id owner. 
         /// </summary>
         string District { get; }
         
         /// <summary>
-        /// The document classifier of Indonesian ID 
-        /// </summary>
-        string DocumentClassifier { get; }
-        
-        /// <summary>
-        /// The document number of the Indonesian ID owner. 
+        /// The document Number of the front side of the Indonesia Id owner. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -233,52 +276,52 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The kel desa of the Indonesian ID owner. 
+        /// The kel Desa of the front side of the Indonesia Id owner. 
         /// </summary>
         string KelDesa { get; }
         
         /// <summary>
-        /// The marital status of the Indonesian ID owner. 
+        /// The marital Status of the front side of the Indonesia Id owner. 
         /// </summary>
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The name of the Indonesian ID owner. 
+        /// The name of the front side of the Indonesia Id owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The occupation of the Indonesian ID owner. 
+        /// The occupation of the front side of the Indonesia Id owner. 
         /// </summary>
         string Occupation { get; }
         
         /// <summary>
-        /// The place of birth of the Indonesian ID owner. 
+        /// The place Of Birth of the front side of the Indonesia Id owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// The province of the Indonesian ID owner. 
+        /// The province of the front side of the Indonesia Id owner. 
         /// </summary>
         string Province { get; }
         
         /// <summary>
-        /// The religion of the Indonesian ID owner. 
+        /// The religion of the front side of the Indonesia Id owner. 
         /// </summary>
         string Religion { get; }
         
         /// <summary>
-        /// The rt of the Indonesian ID owner. 
+        /// The rt of the front side of the Indonesia Id owner. 
         /// </summary>
         string Rt { get; }
         
         /// <summary>
-        /// The rw of the Indonesian ID owner. 
+        /// The rw of the front side of the Indonesia Id owner. 
         /// </summary>
         string Rw { get; }
         
         /// <summary>
-        /// The sex of the Indonesian ID owner. 
+        /// The sex of the front side of the Indonesia Id owner. 
         /// </summary>
         string Sex { get; }
         
@@ -286,16 +329,6 @@
         /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
-        
-        /// <summary>
-        /// The document date of expiry of the Indonesian ID 
-        /// </summary>
-        IDate ValidUntil { get; }
-        
-        /// <summary>
-        /// Check if date of expiry is permanent on the Indonesian ID. 
-        /// </summary>
-        bool ValidUntilPermanent { get; }
         
     }
 }

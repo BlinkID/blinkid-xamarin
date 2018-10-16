@@ -28,6 +28,16 @@
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
         /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
         /// 
         /// Use only if necessary because it slows down the recognition process
