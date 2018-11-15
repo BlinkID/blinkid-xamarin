@@ -1,17 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer used for scanning the front side of elite credit/debit cards.
+    /// Recognizer which can scan back side of German DL cards.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizer : IRecognizer
+    public interface IGermanyDlBackRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Should anonymize the owner area (redact image pixels) on the document image result 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool AnonymizeOwner { get; set; }
         
         /// <summary>
         /// Defines whether glare detector is enabled. 
@@ -19,13 +12,6 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Should extract the card owner information 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractOwner { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -52,23 +38,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IElitePaymentCardFrontRecognizerResult Result { get; }
+        IGermanyDlBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IElitePaymentCardFrontRecognizer.
+    /// Result object for IGermanyDlBackRecognizer.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizerResult : IRecognizerResult {
+    public interface IGermanyDlBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The date of issue for B category of German DL card. 
+        /// </summary>
+        IDate DateOfIssueB10 { get; }
+        
+        /// <summary>
+        /// The date of issue for B category of German DL card is not specified. 
+        /// </summary>
+        bool DateOfIssueB10NotSpecified { get; }
         
         /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
-        
-        /// <summary>
-        /// Information about the payment card owner (name, company, etc.). 
-        /// </summary>
-        string Owner { get; }
         
     }
 }

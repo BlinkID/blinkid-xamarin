@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Singaporean national ID card.
+    /// Recognizer which can scan front side of Mexican voter id.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizer : IRecognizer
+    public interface IMexicoVoterIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,39 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if country/place of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if address of Mexico Voter ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractCountryOfBirth { get; set; }
+        bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if CURP of Mexico Voter ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
+        bool ExtractCurp { get; set; }
         
         /// <summary>
-        /// Defines if name of Singaporean ID card owner should be extracted. 
+        /// Defines if full name of Mexico Voter ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractName { get; set; }
-        
-        /// <summary>
-        /// Defines if race of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractRace { get; set; }
-        
-        /// <summary>
-        /// Defines if sex of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSex { get; set; }
+        bool ExtractFullName { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -83,27 +69,51 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
+        /// <summary>
+        /// Defines whether signature image will be available in result. 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for signature image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISingaporeIdFrontRecognizerResult Result { get; }
+        IMexicoVoterIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISingaporeIdFrontRecognizer.
+    /// Result object for IMexicoVoterIdFrontRecognizer.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizerResult : IRecognizerResult {
+    public interface IMexicoVoterIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The country/place of birth of the Singaporean ID card owner. 
+        /// The address of Mexico Voter ID owner. 
         /// </summary>
-        string CountryOfBirth { get; }
+        string Address { get; }
         
         /// <summary>
-        /// The date of birth of the Singaporean ID card owner. 
+        /// The CURP of Mexico Voter ID owner. 
+        /// </summary>
+        string Curp { get; }
+        
+        /// <summary>
+        /// The date of birth of Mexico Voter ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The elector key of Mexico Voter ID owner. 
+        /// </summary>
+        string ElectorKey { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -116,24 +126,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity card number of the Singaporean ID card. 
+        /// The full name of Mexico Voter ID owner. 
         /// </summary>
-        string IdentityCardNumber { get; }
+        string FullName { get; }
         
         /// <summary>
-        /// The name of the Singaporean ID card owner. 
-        /// </summary>
-        string Name { get; }
-        
-        /// <summary>
-        /// The race of the Singaporean ID card owner. 
-        /// </summary>
-        string Race { get; }
-        
-        /// <summary>
-        /// The sex of the Singaporean ID card owner. 
+        /// The sex of Mexico Voter ID owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// Signature image from the document 
+        /// </summary>
+        Xamarin.Forms.ImageSource SignatureImage { get; }
         
     }
 }

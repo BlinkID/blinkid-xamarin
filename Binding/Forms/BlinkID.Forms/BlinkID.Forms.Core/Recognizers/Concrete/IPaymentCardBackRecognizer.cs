@@ -7,47 +7,42 @@
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Should anonymize the CVV area (redact image pixels) on the document image result 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AnonymizeCvv { get; set; }
+        
+        /// <summary>
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Should extract the card's inventory number
-        /// 
-        ///  
+        /// Should extract the card's inventory number 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractInventoryNumber { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -71,7 +66,7 @@
         string Cvv { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

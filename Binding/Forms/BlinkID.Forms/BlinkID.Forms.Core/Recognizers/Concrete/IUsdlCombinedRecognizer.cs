@@ -29,6 +29,12 @@
         uint FullDocumentImageDpi { get; set; }
 
         /// <summary>
+        /// Gets or sets the extension factors for full document image.
+        /// Default value is <c>[0.0, 0.0, 0.0, 0.0]</c>
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
         /// Gets or sets the minimum number of stable detections required for detection to be successful.
         /// Default value is <c>6</c>
         /// </summary>

@@ -1,66 +1,80 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Swiss ID Front Recognizer.
-    /// 
-    /// Swiss ID Front recognizer is used for scanning front side of Swiss ID.
+    /// Recognizer which can scan front side of Switzerland ID.
     /// </summary>
     public interface ISwitzerlandIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's first name should be extracted from Swiss ID
-        /// 
-        ///  
+        /// Defines if given name of Switzerland ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractGivenName { get; set; }
         
         /// <summary>
-        /// Defines if owner's last name should be extracted from Swiss ID
-        /// 
-        ///  
+        /// Defines if surname of Switzerland ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Sets whether signature image from ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether signature image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for signature image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
         
 
         /// <summary>
@@ -75,32 +89,32 @@
     public interface ISwitzerlandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Swiss ID owner. 
+        /// The date of birth of Switzerland ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The first name of the Swiss ID owner. 
+        /// The given name of Switzerland ID owner. 
         /// </summary>
         string GivenName { get; }
         
         /// <summary>
-        /// image of the signature if enabled with returnSignatureImage property. 
+        /// Signature image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The last name of the Swiss ID owner. 
+        /// The surname of Switzerland ID owner. 
         /// </summary>
         string Surname { get; }
         

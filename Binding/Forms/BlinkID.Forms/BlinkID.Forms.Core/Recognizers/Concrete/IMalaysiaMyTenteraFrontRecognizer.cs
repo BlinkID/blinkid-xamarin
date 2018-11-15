@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Singaporean national ID card.
+    /// Recognizer which can scan front side of Malaysian MyTentera cards.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizer : IRecognizer
+    public interface IMalaysiaMyTenteraFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,39 +14,18 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if country/place of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if full name and address of Malaysian MyTentera owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractCountryOfBirth { get; set; }
+        bool ExtractFullNameAndAddress { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Singaporean ID card owner should be extracted. 
+        /// Defines if religion of Malaysian MyTentera owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if name of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractName { get; set; }
-        
-        /// <summary>
-        /// Defines if race of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractRace { get; set; }
-        
-        /// <summary>
-        /// Defines if sex of Singaporean ID card owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSex { get; set; }
+        bool ExtractReligion { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -87,23 +66,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISingaporeIdFrontRecognizerResult Result { get; }
+        IMalaysiaMyTenteraFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISingaporeIdFrontRecognizer.
+    /// Result object for IMalaysiaMyTenteraFrontRecognizer.
     /// </summary>
-    public interface ISingaporeIdFrontRecognizerResult : IRecognizerResult {
+    public interface IMalaysiaMyTenteraFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The country/place of birth of the Singaporean ID card owner. 
+        /// The army number of Malaysian MyTentera owner. 
         /// </summary>
-        string CountryOfBirth { get; }
+        string ArmyNumber { get; }
         
         /// <summary>
-        /// The date of birth of the Singaporean ID card owner. 
+        /// The birth date of Malaysian MyTentera owner. 
         /// </summary>
-        IDate DateOfBirth { get; }
+        IDate BirthDate { get; }
+        
+        /// <summary>
+        /// The city of Malaysian MyTentera owner. 
+        /// </summary>
+        string City { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -111,29 +95,49 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The address of Malaysian MyTentera owner. 
+        /// </summary>
+        string FullAddress { get; }
+        
+        /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity card number of the Singaporean ID card. 
+        /// The full name of Malaysian MyTentera owner. 
         /// </summary>
-        string IdentityCardNumber { get; }
+        string FullName { get; }
         
         /// <summary>
-        /// The name of the Singaporean ID card owner. 
+        /// The nric of Malaysian MyTentera. 
         /// </summary>
-        string Name { get; }
+        string Nric { get; }
         
         /// <summary>
-        /// The race of the Singaporean ID card owner. 
+        /// The state of Malaysian MyTentera owner. 
         /// </summary>
-        string Race { get; }
+        string OwnerState { get; }
         
         /// <summary>
-        /// The sex of the Singaporean ID card owner. 
+        /// The religion of Malaysian MyTentera owner. 
+        /// </summary>
+        string Religion { get; }
+        
+        /// <summary>
+        /// The sex of Malaysian MyTentera owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// The street of Malaysian MyTentera owner. 
+        /// </summary>
+        string Street { get; }
+        
+        /// <summary>
+        /// The zipcode of Malaysian MyTentera owner. 
+        /// </summary>
+        string Zipcode { get; }
         
     }
 }
