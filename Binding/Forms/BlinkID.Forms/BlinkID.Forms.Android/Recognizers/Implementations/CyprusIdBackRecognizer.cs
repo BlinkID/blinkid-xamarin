@@ -27,6 +27,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
+        public bool ExtractExpiresOn 
+        { 
+            get => nativeRecognizer.ShouldExtractExpiresOn(); 
+            set => nativeRecognizer.SetExtractExpiresOn(value);
+        }
+        
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ShouldExtractSex(); 
@@ -62,6 +68,7 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate ExpiresOn => nativeResult.ExpiresOn.Date != null ? new Date(nativeResult.ExpiresOn.Date) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Sex => nativeResult.Sex;
     }

@@ -8,13 +8,19 @@ namespace Microblink.Forms.Droid.Overlays
 {
     public abstract class OverlaySettings : IOverlaySettings
     {
-        public UISettings NativeUISettings { get; }
+        private readonly UISettings _nativeUISEttings;
+
+        public virtual UISettings NativeUISettings { 
+            get {
+                return _nativeUISEttings;
+            }
+        }
 
         public IRecognizerCollection RecognizerCollection { get; }
 
         protected OverlaySettings(UISettings nativeUISettings, IRecognizerCollection recognizerCollection)
         {
-            NativeUISettings = nativeUISettings;
+            _nativeUISEttings = nativeUISettings;
             RecognizerCollection = recognizerCollection;
         }
     }

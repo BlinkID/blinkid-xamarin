@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SwitzerlandIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MexicoVoterIdFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class SwitzerlandIdFrontRecognizer : Recognizer, ISwitzerlandIdFrontRecognizer
+    public sealed class MexicoVoterIdFrontRecognizer : Recognizer, IMexicoVoterIdFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer nativeRecognizer;
 
-        SwitzerlandIdFrontRecognizerResult result;
+        MexicoVoterIdFrontRecognizerResult result;
 
-        public SwitzerlandIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer())
+        public MexicoVoterIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer;
-            result = new SwitzerlandIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer;
+            result = new MexicoVoterIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ISwitzerlandIdFrontRecognizerResult Result => result;
+        public IMexicoVoterIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,16 +27,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractGivenName 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ShouldExtractGivenName(); 
-            set => nativeRecognizer.SetExtractGivenName(value);
+            get => nativeRecognizer.ShouldExtractAddress(); 
+            set => nativeRecognizer.SetExtractAddress(value);
         }
         
-        public bool ExtractSurname 
+        public bool ExtractCurp 
         { 
-            get => nativeRecognizer.ShouldExtractSurname(); 
-            set => nativeRecognizer.SetExtractSurname(value);
+            get => nativeRecognizer.ShouldExtractCurp(); 
+            set => nativeRecognizer.SetExtractCurp(value);
+        }
+        
+        public bool ExtractFullName 
+        { 
+            get => nativeRecognizer.ShouldExtractFullName(); 
+            set => nativeRecognizer.SetExtractFullName(value);
         }
         
         public uint FaceImageDpi 
@@ -83,19 +89,22 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class SwitzerlandIdFrontRecognizerResult : RecognizerResult, ISwitzerlandIdFrontRecognizerResult
+    public sealed class MexicoVoterIdFrontRecognizerResult : RecognizerResult, IMexicoVoterIdFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer.Result nativeResult;
 
-        internal SwitzerlandIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Switzerland.SwitzerlandIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal MexicoVoterIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Mexico.MexicoVoterIdFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string Address => nativeResult.Address;
+        public string Curp => nativeResult.Curp;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public string ElectorKey => nativeResult.ElectorKey;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string GivenName => nativeResult.GivenName;
+        public string FullName => nativeResult.FullName;
+        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
-        public string Surname => nativeResult.Surname;
     }
 }
