@@ -15,13 +15,13 @@
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <PackageId>BlinkID.Android.Binding</PackageId>
-    <PackageVersion>4.3.0</PackageVersion>
+    <PackageVersion>4.4.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated to BlinkID Android SDK v4.3.0: 
+    <PackageReleaseNotes>Updated to BlinkID Android SDK v4.4.0: 
 
-https://github.com/BlinkID/blinkid-android/releases/tag/v4.3.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-android/releases/tag/v4.4.0</PackageReleaseNotes>
     <Summary>A small, but powerful ID scanning library - native Android SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - native Android SDK binding package.</Description>
