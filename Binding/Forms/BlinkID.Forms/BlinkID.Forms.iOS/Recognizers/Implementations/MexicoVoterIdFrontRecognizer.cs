@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(GermanyIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MexicoVoterIdFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class GermanyIdFrontRecognizer : Recognizer, IGermanyIdFrontRecognizer
+    public sealed class MexicoVoterIdFrontRecognizer : Recognizer, IMexicoVoterIdFrontRecognizer
     {
-        MBGermanyIdFrontRecognizer nativeRecognizer;
+        MBMexicoVoterIdFrontRecognizer nativeRecognizer;
 
-        GermanyIdFrontRecognizerResult result;
+        MexicoVoterIdFrontRecognizerResult result;
 
-        public GermanyIdFrontRecognizer() : base(new MBGermanyIdFrontRecognizer())
+        public MexicoVoterIdFrontRecognizer() : base(new MBMexicoVoterIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBGermanyIdFrontRecognizer;
-            result = new GermanyIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBMexicoVoterIdFrontRecognizer;
+            result = new MexicoVoterIdFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IGermanyIdFrontRecognizerResult Result => result;
+        public IMexicoVoterIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,46 +27,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractCanNumber 
+        public bool ExtractAddress 
         { 
-            get => nativeRecognizer.ExtractCanNumber; 
-            set => nativeRecognizer.ExtractCanNumber = value;
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
         }
         
-        public bool ExtractDateOfExpiry 
+        public bool ExtractCurp 
         { 
-            get => nativeRecognizer.ExtractDateOfExpiry; 
-            set => nativeRecognizer.ExtractDateOfExpiry = value;
+            get => nativeRecognizer.ExtractCurp; 
+            set => nativeRecognizer.ExtractCurp = value;
         }
         
-        public bool ExtractDocumentNumber 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ExtractDocumentNumber; 
-            set => nativeRecognizer.ExtractDocumentNumber = value;
-        }
-        
-        public bool ExtractGivenNames 
-        { 
-            get => nativeRecognizer.ExtractGivenNames; 
-            set => nativeRecognizer.ExtractGivenNames = value;
-        }
-        
-        public bool ExtractNationality 
-        { 
-            get => nativeRecognizer.ExtractNationality; 
-            set => nativeRecognizer.ExtractNationality = value;
-        }
-        
-        public bool ExtractPlaceOfBirth 
-        { 
-            get => nativeRecognizer.ExtractPlaceOfBirth; 
-            set => nativeRecognizer.ExtractPlaceOfBirth = value;
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ExtractSurname; 
-            set => nativeRecognizer.ExtractSurname = value;
+            get => nativeRecognizer.ExtractFullName; 
+            set => nativeRecognizer.ExtractFullName = value;
         }
         
         public uint FaceImageDpi 
@@ -113,24 +89,22 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class GermanyIdFrontRecognizerResult : RecognizerResult, IGermanyIdFrontRecognizerResult
+    public sealed class MexicoVoterIdFrontRecognizerResult : RecognizerResult, IMexicoVoterIdFrontRecognizerResult
     {
-        MBGermanyIdFrontRecognizerResult nativeResult;
+        MBMexicoVoterIdFrontRecognizerResult nativeResult;
 
-        internal GermanyIdFrontRecognizerResult(MBGermanyIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal MexicoVoterIdFrontRecognizerResult(MBMexicoVoterIdFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string CanNumber => nativeResult.CanNumber;
+        public string Address => nativeResult.Address;
+        public string Curp => nativeResult.Curp;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public string ElectorKey => nativeResult.ElectorKey;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string GivenNames => nativeResult.GivenNames;
-        public string Nationality => nativeResult.Nationality;
-        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string FullName => nativeResult.FullName;
+        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
-        public string Surname => nativeResult.Surname;
     }
 }

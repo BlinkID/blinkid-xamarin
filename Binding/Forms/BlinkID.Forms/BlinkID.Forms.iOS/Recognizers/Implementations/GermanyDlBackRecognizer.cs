@@ -1,42 +1,30 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PaymentCardBackRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(GermanyDlBackRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class PaymentCardBackRecognizer : Recognizer, IPaymentCardBackRecognizer
+    public sealed class GermanyDlBackRecognizer : Recognizer, IGermanyDlBackRecognizer
     {
-        MBPaymentCardBackRecognizer nativeRecognizer;
+        MBGermanyDlBackRecognizer nativeRecognizer;
 
-        PaymentCardBackRecognizerResult result;
+        GermanyDlBackRecognizerResult result;
 
-        public PaymentCardBackRecognizer() : base(new MBPaymentCardBackRecognizer())
+        public GermanyDlBackRecognizer() : base(new MBGermanyDlBackRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBPaymentCardBackRecognizer;
-            result = new PaymentCardBackRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBGermanyDlBackRecognizer;
+            result = new GermanyDlBackRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPaymentCardBackRecognizerResult Result => result;
+        public IGermanyDlBackRecognizerResult Result => result;
 
-        
-        public bool AnonymizeCvv 
-        { 
-            get => nativeRecognizer.AnonymizeCvv; 
-            set => nativeRecognizer.AnonymizeCvv = value;
-        }
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
-        }
-        
-        public bool ExtractInventoryNumber 
-        { 
-            get => nativeRecognizer.ExtractInventoryNumber; 
-            set => nativeRecognizer.ExtractInventoryNumber = value;
         }
         
         public uint FullDocumentImageDpi 
@@ -59,16 +47,16 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class PaymentCardBackRecognizerResult : RecognizerResult, IPaymentCardBackRecognizerResult
+    public sealed class GermanyDlBackRecognizerResult : RecognizerResult, IGermanyDlBackRecognizerResult
     {
-        MBPaymentCardBackRecognizerResult nativeResult;
+        MBGermanyDlBackRecognizerResult nativeResult;
 
-        internal PaymentCardBackRecognizerResult(MBPaymentCardBackRecognizerResult nativeResult) : base(nativeResult)
+        internal GermanyDlBackRecognizerResult(MBGermanyDlBackRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string Cvv => nativeResult.Cvv;
+        public IDate DateOfIssueB10 => nativeResult.DateOfIssueB10 != null ? new Date(nativeResult.DateOfIssueB10) : null;
+        public bool DateOfIssueB10NotSpecified => nativeResult.DateOfIssueB10NotSpecified;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string InventoryNumber => nativeResult.InventoryNumber;
     }
 }
