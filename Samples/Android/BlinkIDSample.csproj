@@ -87,7 +87,8 @@
     </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>packages\BlinkID.Android.Binding.4.3.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.Android.Binding.4.4.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
