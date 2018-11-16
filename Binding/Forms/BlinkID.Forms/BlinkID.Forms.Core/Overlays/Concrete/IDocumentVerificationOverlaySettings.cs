@@ -19,6 +19,11 @@ namespace Microblink.Forms.Core.Overlays
         /// </summary>
         string SecondSideSplashMessage { get; set; }
         /// <summary>
+        /// Splash message that is shown after scanning the document.
+        /// If null, default value will be used.
+        /// </summary>
+        string ScanningDoneSplashMessage { get; set; }
+        /// <summary>
         /// User instructions that are shown above camera preview while the first side of the document is being scanned.
         /// If null, default value will be used.
         /// </summary>
