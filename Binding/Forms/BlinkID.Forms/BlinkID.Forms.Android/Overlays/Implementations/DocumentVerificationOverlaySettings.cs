@@ -42,6 +42,8 @@ namespace Microblink.Forms.Droid.Overlays.Implementations
 
         public string GlareMessage { get; set; }
 
+        public string ScanningDoneSplashMessage { get; set; }
+
         public DocumentVerificationOverlaySettings(IRecognizerCollection recognizerCollection)
             : base(new DocumentVerificationUISettings((recognizerCollection as RecognizerCollection).NativeRecognizerBundle), recognizerCollection)
         {}
