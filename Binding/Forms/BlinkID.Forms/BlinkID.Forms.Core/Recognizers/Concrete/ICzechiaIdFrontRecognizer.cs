@@ -1,84 +1,107 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer which can scan front side of czech national ID cards.
+    /// Class for configuring Cz ID Front Recognizer.
     /// 
+    /// Cz ID Front recognizer is used for scanning front side of Cz ID.
     /// </summary>
     public interface ICzechiaIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// {true} if the date of birth is being extracted, {false} otherwise. 
+        /// Defines if date of expiry should be extracted from Czech ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// {true} if the date of expiry is being extracted, {false} otherwise. 
+        /// Defines if date of expiry should be extracted from Czech ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// {true} if the date of issue is being extracted, {false} otherwise. 
+        /// Defines if date of issue should be extracted from Czech ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// {true} if the given names is being extracted, {false} otherwise. 
+        /// Defines if given names of Czech ID owner should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractGivenNames { get; set; }
         
         /// <summary>
-        /// {true} if the place of birth is being extracted, {false} otherwise. 
+        /// Defines if place of birth should be extracted from Czech ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// {true} if the sex is being extracted, {false} otherwise. 
+        ///  Defines if sex of Czech ID owner should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// {true} if the surname is being extracted, {false} otherwise. 
+        /// Defines if surname of Czech ID owner should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -97,22 +120,22 @@
     public interface ICzechiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of Czech ID owner 
+        /// The date of birth of the Czech ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of Czech ID 
+        /// The date of expiry of the Czech ID owner. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of Czech ID 
+        /// The date of issue of the Czech ID owner. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -122,12 +145,12 @@
         string FirstName { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity card number of Czech ID. 
+        /// The ID card number of the Czech ID. 
         /// </summary>
         string IdentityCardNumber { get; }
         
@@ -137,17 +160,17 @@
         string LastName { get; }
         
         /// <summary>
-        /// The place of birth of Czech ID owner. 
+        /// The place of birth of the Czech ID owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// Sex of the Czech ID owner. 
+        /// The sex of the Czech ID owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
