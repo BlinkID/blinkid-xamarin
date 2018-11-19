@@ -90,7 +90,7 @@
       <HintPath>packages\PInvoke.NCrypt.0.5.155\lib\portable-net45+win8+wpa81\PInvoke.NCrypt.dll</HintPath>
     </Reference>
     <Reference Include="iOSBinding">
-      <HintPath>packages\BlinkID.iOS.Binding.4.3.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.iOS.Binding.4.4.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
