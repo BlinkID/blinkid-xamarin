@@ -25,6 +25,11 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool ReturnFaceImage { get => nativeRecognizer.ShouldReturnFaceImage(); set => nativeRecognizer.SetReturnFaceImage(value); }
         public uint FullDocumentImageDpi { get => (uint)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = (int)value; }
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ShouldReturnFullDocumentImage(); set => nativeRecognizer.SetReturnFullDocumentImage(value); }
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
         public uint NumStableDetectionsThreshold 
         { 
             get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 

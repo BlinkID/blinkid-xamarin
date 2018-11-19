@@ -16,6 +16,15 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
+        /// Defines if the expiry date of Cryprus ID card should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractExpiresOn { get; set; }
+        
+        /// <summary>
         /// Defines if sex of Cyprus ID card owner should be extracted.
         /// 
         ///  
@@ -69,6 +78,11 @@
         /// The date Of Birth of the back side of the Cyprus Id owner. 
         /// </summary>
         IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The expiry date of Cyprus ID card. 
+        /// </summary>
+        IDate ExpiresOn { get; }
         
         /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 

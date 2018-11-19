@@ -27,6 +27,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractExpiresOn 
+        { 
+            get => nativeRecognizer.ExtractExpiresOn; 
+            set => nativeRecognizer.ExtractExpiresOn = value;
+        }
+        
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ExtractSex; 
@@ -62,6 +68,7 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate ExpiresOn => nativeResult.ExpiresOn != null ? new Date(nativeResult.ExpiresOn) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string Sex => nativeResult.Sex;
     }

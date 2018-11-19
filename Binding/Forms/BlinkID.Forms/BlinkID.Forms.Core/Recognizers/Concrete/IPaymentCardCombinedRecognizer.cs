@@ -7,6 +7,33 @@
     {
         
         /// <summary>
+        /// Should anonymize the card number area (redact image pixels) on the document image result
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AnonymizeCardNumber { get; set; }
+        
+        /// <summary>
+        /// Should anonymize the CVV area (redact image pixels) on the document image result
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AnonymizeCvv { get; set; }
+        
+        /// <summary>
+        /// Should anonymize the owner area (redact image pixels) on the document image result
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AnonymizeOwner { get; set; }
+        
+        /// <summary>
         /// Defines if glare detection should be turned on/off.
         /// 
         ///  

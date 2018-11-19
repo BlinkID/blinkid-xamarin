@@ -69,6 +69,18 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSurname = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
             get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
@@ -93,6 +105,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
     public sealed class GermanyIdFrontRecognizerResult : RecognizerResult, IGermanyIdFrontRecognizerResult
@@ -108,11 +126,11 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
-        public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string LastName => nativeResult.LastName;
+        public string GivenNames => nativeResult.GivenNames;
         public string Nationality => nativeResult.Nationality;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
+        public string Surname => nativeResult.Surname;
     }
 }

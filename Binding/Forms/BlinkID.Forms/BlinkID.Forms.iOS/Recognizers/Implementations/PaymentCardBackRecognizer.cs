@@ -21,6 +21,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public IPaymentCardBackRecognizerResult Result => result;
 
         
+        public bool AnonymizeCvv 
+        { 
+            get => nativeRecognizer.AnonymizeCvv; 
+            set => nativeRecognizer.AnonymizeCvv = value;
+        }
+        
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 

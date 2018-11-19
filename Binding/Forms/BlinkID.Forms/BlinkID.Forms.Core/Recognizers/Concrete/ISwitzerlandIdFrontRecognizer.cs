@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Swiss ID Front Recognizer.
-    /// 
-    /// Swiss ID Front recognizer is used for scanning front side of Swiss ID.
+    /// Recognizer which can scan front side of Switzerland ID.
     /// </summary>
     public interface ISwitzerlandIdFrontRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's first name should be extracted from Swiss ID
+        /// Defines if given name of Switzerland ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,13 +25,43 @@
         bool ExtractGivenName { get; set; }
         
         /// <summary>
-        /// Defines if owner's last name should be extracted from Swiss ID
+        /// Defines if surname of Switzerland ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -62,6 +90,16 @@
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -75,7 +113,7 @@
     public interface ISwitzerlandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Swiss ID owner. 
+        /// The date of birth of Switzerland ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
@@ -90,7 +128,7 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The first name of the Swiss ID owner. 
+        /// The given name of Switzerland ID owner. 
         /// </summary>
         string GivenName { get; }
         
@@ -100,7 +138,7 @@
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The last name of the Swiss ID owner. 
+        /// The surname of Switzerland ID owner. 
         /// </summary>
         string Surname { get; }
         

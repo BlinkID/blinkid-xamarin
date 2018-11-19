@@ -1,11 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring My Tentera Recognizer.
-    /// 
-    /// My Tentera recognizer is used for scanning My Tentera.
+    /// Recognizer which can scan front side of Malaysian MyTentera cards.
     /// </summary>
-    public interface IMyTenteraRecognizer : IRecognizer
+    public interface IMalaysiaMyTenteraFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if full name and address should be extracted from MyTentera
+        /// Defines if full name and address of Malaysian MyTentera owner should be extracted.
         /// 
         ///  
         ///
@@ -27,13 +25,23 @@
         bool ExtractFullNameAndAddress { get; set; }
         
         /// <summary>
-        /// Defines if religion should be extracted from MyTentera
+        /// Defines if religion of Malaysian MyTentera owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractReligion { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -44,6 +52,16 @@
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -67,18 +85,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMyTenteraRecognizerResult Result { get; }
+        IMalaysiaMyTenteraFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMyTenteraRecognizer.
+    /// Result object for IMalaysiaMyTenteraFrontRecognizer.
     /// </summary>
-    public interface IMyTenteraRecognizerResult : IRecognizerResult {
+    public interface IMalaysiaMyTenteraFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Owner army number 
+        /// The army number of Malaysian MyTentera owner. 
         /// </summary>
         string ArmyNumber { get; }
+        
+        /// <summary>
+        /// The birth date of Malaysian MyTentera owner. 
+        /// </summary>
+        IDate BirthDate { get; }
+        
+        /// <summary>
+        /// The city of Malaysian MyTentera owner. 
+        /// </summary>
+        string City { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
@@ -86,61 +114,49 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The address of Malaysian MyTentera owner. 
+        /// </summary>
+        string FullAddress { get; }
+        
+        /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// NRIC number (National Registration Identity Card Number)
-        /// 
-        ///  @see https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_.28NRIC.29 
+        /// The full name of Malaysian MyTentera owner. 
         /// </summary>
-        string NricNumber { get; }
+        string FullName { get; }
         
         /// <summary>
-        /// Owner address 
+        /// The nric of Malaysian MyTentera. 
         /// </summary>
-        string OwnerAddress { get; }
+        string Nric { get; }
         
         /// <summary>
-        /// Owner address city. Determined from owner address. 
+        /// The state of Malaysian MyTentera owner. 
         /// </summary>
-        string OwnerAddressCity { get; }
+        string OwnerState { get; }
         
         /// <summary>
-        /// Owner address state. Determined from owner address. 
+        /// The religion of Malaysian MyTentera owner. 
         /// </summary>
-        string OwnerAddressState { get; }
+        string Religion { get; }
         
         /// <summary>
-        /// Owner street. Determined from owner address. 
+        /// The sex of Malaysian MyTentera owner. 
         /// </summary>
-        string OwnerAddressStreet { get; }
+        string Sex { get; }
         
         /// <summary>
-        /// Owner address Zip code. Determined from owner address. 
+        /// The street of Malaysian MyTentera owner. 
         /// </summary>
-        string OwnerAddressZipCode { get; }
+        string Street { get; }
         
         /// <summary>
-        /// Owner birth date converted in NSDate object 
+        /// The zipcode of Malaysian MyTentera owner. 
         /// </summary>
-        IDate OwnerBirthDate { get; }
-        
-        /// <summary>
-        /// Owner full name 
-        /// </summary>
-        string OwnerFullName { get; }
-        
-        /// <summary>
-        /// Owner religion if written on MyKad 
-        /// </summary>
-        string OwnerReligion { get; }
-        
-        /// <summary>
-        /// Owner sex (M for male, F for female) 
-        /// </summary>
-        string OwnerSex { get; }
+        string Zipcode { get; }
         
     }
 }

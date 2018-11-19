@@ -39,6 +39,24 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSurname = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -55,6 +73,12 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ReturnSignatureImage; 
             set => nativeRecognizer.ReturnSignatureImage = value;
+        }
+        
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
         }
         
     }

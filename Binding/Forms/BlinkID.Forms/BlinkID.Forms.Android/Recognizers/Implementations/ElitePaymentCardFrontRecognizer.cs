@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IElitePaymentCardFrontRecognizerResult Result => result;
 
         
+        public bool AnonymizeOwner 
+        { 
+            get => nativeRecognizer.AnonymizeOwner; 
+            set => nativeRecognizer.AnonymizeOwner = value;
+        }
+        
         public bool DetectGlare 
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
