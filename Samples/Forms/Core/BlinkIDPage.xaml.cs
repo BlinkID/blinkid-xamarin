@@ -68,7 +68,7 @@ namespace BlinkIDApp
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4oIhH4ywlU8/Zqc2tpXY3x6Jq4MYktFtYaRbzI3x0Qxrr0NeFEjL6qt8Qcz144x2F5LGg1bHXgkRXbt37saoFv1HJUiJ50Y4YHglH8SqhyfSzsT/C/vQEAKXgZBQuNeeCTY6RttMciEbHHHj7nybEz9+aOoBXfx0+XXx3cU4L6Wbmf/5EAXokQXtEkL3mCR8VC/51ohQVyRIgItohusasIcfe8B+UjUMCZU9v1B0bvHcUKZH6g==";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4oIhH4ywlU8/Yec+tmXafEP9XS/lrPJymjFA8VAEF9R6hNvVYpQtZwoEdbwLmz+QwTlvNCz/A2nEvEcWZ/fvDH7qVM6egGH9DYlyz8IvzpJeOYWq6gHTPKikt05J5JNW1P8/3+gB0pQgSl+u5Knr7kl3gT7pLdq7HPIFugeQ/O/U+UBCKpcWA7zxjskjVDnNLpUiMbmjeu3LOtnEFxBZ0EdKBSWuFSUg9kOKDVeU/3xc0Pebrsw=";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
