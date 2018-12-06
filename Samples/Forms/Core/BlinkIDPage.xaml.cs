@@ -75,32 +75,6 @@ namespace BlinkIDApp
             // to construct implementation of IMicroblinkScanner with given license key
             blinkID = microblinkFactory.CreateMicroblinkScanner(licenseKey);
 
-            // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
-
-            // the following code creates and sets up implementation of MrtdRecognizer
-            mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>();
-            mrtdRecognizer.ReturnFullDocumentImage = true;
-
-            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
-            // so we need to use factory to avoid DependencyService's limitations
-            mrtdSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(mrtdRecognizer);
-
-            // the following code creates and sets up implementation of UsdlRecognizer
-            usdlRecognizer = DependencyService.Get<IUsdlRecognizer>();
-
-            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
-            // so we need to use factory to avoid DependencyService's limitations
-            usdlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(usdlRecognizer);
-
-            // the following code creates and sets up implementation of EudlRecognizer
-            eudlRecognizer = DependencyService.Get<IEudlRecognizer>();
-            eudlRecognizer.ReturnFaceImage = true;
-            eudlRecognizer.ReturnFullDocumentImage = true;
-
-            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
-            // so we need to use factory to avoid DependencyService's limitations
-            eudlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>().CreateSuccessFrameGrabberRecognizer(eudlRecognizer);
-
             // subscribe to scanning done message
             MessagingCenter.Subscribe<Messages.ScanningDoneMessage> (this, Messages.ScanningDoneMessageId, (sender) => {
                 ImageSource faceImageSource = null;
@@ -186,6 +160,7 @@ namespace BlinkIDApp
                 });
 
             });
+
         }
 
         /// <summary>
@@ -195,6 +170,31 @@ namespace BlinkIDApp
         /// <param name="e">E.</param>
         void StartScan (object sender, EventArgs e)
         {
+            // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
+            // the following code creates and sets up implementation of MrtdRecognizer
+            mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>(DependencyFetchTarget.NewInstance);
+            mrtdRecognizer.ReturnFullDocumentImage = true;
+
+            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
+            // so we need to use factory to avoid DependencyService's limitations
+            mrtdSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(mrtdRecognizer);
+
+            // the following code creates and sets up implementation of UsdlRecognizer
+            usdlRecognizer = DependencyService.Get<IUsdlRecognizer>(DependencyFetchTarget.NewInstance);
+
+            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
+            // so we need to use factory to avoid DependencyService's limitations
+            usdlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(usdlRecognizer);
+
+            // the following code creates and sets up implementation of EudlRecognizer
+            eudlRecognizer = DependencyService.Get<IEudlRecognizer>(DependencyFetchTarget.NewInstance);
+            eudlRecognizer.ReturnFaceImage = true;
+            eudlRecognizer.ReturnFullDocumentImage = true;
+
+            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
+            // so we need to use factory to avoid DependencyService's limitations
+            eudlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(eudlRecognizer);
+
             // first create a recognizer collection from all recognizers that you want to use in recognition
             // if some recognizer is wrapped with SuccessFrameGrabberRecognizer, then you should use only the wrapped one
             var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdSuccessFrameGrabberRecognizer, usdlSuccessFrameGrabberRecognizer, eudlSuccessFrameGrabberRecognizer);
