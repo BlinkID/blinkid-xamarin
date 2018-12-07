@@ -36,11 +36,6 @@ namespace iOS
 
             // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
             MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDF2B9jpa6FeAwsjTWd4K1QG/1bOeWcBZtZsMM42oxx85/gYlzG5zwSpGi/YVcrAmSeU8wKIsT0PJ4SHV+oDEfTT/fA/MyVHT8WEAhbz1pAA3kNdR4s/qWit0esDuJxZq/TSML6zeBA7gnHNJ/Rqq5A06yl/66QZ94yWoN44NpbO3TTnT57IlRChZJ496Fn414x/Li5KwREYrkjjN90ZovChgbS53+zyPYOgzvfHDZ97sYlIbGq0=");
-
-            mrtdRecognizer = new MBMrtdRecognizer();
-            usdlRecognizer = new MBUsdlRecognizer();
-            eudlRecognizer = new MBEudlRecognizer();
-
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -51,6 +46,10 @@ namespace iOS
 
 		partial void StartScanningButton_TouchUpInside (UIButton sender)
 		{
+            mrtdRecognizer = new MBMrtdRecognizer();
+            usdlRecognizer = new MBUsdlRecognizer();
+            eudlRecognizer = new MBEudlRecognizer();
+
             // create a collection of recognizers that will be used for scanning
             var recognizerCollection = new MBRecognizerCollection(new MBRecognizer[] { mrtdRecognizer, eudlRecognizer, usdlRecognizer });
 
