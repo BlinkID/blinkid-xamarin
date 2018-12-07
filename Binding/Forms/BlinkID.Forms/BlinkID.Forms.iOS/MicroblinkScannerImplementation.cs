@@ -12,11 +12,14 @@ namespace Microblink.Forms.iOS
     {
         // ensure RecognizerRunnerVC does not get GC-ed while it is required for ObjC code
         IMBRecognizerRunnerViewController recognizerRunnerViewController;
+        // ensure OverlaySettings don't get GC-ed while they are required for ObjC code
+        IOverlaySettings overlaySettings;
 
         public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
             MBMicroblinkSDK.SharedInstance.ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
             if (licensee == null) 
+
             {
                 MBMicroblinkSDK.SharedInstance.SetLicenseKey(licenseKey);
             }
@@ -28,6 +31,7 @@ namespace Microblink.Forms.iOS
 
         public void Scan(IOverlaySettings overlaySettings)
         {
+            this.overlaySettings = overlaySettings;
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = window.RootViewController;
 
