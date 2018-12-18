@@ -39,6 +39,24 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
+        }
+        
+        public uint MrzImageDpi 
+        { 
+            get => (uint)nativeRecognizer.MrzImageDpi; 
+            set => nativeRecognizer.MrzImageDpi = value;
+        }
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
@@ -49,12 +67,6 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ReturnMrzImage; 
             set => nativeRecognizer.ReturnMrzImage = value;
-        }
-        
-        public uint SaveImageDPI 
-        { 
-            get => (uint)nativeRecognizer.SaveImageDPI; 
-            set => nativeRecognizer.SaveImageDPI = value;
         }
         
     }

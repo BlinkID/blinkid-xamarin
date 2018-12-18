@@ -45,12 +45,6 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractCvv 
-        { 
-            get => nativeRecognizer.ExtractCvv; 
-            set => nativeRecognizer.ExtractCvv = value;
-        }
-        
         public bool ExtractInventoryNumber 
         { 
             get => nativeRecognizer.ExtractInventoryNumber; 

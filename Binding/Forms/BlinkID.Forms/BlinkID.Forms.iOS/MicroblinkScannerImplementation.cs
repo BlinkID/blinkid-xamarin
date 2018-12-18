@@ -19,7 +19,6 @@ namespace Microblink.Forms.iOS
         {
             MBMicroblinkSDK.SharedInstance.ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
             if (licensee == null) 
-
             {
                 MBMicroblinkSDK.SharedInstance.SetLicenseKey(licenseKey);
             }

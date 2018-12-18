@@ -1,30 +1,48 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(CyprusIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(CyprusOldIdFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class CyprusIdFrontRecognizer : Recognizer, ICyprusIdFrontRecognizer
+    public sealed class CyprusOldIdFrontRecognizer : Recognizer, ICyprusOldIdFrontRecognizer
     {
-        MBCyprusIdFrontRecognizer nativeRecognizer;
+        MBCyprusOldIdFrontRecognizer nativeRecognizer;
 
-        CyprusIdFrontRecognizerResult result;
+        CyprusOldIdFrontRecognizerResult result;
 
-        public CyprusIdFrontRecognizer() : base(new MBCyprusIdFrontRecognizer())
+        public CyprusOldIdFrontRecognizer() : base(new MBCyprusOldIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBCyprusIdFrontRecognizer;
-            result = new CyprusIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBCyprusOldIdFrontRecognizer;
+            result = new CyprusOldIdFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ICyprusIdFrontRecognizerResult Result => result;
+        public ICyprusOldIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
+        }
+        
+        public bool ExtractDocumentNumber 
+        { 
+            get => nativeRecognizer.ExtractDocumentNumber; 
+            set => nativeRecognizer.ExtractDocumentNumber = value;
+        }
+        
+        public bool ExtractName 
+        { 
+            get => nativeRecognizer.ExtractName; 
+            set => nativeRecognizer.ExtractName = value;
+        }
+        
+        public bool ExtractSurname 
+        { 
+            get => nativeRecognizer.ExtractSurname; 
+            set => nativeRecognizer.ExtractSurname = value;
         }
         
         public uint FaceImageDpi 
@@ -57,31 +75,21 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
-        public bool ReturnSignatureImage 
-        { 
-            get => nativeRecognizer.ReturnSignatureImage; 
-            set => nativeRecognizer.ReturnSignatureImage = value;
-        }
-        
-        public uint SignatureImageDpi 
-        { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
-            set => nativeRecognizer.SignatureImageDpi = value;
-        }
-        
     }
 
-    public sealed class CyprusIdFrontRecognizerResult : RecognizerResult, ICyprusIdFrontRecognizerResult
+    public sealed class CyprusOldIdFrontRecognizerResult : RecognizerResult, ICyprusOldIdFrontRecognizerResult
     {
-        MBCyprusIdFrontRecognizerResult nativeResult;
+        MBCyprusOldIdFrontRecognizerResult nativeResult;
 
-        internal CyprusIdFrontRecognizerResult(MBCyprusIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal CyprusOldIdFrontRecognizerResult(MBCyprusOldIdFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string IdNumber => nativeResult.IdNumber;
-        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
+        public string Name => nativeResult.Name;
+        public string Surname => nativeResult.Surname;
     }
 }

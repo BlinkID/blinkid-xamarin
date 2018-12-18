@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MyKadBackRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MalaysiaMyKadBackRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class MyKadBackRecognizer : Recognizer, IMyKadBackRecognizer
+    public sealed class MalaysiaMyKadBackRecognizer : Recognizer, IMalaysiaMyKadBackRecognizer
     {
-        MBMyKadBackRecognizer nativeRecognizer;
+        MBMalaysiaMyKadBackRecognizer nativeRecognizer;
 
-        MyKadBackRecognizerResult result;
+        MalaysiaMyKadBackRecognizerResult result;
 
-        public MyKadBackRecognizer() : base(new MBMyKadBackRecognizer())
+        public MalaysiaMyKadBackRecognizer() : base(new MBMalaysiaMyKadBackRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBMyKadBackRecognizer;
-            result = new MyKadBackRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBMalaysiaMyKadBackRecognizer;
+            result = new MalaysiaMyKadBackRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IMyKadBackRecognizerResult Result => result;
+        public IMalaysiaMyKadBackRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -65,11 +65,11 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class MyKadBackRecognizerResult : RecognizerResult, IMyKadBackRecognizerResult
+    public sealed class MalaysiaMyKadBackRecognizerResult : RecognizerResult, IMalaysiaMyKadBackRecognizerResult
     {
-        MBMyKadBackRecognizerResult nativeResult;
+        MBMalaysiaMyKadBackRecognizerResult nativeResult;
 
-        internal MyKadBackRecognizerResult(MBMyKadBackRecognizerResult nativeResult) : base(nativeResult)
+        internal MalaysiaMyKadBackRecognizerResult(MBMalaysiaMyKadBackRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
