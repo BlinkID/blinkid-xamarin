@@ -1,30 +1,48 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(CyprusIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(CyprusOldIdFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class CyprusIdFrontRecognizer : Recognizer, ICyprusIdFrontRecognizer
+    public sealed class CyprusOldIdFrontRecognizer : Recognizer, ICyprusOldIdFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer nativeRecognizer;
 
-        CyprusIdFrontRecognizerResult result;
+        CyprusOldIdFrontRecognizerResult result;
 
-        public CyprusIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer())
+        public CyprusOldIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer;
-            result = new CyprusIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer;
+            result = new CyprusOldIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ICyprusIdFrontRecognizerResult Result => result;
+        public ICyprusOldIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
             set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
+        public bool ExtractDocumentNumber 
+        { 
+            get => nativeRecognizer.ShouldExtractDocumentNumber(); 
+            set => nativeRecognizer.SetExtractDocumentNumber(value);
+        }
+        
+        public bool ExtractName 
+        { 
+            get => nativeRecognizer.ShouldExtractName(); 
+            set => nativeRecognizer.SetExtractName(value);
+        }
+        
+        public bool ExtractSurname 
+        { 
+            get => nativeRecognizer.ShouldExtractSurname(); 
+            set => nativeRecognizer.SetExtractSurname(value);
         }
         
         public uint FaceImageDpi 
@@ -57,31 +75,21 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
-        public bool ReturnSignatureImage 
-        { 
-            get => nativeRecognizer.ShouldReturnSignatureImage(); 
-            set => nativeRecognizer.SetReturnSignatureImage(value);
-        }
-        
-        public uint SignatureImageDpi 
-        { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
-            set => nativeRecognizer.SignatureImageDpi = (int)value;
-        }
-        
     }
 
-    public sealed class CyprusIdFrontRecognizerResult : RecognizerResult, ICyprusIdFrontRecognizerResult
+    public sealed class CyprusOldIdFrontRecognizerResult : RecognizerResult, ICyprusOldIdFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer.Result nativeResult;
 
-        internal CyprusIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal CyprusOldIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Cyprus.CyprusOldIdFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string IdNumber => nativeResult.IdNumber;
-        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
+        public string Name => nativeResult.Name;
+        public string Surname => nativeResult.Surname;
     }
 }

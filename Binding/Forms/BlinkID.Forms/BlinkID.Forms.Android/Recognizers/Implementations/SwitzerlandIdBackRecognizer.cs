@@ -63,6 +63,18 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractSex(value);
         }
         
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ShouldReturnFullDocumentImage(); 
@@ -80,25 +92,12 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Authority => nativeResult.Authority;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Height => nativeResult.Height;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public IDate NonMrzDateOfExpiry => nativeResult.NonMrzDateOfExpiry != null ? new Date(nativeResult.NonMrzDateOfExpiry) : null;
-        public string NonMrzSex => nativeResult.NonMrzSex;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PlaceOfOrigin => nativeResult.PlaceOfOrigin;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
         public string Sex => nativeResult.Sex;
     }
 }

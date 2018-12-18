@@ -45,12 +45,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractCvv 
-        { 
-            get => nativeRecognizer.ShouldExtractCvv(); 
-            set => nativeRecognizer.SetExtractCvv(value);
-        }
-        
         public bool ExtractInventoryNumber 
         { 
             get => nativeRecognizer.ShouldExtractInventoryNumber(); 

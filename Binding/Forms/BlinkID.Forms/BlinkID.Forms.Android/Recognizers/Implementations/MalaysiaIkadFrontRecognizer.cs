@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(IkadRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MalaysiaIkadFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class IkadRecognizer : Recognizer, IIkadRecognizer
+    public sealed class MalaysiaIkadFrontRecognizer : Recognizer, IMalaysiaIkadFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer nativeRecognizer;
 
-        IkadRecognizerResult result;
+        MalaysiaIkadFrontRecognizerResult result;
 
-        public IkadRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer())
+        public MalaysiaIkadFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer;
-            result = new IkadRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer;
+            result = new MalaysiaIkadFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IIkadRecognizerResult Result => result;
+        public IMalaysiaIkadFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -33,22 +33,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractAddress(value);
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
+            set => nativeRecognizer.SetExtractDateOfExpiry(value);
+        }
+        
         public bool ExtractEmployer 
         { 
             get => nativeRecognizer.ShouldExtractEmployer(); 
             set => nativeRecognizer.SetExtractEmployer(value);
         }
         
-        public bool ExtractExpiryDate 
-        { 
-            get => nativeRecognizer.ShouldExtractExpiryDate(); 
-            set => nativeRecognizer.SetExtractExpiryDate(value);
-        }
-        
         public bool ExtractFacultyAddress 
         { 
             get => nativeRecognizer.ShouldExtractFacultyAddress(); 
             set => nativeRecognizer.SetExtractFacultyAddress(value);
+        }
+        
+        public bool ExtractGender 
+        { 
+            get => nativeRecognizer.ShouldExtractGender(); 
+            set => nativeRecognizer.SetExtractGender(value);
+        }
+        
+        public bool ExtractName 
+        { 
+            get => nativeRecognizer.ShouldExtractName(); 
+            set => nativeRecognizer.SetExtractName(value);
         }
         
         public bool ExtractNationality 
@@ -69,16 +81,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractSector(value);
         }
         
-        public bool ExtractSex 
+        public uint FaceImageDpi 
         { 
-            get => nativeRecognizer.ShouldExtractSex(); 
-            set => nativeRecognizer.SetExtractSex(value);
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -95,25 +113,25 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class IkadRecognizerResult : RecognizerResult, IIkadRecognizerResult
+    public sealed class MalaysiaIkadFrontRecognizerResult : RecognizerResult, IMalaysiaIkadFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer.Result nativeResult;
 
-        internal IkadRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.IkadRecognizer.Result nativeResult) : base(nativeResult)
+        internal MalaysiaIkadFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaIkadFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public string Employer => nativeResult.Employer;
-        public IDate ExpiryDate => nativeResult.ExpiryDate != null ? new Date(nativeResult.ExpiryDate) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FacultyAddress => nativeResult.FacultyAddress;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
+        public string Gender => nativeResult.Gender;
         public string Name => nativeResult.Name;
         public string Nationality => nativeResult.Nationality;
         public string PassportNumber => nativeResult.PassportNumber;
         public string Sector => nativeResult.Sector;
-        public string Sex => nativeResult.Sex;
     }
 }

@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MyKadBackRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(MalaysiaMyKadBackRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class MyKadBackRecognizer : Recognizer, IMyKadBackRecognizer
+    public sealed class MalaysiaMyKadBackRecognizer : Recognizer, IMalaysiaMyKadBackRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer nativeRecognizer;
 
-        MyKadBackRecognizerResult result;
+        MalaysiaMyKadBackRecognizerResult result;
 
-        public MyKadBackRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer())
+        public MalaysiaMyKadBackRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer;
-            result = new MyKadBackRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer;
+            result = new MalaysiaMyKadBackRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IMyKadBackRecognizerResult Result => result;
+        public IMalaysiaMyKadBackRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -65,11 +65,11 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class MyKadBackRecognizerResult : RecognizerResult, IMyKadBackRecognizerResult
+    public sealed class MalaysiaMyKadBackRecognizerResult : RecognizerResult, IMalaysiaMyKadBackRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer.Result nativeResult;
 
-        internal MyKadBackRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MyKadBackRecognizer.Result nativeResult) : base(nativeResult)
+        internal MalaysiaMyKadBackRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Malaysia.MalaysiaMyKadBackRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
