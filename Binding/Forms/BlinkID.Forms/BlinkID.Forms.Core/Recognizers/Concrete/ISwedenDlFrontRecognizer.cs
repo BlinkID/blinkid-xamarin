@@ -1,98 +1,126 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer settings for reading front side of Sweden DL
+    /// Class for configuring Sweden Dl Front Recognizer.
     /// 
+    /// Sweden Dl Front recognizer is used for scanning front side of Sweden Dl.
     /// </summary>
     public interface ISwedenDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// True if date of birth of Sweden DL owner is being extracted 
+        /// Defines if owner's date of birth should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// True if date of expiry of Sweden DL is being extracted 
+        /// Defines if date of expiry should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// True if date of issue of Sweden DL is being extracted 
+        /// Defines if date of issue should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// True if issuing agency of Sweden DL is being extracted 
+        /// Defines if issuing agency should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAgency { get; set; }
         
         /// <summary>
-        /// True if licence categories of Sweden DL is being extracted 
+        /// Defines iflicence categories should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ExtractLicenceCategories { get; set; }
         
         /// <summary>
-        /// True if name of Sweden DL owner is being extracted 
+        /// Defines if owner's name should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// True if reference number of Sweden DL is being extracted 
+        /// Defines if reference number should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractReferenceNumber { get; set; }
         
         /// <summary>
-        /// True if surname of Sweden DL owner is being extracted 
+        /// Defines if owner's surname should be extracted from Sweden DL
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -111,62 +139,62 @@
     public interface ISwedenDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Date of birth of Sweden DL owner. 
+        /// The Date Of Birth of the Sweden DL owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// Date of expiry of Sweden DL. 
+        /// The Date Of Expiry of the Sweden DL. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Date of issue of Sweden DL. 
+        /// The Date Of Issue of the Sweden DL. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Issuing agency of Sweden DL card. 
+        /// The Issuing Agency of the Sweden DL. 
         /// </summary>
         string IssuingAgency { get; }
         
         /// <summary>
-        /// Licence categories of Sweden DL. 
+        /// The Licence Categories of the Sweden DL. 
         /// </summary>
         string LicenceCategories { get; }
         
         /// <summary>
-        /// The licence number of Sweden DL card owner. 
+        /// The Licence Numer of the Sweden DL. 
         /// </summary>
         string LicenceNumber { get; }
         
         /// <summary>
-        /// Name of Sweden DL owner. 
+        /// The Name of the Sweden DL owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// Reference number of Sweden DL card. 
+        /// The Reference Number of the Sweden DL. 
         /// </summary>
         string ReferenceNumber { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// Surname of Sweden DL owner. 
+        /// The Surname of the Sweden DL owner. 
         /// </summary>
         string Surname { get; }
         
