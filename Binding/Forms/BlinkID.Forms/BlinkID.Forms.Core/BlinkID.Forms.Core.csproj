@@ -4,12 +4,11 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>BlinkID.Forms.Core</PackageId>
-    <PackageVersion>4.4.0</PackageVersion>
+    <PackageVersion>4.5.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>- Updated for BlinkID Android and iOS SDKs v4.4.0
-- Added support for changing tooltip strings on DocumentVerificationOverlaySettings</PackageReleaseNotes>
+    <PackageReleaseNotes>- Updated for BlinkID Android and iOS SDKs v4.5.0</PackageReleaseNotes>
     <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Description>
@@ -21,6 +20,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
 </Project>
