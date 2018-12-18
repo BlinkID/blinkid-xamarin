@@ -1,17 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer used for scanning the front side of elite credit/debit cards.
+    /// Recognizer which can scan back side of old Cyprus national ID cards.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizer : IRecognizer
+    public interface ICyprusOldIdBackRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Should anonymize the owner area (redact image pixels) on the document image result 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool AnonymizeOwner { get; set; }
         
         /// <summary>
         /// Defines whether glare detector is enabled. 
@@ -21,11 +14,18 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Should extract the card owner information 
+        /// Defines if the expiry date of old Cryprus ID card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractOwner { get; set; }
+        bool ExtractExpiresOn { get; set; }
+        
+        /// <summary>
+        /// Defines if the sex of old Cyprus ID card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -52,13 +52,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IElitePaymentCardFrontRecognizerResult Result { get; }
+        ICyprusOldIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IElitePaymentCardFrontRecognizer.
+    /// Result object for ICyprusOldIdBackRecognizer.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizerResult : IRecognizerResult {
+    public interface ICyprusOldIdBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The date of birth of the old Cyprus ID card owner. 
+        /// </summary>
+        IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The expiry date of old Cyprus ID card. 
+        /// </summary>
+        IDate ExpiresOn { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -66,9 +76,9 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Information about the payment card owner (name, company, etc.). 
+        /// The sex of the old Cyprus ID card owner. 
         /// </summary>
-        string Owner { get; }
+        string Sex { get; }
         
     }
 }

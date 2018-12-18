@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Mexican voter id.
+    /// Recognizer which can scan front side of Malaysian MyKAS cards.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizer : IRecognizer
+    public interface IMalaysiaMyKasFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,25 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Mexico Voter ID owner should be extracted. 
+        /// Defines if full name and address of Malaysian MyKAS owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
+        bool ExtractFullNameAndAddress { get; set; }
         
         /// <summary>
-        /// Defines if CURP of Mexico Voter ID owner should be extracted. 
+        /// Defines if religion of Malaysian MyKAS owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractCurp { get; set; }
+        bool ExtractReligion { get; set; }
         
         /// <summary>
-        /// Defines if full name of Mexico Voter ID owner should be extracted. 
+        /// Defines if sex of Malaysian MyKAS owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractFullName { get; set; }
+        bool ExtractSex { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -69,51 +69,32 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMexicoVoterIdFrontRecognizerResult Result { get; }
+        IMalaysiaMyKasFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMexicoVoterIdFrontRecognizer.
+    /// Result object for IMalaysiaMyKasFrontRecognizer.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizerResult : IRecognizerResult {
+    public interface IMalaysiaMyKasFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of Mexico Voter ID owner. 
+        /// The birth date of Malaysian MyKAS owner. 
         /// </summary>
-        string Address { get; }
+        IDate BirthDate { get; }
         
         /// <summary>
-        /// The CURP of Mexico Voter ID owner. 
+        /// The city of Malaysian MyKAS owner. 
         /// </summary>
-        string Curp { get; }
+        string City { get; }
         
         /// <summary>
-        /// The date of birth of Mexico Voter ID owner. 
+        /// The date of expiry of Malaysian MyKAS. 
         /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The elector key of Mexico Voter ID owner. 
-        /// </summary>
-        string ElectorKey { get; }
+        IDate DateOfExpiry { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -121,24 +102,49 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The address of Malaysian MyKAS owner. 
+        /// </summary>
+        string FullAddress { get; }
+        
+        /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of Mexico Voter ID owner. 
+        /// The full name of Malaysian MyKAS owner. 
         /// </summary>
         string FullName { get; }
         
         /// <summary>
-        /// The sex of Mexico Voter ID owner. 
+        /// The nric of Malaysian MyKAS. 
+        /// </summary>
+        string Nric { get; }
+        
+        /// <summary>
+        /// The state of Malaysian MyKAS owner. 
+        /// </summary>
+        string OwnerState { get; }
+        
+        /// <summary>
+        /// The religion of Malaysian MyKAS owner. 
+        /// </summary>
+        string Religion { get; }
+        
+        /// <summary>
+        /// The sex of Malaysian MyKAS owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// The street of Malaysian MyKAS owner. 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string Street { get; }
+        
+        /// <summary>
+        /// The zipcode of Malaysian MyKAS owner. 
+        /// </summary>
+        string Zipcode { get; }
         
     }
 }

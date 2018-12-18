@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Austrian national DL cards.
+    /// Recognizer which can scan front side of Malaysia iKad card.
     /// </summary>
-    public interface IAustriaDlFrontRecognizer : IRecognizer
+    public interface IMalaysiaIkadFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,60 +14,67 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Austrian DL owner should be extracted. 
+        /// Defines if address of Malaysian iKad owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
+        bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Austrian DL should be extracted. 
+        /// Defines if date of expiry of Malaysian iKad card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Austrian DL should be extracted. 
+        /// Defines if employer of Malaysian iKad owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfIssue { get; set; }
+        bool ExtractEmployer { get; set; }
         
         /// <summary>
-        /// Defines if first name of Austrian DL owner should be extracted. 
+        /// Defines if address of faculty, in which Malaysian iKad owner currently studies, should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractFirstName { get; set; }
+        bool ExtractFacultyAddress { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority of Austrian DL should be extracted. 
+        /// Defines if gender of Malaysian iKad owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractIssuingAuthority { get; set; }
+        bool ExtractGender { get; set; }
         
         /// <summary>
-        /// Defines if name of Austrian DL owner should be extracted. 
+        /// Defines if (full) name of Malaysian iKad owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of Austrian DL owner should be extracted. 
+        /// Defines if nationality of Malaysian iKad owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractPlaceOfBirth { get; set; }
+        bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if vehicle categories of Austrian DL should be extracted. 
+        /// Defines if passport number of Malaysian iKad owners passport should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractVehicleCategories { get; set; }
+        bool ExtractPassportNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if sector in which  Malaysian iKad owner works should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSector { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -104,46 +111,37 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustriaDlFrontRecognizerResult Result { get; }
+        IMalaysiaIkadFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustriaDlFrontRecognizer.
+    /// Result object for IMalaysiaIkadFrontRecognizer.
     /// </summary>
-    public interface IAustriaDlFrontRecognizerResult : IRecognizerResult {
+    public interface IMalaysiaIkadFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Austrian DL owner. 
+        /// Address of Malaysian iKad owner. 
+        /// </summary>
+        string Address { get; }
+        
+        /// <summary>
+        /// The date of birth of Malaysian iKad owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Austrian DL. 
+        /// Date of expiry of Malaysian iKad card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of the Austrian DL. 
+        /// Employer of Malaysian iKad owner. 
         /// </summary>
-        IDate DateOfIssue { get; }
+        string Employer { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -151,9 +149,9 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Austrian DL owner. 
+        /// Faculty address in which Malaysian iKad owner currently studies. 
         /// </summary>
-        string FirstName { get; }
+        string FacultyAddress { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -161,34 +159,29 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issuing authority of the Austrian DL. 
+        /// Gender of Malaysian iKad owner. 
         /// </summary>
-        string IssuingAuthority { get; }
+        string Gender { get; }
         
         /// <summary>
-        /// The licence number of the Austrian DL. 
-        /// </summary>
-        string LicenceNumber { get; }
-        
-        /// <summary>
-        /// The name of the Austrian DL owner. 
+        /// The name of Malaysian iKad owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The place of birth of the Austrian DL owner. 
+        /// Nationality of Malaysian iKad owner. 
         /// </summary>
-        string PlaceOfBirth { get; }
+        string Nationality { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// The passport number of Malaysian iKad owners passport. 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string PassportNumber { get; }
         
         /// <summary>
-        /// The vehicle categories of the Austrian DL. 
+        /// Sector in which Malaysian iKad owner works. 
         /// </summary>
-        string VehicleCategories { get; }
+        string Sector { get; }
         
     }
 }

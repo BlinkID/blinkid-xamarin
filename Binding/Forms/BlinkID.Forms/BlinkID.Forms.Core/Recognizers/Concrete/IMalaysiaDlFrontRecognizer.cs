@@ -1,117 +1,90 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Malaysian DL cards.
+    /// Recognizer which can scan front side of Malaysia DL cards.
     /// </summary>
     public interface IMalaysiaDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Malaysian DL owner should be extracted.
-        /// 
-        ///  
+        /// Defines if address of Malaysia DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if vehicle classes of Malaysian DL should be extracted.
-        /// 
-        ///  
+        /// Defines if vehicle classes of Malaysia DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractClass { get; set; }
         
         /// <summary>
-        /// Defines if name of Malaysian DL owner should be extracted.
-        /// 
-        ///  
+        /// Defines if name of Malaysia DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if nationality of Malaysian DL owner should be extracted.
-        /// 
-        ///  
+        /// Defines if nationality of Malaysia DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Malaysian DL should be extracted.
-        /// 
-        ///  
+        /// Defines if date of issue of Malaysia DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidFrom { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Malaysian DL should be extracted.
-        /// 
-        ///  
+        /// Defines if date of expiry of Malaysia DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidUntil { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -130,67 +103,67 @@
     public interface IMalaysiaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The city of the front side of the Malaysia Dl owner. 
+        /// The city of Malaysia DL owner 
         /// </summary>
         string City { get; }
         
         /// <summary>
-        /// The dl Class of the front side of the Malaysia Dl owner. 
+        /// The vehicle classes of Malaysia DL 
         /// </summary>
         string DlClass { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The full Address of the front side of the Malaysia Dl owner. 
+        /// The address of Malaysia DL owner 
         /// </summary>
         string FullAddress { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The identity Number of the front side of the Malaysia Dl owner. 
+        /// The identity number of Malaysia DL owner 
         /// </summary>
         string IdentityNumber { get; }
         
         /// <summary>
-        /// The name of the front side of the Malaysia Dl owner. 
+        /// The name of Malaysia DL owner 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The nationality of the front side of the Malaysia Dl owner. 
+        /// The nationality of Malaysia DL owner 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The owner State of the front side of the Malaysia Dl owner. 
+        /// The state of Malaysia DL owner 
         /// </summary>
         string OwnerState { get; }
         
         /// <summary>
-        /// The street of the front side of the Malaysia Dl owner. 
+        /// The street of Malaysia DL owner 
         /// </summary>
         string Street { get; }
         
         /// <summary>
-        /// The valid From of the front side of the Malaysia Dl owner. 
+        /// The date of issue of Malaysia DL 
         /// </summary>
         IDate ValidFrom { get; }
         
         /// <summary>
-        /// The valid Until of the front side of the Malaysia Dl owner. 
+        /// The date of expiry of Malaysia DL 
         /// </summary>
         IDate ValidUntil { get; }
         
         /// <summary>
-        /// The zipcode of the front side of the Malaysia Dl owner. 
+        /// The zipocde of Malaysia DL owner 
         /// </summary>
         string Zipcode { get; }
         

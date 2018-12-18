@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Mexican voter id.
+    /// Recognizer which can scan front side of old Cyprus national ID cards.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizer : IRecognizer
+    public interface ICyprusOldIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,25 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Mexico Voter ID owner should be extracted. 
+        /// Defines if document number of old Cyprus ID card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
+        bool ExtractDocumentNumber { get; set; }
         
         /// <summary>
-        /// Defines if CURP of Mexico Voter ID owner should be extracted. 
+        /// Defines if name of old Cyprus ID card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractCurp { get; set; }
+        bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if full name of Mexico Voter ID owner should be extracted. 
+        /// Defines if surname of old Cyprus ID card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractFullName { get; set; }
+        bool ExtractSurname { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -69,51 +69,22 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMexicoVoterIdFrontRecognizerResult Result { get; }
+        ICyprusOldIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMexicoVoterIdFrontRecognizer.
+    /// Result object for ICyprusOldIdFrontRecognizer.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizerResult : IRecognizerResult {
+    public interface ICyprusOldIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of Mexico Voter ID owner. 
+        /// The document number of old Cyprus ID card. 
         /// </summary>
-        string Address { get; }
-        
-        /// <summary>
-        /// The CURP of Mexico Voter ID owner. 
-        /// </summary>
-        string Curp { get; }
-        
-        /// <summary>
-        /// The date of birth of Mexico Voter ID owner. 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The elector key of Mexico Voter ID owner. 
-        /// </summary>
-        string ElectorKey { get; }
+        string DocumentNumber { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -126,19 +97,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of Mexico Voter ID owner. 
+        /// The ID number of the old Cyprus ID card. 
         /// </summary>
-        string FullName { get; }
+        string IdNumber { get; }
         
         /// <summary>
-        /// The sex of Mexico Voter ID owner. 
+        /// The name of old Cyprus ID card owner. 
         /// </summary>
-        string Sex { get; }
+        string Name { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// The surname of old Cyprus ID card owner. 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string Surname { get; }
         
     }
 }
