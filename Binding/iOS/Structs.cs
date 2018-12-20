@@ -591,4 +591,11 @@ namespace Microblink
 		On,
 		Off
 	}
+
+	[Native]
+	public enum MBDocumentVerificationHighResImageState : ulong
+	{
+		FrontSide,
+		BackSideSide
+	}
 }

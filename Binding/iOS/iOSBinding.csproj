@@ -11,13 +11,13 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>4.4.0</PackageVersion>
+    <PackageVersion>4.5.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.4.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.5.0:
 
-https://github.com/BlinkID/blinkid-ios/releases/tag/v4.4.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-ios/releases/tag/v4.5.0</PackageReleaseNotes>
     <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
@@ -114,7 +114,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.4.0</PackageReleaseNotes>
     <BundleResource Include="MicroBlink.bundle\model_mrtd.zzip" />
     <BundleResource Include="MicroBlink.bundle\morocco_id_confusions.zzip" />
     <BundleResource Include="MicroBlink.bundle\morocco_places_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkCreditCardOcr_general_5.1.0.zzip" />
+    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkCreditCardOcr_general_5.2.0.zzip" />
     <BundleResource Include="MicroBlink.bundle\nn_model_BlinkIDOcr_general_5.2.0.zzip" />
     <BundleResource Include="MicroBlink.bundle\nn_model_BlinkInputOcr_general_5.1.0.zzip" />
     <BundleResource Include="MicroBlink.bundle\payment_card_confusions.zzip" />

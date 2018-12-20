@@ -1,7 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Cyprus national ID cards.
+    /// Recognizer which can scan back side of Cyprus ID cards.
     /// </summary>
     public interface ICyprusIdBackRecognizer : IRecognizer
     {
@@ -14,24 +14,6 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Defines if the expiry date of Cryprus ID card should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractExpiresOn { get; set; }
-        
-        /// <summary>
-        /// Defines if sex of Cyprus ID card owner should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSex { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -75,24 +57,14 @@
     public interface ICyprusIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date Of Birth of the back side of the Cyprus Id owner. 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The expiry date of Cyprus ID card. 
-        /// </summary>
-        IDate ExpiresOn { get; }
-        
-        /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The sex of the back side of the Cyprus Id owner. 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string Sex { get; }
+        IMrzResult MrzResult { get; }
         
     }
 }

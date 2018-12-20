@@ -69,10 +69,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractPassportNumber = value;
         }
         
-        public bool ExtractPlaceOfBirth 
+        public bool ExtractPlaceOfOrigin 
         { 
-            get => nativeRecognizer.ExtractPlaceOfBirth; 
-            set => nativeRecognizer.ExtractPlaceOfBirth = value;
+            get => nativeRecognizer.ExtractPlaceOfOrigin; 
+            set => nativeRecognizer.ExtractPlaceOfOrigin = value;
         }
         
         public bool ExtractSex 
@@ -85,6 +85,24 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ExtractSurname; 
             set => nativeRecognizer.ExtractSurname = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -113,26 +131,13 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string GivenName => nativeResult.GivenName;
         public string Height => nativeResult.Height;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.MrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.MrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public IDate NonMrzDateOfBirth => nativeResult.NonMrzDateOfBirth != null ? new Date(nativeResult.NonMrzDateOfBirth) : null;
-        public IDate NonMrzDateOfExpiry => nativeResult.NonMrzDateOfExpiry != null ? new Date(nativeResult.NonMrzDateOfExpiry) : null;
-        public string NonMrzSex => nativeResult.NonMrzSex;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PassportNumber => nativeResult.PassportNumber;
-        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
+        public string PlaceOfOrigin => nativeResult.PlaceOfOrigin;
         public string Sex => nativeResult.Sex;
         public string Surname => nativeResult.Surname;
     }

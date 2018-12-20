@@ -39,6 +39,24 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
+        
+        public uint MrzImageDpi 
+        { 
+            get => (uint)nativeRecognizer.MrzImageDpi; 
+            set => nativeRecognizer.MrzImageDpi = (int)value;
+        }
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ShouldReturnFullDocumentImage(); 
@@ -49,12 +67,6 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldReturnMrzImage(); 
             set => nativeRecognizer.SetReturnMrzImage(value);
-        }
-        
-        public uint SaveImageDPI 
-        { 
-            get => (uint)nativeRecognizer.SaveImageDPI; 
-            set => nativeRecognizer.SaveImageDPI = (int)value;
         }
         
     }

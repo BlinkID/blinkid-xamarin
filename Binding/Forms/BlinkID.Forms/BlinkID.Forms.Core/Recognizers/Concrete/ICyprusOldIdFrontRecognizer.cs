@@ -1,11 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Kad Back Recognizer.
-    /// 
-    /// MyKadBack recognizer is used for scanning back side of MyKad.
+    /// Recognizer which can scan front side of old Cyprus national ID cards.
     /// </summary>
-    public interface IMyKadBackRecognizer : IRecognizer
+    public interface ICyprusOldIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -18,13 +16,41 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if old NRIC should be extracted from back side of the MyKad
+        /// Defines if document number of old Cyprus ID card should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractOldNric { get; set; }
+        bool ExtractDocumentNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if name of old Cyprus ID card owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractName { get; set; }
+        
+        /// <summary>
+        /// Defines if surname of old Cyprus ID card owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -47,6 +73,15 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnFaceImage { get; set; }
+        
+        /// <summary>
         /// Sets whether full document image of ID card should be extracted.
         /// 
         ///  
@@ -55,46 +90,27 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Sets whether signature image from ID card should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// Property for setting DPI for signature images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMyKadBackRecognizerResult Result { get; }
+        ICyprusOldIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMyKadBackRecognizer.
+    /// Result object for ICyprusOldIdFrontRecognizer.
     /// </summary>
-    public interface IMyKadBackRecognizerResult : IRecognizerResult {
+    public interface ICyprusOldIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Date Of Birth of the MyKad owner. 
+        /// The document number of old Cyprus ID card. 
         /// </summary>
-        IDate DateOfBirth { get; }
+        string DocumentNumber { get; }
         
         /// <summary>
-        /// The Extended NRIC of the MyKad owner. 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
-        string ExtendedNric { get; }
+        Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 
@@ -102,24 +118,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The NRIC of the MyKad owner. 
+        /// The ID number of the old Cyprus ID card. 
         /// </summary>
-        string Nric { get; }
+        string IdNumber { get; }
         
         /// <summary>
-        /// The old NRIC of the MyKad owner. 
+        /// The name of old Cyprus ID card owner. 
         /// </summary>
-        string OldNric { get; }
+        string Name { get; }
         
         /// <summary>
-        /// The Sex of the MyKad owner. 
+        /// The surname of old Cyprus ID card owner. 
         /// </summary>
-        string Sex { get; }
-        
-        /// <summary>
-        /// image of the signature if enabled with returnSignatureImage property. 
-        /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string Surname { get; }
         
     }
 }

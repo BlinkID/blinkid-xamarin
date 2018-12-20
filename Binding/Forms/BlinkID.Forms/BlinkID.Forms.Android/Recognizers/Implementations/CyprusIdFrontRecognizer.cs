@@ -27,24 +27,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractDocumentNumber 
-        { 
-            get => nativeRecognizer.ShouldExtractDocumentNumber(); 
-            set => nativeRecognizer.SetExtractDocumentNumber(value);
-        }
-        
-        public bool ExtractName 
-        { 
-            get => nativeRecognizer.ShouldExtractName(); 
-            set => nativeRecognizer.SetExtractName(value);
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ShouldExtractSurname(); 
-            set => nativeRecognizer.SetExtractSurname(value);
-        }
-        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -75,6 +57,18 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
+        public bool ReturnSignatureImage 
+        { 
+            get => nativeRecognizer.ShouldReturnSignatureImage(); 
+            set => nativeRecognizer.SetReturnSignatureImage(value);
+        }
+        
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class CyprusIdFrontRecognizerResult : RecognizerResult, ICyprusIdFrontRecognizerResult
@@ -85,11 +79,9 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string IdNumber => nativeResult.IdNumber;
-        public string Name => nativeResult.Name;
-        public string Surname => nativeResult.Surname;
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
     }
 }

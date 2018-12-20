@@ -16,33 +16,6 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if document number of Cyprus ID card should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDocumentNumber { get; set; }
-        
-        /// <summary>
-        /// Defines if name of Cyprus ID card owner should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractName { get; set; }
-        
-        /// <summary>
-        /// Defines if surname of Cyprus ID card owner should be extracted.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractSurname { get; set; }
-        
-        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
@@ -90,6 +63,25 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
+        /// <summary>
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -103,11 +95,6 @@
     public interface ICyprusIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The document Number of the front side of the Cyprus Id owner. 
-        /// </summary>
-        string DocumentNumber { get; }
-        
-        /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
@@ -118,19 +105,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The id Number of the front side of the Cyprus Id owner. 
+        /// The ID number of Cyprus ID card. 
         /// </summary>
         string IdNumber { get; }
         
         /// <summary>
-        /// The name of the front side of the Cyprus Id owner. 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
-        string Name { get; }
-        
-        /// <summary>
-        /// The surname of the front side of the Cyprus Id owner. 
-        /// </summary>
-        string Surname { get; }
+        Xamarin.Forms.ImageSource SignatureImage { get; }
         
     }
 }

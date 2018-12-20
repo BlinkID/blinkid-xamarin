@@ -34,15 +34,6 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Should extract the card's security code/value
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractCvv { get; set; }
-        
-        /// <summary>
         /// Should extract the card's inventory number
         /// 
         ///  

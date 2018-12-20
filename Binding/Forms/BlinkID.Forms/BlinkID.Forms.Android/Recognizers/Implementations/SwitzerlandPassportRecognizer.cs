@@ -69,10 +69,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractPassportNumber(value);
         }
         
-        public bool ExtractPlaceOfBirth 
+        public bool ExtractPlaceOfOrigin 
         { 
-            get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
-            set => nativeRecognizer.SetExtractPlaceOfBirth(value);
+            get => nativeRecognizer.ShouldExtractPlaceOfOrigin(); 
+            set => nativeRecognizer.SetExtractPlaceOfOrigin(value);
         }
         
         public bool ExtractSex 
@@ -85,6 +85,24 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldExtractSurname(); 
             set => nativeRecognizer.SetExtractSurname(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -110,29 +128,16 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Authority => nativeResult.Authority;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string GivenName => nativeResult.GivenName;
         public string Height => nativeResult.Height;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public IDate NonMrzDateOfBirth => nativeResult.NonMrzDateOfBirth != null ? new Date(nativeResult.NonMrzDateOfBirth) : null;
-        public IDate NonMrzDateOfExpiry => nativeResult.NonMrzDateOfExpiry != null ? new Date(nativeResult.NonMrzDateOfExpiry) : null;
-        public string NonMrzSex => nativeResult.NonMrzSex;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PassportNumber => nativeResult.PassportNumber;
-        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
+        public string PlaceOfOrigin => nativeResult.PlaceOfOrigin;
         public string Sex => nativeResult.Sex;
         public string Surname => nativeResult.Surname;
     }
