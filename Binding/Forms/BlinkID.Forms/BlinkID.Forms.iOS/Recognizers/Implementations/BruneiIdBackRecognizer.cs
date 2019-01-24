@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SlovakiaIdBackRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiIdBackRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class SlovakiaIdBackRecognizer : Recognizer, ISlovakiaIdBackRecognizer
+    public sealed class BruneiIdBackRecognizer : Recognizer, IBruneiIdBackRecognizer
     {
-        MBSlovakiaIdBackRecognizer nativeRecognizer;
+        MBBruneiIdBackRecognizer nativeRecognizer;
 
-        SlovakiaIdBackRecognizerResult result;
+        BruneiIdBackRecognizerResult result;
 
-        public SlovakiaIdBackRecognizer() : base(new MBSlovakiaIdBackRecognizer())
+        public BruneiIdBackRecognizer() : base(new MBBruneiIdBackRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBSlovakiaIdBackRecognizer;
-            result = new SlovakiaIdBackRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBBruneiIdBackRecognizer;
+            result = new BruneiIdBackRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ISlovakiaIdBackRecognizerResult Result => result;
+        public IBruneiIdBackRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -33,22 +33,16 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractAddress = value;
         }
         
-        public bool ExtractPlaceOfBirth 
+        public bool ExtractDateOfIssue 
         { 
-            get => nativeRecognizer.ExtractPlaceOfBirth; 
-            set => nativeRecognizer.ExtractPlaceOfBirth = value;
+            get => nativeRecognizer.ExtractDateOfIssue; 
+            set => nativeRecognizer.ExtractDateOfIssue = value;
         }
         
-        public bool ExtractSpecialRemarks 
+        public bool ExtractRace 
         { 
-            get => nativeRecognizer.ExtractSpecialRemarks; 
-            set => nativeRecognizer.ExtractSpecialRemarks = value;
-        }
-        
-        public bool ExtractSurnameAtBirth 
-        { 
-            get => nativeRecognizer.ExtractSurnameAtBirth; 
-            set => nativeRecognizer.ExtractSurnameAtBirth = value;
+            get => nativeRecognizer.ExtractRace; 
+            set => nativeRecognizer.ExtractRace = value;
         }
         
         public uint FullDocumentImageDpi 
@@ -71,19 +65,18 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class SlovakiaIdBackRecognizerResult : RecognizerResult, ISlovakiaIdBackRecognizerResult
+    public sealed class BruneiIdBackRecognizerResult : RecognizerResult, IBruneiIdBackRecognizerResult
     {
-        MBSlovakiaIdBackRecognizerResult nativeResult;
+        MBBruneiIdBackRecognizerResult nativeResult;
 
-        internal SlovakiaIdBackRecognizerResult(MBSlovakiaIdBackRecognizerResult nativeResult) : base(nativeResult)
+        internal BruneiIdBackRecognizerResult(MBBruneiIdBackRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
+        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
-        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string SpecialRemarks => nativeResult.SpecialRemarks;
-        public string SurnameAtBirth => nativeResult.SurnameAtBirth;
+        public string Race => nativeResult.Race;
     }
 }

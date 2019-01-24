@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(GermanyOldIdRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(GermanyIdOldRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class GermanyOldIdRecognizer : Recognizer, IGermanyOldIdRecognizer
+    public sealed class GermanyIdOldRecognizer : Recognizer, IGermanyIdOldRecognizer
     {
-        MBGermanyOldIdRecognizer nativeRecognizer;
+        MBGermanyIdOldRecognizer nativeRecognizer;
 
-        GermanyOldIdRecognizerResult result;
+        GermanyIdOldRecognizerResult result;
 
-        public GermanyOldIdRecognizer() : base(new MBGermanyOldIdRecognizer())
+        public GermanyIdOldRecognizer() : base(new MBGermanyIdOldRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBGermanyOldIdRecognizer;
-            result = new GermanyOldIdRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBGermanyIdOldRecognizer;
+            result = new GermanyIdOldRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IGermanyOldIdRecognizerResult Result => result;
+        public IGermanyIdOldRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -31,6 +31,18 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ExtractPlaceOfBirth; 
             set => nativeRecognizer.ExtractPlaceOfBirth = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
@@ -57,33 +69,26 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
-    public sealed class GermanyOldIdRecognizerResult : RecognizerResult, IGermanyOldIdRecognizerResult
+    public sealed class GermanyIdOldRecognizerResult : RecognizerResult, IGermanyIdOldRecognizerResult
     {
-        MBGermanyOldIdRecognizerResult nativeResult;
+        MBGermanyIdOldRecognizerResult nativeResult;
 
-        internal GermanyOldIdRecognizerResult(MBGermanyOldIdRecognizerResult nativeResult) : base(nativeResult)
+        internal GermanyIdOldRecognizerResult(MBGermanyIdOldRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.MrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.MrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
-        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
     }
 }

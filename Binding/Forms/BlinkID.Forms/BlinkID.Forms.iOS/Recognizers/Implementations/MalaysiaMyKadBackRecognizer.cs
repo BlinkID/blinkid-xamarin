@@ -51,18 +51,6 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
-        public bool ReturnSignatureImage 
-        { 
-            get => nativeRecognizer.ReturnSignatureImage; 
-            set => nativeRecognizer.ReturnSignatureImage = value;
-        }
-        
-        public uint SignatureImageDpi 
-        { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
-            set => nativeRecognizer.SignatureImageDpi = value;
-        }
-        
     }
 
     public sealed class MalaysiaMyKadBackRecognizerResult : RecognizerResult, IMalaysiaMyKadBackRecognizerResult
@@ -78,7 +66,5 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string Nric => nativeResult.Nric;
         public string OldNric => nativeResult.OldNric;
-        public string Sex => nativeResult.Sex;
-        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
     }
 }

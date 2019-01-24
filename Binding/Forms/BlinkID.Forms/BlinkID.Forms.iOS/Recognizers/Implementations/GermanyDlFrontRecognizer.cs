@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SlovakiaIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(GermanyDlFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class SlovakiaIdFrontRecognizer : Recognizer, ISlovakiaIdFrontRecognizer
+    public sealed class GermanyDlFrontRecognizer : Recognizer, IGermanyDlFrontRecognizer
     {
-        MBSlovakiaIdFrontRecognizer nativeRecognizer;
+        MBGermanyDlFrontRecognizer nativeRecognizer;
 
-        SlovakiaIdFrontRecognizerResult result;
+        GermanyDlFrontRecognizerResult result;
 
-        public SlovakiaIdFrontRecognizer() : base(new MBSlovakiaIdFrontRecognizer())
+        public GermanyDlFrontRecognizer() : base(new MBGermanyDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBSlovakiaIdFrontRecognizer;
-            result = new SlovakiaIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBGermanyDlFrontRecognizer;
+            result = new GermanyDlFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ISlovakiaIdFrontRecognizerResult Result => result;
+        public IGermanyDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -45,22 +45,16 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfIssue = value;
         }
         
-        public bool ExtractDocumentNumber 
-        { 
-            get => nativeRecognizer.ExtractDocumentNumber; 
-            set => nativeRecognizer.ExtractDocumentNumber = value;
-        }
-        
         public bool ExtractFirstName 
         { 
             get => nativeRecognizer.ExtractFirstName; 
             set => nativeRecognizer.ExtractFirstName = value;
         }
         
-        public bool ExtractIssuedBy 
+        public bool ExtractIssuingAuthority 
         { 
-            get => nativeRecognizer.ExtractIssuedBy; 
-            set => nativeRecognizer.ExtractIssuedBy = value;
+            get => nativeRecognizer.ExtractIssuingAuthority; 
+            set => nativeRecognizer.ExtractIssuingAuthority = value;
         }
         
         public bool ExtractLastName 
@@ -69,16 +63,16 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractLastName = value;
         }
         
-        public bool ExtractNationality 
+        public bool ExtractLicenceCategories 
         { 
-            get => nativeRecognizer.ExtractNationality; 
-            set => nativeRecognizer.ExtractNationality = value;
+            get => nativeRecognizer.ExtractLicenceCategories; 
+            set => nativeRecognizer.ExtractLicenceCategories = value;
         }
         
-        public bool ExtractSex 
+        public bool ExtractPlaceOfBirth 
         { 
-            get => nativeRecognizer.ExtractSex; 
-            set => nativeRecognizer.ExtractSex = value;
+            get => nativeRecognizer.ExtractPlaceOfBirth; 
+            set => nativeRecognizer.ExtractPlaceOfBirth = value;
         }
         
         public uint FaceImageDpi 
@@ -125,26 +119,25 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class SlovakiaIdFrontRecognizerResult : RecognizerResult, ISlovakiaIdFrontRecognizerResult
+    public sealed class GermanyDlFrontRecognizerResult : RecognizerResult, IGermanyDlFrontRecognizerResult
     {
-        MBSlovakiaIdFrontRecognizerResult nativeResult;
+        MBGermanyDlFrontRecognizerResult nativeResult;
 
-        internal SlovakiaIdFrontRecognizerResult(MBSlovakiaIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal GermanyDlFrontRecognizerResult(MBGermanyDlFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string IssuedBy => nativeResult.IssuedBy;
+        public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
-        public string Nationality => nativeResult.Nationality;
-        public string PersonalNumber => nativeResult.PersonalNumber;
-        public string Sex => nativeResult.Sex;
+        public string LicenceCategories => nativeResult.LicenceCategories;
+        public string LicenceNumber => nativeResult.LicenceNumber;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
     }
 }
