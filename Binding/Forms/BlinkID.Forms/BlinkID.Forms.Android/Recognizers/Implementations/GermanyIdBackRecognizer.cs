@@ -39,22 +39,28 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractAuthority(value);
         }
         
+        public bool ExtractColourOfEyes 
+        { 
+            get => nativeRecognizer.ShouldExtractColourOfEyes(); 
+            set => nativeRecognizer.SetExtractColourOfEyes(value);
+        }
+        
         public bool ExtractDateOfIssue 
         { 
             get => nativeRecognizer.ShouldExtractDateOfIssue(); 
             set => nativeRecognizer.SetExtractDateOfIssue(value);
         }
         
-        public bool ExtractEyeColour 
-        { 
-            get => nativeRecognizer.ShouldExtractEyeColour(); 
-            set => nativeRecognizer.SetExtractEyeColour(value);
-        }
-        
         public bool ExtractHeight 
         { 
             get => nativeRecognizer.ShouldExtractHeight(); 
             set => nativeRecognizer.SetExtractHeight(value);
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
@@ -79,29 +85,16 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public string Address => nativeResult.Address;
         public string AddressCity => nativeResult.AddressCity;
         public string AddressHouseNumber => nativeResult.AddressHouseNumber;
         public string AddressStreet => nativeResult.AddressStreet;
         public string AddressZipCode => nativeResult.AddressZipCode;
         public string Authority => nativeResult.Authority;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
-        public string EyeColour => nativeResult.EyeColour;
+        public string ColourOfEyes => nativeResult.ColourOfEyes;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public string FullAddress => nativeResult.FullAddress;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string Height => nativeResult.Height;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
-        public string Sex => nativeResult.Sex;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
     }
 }

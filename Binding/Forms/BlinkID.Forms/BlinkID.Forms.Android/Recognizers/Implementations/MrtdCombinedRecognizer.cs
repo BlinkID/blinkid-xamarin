@@ -33,6 +33,36 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.AllowUnverifiedResults = value;
         }
         
+        public bool DetectGlare 
+        { 
+            get => nativeRecognizer.ShouldDetectGlare(); 
+            set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
+        public DocumentFaceDetectorType DetectorType 
+        { 
+            get => (DocumentFaceDetectorType)nativeRecognizer.DetectorType.Ordinal(); 
+            set => nativeRecognizer.DetectorType = Com.Microblink.Entities.Recognizers.Blinkid.Documentface.DocumentFaceDetectorType.Values()[(int)value];
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
+        
         public uint NumStableDetectionsThreshold 
         { 
             get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
@@ -51,12 +81,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
-        public bool ReturnMrzImage 
-        { 
-            get => nativeRecognizer.ShouldReturnMrzImage(); 
-            set => nativeRecognizer.SetReturnMrzImage(value);
-        }
-        
         public bool SignResult 
         { 
             get => nativeRecognizer.ShouldSignResult(); 
@@ -73,31 +97,13 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public string AlienNumber => nativeResult.AlienNumber;
-        public string ApplicationReceiptNumber => nativeResult.ApplicationReceiptNumber;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
-        public string DocumentCode => nativeResult.DocumentCode;
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
-        public string DocumentNumber => nativeResult.DocumentNumber;
-        public MrtdDocumentType DocumentType => (MrtdDocumentType)nativeResult.DocumentType.Ordinal();
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
-        public string ImmigrantCaseNumber => nativeResult.ImmigrantCaseNumber;
-        public string Issuer => nativeResult.Issuer;
-        public Xamarin.Forms.ImageSource MrzImage => nativeResult.MrzImage != null ? Utils.ConvertAndroidBitmap(nativeResult.MrzImage.ConvertToBitmap()) : null;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
-        public string PrimaryId => nativeResult.PrimaryId;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
-        public string SecondaryId => nativeResult.SecondaryId;
-        public string Sex => nativeResult.Sex;
     }
 }

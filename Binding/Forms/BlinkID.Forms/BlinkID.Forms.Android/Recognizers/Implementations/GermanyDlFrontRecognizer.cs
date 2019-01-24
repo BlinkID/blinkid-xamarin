@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(CzechiaIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(GermanyDlFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class CzechiaIdFrontRecognizer : Recognizer, ICzechiaIdFrontRecognizer
+    public sealed class GermanyDlFrontRecognizer : Recognizer, IGermanyDlFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer nativeRecognizer;
 
-        CzechiaIdFrontRecognizerResult result;
+        GermanyDlFrontRecognizerResult result;
 
-        public CzechiaIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer())
+        public GermanyDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer;
-            result = new CzechiaIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer;
+            result = new GermanyDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public ICzechiaIdFrontRecognizerResult Result => result;
+        public IGermanyDlFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -45,28 +45,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfIssue(value);
         }
         
-        public bool ExtractGivenNames 
+        public bool ExtractFirstName 
         { 
-            get => nativeRecognizer.ShouldExtractGivenNames(); 
-            set => nativeRecognizer.SetExtractGivenNames(value);
+            get => nativeRecognizer.ShouldExtractFirstName(); 
+            set => nativeRecognizer.SetExtractFirstName(value);
+        }
+        
+        public bool ExtractIssuingAuthority 
+        { 
+            get => nativeRecognizer.ShouldExtractIssuingAuthority(); 
+            set => nativeRecognizer.SetExtractIssuingAuthority(value);
+        }
+        
+        public bool ExtractLastName 
+        { 
+            get => nativeRecognizer.ShouldExtractLastName(); 
+            set => nativeRecognizer.SetExtractLastName(value);
+        }
+        
+        public bool ExtractLicenceCategories 
+        { 
+            get => nativeRecognizer.ShouldExtractLicenceCategories(); 
+            set => nativeRecognizer.SetExtractLicenceCategories(value);
         }
         
         public bool ExtractPlaceOfBirth 
         { 
             get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
             set => nativeRecognizer.SetExtractPlaceOfBirth(value);
-        }
-        
-        public bool ExtractSex 
-        { 
-            get => nativeRecognizer.ShouldExtractSex(); 
-            set => nativeRecognizer.SetExtractSex(value);
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ShouldExtractSurname(); 
-            set => nativeRecognizer.SetExtractSurname(value);
         }
         
         public uint FaceImageDpi 
@@ -113,24 +119,25 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class CzechiaIdFrontRecognizerResult : RecognizerResult, ICzechiaIdFrontRecognizerResult
+    public sealed class GermanyDlFrontRecognizerResult : RecognizerResult, IGermanyDlFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer.Result nativeResult;
 
-        internal CzechiaIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Czechia.CzechiaIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal GermanyDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyDlFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string GivenNames => nativeResult.GivenNames;
+        public string IssuingAuthority => nativeResult.IssuingAuthority;
+        public string LastName => nativeResult.LastName;
+        public string LicenceCategories => nativeResult.LicenceCategories;
+        public string LicenceNumber => nativeResult.LicenceNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
-        public string Surname => nativeResult.Surname;
     }
 }

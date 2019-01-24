@@ -21,16 +21,16 @@ namespace Microblink.Forms.Droid.Recognizers
         public IAustraliaDlBackRecognizerResult Result => result;
 
         
+        public bool DetectGlare 
+        { 
+            get => nativeRecognizer.ShouldDetectGlare(); 
+            set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
         public bool ExtractAddress 
         { 
             get => nativeRecognizer.ShouldExtractAddress(); 
             set => nativeRecognizer.SetExtractAddress(value);
-        }
-        
-        public bool ExtractDateOfExpiry 
-        { 
-            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
-            set => nativeRecognizer.SetExtractDateOfExpiry(value);
         }
         
         public bool ExtractLastName 
@@ -39,10 +39,28 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractLastName(value);
         }
         
+        public bool ExtractLicenceNumber 
+        { 
+            get => nativeRecognizer.ShouldExtractLicenceNumber(); 
+            set => nativeRecognizer.SetExtractLicenceNumber(value);
+        }
+        
+        public bool ExtractLicenseExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractLicenseExpiry(); 
+            set => nativeRecognizer.SetExtractLicenseExpiry(value);
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFullDocumentImage 
@@ -62,9 +80,9 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string LastName => nativeResult.LastName;
+        public IDate LicenceExpiry => nativeResult.LicenceExpiry.Date != null ? new Date(nativeResult.LicenceExpiry.Date) : null;
         public string LicenceNumber => nativeResult.LicenceNumber;
     }
 }

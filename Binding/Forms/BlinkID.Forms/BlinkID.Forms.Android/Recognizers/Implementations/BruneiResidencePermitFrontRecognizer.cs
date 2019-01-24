@@ -1,36 +1,30 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AustraliaDlFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiResidencePermitFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class AustraliaDlFrontRecognizer : Recognizer, IAustraliaDlFrontRecognizer
+    public sealed class BruneiResidencePermitFrontRecognizer : Recognizer, IBruneiResidencePermitFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer nativeRecognizer;
 
-        AustraliaDlFrontRecognizerResult result;
+        BruneiResidencePermitFrontRecognizerResult result;
 
-        public AustraliaDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer())
+        public BruneiResidencePermitFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer;
-            result = new AustraliaDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer;
+            result = new BruneiResidencePermitFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IAustraliaDlFrontRecognizerResult Result => result;
+        public IBruneiResidencePermitFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
             set => nativeRecognizer.SetDetectGlare(value);
-        }
-        
-        public bool ExtractAddress 
-        { 
-            get => nativeRecognizer.ShouldExtractAddress(); 
-            set => nativeRecognizer.SetExtractAddress(value);
         }
         
         public bool ExtractDateOfBirth 
@@ -45,10 +39,16 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractFullName(value);
         }
         
-        public bool ExtractLicenseExpiry 
+        public bool ExtractPlaceOfBirth 
         { 
-            get => nativeRecognizer.ShouldExtractLicenseExpiry(); 
-            set => nativeRecognizer.SetExtractLicenseExpiry(value);
+            get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
+            set => nativeRecognizer.SetExtractPlaceOfBirth(value);
+        }
+        
+        public bool ExtractSex 
+        { 
+            get => nativeRecognizer.ShouldExtractSex(); 
+            set => nativeRecognizer.SetExtractSex(value);
         }
         
         public uint FaceImageDpi 
@@ -81,36 +81,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
-        public bool ReturnSignatureImage 
-        { 
-            get => nativeRecognizer.ShouldReturnSignatureImage(); 
-            set => nativeRecognizer.SetReturnSignatureImage(value);
-        }
-        
-        public uint SignatureImageDpi 
-        { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
-            set => nativeRecognizer.SignatureImageDpi = (int)value;
-        }
-        
     }
 
-    public sealed class AustraliaDlFrontRecognizerResult : RecognizerResult, IAustraliaDlFrontRecognizerResult
+    public sealed class BruneiResidencePermitFrontRecognizerResult : RecognizerResult, IBruneiResidencePermitFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer.Result nativeResult;
 
-        internal AustraliaDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Australia.AustraliaDlFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal BruneiResidencePermitFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiResidencePermitFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string Address => nativeResult.Address;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string FullName => nativeResult.FullName;
-        public IDate LicenceExpiry => nativeResult.LicenceExpiry.Date != null ? new Date(nativeResult.LicenceExpiry.Date) : null;
-        public string LicenceNumber => nativeResult.LicenceNumber;
-        public string LicenceType => nativeResult.LicenceType;
-        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string Sex => nativeResult.Sex;
     }
 }
