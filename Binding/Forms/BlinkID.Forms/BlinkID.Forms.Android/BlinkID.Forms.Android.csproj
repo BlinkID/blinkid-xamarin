@@ -14,7 +14,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <PackageId>BlinkID.Forms.Android</PackageId>
-    <PackageVersion>4.5.0</PackageVersion>
+    <PackageVersion>4.6.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -23,8 +23,8 @@
     <Description>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.5.0:
-https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNotes>
+    <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.6.0:
+https://github.com/BlinkID/blinkid-android/releases/tag/v4.6.0</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
