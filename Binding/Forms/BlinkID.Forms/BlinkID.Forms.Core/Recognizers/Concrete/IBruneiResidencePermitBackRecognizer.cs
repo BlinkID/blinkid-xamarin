@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Kuwait national ID cards.
+    /// Recognizer which can scan back side of Brunei national Residence Permit cards.
     /// </summary>
-    public interface IKuwaitIdBackRecognizer : IRecognizer
+    public interface IBruneiResidencePermitBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,11 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if serial number of Kuwait ID should be extracted. 
+        /// Defines if address of Brunei Residence Permit card owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSerialNo { get; set; }
+        bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if date of issue of Brunei Residence Permit card should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if the race of Brunei Residence Permit card owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractRace { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -45,13 +59,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IKuwaitIdBackRecognizerResult Result { get; }
+        IBruneiResidencePermitBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IKuwaitIdBackRecognizer.
+    /// Result object for IBruneiResidencePermitBackRecognizer.
     /// </summary>
-    public interface IKuwaitIdBackRecognizerResult : IRecognizerResult {
+    public interface IBruneiResidencePermitBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The address of Brunei Residence Permit card owner. 
+        /// </summary>
+        string Address { get; }
+        
+        /// <summary>
+        /// The date of issue of Brunei Residence Permit card. 
+        /// </summary>
+        IDate DateOfIssue { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -64,9 +88,9 @@
         IMrzResult MrzResult { get; }
         
         /// <summary>
-        /// The serial number of Kuwait ID. 
+        /// The race of Brunei Residence Permit card owner. 
         /// </summary>
-        string SerialNo { get; }
+        string Race { get; }
         
     }
 }

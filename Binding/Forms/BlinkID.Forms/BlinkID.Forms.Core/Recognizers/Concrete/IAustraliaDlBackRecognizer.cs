@@ -1,54 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Australia DL Back Recognizer.
-    /// 
-    /// Australia DL Back recognizer is used for scanning back side of Australia DL.
+    /// Recognizer which can scan the back side of Australian driver's licences
     /// </summary>
     public interface IAustraliaDlBackRecognizer : IRecognizer
     {
         
         /// <summary>
-        ///  Defines if sex of Australian DL owner should be extracted
-        /// 
-        ///   
+        /// Defines whether glare detector is enabled. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool DetectGlare { get; set; }
+        
+        /// <summary>
+        /// Defines if address of the Australia DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Australian DL
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDateOfExpiry { get; set; }
-        
-        /// <summary>
-        ///  Defines if last name of Australian DL owner should be extracted
-        /// 
-        ///   
+        /// Defines if last name of the Australia DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLastName { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// Defines if the licence number of the Australia DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLicenceNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if date of expiry of the Australia DL should be extracted 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLicenseExpiry { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// The extension factors for full document image. 
+        ///
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -67,27 +75,27 @@
     public interface IAustraliaDlBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Australian DL owner. 
+        /// The address of the Australia DL owner 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The document date of expiry of the Australian DL 
-        /// </summary>
-        IDate DateOfExpiry { get; }
-        
-        /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The last name of the Australian DL owner. 
+        /// The last name of the Australia DL owner 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The licence number of the Australian DL owner. 
+        /// The date of expiry of the Australia DL 
+        /// </summary>
+        IDate LicenceExpiry { get; }
+        
+        /// <summary>
+        /// The licence number of the Australia DL 
         /// </summary>
         string LicenceNumber { get; }
         

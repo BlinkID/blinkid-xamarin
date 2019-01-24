@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan the front side of Australian driver's licences.
+    /// Recognizer which can scan old German ID.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizer : IRecognizer
+    public interface IGermanyIdOldRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,32 +14,11 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Australian DL owner should be extracted 
+        /// Defines if place of birth of old German ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
-        
-        /// <summary>
-        /// Defines if date of birth of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDateOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if full name of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractFullName { get; set; }
-        
-        /// <summary>
-        /// Defines if date of expiry of Australian DL should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractLicenseExpiry { get; set; }
+        bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -94,23 +73,13 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustraliaDlFrontRecognizerResult Result { get; }
+        IGermanyIdOldRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustraliaDlFrontRecognizer.
+    /// Result object for IGermanyIdOldRecognizer.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizerResult : IRecognizerResult {
-        
-        /// <summary>
-        /// The address of the Australian DL owner 
-        /// </summary>
-        string Address { get; }
-        
-        /// <summary>
-        /// The date of birth of the Australian DL owner 
-        /// </summary>
-        IDate DateOfBirth { get; }
+    public interface IGermanyIdOldRecognizerResult : IRecognizerResult {
         
         /// <summary>
         /// Face image from the document 
@@ -123,24 +92,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of the Australian DL owner 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string FullName { get; }
+        IMrzResult MrzResult { get; }
         
         /// <summary>
-        /// The date of expiry of the Australian DL 
+        /// The place of birth of old German ID owner. 
         /// </summary>
-        IDate LicenceExpiry { get; }
-        
-        /// <summary>
-        /// The licence number of the Australian DL 
-        /// </summary>
-        string LicenceNumber { get; }
-        
-        /// <summary>
-        /// The licence type of the Australian DL 
-        /// </summary>
-        string LicenceType { get; }
+        string PlaceOfBirth { get; }
         
         /// <summary>
         /// Signature image from the document 

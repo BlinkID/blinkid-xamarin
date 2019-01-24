@@ -1,17 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer used for scanning the front side of elite credit/debit cards.
+    /// Recognizer which can scan back side of Brunei national ID cards.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizer : IRecognizer
+    public interface IBruneiIdBackRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Should anonymize the owner area (redact image pixels) on the document image result 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool AnonymizeOwner { get; set; }
         
         /// <summary>
         /// Defines whether glare detector is enabled. 
@@ -21,11 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Should extract the card owner information 
+        /// Defines if address of Brunei ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractOwner { get; set; }
+        bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if date of issue of Brunei ID should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if the race of Brunei ID owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractRace { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -52,13 +59,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IElitePaymentCardFrontRecognizerResult Result { get; }
+        IBruneiIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IElitePaymentCardFrontRecognizer.
+    /// Result object for IBruneiIdBackRecognizer.
     /// </summary>
-    public interface IElitePaymentCardFrontRecognizerResult : IRecognizerResult {
+    public interface IBruneiIdBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The address of Brunei ID owner. 
+        /// </summary>
+        string Address { get; }
+        
+        /// <summary>
+        /// The date of issue of Brunei ID. 
+        /// </summary>
+        IDate DateOfIssue { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -66,9 +83,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Information about the payment card owner (name, company, etc.). 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string Owner { get; }
+        IMrzResult MrzResult { get; }
+        
+        /// <summary>
+        /// The race of Brunei ID owner. 
+        /// </summary>
+        string Race { get; }
         
     }
 }

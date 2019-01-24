@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Slovak national ID cards.
+    /// Recognizer which can scan front side of Germany national DL cards
     /// </summary>
-    public interface ISlovakiaIdFrontRecognizer : IRecognizer
+    public interface IGermanyDlFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,67 +14,60 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Slovak ID owner should be extracted. 
+        /// Defines if date of birth of Germany DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Slovak ID should be extracted. 
+        /// Defines if date of expiry of Germany DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Slovak ID should be extracted. 
+        /// Defines if date of issue of Germany DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if document number of Slovak ID should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDocumentNumber { get; set; }
-        
-        /// <summary>
-        /// Defines if first name of Slovak ID owner should be extracted. 
+        /// Defines if first name of Germany DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority of Slovak ID should be extracted. 
+        /// Defines if issuing authority of Germany DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractIssuedBy { get; set; }
+        bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if last name of Slovak ID owner should be extracted. 
+        /// Defines if last name of Germany DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLastName { get; set; }
         
         /// <summary>
-        /// Defines if nationality of Slovak ID owner should be extracted. 
+        /// Defines if licence categories of Germany DL should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractNationality { get; set; }
+        bool ExtractLicenceCategories { get; set; }
         
         /// <summary>
-        /// Defines if sex of Slovak ID owner should be extracted. 
+        /// Defines if place of birth of Germany DL owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractSex { get; set; }
+        bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -129,33 +122,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        ISlovakiaIdFrontRecognizerResult Result { get; }
+        IGermanyDlFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for ISlovakiaIdFrontRecognizer.
+    /// Result object for IGermanyDlFrontRecognizer.
     /// </summary>
-    public interface ISlovakiaIdFrontRecognizerResult : IRecognizerResult {
+    public interface IGermanyDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Slovak ID owner. 
+        /// The date of birth of Germany DL owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Slovak ID card. 
+        /// The date of expiry of Germany DL. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of the Slovak ID card. 
+        /// The date of issue of Germany DL. 
         /// </summary>
         IDate DateOfIssue { get; }
-        
-        /// <summary>
-        /// The document number of the Slovak ID card. 
-        /// </summary>
-        string DocumentNumber { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -163,7 +151,7 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Slovak ID owner. 
+        /// The first name of the Germany DL owner. 
         /// </summary>
         string FirstName { get; }
         
@@ -173,29 +161,29 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issuing authority of the Slovak ID card. 
+        /// The issuing authority of the Germany DL. 
         /// </summary>
-        string IssuedBy { get; }
+        string IssuingAuthority { get; }
         
         /// <summary>
-        /// The last name of the Slovak ID owner. 
+        /// The last name of the Germany DL owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// The nationality of the Slovak ID owner. 
+        /// The licence categories of the Germany DL. 
         /// </summary>
-        string Nationality { get; }
+        string LicenceCategories { get; }
         
         /// <summary>
-        /// The personal number of the Slovak ID owner. 
+        /// The licence number of the Germany DL. 
         /// </summary>
-        string PersonalNumber { get; }
+        string LicenceNumber { get; }
         
         /// <summary>
-        /// The sex of the Slovak ID owner. 
+        /// The place of birth of Germany DL owner. 
         /// </summary>
-        string Sex { get; }
+        string PlaceOfBirth { get; }
         
         /// <summary>
         /// Signature image from the document 
