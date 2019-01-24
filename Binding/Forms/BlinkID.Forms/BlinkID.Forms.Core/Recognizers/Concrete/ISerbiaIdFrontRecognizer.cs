@@ -1,49 +1,62 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for front side of Serbian ID.
+    /// Class for configuring Serbian ID Front Recognizer.
     /// 
+    /// Serbian ID Front recognizer is used for scanning front side of Serbian ID.
     /// </summary>
     public interface ISerbiaIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// True if issuing date of Serbian ID is being extracted 
+        ///  Defines if issuing date of Serbian ID should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingDate { get; set; }
         
         /// <summary>
-        /// True if valid until is being extracted from Serbian ID 
+        ///  Defines if valid until date of Serbian ID should be extracted
+        /// 
+        ///   
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractValidUntil { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -62,17 +75,17 @@
     public interface ISerbiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The document number of Serbian ID. 
+        /// The document number of Serbian ID owner 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
@@ -82,12 +95,12 @@
         IDate IssuingDate { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The valid until of the Serbian ID. 
+        /// The valid until date of the Serbian ID. 
         /// </summary>
         IDate ValidUntil { get; }
         

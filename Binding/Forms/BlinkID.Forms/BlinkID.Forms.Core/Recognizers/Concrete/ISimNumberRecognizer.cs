@@ -19,7 +19,7 @@
     public interface ISimNumberRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Recognized SIM number from barcode or empty string if recognition failed. 
+        /// Returns the recognized SIM number from barcode or empty string if recognition failed. 
         /// </summary>
         string SimNumber { get; }
         
