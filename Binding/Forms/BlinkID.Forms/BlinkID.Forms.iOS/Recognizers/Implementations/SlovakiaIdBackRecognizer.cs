@@ -27,6 +27,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
+        }
+        
         public bool ExtractPlaceOfBirth 
         { 
             get => nativeRecognizer.ExtractPlaceOfBirth; 
@@ -43,6 +49,18 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ExtractSurnameAtBirth; 
             set => nativeRecognizer.ExtractSurnameAtBirth = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFullDocumentImage 
@@ -62,22 +80,9 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.MrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.MrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
-        public string Sex => nativeResult.Sex;
         public string SpecialRemarks => nativeResult.SpecialRemarks;
         public string SurnameAtBirth => nativeResult.SurnameAtBirth;
     }

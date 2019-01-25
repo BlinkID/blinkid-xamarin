@@ -21,16 +21,16 @@ namespace Microblink.Forms.iOS.Recognizers
         public IAustraliaDlBackRecognizerResult Result => result;
 
         
+        public bool DetectGlare 
+        { 
+            get => nativeRecognizer.DetectGlare; 
+            set => nativeRecognizer.DetectGlare = value;
+        }
+        
         public bool ExtractAddress 
         { 
             get => nativeRecognizer.ExtractAddress; 
             set => nativeRecognizer.ExtractAddress = value;
-        }
-        
-        public bool ExtractDateOfExpiry 
-        { 
-            get => nativeRecognizer.ExtractDateOfExpiry; 
-            set => nativeRecognizer.ExtractDateOfExpiry = value;
         }
         
         public bool ExtractLastName 
@@ -39,10 +39,28 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractLastName = value;
         }
         
+        public bool ExtractLicenceNumber 
+        { 
+            get => nativeRecognizer.ExtractLicenceNumber; 
+            set => nativeRecognizer.ExtractLicenceNumber = value;
+        }
+        
+        public bool ExtractLicenseExpiry 
+        { 
+            get => nativeRecognizer.ExtractLicenseExpiry; 
+            set => nativeRecognizer.ExtractLicenseExpiry = value;
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFullDocumentImage 
@@ -62,9 +80,9 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string LastName => nativeResult.LastName;
+        public IDate LicenceExpiry => nativeResult.LicenceExpiry != null ? new Date(nativeResult.LicenceExpiry) : null;
         public string LicenceNumber => nativeResult.LicenceNumber;
     }
 }

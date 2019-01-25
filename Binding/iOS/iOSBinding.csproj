@@ -11,13 +11,13 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>4.5.0</PackageVersion>
+    <PackageVersion>4.6.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.5.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.6.0:
 
-https://github.com/BlinkID/blinkid-ios/releases/tag/v4.5.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-ios/releases/tag/v4.6.0</PackageReleaseNotes>
     <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
@@ -55,6 +55,9 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.5.0</PackageReleaseNotes>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="packages.config" />
+    <BundleResource Include="MicroBlink.bundle\Close.png" />
+    <BundleResource Include="MicroBlink.bundle\Close%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\Close%403x.png" />
     <BundleResource Include="MicroBlink.bundle\Info.plist" />
     <BundleResource Include="MicroBlink.bundle\No Camera-100.png" />
     <BundleResource Include="MicroBlink.bundle\PPbeep.wav" />
@@ -79,6 +82,12 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.5.0</PackageReleaseNotes>
     <BundleResource Include="MicroBlink.bundle\icFrontSide.png" />
     <BundleResource Include="MicroBlink.bundle\icFrontSide%402x.png" />
     <BundleResource Include="MicroBlink.bundle\icFrontSide%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_off.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_off%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_off%403x.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_on.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_on%402x.png" />
+    <BundleResource Include="MicroBlink.bundle\ic_flash_on%403x.png" />
     <BundleResource Include="MicroBlink.bundle\icon-exit.png" />
     <BundleResource Include="MicroBlink.bundle\icon-exit%402x.png" />
     <BundleResource Include="MicroBlink.bundle\icon-flashlight-selected.png" />

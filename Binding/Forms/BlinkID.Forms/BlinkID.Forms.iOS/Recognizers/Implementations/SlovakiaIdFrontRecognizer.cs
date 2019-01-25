@@ -51,10 +51,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDocumentNumber = value;
         }
         
+        public bool ExtractFirstName 
+        { 
+            get => nativeRecognizer.ExtractFirstName; 
+            set => nativeRecognizer.ExtractFirstName = value;
+        }
+        
         public bool ExtractIssuedBy 
         { 
             get => nativeRecognizer.ExtractIssuedBy; 
             set => nativeRecognizer.ExtractIssuedBy = value;
+        }
+        
+        public bool ExtractLastName 
+        { 
+            get => nativeRecognizer.ExtractLastName; 
+            set => nativeRecognizer.ExtractLastName = value;
         }
         
         public bool ExtractNationality 
@@ -67,6 +79,24 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -85,6 +115,12 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ReturnSignatureImage; 
             set => nativeRecognizer.ReturnSignatureImage = value;
+        }
+        
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
         }
         
     }

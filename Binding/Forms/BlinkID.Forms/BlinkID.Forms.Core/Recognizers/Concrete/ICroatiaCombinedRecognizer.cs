@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Croatian ID Combined Recognizer.
-    /// 
-    /// Croatian ID Combined recognizer is used for scanning both front and back side of Croatian ID.
+    /// Recognizer which can front and back side of Croatian national ID cards.
     /// </summary>
     public interface ICroatiaCombinedRecognizer : IRecognizer
     {
@@ -16,6 +14,117 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
+        
+        /// <summary>
+        /// Defines if citizenship of Croatian ID owner should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractCitizenship { get; set; }
+        
+        /// <summary>
+        /// Defines if date of birth of Croatian ID owner should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if date of expiry of Croatian ID document should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if date of issue of Croatian ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if first name of Croatian ID owner should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractFirstName { get; set; }
+        
+        /// <summary>
+        /// Defines if issuer of Croatian ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractIssuedBy { get; set; }
+        
+        /// <summary>
+        /// Defines if last name of Croatian ID owner should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLastName { get; set; }
+        
+        /// <summary>
+        /// Defines if residence of Croatian ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractResidence { get; set; }
+        
+        /// <summary>
+        /// Defines if sex of Croatian ID owner should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -53,6 +162,16 @@
         /// </summary>
         bool SignResult { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -66,32 +185,27 @@
     public interface ICroatiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Croatian ID owner. 
-        /// </summary>
-        string Address { get; }
-        
-        /// <summary>
         /// The citizenship of the Croatian ID owner. 
         /// </summary>
         string Citizenship { get; }
         
         /// <summary>
-        /// The date of birth of Croatian ID owner 
+        /// The date of birth of the Croatian ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The document date of expiry of the Croatian ID 
+        /// The date of expiry of the Croatian ID. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Check if date of expiry is permanent on the Croatian ID. 
+        /// Determines if date of expiry of the Croatian ID is permanent. 
         /// </summary>
         bool DateOfExpiryPermanent { get; }
         
         /// <summary>
-        /// The document date of issue of the Croatian ID. 
+        /// The date of issue of Croatian ID. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -106,7 +220,7 @@
         uint DigitalSignatureVersion { get; }
         
         /// <summary>
-        /// true if the document is bilingual 
+        /// Determines if Croatian ID is bilingual. 
         /// </summary>
         bool DocumentBilingual { get; }
         
@@ -117,6 +231,16 @@
         /// be true only if scanned values for all fields that are compared are the same. 
         /// </summary>
         bool DocumentDataMatch { get; }
+        
+        /// <summary>
+        /// Determines if Croatian ID is issued for non resident. 
+        /// </summary>
+        bool DocumentForNonResident { get; }
+        
+        /// <summary>
+        /// The document number of the Croatian ID. 
+        /// </summary>
+        string DocumentNumber { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
@@ -139,14 +263,9 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The identity card number of Croatian ID. 
+        /// The issuer of Croatian ID. 
         /// </summary>
-        string IdentityCardNumber { get; }
-        
-        /// <summary>
-        /// The issuing authority of Croatian ID. 
-        /// </summary>
-        string IssuingAuthority { get; }
+        string IssuedBy { get; }
         
         /// <summary>
         /// The last name of the Croatian ID owner. 
@@ -154,20 +273,19 @@
         string LastName { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Determines if all check digits inside MRZ are correct. 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// true if the person is non Croatian resident 
+        /// The OIB of Croatian ID owner. 
         /// </summary>
-        bool NonResident { get; }
+        string Oib { get; }
         
         /// <summary>
-        /// The OIB (PIN) of the Croatian ID owner. 
+        /// The residence of Croatian ID owner. 
         /// </summary>
-        string PersonalIdentificationNumber { get; }
+        string Residence { get; }
         
         /// <summary>
         /// Returns true if recognizer has finished scanning first side and is now scanning back side,

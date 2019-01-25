@@ -438,16 +438,6 @@ namespace Microblink
 		Valid
 	}
 
-	[Native]
-	public enum MBMrtdDocumentType : ulong
-	{
-		Unknown,
-		IdentityCard,
-		Passport,
-		Visa,
-		GreenCard
-	}
-
 	[StructLayout (LayoutKind.Sequential)]
 	public struct MBImageExtensionFactors
 	{
@@ -458,6 +448,16 @@ namespace Microblink
 		public nfloat bottom;
 
 		public nfloat left;
+	}
+
+	[Native]
+	public enum MBMrtdDocumentType : ulong
+	{
+		Unknown,
+		IdentityCard,
+		Passport,
+		Visa,
+		GreenCard
 	}
 
 	[Native]

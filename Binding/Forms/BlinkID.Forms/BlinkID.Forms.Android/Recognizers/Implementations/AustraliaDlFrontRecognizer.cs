@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IAustraliaDlFrontRecognizerResult Result => result;
 
         
+        public bool DetectGlare 
+        { 
+            get => nativeRecognizer.ShouldDetectGlare(); 
+            set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
         public bool ExtractAddress 
         { 
             get => nativeRecognizer.ShouldExtractAddress(); 
@@ -33,16 +39,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfBirth(value);
         }
         
-        public bool ExtractDateOfExpiry 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
-            set => nativeRecognizer.SetExtractDateOfExpiry(value);
+            get => nativeRecognizer.ShouldExtractFullName(); 
+            set => nativeRecognizer.SetExtractFullName(value);
+        }
+        
+        public bool ExtractLicenseExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractLicenseExpiry(); 
+            set => nativeRecognizer.SetExtractLicenseExpiry(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -63,6 +87,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class AustraliaDlFrontRecognizerResult : RecognizerResult, IAustraliaDlFrontRecognizerResult
@@ -74,13 +104,13 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
+        public string FullName => nativeResult.FullName;
+        public IDate LicenceExpiry => nativeResult.LicenceExpiry.Date != null ? new Date(nativeResult.LicenceExpiry.Date) : null;
         public string LicenceNumber => nativeResult.LicenceNumber;
         public string LicenceType => nativeResult.LicenceType;
-        public string Name => nativeResult.Name;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
     }
 }

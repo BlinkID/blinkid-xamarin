@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(GermanyOldIdRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(GermanyIdOldRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class GermanyOldIdRecognizer : Recognizer, IGermanyOldIdRecognizer
+    public sealed class GermanyIdOldRecognizer : Recognizer, IGermanyIdOldRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer nativeRecognizer;
 
-        GermanyOldIdRecognizerResult result;
+        GermanyIdOldRecognizerResult result;
 
-        public GermanyOldIdRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer())
+        public GermanyIdOldRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer;
-            result = new GermanyOldIdRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer;
+            result = new GermanyIdOldRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IGermanyOldIdRecognizerResult Result => result;
+        public IGermanyIdOldRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -31,6 +31,18 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
             set => nativeRecognizer.SetExtractPlaceOfBirth(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
@@ -57,33 +69,26 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
-    public sealed class GermanyOldIdRecognizerResult : RecognizerResult, IGermanyOldIdRecognizerResult
+    public sealed class GermanyIdOldRecognizerResult : RecognizerResult, IGermanyIdOldRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer.Result nativeResult;
 
-        internal GermanyOldIdRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyOldIdRecognizer.Result nativeResult) : base(nativeResult)
+        internal GermanyIdOldRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Germany.GermanyIdOldRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string Issuer => nativeResult.Issuer;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
-        public string Nationality => nativeResult.Nationality;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
-        public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
     }
 }

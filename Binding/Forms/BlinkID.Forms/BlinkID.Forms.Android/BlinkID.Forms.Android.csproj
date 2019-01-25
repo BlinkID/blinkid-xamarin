@@ -14,7 +14,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <PackageId>BlinkID.Forms.Android</PackageId>
-    <PackageVersion>4.5.0</PackageVersion>
+    <PackageVersion>4.6.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -23,8 +23,8 @@
     <Description>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.5.0:
-https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNotes>
+    <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.6.0:
+https://github.com/BlinkID/blinkid-android/releases/tag/v4.6.0</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -201,6 +201,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/ElitePaymentCardBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustriaDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BruneiResidencePermitBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CyprusIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
@@ -215,12 +216,14 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/ColombiaDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/ElitePaymentCardFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/RomaniaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MrtdRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/Pdf417Recognizer.cs" />
+    <Compile Include="Recognizers/Implementations/GermanyIdOldRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CyprusOldIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SimNumberRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PaymentCardCombinedRecognizer.cs" />
@@ -235,7 +238,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/MexicoVoterIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/HongKongIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyOldIdRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PaymentCardBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustraliaDlBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyKadFrontRecognizer.cs" />
@@ -246,6 +248,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MoroccoIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BruneiIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaIkadFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyTenteraFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PaymentCardFrontRecognizer.cs" />
@@ -253,6 +256,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.5.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/SerbiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MoroccoIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BruneiResidencePermitFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/NewZealandDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UsdlCombinedRecognizer.cs" />
