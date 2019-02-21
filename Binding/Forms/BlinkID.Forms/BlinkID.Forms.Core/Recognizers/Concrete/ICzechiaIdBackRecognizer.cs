@@ -7,65 +7,49 @@
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if Czech ID's issuing authority should be extracted.
-        /// 
-        ///  
+        /// Defines if Czech ID's issuing authority should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAuthority { get; set; }
         
         /// <summary>
-        /// Defines if Czech ID owner's permanent address should be extracted.
-        /// 
-        ///  
+        /// Defines if Czech ID owner's permanent address should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPermanentStay { get; set; }
         
         /// <summary>
-        /// Defines if Czech ID owner's personal number should be extracted.
-        /// 
-        ///  
+        /// Defines if Czech ID owner's personal number should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPersonalNumber { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -89,7 +73,7 @@
         string Authority { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

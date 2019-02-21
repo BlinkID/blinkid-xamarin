@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan the front side of Australian driver's licences.
+    /// Recognizer which can scan front side of Brunei Temporary Residence Permit.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizer : IRecognizer
+    public interface IBruneiTemporaryResidencePermitFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,32 +14,39 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Australian DL owner should be extracted 
+        /// Defines if address of Brunei Temporary Residence Permit owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Australian DL owner should be extracted 
+        /// Defines if date of birth of Brunei Temporary Residence Permit owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if full name of Australian DL owner should be extracted 
+        /// Defines if full name of Brunei Temporary Residence Permit owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFullName { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Australian DL should be extracted 
+        /// Defines if place of birth of Brunei Temporary Residence Permit owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractLicenseExpiry { get; set; }
+        bool ExtractPlaceOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if sex of Brunei Temporary Residence Permit owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -76,41 +83,32 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustraliaDlFrontRecognizerResult Result { get; }
+        IBruneiTemporaryResidencePermitFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustraliaDlFrontRecognizer.
+    /// Result object for IBruneiTemporaryResidencePermitFrontRecognizer.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizerResult : IRecognizerResult {
+    public interface IBruneiTemporaryResidencePermitFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Australian DL owner 
+        /// The address of Brunei Temporary Residence Permit owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The date of birth of the Australian DL owner 
+        /// The date of birth of Brunei Temporary Residence Permit owner. 
         /// </summary>
         IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The document number of Brunei Temporary Residence Permit. 
+        /// </summary>
+        string DocumentNumber { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -123,29 +121,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of the Australian DL owner 
+        /// The full name of Brunei Temporary Residence Permit owner. 
         /// </summary>
         string FullName { get; }
         
         /// <summary>
-        /// The date of expiry of the Australian DL 
+        /// The place of birth of Brunei Temporary Residence Permit owner. 
         /// </summary>
-        IDate LicenceExpiry { get; }
+        string PlaceOfBirth { get; }
         
         /// <summary>
-        /// The licence number of the Australian DL 
+        /// The sex of Brunei Temporary Residence Permit owner. 
         /// </summary>
-        string LicenceNumber { get; }
-        
-        /// <summary>
-        /// The licence type of the Australian DL 
-        /// </summary>
-        string LicenceType { get; }
-        
-        /// <summary>
-        /// Signature image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string Sex { get; }
         
     }
 }
