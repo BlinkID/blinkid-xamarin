@@ -1,56 +1,72 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    ///  Recognizer for reading front side of Jordan ID.
+    /// Class for configuring Jordan ID Front Recognizer.
     /// 
+    /// Jordan ID Front recognizer is used for scanning front side of Jordan ID.
     /// </summary>
     public interface IJordanIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// True if date of birth of Jordan owner is being extracted 
+        /// Defines if owner's date of birth should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// True if name of Jordan ID owner is being extracted 
+        /// Defines if owner's name should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// True if sex of Jordan owner is being extracted 
+        /// Defines if owner's sex should be extracted from Jordan ID
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines the DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -69,32 +85,32 @@
     public interface IJordanIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Date of birth of Jordan ID owner. 
+        /// The Date Of Birth of the Jordan ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// Name of Jordan ID owner. 
+        /// The Name of the Jordan ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The national number of Jordan ID card owner. 
+        /// The National Number of the Jordan ID. 
         /// </summary>
         string NationalNumber { get; }
         
         /// <summary>
-        /// Sex of Jordan ID owner. 
+        /// The Sex of the Jordan ID owner. 
         /// </summary>
         string Sex { get; }
         
