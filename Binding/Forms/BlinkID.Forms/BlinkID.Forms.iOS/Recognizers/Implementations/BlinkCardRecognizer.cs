@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ElitePaymentCardCombinedRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BlinkCardRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class ElitePaymentCardCombinedRecognizer : Recognizer, IElitePaymentCardCombinedRecognizer
+    public sealed class BlinkCardRecognizer : Recognizer, IBlinkCardRecognizer
     {
-        MBElitePaymentCardCombinedRecognizer nativeRecognizer;
+        MBBlinkCardRecognizer nativeRecognizer;
 
-        ElitePaymentCardCombinedRecognizerResult result;
+        BlinkCardRecognizerResult result;
 
-        public ElitePaymentCardCombinedRecognizer() : base(new MBElitePaymentCardCombinedRecognizer())
+        public BlinkCardRecognizer() : base(new MBBlinkCardRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBElitePaymentCardCombinedRecognizer;
-            result = new ElitePaymentCardCombinedRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBBlinkCardRecognizer;
+            result = new BlinkCardRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IElitePaymentCardCombinedRecognizerResult Result => result;
+        public IBlinkCardRecognizerResult Result => result;
 
         
         public bool AnonymizeCardNumber 
@@ -43,6 +43,12 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
+        }
+        
+        public bool ExtractCvv 
+        { 
+            get => nativeRecognizer.ExtractCvv; 
+            set => nativeRecognizer.ExtractCvv = value;
         }
         
         public bool ExtractInventoryNumber 
@@ -89,11 +95,11 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class ElitePaymentCardCombinedRecognizerResult : RecognizerResult, IElitePaymentCardCombinedRecognizerResult
+    public sealed class BlinkCardRecognizerResult : RecognizerResult, IBlinkCardRecognizerResult
     {
-        MBElitePaymentCardCombinedRecognizerResult nativeResult;
+        MBBlinkCardRecognizerResult nativeResult;
 
-        internal ElitePaymentCardCombinedRecognizerResult(MBElitePaymentCardCombinedRecognizerResult nativeResult) : base(nativeResult)
+        internal BlinkCardRecognizerResult(MBBlinkCardRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
@@ -105,6 +111,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
         public string InventoryNumber => nativeResult.InventoryNumber;
+        public CardIssuer Issuer => (CardIssuer)nativeResult.Issuer;
         public string Owner => nativeResult.Owner;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;
         public IDate ValidThru => nativeResult.ValidThru != null ? new Date(nativeResult.ValidThru) : null;

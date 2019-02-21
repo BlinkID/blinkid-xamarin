@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PaymentCardCombinedRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BlinkCardEliteRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class PaymentCardCombinedRecognizer : Recognizer, IPaymentCardCombinedRecognizer
+    public sealed class BlinkCardEliteRecognizer : Recognizer, IBlinkCardEliteRecognizer
     {
-        MBPaymentCardCombinedRecognizer nativeRecognizer;
+        MBBlinkCardEliteRecognizer nativeRecognizer;
 
-        PaymentCardCombinedRecognizerResult result;
+        BlinkCardEliteRecognizerResult result;
 
-        public PaymentCardCombinedRecognizer() : base(new MBPaymentCardCombinedRecognizer())
+        public BlinkCardEliteRecognizer() : base(new MBBlinkCardEliteRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBPaymentCardCombinedRecognizer;
-            result = new PaymentCardCombinedRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBBlinkCardEliteRecognizer;
+            result = new BlinkCardEliteRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPaymentCardCombinedRecognizerResult Result => result;
+        public IBlinkCardEliteRecognizerResult Result => result;
 
         
         public bool AnonymizeCardNumber 
@@ -89,11 +89,11 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class PaymentCardCombinedRecognizerResult : RecognizerResult, IPaymentCardCombinedRecognizerResult
+    public sealed class BlinkCardEliteRecognizerResult : RecognizerResult, IBlinkCardEliteRecognizerResult
     {
-        MBPaymentCardCombinedRecognizerResult nativeResult;
+        MBBlinkCardEliteRecognizerResult nativeResult;
 
-        internal PaymentCardCombinedRecognizerResult(MBPaymentCardCombinedRecognizerResult nativeResult) : base(nativeResult)
+        internal BlinkCardEliteRecognizerResult(MBBlinkCardEliteRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }

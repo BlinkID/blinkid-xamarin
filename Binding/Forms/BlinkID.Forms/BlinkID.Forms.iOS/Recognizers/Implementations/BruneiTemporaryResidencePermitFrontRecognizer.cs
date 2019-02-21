@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PolandIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiTemporaryResidencePermitFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class PolandIdFrontRecognizer : Recognizer, IPolandIdFrontRecognizer
+    public sealed class BruneiTemporaryResidencePermitFrontRecognizer : Recognizer, IBruneiTemporaryResidencePermitFrontRecognizer
     {
-        MBPolandIdFrontRecognizer nativeRecognizer;
+        MBBruneiTemporaryResidencePermitFrontRecognizer nativeRecognizer;
 
-        PolandIdFrontRecognizerResult result;
+        BruneiTemporaryResidencePermitFrontRecognizerResult result;
 
-        public PolandIdFrontRecognizer() : base(new MBPolandIdFrontRecognizer())
+        public BruneiTemporaryResidencePermitFrontRecognizer() : base(new MBBruneiTemporaryResidencePermitFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBPolandIdFrontRecognizer;
-            result = new PolandIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBBruneiTemporaryResidencePermitFrontRecognizer;
+            result = new BruneiTemporaryResidencePermitFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPolandIdFrontRecognizerResult Result => result;
+        public IBruneiTemporaryResidencePermitFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,40 +27,34 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
+        }
+        
         public bool ExtractDateOfBirth 
         { 
             get => nativeRecognizer.ExtractDateOfBirth; 
             set => nativeRecognizer.ExtractDateOfBirth = value;
         }
         
-        public bool ExtractFamilyName 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ExtractFamilyName; 
-            set => nativeRecognizer.ExtractFamilyName = value;
+            get => nativeRecognizer.ExtractFullName; 
+            set => nativeRecognizer.ExtractFullName = value;
         }
         
-        public bool ExtractGivenNames 
+        public bool ExtractPlaceOfBirth 
         { 
-            get => nativeRecognizer.ExtractGivenNames; 
-            set => nativeRecognizer.ExtractGivenNames = value;
-        }
-        
-        public bool ExtractParentsGivenNames 
-        { 
-            get => nativeRecognizer.ExtractParentsGivenNames; 
-            set => nativeRecognizer.ExtractParentsGivenNames = value;
+            get => nativeRecognizer.ExtractPlaceOfBirth; 
+            set => nativeRecognizer.ExtractPlaceOfBirth = value;
         }
         
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ExtractSurname; 
-            set => nativeRecognizer.ExtractSurname = value;
         }
         
         public uint FaceImageDpi 
@@ -95,21 +89,21 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class PolandIdFrontRecognizerResult : RecognizerResult, IPolandIdFrontRecognizerResult
+    public sealed class BruneiTemporaryResidencePermitFrontRecognizerResult : RecognizerResult, IBruneiTemporaryResidencePermitFrontRecognizerResult
     {
-        MBPolandIdFrontRecognizerResult nativeResult;
+        MBBruneiTemporaryResidencePermitFrontRecognizerResult nativeResult;
 
-        internal PolandIdFrontRecognizerResult(MBPolandIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal BruneiTemporaryResidencePermitFrontRecognizerResult(MBBruneiTemporaryResidencePermitFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string Address => nativeResult.Address;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
-        public string FamilyName => nativeResult.FamilyName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string GivenNames => nativeResult.GivenNames;
-        public string ParentsGivenNames => nativeResult.ParentsGivenNames;
+        public string FullName => nativeResult.FullName;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public string Sex => nativeResult.Sex;
-        public string Surname => nativeResult.Surname;
     }
 }

@@ -478,6 +478,38 @@ namespace Microblink
 	}
 
 	[Native]
+	public enum MBCardIssuer : ulong
+	{
+		Other = 0,
+		AmericanExpress,
+		BmoAbm,
+		ChinaTUnion,
+		ChinaUnionPay,
+		CibcAdvantageDebit,
+		Ciss,
+		DinersClubInternational,
+		DinersClubUsCanada,
+		DiscoverCard,
+		Hsbc,
+		RuPay,
+		InterPayment,
+		InstaPayment,
+		Jcb,
+		Laser,
+		Maestro,
+		Dankort,
+		Mir,
+		MasterCard,
+		RbcClient,
+		ScotiaBank,
+		TdCtAccess,
+		Troy,
+		Visa,
+		Uatp,
+		Verve
+	}
+
+	[Native]
 	public enum MBUsdlKeys : ulong
 	{
 		DocumentType,
