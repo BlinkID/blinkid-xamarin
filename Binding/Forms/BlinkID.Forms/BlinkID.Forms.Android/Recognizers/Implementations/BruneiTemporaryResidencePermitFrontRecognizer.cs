@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PolandIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiTemporaryResidencePermitFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class PolandIdFrontRecognizer : Recognizer, IPolandIdFrontRecognizer
+    public sealed class BruneiTemporaryResidencePermitFrontRecognizer : Recognizer, IBruneiTemporaryResidencePermitFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer nativeRecognizer;
 
-        PolandIdFrontRecognizerResult result;
+        BruneiTemporaryResidencePermitFrontRecognizerResult result;
 
-        public PolandIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer())
+        public BruneiTemporaryResidencePermitFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer;
-            result = new PolandIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer;
+            result = new BruneiTemporaryResidencePermitFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPolandIdFrontRecognizerResult Result => result;
+        public IBruneiTemporaryResidencePermitFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,40 +27,34 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ShouldExtractAddress(); 
+            set => nativeRecognizer.SetExtractAddress(value);
+        }
+        
         public bool ExtractDateOfBirth 
         { 
             get => nativeRecognizer.ShouldExtractDateOfBirth(); 
             set => nativeRecognizer.SetExtractDateOfBirth(value);
         }
         
-        public bool ExtractFamilyName 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ShouldExtractFamilyName(); 
-            set => nativeRecognizer.SetExtractFamilyName(value);
+            get => nativeRecognizer.ShouldExtractFullName(); 
+            set => nativeRecognizer.SetExtractFullName(value);
         }
         
-        public bool ExtractGivenNames 
+        public bool ExtractPlaceOfBirth 
         { 
-            get => nativeRecognizer.ShouldExtractGivenNames(); 
-            set => nativeRecognizer.SetExtractGivenNames(value);
-        }
-        
-        public bool ExtractParentsGivenNames 
-        { 
-            get => nativeRecognizer.ShouldExtractParentsGivenNames(); 
-            set => nativeRecognizer.SetExtractParentsGivenNames(value);
+            get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
+            set => nativeRecognizer.SetExtractPlaceOfBirth(value);
         }
         
         public bool ExtractSex 
         { 
             get => nativeRecognizer.ShouldExtractSex(); 
             set => nativeRecognizer.SetExtractSex(value);
-        }
-        
-        public bool ExtractSurname 
-        { 
-            get => nativeRecognizer.ShouldExtractSurname(); 
-            set => nativeRecognizer.SetExtractSurname(value);
         }
         
         public uint FaceImageDpi 
@@ -95,21 +89,21 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class PolandIdFrontRecognizerResult : RecognizerResult, IPolandIdFrontRecognizerResult
+    public sealed class BruneiTemporaryResidencePermitFrontRecognizerResult : RecognizerResult, IBruneiTemporaryResidencePermitFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer.Result nativeResult;
 
-        internal PolandIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Poland.PolandIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal BruneiTemporaryResidencePermitFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiTemporaryResidencePermitFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
+        public string Address => nativeResult.Address;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public string DocumentNumber => nativeResult.DocumentNumber;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
-        public string FamilyName => nativeResult.FamilyName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string GivenNames => nativeResult.GivenNames;
-        public string ParentsGivenNames => nativeResult.ParentsGivenNames;
+        public string FullName => nativeResult.FullName;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public string Sex => nativeResult.Sex;
-        public string Surname => nativeResult.Surname;
     }
 }

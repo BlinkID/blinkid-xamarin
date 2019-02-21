@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IMrtdCombinedRecognizerResult Result => result;
 
         
+        public bool AllowSpecialCharacters 
+        { 
+            get => nativeRecognizer.AllowSpecialCharacters; 
+            set => nativeRecognizer.AllowSpecialCharacters = value;
+        }
+        
         public bool AllowUnparsedResults 
         { 
             get => nativeRecognizer.AllowUnparsedResults; 
@@ -31,12 +37,6 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.AllowUnverifiedResults; 
             set => nativeRecognizer.AllowUnverifiedResults = value;
-        }
-        
-        public bool DetectGlare 
-        { 
-            get => nativeRecognizer.ShouldDetectGlare(); 
-            set => nativeRecognizer.SetDetectGlare(value);
         }
         
         public DocumentFaceDetectorType DetectorType 

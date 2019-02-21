@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ElitePaymentCardCombinedRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BlinkCardRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class ElitePaymentCardCombinedRecognizer : Recognizer, IElitePaymentCardCombinedRecognizer
+    public sealed class BlinkCardRecognizer : Recognizer, IBlinkCardRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer nativeRecognizer;
 
-        ElitePaymentCardCombinedRecognizerResult result;
+        BlinkCardRecognizerResult result;
 
-        public ElitePaymentCardCombinedRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer())
+        public BlinkCardRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer;
-            result = new ElitePaymentCardCombinedRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer;
+            result = new BlinkCardRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IElitePaymentCardCombinedRecognizerResult Result => result;
+        public IBlinkCardRecognizerResult Result => result;
 
         
         public bool AnonymizeCardNumber 
@@ -43,6 +43,12 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
             set => nativeRecognizer.SetDetectGlare(value);
+        }
+        
+        public bool ExtractCvv 
+        { 
+            get => nativeRecognizer.ShouldExtractCvv(); 
+            set => nativeRecognizer.SetExtractCvv(value);
         }
         
         public bool ExtractInventoryNumber 
@@ -89,11 +95,11 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class ElitePaymentCardCombinedRecognizerResult : RecognizerResult, IElitePaymentCardCombinedRecognizerResult
+    public sealed class BlinkCardRecognizerResult : RecognizerResult, IBlinkCardRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer.Result nativeResult;
 
-        internal ElitePaymentCardCombinedRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Elitepaymentcard.ElitePaymentCardCombinedRecognizer.Result nativeResult) : base(nativeResult)
+        internal BlinkCardRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
@@ -105,6 +111,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
         public string InventoryNumber => nativeResult.InventoryNumber;
+        public CardIssuer Issuer => (CardIssuer)nativeResult.Issuer.Ordinal();
         public string Owner => nativeResult.Owner;
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
         public IDate ValidThru => nativeResult.ValidThru.Date != null ? new Date(nativeResult.ValidThru.Date) : null;

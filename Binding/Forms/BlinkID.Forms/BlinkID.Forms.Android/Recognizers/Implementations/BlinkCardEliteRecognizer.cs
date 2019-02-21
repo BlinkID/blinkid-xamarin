@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(PaymentCardCombinedRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BlinkCardEliteRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class PaymentCardCombinedRecognizer : Recognizer, IPaymentCardCombinedRecognizer
+    public sealed class BlinkCardEliteRecognizer : Recognizer, IBlinkCardEliteRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer nativeRecognizer;
 
-        PaymentCardCombinedRecognizerResult result;
+        BlinkCardEliteRecognizerResult result;
 
-        public PaymentCardCombinedRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer())
+        public BlinkCardEliteRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer;
-            result = new PaymentCardCombinedRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer;
+            result = new BlinkCardEliteRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IPaymentCardCombinedRecognizerResult Result => result;
+        public IBlinkCardEliteRecognizerResult Result => result;
 
         
         public bool AnonymizeCardNumber 
@@ -89,11 +89,11 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class PaymentCardCombinedRecognizerResult : RecognizerResult, IPaymentCardCombinedRecognizerResult
+    public sealed class BlinkCardEliteRecognizerResult : RecognizerResult, IBlinkCardEliteRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer.Result nativeResult;
 
-        internal PaymentCardCombinedRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Paymentcard.PaymentCardCombinedRecognizer.Result nativeResult) : base(nativeResult)
+        internal BlinkCardEliteRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkcard.BlinkCardEliteRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
