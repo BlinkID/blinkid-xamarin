@@ -1,8 +1,8 @@
 //
-//  MBElitePaymentCardCombinedRecognizerResult.h
+//  MBBlinkCardRecognizerResult.h
 //  MicroBlinkDev
 //
-//  Created by Jura Skrlec on 10/10/2018.
+//  Created by juraskrlec on 29/08/2018.
 //
 
 #import "MBRecognizerResult.h"
@@ -14,13 +14,15 @@
 #import "MBCombinedFullDocumentImageResult.h"
 #import "MBEncodedCombinedFullDocumentImageResult.h"
 
+#import "MBCardIssuer.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Class representing values obtained when scanning front and back side of the Payment Card
+ * Class representing values obtained when scanning front side of the Payment Card
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBElitePaymentCardCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
+@interface MBBlinkCardRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
 
 MB_INIT_UNAVAILABLE
 
@@ -40,7 +42,7 @@ MB_INIT_UNAVAILABLE
 @property (nonatomic, readonly) MBDateResult *validThru;
 
 /**
- * Payment card's security code/value.
+ *  Payment card's security code/value
  */
 @property (nonatomic, readonly) NSString *cvv;
 
@@ -48,6 +50,11 @@ MB_INIT_UNAVAILABLE
  * Payment card's inventory number.
  */
 @property (nonatomic, readonly) NSString *inventoryNumber;
+
+/**
+ * Payment card's issuing networ
+ */
+@property (nonatomic, readonly) MBCardIssuer issuer;
 
 @end
 

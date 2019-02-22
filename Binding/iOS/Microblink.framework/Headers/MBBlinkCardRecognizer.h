@@ -1,12 +1,12 @@
 //
-//  MBPaymentCardCombinedRecognizer.h
-//  MicroBlinkDev
+//  MBBlinkCardRecognizerResult.h
+//  MicroblinkDev
 //
-//  Created by Jura Skrlec on 29/08/2018.
+//  Created by juraskrlec on 29/08/2018.
 //
 
 #import "MBRecognizer.h"
-#import "MBPaymentCardCombinedRecognizerResult.h"
+#import "MBBlinkCardRecognizerResult.h"
 
 #import "MBCombinedRecognizer.h"
 
@@ -20,17 +20,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Recognizer used for scanning the front and back side of credit/debit cards.
+ * Recognizer used for scanning the front side of credit/debit cards.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBPaymentCardCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection, MBDigitalSignature, MBFullDocumentImageExtensionFactors>
+@interface MBBlinkCardRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBGlareDetection, MBDigitalSignature, MBFullDocumentImageExtensionFactors>
 
 MB_INIT
 
 /**
- * Result of scanning Payment Card Combined Recognizer
+ * Result of scanning Payment Card Front Recognizer
  */
-@property (nonatomic, strong, readonly) MBPaymentCardCombinedRecognizerResult *result;
+@property (nonatomic, strong, readonly) MBBlinkCardRecognizerResult *result;
 
 /**
  * Should extract the card owner information
@@ -45,6 +45,13 @@ MB_INIT
  * Default: YES
  */
 @property (nonatomic, assign) BOOL extractValidThru;
+
+/**
+ * Should extract CVV
+ *
+ * Default: YES
+ */
+@property (nonatomic, assign) BOOL extractCvv;
 
 /**
  * Should extract the card's inventory number
@@ -67,14 +74,12 @@ MB_INIT
  */
 @property (nonatomic, assign) BOOL anonymizeOwner;
 
-
 /**
- * Should anonymize the CVV area (redact image pixels) on the document image result
+ * Should anonymize the CVV on the document image result
  *
  * Default: NO
  */
 @property (nonatomic, assign) BOOL anonymizeCvv;
-
 
 @end
 

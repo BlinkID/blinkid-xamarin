@@ -1,8 +1,8 @@
 //
-//  MBPaymentCardCombinedRecognizerResult.h
-//  MicroBlinkDev
+//  MBBlinkCardEliteRecognizerResult.h
+//  MicroblinkDev
 //
-//  Created by Jura Skrlec on 29/08/2018.
+//  Created by juraskrlec on 10/10/2018.
 //
 
 #import "MBRecognizerResult.h"
@@ -17,10 +17,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Class representing values obtained when scanning front and back side of the Payment Card
+ * Class representing values obtained when scanning front side of the Elite Payment Card
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBPaymentCardCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
+@interface MBBlinkCardEliteRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
 
 MB_INIT_UNAVAILABLE
 
@@ -40,7 +40,7 @@ MB_INIT_UNAVAILABLE
 @property (nonatomic, readonly) MBDateResult *validThru;
 
 /**
- * Payment card's security code/value.
+ *  Payment card's security code/value
  */
 @property (nonatomic, readonly) NSString *cvv;
 
