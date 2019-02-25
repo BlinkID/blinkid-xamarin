@@ -49,11 +49,6 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.6.0</PackageReleaseNotes>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="MicroBlink.framework">
-      <Kind>Framework</Kind>
-    </NativeReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="packages.config" />
     <BundleResource Include="Microblink.bundle\Close.png" />
     <BundleResource Include="Microblink.bundle\Close%402x.png" />
@@ -171,6 +166,12 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.6.0</PackageReleaseNotes>
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Microblink.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />
