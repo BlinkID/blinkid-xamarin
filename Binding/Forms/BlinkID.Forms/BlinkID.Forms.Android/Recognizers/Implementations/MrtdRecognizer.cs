@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IMrtdRecognizerResult Result => result;
 
         
+        public bool AllowSpecialCharacters 
+        { 
+            get => nativeRecognizer.AllowSpecialCharacters; 
+            set => nativeRecognizer.AllowSpecialCharacters = value;
+        }
+        
         public bool AllowUnparsedResults 
         { 
             get => nativeRecognizer.AllowUnparsedResults; 
@@ -51,22 +57,10 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
-        public uint MrzImageDpi 
-        { 
-            get => (uint)nativeRecognizer.MrzImageDpi; 
-            set => nativeRecognizer.MrzImageDpi = (int)value;
-        }
-        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ShouldReturnFullDocumentImage(); 
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
-        }
-        
-        public bool ReturnMrzImage 
-        { 
-            get => nativeRecognizer.ShouldReturnMrzImage(); 
-            set => nativeRecognizer.SetReturnMrzImage(value);
         }
         
     }
@@ -80,7 +74,6 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public Xamarin.Forms.ImageSource MrzImage => nativeResult.MrzImage != null ? Utils.ConvertAndroidBitmap(nativeResult.MrzImage.ConvertToBitmap()) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
     }
 }

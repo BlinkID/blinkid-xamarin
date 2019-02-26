@@ -11,7 +11,7 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>4.6.0</PackageVersion>
+    <PackageVersion>4.7.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -49,110 +49,129 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.6.0</PackageReleaseNotes>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="MicroBlink.framework">
-      <Kind>Framework</Kind>
-    </NativeReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="packages.config" />
-    <BundleResource Include="MicroBlink.bundle\Close.png" />
-    <BundleResource Include="MicroBlink.bundle\Close%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\Close%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\Info.plist" />
-    <BundleResource Include="MicroBlink.bundle\No Camera-100.png" />
-    <BundleResource Include="MicroBlink.bundle\PPbeep.wav" />
-    <BundleResource Include="MicroBlink.bundle\arrow.png" />
-    <BundleResource Include="MicroBlink.bundle\arrow%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\arrow_pressed.png" />
-    <BundleResource Include="MicroBlink.bundle\arrow_pressed%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\cro_address_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\cro_authority_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\cro_id_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\cro_name_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\de_address_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\de_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\de_id_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\de_name_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\de_surname_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\en.strings" />
-    <BundleResource Include="MicroBlink.bundle\face_detector_model.zzip" />
-    <BundleResource Include="MicroBlink.bundle\icBackSide.png" />
-    <BundleResource Include="MicroBlink.bundle\icBackSide%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icBackSide%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\icFrontSide.png" />
-    <BundleResource Include="MicroBlink.bundle\icFrontSide%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icFrontSide%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_off.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_off%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_off%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_on.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_on%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\ic_flash_on%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-exit.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-exit%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-flashlight-selected.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-flashlight-selected%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-flashlight.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-flashlight%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-help.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-help%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-ok-big-selected.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-ok-big-selected%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-ok-big.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-ok-big%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-skip-selected.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-skip-selected%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-skip.png" />
-    <BundleResource Include="MicroBlink.bundle\icon-skip%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\id_back_wide.png" />
-    <BundleResource Include="MicroBlink.bundle\id_back_wide%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\id_back_wide%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\id_front_wide.png" />
-    <BundleResource Include="MicroBlink.bundle\id_front_wide%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\id_front_wide%403x.png" />
-    <BundleResource Include="MicroBlink.bundle\indonesia_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\indonesia_occupation_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\indonesia_province_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\malaysian_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\malaysian_state_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_arabic.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_eudl.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_general_blink_ocr.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_malaysian.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_micr.zzip" />
-    <BundleResource Include="MicroBlink.bundle\model_mrtd.zzip" />
-    <BundleResource Include="MicroBlink.bundle\morocco_id_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\morocco_places_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkCreditCardOcr_general_5.2.0.zzip" />
-    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkIDOcr_general_5.2.0.zzip" />
-    <BundleResource Include="MicroBlink.bundle\nn_model_BlinkInputOcr_general_5.1.0.zzip" />
-    <BundleResource Include="MicroBlink.bundle\payment_card_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\payment_card_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ll.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ll%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-lr.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-lr%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ul.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ul%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ur.png" />
-    <BundleResource Include="MicroBlink.bundle\scan-corner-ur%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\torchoff.png" />
-    <BundleResource Include="MicroBlink.bundle\torchoff%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\torchoff_pressed.png" />
-    <BundleResource Include="MicroBlink.bundle\torchoff_pressed%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\torchon.png" />
-    <BundleResource Include="MicroBlink.bundle\torchon%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\torchon_pressed.png" />
-    <BundleResource Include="MicroBlink.bundle\torchon_pressed%402x.png" />
-    <BundleResource Include="MicroBlink.bundle\uae_confusions.zzip" />
-    <BundleResource Include="MicroBlink.bundle\uae_name_dictionary.zzip" />
-    <BundleResource Include="MicroBlink.bundle\uae_nationality_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\Close.png" />
+    <BundleResource Include="Microblink.bundle\Close%402x.png" />
+    <BundleResource Include="Microblink.bundle\Close%403x.png" />
+    <BundleResource Include="Microblink.bundle\Info.plist" />
+    <BundleResource Include="Microblink.bundle\No Camera-100.png" />
+    <BundleResource Include="Microblink.bundle\PPbeep.wav" />
+    <BundleResource Include="Microblink.bundle\arrow.png" />
+    <BundleResource Include="Microblink.bundle\arrow%402x.png" />
+    <BundleResource Include="Microblink.bundle\arrow_pressed.png" />
+    <BundleResource Include="Microblink.bundle\arrow_pressed%402x.png" />
+    <BundleResource Include="Microblink.bundle\cbl.png" />
+    <BundleResource Include="Microblink.bundle\cbl%402x.png" />
+    <BundleResource Include="Microblink.bundle\cbl%403x.png" />
+    <BundleResource Include="Microblink.bundle\cbr.png" />
+    <BundleResource Include="Microblink.bundle\cbr%402x.png" />
+    <BundleResource Include="Microblink.bundle\cbr%403x.png" />
+    <BundleResource Include="Microblink.bundle\cro_address_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\cro_authority_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\cro_id_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\cro_name_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\ctl.png" />
+    <BundleResource Include="Microblink.bundle\ctl%402x.png" />
+    <BundleResource Include="Microblink.bundle\ctl%403x.png" />
+    <BundleResource Include="Microblink.bundle\ctr.png" />
+    <BundleResource Include="Microblink.bundle\ctr%402x.png" />
+    <BundleResource Include="Microblink.bundle\ctr%403x.png" />
+    <BundleResource Include="Microblink.bundle\de_address_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\de_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\de_id_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\de_name_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\de_surname_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\en.strings" />
+    <BundleResource Include="Microblink.bundle\face_detector_model.zzip" />
+    <BundleResource Include="Microblink.bundle\icBackSide.png" />
+    <BundleResource Include="Microblink.bundle\icBackSide%402x.png" />
+    <BundleResource Include="Microblink.bundle\icBackSide%403x.png" />
+    <BundleResource Include="Microblink.bundle\icFrontSide.png" />
+    <BundleResource Include="Microblink.bundle\icFrontSide%402x.png" />
+    <BundleResource Include="Microblink.bundle\icFrontSide%403x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_off.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_off%402x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_off%403x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_on.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_on%402x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flash_on%403x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flip.png" />
+    <BundleResource Include="Microblink.bundle\ic_flip%402x.png" />
+    <BundleResource Include="Microblink.bundle\ic_flip%403x.png" />
+    <BundleResource Include="Microblink.bundle\icon-exit.png" />
+    <BundleResource Include="Microblink.bundle\icon-exit%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-flashlight-selected.png" />
+    <BundleResource Include="Microblink.bundle\icon-flashlight-selected%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-flashlight.png" />
+    <BundleResource Include="Microblink.bundle\icon-flashlight%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-help.png" />
+    <BundleResource Include="Microblink.bundle\icon-help%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-ok-big-selected.png" />
+    <BundleResource Include="Microblink.bundle\icon-ok-big-selected%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-ok-big.png" />
+    <BundleResource Include="Microblink.bundle\icon-ok-big%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-skip-selected.png" />
+    <BundleResource Include="Microblink.bundle\icon-skip-selected%402x.png" />
+    <BundleResource Include="Microblink.bundle\icon-skip.png" />
+    <BundleResource Include="Microblink.bundle\icon-skip%402x.png" />
+    <BundleResource Include="Microblink.bundle\id_back_wide.png" />
+    <BundleResource Include="Microblink.bundle\id_back_wide%402x.png" />
+    <BundleResource Include="Microblink.bundle\id_back_wide%403x.png" />
+    <BundleResource Include="Microblink.bundle\id_front_wide.png" />
+    <BundleResource Include="Microblink.bundle\id_front_wide%402x.png" />
+    <BundleResource Include="Microblink.bundle\id_front_wide%403x.png" />
+    <BundleResource Include="Microblink.bundle\indonesia_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\indonesia_occupation_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\indonesia_province_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\malaysian_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\malaysian_state_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\model_arabic.zzip" />
+    <BundleResource Include="Microblink.bundle\model_eudl.zzip" />
+    <BundleResource Include="Microblink.bundle\model_general_blink_ocr.zzip" />
+    <BundleResource Include="Microblink.bundle\model_malaysian.zzip" />
+    <BundleResource Include="Microblink.bundle\model_micr.zzip" />
+    <BundleResource Include="Microblink.bundle\model_mrtd.zzip" />
+    <BundleResource Include="Microblink.bundle\morocco_id_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\morocco_places_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\nn_model_BlinkCreditCardOcr_general_5.2.0.zzip" />
+    <BundleResource Include="Microblink.bundle\nn_model_BlinkIDOcr_general_5.2.0.zzip" />
+    <BundleResource Include="Microblink.bundle\nn_model_BlinkInputOcr_general_5.1.0.zzip" />
+    <BundleResource Include="Microblink.bundle\payment_card_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\payment_card_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ll.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ll%402x.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-lr.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-lr%402x.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ul.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ul%402x.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ur.png" />
+    <BundleResource Include="Microblink.bundle\scan-corner-ur%402x.png" />
+    <BundleResource Include="Microblink.bundle\scan_line_white.png" />
+    <BundleResource Include="Microblink.bundle\scan_line_white%402x.png" />
+    <BundleResource Include="Microblink.bundle\scan_line_white%403x.png" />
+    <BundleResource Include="Microblink.bundle\torchoff.png" />
+    <BundleResource Include="Microblink.bundle\torchoff%402x.png" />
+    <BundleResource Include="Microblink.bundle\torchoff_pressed.png" />
+    <BundleResource Include="Microblink.bundle\torchoff_pressed%402x.png" />
+    <BundleResource Include="Microblink.bundle\torchon.png" />
+    <BundleResource Include="Microblink.bundle\torchon%402x.png" />
+    <BundleResource Include="Microblink.bundle\torchon_pressed.png" />
+    <BundleResource Include="Microblink.bundle\torchon_pressed%402x.png" />
+    <BundleResource Include="Microblink.bundle\uae_confusions.zzip" />
+    <BundleResource Include="Microblink.bundle\uae_name_dictionary.zzip" />
+    <BundleResource Include="Microblink.bundle\uae_nationality_dictionary.zzip" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Microblink.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
   <Import Project="packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets" Condition="Exists('packages\NuGet.Build.Packaging.0.2.0\build\NuGet.Build.Packaging.targets')" />

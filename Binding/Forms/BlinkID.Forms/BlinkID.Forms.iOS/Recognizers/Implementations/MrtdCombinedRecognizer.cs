@@ -21,6 +21,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public IMrtdCombinedRecognizerResult Result => result;
 
         
+        public bool AllowSpecialCharacters 
+        { 
+            get => nativeRecognizer.AllowSpecialCharacters; 
+            set => nativeRecognizer.AllowSpecialCharacters = value;
+        }
+        
         public bool AllowUnparsedResults 
         { 
             get => nativeRecognizer.AllowUnparsedResults; 
@@ -31,12 +37,6 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.AllowUnverifiedResults; 
             set => nativeRecognizer.AllowUnverifiedResults = value;
-        }
-        
-        public bool DetectGlare 
-        { 
-            get => nativeRecognizer.DetectGlare; 
-            set => nativeRecognizer.DetectGlare = value;
         }
         
         public DocumentFaceDetectorType DetectorType 

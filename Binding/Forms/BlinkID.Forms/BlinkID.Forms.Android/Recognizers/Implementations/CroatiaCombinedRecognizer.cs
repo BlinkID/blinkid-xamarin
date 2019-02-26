@@ -69,12 +69,6 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractLastName(value);
         }
         
-        public bool ExtractPersonalIdentificationNumber 
-        { 
-            get => nativeRecognizer.ExtractPersonalIdentificationNumber; 
-            set => nativeRecognizer.ExtractPersonalIdentificationNumber = value;
-        }
-        
         public bool ExtractResidence 
         { 
             get => nativeRecognizer.ShouldExtractResidence(); 

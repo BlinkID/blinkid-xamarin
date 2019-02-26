@@ -21,6 +21,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public IMrtdRecognizerResult Result => result;
 
         
+        public bool AllowSpecialCharacters 
+        { 
+            get => nativeRecognizer.AllowSpecialCharacters; 
+            set => nativeRecognizer.AllowSpecialCharacters = value;
+        }
+        
         public bool AllowUnparsedResults 
         { 
             get => nativeRecognizer.AllowUnparsedResults; 
@@ -51,22 +57,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
-        public uint MrzImageDpi 
-        { 
-            get => (uint)nativeRecognizer.MrzImageDpi; 
-            set => nativeRecognizer.MrzImageDpi = value;
-        }
-        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
-        }
-        
-        public bool ReturnMrzImage 
-        { 
-            get => nativeRecognizer.ReturnMrzImage; 
-            set => nativeRecognizer.ReturnMrzImage = value;
         }
         
     }
@@ -80,7 +74,6 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public Xamarin.Forms.ImageSource MrzImage => nativeResult.MrzImage != null ? Utils.ConvertUIImage(nativeResult.MrzImage.Image) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
     }
 }

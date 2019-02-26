@@ -1,9 +1,7 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Polish ID Front Recognizer.
-    /// 
-    /// Polish ID Front recognizer is used for scanning front side of Polish ID.
+    /// Recognizer which can scan front side of Poland ID cards.
     /// </summary>
     public interface IPolandIdFrontRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Polish ID
+        /// Defines if date of birth of Poland ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,16 +25,16 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Polish ID
+        /// Defines if family name of Poland ID owner should be extracted.
         /// 
         ///  
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to 'false'
         /// </summary>
         bool ExtractFamilyName { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Polish ID owner should be extracted
+        /// Defines if given names of Poland ID owner should be extracted.
         /// 
         ///  
         ///
@@ -45,31 +43,61 @@
         bool ExtractGivenNames { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Polish ID
+        /// Defines if parents given names of Poland ID owner should be extracted.
         /// 
         ///  
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to 'false'
         /// </summary>
         bool ExtractParentsGivenNames { get; set; }
         
         /// <summary>
-        ///  Defines if sex of Polish ID owner should be extracted
+        /// Defines if sex of Poland ID owner should be extracted.
         /// 
-        ///   
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines if citizenship of Polish ID owner should be extracted
+        /// Defines if surname of Poland ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -102,7 +130,7 @@
     public interface IPolandIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of Polish ID owner 
+        /// The date of birth of the Poland ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
@@ -112,7 +140,7 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The family name of Polish ID owner. 
+        /// The family name of the Poland ID owner. 
         /// </summary>
         string FamilyName { get; }
         
@@ -122,22 +150,22 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The first name of the Polish ID owner. 
+        /// The given names of the Poland ID owner. 
         /// </summary>
         string GivenNames { get; }
         
         /// <summary>
-        /// The parents name of Polish ID owner. 
+        /// The parents given names of the Poland ID owner. 
         /// </summary>
         string ParentsGivenNames { get; }
         
         /// <summary>
-        /// The sex of the Polish ID owner. 
+        /// The sex of the Poland ID owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// The last name of the Polish ID owner. 
+        /// The surname of the Poland ID owner. 
         /// </summary>
         string Surname { get; }
         

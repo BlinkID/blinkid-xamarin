@@ -1,10 +1,19 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
     /// Recognizer that can recognizer Machine Readable Zone (MRZ) of the Machine Readable Travel Document (MRTD)
     /// </summary>
     public interface IMrtdRecognizer : IRecognizer
     {
+        
+        /// <summary>
+        /// Whether special characters are allowed
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowSpecialCharacters { get; set; }
         
         /// <summary>
         /// Whether returning of unparsed results is allowed
@@ -55,16 +64,6 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for mrz images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint MrzImageDpi { get; set; }
-        
-        /// <summary>
         /// Sets whether full document image of ID card should be extracted.
         /// 
         ///  
@@ -72,15 +71,6 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
-        
-        /// <summary>
-        /// Sets whether MRZ image from ID card should be extracted
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnMrzImage { get; set; }
         
 
         /// <summary>
@@ -98,11 +88,6 @@
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
-        
-        /// <summary>
-        /// face image from the document if enabled with returnMrzImage property. 
-        /// </summary>
-        Xamarin.Forms.ImageSource MrzImage { get; }
         
         /// <summary>
         /// Returns the Data extracted from the machine readable zone. 

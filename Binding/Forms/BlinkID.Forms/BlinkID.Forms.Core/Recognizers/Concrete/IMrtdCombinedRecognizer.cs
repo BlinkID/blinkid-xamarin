@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
     /// MRTD Combined recognizer
@@ -7,6 +7,15 @@
     /// </summary>
     public interface IMrtdCombinedRecognizer : IRecognizer
     {
+        
+        /// <summary>
+        /// Whether special characters are allowed
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowSpecialCharacters { get; set; }
         
         /// <summary>
         /// Whether returning of unparsed results is allowed
@@ -26,15 +35,6 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool AllowUnverifiedResults { get; set; }
-        
-        /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool DetectGlare { get; set; }
         
         /// <summary>
         /// Type of document this recognizer will scan.
