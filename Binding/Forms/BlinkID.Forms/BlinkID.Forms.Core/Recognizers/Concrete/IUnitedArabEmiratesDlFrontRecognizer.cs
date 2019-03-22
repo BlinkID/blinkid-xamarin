@@ -7,120 +7,91 @@
     {
         
         /// <summary>
-        /// Defines if glare detection should be turned on/off.
-        /// 
-        ///  
+        /// Defines whether glare detector is enabled. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of UAE DL owner should be extracted
-        /// 
-        ///  
+        /// Defines if date of birth of UAE DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if issue date of UAE DL should be extracted
-        /// 
-        ///  
+        /// Defines if issue date of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssueDate { get; set; }
         
         /// <summary>
-        /// Defines if license number of UAE DL should be extracted
-        /// 
-        ///  
+        /// Defines if license number of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLicenseNumber { get; set; }
         
         /// <summary>
-        /// Defines if licensing authority code of UAE DL should be extracted
-        /// 
-        ///  
+        /// Defines if licensing authority code of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLicensingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if name of UAE DL owner should be extracted
-        /// 
-        ///  
+        /// Defines if name of UAE DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if nationality of UAE DL owner should be extracted
-        /// 
-        ///  
+        /// Defines if nationality of UAE DL owner should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if place of issue of UAE DL should be extracted
-        /// 
-        ///  
+        /// Defines if place of issue of UAE DL should be extracted 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfIssue { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -139,52 +110,52 @@
     public interface IUnitedArabEmiratesDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date Of Birth of the front side of the United Arab Emirates Dl owner. 
+        /// The date of birth of UAE DL owner 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The expiry Date of the front side of the United Arab Emirates Dl owner. 
+        /// The expiry date of UAE DL 
         /// </summary>
         IDate ExpiryDate { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issue Date of the front side of the United Arab Emirates Dl owner. 
+        /// The issue date of UAE DL 
         /// </summary>
         IDate IssueDate { get; }
         
         /// <summary>
-        /// The license Number of the front side of the United Arab Emirates Dl owner. 
+        /// The license number of UAE DL 
         /// </summary>
         string LicenseNumber { get; }
         
         /// <summary>
-        /// The licensing Authority of the front side of the United Arab Emirates Dl owner. 
+        /// The licensing authority code of UAE DL 
         /// </summary>
         string LicensingAuthority { get; }
         
         /// <summary>
-        /// The name of the front side of the United Arab Emirates Dl owner. 
+        /// The name of UAE DL owner 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The nationality of the front side of the United Arab Emirates Dl owner. 
+        /// The nationality of UAE DL owner 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The place Of Issue of the front side of the United Arab Emirates Dl owner. 
+        /// The place of issue of UAE DL 
         /// </summary>
         string PlaceOfIssue { get; }
         

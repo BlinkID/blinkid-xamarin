@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan the front side of Australian driver's licences.
+    /// Recognizer which can scan back side of Brunei Military ID card.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizer : IRecognizer
+    public interface IBruneiMilitaryIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,39 +14,18 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Australian DL owner should be extracted 
+        /// Defines if date of expiry of Brunei Military ID card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractAddress { get; set; }
+        bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Australian DL owner should be extracted 
+        /// Defines if date of issue of Brunei Military ID card should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
-        bool ExtractDateOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if full name of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractFullName { get; set; }
-        
-        /// <summary>
-        /// Defines if date of expiry of Australian DL should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractLicenseExpiry { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint FaceImageDpi { get; set; }
+        bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -61,13 +40,6 @@
         /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
-        
-        /// <summary>
-        /// Defines whether face image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnFaceImage { get; set; }
         
         /// <summary>
         /// Defines whether full document image will be available in 
@@ -94,53 +66,33 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustraliaDlFrontRecognizerResult Result { get; }
+        IBruneiMilitaryIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustraliaDlFrontRecognizer.
+    /// Result object for IBruneiMilitaryIdBackRecognizer.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizerResult : IRecognizerResult {
+    public interface IBruneiMilitaryIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Australian DL owner 
+        /// The army number of Brunei Military ID owner. 
         /// </summary>
-        string Address { get; }
+        string ArmyNumber { get; }
         
         /// <summary>
-        /// The date of birth of the Australian DL owner 
+        /// The date of expiry of Brunei Military ID card. 
         /// </summary>
-        IDate DateOfBirth { get; }
+        IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// The date of issue of Brunei Military ID card. 
         /// </summary>
-        Xamarin.Forms.ImageSource FaceImage { get; }
+        IDate DateOfIssue { get; }
         
         /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
-        
-        /// <summary>
-        /// The full name of the Australian DL owner 
-        /// </summary>
-        string FullName { get; }
-        
-        /// <summary>
-        /// The date of expiry of the Australian DL 
-        /// </summary>
-        IDate LicenceExpiry { get; }
-        
-        /// <summary>
-        /// The licence number of the Australian DL 
-        /// </summary>
-        string LicenceNumber { get; }
-        
-        /// <summary>
-        /// The licence type of the Australian DL 
-        /// </summary>
-        string LicenceType { get; }
         
         /// <summary>
         /// Signature image from the document 

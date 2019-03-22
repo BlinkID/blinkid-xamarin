@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Jordan ID cards.
+    /// Recognizer which can scan front side of Brunei Military ID card.
     /// </summary>
-    public interface IJordanIdBackRecognizer : IRecognizer
+    public interface IBruneiMilitaryIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -14,11 +14,25 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if full name of the Jordan ID owner should be extracted. 
+        /// Defines if full name of Brunei Military ID owner should be extracted. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFullName { get; set; }
+        
+        /// <summary>
+        /// Defines if military rank of Brunei Military ID owner should be extracted. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractRank { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -35,6 +49,13 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
+        /// Defines whether face image will be available in result. 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnFaceImage { get; set; }
+        
+        /// <summary>
         /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
@@ -45,13 +66,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IJordanIdBackRecognizerResult Result { get; }
+        IBruneiMilitaryIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IJordanIdBackRecognizer.
+    /// Result object for IBruneiMilitaryIdFrontRecognizer.
     /// </summary>
-    public interface IJordanIdBackRecognizerResult : IRecognizerResult {
+    public interface IBruneiMilitaryIdFrontRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The date of birth of Brunei Military ID owner. 
+        /// </summary>
+        IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// Face image from the document 
+        /// </summary>
+        Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -59,14 +90,14 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of the Jordan ID owner. 
+        /// The full name of Brunei Military ID owner. 
         /// </summary>
         string FullName { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// The military rank of Brunei Military ID owner. 
         /// </summary>
-        IMrzResult MrzResult { get; }
+        string Rank { get; }
         
     }
 }
