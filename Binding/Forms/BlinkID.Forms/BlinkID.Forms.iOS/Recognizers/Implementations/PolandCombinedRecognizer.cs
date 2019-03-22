@@ -63,6 +63,24 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSurname = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -102,7 +120,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
         public string GivenNames => nativeResult.GivenNames;
-        public string Issuer => nativeResult.Issuer;
+        public string IssuedBy => nativeResult.IssuedBy;
         public bool MrzVerified => nativeResult.MrzVerified;
         public string Nationality => nativeResult.Nationality;
         public string ParentsGivenNames => nativeResult.ParentsGivenNames;

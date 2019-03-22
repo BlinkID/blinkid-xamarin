@@ -9,25 +9,12 @@ namespace Microblink.Forms.iOS.Overlays
 {
     public sealed class BlinkCardOverlaySettings : OverlaySettings, IBlinkCardOverlaySettings
     {
-
-        public string FirstSideInstructions
-        {
-            get;
-            set;
-        }
-
-        public string SecondSideInstructions
-        {
-            get;
-            set;
-        }
-
         readonly MBBlinkCardOverlaySettings nativeBlinkCardOverlaySettings;
 
         // this ensures GC does not collect delegate proxy while it is used by ObjC
         BlinkCardOverlayVCDelegate blinkCardOverlayVCDelegate;
 
-        public BlinkCardOverlaySettings(IRecognizerCollection recognizerCollection) 
+        public BlinkCardOverlaySettings(IRecognizerCollection recognizerCollection)
             : base(new MBBlinkCardOverlaySettings(), recognizerCollection)
         {
             nativeBlinkCardOverlaySettings = NativeOverlaySettings as MBBlinkCardOverlaySettings;
@@ -38,6 +25,10 @@ namespace Microblink.Forms.iOS.Overlays
             blinkCardOverlayVCDelegate = new BlinkCardOverlayVCDelegate(overlayVCDelegate);
             return new MBBlinkCardOverlayViewController(nativeBlinkCardOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, blinkCardOverlayVCDelegate);
         }
+
+        public string FirstSideInstructions { get; set; }
+
+        public string SecondSideInstructions { get; set; }
     }
 
     public sealed class BlinkCardOverlaySettingsFactory : IBlinkCardOverlaySettingsFactory

@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(JordanIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiMilitaryIdFrontRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class JordanIdFrontRecognizer : Recognizer, IJordanIdFrontRecognizer
+    public sealed class BruneiMilitaryIdFrontRecognizer : Recognizer, IBruneiMilitaryIdFrontRecognizer
     {
-        MBJordanIdFrontRecognizer nativeRecognizer;
+        MBBruneiMilitaryIdFrontRecognizer nativeRecognizer;
 
-        JordanIdFrontRecognizerResult result;
+        BruneiMilitaryIdFrontRecognizerResult result;
 
-        public JordanIdFrontRecognizer() : base(new MBJordanIdFrontRecognizer())
+        public BruneiMilitaryIdFrontRecognizer() : base(new MBBruneiMilitaryIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBJordanIdFrontRecognizer;
-            result = new JordanIdFrontRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBBruneiMilitaryIdFrontRecognizer;
+            result = new BruneiMilitaryIdFrontRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IJordanIdFrontRecognizerResult Result => result;
+        public IBruneiMilitaryIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,22 +27,16 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
-        public bool ExtractDateOfBirth 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ExtractDateOfBirth; 
-            set => nativeRecognizer.ExtractDateOfBirth = value;
+            get => nativeRecognizer.ExtractFullName; 
+            set => nativeRecognizer.ExtractFullName = value;
         }
         
-        public bool ExtractName 
+        public bool ExtractRank 
         { 
-            get => nativeRecognizer.ExtractName; 
-            set => nativeRecognizer.ExtractName = value;
-        }
-        
-        public bool ExtractSex 
-        { 
-            get => nativeRecognizer.ExtractSex; 
-            set => nativeRecognizer.ExtractSex = value;
+            get => nativeRecognizer.ExtractRank; 
+            set => nativeRecognizer.ExtractRank = value;
         }
         
         public uint FaceImageDpi 
@@ -77,19 +71,18 @@ namespace Microblink.Forms.iOS.Recognizers
         
     }
 
-    public sealed class JordanIdFrontRecognizerResult : RecognizerResult, IJordanIdFrontRecognizerResult
+    public sealed class BruneiMilitaryIdFrontRecognizerResult : RecognizerResult, IBruneiMilitaryIdFrontRecognizerResult
     {
-        MBJordanIdFrontRecognizerResult nativeResult;
+        MBBruneiMilitaryIdFrontRecognizerResult nativeResult;
 
-        internal JordanIdFrontRecognizerResult(MBJordanIdFrontRecognizerResult nativeResult) : base(nativeResult)
+        internal BruneiMilitaryIdFrontRecognizerResult(MBBruneiMilitaryIdFrontRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string Name => nativeResult.Name;
-        public string NationalNumber => nativeResult.NationalNumber;
-        public string Sex => nativeResult.Sex;
+        public string FullName => nativeResult.FullName;
+        public string Rank => nativeResult.Rank;
     }
 }

@@ -33,6 +33,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDateOfBirth = value;
         }
         
+        public bool ExtractFullName 
+        { 
+            get => nativeRecognizer.ExtractFullName; 
+            set => nativeRecognizer.ExtractFullName = value;
+        }
+        
         public bool ExtractName 
         { 
             get => nativeRecognizer.ExtractName; 
@@ -43,6 +49,24 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ExtractSex; 
             set => nativeRecognizer.ExtractSex = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -82,7 +106,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
-        public string Issuer => nativeResult.Issuer;
+        public string IssuedBy => nativeResult.IssuedBy;
         public bool MrzVerified => nativeResult.MrzVerified;
         public string Name => nativeResult.Name;
         public string NationalNumber => nativeResult.NationalNumber;
