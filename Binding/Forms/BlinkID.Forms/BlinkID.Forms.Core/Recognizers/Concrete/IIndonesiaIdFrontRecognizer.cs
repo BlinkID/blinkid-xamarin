@@ -7,154 +7,202 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if address of Indonesian ID owner should be extracted. 
+        /// Defines if address of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
         
         /// <summary>
-        /// Defines if blood type of Indonesian ID owner should be extracted. 
+        /// Defines if blood type of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractBloodType { get; set; }
         
         /// <summary>
-        /// Defines if citizenship of Indonesian ID owner should be extracted. 
+        /// Defines if citizenship of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractCitizenship { get; set; }
         
         /// <summary>
-        /// Defines if city of Indonesian ID owner should be extracted. 
+        /// Defines if city of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractCity { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Indonesian ID card should be extracted. 
+        /// Defines if date of expiry of Indonesian ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if district of Indonesian ID owner should be extracted. 
+        /// Defines if district of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDistrict { get; set; }
         
         /// <summary>
-        /// Defines if Kel/Desa of Indonesian ID owner should be extracted. 
+        /// Defines if Kel/Desa of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractKelDesa { get; set; }
         
         /// <summary>
-        /// Defines if marital status of Indonesian ID owner should be extracted. 
+        /// Defines if marital status of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractMaritalStatus { get; set; }
         
         /// <summary>
-        /// Defines if name of Indonesian ID owner should be extracted. 
+        /// Defines if name of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if occupation of Indonesian ID owner should be extracted. 
+        /// Defines if occupation of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractOccupation { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of Indonesian ID owner should be extracted. 
+        /// Defines if place of birth of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if religion of Indonesian ID owner should be extracted. 
+        /// Defines if religion of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractReligion { get; set; }
         
         /// <summary>
-        /// Defines if RT number of Indonesian ID owner should be extracted. 
+        /// Defines if RT number of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractRt { get; set; }
         
         /// <summary>
-        /// Defines if RW number of Indonesian ID owner should be extracted. 
+        /// Defines if RW number of Indonesian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractRw { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// The extension factors for full document image. 
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
         ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -173,112 +221,112 @@
     public interface IIndonesiaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Indonesian ID owner. 
+        /// The address of the front side of the Indonesia Id owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The blood type of the Indonesian ID owner. 
+        /// The blood Type of the front side of the Indonesia Id owner. 
         /// </summary>
         string BloodType { get; }
         
         /// <summary>
-        /// The citizenship of the Indonesian ID owner. 
+        /// The citizenship of the front side of the Indonesia Id owner. 
         /// </summary>
         string Citizenship { get; }
         
         /// <summary>
-        /// The city of the Indonesian ID owner. 
+        /// The city of the front side of the Indonesia Id owner. 
         /// </summary>
         string City { get; }
         
         /// <summary>
-        /// The date of birth of the Indonesian ID owner. 
+        /// The date Of Birth of the front side of the Indonesia Id owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Indonesian ID card. 
+        /// The date Of Expiry of the front side of the Indonesia Id owner. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of expiry of the Indonesian ID card is permanent. 
+        /// The date Of Expiry Permanent of the front side of the Indonesia Id owner. 
         /// </summary>
         bool DateOfExpiryPermanent { get; }
         
         /// <summary>
-        /// The district of the Indonesian ID owner. 
+        /// The district of the front side of the Indonesia Id owner. 
         /// </summary>
         string District { get; }
         
         /// <summary>
-        /// The document number of Indonesian ID card. 
+        /// The document Number of the front side of the Indonesia Id owner. 
         /// </summary>
         string DocumentNumber { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The Kel/Desa of the Indonesian ID owner. 
+        /// The kel Desa of the front side of the Indonesia Id owner. 
         /// </summary>
         string KelDesa { get; }
         
         /// <summary>
-        /// The marital status of the Indonesian ID owner. 
+        /// The marital Status of the front side of the Indonesia Id owner. 
         /// </summary>
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The name of the Indonesian ID owner. 
+        /// The name of the front side of the Indonesia Id owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The occupation of the Indonesian ID owner. 
+        /// The occupation of the front side of the Indonesia Id owner. 
         /// </summary>
         string Occupation { get; }
         
         /// <summary>
-        /// The place of birth of the Indonesian ID owner. 
+        /// The place Of Birth of the front side of the Indonesia Id owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// The province of the Indonesian ID owner. 
+        /// The province of the front side of the Indonesia Id owner. 
         /// </summary>
         string Province { get; }
         
         /// <summary>
-        /// The religion of the Indonesian ID owner. 
+        /// The religion of the front side of the Indonesia Id owner. 
         /// </summary>
         string Religion { get; }
         
         /// <summary>
-        /// The RT number of the Indonesian ID owner. 
+        /// The rt of the front side of the Indonesia Id owner. 
         /// </summary>
         string Rt { get; }
         
         /// <summary>
-        /// The RW number of the Indonesian ID owner. 
+        /// The rw of the front side of the Indonesia Id owner. 
         /// </summary>
         string Rw { get; }
         
         /// <summary>
-        /// The sex of the Indonesian ID owner. 
+        /// The sex of the front side of the Indonesia Id owner. 
         /// </summary>
         string Sex { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         

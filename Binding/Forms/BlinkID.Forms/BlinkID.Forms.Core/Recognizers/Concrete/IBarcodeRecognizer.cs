@@ -1,125 +1,174 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer that can perform recognition of any supported barcode type.
+    /// BarcodeRecognizer is used for scanning most of 1D barcode formats, and 2D format
+    /// such as Aztec, DataMatrix and QR code
     /// </summary>
     public interface IBarcodeRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Allow enabling the autodetection of image scale when scanning barcodes. 
+        /// Allow enabling the autodetection of image scale when scanning barcodes.
+        /// If set to true, prior reading barcode, image scale will be
+        /// corrected. This enabled correct reading of barcodes on high
+        /// resolution images but slows down the recognition process.
+        /// 
+        /// falseTE: This setting is applied only for Code39 and Code128 barcode scanning.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AutoScaleDetection { get; set; }
         
         /// <summary>
-        /// Allow scanning PDF417 barcodes which don't have quiet zone 
+        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool NullQuietZoneAllowed { get; set; }
         
         /// <summary>
-        /// Enable reading code39 barcode contents as extended data. For more information about code39 
+        /// Enable reading code39 barcode contents as extended data. For more information about code39
+        /// extended data (a.k.a. full ASCII mode), see https://en.wikipedia.org/wiki/Code_39#Full_ASCII_Code_39
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReadCode39AsExtendedData { get; set; }
         
         /// <summary>
-        /// Should Aztec 2D barcode be scanned. 
+        /// Set this to true to scan Aztec 2D barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanAztecCode { get; set; }
         
         /// <summary>
-        /// Should Code128 barcode be scanned. 
+        /// Set this to true to scan Code 128 1D barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanCode128 { get; set; }
         
         /// <summary>
-        /// Should Code39 barcode be scanned. 
+        /// Set this to true to scan Code 39 1D barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanCode39 { get; set; }
         
         /// <summary>
-        /// Should DataMatrix 2D barcode be scanned. 
+        /// Set this to true to scan DataMatrix 2D barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanDataMatrix { get; set; }
         
         /// <summary>
-        /// Should EAN13 barcode be scanned. 
+        /// Set this to true to scan EAN 13 barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanEan13 { get; set; }
         
         /// <summary>
-        /// Should EAN8 barcode be scanned. 
+        /// Set this to true to scan EAN8 barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanEan8 { get; set; }
         
         /// <summary>
-        /// Enables scanning of barcodes with inverse intensity values (e.g. white barcode on black background) 
+        /// Set this to true to allow scanning barcodes with inverted intensities
+        /// (i.e. white barcodes on black background)
+        /// 
+        /// falseTE: this options doubles the frame processing time
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanInverse { get; set; }
         
         /// <summary>
-        /// Should ITF barcode be scanned. 
+        /// Set this to true to scan ITF barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanItf { get; set; }
         
         /// <summary>
-        /// Should PDF417 2D barcode be scanned. 
+        /// Set this to true to scan Pdf417 barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanPdf417 { get; set; }
         
         /// <summary>
-        /// Should QR code be scanned. 
+        /// Set this to true to scan QR barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanQrCode { get; set; }
         
         /// <summary>
-        /// Enable decoding of non-standard PDF417 barcodes, but without 
+        /// Set this to true to scan even barcode not compliant with standards
+        /// For example, malformed PDF417 barcodes which were incorrectly encoded
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ScanUncertain { get; set; }
         
         /// <summary>
-        /// Should UPCA barcode be scanned. 
+        /// Set this to true to scan UPCA barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanUpca { get; set; }
         
         /// <summary>
-        /// Should UPCE barcode be scanned. 
+        /// Set this to true to scan UPCE barcodes
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanUpce { get; set; }
         
         /// <summary>
-        /// Enable slower, but more thorough scanning, thus giving higher possibility of successful scan. 
+        /// Set this to true to allow slower, but better image processing.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -138,22 +187,25 @@
     public interface IBarcodeRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The format of the scanned barcode. 
+        /// Type of the barcode scanned
+        /// 
+        ///  @return Type of the barcode 
         /// </summary>
         BarcodeType BarcodeType { get; }
         
         /// <summary>
-        /// The raw bytes contained inside barcode. 
+        /// Byte array with result of the scan 
         /// </summary>
         byte[] RawData { get; }
         
         /// <summary>
-        /// String representation of data inside barcode. 
+        /// Retrieves string content of scanned data 
         /// </summary>
         string StringData { get; }
         
         /// <summary>
-        /// True if returned result is uncertain, i.e. if scanned barcode was incomplete (i.e. 
+        /// Flag indicating uncertain scanning data
+        /// E.g obtained from damaged barcode. 
         /// </summary>
         bool Uncertain { get; }
         
