@@ -1,24 +1,24 @@
 ﻿using Microblink.Forms.Droid.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(EgyptIdFrontRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(BruneiMilitaryIdFrontRecognizer))]
 namespace Microblink.Forms.Droid.Recognizers
 {
-    public sealed class EgyptIdFrontRecognizer : Recognizer, IEgyptIdFrontRecognizer
+    public sealed class BruneiMilitaryIdFrontRecognizer : Recognizer, IBruneiMilitaryIdFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer nativeRecognizer;
 
-        EgyptIdFrontRecognizerResult result;
+        BruneiMilitaryIdFrontRecognizerResult result;
 
-        public EgyptIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer())
+        public BruneiMilitaryIdFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer;
-            result = new EgyptIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer;
+            result = new BruneiMilitaryIdFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IEgyptIdFrontRecognizerResult Result => result;
+        public IBruneiMilitaryIdFrontRecognizerResult Result => result;
 
         
         public bool DetectGlare 
@@ -27,10 +27,16 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public bool ExtractNationalNumber 
+        public bool ExtractFullName 
         { 
-            get => nativeRecognizer.ShouldExtractNationalNumber(); 
-            set => nativeRecognizer.SetExtractNationalNumber(value);
+            get => nativeRecognizer.ShouldExtractFullName(); 
+            set => nativeRecognizer.SetExtractFullName(value);
+        }
+        
+        public bool ExtractRank 
+        { 
+            get => nativeRecognizer.ShouldExtractRank(); 
+            set => nativeRecognizer.SetExtractRank(value);
         }
         
         public uint FaceImageDpi 
@@ -65,17 +71,18 @@ namespace Microblink.Forms.Droid.Recognizers
         
     }
 
-    public sealed class EgyptIdFrontRecognizerResult : RecognizerResult, IEgyptIdFrontRecognizerResult
+    public sealed class BruneiMilitaryIdFrontRecognizerResult : RecognizerResult, IBruneiMilitaryIdFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer.Result nativeResult;
 
-        internal EgyptIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Egypt.EgyptIdFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal BruneiMilitaryIdFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Brunei.BruneiMilitaryIdFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string NationalNumber => nativeResult.NationalNumber;
+        public string FullName => nativeResult.FullName;
+        public string Rank => nativeResult.Rank;
     }
 }

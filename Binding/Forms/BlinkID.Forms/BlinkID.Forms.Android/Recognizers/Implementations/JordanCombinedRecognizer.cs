@@ -33,6 +33,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractDateOfBirth(value);
         }
         
+        public bool ExtractFullName 
+        { 
+            get => nativeRecognizer.ShouldExtractFullName(); 
+            set => nativeRecognizer.SetExtractFullName(value);
+        }
+        
         public bool ExtractName 
         { 
             get => nativeRecognizer.ShouldExtractName(); 
@@ -43,6 +49,24 @@ namespace Microblink.Forms.Droid.Recognizers
         { 
             get => nativeRecognizer.ShouldExtractSex(); 
             set => nativeRecognizer.SetExtractSex(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -73,8 +97,8 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
@@ -82,7 +106,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
-        public string Issuer => nativeResult.Issuer;
+        public string IssuedBy => nativeResult.IssuedBy;
         public bool MrzVerified => nativeResult.IsMrzVerified;
         public string Name => nativeResult.Name;
         public string NationalNumber => nativeResult.NationalNumber;
