@@ -78,7 +78,7 @@
       <HintPath>packages\Validation.2.4.18\lib\netstandard1.3\Validation.dll</HintPath>
     </Reference>
     <Reference Include="iOSBinding">
-      <HintPath>packages\BlinkID.iOS.Binding.4.7.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.iOS.Binding.4.8.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="PInvoke.Windows.Core">
       <HintPath>packages\PInvoke.Windows.Core.0.5.184\lib\netstandard2.0\PInvoke.Windows.Core.dll</HintPath>
