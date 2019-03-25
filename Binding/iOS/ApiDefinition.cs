@@ -1131,7 +1131,7 @@ namespace Microblink
         nfloat PhysicalHeightInInches { get; }
     }
 
-    // @interface MBQuadWithSizeDetector : MBQuadDetector
+    // @interface MBQuadWithSizeDetector : MBQuadDetect]\
     
     [BaseType(typeof(MBQuadDetector))]
     [DisableDefaultCtor]
@@ -3669,79 +3669,7 @@ namespace Microblink
         bool ExtractDateOfExpiry { get; set; }
     }
 
-
-    // @interface MBLegacyMRTDRecognizerResult : MBLegacyRecognizerResult
-    
-    [BaseType(typeof(MBLegacyRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBLegacyMRTDRecognizerResult
-    {
-        // @property (readonly, nonatomic) NSString * _Nullable issuer;
-        [NullAllowed, Export("issuer")]
-        string Issuer { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
-        [NullAllowed, Export("documentNumber")]
-        string DocumentNumber { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable documentCode;
-        [NullAllowed, Export("documentCode")]
-        string DocumentCode { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable rawDateOfExpiry;
-        [NullAllowed, Export("rawDateOfExpiry")]
-        string RawDateOfExpiry { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfExpiry;
-        [NullAllowed, Export("dateOfExpiry")]
-        NSDate DateOfExpiry { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable primaryId;
-        [NullAllowed, Export("primaryId")]
-        string PrimaryId { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable secondaryId;
-        [NullAllowed, Export("secondaryId")]
-        string SecondaryId { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable rawDateOfBirth;
-        [NullAllowed, Export("rawDateOfBirth")]
-        string RawDateOfBirth { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfBirth;
-        [NullAllowed, Export("dateOfBirth")]
-        NSDate DateOfBirth { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable nationality;
-        [NullAllowed, Export("nationality")]
-        string Nationality { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable sex;
-        [NullAllowed, Export("sex")]
-        string Sex { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable opt1;
-        [NullAllowed, Export("opt1")]
-        string Opt1 { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable opt2;
-        [NullAllowed, Export("opt2")]
-        string Opt2 { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable mrzText;
-        [NullAllowed, Export("mrzText")]
-        string MrzText { get; }
-
-        // @property (readonly, nonatomic) BOOL mrzParsed;
-        [Export("mrzParsed")]
-        bool MrzParsed { get; }
-
-        // @property (readonly, nonatomic) BOOL mrzVerified;
-        [Export("mrzVerified")]
-        bool MrzVerified { get; }
-    }
-
-// @interface MBCroatiaIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    // @interface MBCroatiaIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
     [iOS (8,0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
@@ -6876,128 +6804,6 @@ namespace Microblink
         // @property (assign, nonatomic) BOOL extractSurname;
         [Export ("extractSurname")]
         bool ExtractSurname { get; set; }
-    }
-
-    // @interface MBSerbiaIdBackRecognizerResult : MBLegacyMRTDRecognizerResult <NSCopying, MBFullDocumentImageResult>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyMRTDRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBSerbiaIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult
-    {
-    }
-
-    // @interface MBSerbiaIdBackRecognizer : MBLegacyRecognizer <NSCopying, MBFullDocumentImage, MBGlareDetection>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyRecognizer))]
-    interface MBSerbiaIdBackRecognizer : INSCopying, IMBFullDocumentImage, IMBGlareDetection
-    {
-        // @property (readonly, nonatomic, strong) MBSerbiaIdBackRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
-        MBSerbiaIdBackRecognizerResult Result { get; }
-    }
-
-    // @interface MBSerbiaIdFrontRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBFaceImageResult, MBSignatureImageResult, MBFullDocumentImageResult>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBSerbiaIdFrontRecognizerResult : INSCopying, IMBFaceImageResult, IMBSignatureImageResult, IMBFullDocumentImageResult
-    {
-        // @property (readonly, nonatomic) NSDate * _Nullable issuingDate;
-        [NullAllowed, Export ("issuingDate")]
-        NSDate IssuingDate { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable validUntil;
-        [NullAllowed, Export ("validUntil")]
-        NSDate ValidUntil { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
-        [NullAllowed, Export ("documentNumber")]
-        string DocumentNumber { get; }
-    }
-
-    // @interface MBSerbiaIdFrontRecognizer : MBLegacyRecognizer <NSCopying, MBFaceImage, MBSignatureImage, MBFullDocumentImage, MBGlareDetection>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyRecognizer))]
-    interface MBSerbiaIdFrontRecognizer : INSCopying, IMBFaceImage, IMBSignatureImage, IMBFullDocumentImage, IMBGlareDetection
-    {
-        // @property (readonly, nonatomic, strong) MBSerbiaIdFrontRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
-        MBSerbiaIdFrontRecognizerResult Result { get; }
-
-        // @property (nonatomic) BOOL extractIssuingDate;
-        [Export ("extractIssuingDate")]
-        bool ExtractIssuingDate { get; set; }
-
-        // @property (nonatomic) BOOL extractValidUntil;
-        [Export ("extractValidUntil")]
-        bool ExtractValidUntil { get; set; }
-    }
-
-    // @interface MBSerbiaCombinedRecognizerResult : MBLegacyRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBSignatureImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedSignatureImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBSerbiaCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBSignatureImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedSignatureImageResult, IMBEncodedCombinedFullDocumentImageResult
-    {
-        // @property (readonly, nonatomic) NSString * _Nullable identityCardNumber;
-        [NullAllowed, Export ("identityCardNumber")]
-        string IdentityCardNumber { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfExpiry;
-        [NullAllowed, Export ("dateOfExpiry")]
-        NSDate DateOfExpiry { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfIssue;
-        [NullAllowed, Export ("dateOfIssue")]
-        NSDate DateOfIssue { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable jmbg;
-        [NullAllowed, Export ("jmbg")]
-        string Jmbg { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable firstName;
-        [NullAllowed, Export ("firstName")]
-        string FirstName { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable lastName;
-        [NullAllowed, Export ("lastName")]
-        string LastName { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nullable dateOfBirth;
-        [NullAllowed, Export ("dateOfBirth")]
-        NSDate DateOfBirth { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable nationality;
-        [NullAllowed, Export ("nationality")]
-        string Nationality { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable issuer;
-        [NullAllowed, Export ("issuer")]
-        string Issuer { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable sex;
-        [NullAllowed, Export ("sex")]
-        string Sex { get; }
-
-        // @property (readonly, nonatomic) BOOL mrzVerified;
-        [Export ("mrzVerified")]
-        bool MrzVerified { get; }
-    }
-
-    // @interface MBSerbiaCombinedRecognizer : MBLegacyRecognizer <NSCopying, MBCombinedRecognizer, MBGlareDetection, MBFullDocumentImage, MBSignatureImage, MBFaceImage, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBEncodeSignatureImage, MBDigitalSignature>
-    [Introduced (PlatformName.iOS, 1, 0, 0, message: "Recognizer is deprecated")]
-    [Deprecated (PlatformName.iOS, 4, 6, 0, message: "Recognizer is deprecated")]
-    [BaseType (typeof(MBLegacyRecognizer))]
-    interface MBSerbiaCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBGlareDetection, IMBFullDocumentImage, IMBSignatureImage, IMBFaceImage, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBEncodeSignatureImage, IMBDigitalSignature
-    {
-        // @property (readonly, nonatomic, strong) MBSerbiaCombinedRecognizerResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
-        MBSerbiaCombinedRecognizerResult Result { get; }
     }
 
   // @interface MBSingaporeIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
