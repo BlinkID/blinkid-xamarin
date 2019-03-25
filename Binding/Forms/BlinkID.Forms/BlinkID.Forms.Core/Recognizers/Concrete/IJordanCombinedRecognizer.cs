@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Jordan ID Combined Recognizer.
-    /// 
-    /// Jordan ID Combined recognizer is used for scanning both front and back side of Jordan ID.
+    /// Recognizer which can scan front and back side of Jordan national ID cards.
     /// </summary>
     public interface IJordanCombinedRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of birth should be extracted from Jordan ID
+        /// Defines if date of birth of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,7 +25,16 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if owner's name should be extracted from Jordan ID
+        /// Defines if full name of the Jordan ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractFullName { get; set; }
+        
+        /// <summary>
+        /// Defines if name of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
@@ -36,13 +43,43 @@
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if owner's sex should be extracted from Jordan ID
+        /// Defines if sex of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -84,12 +121,12 @@
     public interface IJordanCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Date Of Birth of the Jordan ID owner. 
+        /// The date of birth of the Jordan ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The Date of expiry of the Jordan ID. 
+        /// The date of expiry of the Jordan ID card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
@@ -112,7 +149,7 @@
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// The Document Number of the Jordan ID. 
+        /// The document number of the Jordan ID card. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -132,23 +169,22 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The issuer of the Jordan ID. 
+        /// The issuing authority of the Jordan ID card. 
         /// </summary>
-        string Issuer { get; }
+        string IssuedBy { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Determines if all check digits inside MRZ are correct 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// The Name of the Jordan ID owner. 
+        /// The name of the Jordan ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The Document Number of the Jordan ID. 
+        /// The national number of the Jordan ID card. 
         /// </summary>
         string NationalNumber { get; }
         
@@ -164,7 +200,7 @@
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The Sex of the Jordan ID owner. 
+        /// The sex of the Jordan ID owner. 
         /// </summary>
         string Sex { get; }
         

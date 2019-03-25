@@ -56,7 +56,7 @@
         /// 
         ///  
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to 'true'
         /// </summary>
         bool ExtractOwner { get; set; }
         

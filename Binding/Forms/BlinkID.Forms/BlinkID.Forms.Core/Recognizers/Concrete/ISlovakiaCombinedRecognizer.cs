@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Slovak ID Combined Recognizer.
-    /// 
-    /// Slovak ID Combined recognizer is used for scanning both front and back side of Slovak ID.
+    /// Recognizer which can scan front and back side of Slovakia national ID cards.
     /// </summary>
     public interface ISlovakiaCombinedRecognizer : IRecognizer
     {
@@ -18,7 +16,16 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of birth should be extracted from Slovakian ID
+        /// Defines if address of Slovak ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if date of birth of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,7 +34,7 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if ID's date of expiry should be extracted
+        /// Defines if date of expiry of Slovak ID should be extracted.
         /// 
         ///  
         ///
@@ -36,7 +43,7 @@
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if ID's date of issue should be extracted
+        /// Defines if date of issue of Slovak ID should be extracted.
         /// 
         ///  
         ///
@@ -45,7 +52,7 @@
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if issuing document number should be extracted from Slovakian ID
+        /// Defines if document number of Slovak ID should be extracted.
         /// 
         ///  
         ///
@@ -54,7 +61,16 @@
         bool ExtractDocumentNumber { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority should be extracted from Slovakian ID
+        /// Defines if first name of Slovak ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractFirstName { get; set; }
+        
+        /// <summary>
+        /// Defines if issuing authority of Slovak ID should be extracted.
         /// 
         ///  
         ///
@@ -63,7 +79,16 @@
         bool ExtractIssuedBy { get; set; }
         
         /// <summary>
-        /// Defines if owner's nationality should be extracted from Slovakian ID
+        /// Defines if last name of Slovak ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractLastName { get; set; }
+        
+        /// <summary>
+        /// Defines if nationality of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
@@ -72,7 +97,7 @@
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        /// Defines if owner's place of birth should be extracted from Slovakian ID
+        /// Defines if place of birth of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
@@ -81,7 +106,7 @@
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if owner's sex should be extracted from Slovakian ID
+        /// Defines if sex of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
@@ -90,7 +115,7 @@
         bool ExtractSex { get; set; }
         
         /// <summary>
-        /// Defines if owner's special remarks should be extracted from Slovakian ID
+        /// Defines if special remarks of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
@@ -99,13 +124,43 @@
         bool ExtractSpecialRemarks { get; set; }
         
         /// <summary>
-        /// Defines if owner's surname at birth should be extracted from Slovakian ID
+        /// Defines if surname at birth of Slovak ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurnameAtBirth { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -143,6 +198,16 @@
         /// </summary>
         bool SignResult { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -161,17 +226,17 @@
         string Address { get; }
         
         /// <summary>
-        /// The date of birth of Slovak ID owner 
+        /// The date of birth of the Slovak ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of Slovak ID owner 
+        /// The date of expiry of the Slovak ID card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of Slovak ID owner 
+        /// The date of issue of the Slovak ID card. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -194,7 +259,7 @@
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// The identity card number of Slovak ID. 
+        /// The document number of the Slovak ID card. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -219,9 +284,9 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The issuing authority of Slovak ID. 
+        /// The issuing authority of the Slovak ID card. 
         /// </summary>
-        string IssuingAuthority { get; }
+        string IssuedBy { get; }
         
         /// <summary>
         /// The last name of the Slovak ID owner. 
@@ -229,8 +294,7 @@
         string LastName { get; }
         
         /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Determines if all check digits inside MRZ are correct 
         /// </summary>
         bool MrzVerified { get; }
         
@@ -240,9 +304,9 @@
         string Nationality { get; }
         
         /// <summary>
-        /// The PIN of the Slovak ID owner. 
+        /// The personal number of the Slovak ID owner. 
         /// </summary>
-        string PersonalIdentificationNumber { get; }
+        string PersonalNumber { get; }
         
         /// <summary>
         /// The place of birth of the Slovak ID owner. 
@@ -266,12 +330,12 @@
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The special remarks of Slovak ID. 
+        /// The special remarks of the Slovak ID owner. 
         /// </summary>
         string SpecialRemarks { get; }
         
         /// <summary>
-        /// The surname at birth of Slovak ID. 
+        /// The surname at birth of the Slovak ID owner. 
         /// </summary>
         string SurnameAtBirth { get; }
         

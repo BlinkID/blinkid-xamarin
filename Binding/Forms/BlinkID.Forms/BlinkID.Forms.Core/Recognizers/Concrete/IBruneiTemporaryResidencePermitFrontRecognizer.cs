@@ -1,4 +1,4 @@
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
     /// Recognizer which can scan front side of Brunei Temporary Residence Permit.

@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Jordan ID Front Recognizer.
-    /// 
-    /// Jordan ID Front recognizer is used for scanning front side of Jordan ID.
+    /// Recognizer which can scan front side of Jordan national ID cards.
     /// </summary>
     public interface IJordanIdFrontRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of birth should be extracted from Jordan ID
+        /// Defines if date of birth of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
@@ -27,7 +25,7 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if owner's name should be extracted from Jordan ID
+        /// Defines if name of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
@@ -36,13 +34,23 @@
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if owner's sex should be extracted from Jordan ID
+        /// Defines if sex of Jordan ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -53,6 +61,16 @@
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -85,7 +103,7 @@
     public interface IJordanIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Date Of Birth of the Jordan ID owner. 
+        /// The date of birth of the Jordan ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
@@ -100,17 +118,17 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The Name of the Jordan ID owner. 
+        /// The name of the Jordan ID owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The National Number of the Jordan ID. 
+        /// The national number of the Jordan ID. 
         /// </summary>
         string NationalNumber { get; }
         
         /// <summary>
-        /// The Sex of the Jordan ID owner. 
+        /// The sex of the Jordan ID owner. 
         /// </summary>
         string Sex { get; }
         

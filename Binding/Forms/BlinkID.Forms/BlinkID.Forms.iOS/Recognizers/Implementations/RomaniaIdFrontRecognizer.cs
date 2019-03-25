@@ -33,6 +33,18 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractAddress = value;
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ExtractDateOfExpiry; 
+            set => nativeRecognizer.ExtractDateOfExpiry = value;
+        }
+        
+        public bool ExtractDateOfIssue 
+        { 
+            get => nativeRecognizer.ExtractDateOfIssue; 
+            set => nativeRecognizer.ExtractDateOfIssue = value;
+        }
+        
         public bool ExtractFirstName 
         { 
             get => nativeRecognizer.ExtractFirstName; 
@@ -45,34 +57,40 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractIssuedBy = value;
         }
         
-        public bool ExtractLastName 
-        { 
-            get => nativeRecognizer.ExtractLastName; 
-            set => nativeRecognizer.ExtractLastName = value;
-        }
-        
-        public bool ExtractNonMRZSex 
-        { 
-            get => nativeRecognizer.ExtractNonMRZSex; 
-            set => nativeRecognizer.ExtractNonMRZSex = value;
-        }
-        
         public bool ExtractPlaceOfBirth 
         { 
             get => nativeRecognizer.ExtractPlaceOfBirth; 
             set => nativeRecognizer.ExtractPlaceOfBirth = value;
         }
         
-        public bool ExtractValidFrom 
+        public bool ExtractSex 
         { 
-            get => nativeRecognizer.ExtractValidFrom; 
-            set => nativeRecognizer.ExtractValidFrom = value;
+            get => nativeRecognizer.ExtractSex; 
+            set => nativeRecognizer.ExtractSex = value;
         }
         
-        public bool ExtractValidUntil 
+        public bool ExtractSurname 
         { 
-            get => nativeRecognizer.ExtractValidUntil; 
-            set => nativeRecognizer.ExtractValidUntil = value;
+            get => nativeRecognizer.ExtractSurname; 
+            set => nativeRecognizer.ExtractSurname = value;
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
         public bool ReturnFaceImage 
@@ -98,33 +116,17 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public string CardNumber => nativeResult.CardNumber;
-        public string Cnp => nativeResult.Cnp;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
-        public string IdSeries => nativeResult.IdSeries;
         public string IssuedBy => nativeResult.IssuedBy;
-        public string Issuer => nativeResult.Issuer;
-        public string LastName => nativeResult.LastName;
-        public bool MrzParsed => nativeResult.MrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.MrzVerified;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;
-        public string NonMRZNationality => nativeResult.NonMRZNationality;
-        public string NonMRZSex => nativeResult.NonMRZSex;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
-        public string ParentNames => nativeResult.ParentNames;
+        public string ParentName => nativeResult.ParentName;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
         public string Sex => nativeResult.Sex;
-        public IDate ValidFrom => nativeResult.ValidFrom != null ? new Date(nativeResult.ValidFrom) : null;
-        public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
+        public string Surname => nativeResult.Surname;
     }
 }

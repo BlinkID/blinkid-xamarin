@@ -1,9 +1,8 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// German ID Combined Recognizer.
-    /// 
-    /// German ID Combined recognizer is used for scanning both front and back side of German ID.
+    /// Recognizer which can scan front and back side of German national ID cards,
+    ///  front side of German old ID card and front side of German Passport.
     /// </summary>
     public interface IGermanyCombinedRecognizer : IRecognizer
     {
@@ -18,13 +17,141 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's address should be extracted from German ID
+        /// Defines if address of German ID owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractAddress { get; set; }
+        
+        /// <summary>
+        /// Defines if issuing authority of German ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractAuthority { get; set; }
+        
+        /// <summary>
+        /// Defines if CAN number of Germany ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractCanNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if colour of eyes of German ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractColourOfEyes { get; set; }
+        
+        /// <summary>
+        /// Defines if date of expiry of Germany ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if date of issue of German ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if document number of Germany ID should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDocumentNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if given name of German passport owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractGivenName { get; set; }
+        
+        /// <summary>
+        /// Defines if given names of Germany ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractGivenNames { get; set; }
+        
+        /// <summary>
+        /// Defines if height of German ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractHeight { get; set; }
+        
+        /// <summary>
+        /// Defines if nationality  of Germany ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractNationality { get; set; }
+        
+        /// <summary>
+        /// Defines if place of birth of Germany ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPlaceOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if surname of Germany ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Image extension factors for full document image.
@@ -72,6 +199,16 @@
         /// </summary>
         bool SignResult { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -85,27 +222,37 @@
     public interface IGermanyCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the German ID owner. 
+        /// The address of the Germany ID owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The CAN number of German ID. 
+        /// The issuing authority of the Germany ID card. 
+        /// </summary>
+        string Authority { get; }
+        
+        /// <summary>
+        /// The CAN number of the Germany ID card. 
         /// </summary>
         string CanNumber { get; }
         
         /// <summary>
-        /// The date of birth of German ID owner 
+        /// The colour of eyes of the Germany ID owner. 
+        /// </summary>
+        string ColourOfEyes { get; }
+        
+        /// <summary>
+        /// The date of birth of the Germany ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of German ID owner 
+        /// The date of expiry of the Germany ID card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of German ID owner 
+        /// The date of issue of the Germany ID card. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -128,19 +275,14 @@
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// The eye color of German ID owner. 
+        /// The document number of the Germany ID card. 
         /// </summary>
-        string EyeColor { get; }
+        string DocumentNumber { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
-        
-        /// <summary>
-        /// The first name of the German ID owner. 
-        /// </summary>
-        string FirstName { get; }
         
         /// <summary>
         /// back side image of the document if enabled with returnFullDocumentImage property. 
@@ -153,38 +295,27 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The height of German ID owner. 
+        /// The given names of the Germany ID owner. 
+        /// </summary>
+        string GivenNames { get; }
+        
+        /// <summary>
+        /// The height of the Germany ID owner. 
         /// </summary>
         string Height { get; }
         
         /// <summary>
-        /// The identity card number of German ID. 
-        /// </summary>
-        string IdentityCardNumber { get; }
-        
-        /// <summary>
-        /// The issuing authority of German ID. 
-        /// </summary>
-        string IssuingAuthority { get; }
-        
-        /// <summary>
-        /// The last name of the German ID owner. 
-        /// </summary>
-        string LastName { get; }
-        
-        /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Determines if all check digits inside MRZ are correct 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// The nationality of the German ID owner. 
+        /// The nationality of the Germany ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The place of birth of the German ID owner. 
+        /// The place of birth of the Germany ID owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
@@ -195,7 +326,7 @@
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The sex of the German ID owner. 
+        /// The sex of the Germany ID owner. 
         /// </summary>
         string Sex { get; }
         
@@ -203,6 +334,11 @@
         /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
+        
+        /// <summary>
+        /// The surname of the Germany ID owner. 
+        /// </summary>
+        string Surname { get; }
         
     }
 }

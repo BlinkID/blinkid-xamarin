@@ -6,14 +6,14 @@ namespace Microblink.Forms.Droid.Recognizers
 {
     public sealed class SwedenDlFrontRecognizer : Recognizer, ISwedenDlFrontRecognizer
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer nativeRecognizer;
+        Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer nativeRecognizer;
 
         SwedenDlFrontRecognizerResult result;
 
-        public SwedenDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer())
+        public SwedenDlFrontRecognizer() : base(new Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer;
-            result = new SwedenDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer;
+            result = new SwedenDlFrontRecognizerResult(nativeRecognizer.GetResult() as Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
@@ -75,10 +75,22 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractSurname(value);
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
         public uint FullDocumentImageDpi 
         { 
             get => (uint)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -99,19 +111,25 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = (int)value;
+        }
+        
     }
 
     public sealed class SwedenDlFrontRecognizerResult : RecognizerResult, ISwedenDlFrontRecognizerResult
     {
-        Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer.Result nativeResult;
+        Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer.Result nativeResult;
 
-        internal SwedenDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Sweden.DL.SwedenDlFrontRecognizer.Result nativeResult) : base(nativeResult)
+        internal SwedenDlFrontRecognizerResult(Com.Microblink.Entities.Recognizers.Blinkid.Sweden.SwedenDlFrontRecognizer.Result nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string IssuingAgency => nativeResult.IssuingAgency;

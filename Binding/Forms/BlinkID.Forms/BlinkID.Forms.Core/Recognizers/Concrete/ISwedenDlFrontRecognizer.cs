@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Sweden Dl Front Recognizer.
-    /// 
-    /// Sweden Dl Front recognizer is used for scanning front side of Sweden Dl.
+    /// Recognizer which can scan front side of Sweden DL.
     /// </summary>
     public interface ISwedenDlFrontRecognizer : IRecognizer
     {
@@ -18,7 +16,7 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's date of birth should be extracted from Sweden DL
+        /// Defines if date of birth of Sweden DL owner should be extracted.
         /// 
         ///  
         ///
@@ -27,7 +25,7 @@
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry should be extracted from Sweden DL
+        /// Defines if date of expiry of Sweden DL should be extracted.
         /// 
         ///  
         ///
@@ -36,7 +34,7 @@
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issue should be extracted from Sweden DL
+        /// Defines if date of issue of Sweden DL should be extracted.
         /// 
         ///  
         ///
@@ -45,7 +43,7 @@
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if issuing agency should be extracted from Sweden DL
+        /// Defines if issuing agency of Sweden DL should be extracted.
         /// 
         ///  
         ///
@@ -54,16 +52,16 @@
         bool ExtractIssuingAgency { get; set; }
         
         /// <summary>
-        /// Defines iflicence categories should be extracted from Sweden DL
+        /// Defines if licence categories of Sweden DL should be extracted.
         /// 
         ///  
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to 'true'
         /// </summary>
         bool ExtractLicenceCategories { get; set; }
         
         /// <summary>
-        /// Defines if owner's name should be extracted from Sweden DL
+        /// Defines if name of Sweden DL owner should be extracted.
         /// 
         ///  
         ///
@@ -72,7 +70,7 @@
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if reference number should be extracted from Sweden DL
+        /// Defines if reference number of Sweden DL should be extracted.
         /// 
         ///  
         ///
@@ -81,13 +79,23 @@
         bool ExtractReferenceNumber { get; set; }
         
         /// <summary>
-        /// Defines if owner's surname should be extracted from Sweden DL
+        /// Defines if surname of Sweden DL owner should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -98,6 +106,16 @@
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -126,6 +144,16 @@
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -139,17 +167,17 @@
     public interface ISwedenDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The Date Of Birth of the Sweden DL owner. 
+        /// The date of birth of Sweden DL owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The Date Of Expiry of the Sweden DL. 
+        /// The date of expiry of Sweden DL. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The Date Of Issue of the Sweden DL. 
+        /// The date of issue of Sweden DL. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -164,27 +192,27 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The Issuing Agency of the Sweden DL. 
+        /// The issuing agency of Sweden DL. 
         /// </summary>
         string IssuingAgency { get; }
         
         /// <summary>
-        /// The Licence Categories of the Sweden DL. 
+        /// The licence categories of Sweden DL. 
         /// </summary>
         string LicenceCategories { get; }
         
         /// <summary>
-        /// The Licence Numer of the Sweden DL. 
+        /// The licence number of Sweden DL. 
         /// </summary>
         string LicenceNumber { get; }
         
         /// <summary>
-        /// The Name of the Sweden DL owner. 
+        /// The name of Sweden DL owner. 
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The Reference Number of the Sweden DL. 
+        /// The reference number of Sweden DL. 
         /// </summary>
         string ReferenceNumber { get; }
         
@@ -194,7 +222,7 @@
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The Surname of the Sweden DL owner. 
+        /// The surname of Sweden DL owner. 
         /// </summary>
         string Surname { get; }
         

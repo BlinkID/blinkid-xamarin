@@ -72,7 +72,7 @@ namespace Android
 		private void initBlinkId ()
 		{
             // set license key for Android with package name com.microblink.xamarin.blinkid
-            MicroblinkSDK.SetLicenseKey("sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZxeZF/3WH4f7rDoPTmWhEo48MjK/fX7RlTO0v7v73CClK6xWQPoWEulqcDCFMMwSdOplnZcrgoBpiEKflb+aKkvmtqBbHT7WO9utGeOjeOb0yAIcNn0Vfom16O/eTPqn5gg67gc4WkW9L6uIxv7U7T/n6cmw8pP77MoVXinq1bg/kBfjUMASNSDAIF0gPfhvptx5AqIzs8rFSS8LdQC+4boEzOaY5QkKuhn/jqyEMaRf", this);
+            MicroblinkSDK.SetLicenseKey("sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU+/YDeeF3lzxt4df8Bdwz8iujH8xSkqiErF84W+CdB8oESylJFsxW8IfgpH4WpfP5Dz7oZVr17d9wI1VzsXIyUCe696qZt2yZIJC1a4MoLOlAK/PxFm9zsJPRIA4v/kP9mxIZhAzAZ0aRWfXncqnaXgQIqUmoeFqRwp2CwRTdM4rdoWV32bUQQcEgKu9J+24I7m1G/w8wj5upNZmtYtrmjDbtK0Ls7975kfaqX+QBhz62yB", this);
 
             // Since we plan to transfer large data between activities, we need to enable
             // PersistedOptimised intent data transfer mode.
@@ -129,9 +129,9 @@ namespace Android
                 }
                 if (usdlResult.ResultState == Recognizer.Result.State.Valid) {
                     message += "USDL recognizer result:\n" +
-                           "First name: " + usdlResult.GetField(UsdlKeys.CustomerFirstName) + "\n" +
-                           "Last name: " + usdlResult.GetField(UsdlKeys.CustomerFamilyName) + "\n" +
-                           "City: " + usdlResult.GetField(UsdlKeys.AddressCity) + "\n";
+                           "First name: " + usdlResult.FirstName + "\n" +
+                           "Last name: " + usdlResult.LastName + "\n" +
+                           "Address: " + usdlResult.Address + "\n";
                 }
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);

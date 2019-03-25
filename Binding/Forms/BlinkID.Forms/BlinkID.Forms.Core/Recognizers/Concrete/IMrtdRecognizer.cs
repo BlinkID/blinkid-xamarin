@@ -1,4 +1,4 @@
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
     /// Recognizer that can recognizer Machine Readable Zone (MRZ) of the Machine Readable Travel Document (MRTD)

@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Slovenian ID Front Recognizer.
-    /// 
-    /// Slovenian ID Front recognizer is used for scanning front side of Slovenian ID.
+    /// Recognizer which can scan front side of Slovenia ID.
     /// </summary>
     public interface ISloveniaIdFrontRecognizer : IRecognizer
     {
@@ -18,40 +16,79 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        ///  Defines if date of birth of Slovenian ID owner should be extracted
+        /// Defines if date of expiry of Slovenian ID card should be extracted.
         /// 
-        ///   
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDateOfBirth { get; set; }
-        
-        /// <summary>
-        ///  Defines if date of expiry of Slovenian ID should be extracted
-        /// 
-        ///   
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        ///  Defines if nationality of Slovenian ID owner should be extracted
+        /// Defines if given names of Slovenian ID owner should be extracted.
         /// 
-        ///   
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractGivenNames { get; set; }
+        
+        /// <summary>
+        /// Defines if nationality of Slovenian ID owner should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationality { get; set; }
         
         /// <summary>
-        ///  Defines if sex of Slovenian ID owner should be extracted
+        /// Defines if sex of Slovenian ID owner should be extracted.
         /// 
-        ///   
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Defines if surname of Slovenian ID owner should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -80,6 +117,16 @@
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -93,12 +140,12 @@
     public interface ISloveniaIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Slovenian ID owner. 
+        /// The date of birth of Slovenian ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Slovenian ID owner. 
+        /// The date of expiry of Slovenian ID card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
@@ -108,27 +155,22 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Slovenian ID owner. 
-        /// </summary>
-        string FirstName { get; }
-        
-        /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The last name of the Slovenian ID owner. 
+        /// The given names of Slovenian ID owner. 
         /// </summary>
-        string LastName { get; }
+        string GivenNames { get; }
         
         /// <summary>
-        /// The nationality of the Slovenian ID owner. 
+        /// The nationality of Slovenian ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The sex of the Slovenian ID owner. 
+        /// The sex of Slovenian ID owner. 
         /// </summary>
         string Sex { get; }
         
@@ -136,6 +178,11 @@
         /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
+        
+        /// <summary>
+        /// The surname of Slovenian ID owner. 
+        /// </summary>
+        string Surname { get; }
         
     }
 }

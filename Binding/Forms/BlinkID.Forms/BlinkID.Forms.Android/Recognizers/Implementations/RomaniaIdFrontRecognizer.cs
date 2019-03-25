@@ -33,6 +33,18 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractAddress(value);
         }
         
+        public bool ExtractDateOfExpiry 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfExpiry(); 
+            set => nativeRecognizer.SetExtractDateOfExpiry(value);
+        }
+        
+        public bool ExtractDateOfIssue 
+        { 
+            get => nativeRecognizer.ShouldExtractDateOfIssue(); 
+            set => nativeRecognizer.SetExtractDateOfIssue(value);
+        }
+        
         public bool ExtractFirstName 
         { 
             get => nativeRecognizer.ShouldExtractFirstName(); 
@@ -45,34 +57,40 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetExtractIssuedBy(value);
         }
         
-        public bool ExtractLastName 
-        { 
-            get => nativeRecognizer.ShouldExtractLastName(); 
-            set => nativeRecognizer.SetExtractLastName(value);
-        }
-        
-        public bool ExtractNonMRZSex 
-        { 
-            get => nativeRecognizer.ShouldExtractNonMRZSex(); 
-            set => nativeRecognizer.SetExtractNonMRZSex(value);
-        }
-        
         public bool ExtractPlaceOfBirth 
         { 
             get => nativeRecognizer.ShouldExtractPlaceOfBirth(); 
             set => nativeRecognizer.SetExtractPlaceOfBirth(value);
         }
         
-        public bool ExtractValidFrom 
+        public bool ExtractSex 
         { 
-            get => nativeRecognizer.ShouldExtractValidFrom(); 
-            set => nativeRecognizer.SetExtractValidFrom(value);
+            get => nativeRecognizer.ShouldExtractSex(); 
+            set => nativeRecognizer.SetExtractSex(value);
         }
         
-        public bool ExtractValidUntil 
+        public bool ExtractSurname 
         { 
-            get => nativeRecognizer.ShouldExtractValidUntil(); 
-            set => nativeRecognizer.SetExtractValidUntil(value);
+            get => nativeRecognizer.ShouldExtractSurname(); 
+            set => nativeRecognizer.SetExtractSurname(value);
+        }
+        
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = (int)value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = (int)value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
         public bool ReturnFaceImage 
@@ -98,33 +116,17 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
-        public string CardNumber => nativeResult.CardNumber;
-        public string Cnp => nativeResult.Cnp;
-        public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
-        public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
-        public string DocumentCode => nativeResult.DocumentCode;
-        public string DocumentNumber => nativeResult.DocumentNumber;
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
-        public string IdSeries => nativeResult.IdSeries;
         public string IssuedBy => nativeResult.IssuedBy;
-        public string Issuer => nativeResult.Issuer;
-        public string LastName => nativeResult.LastName;
-        public bool MrzParsed => nativeResult.IsMrzParsed;
-        public string MrzText => nativeResult.MrzText;
-        public bool MrzVerified => nativeResult.IsMrzVerified;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;
-        public string NonMRZNationality => nativeResult.NonMRZNationality;
-        public string NonMRZSex => nativeResult.NonMRZSex;
-        public string Opt1 => nativeResult.Opt1;
-        public string Opt2 => nativeResult.Opt2;
-        public string ParentNames => nativeResult.ParentNames;
+        public string ParentName => nativeResult.ParentName;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
-        public string PrimaryId => nativeResult.PrimaryId;
-        public string SecondaryId => nativeResult.SecondaryId;
         public string Sex => nativeResult.Sex;
-        public IDate ValidFrom => nativeResult.ValidFrom != null ? new Date(nativeResult.ValidFrom) : null;
-        public IDate ValidUntil => nativeResult.ValidUntil != null ? new Date(nativeResult.ValidUntil) : null;
+        public string Surname => nativeResult.Surname;
     }
 }

@@ -1,4 +1,4 @@
-namespace Microblink.Forms.Core.Recognizers
+﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
     /// MRTD Combined recognizer

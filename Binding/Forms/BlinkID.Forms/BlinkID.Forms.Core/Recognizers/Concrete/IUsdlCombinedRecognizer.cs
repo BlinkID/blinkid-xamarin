@@ -143,5 +143,65 @@
         /// <returns>The field.</returns>
         /// <param name="key">Key.</param>
         string GetField(UsdlKeys key);
+
+        /// <summary>
+        /// The first name of the United States driver license owner.
+        /// </summary>
+        string FirstName { get; }
+
+        /// <summary>
+        /// The last name of the United States driver license owner.
+        /// </summary>
+        string LastName { get; }
+
+        /// <summary>
+        /// The full name of the United States driver license owner.
+        /// </summary>
+        string FullName { get; }
+
+        /// <summary>
+        /// The full address of the United States driver license owner.
+        /// </summary>
+        string Address { get; }
+
+        /// <summary>
+        /// The document number of the United States driver license.
+        /// </summary>
+        string DocumentNumber { get; }
+
+        /// <summary>
+        /// The sex of the United States driver license owner.
+        /// </summary>
+        string Sex { get; }
+
+        /// <summary>
+        /// The restrictions to driving privileges for the United States driver license owner.
+        /// </summary>
+        string Restrictions { get; }
+
+        /// <summary>
+        /// The additional privileges granted to the United States driver license owner.
+        /// </summary>
+        string Endorsements { get; }
+
+        /// <summary>
+        /// The type of vehicle the driver license owner has privilege to drive.
+        /// </summary>
+        string VehicleClass { get; }
+
+         /// <summary>
+        /// The date of birth of United States driver license owner.
+        /// </summary>
+        IDate DateOfBirth { get; }
+
+        /// <summary>
+        /// The document date of issue of the United States driver license.
+        /// </summary>
+        IDate DateOfIssue { get; }
+
+        /// <summary>
+        /// The document date of expiry of the United States driver license.
+        /// </summary>
+        IDate DateOfExpiry { get; }
     }
 }

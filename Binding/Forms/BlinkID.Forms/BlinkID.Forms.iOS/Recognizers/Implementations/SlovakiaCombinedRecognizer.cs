@@ -27,6 +27,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        public bool ExtractAddress 
+        { 
+            get => nativeRecognizer.ExtractAddress; 
+            set => nativeRecognizer.ExtractAddress = value;
+        }
+        
         public bool ExtractDateOfBirth 
         { 
             get => nativeRecognizer.ExtractDateOfBirth; 
@@ -51,10 +57,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractDocumentNumber = value;
         }
         
+        public bool ExtractFirstName 
+        { 
+            get => nativeRecognizer.ExtractFirstName; 
+            set => nativeRecognizer.ExtractFirstName = value;
+        }
+        
         public bool ExtractIssuedBy 
         { 
             get => nativeRecognizer.ExtractIssuedBy; 
             set => nativeRecognizer.ExtractIssuedBy = value;
+        }
+        
+        public bool ExtractLastName 
+        { 
+            get => nativeRecognizer.ExtractLastName; 
+            set => nativeRecognizer.ExtractLastName = value;
         }
         
         public bool ExtractNationality 
@@ -87,6 +105,24 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ExtractSurnameAtBirth = value;
         }
         
+        public uint FaceImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FaceImageDpi; 
+            set => nativeRecognizer.FaceImageDpi = value;
+        }
+        
+        public uint FullDocumentImageDpi 
+        { 
+            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            set => nativeRecognizer.FullDocumentImageDpi = value;
+        }
+        
+        public IImageExtensionFactors FullDocumentImageExtensionFactors 
+        { 
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+            set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -111,6 +147,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.SignResult = value;
         }
         
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
+        }
+        
     }
 
     public sealed class SlovakiaCombinedRecognizerResult : RecognizerResult, ISlovakiaCombinedRecognizerResult
@@ -133,11 +175,11 @@ namespace Microblink.Forms.iOS.Recognizers
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
-        public string IssuingAuthority => nativeResult.IssuingAuthority;
+        public string IssuedBy => nativeResult.IssuedBy;
         public string LastName => nativeResult.LastName;
         public bool MrzVerified => nativeResult.MrzVerified;
         public string Nationality => nativeResult.Nationality;
-        public string PersonalIdentificationNumber => nativeResult.PersonalIdentificationNumber;
+        public string PersonalNumber => nativeResult.PersonalNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;
         public string Sex => nativeResult.Sex;

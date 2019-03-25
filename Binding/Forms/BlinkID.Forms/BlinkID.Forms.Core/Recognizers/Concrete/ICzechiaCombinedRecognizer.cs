@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Czech ID Combined Recognizer.
-    /// 
-    /// Czech ID Combined recognizer is used for scanning both front and back side of Czech ID.
+    /// Recognizer which can scan front and back side of Czechia national ID cards.
     /// </summary>
     public interface ICzechiaCombinedRecognizer : IRecognizer
     {
@@ -16,6 +14,126 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID's issuing authority should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractAuthority { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's date of birth should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID's date of expiry should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfExpiry { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID's date of issue should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractDateOfIssue { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's given names should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractGivenNames { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's permanent address should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPermanentStay { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's personal number should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPersonalNumber { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's place of birth should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractPlaceOfBirth { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's sex should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSex { get; set; }
+        
+        /// <summary>
+        /// Defines if Czech ID owner's surname should be extracted
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ExtractSurname { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -53,6 +171,16 @@
         /// </summary>
         bool SignResult { get; set; }
         
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -66,22 +194,22 @@
     public interface ICzechiaCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The full address of the Czech ID owner. 
+        /// The issuing authority of the Czechia ID card. 
         /// </summary>
-        string Address { get; }
+        string Authority { get; }
         
         /// <summary>
-        /// The date of birth of Czech ID owner 
+        /// The date of birth of the Czechia ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of Czech ID owner 
+        /// The date of expiry of the Czechia ID card. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of Czech ID owner 
+        /// The date of issue of the Czechia ID card. 
         /// </summary>
         IDate DateOfIssue { get; }
         
@@ -104,14 +232,14 @@
         bool DocumentDataMatch { get; }
         
         /// <summary>
+        /// The document number of the Czechia ID card. 
+        /// </summary>
+        string DocumentNumber { get; }
+        
+        /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
-        
-        /// <summary>
-        /// The first name of the Czech ID owner. 
-        /// </summary>
-        string FirstName { get; }
         
         /// <summary>
         /// back side image of the document if enabled with returnFullDocumentImage property. 
@@ -124,38 +252,32 @@
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The document number of the Czech ID. 
+        /// The given names of the Czechia ID owner. 
         /// </summary>
-        string IdentityCardNumber { get; }
+        string GivenNames { get; }
         
         /// <summary>
-        /// The issuing authority of Czech ID. 
-        /// </summary>
-        string IssuingAuthority { get; }
-        
-        /// <summary>
-        /// The last name of the Czech ID owner. 
-        /// </summary>
-        string LastName { get; }
-        
-        /// <summary>
-        /// true if all check digits inside MRZ are correct, false otherwise.
-        /// More specifically, true if MRZ complies with ICAO Document 9303 standard, false otherwise. 
+        /// Determines if all check digits inside MRZ are correct 
         /// </summary>
         bool MrzVerified { get; }
         
         /// <summary>
-        /// The nationality of the Czech ID owner. 
+        /// The nationality of the Czechia ID owner. 
         /// </summary>
         string Nationality { get; }
         
         /// <summary>
-        /// The personal identification number of the Czech ID owner. 
+        /// The permanent stay address of the Czechia ID owner. 
         /// </summary>
-        string PersonalIdentificationNumber { get; }
+        string PermanentStay { get; }
         
         /// <summary>
-        /// The place of birth of the Czech ID owner. 
+        /// The personal number of the Czechia ID owner. 
+        /// </summary>
+        string PersonalNumber { get; }
+        
+        /// <summary>
+        /// The place of birth of the Czechia ID owner. 
         /// </summary>
         string PlaceOfBirth { get; }
         
@@ -166,7 +288,7 @@
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The sex of the Czech ID owner. 
+        /// The sex of the Czechia ID owner. 
         /// </summary>
         string Sex { get; }
         
@@ -174,6 +296,11 @@
         /// image of the signature if enabled with returnSignatureImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
+        
+        /// <summary>
+        /// The surname of the Czechia ID owner. 
+        /// </summary>
+        string Surname { get; }
         
     }
 }

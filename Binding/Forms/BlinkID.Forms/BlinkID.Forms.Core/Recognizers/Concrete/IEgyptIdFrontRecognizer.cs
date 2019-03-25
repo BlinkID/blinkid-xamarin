@@ -1,9 +1,7 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Egypt ID Front Recognizer.
-    /// 
-    /// Egypt ID Front recognizer is used for scanning front side of Egypt ID.
+    /// Recognizer which can scan front side of Egypt ID.
     /// </summary>
     public interface IEgyptIdFrontRecognizer : IRecognizer
     {
@@ -18,13 +16,43 @@
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if owner's national number should be extracted from Egypt ID
+        /// Defines if national number of Egypt ID should be extracted.
         /// 
         ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractNationalNumber { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FullDocumentImageDpi { get; set; }
+        
+        /// <summary>
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// </summary>
+        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -57,7 +85,7 @@
     public interface IEgyptIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The document number of the Egypt ID. 
+        /// The document number of Egypt ID. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -72,7 +100,7 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The National Number of the Egypt ID owner. 
+        /// The national number of Egypt ID. 
         /// </summary>
         string NationalNumber { get; }
         

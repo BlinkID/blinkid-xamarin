@@ -46,5 +46,29 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             return nativeResult.GetField(Com.Microblink.Entities.Recognizers.Blinkbarcode.Usdl.UsdlKeys.Values()[(int)key]);
         }
+
+        public string FirstName => nativeResult.FirstName;
+
+        public string LastName => nativeResult.LastName;
+
+        public string FullName => nativeResult.FullName;
+
+        public string Address => nativeResult.Address;
+
+        public string DocumentNumber => nativeResult.DocumentNumber;
+
+        public string Sex => nativeResult.Sex;
+
+        public string Restrictions => nativeResult.Restrictions;
+
+        public string Endorsements => nativeResult.Endorsements;
+
+        public string VehicleClass => nativeResult.VehicleClass;
+
+        public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
+
+        public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+
+        public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
     }
 }
