@@ -182,6 +182,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool MrzVerified => nativeResult.MrzVerified;
         public string Nationality => nativeResult.Nationality;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string RawMrzString => nativeResult.RawMrzString;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;

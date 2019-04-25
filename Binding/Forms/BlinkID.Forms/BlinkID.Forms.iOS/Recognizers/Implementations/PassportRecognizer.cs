@@ -1,30 +1,30 @@
 ﻿using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(DocumentFaceRecognizer))]
+[assembly: Xamarin.Forms.Dependency(typeof(PassportRecognizer))]
 namespace Microblink.Forms.iOS.Recognizers
 {
-    public sealed class DocumentFaceRecognizer : Recognizer, IDocumentFaceRecognizer
+    public sealed class PassportRecognizer : Recognizer, IPassportRecognizer
     {
-        MBDocumentFaceRecognizer nativeRecognizer;
+        MBPassportRecognizer nativeRecognizer;
 
-        DocumentFaceRecognizerResult result;
+        PassportRecognizerResult result;
 
-        public DocumentFaceRecognizer() : base(new MBDocumentFaceRecognizer())
+        public PassportRecognizer() : base(new MBPassportRecognizer())
         {
-            nativeRecognizer = NativeRecognizer as MBDocumentFaceRecognizer;
-            result = new DocumentFaceRecognizerResult(nativeRecognizer.Result);
+            nativeRecognizer = NativeRecognizer as MBPassportRecognizer;
+            result = new PassportRecognizerResult(nativeRecognizer.Result);
         }
 
         public override IRecognizerResult BaseResult => result;
 
-        public IDocumentFaceRecognizerResult Result => result;
+        public IPassportRecognizerResult Result => result;
 
         
-        public DocumentFaceDetectorType DetectorType 
+        public bool DetectGlare 
         { 
-            get => (DocumentFaceDetectorType)nativeRecognizer.DetectorType; 
-            set => nativeRecognizer.DetectorType = (MBDocumentFaceDetectorType)value;
+            get => nativeRecognizer.DetectGlare; 
+            set => nativeRecognizer.DetectGlare = value;
         }
         
         public uint FaceImageDpi 
@@ -45,12 +45,6 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
-        public uint NumStableDetectionsThreshold 
-        { 
-            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
-            set => nativeRecognizer.NumStableDetectionsThreshold = value;
-        }
-        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -63,25 +57,18 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
-        public bool TryBothOrientations 
-        { 
-            get => nativeRecognizer.TryBothOrientations; 
-            set => nativeRecognizer.TryBothOrientations = value;
-        }
-        
     }
 
-    public sealed class DocumentFaceRecognizerResult : RecognizerResult, IDocumentFaceRecognizerResult
+    public sealed class PassportRecognizerResult : RecognizerResult, IPassportRecognizerResult
     {
-        MBDocumentFaceRecognizerResult nativeResult;
+        MBPassportRecognizerResult nativeResult;
 
-        internal DocumentFaceRecognizerResult(MBDocumentFaceRecognizerResult nativeResult) : base(nativeResult)
+        internal PassportRecognizerResult(MBPassportRecognizerResult nativeResult) : base(nativeResult)
         {
             this.nativeResult = nativeResult;
         }
-        public IQuadrilateral DocumentLocation => nativeResult.DocumentLocation != null ? new Quadrilateral(nativeResult.DocumentLocation) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
-        public IQuadrilateral FaceLocation => nativeResult.FaceLocation != null ? new Quadrilateral(nativeResult.FaceLocation) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
     }
 }

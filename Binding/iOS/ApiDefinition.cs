@@ -4221,6 +4221,10 @@ namespace Microblink
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
         [Export ("numStableDetectionsThreshold")]
         nuint NumStableDetectionsThreshold { get; set; }
+
+        // @property (assign, nonatomic) BOOL tryBothOrientations;
+        [Export ("tryBothOrientations")]
+        bool TryBothOrientations { get; set; }
     }
 
     // @interface MBEgyptIdFrontRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
@@ -4562,6 +4566,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nonnull surname;
         [Export ("surname")]
         string Surname { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull rawMrzString;
+        [Export ("rawMrzString")]
+        string RawMrzString { get; }
     }
 
     // @interface MBGermanyCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage>
@@ -6537,6 +6545,27 @@ namespace Microblink
 		[Export ("anonymizeCvv")]
 		bool AnonymizeCvv { get; set; }
 	}
+
+        // @interface MBPassportRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
+        [Export ("mrzResult")]
+        MBMrzResult MrzResult { get; }
+    }
+
+    // @interface MBPassportRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizer))]
+    interface MBPassportRecognizer : INSCopying, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    {
+        // @property (readonly, nonatomic, strong) MBPassportRecognizerResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBPassportRecognizerResult Result { get; }
+    }
 
     // @interface MBPolandIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
 	[iOS (8,0)]
