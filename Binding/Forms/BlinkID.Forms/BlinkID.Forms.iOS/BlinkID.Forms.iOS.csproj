@@ -113,6 +113,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.8.0</PackageReleaseNotes>
     <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PassportRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyPrFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />

@@ -320,6 +320,11 @@
         string PlaceOfBirth { get; }
         
         /// <summary>
+        /// The full mrz string result. 
+        /// </summary>
+        string RawMrzString { get; }
+        
+        /// <summary>
         /// Returns true if recognizer has finished scanning first side and is now scanning back side,
         /// false if it's still scanning first side. 
         /// </summary>
