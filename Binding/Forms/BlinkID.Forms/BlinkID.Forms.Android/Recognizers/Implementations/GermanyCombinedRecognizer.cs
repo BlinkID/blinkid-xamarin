@@ -182,6 +182,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool MrzVerified => nativeResult.IsMrzVerified;
         public string Nationality => nativeResult.Nationality;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string RawMrzString => nativeResult.RawMrzString;
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
         public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertAndroidBitmap(nativeResult.SignatureImage.ConvertToBitmap()) : null;
