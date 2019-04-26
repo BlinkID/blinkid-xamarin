@@ -64,11 +64,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.xamarin.blinkid
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FcAw7h88AuX/Ii0wC30IdgQEi8V1BJWmhiCl/rdyRUHR2xMC1ftD4OAibjcAVyFB16PmKpSFdMsX7HcdSMYqKOoAY1tdn3wgOXKkA+2JO9CJvFno8g9FdX5tp5oDVYsWtAhGbROdAFgC3J7MAXbqJxjxLVg1WJa+kC+ViwmYhrel1uCpwVh60E4UQZle0hyOHRAYOc48Ww/m3HWiPGZqf49MZlXy9/kqd5UWWdDpXiyNMvv";
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FcAx5h88CdDbY3Ed+UmC8vCiVkZ+6EIZ7hW41+6+HV0NsoLauehaCsqgNSVOm4Wejt+tuG72LqnsaPTlqMQJywstXv26AMJvjXkP36f/F/Aaux+QMy7JtoBgS75/BttvsUuZOgN6W3MRR3x1uT6zcXiK+d8wUPbjFLwst5iMm3nCrzkHaQI/N4ZAFeAAYRw4sKObUjJBW1WnQc2dujTKsDW7daandn3Xp/TvDHslNQL+nkJ";
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU+/YDeeF3lzxt4df8Bdwz8iujH8xSkqiErF84W+CdB8oESylJFsxW8IfgpH4WpfP5Dz7oZVr17d9wI1VzsXIyUCe696qZt2yZIJC1a4MoLOlAK/PxFm9zsJPRIA4v/kP9mxIZhAzAZ0aRWfXncqnaXgQIqUmoeFqRwp2CwRTdM4rdoWV32bUQQcEgKu9J+24I7m1G/w8wj5upNZmtYtrmjDbtK0Ls7975kfaqX+QBhz62yB";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU+/ZIc2vl8cSLO7fozYiHFM+OU1QbKGbG7mvVRHyHTJmSs4PSUXacmR0tRAMYBDnwJ/xrQvKlNuV6JPSdeb/ksu57VAZAYVPJyiCOwLdPrUHfcujfxyJcDtBWLzbw6J9IEjDpTpJUJAcgxQZvKYzpZ0EzQ0Oy5da4BnwIZLarPn7JbSSb+IcNNDdapQOcMqQdsLI2DJma7PA2b6WHsppYMNOl9CcVmD0ygHkF8G0WfDmHKe";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed

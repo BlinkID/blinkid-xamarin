@@ -63,6 +63,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
+        public bool TryBothOrientations 
+        { 
+            get => nativeRecognizer.TryBothOrientations; 
+            set => nativeRecognizer.TryBothOrientations = value;
+        }
+        
     }
 
     public sealed class DocumentFaceRecognizerResult : RecognizerResult, IDocumentFaceRecognizerResult
