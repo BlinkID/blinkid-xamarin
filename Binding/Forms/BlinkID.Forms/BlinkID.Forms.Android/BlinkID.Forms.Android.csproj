@@ -14,7 +14,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <PackageId>BlinkID.Forms.Android</PackageId>
-    <PackageVersion>4.9.0</PackageVersion>
+    <PackageVersion>4.9.0.1</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -24,7 +24,9 @@
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.9.0:
-https://github.com/BlinkID/blinkid-android/releases/tag/v4.9.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-android/releases/tag/v4.9.0
+
+- fix: included missing PassportRecognizer</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -231,6 +233,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.9.0</PackageReleaseNo
     <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/PassportRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyPrFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
