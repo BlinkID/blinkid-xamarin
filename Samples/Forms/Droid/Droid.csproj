@@ -184,7 +184,7 @@
       <HintPath>..\packages\BlinkID.Forms.Core.4.9.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.4.9.0\lib\monoandroid90\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Android.4.9.0.1\lib\monoandroid90\BlinkID.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.CustomTabs">
