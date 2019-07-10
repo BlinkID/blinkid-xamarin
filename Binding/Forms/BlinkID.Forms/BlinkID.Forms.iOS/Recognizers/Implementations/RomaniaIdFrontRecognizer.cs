@@ -116,6 +116,7 @@ namespace Microblink.Forms.iOS.Recognizers
             this.nativeResult = nativeResult;
         }
         public string Address => nativeResult.Address;
+        public string CnpNumber => nativeResult.CnpNumber;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;

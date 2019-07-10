@@ -137,6 +137,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string AdministrativeUnit => nativeResult.AdministrativeUnit;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;

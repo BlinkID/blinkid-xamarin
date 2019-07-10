@@ -73,4 +73,21 @@ namespace Microblink.Forms.iOS.Recognizers
             return new ImageExtensionFactors(new MBImageExtensionFactors { top = upFactor, bottom = downFactor, left = leftFactor, right = rightFactor });
         }
     }
+
+    public sealed class DriverLicenseDetailedInfo : IDriverLicenseDetailedInfo
+    {
+        MBDriverLicenseDetailedInfo nativeDlDetailedInfo;
+
+        public DriverLicenseDetailedInfo(MBDriverLicenseDetailedInfo nativeDlDetailedInfo)
+        {
+            this.nativeDlDetailedInfo = nativeDlDetailedInfo;
+        }
+
+        public string Restrictions => nativeDlDetailedInfo.Restrictions;
+
+        public string Endorsements => nativeDlDetailedInfo.Endorsements;
+
+        public string VehicleClass => nativeDlDetailedInfo.VehicleClass;
+
+    }
 }

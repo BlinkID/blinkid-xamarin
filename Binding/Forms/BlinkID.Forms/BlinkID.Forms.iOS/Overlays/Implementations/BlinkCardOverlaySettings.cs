@@ -27,7 +27,6 @@ namespace Microblink.Forms.iOS.Overlays
         }
 
         public string FirstSideInstructions { get; set; }
-
         public string SecondSideInstructions { get; set; }
     }
 
