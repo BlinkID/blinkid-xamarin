@@ -190,6 +190,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays/OverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/BlinkCardOverlaySettings.cs" />
+    <Compile Include="Overlays/Implementations/BlinkIdOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentVerificationOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/BarcodeOverlaySettings.cs" />
@@ -203,6 +204,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/NigeriaVoterIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/AustriaDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BruneiResidencePermitBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CyprusIdBackRecognizer.cs" />
@@ -235,6 +237,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyPrFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BlinkIdCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MexicoVoterIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
@@ -276,6 +279,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/AustriaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/ItalyDlFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BlinkIdRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BruneiMilitaryIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/GermanyDlBackRecognizer.cs" />
