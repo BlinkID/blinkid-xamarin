@@ -1,88 +1,64 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Document Face Recognizer Recognizer.
-    /// 
-    /// Document Face Recognizer recognizer is used for scanning documents containing face images.
+    /// Recognizer for detecting holder's photo on documents containing image.
     /// </summary>
     public interface IDocumentFaceRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Type of docment this recognizer will scan.
-        /// 
-        ///  
+        /// Currently used detector type. 
         ///
-        /// By default, this is set to 'MBDocumentFaceDetectorTypeTD1'
+        /// By default, this is set to 'IDENTITY_CARD_TD1'
         /// </summary>
         DocumentFaceDetectorType DetectorType { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines how many times the same document should be detected before the detector
-        /// returns this document as a result of the deteciton
-        /// 
-        /// Higher number means more reliable detection, but slower processing
-        /// 
-        ///  
+        /// Minimum number of stable detections required for detection to be successful. 
         ///
         /// By default, this is set to '6'
         /// </summary>
         uint NumStableDetectionsThreshold { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Setting for control over FaceImageCropProcessor's tryBothOrientations option
-        /// 
-        ///  
+        /// Defines whether document will be scanned in both orientations - normal and upside down. 
         ///
-        /// By default, this is set to 'false'
+        /// By default, this is set to 'true'
         /// </summary>
         bool TryBothOrientations { get; set; }
         
@@ -99,22 +75,22 @@
     public interface IDocumentFaceRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Quadrangle represeting corner points of the document within the input image. 
+        /// The location of document detection in coordinate system of full input frame. 
         /// </summary>
         IQuadrilateral DocumentLocation { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Quadrangle represeting corner points of the face image within the input image. 
+        /// The location of face detection in coordinate system of cropped full document image. 
         /// </summary>
         IQuadrilateral FaceLocation { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         

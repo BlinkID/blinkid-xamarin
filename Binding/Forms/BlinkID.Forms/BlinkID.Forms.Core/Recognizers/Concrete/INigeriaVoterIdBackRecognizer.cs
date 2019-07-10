@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Jordan ID cards.
+    /// Recognizer which can scan back side of Nigeria voter ID cards.
     /// </summary>
-    public interface IJordanIdBackRecognizer : IRecognizer
+    public interface INigeriaVoterIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -12,13 +12,6 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Defines if full name of the Jordan ID owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractFullName { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -45,13 +38,28 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IJordanIdBackRecognizerResult Result { get; }
+        INigeriaVoterIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IJordanIdBackRecognizer.
+    /// Result object for INigeriaVoterIdBackRecognizer.
     /// </summary>
-    public interface IJordanIdBackRecognizerResult : IRecognizerResult {
+    public interface INigeriaVoterIdBackRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The address of Nigeria Voter ID owner. 
+        /// </summary>
+        string Address { get; }
+        
+        /// <summary>
+        /// The date of birth of Nigeria Voter ID owner. 
+        /// </summary>
+        IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The first name of Nigeria Voter ID owner. 
+        /// </summary>
+        string FirstName { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -59,14 +67,19 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of the Jordan ID owner. 
+        /// The raw barcode data of Nigeria Voter ID card. 
         /// </summary>
-        string FullName { get; }
+        string RawBarcodeData { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// The sex of Nigeria Voter ID owner. 
         /// </summary>
-        IMrzResult MrzResult { get; }
+        string Sex { get; }
+        
+        /// <summary>
+        /// The surname of Nigeria Voter ID owner. 
+        /// </summary>
+        string Surname { get; }
         
     }
 }

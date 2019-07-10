@@ -1,24 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan old German ID.
+    /// Generic BlinkID recognizer.
     /// </summary>
-    public interface IGermanyIdOldRecognizer : IRecognizer
+    public interface IBlinkIdRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Defines whether glare detector is enabled. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Defines if place of birth of old German ID owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -55,31 +41,47 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Defines whether signature image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IGermanyIdOldRecognizerResult Result { get; }
+        IBlinkIdRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IGermanyIdOldRecognizer.
+    /// Result object for IBlinkIdRecognizer.
     /// </summary>
-    public interface IGermanyIdOldRecognizerResult : IRecognizerResult {
+    public interface IBlinkIdRecognizerResult : IRecognizerResult {
+        
+        /// <summary>
+        /// The full address of the United States driver license owner. 
+        /// </summary>
+        string Address { get; }
+        
+        /// <summary>
+        /// The date of birth of the United States driver license owner. 
+        /// </summary>
+        IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The date of expiry of the United States driver license. 
+        /// </summary>
+        IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// The date of issue of the United States driver license. 
+        /// </summary>
+        IDate DateOfIssue { get; }
+        
+        /// <summary>
+        /// The document number of the United States driver license. 
+        /// </summary>
+        string DocumentNumber { get; }
+        
+        /// <summary>
+        /// The driver license detailed info. 
+        /// </summary>
+        IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -87,24 +89,29 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The first name of the United States driver license owner. 
+        /// </summary>
+        string FirstName { get; }
+        
+        /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// The full name of the United States driver license owner. 
         /// </summary>
-        IMrzResult MrzResult { get; }
+        string FullName { get; }
         
         /// <summary>
-        /// The place of birth of old German ID owner. 
+        /// The last name of the United States driver license owner. 
         /// </summary>
-        string PlaceOfBirth { get; }
+        string LastName { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// The sex of the United States driver license owner. 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        string Sex { get; }
         
     }
 }

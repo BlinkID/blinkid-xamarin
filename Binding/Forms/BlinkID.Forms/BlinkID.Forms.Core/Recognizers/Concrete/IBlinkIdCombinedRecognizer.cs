@@ -1,38 +1,10 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front side of Mexican voter id.
+    /// Recognizer which can scan front and back side of the United States driver license.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizer : IRecognizer
+    public interface IBlinkIdCombinedRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Defines whether glare detector is enabled. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Defines if address of Mexico Voter ID owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractAddress { get; set; }
-        
-        /// <summary>
-        /// Defines if CURP of Mexico Voter ID owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractCurp { get; set; }
-        
-        /// <summary>
-        /// Defines if full name of Mexico Voter ID owner should be extracted. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractFullName { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -70,50 +42,68 @@
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Defines whether or not recognition result should be signed. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
+        bool SignResult { get; set; }
         
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IMexicoVoterIdFrontRecognizerResult Result { get; }
+        IBlinkIdCombinedRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IMexicoVoterIdFrontRecognizer.
+    /// Result object for IBlinkIdCombinedRecognizer.
     /// </summary>
-    public interface IMexicoVoterIdFrontRecognizerResult : IRecognizerResult {
+    public interface IBlinkIdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of Mexico Voter ID owner. 
+        /// The full address of the United States driver license owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The CURP of Mexico Voter ID owner. 
-        /// </summary>
-        string Curp { get; }
-        
-        /// <summary>
-        /// The date of birth of Mexico Voter ID owner. 
+        /// The date of birth of the United States driver license owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The elector key of Mexico Voter ID owner. 
+        /// The date of expiry of the United States driver license. 
         /// </summary>
-        string ElectorKey { get; }
+        IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// The date of issue of the United States driver license. 
+        /// </summary>
+        IDate DateOfIssue { get; }
+        
+        /// <summary>
+        /// Defines digital signature of recognition results. 
+        /// </summary>
+        byte[] DigitalSignature { get; }
+        
+        /// <summary>
+        /// Defines digital signature version. 
+        /// </summary>
+        uint DigitalSignatureVersion { get; }
+        
+        /// <summary>
+        /// Defines {true} if data from scanned parts/sides of the document match, 
+        /// </summary>
+        bool DocumentDataMatch { get; }
+        
+        /// <summary>
+        /// The document number of the United States driver license. 
+        /// </summary>
+        string DocumentNumber { get; }
+        
+        /// <summary>
+        /// The driver license detailed info. 
+        /// </summary>
+        IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -121,24 +111,34 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The first name of the United States driver license owner. 
+        /// </summary>
+        string FirstName { get; }
+        
+        /// <summary>
         /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of Mexico Voter ID owner. 
+        /// The full name of the United States driver license owner. 
         /// </summary>
         string FullName { get; }
         
         /// <summary>
-        /// The sex of Mexico Voter ID owner. 
+        /// The last name of the United States driver license owner. 
         /// </summary>
-        string Sex { get; }
+        string LastName { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        bool ScanningFirstSideDone { get; }
+        
+        /// <summary>
+        /// The sex of the United States driver license owner. 
+        /// </summary>
+        string Sex { get; }
         
     }
 }
