@@ -7,42 +7,80 @@
     {
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AllowNullQuietZone { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// The extension factors for full document image. 
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
         ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether or not recognition result should be signed. 
+        /// Set this to true to scan even barcode not compliant with standards
+        /// For example, malformed USDL barcodes which were incorrectly encoded
+        /// 
+        /// Use only if necessary because it slows down the recognition process
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ScanUncertain { get; set; }
+        
+        /// <summary>
+        /// Whether or not recognition result should be signed.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -61,42 +99,45 @@
     public interface IBlinkIdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The full address of the United States driver license owner. 
+        /// The address of the document owner. 
         /// </summary>
         string Address { get; }
         
         /// <summary>
-        /// The date of birth of the United States driver license owner. 
+        /// The date of birth of the document owner. 
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the United States driver license. 
+        /// The date of expiry of the document. 
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of the United States driver license. 
+        /// The date of issue of the document. 
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Defines digital signature of recognition results. 
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Defines digital signature version. 
+        /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
         /// <summary>
-        /// Defines {true} if data from scanned parts/sides of the document match, 
+        /// Returns true if data from scanned parts/sides of the document match,
+        /// false otherwise. For example if date of expiry is scanned from the front and back side
+        /// of the document and values do not match, this method will return false. Result will
+        /// be true only if scanned values for all fields that are compared are the same. 
         /// </summary>
         bool DocumentDataMatch { get; }
         
         /// <summary>
-        /// The document number of the United States driver license. 
+        /// The document number. 
         /// </summary>
         string DocumentNumber { get; }
         
@@ -106,37 +147,38 @@
         IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the United States driver license owner. 
+        /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The full name of the United States driver license owner. 
+        /// The full name of the document owner. 
         /// </summary>
         string FullName { get; }
         
         /// <summary>
-        /// The last name of the United States driver license owner. 
+        /// The last name of the document owner. 
         /// </summary>
         string LastName { get; }
         
         /// <summary>
-        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
+        /// false if it's still scanning first side. 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
         /// <summary>
-        /// The sex of the United States driver license owner. 
+        /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
         
