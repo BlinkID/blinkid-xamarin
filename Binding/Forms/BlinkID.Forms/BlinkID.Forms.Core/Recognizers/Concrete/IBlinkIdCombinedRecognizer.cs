@@ -7,17 +7,6 @@
     {
         
         /// <summary>
-        /// Set this to true to scan barcodes which don't have quiet zone (white area) around it
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool AllowNullQuietZone { get; set; }
-        
-        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
@@ -64,18 +53,6 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
-        
-        /// <summary>
-        /// Set this to true to scan even barcode not compliant with standards
-        /// For example, malformed USDL barcodes which were incorrectly encoded
-        /// 
-        /// Use only if necessary because it slows down the recognition process
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ScanUncertain { get; set; }
         
         /// <summary>
         /// Whether or not recognition result should be signed.

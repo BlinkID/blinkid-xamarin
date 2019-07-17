@@ -21,12 +21,6 @@ namespace Microblink.Forms.iOS.Recognizers
         public IBlinkIdCombinedRecognizerResult Result => result;
 
         
-        public bool AllowNullQuietZone 
-        { 
-            get => nativeRecognizer.AllowNullQuietZone; 
-            set => nativeRecognizer.AllowNullQuietZone = value;
-        }
-        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -55,12 +49,6 @@ namespace Microblink.Forms.iOS.Recognizers
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
-        }
-        
-        public bool ScanUncertain 
-        { 
-            get => nativeRecognizer.ScanUncertain; 
-            set => nativeRecognizer.ScanUncertain = value;
         }
         
         public bool SignResult 

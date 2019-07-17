@@ -4491,14 +4491,6 @@ namespace Microblink
         [Export ("result", ArgumentSemantic.Strong)]
         MBBlinkIdCombinedRecognizerResult Result { get; }
 
-        // @property (assign, nonatomic) BOOL scanUncertain;
-        [Export ("scanUncertain")]
-        bool ScanUncertain { get; set; }
-
-        // @property (assign, nonatomic) BOOL allowNullQuietZone;
-        [Export ("allowNullQuietZone")]
-        bool AllowNullQuietZone { get; set; }
-
         // -(void)setDewarpedImageDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
         [Export ("setDewarpedImageDelegate:")]
         void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
@@ -9426,7 +9418,7 @@ namespace Microblink
         bool RequireDocumentSidesDataMatch { get; set; }
     }
 
-    
+
     // @interface MBBlinkCardOverlaySettings : MBBaseOcrOverlaySettings
     [iOS (8,0)]
     [BaseType (typeof(MBBaseOcrOverlaySettings))]

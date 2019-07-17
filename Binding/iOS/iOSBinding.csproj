@@ -103,6 +103,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.10.0</PackageReleaseNotes
     <BundleResource Include="Microblink.bundle\de_surname_dictionary.zzip" />
     <BundleResource Include="Microblink.bundle\en.strings" />
     <BundleResource Include="Microblink.bundle\face_detector_model.zzip" />
+    <BundleResource Include="Microblink.bundle\hr.strings" />
     <BundleResource Include="Microblink.bundle\icBackSide.png" />
     <BundleResource Include="Microblink.bundle\icBackSide%402x.png" />
     <BundleResource Include="Microblink.bundle\icBackSide%403x.png" />
