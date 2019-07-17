@@ -22,17 +22,18 @@
 "photopay_back_splash_verification_document" = "Document back side";
 "photopay_done_splash_verification_document" = "Document scanning done";
 
-"blinkid_generic_message" = "Scan the front side of a document";
-"blinkid_not_supported_title" = "Document not recognized";
-"blinkid_not_supported_message" = "Scan the front side of a supported document.";
-"blinkid_not_supported_action" = "Retry";
+"blinkid_generic_message" = "Skenirajte prednju stranu dokumenta";
+"blinkid_not_supported_title" = "Nepoznat dokument";
+"blinkid_not_supported_message" = "Ponovite skeniranje prednje strane podržanog dokumenta.";
+"blinkid_not_supported_action" = "U redu";
 
-"blinkid_sides_dont_match_title" = "Sides don't match";
-"blinkid_sides_dont_match_message" = "Please start the scanning process over.";
+"blinkid_sides_dont_match_title" = "Podaci se ne podudaraju";
+"blinkid_sides_dont_match_message" = "Molimo ponovno skenirajte prednju i stražnju stranu istog dokumenta.";
 
-"blinkid_first_side_scanned_message" = "Flip the card";
+"blinkid_first_side_scanned_message" = "Okrenite dokument";
 
-"blinkid_too_near_error_message" = "Move farther";
-"blinkid_too_far_error_message" = "Move closer";
-"blinkid_scan_unsuccessful_error_title" = "Scan unsuccessful";
-"blinkid_scan_unsuccessful_error_message" = "Unable to read the document. Please try again.";
+"blinkid_too_near_error_message" = "Udaljite dokument";
+"blinkid_too_far_error_message" = "Približite dokument";
+"blinkid_scan_unsuccessful_error_title" = "Skeniranje nije uspjelo";
+"blinkid_scan_unsuccessful_error_message" = "Dokument nije moguće očitati. Molimo pokušajte ponovno.";
+
