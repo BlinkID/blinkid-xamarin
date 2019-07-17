@@ -32,5 +32,6 @@
 
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='consumeResultFrom']" />
 
-    <attr path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='clone']" name="managedName">Copy</attr>
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='clone']" />
+
 </metadata>

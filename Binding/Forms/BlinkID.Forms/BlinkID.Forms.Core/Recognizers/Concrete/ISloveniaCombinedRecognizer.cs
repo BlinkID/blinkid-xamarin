@@ -196,6 +196,11 @@
         IDate DateOfExpiry { get; }
         
         /// <summary>
+        /// Determines if date of expiry of Slovenian ID card is permanent. 
+        /// </summary>
+        bool DateOfExpiryPermanent { get; }
+        
+        /// <summary>
         /// The date of issue of the Slovenia ID card. 
         /// </summary>
         IDate DateOfIssue { get; }

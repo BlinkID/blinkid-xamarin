@@ -150,6 +150,11 @@
         IDate DateOfExpiry { get; }
         
         /// <summary>
+        /// Determines if date of expiry of Slovenian ID card is permanent. 
+        /// </summary>
+        bool DateOfExpiryPermanent { get; }
+        
+        /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }

@@ -153,6 +153,11 @@
         string Address { get; }
         
         /// <summary>
+        /// The CNP number of Romania ID owner. 
+        /// </summary>
+        string CnpNumber { get; }
+        
+        /// <summary>
         /// The date of expiry of Romania ID. 
         /// </summary>
         IDate DateOfExpiry { get; }

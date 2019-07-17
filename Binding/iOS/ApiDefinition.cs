@@ -2178,22 +2178,6 @@ namespace Microblink
         bool EncodeImage { get; set; }
     }
 
-    // @interface MBLegacyRecognizer : MBRecognizer
-    
-    [BaseType(typeof(MBRecognizer))]
-    [DisableDefaultCtor]
-    interface MBLegacyRecognizer
-    {
-    }
-
-    // @interface MBLegacyRecognizerResult : MBRecognizerResult
-    
-    [BaseType(typeof(MBRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBLegacyRecognizerResult
-    {
-    }
-
     // @protocol MBFaceImageResult
     [Protocol]
     interface IMBFaceImageResult
@@ -4337,6 +4321,183 @@ namespace Microblink
         MBEudlCountry Country { get; set; }
     }
 
+    // @interface MBDriverLicenseDetailedInfo : NSObject
+    [iOS (8,0)]
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBDriverLicenseDetailedInfo
+    {
+        // @property (readonly, nonatomic) NSString * _Nullable restrictions;
+        [NullAllowed, Export ("restrictions")]
+        string Restrictions { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable endorsements;
+        [NullAllowed, Export ("endorsements")]
+        string Endorsements { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable vehicleClass;
+        [NullAllowed, Export ("vehicleClass")]
+        string VehicleClass { get; }
+    }
+
+    // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nullable address;
+        [NullAllowed, Export ("address")]
+        string Address { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
+        [NullAllowed, Export ("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfExpiry;
+        [NullAllowed, Export ("dateOfExpiry")]
+        MBDateResult DateOfExpiry { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfIssue;
+        [NullAllowed, Export ("dateOfIssue")]
+        MBDateResult DateOfIssue { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
+        [NullAllowed, Export ("documentNumber")]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable firstName;
+        [NullAllowed, Export ("firstName")]
+        string FirstName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable fullName;
+        [NullAllowed, Export ("fullName")]
+        string FullName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable lastName;
+        [NullAllowed, Export ("lastName")]
+        string LastName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable sex;
+        [NullAllowed, Export ("sex")]
+        string Sex { get; }
+
+        // @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
+        [NullAllowed, Export ("driverLicenseDetailedInfo")]
+        MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+    }
+
+    // @interface MBBlinkIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizer))]
+    interface MBBlinkIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    {
+        // @property (readonly, nonatomic, strong) MBBlinkIdRecognizerResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBBlinkIdRecognizerResult Result { get; }
+
+        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
+        [Export ("setDewarpedImageDelegate:")]
+        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
+
+        // -(void)setClassifierDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
+        [Export ("setClassifierDelegate:")]
+        void SetClassifierDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
+    }
+
+    // @protocol MBBlinkIdRecognizerDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface MBBlinkIdRecognizerDelegate
+    {
+        // @optional -(void)onImageAvailable:(MBImage * _Nullable)dewarpedImage;
+        [Export ("onImageAvailable:")]
+        void OnImageAvailable ([NullAllowed] MBImage dewarpedImage);
+
+        // @optional -(void)onDocumentSupportStatus:(BOOL)isDocumentSupported;
+        [Export ("onDocumentSupportStatus:")]
+        void OnDocumentSupportStatus (bool isDocumentSupported);
+    }
+
+    // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nullable address;
+        [NullAllowed, Export ("address")]
+        string Address { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfBirth;
+        [NullAllowed, Export ("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfExpiry;
+        [NullAllowed, Export ("dateOfExpiry")]
+        MBDateResult DateOfExpiry { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nullable dateOfIssue;
+        [NullAllowed, Export ("dateOfIssue")]
+        MBDateResult DateOfIssue { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentNumber;
+        [NullAllowed, Export ("documentNumber")]
+        string DocumentNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable firstName;
+        [NullAllowed, Export ("firstName")]
+        string FirstName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable fullName;
+        [NullAllowed, Export ("fullName")]
+        string FullName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable lastName;
+        [NullAllowed, Export ("lastName")]
+        string LastName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable sex;
+        [NullAllowed, Export ("sex")]
+        string Sex { get; }
+
+        // @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
+        [NullAllowed, Export ("driverLicenseDetailedInfo")]
+        MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+    }
+
+    // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizer))]
+    interface MBBlinkIdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBDigitalSignature, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    {
+        // @property (readonly, nonatomic, strong) MBBlinkIdCombinedRecognizerResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBBlinkIdCombinedRecognizerResult Result { get; }
+
+        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
+        [Export ("setDewarpedImageDelegate:")]
+        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
+
+        // -(void)setClassifierDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
+        [Export ("setClassifierDelegate:")]
+        void SetClassifierDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
+    }
+
+    // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface MBBlinkIdCombinedRecognizerDelegate
+    {
+        // @optional -(void)onCombinedImageAvailable:(MBImage * _Nullable)dewarpedImage;
+        [Export ("onCombinedImageAvailable:")]
+        void OnCombinedImageAvailable ([NullAllowed] MBImage dewarpedImage);
+
+        // @optional -(void)onCombinedDocumentSupportStatus:(BOOL)isDocumentSupported;
+        [Export ("onCombinedDocumentSupportStatus:")]
+        void OnCombinedDocumentSupportStatus (bool isDocumentSupported);
+    }
+
     // @protocol MBFullDocumentImageExtensionFactors
     [Protocol]
     interface IMBFullDocumentImageExtensionFactors
@@ -6415,6 +6576,47 @@ namespace Microblink
         bool ExtractAddress { get; set; }
     }
 
+    // @interface MBNigeriaVoterIdBackRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizerResult))]
+    [DisableDefaultCtor]
+    interface MBNigeriaVoterIdBackRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    {
+        // @property (readonly, nonatomic) NSString * _Nonnull address;
+        [Export ("address")]
+        string Address { get; }
+
+        // @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
+        [Export ("dateOfBirth")]
+        MBDateResult DateOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull firstName;
+        [Export ("firstName")]
+        string FirstName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull rawBarcodeData;
+        [Export ("rawBarcodeData")]
+        string RawBarcodeData { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull sex;
+        [Export ("sex")]
+        string Sex { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull surname;
+        [Export ("surname")]
+        string Surname { get; }
+    }
+
+    // @interface MBNigeriaVoterIdBackRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+    [iOS (8,0)]
+    [BaseType (typeof(MBRecognizer))]
+    interface MBNigeriaVoterIdBackRecognizer : INSCopying, IMBGlareDetection, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    {
+        // @property (readonly, nonatomic, strong) MBNigeriaVoterIdBackRecognizerResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBNigeriaVoterIdBackRecognizerResult Result { get; }
+    }
+
    // @interface MBBlinkCardRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
@@ -6791,6 +6993,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nonnull surname;
         [Export ("surname")]
         string Surname { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull cnpNumber;
+        [Export ("cnpNumber")]
+        string CnpNumber { get; }
     }
 
     // @interface MBRomaniaIdFrontRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -7489,6 +7695,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nonnull surname;
         [Export ("surname")]
         string Surname { get; }
+
+        // @property (readonly, nonatomic) BOOL dateOfExpiryPermanent;
+        [Export ("dateOfExpiryPermanent")]
+        bool DateOfExpiryPermanent { get; }
     }
 
     // @interface MBSloveniaIdFrontRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage>
@@ -7574,6 +7784,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nonnull surname;
         [Export ("surname")]
         string Surname { get; }
+
+        // @property (readonly, nonatomic) BOOL dateOfExpiryPermanent;
+        [Export ("dateOfExpiryPermanent")]
+        bool DateOfExpiryPermanent { get; }
     }
 
     // @interface MBSloveniaCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage>
@@ -9135,6 +9349,60 @@ namespace Microblink
         [Export("documentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
         void DocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
     }
+
+    // @interface MBBlinkIdOverlayViewController : MBBaseOverlayViewController
+    [iOS (8,0)]
+    [BaseType (typeof(MBBaseOverlayViewController))]
+    interface MBBlinkIdOverlayViewController
+    {
+        // @property (readonly, nonatomic) MBBlinkIdOverlaySettings * _Nonnull settings;
+        [Export ("settings")]
+        MBBlinkIdOverlaySettings Settings { get; }
+
+        [Wrap ("WeakDelegate")]
+        [NullAllowed]
+        MBBlinkIdOverlayViewControllerDelegate Delegate { get; }
+
+        // @property (readonly, nonatomic, weak) id<MBBlinkIdOverlayViewControllerDelegate> _Nullable delegate;
+        [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
+        NSObject WeakDelegate { get; }
+
+        // -(instancetype _Nonnull)initWithSettings:(MBBlinkIdOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBBlinkIdOverlayViewControllerDelegate> _Nonnull)delegate;
+        [Export ("initWithSettings:recognizerCollection:delegate:")]
+        IntPtr Constructor (MBBlinkIdOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBBlinkIdOverlayViewControllerDelegate @delegate);
+    }
+
+    // @protocol MBBlinkIdOverlayViewControllerDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface MBBlinkIdOverlayViewControllerDelegate
+    {
+        // @required -(void)blinkIdOverlayViewControllerDidFinishScanning:(MBBlinkIdOverlayViewController * _Nonnull)blinkIdOverlayViewController state:(MBRecognizerResultState)state;
+        [Abstract]
+        [Export ("blinkIdOverlayViewControllerDidFinishScanning:state:")]
+        void BlinkIdOverlayViewControllerDidFinishScanning (MBBlinkIdOverlayViewController blinkIdOverlayViewController, MBRecognizerResultState state);
+
+        // @required -(void)blinkIdOverlayViewControllerDidTapClose:(MBBlinkIdOverlayViewController * _Nonnull)blinkIdOverlayViewController;
+        [Abstract]
+        [Export ("blinkIdOverlayViewControllerDidTapClose:")]
+        void BlinkIdOverlayViewControllerDidTapClose (MBBlinkIdOverlayViewController blinkIdOverlayViewController);
+
+        // @optional -(void)blinkIdOverlayViewControllerDidFinishScanningFirstSide:(MBBlinkIdOverlayViewController * _Nonnull)blinkIdOverlayViewController;
+        [Export ("blinkIdOverlayViewControllerDidFinishScanningFirstSide:")]
+        void BlinkIdOverlayViewControllerDidFinishScanningFirstSide (MBBlinkIdOverlayViewController blinkIdOverlayViewController);
+    }
+
+    // @interface MBBlinkIdOverlaySettings : MBBaseOverlaySettings
+    [iOS (8,0)]
+    [BaseType (typeof(MBBaseOverlaySettings))]
+    interface MBBlinkIdOverlaySettings
+    {
+        // @property (assign, nonatomic) BOOL requireDocumentSidesDataMatch;
+        [Export ("requireDocumentSidesDataMatch")]
+        bool RequireDocumentSidesDataMatch { get; set; }
+    }
+
+
     // @interface MBBlinkCardOverlaySettings : MBBaseOcrOverlaySettings
     [iOS (8,0)]
     [BaseType (typeof(MBBaseOcrOverlaySettings))]

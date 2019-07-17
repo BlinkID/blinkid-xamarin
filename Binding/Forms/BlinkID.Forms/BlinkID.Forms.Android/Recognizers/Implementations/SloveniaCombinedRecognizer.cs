@@ -137,6 +137,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string AdministrativeUnit => nativeResult.AdministrativeUnit;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;

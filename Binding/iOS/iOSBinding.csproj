@@ -11,13 +11,13 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>4.9.0</PackageVersion>
+    <PackageVersion>4.10.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.9.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.10.0:
 
-https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-ios/releases/tag/v4.10.0</PackageReleaseNotes>
     <Summary>A small, but powerfull ID scanning library - native iOS SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerfull ID scanning library - native iOS SDK binding package.</Description>
@@ -50,6 +50,15 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="packages.config" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Analyzer_general_6.0.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Classifier_general_6.3.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_CreditCardOcr_general_6.2.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Detector_general_6.3.1.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_general_6.2.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_mrz_6.2.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_usa_6.1.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Segmentator_general_6.1.0.strop" />
+    <BundleResource Include="Microblink.bundle\BlinkOCR_Ocr_general_6.1.0.strop" />
     <BundleResource Include="Microblink.bundle\Close.png" />
     <BundleResource Include="Microblink.bundle\Close%402x.png" />
     <BundleResource Include="Microblink.bundle\Close%403x.png" />
@@ -60,6 +69,12 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\arrow%402x.png" />
     <BundleResource Include="Microblink.bundle\arrow_pressed.png" />
     <BundleResource Include="Microblink.bundle\arrow_pressed%402x.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdBack.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdBack%402x.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdBack%403x.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdFront.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdFront%402x.png" />
+    <BundleResource Include="Microblink.bundle\blinkIdFront%403x.png" />
     <BundleResource Include="Microblink.bundle\blinkcard_logo.png" />
     <BundleResource Include="Microblink.bundle\blinkcard_logo%402x.png" />
     <BundleResource Include="Microblink.bundle\cbl.png" />
@@ -68,6 +83,9 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\cbr.png" />
     <BundleResource Include="Microblink.bundle\cbr%402x.png" />
     <BundleResource Include="Microblink.bundle\cbr%403x.png" />
+    <BundleResource Include="Microblink.bundle\confirmationBlinkId.png" />
+    <BundleResource Include="Microblink.bundle\confirmationBlinkId%402x.png" />
+    <BundleResource Include="Microblink.bundle\confirmationBlinkId%403x.png" />
     <BundleResource Include="Microblink.bundle\cro_address_dictionary.zzip" />
     <BundleResource Include="Microblink.bundle\cro_authority_dictionary.zzip" />
     <BundleResource Include="Microblink.bundle\cro_id_confusions.zzip" />
@@ -85,6 +103,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\de_surname_dictionary.zzip" />
     <BundleResource Include="Microblink.bundle\en.strings" />
     <BundleResource Include="Microblink.bundle\face_detector_model.zzip" />
+    <BundleResource Include="Microblink.bundle\hr.strings" />
     <BundleResource Include="Microblink.bundle\icBackSide.png" />
     <BundleResource Include="Microblink.bundle\icBackSide%402x.png" />
     <BundleResource Include="Microblink.bundle\icBackSide%403x.png" />
@@ -135,10 +154,6 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.9.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\model_mrtd.zzip" />
     <BundleResource Include="Microblink.bundle\morocco_id_confusions.zzip" />
     <BundleResource Include="Microblink.bundle\morocco_places_dictionary.zzip" />
-    <BundleResource Include="Microblink.bundle\nn_model_BlinkCreditCardOcr_general_5.2.0.zzip" />
-    <BundleResource Include="Microblink.bundle\nn_model_BlinkIDOcr_general_5.2.0.zzip" />
-    <BundleResource Include="Microblink.bundle\nn_model_BlinkIDOcr_mrz_5.2.0.zzip" />
-    <BundleResource Include="Microblink.bundle\nn_model_BlinkInputOcr_general_5.1.0.zzip" />
     <BundleResource Include="Microblink.bundle\payment_card_confusions.zzip" />
     <BundleResource Include="Microblink.bundle\payment_card_dictionary.zzip" />
     <BundleResource Include="Microblink.bundle\scan-corner-ll.png" />

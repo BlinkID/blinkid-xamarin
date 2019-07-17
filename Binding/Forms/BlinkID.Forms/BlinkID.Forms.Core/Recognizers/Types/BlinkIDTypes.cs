@@ -183,6 +183,30 @@ namespace Microblink.Forms.Core.Recognizers
     }
 
     /// <summary>
+    /// Represents data extracted from the Driver's license.
+    /// </summary>
+    public interface IDriverLicenseDetailedInfo
+    {
+        /// <summary>
+        /// Gets the restrictions to driving privileges for the driver license owner.
+        /// </summary>
+        /// <value>The restrictions to driving privileges for the driver license owner.</value>
+        string Restrictions { get; }
+
+        /// <summary>
+        /// Gets the additional privileges granted to the driver license owner.
+        /// </summary>
+        /// <value>The additional privileges granted to the driver license owner.</value>
+        string Endorsements { get; }
+
+        /// <summary>
+        /// Gets the type of vehicle the driver license owner has privilege to drive.
+        /// </summary>
+        /// <value>The type of vehicle the driver license owner has privilege to drive.</value>
+        string VehicleClass { get; }
+    }
+
+    /// <summary>
     /// Possible values for EUDL country fields.
     /// </summary>
     public enum EudlCountry
