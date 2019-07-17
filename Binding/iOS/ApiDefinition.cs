@@ -2178,22 +2178,6 @@ namespace Microblink
         bool EncodeImage { get; set; }
     }
 
-    // @interface MBLegacyRecognizer : MBRecognizer
-    
-    [BaseType(typeof(MBRecognizer))]
-    [DisableDefaultCtor]
-    interface MBLegacyRecognizer
-    {
-    }
-
-    // @interface MBLegacyRecognizerResult : MBRecognizerResult
-    
-    [BaseType(typeof(MBRecognizerResult))]
-    [DisableDefaultCtor]
-    interface MBLegacyRecognizerResult
-    {
-    }
-
     // @protocol MBFaceImageResult
     [Protocol]
     interface IMBFaceImageResult
