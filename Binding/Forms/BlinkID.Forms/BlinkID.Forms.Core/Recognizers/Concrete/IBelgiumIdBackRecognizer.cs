@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Nigeria voter ID cards.
+    /// Recognizer which can scan back side of Belgium ID cards.
     /// </summary>
-    public interface INigeriaVoterIdBackRecognizer : IRecognizer
+    public interface IBelgiumIdBackRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -38,28 +38,13 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        INigeriaVoterIdBackRecognizerResult Result { get; }
+        IBelgiumIdBackRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for INigeriaVoterIdBackRecognizer.
+    /// Result object for IBelgiumIdBackRecognizer.
     /// </summary>
-    public interface INigeriaVoterIdBackRecognizerResult : IRecognizerResult {
-        
-        /// <summary>
-        /// The address of Nigeria Voter ID owner. 
-        /// </summary>
-        string Address { get; }
-        
-        /// <summary>
-        /// The date of birth of Nigeria Voter ID owner. 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The first name of Nigeria Voter ID owner. 
-        /// </summary>
-        string FirstName { get; }
+    public interface IBelgiumIdBackRecognizerResult : IRecognizerResult {
         
         /// <summary>
         /// Image of the full document 
@@ -67,19 +52,9 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The raw barcode data of Nigeria Voter ID card. 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string RawBarcodeData { get; }
-        
-        /// <summary>
-        /// The sex of Nigeria Voter ID owner. 
-        /// </summary>
-        string Sex { get; }
-        
-        /// <summary>
-        /// The surname of Nigeria Voter ID owner. 
-        /// </summary>
-        string Surname { get; }
+        IMrzResult MrzResult { get; }
         
     }
 }

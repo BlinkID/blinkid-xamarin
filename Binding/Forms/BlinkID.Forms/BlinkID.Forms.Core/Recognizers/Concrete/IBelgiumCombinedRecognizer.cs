@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan the front side of Australian driver's licences.
+    /// Recognizer which can scan front and back side of Belgium national ID cards.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizer : IRecognizer
+    public interface IBelgiumCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -12,34 +12,6 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
-        
-        /// <summary>
-        /// Defines if address of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractAddress { get; set; }
-        
-        /// <summary>
-        /// Defines if date of birth of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractDateOfBirth { get; set; }
-        
-        /// <summary>
-        /// Defines if full name of Australian DL owner should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractFullName { get; set; }
-        
-        /// <summary>
-        /// Defines if date of expiry of Australian DL should be extracted 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool ExtractLicenseExpiry { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for face image that should be returned. 
@@ -77,40 +49,53 @@
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Defines whether or not recognition result should be signed. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
-        bool ReturnSignatureImage { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint SignatureImageDpi { get; set; }
+        bool SignResult { get; set; }
         
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IAustraliaDlFrontRecognizerResult Result { get; }
+        IBelgiumCombinedRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IAustraliaDlFrontRecognizer.
+    /// Result object for IBelgiumCombinedRecognizer.
     /// </summary>
-    public interface IAustraliaDlFrontRecognizerResult : IRecognizerResult {
+    public interface IBelgiumCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of the Australian DL owner 
+        /// The card number of the Belgium ID card. 
         /// </summary>
-        string Address { get; }
+        string CardNumber { get; }
         
         /// <summary>
-        /// The date of birth of the Australian DL owner 
+        /// The date of birth of the Belgium ID owner. 
         /// </summary>
         IDate DateOfBirth { get; }
+        
+        /// <summary>
+        /// The date of expiry of the Belgium ID card. 
+        /// </summary>
+        IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// Defines digital signature of recognition results. 
+        /// </summary>
+        byte[] DigitalSignature { get; }
+        
+        /// <summary>
+        /// Defines digital signature version. 
+        /// </summary>
+        uint DigitalSignatureVersion { get; }
+        
+        /// <summary>
+        /// Defines {true} if data from scanned parts/sides of the document match, 
+        /// </summary>
+        bool DocumentDataMatch { get; }
         
         /// <summary>
         /// Face image from the document 
@@ -118,34 +103,49 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// The first name of the Belgium ID owner. 
         /// </summary>
-        Xamarin.Forms.ImageSource FullDocumentImage { get; }
+        string FirstName { get; }
         
         /// <summary>
-        /// The full name of the Australian DL owner 
+        /// Back side image of the document 
         /// </summary>
-        string FullName { get; }
+        Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        /// The date of expiry of the Australian DL 
+        /// Front side image of the document 
         /// </summary>
-        IDate LicenceExpiry { get; }
+        Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
         /// <summary>
-        /// The licence number of the Australian DL 
+        /// The issuing authority of the Belgium ID card. 
         /// </summary>
-        string LicenceNumber { get; }
+        string IssuedBy { get; }
         
         /// <summary>
-        /// The licence type of the Australian DL 
+        /// The last name of the Belgium ID owner. 
         /// </summary>
-        string LicenceType { get; }
+        string LastName { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// Determines if all check digits inside MRZ are correct. 
         /// </summary>
-        Xamarin.Forms.ImageSource SignatureImage { get; }
+        bool MrzVerified { get; }
+        
+        /// <summary>
+        /// The nationality of the Belgium ID owner. 
+        /// </summary>
+        string Nationality { get; }
+        
+        /// <summary>
+        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// </summary>
+        bool ScanningFirstSideDone { get; }
+        
+        /// <summary>
+        /// The sex of the Belgium ID owner. 
+        /// </summary>
+        string Sex { get; }
         
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan back side of Nigeria voter ID cards.
+    /// Recognizer which can scan all visas with MRZ.
     /// </summary>
-    public interface INigeriaVoterIdBackRecognizer : IRecognizer
+    public interface IVisaRecognizer : IRecognizer
     {
         
         /// <summary>
@@ -12,6 +12,13 @@
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint FaceImageDpi { get; set; }
         
         /// <summary>
         /// The DPI (Dots Per Inch) for full document image that should be returned. 
@@ -28,6 +35,13 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
+        /// Defines whether face image will be available in result. 
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnFaceImage { get; set; }
+        
+        /// <summary>
         /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
@@ -38,28 +52,18 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        INigeriaVoterIdBackRecognizerResult Result { get; }
+        IVisaRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for INigeriaVoterIdBackRecognizer.
+    /// Result object for IVisaRecognizer.
     /// </summary>
-    public interface INigeriaVoterIdBackRecognizerResult : IRecognizerResult {
+    public interface IVisaRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The address of Nigeria Voter ID owner. 
+        /// Face image from the document 
         /// </summary>
-        string Address { get; }
-        
-        /// <summary>
-        /// The date of birth of Nigeria Voter ID owner. 
-        /// </summary>
-        IDate DateOfBirth { get; }
-        
-        /// <summary>
-        /// The first name of Nigeria Voter ID owner. 
-        /// </summary>
-        string FirstName { get; }
+        Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
         /// Image of the full document 
@@ -67,19 +71,9 @@
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The raw barcode data of Nigeria Voter ID card. 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
-        string RawBarcodeData { get; }
-        
-        /// <summary>
-        /// The sex of Nigeria Voter ID owner. 
-        /// </summary>
-        string Sex { get; }
-        
-        /// <summary>
-        /// The surname of Nigeria Voter ID owner. 
-        /// </summary>
-        string Surname { get; }
+        IMrzResult MrzResult { get; }
         
     }
 }
