@@ -200,6 +200,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Utils.cs" />
     <Compile Include="Recognizers/Types/BlinkIDTypes.cs" />
     <Compile Include="Recognizers/Types/CommonTypes.cs" />
+    <Compile Include="Recognizers/Implementations/VisaRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MrtdCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
@@ -235,6 +236,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PassportRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BelgiumCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaMyPrFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BlinkIdCombinedRecognizer.cs" />
@@ -250,6 +252,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/MalaysiaMyKasFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BelgiumIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MoroccoIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BruneiIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MalaysiaIkadFrontRecognizer.cs" />
@@ -294,6 +297,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v4.10.0</PackageReleaseN
     <Compile Include="Recognizers/Implementations/SwitzerlandIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SloveniaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/JordanIdFrontRecognizer.cs" />
+    <Compile Include="Recognizers/Implementations/BelgiumIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BlinkCardRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SpainDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SuccessFrameGrabberRecognizer.cs" />
