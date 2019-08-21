@@ -1,5 +1,7 @@
 ﻿using System;
+using Android.Content;
 using Com.Microblink.Uisettings;
+using Com.Microblink.Fragment.Overlay.Blinkcard.Scanlineui;
 using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.Droid.Overlays.Implementations;
@@ -13,12 +15,14 @@ namespace Microblink.Forms.Droid.Overlays.Implementations
         public override UISettings NativeUISettings { 
             get {
                 var concreteUISettings = (BlinkCardUISettings)base.NativeUISettings;
+                var overlayStringsBuilder = new ScanLineOverlayStrings.Builder(Android.App.Application.Context);
                 if (FirstSideInstructions != null) {
-                    concreteUISettings.FirstSideInstructions = FirstSideInstructions;
+                    overlayStringsBuilder.SetFrontSideInstructions(FirstSideInstructions);
                 }
                 if (SecondSideInstructions != null) {
-                    concreteUISettings.SecondSideInstructions = SecondSideInstructions;
+                    overlayStringsBuilder.SetBackSideInstructions(SecondSideInstructions);
                 }
+                concreteUISettings.SetStrings(overlayStringsBuilder.Build());
                 return concreteUISettings;
             }
         }

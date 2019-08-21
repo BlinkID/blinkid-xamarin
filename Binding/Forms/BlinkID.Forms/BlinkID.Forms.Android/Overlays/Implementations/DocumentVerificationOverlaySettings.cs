@@ -1,5 +1,7 @@
 ﻿using System;
+using Android.Content;
 using Com.Microblink.Uisettings;
+using Com.Microblink.Fragment.Overlay.Blinkid.Documentverification;
 using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.Droid.Overlays.Implementations;
@@ -13,21 +15,23 @@ namespace Microblink.Forms.Droid.Overlays.Implementations
         public override UISettings NativeUISettings { 
             get {
                 var concreteUISettings = (DocumentVerificationUISettings)base.NativeUISettings;
+                var overlayStringsBuilder = new DocumentVerificationOverlayStrings.Builder(Android.App.Application.Context);
                 if (FirstSideSplashMessage != null) {
-                    concreteUISettings.FirstSideSplashMessage = FirstSideSplashMessage;
+                    overlayStringsBuilder.SetFrontSideSplashText(FirstSideSplashMessage);
                 }
                 if (SecondSideSplashMessage != null) {
-                    concreteUISettings.SecondSideSplashMessage = SecondSideSplashMessage;
+                    overlayStringsBuilder.SetBackSideSplashText(SecondSideSplashMessage);
                 }
                 if (FirstSideInstructions != null) {
-                    concreteUISettings.FirstSideInstructions = FirstSideInstructions;
+                    overlayStringsBuilder.SetFrontSideInstructions(FirstSideInstructions);
                 }
                 if (SecondSideInstructions != null) {
-                    concreteUISettings.SecondSideInstructions = SecondSideInstructions;
+                    overlayStringsBuilder.SetBackSideInstructions(SecondSideInstructions);
                 }
                 if (GlareMessage != null) {
-                    concreteUISettings.GlareMessage = GlareMessage;
+                    overlayStringsBuilder.SetGlareMessage(GlareMessage);
                 }
+                concreteUISettings.SetStrings(overlayStringsBuilder.Build());
                 return concreteUISettings;
             }
         }

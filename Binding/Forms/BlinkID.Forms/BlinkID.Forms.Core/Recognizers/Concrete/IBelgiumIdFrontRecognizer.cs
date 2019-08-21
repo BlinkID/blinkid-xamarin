@@ -1,21 +1,19 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Class for configuring Document Face Recognizer Recognizer.
-    /// 
-    /// Document Face Recognizer recognizer is used for scanning documents containing face images.
+    /// Recognizer which can scan front side of Belgium national ID card.
     /// </summary>
-    public interface IDocumentFaceRecognizer : IRecognizer
+    public interface IBelgiumIdFrontRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Type of docment this recognizer will scan.
+        /// Defines if glare detection should be turned on/off.
         /// 
         ///  
         ///
-        /// By default, this is set to 'MBDocumentFaceDetectorTypeTD1'
+        /// By default, this is set to 'true'
         /// </summary>
-        DocumentFaceDetectorType DetectorType { get; set; }
+        bool DetectGlare { get; set; }
         
         /// <summary>
         /// Property for setting DPI for face images
@@ -48,18 +46,6 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines how many times the same document should be detected before the detector
-        /// returns this document as a result of the deteciton
-        /// 
-        /// Higher number means more reliable detection, but slower processing
-        /// 
-        ///  
-        ///
-        /// By default, this is set to '6'
-        /// </summary>
-        uint NumStableDetectionsThreshold { get; set; }
-        
-        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  
@@ -81,28 +67,23 @@
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IDocumentFaceRecognizerResult Result { get; }
+        IBelgiumIdFrontRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IDocumentFaceRecognizer.
+    /// Result object for IBelgiumIdFrontRecognizer.
     /// </summary>
-    public interface IDocumentFaceRecognizerResult : IRecognizerResult {
+    public interface IBelgiumIdFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// Quadrangle represeting corner points of the document within the input image. 
+        /// The card number of the Belgium ID card. 
         /// </summary>
-        IQuadrilateral DocumentLocation { get; }
+        string CardNumber { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
-        
-        /// <summary>
-        /// Quadrangle represeting corner points of the face image within the input image. 
-        /// </summary>
-        IQuadrilateral FaceLocation { get; }
         
         /// <summary>
         /// full document image if enabled with returnFullDocumentImage property. 
