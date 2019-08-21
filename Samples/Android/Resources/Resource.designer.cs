@@ -615,17 +615,38 @@ namespace Android
 			// aapt resource value: 0x7f010112
 			public const int mb_aspectRatio = 2130772242;
 			
-			// aapt resource value: 0x7f01011d
-			public const int mb_borderColor = 2130772253;
+			// aapt resource value: 0x7f010129
+			public const int mb_backSideInstructionsDrawable = 2130772265;
 			
-			// aapt resource value: 0x7f01011e
-			public const int mb_borderWidth = 2130772254;
+			// aapt resource value: 0x7f01012b
+			public const int mb_backSideSplashDrawable = 2130772267;
 			
-			// aapt resource value: 0x7f01011f
-			public const int mb_cornerRadius = 2130772255;
+			// aapt resource value: 0x7f01012e
+			public const int mb_borderColor = 2130772270;
+			
+			// aapt resource value: 0x7f01012f
+			public const int mb_borderWidth = 2130772271;
+			
+			// aapt resource value: 0x7f010123
+			public const int mb_cardBackDrawable = 2130772259;
+			
+			// aapt resource value: 0x7f010122
+			public const int mb_cardFrontDrawable = 2130772258;
+			
+			// aapt resource value: 0x7f010130
+			public const int mb_cornerRadius = 2130772272;
+			
+			// aapt resource value: 0x7f010121
+			public const int mb_exitScanDrawable = 2130772257;
 			
 			// aapt resource value: 0x7f010119
 			public const int mb_flipCardColor = 2130772249;
+			
+			// aapt resource value: 0x7f010128
+			public const int mb_frontSideInstructionsDrawable = 2130772264;
+			
+			// aapt resource value: 0x7f01012a
+			public const int mb_frontSideSplashDrawable = 2130772266;
 			
 			// aapt resource value: 0x7f010116
 			public const int mb_hookColor = 2130772246;
@@ -633,14 +654,35 @@ namespace Android
 			// aapt resource value: 0x7f010110
 			public const int mb_initialOrientation = 2130772240;
 			
-			// aapt resource value: 0x7f01011b
-			public const int mb_innerColor = 2130772251;
+			// aapt resource value: 0x7f01012c
+			public const int mb_innerColor = 2130772268;
 			
-			// aapt resource value: 0x7f01011c
-			public const int mb_outerColor = 2130772252;
+			// aapt resource value: 0x7f010124
+			public const int mb_instructionsBackgroundDrawable = 2130772260;
+			
+			// aapt resource value: 0x7f010125
+			public const int mb_instructionsTextAppearance = 2130772261;
+			
+			// aapt resource value: 0x7f01012d
+			public const int mb_outerColor = 2130772269;
 			
 			// aapt resource value: 0x7f010117
 			public const int mb_overlayColor = 2130772247;
+			
+			// aapt resource value: 0x7f01011b
+			public const int mb_progressDrawable = 2130772251;
+			
+			// aapt resource value: 0x7f010126
+			public const int mb_pulseColor = 2130772262;
+			
+			// aapt resource value: 0x7f01011c
+			public const int mb_reticleDefaultDrawable = 2130772252;
+			
+			// aapt resource value: 0x7f01011e
+			public const int mb_reticleErrorDrawable = 2130772254;
+			
+			// aapt resource value: 0x7f01011d
+			public const int mb_reticleSuccessDrawable = 2130772253;
 			
 			// aapt resource value: 0x7f010113
 			public const int mb_rotatable = 2130772243;
@@ -648,8 +690,17 @@ namespace Android
 			// aapt resource value: 0x7f010118
 			public const int mb_scanLineColor = 2130772248;
 			
+			// aapt resource value: 0x7f010131
+			public const int mb_shapeType = 2130772273;
+			
+			// aapt resource value: 0x7f010127
+			public const int mb_successFlashColor = 2130772263;
+			
 			// aapt resource value: 0x7f010120
-			public const int mb_shapeType = 2130772256;
+			public const int mb_torchOffDrawable = 2130772256;
+			
+			// aapt resource value: 0x7f01011f
+			public const int mb_torchOnDrawable = 2130772255;
 			
 			// aapt resource value: 0x7f01011a
 			public const int mb_viewfinderAspectRatio = 2130772250;
@@ -3294,11 +3345,11 @@ namespace Android
 			// aapt resource value: 0x7f07001a
 			public const int abc_toolbar_collapse_description = 2131165210;
 			
-			// aapt resource value: 0x7f070059
-			public const int app_name = 2131165273;
-			
 			// aapt resource value: 0x7f070058
-			public const int hello = 2131165272;
+			public const int app_name = 2131165272;
+			
+			// aapt resource value: 0x7f070057
+			public const int hello = 2131165271;
 			
 			// aapt resource value: 0x7f070040
 			public const int mb_activity_title_step_back_side = 2131165248;
@@ -3399,11 +3450,11 @@ namespace Android
 			// aapt resource value: 0x7f07004d
 			public const int mb_recognition_timeout_dialog_message = 2131165261;
 			
-			// aapt resource value: 0x7f07004e
-			public const int mb_recognition_timeout_dialog_retry_button = 2131165262;
+			// aapt resource value: 0x7f070056
+			public const int mb_recognition_timeout_dialog_retry_button = 2131165270;
 			
-			// aapt resource value: 0x7f07004f
-			public const int mb_recognition_timeout_dialog_title = 2131165263;
+			// aapt resource value: 0x7f07004e
+			public const int mb_recognition_timeout_dialog_title = 2131165262;
 			
 			// aapt resource value: 0x7f07003c
 			public const int mb_result_list = 2131165244;
@@ -3411,29 +3462,26 @@ namespace Android
 			// aapt resource value: 0x7f07003d
 			public const int mb_skip = 2131165245;
 			
+			// aapt resource value: 0x7f07004f
+			public const int mb_splash_msg_id_back = 2131165263;
+			
 			// aapt resource value: 0x7f070050
-			public const int mb_splash_msg_id_back = 2131165264;
+			public const int mb_splash_msg_id_front = 2131165264;
 			
 			// aapt resource value: 0x7f070051
-			public const int mb_splash_msg_id_front = 2131165265;
+			public const int mb_tooltip_back_id = 2131165265;
 			
 			// aapt resource value: 0x7f070052
-			public const int mb_tooltip_back_id = 2131165266;
+			public const int mb_tooltip_front_id = 2131165266;
 			
 			// aapt resource value: 0x7f070053
-			public const int mb_tooltip_front_id = 2131165267;
+			public const int mb_tooltip_glare = 2131165267;
 			
 			// aapt resource value: 0x7f070054
-			public const int mb_tooltip_glare = 2131165268;
+			public const int mb_unsupported_document_message = 2131165268;
 			
 			// aapt resource value: 0x7f070055
-			public const int mb_unsupported_document_message = 2131165269;
-			
-			// aapt resource value: 0x7f070056
-			public const int mb_unsupported_document_retry_button = 2131165270;
-			
-			// aapt resource value: 0x7f070057
-			public const int mb_unsupported_document_title = 2131165271;
+			public const int mb_unsupported_document_title = 2131165269;
 			
 			// aapt resource value: 0x7f07003e
 			public const int mb_use = 2131165246;
@@ -3965,16 +4013,28 @@ namespace Android
 			public const int MB_blinkid_instructions_text = 2131296614;
 			
 			// aapt resource value: 0x7f090167
-			public const int MB_scan_instructions_text = 2131296615;
+			public const int MB_default_reticle_overlay_style = 2131296615;
 			
 			// aapt resource value: 0x7f090168
-			public const int MB_scan_status_text = 2131296616;
+			public const int MB_default_scan_box_overlay_style = 2131296616;
 			
 			// aapt resource value: 0x7f090169
-			public const int MB_top_button = 2131296617;
+			public const int MB_default_scan_line_overlay_style = 2131296617;
 			
 			// aapt resource value: 0x7f09016a
-			public const int MB_top_button_bar = 2131296618;
+			public const int MB_default_simple_box_overlay_style = 2131296618;
+			
+			// aapt resource value: 0x7f09016b
+			public const int MB_scan_instructions_text = 2131296619;
+			
+			// aapt resource value: 0x7f09016c
+			public const int MB_scan_status_text = 2131296620;
+			
+			// aapt resource value: 0x7f09016d
+			public const int MB_top_button = 2131296621;
+			
+			// aapt resource value: 0x7f09016e
+			public const int MB_top_button_bar = 2131296622;
 			
 			// aapt resource value: 0x7f09006f
 			public const int Platform_AppCompat = 2131296367;
@@ -5432,6 +5492,122 @@ namespace Android
 			// aapt resource value: 0
 			public const int BaseCameraView_mb_initialOrientation = 0;
 			
+			public static int[] BlinkCardScanLineOverlay = new int[] {
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772261};
+			
+			// aapt resource value: 2
+			public const int BlinkCardScanLineOverlay_mb_exitScanDrawable = 2;
+			
+			// aapt resource value: 3
+			public const int BlinkCardScanLineOverlay_mb_instructionsTextAppearance = 3;
+			
+			// aapt resource value: 1
+			public const int BlinkCardScanLineOverlay_mb_torchOffDrawable = 1;
+			
+			// aapt resource value: 0
+			public const int BlinkCardScanLineOverlay_mb_torchOnDrawable = 0;
+			
+			public static int[] BlinkIdReticleOverlay = new int[] {
+					2130772251,
+					2130772252,
+					2130772253,
+					2130772254,
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772258,
+					2130772259,
+					2130772260,
+					2130772261,
+					2130772262,
+					2130772263};
+			
+			// aapt resource value: 8
+			public const int BlinkIdReticleOverlay_mb_cardBackDrawable = 8;
+			
+			// aapt resource value: 7
+			public const int BlinkIdReticleOverlay_mb_cardFrontDrawable = 7;
+			
+			// aapt resource value: 6
+			public const int BlinkIdReticleOverlay_mb_exitScanDrawable = 6;
+			
+			// aapt resource value: 9
+			public const int BlinkIdReticleOverlay_mb_instructionsBackgroundDrawable = 9;
+			
+			// aapt resource value: 10
+			public const int BlinkIdReticleOverlay_mb_instructionsTextAppearance = 10;
+			
+			// aapt resource value: 0
+			public const int BlinkIdReticleOverlay_mb_progressDrawable = 0;
+			
+			// aapt resource value: 11
+			public const int BlinkIdReticleOverlay_mb_pulseColor = 11;
+			
+			// aapt resource value: 1
+			public const int BlinkIdReticleOverlay_mb_reticleDefaultDrawable = 1;
+			
+			// aapt resource value: 3
+			public const int BlinkIdReticleOverlay_mb_reticleErrorDrawable = 3;
+			
+			// aapt resource value: 2
+			public const int BlinkIdReticleOverlay_mb_reticleSuccessDrawable = 2;
+			
+			// aapt resource value: 12
+			public const int BlinkIdReticleOverlay_mb_successFlashColor = 12;
+			
+			// aapt resource value: 5
+			public const int BlinkIdReticleOverlay_mb_torchOffDrawable = 5;
+			
+			// aapt resource value: 4
+			public const int BlinkIdReticleOverlay_mb_torchOnDrawable = 4;
+			
+			public static int[] BlinkIdScanBoxOverlay = new int[] {
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772264,
+					2130772265,
+					2130772266,
+					2130772267};
+			
+			// aapt resource value: 4
+			public const int BlinkIdScanBoxOverlay_mb_backSideInstructionsDrawable = 4;
+			
+			// aapt resource value: 6
+			public const int BlinkIdScanBoxOverlay_mb_backSideSplashDrawable = 6;
+			
+			// aapt resource value: 2
+			public const int BlinkIdScanBoxOverlay_mb_exitScanDrawable = 2;
+			
+			// aapt resource value: 3
+			public const int BlinkIdScanBoxOverlay_mb_frontSideInstructionsDrawable = 3;
+			
+			// aapt resource value: 5
+			public const int BlinkIdScanBoxOverlay_mb_frontSideSplashDrawable = 5;
+			
+			// aapt resource value: 1
+			public const int BlinkIdScanBoxOverlay_mb_torchOffDrawable = 1;
+			
+			// aapt resource value: 0
+			public const int BlinkIdScanBoxOverlay_mb_torchOnDrawable = 0;
+			
+			public static int[] BlinkIdSimpleBoxOverlay = new int[] {
+					2130772255,
+					2130772256,
+					2130772257};
+			
+			// aapt resource value: 2
+			public const int BlinkIdSimpleBoxOverlay_mb_exitScanDrawable = 2;
+			
+			// aapt resource value: 1
+			public const int BlinkIdSimpleBoxOverlay_mb_torchOffDrawable = 1;
+			
+			// aapt resource value: 0
+			public const int BlinkIdSimpleBoxOverlay_mb_torchOnDrawable = 0;
+			
 			public static int[] BlinkidCameraOverlay = new int[] {
 					2130772246,
 					2130772247,
@@ -5655,7 +5831,24 @@ namespace Android
 					2130772247,
 					2130772248,
 					2130772249,
-					2130772250};
+					2130772250,
+					2130772251,
+					2130772252,
+					2130772253,
+					2130772254,
+					2130772255,
+					2130772256,
+					2130772257,
+					2130772258,
+					2130772259,
+					2130772260,
+					2130772261,
+					2130772262,
+					2130772263,
+					2130772264,
+					2130772265,
+					2130772266,
+					2130772267};
 			
 			// aapt resource value: 2
 			public const int GlobalAttrs_mb_animateRotation = 2;
@@ -5666,20 +5859,71 @@ namespace Android
 			// aapt resource value: 0
 			public const int GlobalAttrs_mb_aspectRatio = 0;
 			
+			// aapt resource value: 23
+			public const int GlobalAttrs_mb_backSideInstructionsDrawable = 23;
+			
+			// aapt resource value: 25
+			public const int GlobalAttrs_mb_backSideSplashDrawable = 25;
+			
+			// aapt resource value: 17
+			public const int GlobalAttrs_mb_cardBackDrawable = 17;
+			
+			// aapt resource value: 16
+			public const int GlobalAttrs_mb_cardFrontDrawable = 16;
+			
+			// aapt resource value: 15
+			public const int GlobalAttrs_mb_exitScanDrawable = 15;
+			
 			// aapt resource value: 7
 			public const int GlobalAttrs_mb_flipCardColor = 7;
+			
+			// aapt resource value: 22
+			public const int GlobalAttrs_mb_frontSideInstructionsDrawable = 22;
+			
+			// aapt resource value: 24
+			public const int GlobalAttrs_mb_frontSideSplashDrawable = 24;
 			
 			// aapt resource value: 4
 			public const int GlobalAttrs_mb_hookColor = 4;
 			
+			// aapt resource value: 18
+			public const int GlobalAttrs_mb_instructionsBackgroundDrawable = 18;
+			
+			// aapt resource value: 19
+			public const int GlobalAttrs_mb_instructionsTextAppearance = 19;
+			
 			// aapt resource value: 5
 			public const int GlobalAttrs_mb_overlayColor = 5;
+			
+			// aapt resource value: 9
+			public const int GlobalAttrs_mb_progressDrawable = 9;
+			
+			// aapt resource value: 20
+			public const int GlobalAttrs_mb_pulseColor = 20;
+			
+			// aapt resource value: 10
+			public const int GlobalAttrs_mb_reticleDefaultDrawable = 10;
+			
+			// aapt resource value: 12
+			public const int GlobalAttrs_mb_reticleErrorDrawable = 12;
+			
+			// aapt resource value: 11
+			public const int GlobalAttrs_mb_reticleSuccessDrawable = 11;
 			
 			// aapt resource value: 1
 			public const int GlobalAttrs_mb_rotatable = 1;
 			
 			// aapt resource value: 6
 			public const int GlobalAttrs_mb_scanLineColor = 6;
+			
+			// aapt resource value: 21
+			public const int GlobalAttrs_mb_successFlashColor = 21;
+			
+			// aapt resource value: 14
+			public const int GlobalAttrs_mb_torchOffDrawable = 14;
+			
+			// aapt resource value: 13
+			public const int GlobalAttrs_mb_torchOnDrawable = 13;
 			
 			// aapt resource value: 8
 			public const int GlobalAttrs_mb_viewfinderAspectRatio = 8;
@@ -6403,12 +6647,12 @@ namespace Android
 			public const int ViewStubCompat_android_layout = 1;
 			
 			public static int[] ViewfinderShapeView = new int[] {
-					2130772251,
-					2130772252,
-					2130772253,
-					2130772254,
-					2130772255,
-					2130772256};
+					2130772268,
+					2130772269,
+					2130772270,
+					2130772271,
+					2130772272,
+					2130772273};
 			
 			// aapt resource value: 2
 			public const int ViewfinderShapeView_mb_borderColor = 2;
