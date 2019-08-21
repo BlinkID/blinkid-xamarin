@@ -25,6 +25,8 @@
     <PackOnBuild>true</PackOnBuild>
     <PackageReleaseNotes>- Updated for BlinkID Android SDK v4.11.0:
 https://github.com/BlinkID/blinkid-android/releases/tag/v4.11.0</PackageReleaseNotes>
+    <!-- Workaround for build error  -->
+    <DesignTimeBuild>false</DesignTimeBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
