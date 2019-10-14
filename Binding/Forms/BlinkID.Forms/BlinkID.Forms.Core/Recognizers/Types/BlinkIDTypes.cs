@@ -230,6 +230,25 @@ namespace Microblink.Forms.Core.Recognizers
     }
 
     /// <summary>
+    /// Result of the data matching algorithm for scanned parts/sides of the document.
+    /// </summary>
+    public enum DataMatchResult
+    {
+        /// <summary>
+        /// Data matching has not been performed.
+        /// </summary>
+        NotPerformed,
+        /// <summary>
+        /// Data does not match.
+        /// </summary>
+        Failed,
+        /// <summary>
+        /// Data match.
+        /// </summary>
+        Success
+    }
+
+    /// <summary>
     /// Possible supported detectors for documents containing face image.
     /// </summary>
     public enum DocumentFaceDetectorType
