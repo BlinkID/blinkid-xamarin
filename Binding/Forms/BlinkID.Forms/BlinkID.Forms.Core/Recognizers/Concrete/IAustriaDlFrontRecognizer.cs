@@ -7,112 +7,148 @@
     {
         
         /// <summary>
-        /// Defines whether glare detector is enabled. 
+        /// Defines if glare detection should be turned on/off.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool DetectGlare { get; set; }
         
         /// <summary>
-        /// Defines if date of birth of Austrian DL owner should be extracted. 
+        /// Defines if date of birth of Austrian DL owner should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if date of expiry of Austrian DL should be extracted. 
+        /// Defines if date of expiry of Austrian DL should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfExpiry { get; set; }
         
         /// <summary>
-        /// Defines if date of issue of Austrian DL should be extracted. 
+        /// Defines if date of issue of Austrian DL should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractDateOfIssue { get; set; }
         
         /// <summary>
-        /// Defines if first name of Austrian DL owner should be extracted. 
+        /// Defines if first name of Austrian DL owner should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractFirstName { get; set; }
         
         /// <summary>
-        /// Defines if issuing authority of Austrian DL should be extracted. 
+        /// Defines if issuing authority of Austrian DL should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractIssuingAuthority { get; set; }
         
         /// <summary>
-        /// Defines if name of Austrian DL owner should be extracted. 
+        /// Defines if name of Austrian DL owner should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractName { get; set; }
         
         /// <summary>
-        /// Defines if place of birth of Austrian DL owner should be extracted. 
+        /// Defines if place of birth of Austrian DL owner should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractPlaceOfBirth { get; set; }
         
         /// <summary>
-        /// Defines if vehicle categories of Austrian DL should be extracted. 
+        /// Defines if vehicle categories of Austrian DL should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool ExtractVehicleCategories { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        ///
+        ///
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        ///
+        ///
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// The extension factors for full document image. 
+        /// Image extension factors for full document image.
         ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// @see ImageExtensionFactors
+        ///
+        ///
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        ///
+        ///
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether signature image will be available in result. 
+        /// Sets whether signature image from ID card should be extracted.
+        ///
+        ///
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for signature image that should be returned. 
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        ///
+        ///
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -131,62 +167,62 @@
     public interface IAustriaDlFrontRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The date of birth of the Austrian DL owner. 
+        /// The date Of Birth of the front side of the Austria Dl owner.
         /// </summary>
         IDate DateOfBirth { get; }
         
         /// <summary>
-        /// The date of expiry of the Austrian DL. 
+        /// The date Of Expiry of the front side of the Austria Dl owner.
         /// </summary>
         IDate DateOfExpiry { get; }
         
         /// <summary>
-        /// The date of issue of the Austrian DL. 
+        /// The date Of Issue of the front side of the Austria Dl owner.
         /// </summary>
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property.
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
-        /// The first name of the Austrian DL owner. 
+        /// The first Name of the front side of the Austria Dl owner.
         /// </summary>
         string FirstName { get; }
         
         /// <summary>
-        /// Image of the full document 
+        /// full document image if enabled with returnFullDocumentImage property.
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
-        /// The issuing authority of the Austrian DL. 
+        /// The issuing Authority of the front side of the Austria Dl owner.
         /// </summary>
         string IssuingAuthority { get; }
         
         /// <summary>
-        /// The licence number of the Austrian DL. 
+        /// The licence Number of the front side of the Austria Dl owner.
         /// </summary>
         string LicenceNumber { get; }
         
         /// <summary>
-        /// The name of the Austrian DL owner. 
+        /// The name of the front side of the Austria Dl owner.
         /// </summary>
         string Name { get; }
         
         /// <summary>
-        /// The place of birth of the Austrian DL owner. 
+        /// The place Of Birth of the front side of the Austria Dl owner.
         /// </summary>
         string PlaceOfBirth { get; }
         
         /// <summary>
-        /// Signature image from the document 
+        /// image of the signature if enabled with returnSignatureImage property.
         /// </summary>
         Xamarin.Forms.ImageSource SignatureImage { get; }
         
         /// <summary>
-        /// The vehicle categories of the Austrian DL. 
+        /// The vehicle Categories of the front side of the Austria Dl owner.
         /// </summary>
         string VehicleCategories { get; }
         
