@@ -28,6 +28,8 @@
     
     <remove-node path="/api/package[@name='com.microblink.entities.parsers']/class[@name='Parser']/method[@name='consumeResult']" />
 
+    <remove-node path="/api/package[starts-with(@name, 'com.microblink.fragment')]" />
+
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='consumeResultFrom']" />
 
     <remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='clone']" />

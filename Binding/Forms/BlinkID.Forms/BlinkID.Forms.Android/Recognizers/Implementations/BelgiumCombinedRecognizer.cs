@@ -78,7 +78,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
-        public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
+        public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
@@ -86,6 +86,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string IssuedBy => nativeResult.IssuedBy;
         public string LastName => nativeResult.LastName;
         public bool MrzVerified => nativeResult.IsMrzVerified;
+        public string NationalRegisterNumber => nativeResult.NationalRegisterNumber;
         public string Nationality => nativeResult.Nationality;
         public bool ScanningFirstSideDone => nativeResult.IsScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
