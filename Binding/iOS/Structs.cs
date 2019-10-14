@@ -438,6 +438,14 @@ namespace Microblink
 		Valid
 	}
 
+	[Native]
+	public enum MBDataMatchResult : ulong
+	{
+		NotPerformed = 0,
+		Failed,
+		Success
+	}
+
 	[StructLayout (LayoutKind.Sequential)]
 	public struct MBImageExtensionFactors
 	{

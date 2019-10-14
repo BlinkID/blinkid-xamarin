@@ -78,7 +78,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
-        public bool DocumentDataMatch => nativeResult.DocumentDataMatch;
+        public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
@@ -86,6 +86,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string IssuedBy => nativeResult.IssuedBy;
         public string LastName => nativeResult.LastName;
         public bool MrzVerified => nativeResult.MrzVerified;
+        public string NationalRegisterNumber => nativeResult.NationalRegisterNumber;
         public string Nationality => nativeResult.Nationality;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;
         public string Sex => nativeResult.Sex;

@@ -2746,10 +2746,10 @@ namespace Microblink
     [Protocol]   
     interface MBCombinedRecognizerResult
     {
-        // @required @property (readonly, assign, nonatomic) BOOL documentDataMatch;
+        // @required @property (readonly, assign, nonatomic) MBDataMatchResult documentDataMatch;
         [Abstract]
-        [Export("documentDataMatch")]
-        bool DocumentDataMatch { get; }
+        [Export ("documentDataMatch", ArgumentSemantic.Assign)]
+        MBDataMatchResult DocumentDataMatch { get; }
 
         // @required @property (readonly, assign, nonatomic) BOOL scanningFirstSideDone;
         [Abstract]
@@ -3120,6 +3120,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nonnull issuedBy;
         [Export ("issuedBy")]
         string IssuedBy { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull nationalRegisterNumber;
+        [Export ("nationalRegisterNumber")]
+        string NationalRegisterNumber { get; }
 
         // @property (readonly, nonatomic) NSString * _Nonnull lastName;
         [Export ("lastName")]
@@ -4473,9 +4477,69 @@ namespace Microblink
         [NullAllowed, Export ("sex")]
         string Sex { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable additionalNameInformation;
+        [NullAllowed, Export ("additionalNameInformation")]
+        string AdditionalNameInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable additionalAddressInformation;
+        [NullAllowed, Export ("additionalAddressInformation")]
+        string AdditionalAddressInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export ("placeOfBirth")]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable nationality;
+        [NullAllowed, Export ("nationality")]
+        string Nationality { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable race;
+        [NullAllowed, Export ("race")]
+        string Race { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable religion;
+        [NullAllowed, Export ("religion")]
+        string Religion { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable profession;
+        [NullAllowed, Export ("profession")]
+        string Profession { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable maritalStatus;
+        [NullAllowed, Export ("maritalStatus")]
+        string MaritalStatus { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable residentialStatus;
+        [NullAllowed, Export ("residentialStatus")]
+        string ResidentialStatus { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable employer;
+        [NullAllowed, Export ("employer")]
+        string Employer { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable personalIdNumber;
+        [NullAllowed, Export ("personalIdNumber")]
+        string PersonalIdNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentAdditionalNumber;
+        [NullAllowed, Export ("documentAdditionalNumber")]
+        string DocumentAdditionalNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
+        [NullAllowed, Export ("issuingAuthority")]
+        string IssuingAuthority { get; }
+
+        // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
+        [Export ("mrzResult")]
+        MBMrzResult MrzResult { get; }
+
         // @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
         [NullAllowed, Export ("driverLicenseDetailedInfo")]
         MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable conditions;
+        [NullAllowed, Export ("conditions")]
+        string Conditions { get; }
     }
 
     // @interface MBBlinkIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -4514,7 +4578,7 @@ namespace Microblink
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable address;
         [NullAllowed, Export ("address")]
@@ -4552,9 +4616,69 @@ namespace Microblink
         [NullAllowed, Export ("sex")]
         string Sex { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable additionalNameInformation;
+        [NullAllowed, Export ("additionalNameInformation")]
+        string AdditionalNameInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable additionalAddressInformation;
+        [NullAllowed, Export ("additionalAddressInformation")]
+        string AdditionalAddressInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export ("placeOfBirth")]
+        string PlaceOfBirth { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable nationality;
+        [NullAllowed, Export ("nationality")]
+        string Nationality { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable race;
+        [NullAllowed, Export ("race")]
+        string Race { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable religion;
+        [NullAllowed, Export ("religion")]
+        string Religion { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable profession;
+        [NullAllowed, Export ("profession")]
+        string Profession { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable maritalStatus;
+        [NullAllowed, Export ("maritalStatus")]
+        string MaritalStatus { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable residentialStatus;
+        [NullAllowed, Export ("residentialStatus")]
+        string ResidentialStatus { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable employer;
+        [NullAllowed, Export ("employer")]
+        string Employer { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable personalIdNumber;
+        [NullAllowed, Export ("personalIdNumber")]
+        string PersonalIdNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentAdditionalNumber;
+        [NullAllowed, Export ("documentAdditionalNumber")]
+        string DocumentAdditionalNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
+        [NullAllowed, Export ("issuingAuthority")]
+        string IssuingAuthority { get; }
+
+        // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
+        [Export ("mrzResult")]
+        MBMrzResult MrzResult { get; }
+
         // @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
         [NullAllowed, Export ("driverLicenseDetailedInfo")]
         MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable conditions;
+        [NullAllowed, Export ("conditions")]
+        string Conditions { get; }
     }
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>

@@ -168,7 +168,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfIssuance => nativeResult.DateOfIssuance != null ? new Date(nativeResult.DateOfIssuance) : null;
         public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
-        public bool DocumentDataMatch => nativeResult.DocumentDataMatch;
+        public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public string EyeColour => nativeResult.EyeColour;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
