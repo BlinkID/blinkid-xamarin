@@ -48,73 +48,27 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBBarcodeType : ulong
+	public enum MBDocumentFaceDetectorType : ulong
 	{
-		None = 0,
-		TypeQR,
-		TypeDataMatrix,
-		TypeUPCE,
-		TypeUPCA,
-		TypeEAN8,
-		TypeEAN13,
-		TypeCode128,
-		TypeCode39,
-		TypeITF,
-		TypeAztec,
-		TypePdf417
-	}
-
-	[Native]
-	public enum MBDetectionStatus : ulong
-	{
-		Success = 1 << 0,
-		Fail = 1 << 1,
-		CameraTooHigh = 1 << 2,
-		CameraAtAngle = 1 << 3,
-		CameraRotated = 1 << 4,
-		QRSuccess = 1 << 6,
-		Pdf417Success = 1 << 7,
-		FallbackSuccess = 1 << 8,
-		PartialForm = 1 << 9,
-		CameraTooNear = 1 << 10
-	}
-
-	[Native]
-	public enum MBDetectionCode : ulong
-	{
-		Fail = 0,
-		Fallback,
-		Success
-	}
-
-	[Native]
-	public enum MBMrtdSpecificationPreset : ulong
-	{
-		MBMrtdSpecificationTd1,
-		MBMrtdSpecificationTd2,
-		MBMrtdSpecificationTd3
+		Td1 = 0,
+		Td2,
+		PassportsAndVisas
 	}
 
 	[StructLayout (LayoutKind.Sequential)]
-	public struct MBRange
+	public struct MBImageExtensionFactors
 	{
-		public nfloat start;
+		public nfloat top;
 
-		public nfloat stop;
+		public nfloat right;
+
+		public nfloat bottom;
+
+		public nfloat left;
 	}
 
 	// static class CFunctions
 	// {
-	// 	// MBRange MBMakeRange (CGFloat start, CGFloat stop) __attribute__((always_inline));
-	// 	[DllImport ("__Internal")]
-	// 	[Verify (PlatformInvoke)]
-	// 	static extern MBRange MBMakeRange (nfloat start, nfloat stop);
-
-	// 	// MBScale MBMakeScale (CGFloat scale, CGFloat tolerance) __attribute__((always_inline));
-	// 	[DllImport ("__Internal")]
-	// 	[Verify (PlatformInvoke)]
-	// 	static extern MBScale MBMakeScale (nfloat scale, nfloat tolerance);
-
 	// 	// MBImageExtensionFactors MBMakeImageExtensionFactors (CGFloat top, CGFloat right, CGFloat bottom, CGFloat left) __attribute__((always_inline));
 	// 	[DllImport ("__Internal")]
 	// 	[Verify (PlatformInvoke)]
@@ -266,198 +220,6 @@ namespace Microblink
 	// 	static extern CGRect scanningRegionForFrameInBounds (CGRect frame, CGRect bounds);
 	// }
 
-	[StructLayout (LayoutKind.Sequential)]
-	public struct MBScale
-	{
-		public nfloat scale;
-
-		public nfloat tolerance;
-	}
-
-	[Native]
-	public enum MBScanningMode : ulong
-	{
-		Auto,
-		Landscape,
-		Portrait
-	}
-
-	[Native]
-	public enum MBDocumentSpecificationPreset : ulong
-	{
-		Id1Card,
-		Id2Card,
-		Cheque,
-		A4Portrait,
-		A4Landscape,
-		Id1VerticalCard,
-		Id2VerticalCard
-	}
-
-	[Native]
-	public enum MBParserResultState : ulong
-	{
-		Empty,
-		Uncertain,
-		Valid
-	}
-
-	[Native]
-	public enum MBTopUpPreset : ulong
-	{
-		MBTopUp123,
-		MBTopUp103,
-		MBTopUp131,
-		Generic
-	}
-
-	[Native]
-	public enum MBDateFormat : ulong
-	{
-		Ddmmyyyy = 0,
-		Ddmmyy,
-		Mmddyyyy,
-		Mmddyy,
-		Yyyymmdd,
-		Yymmdd,
-		Ddmonthyyyy,
-		Ddmonthyy,
-		Monthddyyyy,
-		Monthddyy,
-		Yyyymonthdd,
-		Yymonthdd
-	}
-
-	[Native]
-	public enum MBDeepOcrModel : ulong
-	{
-		MBDeepOcrModelBlinkInput
-	}
-
-	[Native]
-	public enum MBOcrFont : ulong
-	{
-		AkzidenzGrotesk,
-		Arial,
-		ArialBlack,
-		Arnhem,
-		AvantGarde,
-		Bembo,
-		Bodoni,
-		Calibri,
-		CalibriBold,
-		Chainprinter,
-		ComicSans,
-		ConcertoRoundedSg,
-		Courier,
-		CourierBold,
-		CourierMediumBold,
-		CourierNewBold,
-		CourierNewCe,
-		CourierCondensed,
-		DejavuSansMono,
-		Din,
-		EuropaGroteskNo2SbBold,
-		Eurostile,
-		F25BankPrinterBold,
-		FranklinGothic,
-		Frutiger,
-		Futura,
-		FuturaBold,
-		Garamond,
-		Georgia,
-		GillSans,
-		Handwritten,
-		Helvetica,
-		HelveticaBold,
-		HelveticaCondensedLight,
-		Hypermarket,
-		Interstate,
-		LatinModern,
-		LatinModernItalic,
-		LetterGothic,
-		Lucida,
-		LucidaSans,
-		Matrix,
-		Meta,
-		Minion,
-		Ocra,
-		Ocrb,
-		Officina,
-		Optima,
-		Printf,
-		Rockwell,
-		RotisSansSerif,
-		RotisSerif,
-		Sabon,
-		Stone,
-		SvBasicManual,
-		Tahoma,
-		TahomaBold,
-		TexGyreTermes,
-		TexGyreTermesItalic,
-		TheSansMonoCondensedBlack,
-		Thesis,
-		TicketDeCaisse,
-		TimesNewRoman,
-		Trajan,
-		Trinite,
-		Univers,
-		Verdana,
-		Voltaire,
-		Walbaum,
-		EuropaGroSb,
-		EuropaGroSbLight,
-		AntonioRegular,
-		CorporateLight,
-		Micr,
-		ArabicNile,
-		Unknown,
-		XitsMath,
-		Any,
-		UnknownMath,
-		UkdlLight,
-		Count,
-		FeSchrift
-	}
-
-	[Native]
-	public enum PPDocumentType : ulong
-	{
-		BlinkOCRDocumentType,
-		MicrDocumentType,
-		ArabicDocumentType,
-		HandwrittenDocumentType
-	}
-
-	[Native]
-	public enum MBProcessorResultState : ulong
-	{
-		Empty,
-		Uncertain,
-		Valid
-	}
-
-	[Native]
-	public enum MBDataMatchResult : ulong
-	{
-		NotPerformed = 0,
-		Failed,
-		Success
-	}
-
-	[StructLayout (LayoutKind.Sequential)]
-	public struct MBImageExtensionFactors
-	{
-		public nfloat top;
-
-		public nfloat right;
-
-		public nfloat bottom;
-
-		public nfloat left;
-	}
-
 	[Native]
 	public enum MBMrtdDocumentType : ulong
 	{
@@ -469,52 +231,19 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBDocumentFaceDetectorType : ulong
+	public enum MBDataMatchResult : ulong
 	{
-		Td1 = 0,
-		Td2,
-		PassportsAndVisas
+		NotPerformed = 0,
+		Failed,
+		Success
 	}
 
 	[Native]
-	public enum MBEudlCountry : ulong
+	public enum MBMrtdSpecificationPreset : ulong
 	{
-		UnitedKingdom,
-		Germany,
-		Austria,
-		Any
-	}
-
-	[Native]
-	public enum MBCardIssuer : ulong
-	{
-		Other = 0,
-		AmericanExpress,
-		BmoAbm,
-		ChinaTUnion,
-		ChinaUnionPay,
-		CibcAdvantageDebit,
-		Ciss,
-		DinersClubInternational,
-		DinersClubUsCanada,
-		DiscoverCard,
-		Hsbc,
-		RuPay,
-		InterPayment,
-		InstaPayment,
-		Jcb,
-		Laser,
-		Maestro,
-		Dankort,
-		Mir,
-		MasterCard,
-		RbcClient,
-		ScotiaBank,
-		TdCtAccess,
-		Troy,
-		Visa,
-		Uatp,
-		Verve
+		MBMrtdSpecificationTd1,
+		MBMrtdSpecificationTd2,
+		MBMrtdSpecificationTd3
 	}
 
 	[Native]
@@ -608,6 +337,101 @@ namespace Microblink
 		SecurityVersion
 	}
 
+	[Native]
+	public enum MBProcessorResultState : ulong
+	{
+		Empty,
+		Uncertain,
+		Valid
+	}
+
+	[Native]
+	public enum MBOcrFont : ulong
+	{
+		AkzidenzGrotesk,
+		Arial,
+		ArialBlack,
+		Arnhem,
+		AvantGarde,
+		Bembo,
+		Bodoni,
+		Calibri,
+		CalibriBold,
+		Chainprinter,
+		ComicSans,
+		ConcertoRoundedSg,
+		Courier,
+		CourierBold,
+		CourierMediumBold,
+		CourierNewBold,
+		CourierNewCe,
+		CourierCondensed,
+		DejavuSansMono,
+		Din,
+		EuropaGroteskNo2SbBold,
+		Eurostile,
+		F25BankPrinterBold,
+		FranklinGothic,
+		Frutiger,
+		Futura,
+		FuturaBold,
+		Garamond,
+		Georgia,
+		GillSans,
+		Handwritten,
+		Helvetica,
+		HelveticaBold,
+		HelveticaCondensedLight,
+		Hypermarket,
+		Interstate,
+		LatinModern,
+		LatinModernItalic,
+		LetterGothic,
+		Lucida,
+		LucidaSans,
+		Matrix,
+		Meta,
+		Minion,
+		Ocra,
+		Ocrb,
+		Officina,
+		Optima,
+		Printf,
+		Rockwell,
+		RotisSansSerif,
+		RotisSerif,
+		Sabon,
+		Stone,
+		SvBasicManual,
+		Tahoma,
+		TahomaBold,
+		TexGyreTermes,
+		TexGyreTermesItalic,
+		TheSansMonoCondensedBlack,
+		Thesis,
+		TicketDeCaisse,
+		TimesNewRoman,
+		Trajan,
+		Trinite,
+		Univers,
+		Verdana,
+		Voltaire,
+		Walbaum,
+		EuropaGroSb,
+		EuropaGroSbLight,
+		AntonioRegular,
+		CorporateLight,
+		Micr,
+		ArabicNile,
+		Unknown,
+		XitsMath,
+		Any,
+		UnknownMath,
+		UkdlLight,
+		Count,
+		FeSchrift
+	}
+
 	[StructLayout (LayoutKind.Sequential)]
 	public struct CGLine
 	{
@@ -637,5 +461,20 @@ namespace Microblink
 	{
 		FrontSide,
 		BackSideSide
+	}
+
+	[Native]
+	public enum MBDetectionStatus : ulong
+	{
+		Success = 1 << 0,
+		Fail = 1 << 1,
+		CameraTooHigh = 1 << 2,
+		CameraAtAngle = 1 << 3,
+		CameraRotated = 1 << 4,
+		QRSuccess = 1 << 6,
+		Pdf417Success = 1 << 7,
+		FallbackSuccess = 1 << 8,
+		PartialForm = 1 << 9,
+		CameraTooNear = 1 << 10
 	}
 }
