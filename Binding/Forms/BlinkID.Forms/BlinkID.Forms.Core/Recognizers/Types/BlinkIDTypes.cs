@@ -207,29 +207,6 @@ namespace Microblink.Forms.Core.Recognizers
     }
 
     /// <summary>
-    /// Possible values for EUDL country fields.
-    /// </summary>
-    public enum EudlCountry
-    {
-        /// <summary>
-        /// UK's driver's license.
-        /// </summary>
-        UK,
-        /// <summary>
-        /// German driver's license
-        /// </summary>
-        Germany,
-        /// <summary>
-        /// Austrian driver's license.
-        /// </summary>
-        Austria,
-        /// <summary>
-        /// Performs country detection and uses scanning parameters for detected country.
-        /// </summary>
-        Automatic
-    }
-
-    /// <summary>
     /// Result of the data matching algorithm for scanned parts/sides of the document.
     /// </summary>
     public enum DataMatchResult
@@ -265,121 +242,6 @@ namespace Microblink.Forms.Core.Recognizers
         /// Uses MRTD detector for detecting documents with MRZ
         /// </summary>
         PassportAndVisas
-    }
-
-    /// <summary>
-    /// Supported BlinkCard card issuer values.
-    /// </summary>
-    public enum CardIssuer
-    {
-        /// <summary>
-        /// Unidentified Card
-        /// </summary>
-        Other,
-        /// <summary>
-        /// The American Express Company Card
-        /// </summary>
-        AmericanExpress,
-        /// <summary>
-        /// The Bank of Montreal ABM Card
-        /// </summary>
-        BmoAbm,
-        /// <summary>
-        /// China T-Union Transportation Card
-        /// </summary>
-        ChinaTUnion,
-        /// <summary>
-        /// China UnionPay Card
-        /// </summary>
-        ChinaUnionPay,
-        /// <summary>
-        /// Canadian Imperial Bank of Commerce Advantage Debit Card
-        /// </summary>
-        CibcAdvantageDebit,
-        /// <summary>
-        /// CISS Card
-        /// </summary>
-        Ciss,
-        /// <summary>
-        /// Diners Club International Card
-        /// </summary>
-        DinersClubInternational,
-        /// <summary>
-        /// Diners Club United States & Canada Card
-        /// </summary>
-        DinersClubUsCanada,
-        /// <summary>
-        /// Discover Card
-        /// </summary>
-        DiscoverCard,
-        /// <summary>
-        /// HSBC Bank Canada Card
-        /// </summary>
-        Hsbc,
-        /// <summary>
-        /// RuPay Card
-        /// </summary>
-        RuPay,
-        /// <summary>
-        /// InterPayment Card
-        /// </summary>
-        InterPayment,
-        /// <summary>
-        /// InstaPayment Card
-        /// </summary>
-        InstaPayment,
-        /// <summary>
-        /// The JCB Company Card
-        /// </summary>
-        Jcb,
-        /// <summary>
-        /// Laser Debit Card (deprecated)
-        /// </summary>
-        Laser,
-        /// <summary>
-        /// Maestro Debit Card
-        /// </summary>
-        Maestro,
-        /// <summary>
-        /// Dankort Card
-        /// </summary>
-        Dankort,
-        /// <summary>
-        /// MIR Card
-        /// </summary>
-        Mir,
-        /// <summary>
-        /// MasterCard Inc. Card
-        /// </summary>
-        MasterCard,
-        /// <summary>
-        /// The Royal Bank of Canada Client Card
-        /// </summary>
-        RbcClient,
-        /// <summary>
-        /// ScotiaBank Scotia Card
-        /// </summary>
-        ScotiaBank,
-        /// <summary>
-        /// TD Canada Trust Access Card
-        /// </summary>
-        TdCtAccess,
-        /// <summary>
-        /// Troy Card
-        /// </summary>
-        Troy,
-        /// <summary>
-        /// Visa Inc. Card
-        /// </summary>
-        Visa,
-        /// <summary>
-        /// Universal Air Travel Plan Inc. Card
-        /// </summary>
-        Uatp,
-        /// <summary>
-        /// Interswitch Verve Card
-        /// </summary>
-        Verve
     }
 
     public interface IImageExtensionFactors
@@ -424,4 +286,5 @@ namespace Microblink.Forms.Core.Recognizers
         /// <param name="rightFactor">image extension factor relative to full image width in RIGHT direction</param>
         IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0.0f, float downFactor = 0.0f, float leftFactor = 0.0f, float rightFactor = 0.0f);
     }
+
 }

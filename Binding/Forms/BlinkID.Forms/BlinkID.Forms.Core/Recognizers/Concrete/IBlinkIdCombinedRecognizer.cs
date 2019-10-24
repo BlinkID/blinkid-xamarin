@@ -1,54 +1,41 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Recognizer which can scan front and back side of the United States driver license.
+    /// A generic recognizer which can scan front and back side of the document.
     /// </summary>
     public interface IBlinkIdCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        ///
-        ///
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        ///
-        ///
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
+        /// The extension factors for full document image. 
         ///
-        /// @see ImageExtensionFactors
-        ///
-        ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        ///
-        ///
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        ///
-        ///
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -67,7 +54,7 @@
     public interface IBlinkIdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional address information of the document owner.
+        /// The additional name information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -107,10 +94,7 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
-        /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
-        /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
-        /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same.
+        /// Defines result of the data matching algorithm for scanned parts/sides of the document. 
         /// </summary>
         DataMatchResult DocumentDataMatch { get; }
         
@@ -130,7 +114,7 @@
         string Employer { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property.
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -140,12 +124,12 @@
         string FirstName { get; }
         
         /// <summary>
-        /// back side image of the document if enabled with returnFullDocumentImage property.
+        /// Back side image of the document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        /// front side image of the document if enabled with returnFullDocumentImage property.
+        /// Front side image of the document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
@@ -170,7 +154,7 @@
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone
+        /// The data extracted from the machine readable zone. 
         /// </summary>
         IMrzResult MrzResult { get; }
         
@@ -210,8 +194,7 @@
         string ResidentialStatus { get; }
         
         /// <summary>
-        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
-        /// false if it's still scanning first side.
+        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
