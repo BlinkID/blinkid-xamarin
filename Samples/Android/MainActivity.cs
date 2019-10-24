@@ -5,8 +5,7 @@ using Android.Content.PM;
 
 using Android.Content;
 
-using Com.Microblink.Entities.Recognizers.Blinkid.Mrtd;
-using Com.Microblink.Entities.Recognizers.Blinkid.Eudl;
+using Com.Microblink.Entities.Recognizers.Blinkid.Generic;
 using Com.Microblink.Entities.Recognizers.Blinkbarcode.Usdl;
 using Com.Microblink.Entities.Recognizers;
 using Com.Microblink.Util;
@@ -22,15 +21,10 @@ namespace Android
 	{
         const int ACTIVITY_REQUEST_ID = 101;
 
-        // MrtdRecognizer is used for scanning Machine Readable Travel Documents
-        MrtdRecognizer mrtdRecognizer;
+        // BlinkIdRecognizer is used automatic classification and data extraction from the supported
+        // document
+        BlinkIdRecognizer blinkidRecognizer;
 
-        // EudlRecognizer is used for scanning EU Driver's licenses
-        EudlRecognizer eudlRecognizer;
-
-        // UsdlRecognizer is used for scanning PDF417 barcode on back side of
-        // US Driver's licenses
-        UsdlRecognizer usdlRecognizer;
 
         // there are plenty of recognizers available - see Android documentation
         // for more information: https://github.com/BlinkID/blinkid-android/blob/master/README.md
@@ -60,11 +54,11 @@ namespace Android
 				button.Click += delegate {
                     // create a settings object for activity that will be used. For ID it's best to
                     // use DocumentUISettings. There are also other UI settings available - check Android documentation
-                    var documentUISettings = new DocumentUISettings(recognizerBundle);
+                    var blinkidUISettings = new BlinkIdUISettings(recognizerBundle);
 
                     // start activity associated with given UI settings. After scanning completes,
                     // OnActivityResult will be invoked
-                    ActivityRunner.StartActivityForResult(this, ACTIVITY_REQUEST_ID, documentUISettings);
+                    ActivityRunner.StartActivityForResult(this, ACTIVITY_REQUEST_ID, blinkidUISettings);
 				};
 			}
 		}
@@ -72,7 +66,7 @@ namespace Android
 		private void initBlinkId ()
 		{
             // set license key for Android with package name com.microblink.xamarin.blinkid
-            MicroblinkSDK.SetLicenseKey("sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU+/Zv8cEFJpkZtmqlysrWqktGZQ//Gs2MfTBoDAn5ug+aVBeaGW1fZbtks5QPvB0GHCyGe3ifl5FszmWiUzgJVOHuQ5I1P+81ya5Th79vsb6uIfy+tdcZDfEeNUX7ql0Bffa9UU9CgaJYIDIK9xHQPew3WbhQVvjbztHOuYhMtyo7NGCeLPc3zfbX3gkb3+wy9UzBVTeBb/VEyDgjvX4vn8ZlhBKH1NFUCXbDnTDhb9eh5/Utu19HQ=", this);
+            MicroblinkSDK.SetLicenseKey("sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/YOseEDpc37NgwX0A5o+Tylp/16TUJXSBrGxWr7uFg4F2MWT0+nFMV7Yxf2i9FuRMy13dXgBOhfll1M8RoclQikWapjwiX0jBDOZm2xUlNII3g9nisGbyhkhszCb2/UdhNdQSi7JgLxWRUdx6rMBgHdjsP+P32uNh6fcgopSaOAkpdsoHBMD5rFWJBXlbqa1Ij04EuRHIFZGKJobTmt5dxgA6zyowaXw8zvR6WA33JEKkE7c4nw2MyaBtxWw=", this);
 
             // Since we plan to transfer large data between activities, we need to enable
             // PersistedOptimised intent data transfer mode.
@@ -80,13 +74,10 @@ namespace Android
             MicroblinkSDK.IntentDataTransferMode = IntentDataTransferMode.PersistedOptimised;
 
             // create recognizers and bundle them into RecognizerBundle
-            mrtdRecognizer = new MrtdRecognizer();
-            mrtdRecognizer.SetReturnFullDocumentImage(true);
-            eudlRecognizer = new EudlRecognizer();
-            eudlRecognizer.SetReturnFullDocumentImage(true);
-            usdlRecognizer = new UsdlRecognizer();
+            blinkidRecognizer = new BlinkIdRecognizer();
+            blinkidRecognizer.SetReturnFullDocumentImage(true);
 
-            recognizerBundle = new RecognizerBundle(mrtdRecognizer, eudlRecognizer, usdlRecognizer);
+            recognizerBundle = new RecognizerBundle(blinkidRecognizer);
 		}
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
@@ -101,37 +92,45 @@ namespace Android
                 // of AAR loses the return type of the Java's GetResult method. Therefore, a cast is required.
                 // This is always a safe cast, since the original object in Java is of correct type - type
                 // information was lost during conversion to C# due to https://github.com/xamarin/java.interop/pull/216
-                var mrtdResult = (MrtdRecognizer.Result)mrtdRecognizer.GetResult();
-                var eudlResult = (EudlRecognizer.Result)eudlRecognizer.GetResult();
-                var usdlResult = (UsdlRecognizer.Result)usdlRecognizer.GetResult();
+                var blinkidResult = (BlinkIdRecognizer.Result)blinkidRecognizer.GetResult();
 
                 var message = "";
 
                 // we can check ResultState property of the Result to see if the result contains scanned information
-                if (mrtdResult.ResultState == Recognizer.Result.State.Valid) {
-                    message += "MRTD recognizer result:\n" +
-                        "PrimaryID: " + mrtdResult.MrzResult.PrimaryId + "\n" +
-                         "SecondaryID: " + mrtdResult.MrzResult.SecondaryId + "\n" +
-                         "Date of birth: " + mrtdResult.MrzResult.DateOfBirth.Date.Day + "." +
-                                             mrtdResult.MrzResult.DateOfBirth.Date.Month + "." +
-                                             mrtdResult.MrzResult.DateOfBirth.Date.Year + ".\n";
+                if (blinkidResult.ResultState == Recognizer.Result.State.Valid) {
+                    message += "BlinkID recognizer result:\n" +
+                        "FirstName: " + blinkidResult.FirstName + "\n" +
+                        "LastName: " + blinkidResult.LastName + "\n" +
+                        "Address: " + blinkidResult.Address + "\n" +
+                        "DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
+                        "Sex: " + blinkidResult.Sex + "\n";
+                    var dob = blinkidResult.DateOfBirth.Date;
+                    if (dob != null) {
+                        message +=
+                            "DateOfBirth: " + dob.Day + "." +
+                                              dob.Month + "." +
+                                              dob.Year + ".\n";
+                    }
+                    var doi = blinkidResult.DateOfIssue.Date;
+                    if (doi != null) {
+                        message +=
+                            "DateOfIssue: " + doi.Day + "." +
+                                              doi.Month + "." +
+                                              doi.Year + ".\n";
 
-                    // image is now part of the result - no need for having separate image listener
-                    documentImageView.SetImageBitmap(mrtdResult.FullDocumentImage.ConvertToBitmap());
-                }
-                if (eudlResult.ResultState == Recognizer.Result.State.Valid) {
-                    message += "EUDL recognizer result:\n" +
-                       "First name: " + eudlResult.FirstName + "\n" +
-                       "Last name: " + eudlResult.LastName + "\n" +
-                       "Birth data: " + eudlResult.BirthData + "\n" +
-                       "Country: " + eudlResult.Country.ToString() + "\n";
-                    documentImageView.SetImageBitmap(eudlResult.FullDocumentImage.ConvertToBitmap());
-                }
-                if (usdlResult.ResultState == Recognizer.Result.State.Valid) {
-                    message += "USDL recognizer result:\n" +
-                           "First name: " + usdlResult.FirstName + "\n" +
-                           "Last name: " + usdlResult.LastName + "\n" +
-                           "Address: " + usdlResult.Address + "\n";
+                    }
+                    var doe = blinkidResult.DateOfExpiry.Date;
+                    if (doe != null) {
+                        message +=
+                            "DateOfExpiry: " + doe.Day + "." +
+                                               doe.Month + "." +
+                                               doe.Year + ".\n";
+
+                    }
+                    // there are other fields to extract
+
+                    // show full document image
+                    documentImageView.SetImageBitmap(blinkidResult.FullDocumentImage.ConvertToBitmap());
                 }
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
