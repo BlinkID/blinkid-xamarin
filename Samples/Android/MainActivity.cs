@@ -6,7 +6,6 @@ using Android.Content.PM;
 using Android.Content;
 
 using Com.Microblink.Entities.Recognizers.Blinkid.Generic;
-using Com.Microblink.Entities.Recognizers.Blinkbarcode.Usdl;
 using Com.Microblink.Entities.Recognizers;
 using Com.Microblink.Util;
 using Com.Microblink;
