@@ -19,7 +19,9 @@
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated to BlinkID Android SDK v5.0.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to BlinkID Android SDK v5.0.0 
+
+https://github.com/BlinkID/blinkid-android/releases/tag/v5.0.0</PackageReleaseNotes>
     <Summary>A small, but powerful ID scanning library - native Android SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - native Android SDK binding package.</Description>
