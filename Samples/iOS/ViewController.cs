@@ -8,15 +8,8 @@ namespace iOS
 {
 	public partial class ViewController : UIViewController
 	{
-        // MBMrtdRecognizer is used for scanning Machine Readable Travel Documents
-        MBMrtdRecognizer mrtdRecognizer;
-
-        // MBEudlRecognizer is used for scanning EU Driver's licenses
-        MBEudlRecognizer eudlRecognizer;
-
-        // MBUsdlRecognizer is used for scanning PDF417 barcode on back side of
-        // US Driver's licenses
-        MBUsdlRecognizer usdlRecognizer;
+		// MBBlinkIdRecognizer is used to scan all supported documents
+		MBBlinkIdRecognizer blinkIdRecognizer;
 
         // there are plenty of recognizers available - see iOS documentation
         // for more information: https://github.com/BlinkID/blinkid-ios/blob/master/README.md
@@ -35,7 +28,7 @@ namespace iOS
             customDelegate = new CustomDelegate(this);
 
             // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
-            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FcAxRB59KP5uKHx3yK5i71SaHBhxP57cZUJAlNPBDUgzhrOUQdf7HIZk5yAOu2VV3dhk9+ZC9/rCR+Ob2psUpvm7GwgguVcn6byvrscHvxIjTisV1GyZ+Zhr5kjGhLvlToSWQ8kFkm+IVEmMXAJ/JWnHt8DESn0KTenlhpMKjhoPr5pAxOGLVSgqhoigoIOwmXwoL+e6SxfdH+yEQqsoSdVaTuIaojpMcmCtPDg2bHBZfot2QfDzEE=");
+            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwwR59En984J4Ii3FbxJsLnbDNmxYX1B6I2Wziz/GdpHQk8xYx/+WyaLzil0hiI2oRujoEfQawqvM/FGqhb154jOM8Azuj3p/P54XONjcVB8TjcEDdskWFBuH22Bw6iKCpUrj47CkWGFJb5vv+wQQW9DpF5wH04AnFETMVTsQdqDD2Mio7F3L+eu0xnKtPjyaT73NOHhNEsQDf17F5B+Q7Pd0spOPzGxvVvP73xrsam69NmbmQanB3n+ggL0=");
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -46,20 +39,18 @@ namespace iOS
 
 		partial void StartScanningButton_TouchUpInside (UIButton sender)
 		{
-            mrtdRecognizer = new MBMrtdRecognizer();
-            usdlRecognizer = new MBUsdlRecognizer();
-            eudlRecognizer = new MBEudlRecognizer();
+            blinkIdRecognizer = new MBBlinkIdRecognizer();
 
             // create a collection of recognizers that will be used for scanning
-            var recognizerCollection = new MBRecognizerCollection(new MBRecognizer[] { mrtdRecognizer, eudlRecognizer, usdlRecognizer });
+            var recognizerCollection = new MBRecognizerCollection(new MBRecognizer[] { blinkIdRecognizer });
 
             // create a settings object for overlay that will be used. For ID it's best to use DocumentOverlayViewController
             // there are also other overlays available - check iOS documentation
-            var documentOverlaySettings = new MBDocumentOverlaySettings();
-            var documentOverlay = new MBDocumentOverlayViewController(documentOverlaySettings, recognizerCollection, customDelegate);
+            var blinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
+            var blinkIdOverlay = new MBBlinkIdOverlayViewController(blinkIdOverlaySettings, recognizerCollection, customDelegate);
 
             // finally, create a recognizerRunnerViewController
-            var recognizerRunnerViewController = MBViewControllerFactory.RecognizerRunnerViewControllerWithOverlayViewController(documentOverlay);
+            var recognizerRunnerViewController = MBViewControllerFactory.RecognizerRunnerViewControllerWithOverlayViewController(blinkIdOverlay);
 
             // in ObjC recognizerRunnerViewController would actually be of type UIViewController<MBRecognizerRunnerViewController>*, but this construct
             // is not supported in C#, so we need to use Runtime.GetINativeObject to cast obtained IMBReocognizerRunnerViewController into UIViewController
@@ -67,7 +58,7 @@ namespace iOS
             this.PresentViewController(ObjCRuntime.Runtime.GetINativeObject<UIViewController>(recognizerRunnerViewController.Handle, false), true, null);
 		}
 
-        class CustomDelegate : MBDocumentOverlayViewControllerDelegate
+        class CustomDelegate : MBBlinkIdOverlayViewControllerDelegate
         {
             ViewController me;
 
@@ -76,12 +67,12 @@ namespace iOS
                 this.me = me;
             }
 
-            public override void DocumentOverlayViewControllerDidFinishScanning(MBDocumentOverlayViewController documentOverlayViewController, MBRecognizerResultState state)
+            public override void BlinkIdOverlayViewControllerDidFinishScanning(MBBlinkIdOverlayViewController blinkIdOverlayViewController, MBRecognizerResultState state)
             {
-                // this method is called on background processing thread. The scanning will resume as soon
-                // as this method ends, so in order to have unchanged results at the time of displaying UIAlertView
-                // pause the scanning
-                documentOverlayViewController.RecognizerRunnerViewController.PauseScanning();
+				// this method is called on background processing thread. The scanning will resume as soon
+				// as this method ends, so in order to have unchanged results at the time of displaying UIAlertView
+				// pause the scanning
+				blinkIdOverlayViewController.RecognizerRunnerViewController.PauseScanning();
 
                 var title = "Result";
                 var message = "";
@@ -89,30 +80,41 @@ namespace iOS
                 // each recognizer has Result property which contains recognized data after scanning has been finished
 
                 // we can check ResultState property of the Result to see if the result contains scanned information
-                if (me.mrtdRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
-                    var mrtdResult = me.mrtdRecognizer.Result;
-                    message += "MRTD recognizer result:\n" +
-                        "PrimaryID: " + mrtdResult.MrzResult.PrimaryID + "\n" +
-                         "SecondaryID: " + mrtdResult.MrzResult.SecondaryID + "\n" +
-                         "Date of birth: " + mrtdResult.MrzResult.DateOfBirth.Day + "." +
-                                             mrtdResult.MrzResult.DateOfBirth.Month + "." +
-                                             mrtdResult.MrzResult.DateOfBirth.Year + ".\n";
-                }
-                if (me.eudlRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
-                    var eudlResult = me.eudlRecognizer.Result;
-                    message += "EUDL recognizer result:\n" +
-                       "First name: " + eudlResult.FirstName + "\n" +
-                       "Last name: " + eudlResult.LastName + "\n" +
-                       "Birth data: " + eudlResult.BirthData + "\n" +
-                       "Country: " + eudlResult.Country.ToString() + "\n";
-                }
-                if (me.usdlRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
-                    var usdlResult = me.usdlRecognizer.Result;
-                    message += "USDL recognizer result:\n" +
-                           "First name: " + usdlResult.GetField(MBUsdlKeys.CustomerFirstName) + "\n" +
-                           "Last name: " + usdlResult.GetField(MBUsdlKeys.CustomerFamilyName) + "\n" +
-                           "City: " + usdlResult.GetField(MBUsdlKeys.AddressCity) + "\n";
-                }
+                if (me.blinkIdRecognizer.Result.ResultState == MBRecognizerResultState.Uncertain) {
+                    var blinkidResult = me.blinkIdRecognizer.Result;
+					message += "BlinkID recognizer result:\n" +
+						"FirstName: " + blinkidResult.FirstName + "\n" +
+						"LastName: " + blinkidResult.LastName + "\n" +
+						"Address: " + blinkidResult.Address + "\n" +
+						"DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
+						"Sex: " + blinkidResult.Sex + "\n";
+					var dob = blinkidResult.DateOfBirth;
+					if (dob != null)
+					{
+						message +=
+							"DateOfBirth: " + dob.Day + "." +
+											  dob.Month + "." +
+											  dob.Year + ".\n";
+					}
+					var doi = blinkidResult.DateOfIssue;
+					if (doi != null)
+					{
+						message +=
+							"DateOfIssue: " + doi.Day + "." +
+											  doi.Month + "." +
+											  doi.Year + ".\n";
+
+					}
+					var doe = blinkidResult.DateOfExpiry;
+					if (doe != null)
+					{
+						message +=
+							"DateOfExpiry: " + doe.Day + "." +
+											   doe.Month + "." +
+											   doe.Year + ".\n";
+
+					}
+				}
 
                 UIApplication.SharedApplication.InvokeOnMainThread(delegate
                 {
@@ -131,7 +133,7 @@ namespace iOS
 
             }
 
-            public override void DocumentOverlayViewControllerDidTapClose(MBDocumentOverlayViewController documentOverlayViewController)
+            public override void BlinkIdOverlayViewControllerDidTapClose(MBBlinkIdOverlayViewController blinkIdOverlayViewController)
             {
                 me.DismissViewController(true, null);
             }

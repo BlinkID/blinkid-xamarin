@@ -84,7 +84,7 @@
         /// be true only if scanned values for all fields that are compared are the same. 
         /// </summary>
         /// <value><c>true</c> if document data match; otherwise, <c>false</c>.</value>
-        bool DocumentDataMatch { get; }
+        DataMatchResult DocumentDataMatch { get; }
 
         /// <summary>
         /// Gets the face image from the document if enabled with ReturnFaceImage property. 

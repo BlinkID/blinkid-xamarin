@@ -60,7 +60,7 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
 
-        public bool DocumentDataMatch => nativeResult.IsDocumentDataMatch;
+        public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
 
         public ImageSource FaceImage => Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap());
 

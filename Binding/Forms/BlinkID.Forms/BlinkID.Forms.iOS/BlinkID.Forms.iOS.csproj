@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.908675\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.908675\build\Xamarin.Forms.props')" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,7 +12,7 @@
     <AssemblyName>BlinkID</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.Forms.iOS</PackageId>
-    <PackageVersion>4.11.0</PackageVersion>
+    <PackageVersion>5.0.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -21,9 +21,9 @@
     <Description>A small, but powerful ID scanning library - iOS implementation for Xamarin Forms.</Description>
     <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>Updated for BlinkID iOS SDK v4.11.0:
+    <PackageReleaseNotes>Updated for BlinkID iOS SDK v5.0.0
 
-https://github.com/BlinkID/blinkid-ios/releases/tag/v4.11.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-ios/releases/tag/v5.0.0</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,27 +55,25 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.11.0</PackageReleaseNotes
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.4.1.0.581479\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.908675\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.4.1.0.581479\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.908675\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.4.1.0.581479\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.908675\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.4.1.0.581479\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.3.0.908675\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays/OverlaySettings.cs" />
     <Compile Include="Overlays/OverlayVCDelegate.cs" />
-    <Compile Include="Overlays/Implementations/BlinkCardOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/BlinkIdOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentVerificationOverlaySettings.cs" />
-    <Compile Include="Overlays/Implementations/BarcodeOverlaySettings.cs" />
     <Compile Include="Properties/AssemblyInfo.cs" />
     <Compile Include="Recognizers/Recognizer.cs" />
     <Compile Include="Recognizers/RecognizerCollection.cs" />
@@ -84,104 +82,13 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.11.0</PackageReleaseNotes
     <Compile Include="Recognizers/Types/CommonTypes.cs" />
     <Compile Include="Recognizers/Implementations/VisaRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MrtdCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/IndonesiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/EudlRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SloveniaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/NigeriaVoterIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustriaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiResidencePermitBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CyprusIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/JordanIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SwitzerlandDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/PolandIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SwitzerlandPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CyprusIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SingaporeDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/ColombiaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BlinkCardEliteRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/PolandIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/RomaniaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/MrtdRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CzechiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/Pdf417Recognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyIdOldRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CyprusOldIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SimNumberRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaMyKadBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SwedenDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CroatiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SlovakiaIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/PassportRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SlovakiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BelgiumCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaMyPrFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/VinRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BlinkIdCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CroatiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MexicoVoterIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CroatiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/HongKongIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustraliaDlBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaMyKadFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustriaPassportRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SloveniaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SingaporeIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaMyKasFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CzechiaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/PolandCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BelgiumIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MoroccoIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaIkadFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MalaysiaMyTenteraFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/IrelandDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiMilitaryIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/MoroccoIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CzechiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiResidencePermitFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/NewZealandDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SlovakiaIdBackRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UsdlCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustriaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/KuwaitIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiTemporaryResidencePermitBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/EgyptIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SingaporeChangiEmployeeIdRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SingaporeCombinedRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/UsdlRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/ColombiaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustraliaDlFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/CyprusOldIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/KuwaitIdFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/DocumentFaceRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustriaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/JordanCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/ItalyDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/BlinkIdRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiMilitaryIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyDlBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BarcodeRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BruneiTemporaryResidencePermitFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/GermanyIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/ColombiaIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SingaporeIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/UnitedArabEmiratesIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/AustriaCombinedRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SwitzerlandIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SwitzerlandIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SloveniaIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/JordanIdFrontRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BelgiumIdBackRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/BlinkCardRecognizer.cs" />
-    <Compile Include="Recognizers/Implementations/SpainDlFrontRecognizer.cs" />
     <Compile Include="Recognizers/Implementations/SuccessFrameGrabberRecognizer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,5 +106,5 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v4.11.0</PackageReleaseNotes
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.1.0.581479\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.4.3.0.908675\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.3.0.908675\build\Xamarin.Forms.targets')" />
 </Project>

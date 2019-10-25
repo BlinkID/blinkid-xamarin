@@ -15,37 +15,20 @@ namespace BlinkIDApp
         IMicroblinkScanner blinkID;
 
         /// <summary>
-        /// MRTD recognizer will be used for scanning Machine Readable Travel Documents (MRTDs), such as IDs and passports.
+        /// BlinkID recognizer will be used for automatic detection and data extraction from the supported document.
         /// </summary>
-        IMrtdRecognizer mrtdRecognizer;
-
-        /// <summary>
-        /// This success frame grabber recognizer will wrap mrtdRecognizer and will contain camera frame of the moment
-        /// when wrapped recognizer finished its recognition.
-        /// </summary>
-        ISuccessFrameGrabberRecognizer mrtdSuccessFrameGrabberRecognizer;
+        IBlinkIdRecognizer blinkidRecognizer;
 
         /// <summary>
         /// USDL recognizer will be used for scanning barcode from back side of United States' driver's licenses.
         /// </summary>
-        IUsdlRecognizer usdlRecognizer;
+        //IUsdlRecognizer usdlRecognizer;
 
         /// <summary>
         /// This success frame grabber recognizer will wrap usdlRecognizer and will contain camera frame of the moment
         /// when wrapped recognizer finished its recognition.
         /// </summary>
-        ISuccessFrameGrabberRecognizer usdlSuccessFrameGrabberRecognizer;
-
-        /// <summary>
-        /// EUDL recognizer will be used for scanning front side of EU driver's licenses.
-        /// </summary>
-        IEudlRecognizer eudlRecognizer;
-
-        /// <summary>
-        /// This success frame grabber recognizer will wrap eudlRecognizer and will contain camera frame of the moment
-        /// when wrapped recognizer finished its recognition.
-        /// </summary>
-        ISuccessFrameGrabberRecognizer eudlSuccessFrameGrabberRecognizer;
+        //ISuccessFrameGrabberRecognizer usdlSuccessFrameGrabberRecognizer;
 
 		public BlinkIDPage ()
 		{
@@ -64,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.xamarin.blinkid
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FcAxRB59KP5uKHx3yK5i71SaHBhxP57cZUJAlNPBDUgzhrOUQdf7HIZk5yAOu2VV3dhk9+ZC9/rCR+Ob2psUpvm7GwgguVcn6byvrscHvxIjTisV1GyZ+Zhr5kjGhLvlToSWQ8kFkm+IVEmMXAJ/JWnHt8DESn0KTenlhpMKjhoPr5pAxOGLVSgqhoigoIOwmXwoL+e6SxfdH+yEQqsoSdVaTuIaojpMcmCtPDg2bHBZfot2QfDzEE=";
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwwR59En984J4Ii3FbxJsLnbDNmxYX1B6I2Wziz/GdpHQk8xYx/+WyaLzil0hiI2oRujoEfQawqvM/FGqhb154jOM8Azuj3p/P54XONjcVB8TjcEDdskWFBuH22Bw6iKCpUrj47CkWGFJb5vv+wQQW9DpF5wH04AnFETMVTsQdqDD2Mio7F3L+eu0xnKtPjyaT73NOHhNEsQDf17F5B+Q7Pd0spOPzGxvVvP73xrsam69NmbmQanB3n+ggL0=";
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU+/Zv8cEFJpkZtmqlysrWqktGZQ//Gs2MfTBoDAn5ug+aVBeaGW1fZbtks5QPvB0GHCyGe3ifl5FszmWiUzgJVOHuQ5I1P+81ya5Th79vsb6uIfy+tdcZDfEeNUX7ql0Bffa9UU9CgaJYIDIK9xHQPew3WbhQVvjbztHOuYhMtyo7NGCeLPc3zfbX3gkb3+wy9UzBVTeBb/VEyDgjvX4vn8ZlhBKH1NFUCXbDnTDhb9eh5/Utu19HQ=";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/YOseEDpc37NgwX0A5o+Tylp/16TUJXSBrGxWr7uFg4F2MWT0+nFMV7Yxf2i9FuRMy13dXgBOhfll1M8RoclQikWapjwiX0jBDOZm2xUlNII3g9nisGbyhkhszCb2/UdhNdQSi7JgLxWRUdx6rMBgHdjsP+P32uNh6fcgopSaOAkpdsoHBMD5rFWJBXlbqa1Ij04EuRHIFZGKJobTmt5dxgA6zyowaXw8zvR6WA33JEKkE7c4nw2MyaBtxWw=";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -94,61 +77,75 @@ namespace BlinkIDApp
                     // will contain result
 
                     // if specific recognizer's result's state is Valid, then it contains data recognized from image
-                    if (mrtdRecognizer.Result.ResultState == RecognizerResultState.Valid)
+                    if (blinkidRecognizer.Result.ResultState == RecognizerResultState.Valid)
                     {
-                        var result = mrtdRecognizer.Result;
-                        stringResult = "PrimaryID: " + result.MrzResult.PrimaryId + "\n" +
-                                       "SecondaryID: " + result.MrzResult.SecondaryId + "\n" +
-                                       "Nationality: " + result.MrzResult.Nationality + "\n" +
-                                       "Gender: " + result.MrzResult.Gender + "\n" +
-                                       "Date of birth: " + result.MrzResult.DateOfBirth.Day + "." + result.MrzResult.DateOfBirth.Month + "." + result.MrzResult.DateOfBirth.Year + ".";
+                        var blinkidResult = blinkidRecognizer.Result;
+                        stringResult =
+                            "BlinkID recognizer result:\n" +
+                            "FirstName: " + blinkidResult.FirstName + "\n" +
+                            "LastName: " + blinkidResult.LastName + "\n" +
+                            "Address: " + blinkidResult.Address + "\n" +
+                            "DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
+                            "Sex: " + blinkidResult.Sex + "\n";
+                        var dob = blinkidResult.DateOfBirth;
+                        if (dob != null)
+                        {
+                            stringResult +=
+                                "DateOfBirth: " + dob.Day + "." +
+                                                  dob.Month + "." +
+                                                  dob.Year + ".\n";
+                        }
+                        var doi = blinkidResult.DateOfIssue;
+                        if (doi != null)
+                        {
+                            stringResult +=
+                                "DateOfIssue: " + doi.Day + "." +
+                                                  doi.Month + "." +
+                                                  doi.Year + ".\n";
 
-                        fullDocumentImageSource = result.FullDocumentImage;
-                        successFrameImageSource = mrtdSuccessFrameGrabberRecognizer.Result.SuccessFrame;
+                        }
+                        var doe = blinkidResult.DateOfExpiry;
+                        if (doe != null)
+                        {
+                            stringResult +=
+                                "DateOfExpiry: " + doe.Day + "." +
+                                                   doe.Month + "." +
+                                                   doe.Year + ".\n";
+
+                        }
+                        // there are other fields to extract
+
+                        fullDocumentImageSource = blinkidResult.FullDocumentImage;
                     }
 
                     // similarly, we can check for results of other recognizers
-                    if (usdlRecognizer.Result.ResultState == RecognizerResultState.Valid)
-                    {
-                        var result = usdlRecognizer.Result;
-                        stringResult = 
-                            "USDL version: " + result.GetField(UsdlKeys.StandardVersionNumber) + "\n" +
-                            "Family name: " + result.GetField(UsdlKeys.CustomerFamilyName) + "\n" +
-                            "First name: " + result.GetField(UsdlKeys.CustomerFirstName) + "\n" +
-                            "Date of birth: " + result.GetField(UsdlKeys.DateOfBirth) + "\n" +
-                            "Sex: " + result.GetField(UsdlKeys.Sex) + "\n" +
-                            "Eye color: " + result.GetField(UsdlKeys.EyeColor) + "\n" +
-                            "Height: " + result.GetField(UsdlKeys.Height) + "\n" +
-                            "Street: " + result.GetField(UsdlKeys.AddressStreet) + "\n" +
-                            "City: " + result.GetField(UsdlKeys.AddressCity) + "\n" +
-                            "Jurisdiction: " + result.GetField(UsdlKeys.AddressJurisdictionCode) + "\n" +
-                            "Postal code: " + result.GetField(UsdlKeys.AddressPostalCode) + "\n" +
-                              // License information
-                              "Issue date: " + result.GetField(UsdlKeys.DocumentIssueDate) + "\n" +
-                              "Expiration date: " + result.GetField(UsdlKeys.DocumentExpirationDate) + "\n" +
-                              "Issuer ID: " + result.GetField(UsdlKeys.IssuerIdentificationNumber) + "\n" +
-                              "Jurisdiction version: " + result.GetField(UsdlKeys.JurisdictionVersionNumber) + "\n" +
-                              "Vehicle class: " + result.GetField(UsdlKeys.JurisdictionVehicleClass) + "\n" +
-                              "Restrictions: " + result.GetField(UsdlKeys.JurisdictionRestrictionCodes) + "\n" +
-                              "Endorsments: " + result.GetField(UsdlKeys.JurisdictionEndorsementCodes) + "\n" +
-                              "Customer ID: " + result.GetField(UsdlKeys.CustomerIdNumber);
+                    //if (usdlRecognizer.Result.ResultState == RecognizerResultState.Valid)
+                    //{
+                    //    var result = usdlRecognizer.Result;
+                    //    stringResult = 
+                    //        "USDL version: " + result.GetField(UsdlKeys.StandardVersionNumber) + "\n" +
+                    //        "Family name: " + result.GetField(UsdlKeys.CustomerFamilyName) + "\n" +
+                    //        "First name: " + result.GetField(UsdlKeys.CustomerFirstName) + "\n" +
+                    //        "Date of birth: " + result.GetField(UsdlKeys.DateOfBirth) + "\n" +
+                    //        "Sex: " + result.GetField(UsdlKeys.Sex) + "\n" +
+                    //        "Eye color: " + result.GetField(UsdlKeys.EyeColor) + "\n" +
+                    //        "Height: " + result.GetField(UsdlKeys.Height) + "\n" +
+                    //        "Street: " + result.GetField(UsdlKeys.AddressStreet) + "\n" +
+                    //        "City: " + result.GetField(UsdlKeys.AddressCity) + "\n" +
+                    //        "Jurisdiction: " + result.GetField(UsdlKeys.AddressJurisdictionCode) + "\n" +
+                    //        "Postal code: " + result.GetField(UsdlKeys.AddressPostalCode) + "\n" +
+                    //          // License information
+                    //          "Issue date: " + result.GetField(UsdlKeys.DocumentIssueDate) + "\n" +
+                    //          "Expiration date: " + result.GetField(UsdlKeys.DocumentExpirationDate) + "\n" +
+                    //          "Issuer ID: " + result.GetField(UsdlKeys.IssuerIdentificationNumber) + "\n" +
+                    //          "Jurisdiction version: " + result.GetField(UsdlKeys.JurisdictionVersionNumber) + "\n" +
+                    //          "Vehicle class: " + result.GetField(UsdlKeys.JurisdictionVehicleClass) + "\n" +
+                    //          "Restrictions: " + result.GetField(UsdlKeys.JurisdictionRestrictionCodes) + "\n" +
+                    //          "Endorsments: " + result.GetField(UsdlKeys.JurisdictionEndorsementCodes) + "\n" +
+                    //          "Customer ID: " + result.GetField(UsdlKeys.CustomerIdNumber);
 
-                        successFrameImageSource = usdlSuccessFrameGrabberRecognizer.Result.SuccessFrame;
-                    }
-
-                    if (eudlRecognizer.Result.ResultState == RecognizerResultState.Valid)
-                    {
-                        var result = eudlRecognizer.Result;
-                        stringResult =
-                            "First name: " + result.FirstName + "\n" +
-                            "Last name: " + result.LastName + "\n" +
-                            "Address: " + result.Address + "\n" +
-                            "Personal number: " + result.PersonalNumber + "\n" +
-                            "Driver number: " + result.DriverNumber;
-                        successFrameImageSource = eudlSuccessFrameGrabberRecognizer.Result.SuccessFrame;
-                        faceImageSource = result.FaceImage;
-                        fullDocumentImageSource = result.FullDocumentImage;
-                    }
+                    //    successFrameImageSource = usdlSuccessFrameGrabberRecognizer.Result.SuccessFrame;
+                    //}
                 }
 
                 // updating the UI must be performed on main thread
@@ -172,40 +169,27 @@ namespace BlinkIDApp
         {
             // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
             // the following code creates and sets up implementation of MrtdRecognizer
-            mrtdRecognizer = DependencyService.Get<IMrtdRecognizer>(DependencyFetchTarget.NewInstance);
-            mrtdRecognizer.ReturnFullDocumentImage = true;
-
-            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
-            // so we need to use factory to avoid DependencyService's limitations
-            mrtdSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(mrtdRecognizer);
+            blinkidRecognizer = DependencyService.Get<IBlinkIdRecognizer>(DependencyFetchTarget.NewInstance);
+            blinkidRecognizer.ReturnFullDocumentImage = true;
 
             // the following code creates and sets up implementation of UsdlRecognizer
-            usdlRecognizer = DependencyService.Get<IUsdlRecognizer>(DependencyFetchTarget.NewInstance);
+            //usdlRecognizer = DependencyService.Get<IUsdlRecognizer>(DependencyFetchTarget.NewInstance);
 
             // success frame grabber recognizer must be constructed with reference to its slave recognizer,
             // so we need to use factory to avoid DependencyService's limitations
-            usdlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(usdlRecognizer);
-
-            // the following code creates and sets up implementation of EudlRecognizer
-            eudlRecognizer = DependencyService.Get<IEudlRecognizer>(DependencyFetchTarget.NewInstance);
-            eudlRecognizer.ReturnFaceImage = true;
-            eudlRecognizer.ReturnFullDocumentImage = true;
-
-            // success frame grabber recognizer must be constructed with reference to its slave recognizer,
-            // so we need to use factory to avoid DependencyService's limitations
-            eudlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(eudlRecognizer);
+            //usdlSuccessFrameGrabberRecognizer = DependencyService.Get<ISuccessFrameGrabberRecognizerFactory>(DependencyFetchTarget.NewInstance).CreateSuccessFrameGrabberRecognizer(usdlRecognizer);
 
             // first create a recognizer collection from all recognizers that you want to use in recognition
             // if some recognizer is wrapped with SuccessFrameGrabberRecognizer, then you should use only the wrapped one
-            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(mrtdSuccessFrameGrabberRecognizer, usdlSuccessFrameGrabberRecognizer, eudlSuccessFrameGrabberRecognizer);
+            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(blinkidRecognizer/*, usdlSuccessFrameGrabberRecognizer*/);
 
             // using recognizerCollection, create overlay settings that will define the UI that will be used
             // there are several available overlay settings classes in Microblink.Forms.Core.Overlays namespace
             // document overlay settings is best for scanning identity documents
-            var documentOverlaySettings = DependencyService.Get<IDocumentOverlaySettingsFactory>().CreateDocumentOverlaySettings(recognizerCollection);
+            var blinkidOverlaySettings = DependencyService.Get<IBlinkIdOverlaySettingsFactory>().CreateBlinkIdOverlaySettings(recognizerCollection);
 
             // start scanning
-            blinkID.Scan(documentOverlaySettings);
+            blinkID.Scan(blinkidOverlaySettings);
         }
     }
 }

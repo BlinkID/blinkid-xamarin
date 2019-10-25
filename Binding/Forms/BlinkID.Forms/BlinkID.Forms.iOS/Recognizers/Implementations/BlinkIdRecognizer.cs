@@ -61,17 +61,32 @@ namespace Microblink.Forms.iOS.Recognizers
         {
             this.nativeResult = nativeResult;
         }
+        public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
+        public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
+        public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
+        public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
+        public string Employer => nativeResult.Employer;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string FullName => nativeResult.FullName;
+        public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
+        public string MaritalStatus => nativeResult.MaritalStatus;
+        public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
+        public string Nationality => nativeResult.Nationality;
+        public string PersonalIdNumber => nativeResult.PersonalIdNumber;
+        public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string Profession => nativeResult.Profession;
+        public string Race => nativeResult.Race;
+        public string Religion => nativeResult.Religion;
+        public string ResidentialStatus => nativeResult.ResidentialStatus;
         public string Sex => nativeResult.Sex;
     }
 }

@@ -78,20 +78,22 @@
       <HintPath>packages\Validation.2.4.22\lib\netstandard1.3\Validation.dll</HintPath>
     </Reference>
     <Reference Include="iOSBinding">
-      <HintPath>packages\BlinkID.iOS.Binding.4.11.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.iOS.Binding.5.0.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="PInvoke.Windows.Core">
-      <HintPath>packages\PInvoke.Windows.Core.0.5.184\lib\netstandard2.0\PInvoke.Windows.Core.dll</HintPath>
+      <HintPath>packages\PInvoke.Windows.Core.0.6.6\lib\netstandard2.0\PInvoke.Windows.Core.dll</HintPath>
     </Reference>
     <Reference Include="PInvoke.Kernel32">
-      <HintPath>packages\PInvoke.Kernel32.0.5.184\lib\netstandard2.0\PInvoke.Kernel32.dll</HintPath>
+      <HintPath>packages\PInvoke.Kernel32.0.6.6\lib\netstandard2.0\PInvoke.Kernel32.dll</HintPath>
     </Reference>
     <Reference Include="PInvoke.BCrypt">
-      <HintPath>packages\PInvoke.BCrypt.0.5.184\lib\portable-net45+win8+wpa81\PInvoke.BCrypt.dll</HintPath>
+      <HintPath>packages\PInvoke.BCrypt.0.6.6\lib\netstandard1.1\PInvoke.BCrypt.dll</HintPath>
     </Reference>
     <Reference Include="PInvoke.NCrypt">
-      <HintPath>packages\PInvoke.NCrypt.0.5.184\lib\netstandard2.0\PInvoke.NCrypt.dll</HintPath>
+      <HintPath>packages\PInvoke.NCrypt.0.6.6\lib\netstandard2.0\PInvoke.NCrypt.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -114,4 +116,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>
