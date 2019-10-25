@@ -96,6 +96,7 @@ namespace BlinkIDApp
                                                   dob.Year + ".\n";
                         }
                         var doi = blinkidResult.DateOfIssue;
+                        if (doi != null)
                         {
                             stringResult +=
                                 "DateOfIssue: " + doi.Day + "." +

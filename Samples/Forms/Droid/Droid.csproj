@@ -181,10 +181,10 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.4.11.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.0.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.4.11.1\lib\monoandroid90\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Android.5.0.0\lib\monoandroid90\BlinkID.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.CustomTabs">
