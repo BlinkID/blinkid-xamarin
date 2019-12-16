@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IBlinkIdRecognizerResult Result => result;
 
         
+        public bool AllowBlurFilter 
+        { 
+            get => nativeRecognizer.ShouldAllowBlurFilter(); 
+            set => nativeRecognizer.SetAllowBlurFilter(value);
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
