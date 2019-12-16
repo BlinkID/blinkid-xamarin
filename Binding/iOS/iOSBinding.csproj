@@ -11,7 +11,7 @@
     <AssemblyName>iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
-    <PackageVersion>5.0.0</PackageVersion>
+    <PackageVersion>5.1.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -52,52 +52,40 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.0.0</PackageReleaseNotes>
     <BundleResource Include="packages.config" />
     <BundleResource Include="Microblink.bundle\torchoff_pressed%402x.png" />
     <BundleResource Include="Microblink.bundle\BlinkID_Ocr_mrz_6.2.0.strop" />
-    <BundleResource Include="Microblink.bundle\BlinkOCR_Ocr_general_6.1.0.strop" />
     <BundleResource Include="Microblink.bundle\icFrontSide%403x.png" />
     <BundleResource Include="Microblink.bundle\cbr%403x.png" />
-    <BundleResource Include="Microblink.bundle\icon-ok-big-selected%402x.png" />
     <BundleResource Include="Microblink.bundle\ctl%403x.png" />
     <BundleResource Include="Microblink.bundle\blinkIdBack%402x.png" />
+    <BundleResource Include="Microblink.bundle\BlinkID_BlurClassifier_general_6.0.0.strop" />
     <BundleResource Include="Microblink.bundle\id_front_wide%403x.png" />
-    <BundleResource Include="Microblink.bundle\icon-skip%402x.png" />
     <BundleResource Include="Microblink.bundle\torchon_pressed.png" />
     <BundleResource Include="Microblink.bundle\BlinkID_RotationClassifier_general_6.0.0.strop" />
-    <BundleResource Include="Microblink.bundle\icon-ok-big%402x.png" />
     <BundleResource Include="Microblink.bundle\BlinkID_Detector_general_6.3.1.strop" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ll.png" />
-    <BundleResource Include="Microblink.bundle\icon-skip.png" />
-    <BundleResource Include="Microblink.bundle\BlinkID_Analyzer_general_6.0.0.strop" />
     <BundleResource Include="Microblink.bundle\id_front_wide%402x.png" />
     <BundleResource Include="Microblink.bundle\blinkcard_logo.png" />
-    <BundleResource Include="Microblink.bundle\BlinkID_Classifier_general_6.5.0.strop" />
     <BundleResource Include="Microblink.bundle\blinkIdBack%403x.png" />
     <BundleResource Include="Microblink.bundle\en.strings" />
     <BundleResource Include="Microblink.bundle\ctl%402x.png" />
     <BundleResource Include="Microblink.bundle\model_mrtd.zzip" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ll%402x.png" />
     <BundleResource Include="Microblink.bundle\torchon.png" />
     <BundleResource Include="Microblink.bundle\cbr%402x.png" />
     <BundleResource Include="Microblink.bundle\icFrontSide%402x.png" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ul.png" />
-    <BundleResource Include="Microblink.bundle\icon-flashlight-selected%402x.png" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_general_6.4.1.strop" />
     <BundleResource Include="Microblink.bundle\id_back_wide%403x.png" />
     <BundleResource Include="Microblink.bundle\cbr.png" />
     <BundleResource Include="Microblink.bundle\scan_line_white.png" />
     <BundleResource Include="Microblink.bundle\confirmationBlinkId.png" />
-    <BundleResource Include="Microblink.bundle\icon-ok-big.png" />
     <BundleResource Include="Microblink.bundle\confirmationBlinkId%403x.png" />
     <BundleResource Include="Microblink.bundle\blinkIdBack.png" />
     <BundleResource Include="Microblink.bundle\icBackSide.png" />
     <BundleResource Include="Microblink.bundle\ic_flash_on%402x.png" />
     <BundleResource Include="Microblink.bundle\arrow%402x.png" />
     <BundleResource Include="Microblink.bundle\hr.strings" />
-    <BundleResource Include="Microblink.bundle\icon-flashlight-selected.png" />
     <BundleResource Include="Microblink.bundle\face_detector_model.zzip" />
     <BundleResource Include="Microblink.bundle\ctr%403x.png" />
     <BundleResource Include="Microblink.bundle\cbl%403x.png" />
     <BundleResource Include="Microblink.bundle\cbl%402x.png" />
     <BundleResource Include="Microblink.bundle\id_back_wide.png" />
-    <BundleResource Include="Microblink.bundle\scan-corner-lr%402x.png" />
     <BundleResource Include="Microblink.bundle\ic_flash_off.png" />
     <BundleResource Include="Microblink.bundle\ctr%402x.png" />
     <BundleResource Include="Microblink.bundle\ic_flash_on.png" />
@@ -105,14 +93,12 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.0.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\ic_flash_on%403x.png" />
     <BundleResource Include="Microblink.bundle\confirmationBlinkId%402x.png" />
     <BundleResource Include="Microblink.bundle\PPbeep.wav" />
-    <BundleResource Include="Microblink.bundle\model_arabic.zzip" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Classifier_general_6.6.0.strop" />
     <BundleResource Include="Microblink.bundle\ctl.png" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Segmentator_general_6.4.0.strop" />
     <BundleResource Include="Microblink.bundle\id_back_wide%402x.png" />
     <BundleResource Include="Microblink.bundle\cbl.png" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ur%402x.png" />
-    <BundleResource Include="Microblink.bundle\icon-flashlight%402x.png" />
     <BundleResource Include="Microblink.bundle\arrow_pressed.png" />
-    <BundleResource Include="Microblink.bundle\model_micr.zzip" />
     <BundleResource Include="Microblink.bundle\icBackSide%403x.png" />
     <BundleResource Include="Microblink.bundle\id_front_wide.png" />
     <BundleResource Include="Microblink.bundle\No Camera-100.png" />
@@ -126,33 +112,18 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.0.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\scan_line_white%402x.png" />
     <BundleResource Include="Microblink.bundle\icFrontSide.png" />
     <BundleResource Include="Microblink.bundle\ic_flash_off%402x.png" />
-    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_general_6.2.0.strop" />
     <BundleResource Include="Microblink.bundle\ic_flip%403x.png" />
-    <BundleResource Include="Microblink.bundle\icon-ok-big-selected.png" />
-    <BundleResource Include="Microblink.bundle\icon-help.png" />
     <BundleResource Include="Microblink.bundle\ic_flip.png" />
     <BundleResource Include="Microblink.bundle\torchoff_pressed.png" />
-    <BundleResource Include="Microblink.bundle\icon-skip-selected.png" />
     <BundleResource Include="Microblink.bundle\blinkIdFront%403x.png" />
     <BundleResource Include="Microblink.bundle\blinkIdFront.png" />
     <BundleResource Include="Microblink.bundle\Close%403x.png" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ul%402x.png" />
-    <BundleResource Include="Microblink.bundle\icon-exit.png" />
-    <BundleResource Include="Microblink.bundle\icon-skip-selected%402x.png" />
-    <BundleResource Include="Microblink.bundle\BlinkID_Segmentator_general_6.3.0.strop" />
-    <BundleResource Include="Microblink.bundle\scan-corner-lr.png" />
     <BundleResource Include="Microblink.bundle\Close%402x.png" />
-    <BundleResource Include="Microblink.bundle\model_general_blink_ocr.zzip" />
     <BundleResource Include="Microblink.bundle\Info.plist" />
     <BundleResource Include="Microblink.bundle\blinkIdFront%402x.png" />
-    <BundleResource Include="Microblink.bundle\icon-help%402x.png" />
     <BundleResource Include="Microblink.bundle\blinkcard_logo%402x.png" />
-    <BundleResource Include="Microblink.bundle\icon-flashlight.png" />
-    <BundleResource Include="Microblink.bundle\BlinkID_Ocr_general_6.3.0.strop" />
-    <BundleResource Include="Microblink.bundle\scan-corner-ur.png" />
     <BundleResource Include="Microblink.bundle\ic_flash_off%403x.png" />
     <BundleResource Include="Microblink.bundle\ic_flip%402x.png" />
-    <BundleResource Include="Microblink.bundle\icon-exit%402x.png" />
     <BundleResource Include="Microblink.bundle\Close.png" />
     <BundleResource Include="Microblink.bundle\scan_line_white%403x.png" />
   </ItemGroup>

@@ -65,71 +65,75 @@ namespace Microblink
 
     interface IMBRecognizerRunnerViewController {}
 
-// @protocol MBRecognizerRunnerViewController <NSObject>
+    // @protocol MBRecognizerRunnerViewController <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBRecognizerRunnerViewController
     {
         // @required @property (nonatomic) BOOL autorotate;
         [Abstract]
-        [Export("autorotate")]
+        [Export ("autorotate")]
         bool Autorotate { get; set; }
 
         // @required @property (nonatomic) UIInterfaceOrientationMask supportedOrientations;
         [Abstract]
-        [Export("supportedOrientations", ArgumentSemantic.Assign)]
+        [Export ("supportedOrientations", ArgumentSemantic.Assign)]
         UIInterfaceOrientationMask SupportedOrientations { get; set; }
 
-        // @required -(BOOL)pauseScanning;
+        // @required -(void)pauseScanning;
         [Abstract]
-        [Export("pauseScanning")]
-        bool PauseScanning();
+        [Export ("pauseScanning")]
+        void PauseScanning ();
 
         // @required -(BOOL)isScanningPaused;
         [Abstract]
-        [Export("isScanningPaused")]
+        [Export ("isScanningPaused")]
         bool IsScanningPaused { get; }
 
-        // @required -(BOOL)resumeScanningAndResetState:(BOOL)resetState;
+        // @required -(void)resumeScanningAndResetState:(BOOL)resetState;
         [Abstract]
-        [Export("resumeScanningAndResetState:")]
-        bool ResumeScanningAndResetState(bool resetState);
+        [Export ("resumeScanningAndResetState:")]
+        void ResumeScanningAndResetState (bool resetState);
 
         // @required -(BOOL)resumeCamera;
         [Abstract]
-        [Export("resumeCamera")]
-        bool ResumeCamera();
+        [Export ("resumeCamera")]
+        bool ResumeCamera { get; }
 
         // @required -(BOOL)pauseCamera;
         [Abstract]
-        [Export("pauseCamera")]
-        bool PauseCamera();
+        [Export ("pauseCamera")]
+        bool PauseCamera { get; }
 
         // @required -(BOOL)isCameraPaused;
         [Abstract]
-        [Export("isCameraPaused")]
+        [Export ("isCameraPaused")]
         bool IsCameraPaused { get; }
 
         // @required -(void)playScanSuccessSound;
         [Abstract]
-        [Export("playScanSuccessSound")]
-        void PlayScanSuccessSound();
+        [Export ("playScanSuccessSound")]
+        void PlayScanSuccessSound ();
 
         // @required -(void)willSetTorchOn:(BOOL)torchOn;
         [Abstract]
-        [Export("willSetTorchOn:")]
-        void WillSetTorchOn(bool torchOn);
+        [Export ("willSetTorchOn:")]
+        void WillSetTorchOn (bool torchOn);
 
         // @required -(void)resetState;
         [Abstract]
-        [Export("resetState")]
-        void ResetState();
+        [Export ("resetState")]
+        void ResetState ();
 
-        // @required -(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error;
+        // @required -(void)captureHighResImage:(MBCaptureHighResImage _Nonnull)highResoulutionImageCaptured;
         [Abstract]
-        [Export("isScanningUnsupportedForCameraType:error:")]
-        bool IsScanningUnsupportedForCameraType(MBCameraType type, [NullAllowed] out NSError error);
+        [Export ("captureHighResImage:")]
+        void CaptureHighResImage (MBCaptureHighResImage highResoulutionImageCaptured);
     }
+
+    // typedef void (^MBCaptureHighResImage)(MBImage * _Nullable);
+    delegate void MBCaptureHighResImage ([NullAllowed] MBImage arg0);
+
     // @protocol MBOverlayContainerViewController <MBRecognizerRunnerViewController>
     [Protocol]
     interface MBOverlayContainerViewController : MBRecognizerRunnerViewController
@@ -406,6 +410,58 @@ namespace Microblink
         // @optional -(void)recognizerRunnerViewControllerDidFailDetection:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Export("recognizerRunnerViewControllerDidFailDetection:")]
         void RecognizerRunnerViewControllerDidFailDetection(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+    }
+
+    // @interface MBDewarpPolicy : NSObject
+    [iOS (8,0)]
+    [BaseType (typeof(NSObject))]
+    interface MBDewarpPolicy
+    {
+    }
+
+    // @interface MBFixedDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBFixedDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithDewarpHeight:(NSUInteger)dewarpHeight __attribute__((objc_designated_initializer));
+        [Export ("initWithDewarpHeight:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nuint dewarpHeight);
+
+        // @property (readonly, assign, nonatomic) NSUInteger dewarpHeight;
+        [Export ("dewarpHeight")]
+        nuint DewarpHeight { get; }
+    }
+
+    // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBDPIBasedDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithDesiredDPI:(NSUInteger)desiredDPI __attribute__((objc_designated_initializer));
+        [Export ("initWithDesiredDPI:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nuint desiredDPI);
+
+        // @property (readonly, assign, nonatomic) NSUInteger desiredDPI;
+        [Export ("desiredDPI")]
+        nuint DesiredDPI { get; }
+    }
+
+    // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBNoUpScalingDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSUInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
+        [Export ("initWithMaxAllowedDewarpHeight:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nuint maxAllowedDewarpHeight);
+
+        // @property (readonly, assign, nonatomic) NSUInteger maxAllowedDewarpHeight;
+        [Export ("maxAllowedDewarpHeight")]
+        nuint MaxAllowedDewarpHeight { get; }
     }
 
     // @protocol MBOcrRecognizerRunnerViewControllerDelegate <NSObject>
@@ -1740,6 +1796,10 @@ namespace Microblink
         // -(void)setClassifierDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
         [Export ("setClassifierDelegate:")]
         void SetClassifierDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
+
+        // @property (assign, nonatomic) BOOL allowBlurFilter;
+        [Export ("allowBlurFilter")]
+        bool AllowBlurFilter { get; set; }
     }
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -1879,6 +1939,10 @@ namespace Microblink
         // -(void)setClassifierDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
         [Export ("setClassifierDelegate:")]
         void SetClassifierDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
+
+        // @property (assign, nonatomic) BOOL allowBlurFilter;
+        [Export ("allowBlurFilter")]
+        bool AllowBlurFilter { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
@@ -2832,6 +2896,14 @@ namespace Microblink
         // @property (assign, nonatomic) BOOL requireDocumentSidesDataMatch;
         [Export ("requireDocumentSidesDataMatch")]
         bool RequireDocumentSidesDataMatch { get; set; }
+
+        // @property (assign, nonatomic) BOOL showNotSupportedDialog;
+        [Export ("showNotSupportedDialog")]
+        bool ShowNotSupportedDialog { get; set; }
+
+        // @property (assign, nonatomic) NSTimeInterval backSideScanningTimeout;
+        [Export ("backSideScanningTimeout")]
+        double BackSideScanningTimeout { get; set; }
     }
 
     // @interface MBDocumentSubview : MBSubview

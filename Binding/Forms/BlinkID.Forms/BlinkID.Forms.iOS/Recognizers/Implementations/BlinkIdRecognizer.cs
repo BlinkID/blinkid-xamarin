@@ -21,6 +21,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public IBlinkIdRecognizerResult Result => result;
 
         
+        public bool AllowBlurFilter 
+        { 
+            get => nativeRecognizer.AllowBlurFilter; 
+            set => nativeRecognizer.AllowBlurFilter = value;
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
