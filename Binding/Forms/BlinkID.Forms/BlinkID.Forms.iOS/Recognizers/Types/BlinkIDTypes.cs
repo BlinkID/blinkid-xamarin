@@ -49,6 +49,18 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool Parsed => nativeMrzResult.IsParsed;
 
         public bool Verified => nativeMrzResult.IsVerified;
+
+        public string SanitizedOpt1 => nativeMrzResult.SanitizedOpt1;
+
+        public string SanitizedOpt2 => nativeMrzResult.SanitizedOpt2;
+
+        public string SanitizedNationality => nativeMrzResult.SanitizedNationality;
+
+        public string SanitizedIssuer => nativeMrzResult.SanitizedIssuer;
+
+        public string SanitizedDocumentCode => nativeMrzResult.SanitizedDocumentCode;
+
+        public string SanitizedDocumentNumber => nativeMrzResult.SanitizedDocumentNumber;
     }
 
     public sealed class ImageExtensionFactors : IImageExtensionFactors

@@ -1457,6 +1457,14 @@ namespace Microblink
         // @property (readonly, nonatomic, strong) NSString * _Nonnull sanitizedIssuer;
         [Export ("sanitizedIssuer", ArgumentSemantic.Strong)]
         string SanitizedIssuer { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull sanitizedDocumentCode;
+        [Export ("sanitizedDocumentCode", ArgumentSemantic.Strong)]
+        string SanitizedDocumentCode { get; }
+
+        // @property (readonly, nonatomic, strong) NSString * _Nonnull sanitizedDocumentNumber;
+        [Export ("sanitizedDocumentNumber", ArgumentSemantic.Strong)]
+        string SanitizedDocumentNumber { get; }
     }
 
     // @protocol MBGlareDetection
