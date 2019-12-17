@@ -45,6 +45,18 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public string MrzText => nativeMrzResult.MrzText;
 
+        public string SanitizedOpt1 => nativeMrzResult.SanitizedOpt1;
+
+        public string SanitizedOpt2 => nativeMrzResult.SanitizedOpt2;
+
+        public string SanitizedNationality => nativeMrzResult.SanitizedNationality;
+
+        public string SanitizedIssuer => nativeMrzResult.SanitizedIssuer;
+
+        public string SanitizedDocumentCode => nativeMrzResult.SanitizedDocumentCode;
+
+        public string SanitizedDocumentNumber => nativeMrzResult.SanitizedDocumentNumber;
+
         public bool Parsed => nativeMrzResult.IsMrzParsed;
 
         public bool Verified => nativeMrzResult.IsMrzVerified;
