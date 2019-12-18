@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/MBBlinkIDEntities.h</key>
 		<data>
-		cagRArW+OugC3YgnBgusyI1PrIE=
+		7QxREe/Uo6QVupSbPi5HfBLGfHs=
 		</data>
 		<key>Headers/MBBlinkIDUIComponents.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/MBBlinkIdCombinedRecognizer.h</key>
 		<data>
-		5yXaaoh8H2tB4Fzwej7lecd2iRs=
+		B86XWMAnSlk3tm44Q6ZLQ1Fei+s=
 		</data>
 		<key>Headers/MBBlinkIdCombinedRecognizerResult.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/MBBlinkIdOverlaySettings.h</key>
 		<data>
-		xuIHm97h/vojlkGoyx+S+FwuLl4=
+		enaRN0zaxemq+tT0rN83398GcKA=
 		</data>
 		<key>Headers/MBBlinkIdOverlayViewController.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/MBBlinkIdRecognizer.h</key>
 		<data>
-		cwiNAZCTrABYjAZCgHLFlvmqPGs=
+		QhR0enDESM5l7c9oeYGgGvNg7Mg=
 		</data>
 		<key>Headers/MBBlinkIdRecognizerResult.h</key>
 		<data>
@@ -76,6 +76,10 @@
 		<data>
 		lwRr3fdKY+fRliel+acpGFp1ZZE=
 		</data>
+		<key>Headers/MBDPIBasedDewarpPolicy.h</key>
+		<data>
+		86I/F59TVHv0rSJMEKQKCotTko8=
+		</data>
 		<key>Headers/MBDateResult.h</key>
 		<data>
 		9/LfBx2SmF1fRbkAazp+Re1tC1w=
@@ -99,6 +103,10 @@
 		<key>Headers/MBDetectionStatus.h</key>
 		<data>
 		2rX7M7wtxD4mM93wckjv2GTR1/w=
+		</data>
+		<key>Headers/MBDewarpPolicy.h</key>
+		<data>
+		qN8skbo4lYmJimjXOKdmcDg6rSY=
 		</data>
 		<key>Headers/MBDigitalSignature.h</key>
 		<data>
@@ -166,7 +174,7 @@
 		</data>
 		<key>Headers/MBDocumentVerificationOverlayViewControllerDelegate.h</key>
 		<data>
-		73iekx4eflJ5OQsDdfYmHI9YXaA=
+		V/629kxJpEVvtkdlvD2ei0Eanpg=
 		</data>
 		<key>Headers/MBDocumentVerificationSubview.h</key>
 		<data>
@@ -255,6 +263,10 @@
 		<key>Headers/MBFirstSideFinishedRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
 		8rK43bEsE5t99pvHHrcNs6Eylso=
+		</data>
+		<key>Headers/MBFixedDewarpPolicy.h</key>
+		<data>
+		AcqHPWtuGuPEwV7bxQ58aT8aKds=
 		</data>
 		<key>Headers/MBFrameGrabberRecognizer.h</key>
 		<data>
@@ -366,11 +378,15 @@
 		</data>
 		<key>Headers/MBMrzResult.h</key>
 		<data>
-		pwpaDkyugdxgg+WqL2i2++4v/Eg=
+		B7vDJXl2S4bI+H7g8acJxeDY7uI=
 		</data>
 		<key>Headers/MBNativeResult.h</key>
 		<data>
 		GCEyCCwbLge32bVB61h+h+eYHKA=
+		</data>
+		<key>Headers/MBNoUpScalingDewarpPolicy.h</key>
+		<data>
+		rSd3exLHKBeTIu0/xzJD5wkbYk4=
 		</data>
 		<key>Headers/MBOcrFont.h</key>
 		<data>
@@ -462,7 +478,7 @@
 		</data>
 		<key>Headers/MBRecognizerRunnerViewController.h</key>
 		<data>
-		0wMD+YY1DaqbdYaAkw2vu0g/cAQ=
+		S+XfENfcwL0BDYnLAUgWkh8VBYc=
 		</data>
 		<key>Headers/MBRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
@@ -574,7 +590,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Wp5xV9Q/xsmbx97CiRbcDrZ+BGo=
+		KWitnZyXizDqKc0sEf7xcKy8PEs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -620,11 +636,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cagRArW+OugC3YgnBgusyI1PrIE=
+			7QxREe/Uo6QVupSbPi5HfBLGfHs=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jj/AWrHNC5+UqVs2g45mNSmFhrLjMayneveceOiOTxo=
+			1R2603ixa5UXV2SD2i58d00mI6gsVwIvBpuKNAwpN+k=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkIDUIComponents.h</key>
@@ -642,11 +658,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5yXaaoh8H2tB4Fzwej7lecd2iRs=
+			B86XWMAnSlk3tm44Q6ZLQ1Fei+s=
 			</data>
 			<key>hash2</key>
 			<data>
-			X+cbMx5pfyKEQkuE9mQKTxAeXtlVv3lPuNd9hlddSFo=
+			wX1C9+GfNTL0e0oWrJN1A+bcpNkw5t8epe9rupH/Nxg=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkIdCombinedRecognizerResult.h</key>
@@ -664,11 +680,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xuIHm97h/vojlkGoyx+S+FwuLl4=
+			enaRN0zaxemq+tT0rN83398GcKA=
 			</data>
 			<key>hash2</key>
 			<data>
-			pFwkLBQiJ6Gvpzc1TLSTwpND+7SJQRRMADoFiKnyon8=
+			0YShpqBKIhXrLy5IV1cUIVaSqFubjRTSfSj5YDef/uk=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkIdOverlayViewController.h</key>
@@ -697,11 +713,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cwiNAZCTrABYjAZCgHLFlvmqPGs=
+			QhR0enDESM5l7c9oeYGgGvNg7Mg=
 			</data>
 			<key>hash2</key>
 			<data>
-			amDNwBkfD63Z0x5I5LMQgY7ti9YWa4PHcOnpU+GO3zw=
+			JH85AwzUPuV2L8ULDS67DqZnv72bfQj6O/xrBy7GvU8=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkIdRecognizerResult.h</key>
@@ -781,6 +797,17 @@
 			hvWa3EhImigzV8klI2TsSJQO8lpcUMunjiw8djWZGPY=
 			</data>
 		</dict>
+		<key>Headers/MBDPIBasedDewarpPolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			86I/F59TVHv0rSJMEKQKCotTko8=
+			</data>
+			<key>hash2</key>
+			<data>
+			YANzUXl55AHKpT/CylL4oV2isE90OuEnIsuZYYyxsnY=
+			</data>
+		</dict>
 		<key>Headers/MBDateResult.h</key>
 		<dict>
 			<key>hash</key>
@@ -845,6 +872,17 @@
 			<key>hash2</key>
 			<data>
 			V0NdaaTUMPCtqVI2BDUqCtmmgFGWZGtFepWTgz9pEXs=
+			</data>
+		</dict>
+		<key>Headers/MBDewarpPolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qN8skbo4lYmJimjXOKdmcDg6rSY=
+			</data>
+			<key>hash2</key>
+			<data>
+			1LoE/3mkgB6g0BE9Nzc7RnhCyWIj55nbXT1A5BNqSgI=
 			</data>
 		</dict>
 		<key>Headers/MBDigitalSignature.h</key>
@@ -1027,11 +1065,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			73iekx4eflJ5OQsDdfYmHI9YXaA=
+			V/629kxJpEVvtkdlvD2ei0Eanpg=
 			</data>
 			<key>hash2</key>
 			<data>
-			TRkuJPZalOZTS4fewLmuYmU6gH2GaJechhHwneJqno8=
+			N6KT2wHITIBJhQGcOJnPiQWkL+I2bCslKipO+KI6pI4=
 			</data>
 		</dict>
 		<key>Headers/MBDocumentVerificationSubview.h</key>
@@ -1274,6 +1312,17 @@
 			<key>hash2</key>
 			<data>
 			eM1GR+/zWCQM2YDwlLqBqTH4d7oWjDqtLauH8fXjakg=
+			</data>
+		</dict>
+		<key>Headers/MBFixedDewarpPolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AcqHPWtuGuPEwV7bxQ58aT8aKds=
+			</data>
+			<key>hash2</key>
+			<data>
+			P1qQnekEQQKCukCk4oBoQlgl1lpaXHpa8KpgeVNtbXE=
 			</data>
 		</dict>
 		<key>Headers/MBFrameGrabberRecognizer.h</key>
@@ -1577,11 +1626,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pwpaDkyugdxgg+WqL2i2++4v/Eg=
+			B7vDJXl2S4bI+H7g8acJxeDY7uI=
 			</data>
 			<key>hash2</key>
 			<data>
-			nS3ubC7jM3t067e0xJQwg1I1lvnOWmG52H/XYfCE1kY=
+			xWzAYgeu2TzfvpCpauxAC2u4Jjrfcq9bbAqIjCgmpyc=
 			</data>
 		</dict>
 		<key>Headers/MBNativeResult.h</key>
@@ -1593,6 +1642,17 @@
 			<key>hash2</key>
 			<data>
 			z/I44iYjSDPc7t/rBUlc6NTazsUMBy7V6TXzD/Q0JXo=
+			</data>
+		</dict>
+		<key>Headers/MBNoUpScalingDewarpPolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rSd3exLHKBeTIu0/xzJD5wkbYk4=
+			</data>
+			<key>hash2</key>
+			<data>
+			L7ZqkP+BaWaA3qUMr3xaWqvL0kyiZZ1uFGFQ18/7q6M=
 			</data>
 		</dict>
 		<key>Headers/MBOcrFont.h</key>
@@ -1841,11 +1901,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0wMD+YY1DaqbdYaAkw2vu0g/cAQ=
+			S+XfENfcwL0BDYnLAUgWkh8VBYc=
 			</data>
 			<key>hash2</key>
 			<data>
-			DP+uWLQldXHEE8Id9cKjSm7vh7bCemPp2merj8vtkDY=
+			tttaRmakbTlIKiunc7IQcGpsYU8TQjzbhYb1kxIDHbo=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerViewControllerDelegate.h</key>

@@ -52,3 +52,22 @@
 
 // Templating class
 #import "MBTemplatingClass.h"
+
+// Dewarp policies
+// Fixed policy
+#import "MBFixedDewarpPolicy.h"
+
+// DPI Based policy
+#import "MBDPIBasedDewarpPolicy.h"
+
+// No Up Scaling policy
+#import "MBNoUpScalingDewarpPolicy.h"
+
+// Displayable Quad
+#import "MBDisplayableQuadDetection.h"
+
+// Protocols
+#import "MBSignatureImage.h"
+#import "MBEncodeSignatureImage.h"
+#import "MBSignatureImageDpi.h"
+#import "MBQuadDetectorSubview.h"
