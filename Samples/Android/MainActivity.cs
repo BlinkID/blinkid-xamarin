@@ -15,15 +15,14 @@ using Android.Runtime;
 
 namespace Android
 {
-	[Activity (Label = "BlinkID Xamarin", MainLauncher = true, Icon = "@mipmap/icon", HardwareAccelerated = true)]
-	public class MainActivity : Activity
-	{
+    [Activity(Label = "BlinkID Xamarin", MainLauncher = true, Icon = "@mipmap/icon", HardwareAccelerated = true)]
+    public class MainActivity : Activity
+    {
         const int ACTIVITY_REQUEST_ID = 101;
 
-        // BlinkIdRecognizer is used automatic classification and data extraction from the supported
+        // BlinkIdCombinedRecognizer is used for automatic classification and data extraction from the supported
         // document
-        BlinkIdRecognizer blinkidRecognizer;
-
+        BlinkIdCombinedRecognizer blinkidRecognizer;
 
         // there are plenty of recognizers available - see Android documentation
         // for more information: https://github.com/BlinkID/blinkid-android/blob/master/README.md
@@ -32,25 +31,28 @@ namespace Android
         // and for loading results from them back.
         RecognizerBundle recognizerBundle;
 
-		protected override void OnCreate (Bundle savedInstanceState)
-		{
-			base.OnCreate (savedInstanceState);
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
-			RequestedOrientation = ScreenOrientation.Portrait;
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
+            RequestedOrientation = ScreenOrientation.Portrait;
 
-			Button button = FindViewById<Button> (Resource.Id.startScanningButton);
+            Button button = FindViewById<Button>(Resource.Id.startScanningButton);
 
-			// Setup BlinkID before usage
-			initBlinkId ();
+            // Setup BlinkID before usage
+            initBlinkId();
 
             // check if BlinkID is supported on current device. Device needs to have camera with autofocus.
-            if (RecognizerCompatibility.GetRecognizerCompatibilityStatus(this) != RecognizerCompatibilityStatus.RecognizerSupported) {
-				button.Enabled = false;
-				Toast.MakeText (this, "BlinkID is not supported!", ToastLength.Long).Show ();
-			} else {
-				button.Click += delegate {
+            if (RecognizerCompatibility.GetRecognizerCompatibilityStatus(this) != RecognizerCompatibilityStatus.RecognizerSupported)
+            {
+                button.Enabled = false;
+                Toast.MakeText(this, "BlinkID is not supported!", ToastLength.Long).Show();
+            }
+            else
+            {
+                button.Click += delegate {
                     // create a settings object for activity that will be used. For ID it's best to
                     // use DocumentUISettings. There are also other UI settings available - check Android documentation
                     var blinkidUISettings = new BlinkIdUISettings(recognizerBundle);
@@ -58,12 +60,12 @@ namespace Android
                     // start activity associated with given UI settings. After scanning completes,
                     // OnActivityResult will be invoked
                     ActivityRunner.StartActivityForResult(this, ACTIVITY_REQUEST_ID, blinkidUISettings);
-				};
-			}
-		}
+                };
+            }
+        }
 
-		private void initBlinkId ()
-		{
+        private void initBlinkId()
+        {
             // set license key for Android with package name com.microblink.xamarin.blinkid
             MicroblinkSDK.SetLicenseKey("sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZLMbELfv07jxSZleylhrg1TGwLmMBn5fZzgRlTqfMhHKbgNdNH8IJHQ1mGk1G8abt0/uz7tlBNYzwc4XRcsyzkY7MlR5ZDN3TyjzwprvDNDO7CVGeB4712YCJ/Khbn8wpymaHZwKXSjq8BkkdKfJWD5sE0/eauWRH/SQ1HVZ0SIbNs/Z5lwyXcPIFCFRLKIMUb/fxFsg8bcP5W8WdIPEP+t7PzWiMcEFPgpcqAmp395nooYWCQt8W7yqOGX4WAY4", this);
 
@@ -73,30 +75,36 @@ namespace Android
             MicroblinkSDK.IntentDataTransferMode = IntentDataTransferMode.PersistedOptimised;
 
             // create recognizers and bundle them into RecognizerBundle
-            blinkidRecognizer = new BlinkIdRecognizer();
+            blinkidRecognizer = new BlinkIdCombinedRecognizer();
             blinkidRecognizer.SetReturnFullDocumentImage(true);
+            blinkidRecognizer.SetReturnFaceImage(true);
 
             recognizerBundle = new RecognizerBundle(blinkidRecognizer);
-		}
+        }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            if (requestCode == ACTIVITY_REQUEST_ID && resultCode == Result.Ok) {
+            if (requestCode == ACTIVITY_REQUEST_ID && resultCode == Result.Ok)
+            {
 
                 // obtain image view that will display image of the document
-                ImageView documentImageView = this.FindViewById<ImageView>(Resource.Id.documentImageView);
+                ImageView documentImageFrontView = this.FindViewById<ImageView>(Resource.Id.documentImageFrontView);
+                ImageView documentImageBackView = this.FindViewById<ImageView>(Resource.Id.documentImageBackView);
 
                 // unfortunately, C# does not support covariant return types, so binding
                 // of AAR loses the return type of the Java's GetResult method. Therefore, a cast is required.
                 // This is always a safe cast, since the original object in Java is of correct type - type
                 // information was lost during conversion to C# due to https://github.com/xamarin/java.interop/pull/216
-                var blinkidResult = (BlinkIdRecognizer.Result)blinkidRecognizer.GetResult();
+                var blinkidResult = (BlinkIdCombinedRecognizer.Result)blinkidRecognizer.GetResult();
+                // var mrtdResult = (MrtdRecognizer.Result)mrtdRecognizer.GetResult();
+
 
                 var message = "";
 
                 // we can check ResultState property of the Result to see if the result contains scanned information
-                if (blinkidResult.ResultState == Recognizer.Result.State.Valid) {
+                if (blinkidResult.ResultState == Recognizer.Result.State.Valid)
+                {
                     message += "BlinkID recognizer result:\n" +
                         "FirstName: " + blinkidResult.FirstName + "\n" +
                         "LastName: " + blinkidResult.LastName + "\n" +
@@ -104,14 +112,16 @@ namespace Android
                         "DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
                         "Sex: " + blinkidResult.Sex + "\n";
                     var dob = blinkidResult.DateOfBirth.Date;
-                    if (dob != null) {
+                    if (dob != null)
+                    {
                         message +=
                             "DateOfBirth: " + dob.Day + "." +
                                               dob.Month + "." +
                                               dob.Year + ".\n";
                     }
                     var doi = blinkidResult.DateOfIssue.Date;
-                    if (doi != null) {
+                    if (doi != null)
+                    {
                         message +=
                             "DateOfIssue: " + doi.Day + "." +
                                               doi.Month + "." +
@@ -119,7 +129,8 @@ namespace Android
 
                     }
                     var doe = blinkidResult.DateOfExpiry.Date;
-                    if (doe != null) {
+                    if (doe != null)
+                    {
                         message +=
                             "DateOfExpiry: " + doe.Day + "." +
                                                doe.Month + "." +
@@ -128,8 +139,24 @@ namespace Android
                     }
                     // there are other fields to extract
 
-                    // show full document image
-                    documentImageView.SetImageBitmap(blinkidResult.FullDocumentImage.ConvertToBitmap());
+                    // show full document images
+                    if (blinkidResult.FullDocumentFrontImage != null)
+                    {
+                        documentImageFrontView.SetImageBitmap(blinkidResult.FullDocumentFrontImage.ConvertToBitmap());
+                    }
+                    else
+                    {
+                        documentImageFrontView.SetImageResource(Resource.Drawable.no_image_black);
+                    }
+                    if (blinkidResult.FullDocumentBackImage != null)
+                    {
+                        documentImageBackView.SetImageBitmap(blinkidResult.FullDocumentBackImage.ConvertToBitmap());
+                    }
+                    else
+                    {
+                        documentImageBackView.SetImageResource(Resource.Drawable.no_image_black);
+                    }
+
                 }
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -139,7 +166,7 @@ namespace Android
                 alert.Show();
             }
         }
-	}
+    }
 }
 
 
