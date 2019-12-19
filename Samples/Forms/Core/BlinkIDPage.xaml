@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="BlinkIDApp.BlinkIDPage">
-	<ContentPage.Content>
-		<StackLayout Spacing="10" Padding="30" >
-			<Label Text="BlinkID Results:" />
-			<Editor x:Name="resultsEditor"
-				IsEnabled="true" 
-				Text=""
-				HeightRequest="150" 
-				TextColor="Black" 
-				BackgroundColor="White" 
-				FontSize="Medium" />
-			<Button x:Name="startScanningButton" Text="Start scanning" Clicked="StartScan" />
-			<Image x:Name="fullDocumentImage" 
-				WidthRequest="200"
-				HeightRequest="100"  />
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="BlinkIDApp.BlinkIDPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="30" >
+            <Label Text="BlinkID Results:" />
+            <Editor x:Name="resultsEditor"
+                IsEnabled="true" 
+                Text=""
+                HeightRequest="150" 
+                TextColor="Black" 
+                BackgroundColor="White" 
+                FontSize="Medium" />
+            <Button x:Name="startScanningButton" Text="Start scanning" Clicked="StartScan" />
+            <Image x:Name="fullDocumentFrontImage" 
+                WidthRequest="200"
+                HeightRequest="100"  />
+            <Image x:Name="fullDocumentBackImage" 
+                WidthRequest="200"
+                HeightRequest="100"  />
             <Image x:Name="faceImage" 
                 WidthRequest="200"
                 HeightRequest="100"  />
             <Image x:Name="successScanImage" 
                 WidthRequest="200"
                 HeightRequest="100"  />
-		</StackLayout>
-	</ContentPage.Content>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

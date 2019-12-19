@@ -7,6 +7,15 @@
     {
         
         /// <summary>
+        /// Defines whether blured frames filtering is allowed
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AllowBlurFilter { get; set; }
+        
+        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 

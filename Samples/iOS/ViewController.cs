@@ -28,7 +28,7 @@ namespace iOS
             customDelegate = new CustomDelegate(this);
 
             // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
-            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwwR59En984J4Ii3FbxJsLnbDNmxYX1B6I2Wziz/GdpHQk8xYx/+WyaLzil0hiI2oRujoEfQawqvM/FGqhb154jOM8Azuj3p/P54XONjcVB8TjcEDdskWFBuH22Bw6iKCpUrj47CkWGFJb5vv+wQQW9DpF5wH04AnFETMVTsQdqDD2Mio7F3L+eu0xnKtPjyaT73NOHhNEsQDf17F5B+Q7Pd0spOPzGxvVvP73xrsam69NmbmQanB3n+ggL0=");
+            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAx7x69Nn9VVTofYT2ZAb8+dDWUdwnBje1AqOjCH2Ckp78A0XKEBbg91lC3vJyWALjcuZHPeESnd+JI2IzBQbP/32HhRBLJaXyZxbOtTwNFBnadltFIf2AGL+FDIFJz3bc6VWOEA3ImT7S02gnAaYMS3Gy7PnIYJr33JHe+qOKzSUtESQLVIbMQp1+ubP7hh+/g3z2Vb8LRA0i2n/x/YRcqmA0bDe5oA3Ww39I/6O2PNGX/PNhLDkaVpbX3RYof5cx");
 		}
 
 		public override void DidReceiveMemoryWarning ()

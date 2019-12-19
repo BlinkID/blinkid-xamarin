@@ -180,6 +180,43 @@ namespace Microblink.Forms.Core.Recognizers
         /// </summary>
         /// <value><c>true</c> if verified; otherwise, <c>false</c>.</value>
         bool Verified { get; }
+
+        /// <summary>
+        /// Sanitized field opt1.
+        /// </summary>
+        /// <value>Sanitized field opt1.</value>
+        string SanitizedOpt1 { get; }
+
+        /// <summary>
+        /// Sanitized field opt1.
+        /// </summary>
+        /// <value>Sanitized field opt1.</value>
+        string SanitizedOpt2 { get; }
+
+        /// <summary>
+        /// Sanitized field nationality
+        /// </summary>
+        /// <value>Sanitized field nationality.</value>
+        string SanitizedNationality { get; }
+
+        /// <summary>
+        /// Sanitized field issuer
+        /// </summary>
+        /// <value>Sanitized field issuer.</value>
+        string SanitizedIssuer { get; }
+
+        /// <summary>
+        /// Sanitized document code
+        /// </summary>
+        /// <value>Sanitized document code.</value>
+        string SanitizedDocumentCode { get; }
+
+        /// <summary>
+        /// Sanitized document number
+        /// </summary>
+        /// <value>Sanitized document number.</value>
+        string SanitizedDocumentNumber { get; }
+
     }
 
     /// <summary>
