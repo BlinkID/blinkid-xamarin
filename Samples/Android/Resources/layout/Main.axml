@@ -9,13 +9,13 @@
         android:layout_height="wrap_content"
         android:text="@string/hello" />
     <ImageView
-        android:src="@drawable/no_image_black"
+        android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/documentImageFrontView"
         android:scaleType="fitCenter" />
     <ImageView
-        android:src="@drawable/no_image_black"
+        android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/documentImageBackView"

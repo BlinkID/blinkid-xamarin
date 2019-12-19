@@ -146,7 +146,7 @@ namespace Android
                     }
                     else
                     {
-                        documentImageFrontView.SetImageResource(Resource.Drawable.no_image_black);
+                        documentImageFrontView.SetImageResource(0);
                     }
                     if (blinkidResult.FullDocumentBackImage != null)
                     {
@@ -154,7 +154,7 @@ namespace Android
                     }
                     else
                     {
-                        documentImageBackView.SetImageResource(Resource.Drawable.no_image_black);
+                        documentImageBackView.SetImageResource(0);
                     }
 
                 }
