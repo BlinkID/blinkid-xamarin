@@ -15,9 +15,9 @@ namespace BlinkIDApp
         IMicroblinkScanner blinkID;
 
         /// <summary>
-        /// BlinkID recognizer will be used for automatic detection and data extraction from the supported document.
+        /// BlinkID Combined recognizer will be used for automatic detection and data extraction from the supported document.
         /// </summary>
-        IBlinkIdRecognizer blinkidRecognizer;
+        IBlinkIdCombinedRecognizer blinkidRecognizer;
 
         /// <summary>
         /// USDL recognizer will be used for scanning barcode from back side of United States' driver's licenses.
@@ -30,9 +30,9 @@ namespace BlinkIDApp
         /// </summary>
         //ISuccessFrameGrabberRecognizer usdlSuccessFrameGrabberRecognizer;
 
-		public BlinkIDPage ()
-		{
-			InitializeComponent ();
+        public BlinkIDPage ()
+        {
+            InitializeComponent ();
 
             // before obtaining any of the recognizer's implementations from DependencyService, it is required
             // to obtain instance of IMicroblinkScanner and set the license key.
@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.xamarin.blinkid
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwwR59En984J4Ii3FbxJsLnbDNmxYX1B6I2Wziz/GdpHQk8xYx/+WyaLzil0hiI2oRujoEfQawqvM/FGqhb154jOM8Azuj3p/P54XONjcVB8TjcEDdskWFBuH22Bw6iKCpUrj47CkWGFJb5vv+wQQW9DpF5wH04AnFETMVTsQdqDD2Mio7F3L+eu0xnKtPjyaT73NOHhNEsQDf17F5B+Q7Pd0spOPzGxvVvP73xrsam69NmbmQanB3n+ggL0=";
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAx7x69Nn9VVTofYT2ZAb8+dDWUdwnBje1AqOjCH2Ckp78A0XKEBbg91lC3vJyWALjcuZHPeESnd+JI2IzBQbP/32HhRBLJaXyZxbOtTwNFBnadltFIf2AGL+FDIFJz3bc6VWOEA3ImT7S02gnAaYMS3Gy7PnIYJr33JHe+qOKzSUtESQLVIbMQp1+ubP7hh+/g3z2Vb8LRA0i2n/x/YRcqmA0bDe5oA3Ww39I/6O2PNGX/PNhLDkaVpbX3RYof5cx";
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/YOseEDpc37NgwX0A5o+Tylp/16TUJXSBrGxWr7uFg4F2MWT0+nFMV7Yxf2i9FuRMy13dXgBOhfll1M8RoclQikWapjwiX0jBDOZm2xUlNII3g9nisGbyhkhszCb2/UdhNdQSi7JgLxWRUdx6rMBgHdjsP+P32uNh6fcgopSaOAkpdsoHBMD5rFWJBXlbqa1Ij04EuRHIFZGKJobTmt5dxgA6zyowaXw8zvR6WA33JEKkE7c4nw2MyaBtxWw=";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZLMbELfv07jxSZleylhrg1TGwLmMBn5fZzgRlTqfMhHKbgNdNH8IJHQ1mGk1G8abt0/uz7tlBNYzwc4XRcsyzkY7MlR5ZDN3TyjzwprvDNDO7CVGeB4712YCJ/Khbn8wpymaHZwKXSjq8BkkdKfJWD5sE0/eauWRH/SQ1HVZ0SIbNs/Z5lwyXcPIFCFRLKIMUb/fxFsg8bcP5W8WdIPEP+t7PzWiMcEFPgpcqAmp395nooYWCQt8W7yqOGX4WAY4";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -61,7 +61,8 @@ namespace BlinkIDApp
             // subscribe to scanning done message
             MessagingCenter.Subscribe<Messages.ScanningDoneMessage> (this, Messages.ScanningDoneMessageId, (sender) => {
                 ImageSource faceImageSource = null;
-                ImageSource fullDocumentImageSource = null;
+                ImageSource fullDocumentFrontImageSource = null;
+                ImageSource fullDocumentBackImageSource = null;
                 ImageSource successFrameImageSource = null;
 
                 string stringResult = "No valid results.";
@@ -115,7 +116,8 @@ namespace BlinkIDApp
                         }
                         // there are other fields to extract
 
-                        fullDocumentImageSource = blinkidResult.FullDocumentImage;
+                        fullDocumentFrontImageSource = blinkidResult.FullDocumentFrontImage;
+                        fullDocumentBackImageSource = blinkidResult.FullDocumentBackImage;
                     }
 
                     // similarly, we can check for results of other recognizers
@@ -151,7 +153,8 @@ namespace BlinkIDApp
                 // updating the UI must be performed on main thread
                 Device.BeginInvokeOnMainThread (() => {
                     resultsEditor.Text = stringResult;
-                    fullDocumentImage.Source = fullDocumentImageSource;
+                    fullDocumentFrontImage.Source = fullDocumentFrontImageSource;
+                    fullDocumentBackImage.Source = fullDocumentBackImageSource;
                     successScanImage.Source = successFrameImageSource;
                     faceImage.Source = faceImageSource;
                 });
@@ -169,7 +172,7 @@ namespace BlinkIDApp
         {
             // license keys must be set before creating Recognizer, othervise InvalidLicenseKeyException will be thrown
             // the following code creates and sets up implementation of MrtdRecognizer
-            blinkidRecognizer = DependencyService.Get<IBlinkIdRecognizer>(DependencyFetchTarget.NewInstance);
+            blinkidRecognizer = DependencyService.Get<IBlinkIdCombinedRecognizer>(DependencyFetchTarget.NewInstance);
             blinkidRecognizer.ReturnFullDocumentImage = true;
 
             // the following code creates and sets up implementation of UsdlRecognizer
