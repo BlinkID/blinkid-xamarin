@@ -51,6 +51,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.2.0</PackageReleaseNotes>
   <ItemGroup>
     <BundleResource Include="packages.config" />
     <BundleResource Include="Microblink.bundle\torchoff_pressed%402x.png" />
+    <BundleResource Include="Microblink.bundle\ccc_lookup_table.zzip" />
     <BundleResource Include="Microblink.bundle\BlinkID_Ocr_mrz_6.2.0.strop" />
     <BundleResource Include="Microblink.bundle\icFrontSide%403x.png" />
     <BundleResource Include="Microblink.bundle\cbr%403x.png" />
@@ -58,6 +59,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.2.0</PackageReleaseNotes>
     <BundleResource Include="Microblink.bundle\blinkIdBack%402x.png" />
     <BundleResource Include="Microblink.bundle\BlinkID_BlurClassifier_general_6.0.0.strop" />
     <BundleResource Include="Microblink.bundle\id_front_wide%403x.png" />
+    <BundleResource Include="Microblink.bundle\BlinkID_Analyzer_general_6.1.0.strop" />
     <BundleResource Include="Microblink.bundle\torchon_pressed.png" />
     <BundleResource Include="Microblink.bundle\BlinkID_RotationClassifier_general_6.0.0.strop" />
     <BundleResource Include="Microblink.bundle\BlinkID_Detector_general_6.3.1.strop" />

@@ -1801,14 +1801,6 @@ namespace Microblink
         [Export ("result", ArgumentSemantic.Strong)]
         MBBlinkIdRecognizerResult Result { get; }
 
-        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
-        [Export ("setDewarpedImageDelegate:")]
-        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
-
-        // -(void)setClassifierDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
-        [Export ("setClassifierDelegate:")]
-        void SetClassifierDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
-
         // @property (assign, nonatomic) BOOL allowBlurFilter;
         [Export ("allowBlurFilter")]
         bool AllowBlurFilter { get; set; }
@@ -1948,14 +1940,6 @@ namespace Microblink
         [Export ("result", ArgumentSemantic.Strong)]
         MBBlinkIdCombinedRecognizerResult Result { get; }
 
-        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
-        [Export ("setDewarpedImageDelegate:")]
-        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
-
-        // -(void)setClassifierDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
-        [Export ("setClassifierDelegate:")]
-        void SetClassifierDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
-
         // @property (assign, nonatomic) BOOL allowBlurFilter;
         [Export ("allowBlurFilter")]
         bool AllowBlurFilter { get; set; }
@@ -2028,10 +2012,6 @@ namespace Microblink
 		// @property (readonly, nonatomic, strong) NSArray<__kindof MBMrtdSpecification *> * _Nullable mrtdSpecifications;
 		[NullAllowed, Export ("mrtdSpecifications", ArgumentSemantic.Strong)]
 		MBMrtdSpecification[] MrtdSpecifications { get; }
-
-		// -(void)setMrzFilter:(id<MBMrzFilter> _Nullable)mrzFilter;
-		[Export ("setMrzFilter:")]
-		void SetMrzFilter ([NullAllowed] MBMrzFilter mrzFilter);
 	}
 
     // @protocol MBMrzFilter <NSObject>
