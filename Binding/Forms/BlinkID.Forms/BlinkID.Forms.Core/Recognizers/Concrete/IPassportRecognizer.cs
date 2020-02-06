@@ -7,6 +7,15 @@
     {
         
         /// <summary>
+        /// Defines whether to anonymize Netherlands MRZ
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AnonymizeNetherlandsMrz { get; set; }
+        
+        /// <summary>
         /// Defines if glare detection should be turned on/off.
         /// 
         ///  

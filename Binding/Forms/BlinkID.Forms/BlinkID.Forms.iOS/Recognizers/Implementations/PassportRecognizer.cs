@@ -21,6 +21,12 @@ namespace Microblink.Forms.iOS.Recognizers
         public IPassportRecognizerResult Result => result;
 
         
+        public bool AnonymizeNetherlandsMrz 
+        { 
+            get => nativeRecognizer.AnonymizeNetherlandsMrz; 
+            set => nativeRecognizer.AnonymizeNetherlandsMrz = value;
+        }
+        
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 

@@ -161,6 +161,11 @@
         string LastName { get; }
         
         /// <summary>
+        /// The localized name of the document owner. 
+        /// </summary>
+        string LocalizedName { get; }
+        
+        /// <summary>
         /// The marital status of the document owner. 
         /// </summary>
         string MaritalStatus { get; }

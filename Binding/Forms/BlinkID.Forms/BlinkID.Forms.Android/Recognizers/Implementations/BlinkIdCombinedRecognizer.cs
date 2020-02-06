@@ -57,6 +57,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
+        public bool SignResult 
+        { 
+            get => nativeRecognizer.ShouldSignResult(); 
+            set => nativeRecognizer.SetSignResult(value);
+        }
+        
     }
 
     public sealed class BlinkIdCombinedRecognizerResult : RecognizerResult, IBlinkIdCombinedRecognizerResult
@@ -74,6 +80,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
+        public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
+        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
@@ -86,6 +94,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
+        public string LocalizedName => nativeResult.LocalizedName;
         public string MaritalStatus => nativeResult.MaritalStatus;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;

@@ -84,6 +84,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
+        public string LocalizedName => nativeResult.LocalizedName;
         public string MaritalStatus => nativeResult.MaritalStatus;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;

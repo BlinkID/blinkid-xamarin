@@ -63,6 +63,15 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
+        /// <summary>
+        /// Whether or not recognition result should be signed.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool SignResult { get; set; }
+        
 
         /// <summary>
         /// Gets the result.
@@ -109,6 +118,16 @@
         /// The date of issue of the document. 
         /// </summary>
         IDate DateOfIssue { get; }
+        
+        /// <summary>
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
+        /// </summary>
+        byte[] DigitalSignature { get; }
+        
+        /// <summary>
+        /// Version of the digital signature. Available only if enabled with signResult property. 
+        /// </summary>
+        uint DigitalSignatureVersion { get; }
         
         /// <summary>
         /// The additional number of the document. 
@@ -172,6 +191,11 @@
         /// The last name of the document owner. 
         /// </summary>
         string LastName { get; }
+        
+        /// <summary>
+        /// The localized name of the document owner. 
+        /// </summary>
+        string LocalizedName { get; }
         
         /// <summary>
         /// The marital status of the document owner. 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.4.4.0.991265\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.4.0.991265\build\Xamarin.Forms.props')" />
-  <Import Project="..\packages\Xamarin.Build.Download.0.7.1\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.7.1\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Forms.4.4.0.991640\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.4.0.991640\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.8.0\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.8.0\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -48,19 +48,19 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="FormsViewGroup">
-      <HintPath>..\packages\Xamarin.Forms.4.4.0.991265\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.4.4.0.991265\lib\MonoAndroid90\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\MonoAndroid90\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.Android">
-      <HintPath>..\packages\Xamarin.Forms.4.4.0.991265\lib\MonoAndroid90\Xamarin.Forms.Platform.Android.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\MonoAndroid90\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.4.4.0.991265\lib\MonoAndroid90\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\MonoAndroid90\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.4.4.0.991265\lib\MonoAndroid90\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\MonoAndroid90\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.Annotations">
       <HintPath>..\packages\Xamarin.Android.Support.Annotations.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.Annotations.dll</HintPath>
@@ -168,7 +168,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>..\packages\BlinkID.Android.Binding.5.1.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Android.Binding.5.2.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
@@ -181,10 +181,10 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.1.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.2.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.5.1.0\lib\monoandroid90\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Android.5.2.0\lib\monoandroid90\BlinkID.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.CustomTabs">
@@ -218,6 +218,9 @@
       <Project>{45EA429A-99C6-4BE2-B0DD-BF31EAB4737B}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProguardConfiguration Include="proguard.cfg" />
   </ItemGroup>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Annotations.targets')" />
@@ -259,6 +262,6 @@
   <Import Project="..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.RecyclerView.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Design.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Design.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.targets')" />
-  <Import Project="..\packages\Xamarin.Build.Download.0.7.1\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.7.1\build\Xamarin.Build.Download.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.4.4.0.991265\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.4.0.991265\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.8.0\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.8.0\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.4.4.0.991640\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.4.0.991640\build\Xamarin.Forms.targets')" />
 </Project>

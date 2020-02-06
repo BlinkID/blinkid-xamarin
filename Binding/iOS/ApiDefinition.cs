@@ -1723,6 +1723,10 @@ namespace Microblink
         [NullAllowed, Export ("sex")]
         string Sex { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable localizedName;
+        [NullAllowed, Export ("localizedName")]
+        string LocalizedName { get; }
+
         // @property (readonly, nonatomic) NSString * _Nullable additionalNameInformation;
         [NullAllowed, Export ("additionalNameInformation")]
         string AdditionalNameInformation { get; }
@@ -1797,14 +1801,6 @@ namespace Microblink
         [Export ("result", ArgumentSemantic.Strong)]
         MBBlinkIdRecognizerResult Result { get; }
 
-        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
-        [Export ("setDewarpedImageDelegate:")]
-        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
-
-        // -(void)setClassifierDelegate:(id<MBBlinkIdRecognizerDelegate> _Nullable)delegate;
-        [Export ("setClassifierDelegate:")]
-        void SetClassifierDelegate ([NullAllowed] MBBlinkIdRecognizerDelegate @delegate);
-
         // @property (assign, nonatomic) BOOL allowBlurFilter;
         [Export ("allowBlurFilter")]
         bool AllowBlurFilter { get; set; }
@@ -1828,7 +1824,7 @@ namespace Microblink
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult
+    interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable address;
         [NullAllowed, Export ("address")]
@@ -1865,6 +1861,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nullable sex;
         [NullAllowed, Export ("sex")]
         string Sex { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable localizedName;
+        [NullAllowed, Export ("localizedName")]
+        string LocalizedName { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable additionalNameInformation;
         [NullAllowed, Export ("additionalNameInformation")]
@@ -1940,14 +1940,6 @@ namespace Microblink
         [Export ("result", ArgumentSemantic.Strong)]
         MBBlinkIdCombinedRecognizerResult Result { get; }
 
-        // -(void)setDewarpedImageDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
-        [Export ("setDewarpedImageDelegate:")]
-        void SetDewarpedImageDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
-
-        // -(void)setClassifierDelegate:(id<MBBlinkIdCombinedRecognizerDelegate> _Nullable)delegate;
-        [Export ("setClassifierDelegate:")]
-        void SetClassifierDelegate ([NullAllowed] MBBlinkIdCombinedRecognizerDelegate @delegate);
-
         // @property (assign, nonatomic) BOOL allowBlurFilter;
         [Export ("allowBlurFilter")]
         bool AllowBlurFilter { get; set; }
@@ -2020,10 +2012,6 @@ namespace Microblink
 		// @property (readonly, nonatomic, strong) NSArray<__kindof MBMrtdSpecification *> * _Nullable mrtdSpecifications;
 		[NullAllowed, Export ("mrtdSpecifications", ArgumentSemantic.Strong)]
 		MBMrtdSpecification[] MrtdSpecifications { get; }
-
-		// -(void)setMrzFilter:(id<MBMrzFilter> _Nullable)mrzFilter;
-		[Export ("setMrzFilter:")]
-		void SetMrzFilter ([NullAllowed] MBMrzFilter mrzFilter);
 	}
 
     // @protocol MBMrzFilter <NSObject>
@@ -2150,6 +2138,10 @@ namespace Microblink
         // @property (readonly, nonatomic, strong) MBPassportRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
         MBPassportRecognizerResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL anonymizeNetherlandsMrz;
+        [Export ("anonymizeNetherlandsMrz")]
+        bool AnonymizeNetherlandsMrz { get; set; }
     }
 
     // @interface MBVisaRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
