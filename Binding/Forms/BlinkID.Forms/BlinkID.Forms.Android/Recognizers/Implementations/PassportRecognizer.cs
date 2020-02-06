@@ -21,6 +21,12 @@ namespace Microblink.Forms.Droid.Recognizers
         public IPassportRecognizerResult Result => result;
 
         
+        public bool AnonymizeNetherlandsMrz 
+        { 
+            get => nativeRecognizer.ShouldAnonymizeNetherlandsMrz(); 
+            set => nativeRecognizer.SetAnonymizeNetherlandsMrz(value);
+        }
+        
         public bool DetectGlare 
         { 
             get => nativeRecognizer.ShouldDetectGlare(); 
