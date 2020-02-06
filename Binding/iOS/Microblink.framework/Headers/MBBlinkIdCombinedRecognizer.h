@@ -9,6 +9,7 @@
 #import "MBBlinkIdCombinedRecognizerResult.h"
 
 #import "MBCombinedRecognizer.h"
+#import "MBDigitalSignature.h"
 
 #import "MBFaceImage.h"
 #import "MBEncodeFaceImage.h"
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Recognizer which can scan front and back side of the United States driver license.
  */
 MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
-@interface MBBlinkIdCombinedRecognizer : MBRecognizer<NSCopying, MBCombinedRecognizer, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+@interface MBBlinkIdCombinedRecognizer : MBRecognizer<NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
 
 MB_INIT
 
@@ -36,14 +37,14 @@ MB_INIT
 @property (nonatomic, strong, readonly) MBBlinkIdCombinedRecognizerResult *result;
 
 /**
- * Called with dewarped full document image
- */
-- (void)setDewarpedImageDelegate:(nullable id<MBBlinkIdCombinedRecognizerDelegate>)delegate;
+* Full document dewarped imagedelegate
+*/
+@property (nonatomic, nullable, weak) id<MBBlinkIdCombinedRecognizerDelegate> dewarpedImageDelegate;
 
 /**
- * Called when document is not supported
- */
-- (void)setClassifierDelegate:(nullable id<MBBlinkIdCombinedRecognizerDelegate>)delegate;
+* Document not supported classifier delegate
+*/
+@property (nonatomic, nullable, weak) id<MBBlinkIdCombinedRecognizerDelegate> classifierDelegate;
 
 /**
  * Defines whether blured frames filtering is allowed
