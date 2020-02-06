@@ -51,7 +51,7 @@ namespace BlinkIDApp
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZLMbELfv07jxSZleylhrg1TGwLmMBn5fZzgRlTqfMhHKbgNdNH8IJHQ1mGk1G8abt0/uz7tlBNYzwc4XRcsyzkY7MlR5ZDN3TyjzwprvDNDO7CVGeB4712YCJ/Khbn8wpymaHZwKXSjq8BkkdKfJWD5sE0/eauWRH/SQ1HVZ0SIbNs/Z5lwyXcPIFCFRLKIMUb/fxFsg8bcP5W8WdIPEP+t7PzWiMcEFPgpcqAmp395nooYWCQt8W7yqOGX4WAY4";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/YsMwsVy+U9bPu3BoRaAYSC9c5gHMjEg299GKP8NQ3z5yf0C6eN99eDFoLhwYPtlGgFkrlnFnkpuHDtBoomYagBMcmjch0d8KStup7zrp4v++mMH1d198ugf1Gr82LDCad2mVTyhOuUf1SbwsLpFd6wHS1Q/q1Nj20xO8rPHNh37lYCBGeKBNeBvVIA0oz8OIO2wkxeB0ZVgG4U15ZpESWgdP1p7a8krj5HqwI7xHosGJpnFifHFK4Mx4aWfl4qUQ";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
