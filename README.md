@@ -1,6 +1,6 @@
-<p align="center" >
+<!--<p align="center" >
   <img src="https://raw.githubusercontent.com/BlinkID/blinkid-xamarin/design/Design/logo-microblink-xamarin.png" alt="MicroBlink" title="MicroBlink">
-</p>
+</p>-->
 
 _BlinkID_ Xamarin SDK
 ======================
