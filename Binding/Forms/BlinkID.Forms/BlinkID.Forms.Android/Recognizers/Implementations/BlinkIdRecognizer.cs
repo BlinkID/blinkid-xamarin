@@ -27,6 +27,18 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetAllowBlurFilter(value);
         }
         
+        public bool AllowUnparsedMrzResults 
+        { 
+            get => nativeRecognizer.ShouldAllowUnparsedMrzResults(); 
+            set => nativeRecognizer.SetAllowUnparsedMrzResults(value);
+        }
+        
+        public bool AllowUnverifiedMrzResults 
+        { 
+            get => nativeRecognizer.ShouldAllowUnverifiedMrzResults(); 
+            set => nativeRecognizer.SetAllowUnverifiedMrzResults(value);
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -73,6 +85,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
+        public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public string DocumentNumber => nativeResult.DocumentNumber;
