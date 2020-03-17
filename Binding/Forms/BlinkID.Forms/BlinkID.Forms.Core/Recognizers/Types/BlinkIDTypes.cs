@@ -281,6 +281,62 @@ namespace Microblink.Forms.Core.Recognizers
         PassportAndVisas
     }
 
+    /// <summary>
+    /// Represents the type of scanned document
+    /// </summary>
+    public enum IdBarcodeDocumentType
+    {
+        /// <summary>
+        /// No document was scanned
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// AAMVACompliant document was scanned
+        /// </summary>
+        AAMVACompliant,
+
+        /// <summary>
+        /// Argentina ID document was scanned
+        /// </summary>
+        ArgentinaID,
+
+        /// <summary>
+        /// Argentina driver license document was scanned
+        /// </summary>
+        ArgentinaDL,
+
+        /// <summary>
+        /// Colombia ID document was scanned
+        /// </summary>
+        ColombiaID,
+
+        /// <summary>
+        /// Colombia driver license document was scanned
+        /// </summary>
+        ColombiaDL,
+
+        /// <summary>
+        /// NigeriaVoter ID document was scanned
+        /// </summary>
+        NigeriaVoterID,
+
+        /// <summary>
+        /// Nigeria driver license document was scanned
+        /// </summary>
+        NigeriaDL,
+
+        /// <summary>
+        /// Panama ID document was scanned
+        /// </summary>
+        PanamaID,
+
+        /// <summary>
+        /// SouthAfrica ID document was scanned
+        /// </summary>
+        SouthAfricaID,
+    }
+
     public interface IImageExtensionFactors
     {
         /// <summary>

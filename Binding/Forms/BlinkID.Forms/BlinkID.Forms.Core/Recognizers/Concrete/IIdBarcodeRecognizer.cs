@@ -1,81 +1,25 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// Generic BlinkID recognizer.
+    /// The ID Barcode Recognizer is used for scanning ID Barcode.
     /// </summary>
-    public interface IBlinkIdRecognizer : IRecognizer
+    public interface IIdBarcodeRecognizer : IRecognizer
     {
-        
-        /// <summary>
-        /// Defines whether blured frames filtering is allowed" 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool AllowBlurFilter { get; set; }
-        
-        /// <summary>
-        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool AllowUnparsedMrzResults { get; set; }
-        
-        /// <summary>
-        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed. 
-        ///
-        /// By default, this is set to 'true'
-        /// </summary>
-        bool AllowUnverifiedMrzResults { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint FaceImageDpi { get; set; }
-        
-        /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
-        ///
-        /// By default, this is set to '250'
-        /// </summary>
-        uint FullDocumentImageDpi { get; set; }
-        
-        /// <summary>
-        /// The extension factors for full document image. 
-        ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
-        /// </summary>
-        IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
-        
-        /// <summary>
-        /// Defines whether face image will be available in result. 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnFaceImage { get; set; }
-        
-        /// <summary>
-        /// Defines whether full document image will be available in 
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool ReturnFullDocumentImage { get; set; }
         
 
         /// <summary>
         /// Gets the result.
         /// </summary>
-        IBlinkIdRecognizerResult Result { get; }
+        IIdBarcodeRecognizerResult Result { get; }
     }
 
     /// <summary>
-    /// Result object for IBlinkIdRecognizer.
+    /// Result object for IIdBarcodeRecognizer.
     /// </summary>
-    public interface IBlinkIdRecognizerResult : IRecognizerResult {
+    public interface IIdBarcodeRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional name information of the document owner. 
+        /// THe additional address information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -90,9 +34,9 @@
         string Address { get; }
         
         /// <summary>
-        /// The driver license conditions. 
+        /// The format of the scanned barcode. 
         /// </summary>
-        string Conditions { get; }
+        BarcodeType BarcodeType { get; }
         
         /// <summary>
         /// The date of birth of the document owner. 
@@ -103,11 +47,6 @@
         /// The date of expiry of the document. 
         /// </summary>
         IDate DateOfExpiry { get; }
-        
-        /// <summary>
-        /// Determines if date of expiry is permanent. 
-        /// </summary>
-        bool DateOfExpiryPermanent { get; }
         
         /// <summary>
         /// The date of issue of the document. 
@@ -125,9 +64,9 @@
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The driver license detailed info. 
+        /// The document type deduced from the recognized barcode 
         /// </summary>
-        IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+        IdBarcodeDocumentType DocumentType { get; }
         
         /// <summary>
         /// The employer of the document owner. 
@@ -135,19 +74,9 @@
         string Employer { get; }
         
         /// <summary>
-        /// Face image from the document 
-        /// </summary>
-        Xamarin.Forms.ImageSource FaceImage { get; }
-        
-        /// <summary>
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
-        
-        /// <summary>
-        /// Image of the full document 
-        /// </summary>
-        Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
         /// <summary>
         /// The full name of the document owner. 
@@ -165,19 +94,9 @@
         string LastName { get; }
         
         /// <summary>
-        /// The localized name of the document owner. 
-        /// </summary>
-        string LocalizedName { get; }
-        
-        /// <summary>
         /// The marital status of the document owner. 
         /// </summary>
         string MaritalStatus { get; }
-        
-        /// <summary>
-        /// The data extracted from the machine readable zone. 
-        /// </summary>
-        IMrzResult MrzResult { get; }
         
         /// <summary>
         /// The nationality of the documet owner. 
@@ -205,6 +124,11 @@
         string Race { get; }
         
         /// <summary>
+        /// The raw bytes contained inside barcode. 
+        /// </summary>
+        byte[] RawData { get; }
+        
+        /// <summary>
         /// The religion of the document owner. 
         /// </summary>
         string Religion { get; }
@@ -218,6 +142,16 @@
         /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// String representation of data inside barcode. 
+        /// </summary>
+        string StringData { get; }
+        
+        /// <summary>
+        /// True if returned result is uncertain, i.e. if scanned barcode was incomplete (i.e. 
+        /// </summary>
+        bool Uncertain { get; }
         
     }
 }
