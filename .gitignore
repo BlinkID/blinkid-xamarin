@@ -96,3 +96,5 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+
+clean.sh
