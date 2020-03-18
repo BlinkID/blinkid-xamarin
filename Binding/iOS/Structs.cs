@@ -247,6 +247,38 @@ namespace Microblink
 	}
 
 	[Native]
+	public enum MBBarcodeType : ulong
+	{
+		None = 0,
+		TypeQR,
+		TypeDataMatrix,
+		TypeUPCE,
+		TypeUPCA,
+		TypeEAN8,
+		TypeEAN13,
+		TypeCode128,
+		TypeCode39,
+		TypeITF,
+		TypeAztec,
+		TypePdf417
+	}
+
+	[Native]
+	public enum MBIdBarcodeDocumentType : ulong
+	{
+		None = 0,
+		AAMVACompliant,
+		ArgentinaID,
+		ArgentinaDL,
+		ColombiaID,
+		ColombiaDL,
+		NigeriaVoterID,
+		NigeriaDL,
+		PanamaID,
+		SouthAfricaID
+	}
+
+	[Native]
 	public enum MBUsdlKeys : ulong
 	{
 		DocumentType,
