@@ -16,6 +16,25 @@
         bool AllowBlurFilter { get; set; }
         
         /// <summary>
+        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowUnparsedMrzResults { get; set; }
+        
+        /// <summary>
+        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed
+        /// Unverified MRZ is parsed, but check digits are incorrect
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AllowUnverifiedMrzResults { get; set; }
+        
+        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
@@ -104,6 +123,11 @@
         /// The date of expiry of the document. 
         /// </summary>
         IDate DateOfExpiry { get; }
+        
+        /// <summary>
+        /// Determines if date of expiry is permanent. 
+        /// </summary>
+        bool DateOfExpiryPermanent { get; }
         
         /// <summary>
         /// The date of issue of the document. 

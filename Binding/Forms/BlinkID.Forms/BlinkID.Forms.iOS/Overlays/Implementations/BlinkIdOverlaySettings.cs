@@ -3,6 +3,7 @@ using Microblink.Forms.iOS.Recognizers;
 using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.Core.Recognizers;
 using Microblink;
+using System;
 
 [assembly: Xamarin.Forms.Dependency(typeof(BlinkIdOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays
@@ -24,6 +25,132 @@ namespace Microblink.Forms.iOS.Overlays
         {
             blinkIdOverlayVCDelegate = new BlinkIdOverlayVCDelegate(overlayVCDelegate);
             return new MBBlinkIdOverlayViewController(nativeBlinkIdOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, blinkIdOverlayVCDelegate);
+        }
+
+        public string FirstSideInstructionsText { 
+            get {
+                return nativeBlinkIdOverlaySettings.FirstSideInstructionsText;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.FirstSideInstructionsText = value;
+            } 
+        }
+
+        public string FlipInstructions { 
+            get {
+                return nativeBlinkIdOverlaySettings.FlipInstructions;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.FlipInstructions = value;
+            }  
+        }
+
+        public string ErrorMoveCloser { 
+            get {
+                return nativeBlinkIdOverlaySettings.ErrorMoveCloser;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ErrorMoveCloser = value;
+            }  
+        }
+
+        public string ErrorMoveFarther { 
+            get {
+                return nativeBlinkIdOverlaySettings.ErrorMoveFarther;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ErrorMoveFarther = value;
+            }  
+        }
+
+        public string SidesNotMatchingTitle { 
+            get {
+                return nativeBlinkIdOverlaySettings.SidesNotMatchingTitle;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.SidesNotMatchingTitle = value;
+            }  
+        }
+
+        public string SidesNotMatchingMessage { 
+            get {
+                return nativeBlinkIdOverlaySettings.SidesNotMatchingMessage;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.SidesNotMatchingMessage = value;
+            }  
+        }
+
+        public string UnsupportedDocumentTitle { 
+            get {
+                return nativeBlinkIdOverlaySettings.UnsupportedDocumentTitle;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.UnsupportedDocumentTitle = value;
+            }  
+        }
+
+        public string UnsupportedDocumentMessage { 
+            get {
+                return nativeBlinkIdOverlaySettings.UnsupportedDocumentMessage;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.UnsupportedDocumentMessage = value;
+            }  
+        }
+
+        public string RecognitionTimeoutTitle { 
+            get {
+                return nativeBlinkIdOverlaySettings.RecognitionTimeoutTitle;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.RecognitionTimeoutTitle = value;
+            }  
+        }
+
+        public string RecognitionTimeoutMessage { 
+            get {
+                return nativeBlinkIdOverlaySettings.RecognitionTimeoutMessage;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.RecognitionTimeoutMessage = value;
+            }  
+        }
+
+        public string RetryButtonText { 
+            get {
+                return nativeBlinkIdOverlaySettings.RetryButtonText;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.RetryButtonText = value;
+            }  
+        }
+
+        public bool RequireDocumentSidesDataMatch { 
+            get {
+                return nativeBlinkIdOverlaySettings.RequireDocumentSidesDataMatch;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.RequireDocumentSidesDataMatch = value;
+            }  
+        }
+
+        public bool ShowNotSupportedDialog { 
+            get {
+                return nativeBlinkIdOverlaySettings.ShowNotSupportedDialog;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ShowNotSupportedDialog = value;
+            }  
+        }
+
+        public long BackSideScanningTimeoutMilliseconds { 
+            get {
+                return Convert.ToInt64(nativeBlinkIdOverlaySettings.BackSideScanningTimeout * 1000);
+            }
+            set {
+                nativeBlinkIdOverlaySettings.BackSideScanningTimeout = Convert.ToDouble(value / 1000.0);
+            }  
         }
     }
 

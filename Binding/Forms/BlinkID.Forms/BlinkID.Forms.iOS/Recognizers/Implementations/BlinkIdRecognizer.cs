@@ -27,6 +27,18 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowBlurFilter = value;
         }
         
+        public bool AllowUnparsedMrzResults 
+        { 
+            get => nativeRecognizer.AllowUnparsedMrzResults; 
+            set => nativeRecognizer.AllowUnparsedMrzResults = value;
+        }
+        
+        public bool AllowUnverifiedMrzResults 
+        { 
+            get => nativeRecognizer.AllowUnverifiedMrzResults; 
+            set => nativeRecognizer.AllowUnverifiedMrzResults = value;
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -73,6 +85,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
+        public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public string DocumentNumber => nativeResult.DocumentNumber;
