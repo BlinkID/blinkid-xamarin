@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
     <PackageReference Include="BlinkID.Forms" Version="5.3.0" />
   </ItemGroup>
   <ItemGroup>
