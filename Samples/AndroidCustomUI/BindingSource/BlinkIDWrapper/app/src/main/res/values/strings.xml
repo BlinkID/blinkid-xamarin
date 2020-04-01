@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BlinkIDWrapper Test</string>
+    <string name="scan_id">Scan ID</string>
+</resources>
