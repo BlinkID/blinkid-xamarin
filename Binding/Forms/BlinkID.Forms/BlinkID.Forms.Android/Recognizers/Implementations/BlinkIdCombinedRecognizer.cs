@@ -57,6 +57,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
+        public float PaddingEdge 
+        { 
+            get => nativeRecognizer.PaddingEdge; 
+            set => nativeRecognizer.PaddingEdge = value;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ShouldReturnFaceImage(); 
@@ -75,6 +81,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetSignResult(value);
         }
         
+        public bool SkipUnsupportedBack 
+        { 
+            get => nativeRecognizer.ShouldSkipUnsupportedBack(); 
+            set => nativeRecognizer.SetSkipUnsupportedBack(value);
+        }
+        
     }
 
     public sealed class BlinkIdCombinedRecognizerResult : RecognizerResult, IBlinkIdCombinedRecognizerResult
@@ -88,6 +100,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
+        public int Age => (int)nativeResult.Age;
+        public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
@@ -96,7 +110,9 @@ namespace Microblink.Forms.Droid.Recognizers
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
+        public DocumentImageColorStatus DocumentBackImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentBackImageColorStatus.Ordinal();
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
+        public DocumentImageColorStatus DocumentFrontImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentFrontImageColorStatus.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;

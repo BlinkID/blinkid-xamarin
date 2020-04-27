@@ -102,4 +102,22 @@ namespace Microblink.Forms.Droid.Recognizers
             return new ImageExtensionFactors(new Com.Microblink.Entities.Recognizers.Blinkid.Imageoptions.Extension.ImageExtensionFactors(upFactor, downFactor, leftFactor, rightFactor));
         }
     }
+
+    public sealed class ClassInfo : IClassInfo
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Generic.Classinfo.ClassInfo nativeClassInfo;
+
+        public ClassInfo(Com.Microblink.Entities.Recognizers.Blinkid.Generic.Classinfo.ClassInfo nativeClassInfo)
+        {
+            this.nativeClassInfo = nativeClassInfo;
+        }
+
+
+        public Country Country => (Country)nativeClassInfo.Country.Ordinal();
+
+        public Region Region => (Region)nativeClassInfo.Region.Ordinal();
+
+        public Type Type => (Type)nativeClassInfo.Type.Ordinal();
+
+    }
 }

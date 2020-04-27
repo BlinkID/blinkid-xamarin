@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Microblink.Forms.Core;
 using Microblink.Forms.Core.Overlays;
+using Microblink.Forms.Core.Recognizers;
 using Com.Microblink;
 using Com.Microblink.Uisettings;
 using Microblink.Forms.Droid.Overlays;
@@ -68,7 +69,10 @@ namespace Microblink.Forms.Droid
             {
                 if (resultCode == Result.Ok) 
                 {
-                    recognizerBundle.LoadFromIntent(data);
+                    if (recognizerBundle != null)
+                    {
+                        recognizerBundle.LoadFromIntent(data);
+                    }
                     MessagingCenter.Send(new Messages.ScanningDoneMessage { ScanningCancelled = false }, Messages.ScanningDoneMessageId);
                 } 
                 else
@@ -83,7 +87,8 @@ namespace Microblink.Forms.Droid
             androidHostActivity.ScanningStarted(this);
             var aOverlaySettings = (OverlaySettings)overlaySettings;
             // assume given recognizerColelction was also used for constructing overlaySettings
-            recognizerBundle = ((RecognizerCollection)aOverlaySettings.RecognizerCollection).NativeRecognizerBundle;
+            recognizerBundle = ((RecognizerCollection)((RecognizerCollectionOverlaySettings)aOverlaySettings).RecognizerCollection).NativeRecognizerBundle;
+
             ActivityRunner.StartActivityForResult(androidHostActivity.HostActivity, androidHostActivity.ScanActivityRequestCode, ((OverlaySettings)overlaySettings).NativeUISettings);
         }
     }

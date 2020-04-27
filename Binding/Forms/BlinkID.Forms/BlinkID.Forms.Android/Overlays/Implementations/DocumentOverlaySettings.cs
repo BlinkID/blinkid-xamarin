@@ -7,9 +7,9 @@ using Com.Microblink.Uisettings;
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
 namespace Microblink.Forms.Droid.Overlays
 {
-    public sealed class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
+    public sealed class DocumentOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentOverlaySettings
     {
-        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection) 
+        public DocumentOverlaySettings(IRecognizerCollection recognizerCollection)
             : base(new DocumentUISettings((recognizerCollection as RecognizerCollection).NativeRecognizerBundle), recognizerCollection)
         {}
     }

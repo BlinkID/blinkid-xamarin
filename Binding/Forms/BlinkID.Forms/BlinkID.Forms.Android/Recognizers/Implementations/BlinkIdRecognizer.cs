@@ -57,6 +57,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
+        public float PaddingEdge 
+        { 
+            get => nativeRecognizer.PaddingEdge; 
+            set => nativeRecognizer.PaddingEdge = value;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ShouldReturnFaceImage(); 
@@ -82,12 +88,15 @@ namespace Microblink.Forms.Droid.Recognizers
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
+        public int Age => (int)nativeResult.Age;
+        public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
+        public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentImageColorStatus.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;

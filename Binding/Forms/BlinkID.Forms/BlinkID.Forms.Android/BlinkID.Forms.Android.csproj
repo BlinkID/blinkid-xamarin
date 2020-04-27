@@ -192,6 +192,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.4.0</PackageReleaseNo
   <ItemGroup>
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays/OverlaySettings.cs" />
+    <Compile Include="Overlays/RecognizerCollectionOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/BlinkIdOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentVerificationOverlaySettings.cs" />

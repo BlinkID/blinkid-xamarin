@@ -34,6 +34,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
+        public int Age => (int)nativeResult.Age;
         public BarcodeType BarcodeType => (BarcodeType)nativeResult.BarcodeType.Ordinal();
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;

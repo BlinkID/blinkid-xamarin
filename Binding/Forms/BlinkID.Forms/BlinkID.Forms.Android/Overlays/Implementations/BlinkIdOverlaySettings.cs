@@ -11,7 +11,7 @@ using Microblink.Forms.Droid.Overlays;
 [assembly: Xamarin.Forms.Dependency(typeof(BlinkIdOverlaySettingsFactory))]
 namespace Microblink.Forms.Droid.Overlays
 {
-    public sealed class BlinkIdOverlaySettings : OverlaySettings, IBlinkIdOverlaySettings
+    public sealed class BlinkIdOverlaySettings : RecognizerCollectionOverlaySettings, IBlinkIdOverlaySettings
     {
         public override UISettings NativeUISettings {
             get {
@@ -52,8 +52,14 @@ namespace Microblink.Forms.Droid.Overlays
                 if (RecognitionTimeoutMessage != null) {
                     overlayStringsBuilder.SetRecognitionTimeoutMessage(RecognitionTimeoutMessage);
                 }
-                 if (RetryButtonText != null) {
+                if (RetryButtonText != null) {
                     overlayStringsBuilder.SetRetryButtonText(RetryButtonText);
+                }
+                if (ScanBarcodeText != null) {
+                    overlayStringsBuilder.SetBackSideBarcodeInstructions(ScanBarcodeText);
+                }
+                if (ErrorDocumentTooCloseToEdge != null) {
+                    overlayStringsBuilder.SetErrorDocumentTooCloseToEdge(ErrorDocumentTooCloseToEdge);
                 }
                 concreteUISettings.SetStrings(overlayStringsBuilder.Build());
                 return concreteUISettings;
@@ -81,6 +87,10 @@ namespace Microblink.Forms.Droid.Overlays
         public string RecognitionTimeoutMessage { get; set; }
 
         public string RetryButtonText { get; set; }
+
+        public string ScanBarcodeText { get; set; }
+
+        public string ErrorDocumentTooCloseToEdge { get; set; }
 
         public bool RequireDocumentSidesDataMatch { get; set; } = true;
 
