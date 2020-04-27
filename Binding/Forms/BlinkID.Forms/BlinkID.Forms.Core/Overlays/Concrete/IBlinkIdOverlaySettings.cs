@@ -79,6 +79,17 @@ namespace Microblink.Forms.Core.Overlays
         /// Default 17000.
         /// </summary>
         long BackSideScanningTimeoutMilliseconds { get; set; }
+        /// <summary>
+        /// Message that is shown while scanning the barcode.
+        /// If null, default value will be used.
+        /// </summary>
+        string ScanBarcodeText { get; set; }
+        /// <summary>
+        /// Instructions for the user to move the document from the edge.
+        /// If null, default value will be used.
+        /// </summary>
+        string ErrorDocumentTooCloseToEdge { get; set; }
+
 
     }
 

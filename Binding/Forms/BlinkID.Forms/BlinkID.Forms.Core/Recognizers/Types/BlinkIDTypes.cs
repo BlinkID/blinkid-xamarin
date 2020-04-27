@@ -380,4 +380,234 @@ namespace Microblink.Forms.Core.Recognizers
         IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0.0f, float downFactor = 0.0f, float leftFactor = 0.0f, float rightFactor = 0.0f);
     }
 
+    /// <summary>
+    /// Represents class information from BlinkID Scanning
+    /// </summary>
+    public interface IClassInfo
+    {
+        /// <summary>
+        /// The document country.
+        /// </summary>
+        Country Country { get; }
+
+        /// <summary>
+        /// The document region.
+        /// </summary>
+        Region Region { get; }
+
+        /// <summary>
+        /// The type of the scanned document.
+        /// </summary>
+        Type Type { get; }
+    }
+
+    /// <summary>
+    /// Possible countries from ClassInfo
+    /// </summary>
+    public enum Country
+    {
+        None,
+        Albania,
+        Algeria,
+        Argentina,
+        Australia,
+        Austria,
+        Azerbaijan,
+        Bahrain,
+        Bangladesh,
+        Belgium,
+        BosniaAndHerzegovina,
+        Brunei,
+        Bulgaria,
+        Cambodia,
+        Canada,
+        Chile,
+        Colombia,
+        CostaRica,
+        Croatia,
+        Cyprus,
+        Czechia,
+        Denmark,
+        DominicanRepublic,
+        Egypt,
+        Estonia,
+        Finland,
+        France,
+        Georgia,
+        Germany,
+        Ghana,
+        Greece,
+        Guatemala,
+        HongKong,
+        Hungary,
+        India,
+        Indonesia,
+        Ireland,
+        Israel,
+        Italy,
+        Jordan,
+        Kazakhstan,
+        Kenya,
+        Kosovo,
+        Kuwait,
+        Latvia,
+        Lithuania,
+        Malaysia,
+        Maldives,
+        Malta,
+        Mauritius,
+        Mexico,
+        Morocco,
+        Netherlands,
+        NewZealand,
+        Nigeria,
+        Pakistan,
+        Panama,
+        Paraguay,
+        Philippines,
+        Poland,
+        Portugal,
+        PuertoRico,
+        Qatar,
+        Romania,
+        Russia,
+        SaudiArabia,
+        Serbia,
+        Singapore,
+        Slovakia,
+        Slovenia,
+        SouthAfrica,
+        Spain,
+        Sweden,
+        Switzerland,
+        Taiwan,
+        Thailand,
+        Tunisia,
+        Turkey,
+        UAE,
+        Uganda,
+        UK,
+        Ukraine,
+        Usa,
+        Vietnam,
+    }
+
+    /// <summary>
+    /// Possible regions from ClassInfo
+    /// </summary>
+    public enum Region
+    {
+        None,
+        Alabama,
+        Alaska,
+        Alberta,
+        Arizona,
+        Arkansas,
+        AustralianCapitalTerritory,
+        BritishColumbia,
+        California,
+        Colorado,
+        Connecticut,
+        Delaware,
+        DistrictOfColumbia,
+        Florida,
+        Georgia,
+        Hawaii,
+        Idaho,
+        Illinois,
+        Indiana,
+        Iowa,
+        Kansas,
+        Kentucky,
+        Louisiana,
+        Maine,
+        Manitoba,
+        Maryland,
+        Massachusetts,
+        Michigan,
+        Minnesota,
+        Mississippi,
+        Missouri,
+        Montana,
+        Nebraska,
+        Nevada,
+        NewBrunswick,
+        NewHampshire,
+        NewJersey,
+        NewMexico,
+        NewSouthWales,
+        NewYork,
+        NorthernTerritory,
+        NorthCarolina,
+        NorthDakota,
+        NovaScotia,
+        Ohio,
+        Oklahoma,
+        Ontario,
+        Oregon,
+        Pennsylvania,
+        Quebec,
+        Queensland,
+        RhodeIsland,
+        Saskatchewan,
+        SouthAustralia,
+        SouthCarolina,
+        SouthDakota,
+        Tasmania,
+        Tennessee,
+        Texas,
+        Utah,
+        Vermont,
+        Victoria,
+        Virginia,
+        Washington,
+        WesternAustralia,
+        WestVirginia,
+        Wisconsin,
+        Wyoming,
+        Yukon,
+    }
+
+    /// <summary>
+    /// Possible types from ClassInfo
+    /// </summary>
+    public enum Type
+    {
+        None,
+        ConsularId,
+        Dl,
+        DlPublicServicesCard,
+        FinCard,
+        EmploymentPass,
+        GreenCard,
+        Id,
+        MultipurposeId,
+        MyKad,
+        MyKid,
+        MyTentera,
+        PanCard,
+        ProfessionalId,
+        PublicServicesCard,
+        ResidencePermit,
+        ResidentId,
+        TemporaryResidencePermit,
+        VoterId,
+        WorkPermit,
+        iKad,
+    }
+
+    /// <summary>
+    /// DocumentImageColorStatus enum defines possible color statuses determined from scanned image.
+    /// </summary>
+    public enum DocumentImageColorStatus
+    {
+        // Determining image color status was not performed
+        NotAvailable,
+
+        // Black-and-white image scanned
+        BlackAndWhite,
+
+        // Color image scanned
+        Color,
+    }
 }
