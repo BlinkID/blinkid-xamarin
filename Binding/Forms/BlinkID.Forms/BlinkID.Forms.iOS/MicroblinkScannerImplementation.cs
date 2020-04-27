@@ -55,6 +55,11 @@ namespace Microblink.Forms.iOS
             overlayViewController.DismissViewController(true, null);
         }
 
+        public void ScanningFinishedWithHighResolutionImage(MBOverlayViewController overlayViewController, MBImage highResImage, MBRecognizerResultState state)
+		{
+
+		}
+
     }
 
     public sealed class MicroblinkScannerFactoryImplementation : IMicroblinkScannerFactory
@@ -68,6 +73,7 @@ namespace Microblink.Forms.iOS
         {
             return new MicroblinkScannerImplementation(licenseKey, licensee, showTimeLimitedLicenseWarning);
         }
+
     }
 }
 

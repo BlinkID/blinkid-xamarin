@@ -7,5 +7,7 @@ namespace Microblink.Forms.iOS.Overlays
         void ScanningFinished(MBOverlayViewController overlayViewController, MBRecognizerResultState state);
 
         void CloseButtonTapped(MBOverlayViewController overlayViewController);
+
+        void ScanningFinishedWithHighResolutionImage(MBOverlayViewController overlayViewController, MBImage highResImage, MBRecognizerResultState state);
     }
 }

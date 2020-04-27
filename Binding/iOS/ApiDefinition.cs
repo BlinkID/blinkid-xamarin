@@ -1364,11 +1364,21 @@ namespace Microblink
         nuint FullDocumentImageDpi { get; set; }
     }
 
+    // @protocol IMBAgeResult
+    [Protocol]
+    interface IMBAgeResult
+    {
+        // @required @property (assign, nonatomic) NSInteger fullDocumentImageDpi;
+        [Abstract]
+        [Export("age")]
+        int Age { get; set; }
+    }
+
    // @interface MBMrzResult : NSObject
 	[iOS (8,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
-	interface MBMrzResult
+	interface MBMrzResult : IMBAgeResult
 	{
 		// @property (readonly, assign, nonatomic) MBMrtdDocumentType documentType;
 		[Export ("documentType", ArgumentSemantic.Assign)]
@@ -1473,6 +1483,25 @@ namespace Microblink
 		// @property (readonly, nonatomic, strong) NSString * _Nonnull nationalityName;
 		[Export ("nationalityName", ArgumentSemantic.Strong)]
 		string NationalityName { get; }
+	}
+
+    // @interface MBClassInfo : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBClassInfo
+	{
+		// @property (readonly, assign, nonatomic) MBCountry country;
+		[Export ("country", ArgumentSemantic.Assign)]
+		MBCountry Country { get; }
+
+		// @property (readonly, assign, nonatomic) MBRegion region;
+		[Export ("region", ArgumentSemantic.Assign)]
+		MBRegion Region { get; }
+
+		// @property (readonly, assign, nonatomic) MBType type;
+		[Export ("type", ArgumentSemantic.Assign)]
+		MBType Type { get; }
 	}
 
     // @protocol MBGlareDetection
@@ -1689,11 +1718,11 @@ namespace Microblink
         string VehicleClass { get; }
     }
 
-   // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult>
+   // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, IMBAgeResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult
+	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -1802,6 +1831,14 @@ namespace Microblink
 		// @property (readonly, nonatomic) NSString * _Nullable conditions;
 		[NullAllowed, Export ("conditions")]
 		string Conditions { get; }
+
+        // @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
+		[NullAllowed, Export ("classInfo")]
+		MBClassInfo ClassInfo { get; }
+
+		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentImageColorStatus;
+		[Export ("documentImageColorStatus")]
+		MBDocumentImageColorStatus DocumentImageColorStatus { get; }
 	}
 
 
@@ -1829,6 +1866,10 @@ namespace Microblink
 		// @property (assign, nonatomic) BOOL allowUnverifiedMrzResults;
 		[Export ("allowUnverifiedMrzResults")]
 		bool AllowUnverifiedMrzResults { get; set; }
+
+        // @property (assign, nonatomic) CGFloat paddingEdge;
+		[Export ("paddingEdge")]
+		nfloat PaddingEdge { get; set; }
 	}
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -1845,11 +1886,11 @@ namespace Microblink
         void OnDocumentSupportStatus (bool isDocumentSupported);
     }
 
-    // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
+    // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, IMBAgeResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult
+	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -1958,6 +1999,18 @@ namespace Microblink
 		// @property (readonly, nonatomic) NSString * _Nullable conditions;
 		[NullAllowed, Export ("conditions")]
 		string Conditions { get; }
+
+        // @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
+		[NullAllowed, Export ("classInfo")]
+		MBClassInfo ClassInfo { get; }
+
+		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentFrontImageColorStatus;
+		[Export ("documentFrontImageColorStatus")]
+		MBDocumentImageColorStatus DocumentFrontImageColorStatus { get; }
+
+		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentBackImageColorStatus;
+		[Export ("documentBackImageColorStatus")]
+		MBDocumentImageColorStatus DocumentBackImageColorStatus { get; }
 	}
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -1980,6 +2033,14 @@ namespace Microblink
 		// @property (assign, nonatomic) BOOL allowUnverifiedMrzResults;
 		[Export ("allowUnverifiedMrzResults")]
 		bool AllowUnverifiedMrzResults { get; set; }
+
+        // @property (assign, nonatomic) CGFloat paddingEdge;
+		[Export ("paddingEdge")]
+		nfloat PaddingEdge { get; set; }
+
+		// @property (assign, nonatomic) BOOL skipUnsupportedBack;
+		[Export ("skipUnsupportedBack")]
+		bool SkipUnsupportedBack { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
@@ -2000,7 +2061,7 @@ namespace Microblink
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBIdBarcodeRecognizerResult : INSCopying
+	interface MBIdBarcodeRecognizerResult : INSCopying, IMBAgeResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalAddressInformation;
 		[Export ("additionalAddressInformation")]
@@ -3071,6 +3132,10 @@ namespace Microblink
 		[Export ("firstSideInstructionsText", ArgumentSemantic.Strong)]
 		string FirstSideInstructionsText { get; set; }
 
+		// @property (nonatomic, strong) NSString * _Nonnull scanBarcodeText;
+		[Export ("scanBarcodeText", ArgumentSemantic.Strong)]
+		string ScanBarcodeText { get; set; }
+
 		// @property (nonatomic, strong) NSString * _Nonnull flipInstructions;
 		[Export ("flipInstructions", ArgumentSemantic.Strong)]
 		string FlipInstructions { get; set; }
@@ -3082,6 +3147,10 @@ namespace Microblink
 		// @property (nonatomic, strong) NSString * _Nonnull errorMoveFarther;
 		[Export ("errorMoveFarther", ArgumentSemantic.Strong)]
 		string ErrorMoveFarther { get; set; }
+
+		// @property (nonatomic, strong) NSString * _Nonnull errorDocumentTooCloseToEdge;
+		[Export ("errorDocumentTooCloseToEdge", ArgumentSemantic.Strong)]
+		string ErrorDocumentTooCloseToEdge { get; set; }
 
 		// @property (nonatomic, strong) NSString * _Nonnull sidesNotMatchingTitle;
 		[Export ("sidesNotMatchingTitle", ArgumentSemantic.Strong)]
