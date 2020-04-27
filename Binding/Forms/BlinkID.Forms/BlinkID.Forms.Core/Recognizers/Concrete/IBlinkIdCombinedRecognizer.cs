@@ -1,83 +1,111 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// A generic recognizer which can scan front and back side of the document.
+    /// Recognizer which can scan front and back side of the United States driver license.
     /// </summary>
     public interface IBlinkIdCombinedRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether blured frames filtering is allowed. 
+        /// Defines whether blured frames filtering is allowed
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowBlurFilter { get; set; }
         
         /// <summary>
-        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed. 
+        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool AllowUnparsedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed. 
+        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed
+        /// Unverified MRZ is parsed, but check digits are incorrect
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for face image that should be returned. 
+        /// Property for setting DPI for face images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// The DPI (Dots Per Inch) for full document image that should be returned. 
+        /// Property for setting DPI for full document images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// The extension factors for full document image. 
+        /// Image extension factors for full document image.
+        /// 
+        /// @see ImageExtensionFactors
+        ///  
         ///
-        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
+        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Padding is a minimum distance from the edge of the frame and it is defined 
+        /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
+        /// padding edge and image edge are the same.
+        /// Recommended value is 0.02f.
+        /// 
+        ///  
         ///
-        /// By default, this is set to '0.0'
+        /// By default, this is set to '0.0f'
         /// </summary>
         float PaddingEdge { get; set; }
         
         /// <summary>
-        /// Defines whether face image will be available in result. 
+        /// Sets whether face image from ID card should be extracted
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Defines whether full document image will be available in 
+        /// Sets whether full document image of ID card should be extracted.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether or not recognition result should be signed. 
+        /// Whether or not recognition result should be signed.
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool SignResult { get; set; }
         
         /// <summary>
-        /// Skip back side capture and processing step when back side of the document is not supported. 
+        /// Skip back side capture and processing step when back side of the document is not supported
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -96,7 +124,7 @@
     public interface IBlinkIdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional name information of the document owner. 
+        /// The additional address information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -111,12 +139,14 @@
         string Address { get; }
         
         /// <summary>
-        /// The current age of the document owner in years. It is calculated difference 
+        /// The current age of the document owner in years. It is calculated difference
+        /// between now and date of birth. Now is current time on the device.
+        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
         /// </summary>
         int Age { get; }
         
         /// <summary>
-        /// The document class information. 
+        /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
         
@@ -146,12 +176,12 @@
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Defines digital signature of recognition results. 
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Defines digital signature version. 
+        /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
@@ -161,17 +191,20 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// The document back side color status determined from scanned image. 
+        /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentBackImageColorStatus { get; }
         
         /// <summary>
-        /// Defines result of the data matching algorithm for scanned parts/sides of the document. 
+        /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
+        /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
+        /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
+        /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same. 
         /// </summary>
         DataMatchResult DocumentDataMatch { get; }
         
         /// <summary>
-        /// The document front side color status determined from scanned image. 
+        /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentFrontImageColorStatus { get; }
         
@@ -191,7 +224,7 @@
         string Employer { get; }
         
         /// <summary>
-        /// Face image from the document 
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -201,12 +234,12 @@
         string FirstName { get; }
         
         /// <summary>
-        /// Back side image of the document 
+        /// back side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        /// Front side image of the document 
+        /// front side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
@@ -236,7 +269,7 @@
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone. 
+        /// The data extracted from the machine readable zone 
         /// </summary>
         IMrzResult MrzResult { get; }
         
@@ -276,7 +309,8 @@
         string ResidentialStatus { get; }
         
         /// <summary>
-        /// {true} if recognizer has finished scanning first side and is now scanning back side, 
+        /// Returns true if recognizer has finished scanning first side and is now scanning back side,
+        /// false if it's still scanning first side. 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         
