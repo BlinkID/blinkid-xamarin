@@ -85,6 +85,8 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public string Sex => nativeResult.Sex;
 
+        public int Age => nativeResult.Age;
+
         public string Restrictions => nativeResult.Restrictions;
 
         public string Endorsements => nativeResult.Endorsements;

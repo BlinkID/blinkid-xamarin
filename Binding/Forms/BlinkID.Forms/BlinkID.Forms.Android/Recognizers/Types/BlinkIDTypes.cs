@@ -23,6 +23,8 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public IDate DateOfBirth => nativeMrzResult.DateOfBirth.Date != null ? new Date(nativeMrzResult.DateOfBirth.Date) : null;
 
+        public int Age =>  nativeMrzResult.Age;
+
         public string DocumentNumber => nativeMrzResult.DocumentNumber;
 
         public string Nationality => nativeMrzResult.Nationality;
