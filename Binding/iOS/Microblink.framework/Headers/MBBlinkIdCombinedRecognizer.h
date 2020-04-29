@@ -7,6 +7,7 @@
 
 #import "MBRecognizer.h"
 #import "MBBlinkIdCombinedRecognizerResult.h"
+#import "MBClassInfo.h"
 
 #import "MBCombinedRecognizer.h"
 #import "MBDigitalSignature.h"
@@ -47,6 +48,11 @@ MB_INIT
 @property (nonatomic, nullable, weak) id<MBBlinkIdCombinedRecognizerDelegate> classifierDelegate;
 
 /**
+ * Class filter delegate
+ */
+@property (nonatomic, nullable, weak) id<MBBlinkIdCombinedRecognizerDelegate> classFilterDelegate;
+
+/**
  * Defines whether blured frames filtering is allowed
  *
  * Default: YES
@@ -68,13 +74,45 @@ MB_INIT
  */
 @property (nonatomic, assign) BOOL allowUnverifiedMrzResults;
 
+/**
+ * Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
+ * padding edge and image edge are the same.
+ * Recommended value is 0.02f.
+ *
+ * Default: 0.0f
+ */
+@property (nonatomic, assign) CGFloat paddingEdge;
+
+/**
+ * Skip back side capture and processing step when back side of the document is not supported
+ *
+ * Default: NO
+ */
+@property (nonatomic, assign) BOOL skipUnsupportedBack;
+
 @end
 
 @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
 @optional
-- (void)onCombinedImageAvailable:(nullable MBImage *)dewarpedImage;
-- (void)onCombinedDocumentSupportStatus:(BOOL)isDocumentSupported;
-@end
 
+/**
+ * Called when dewarped full document image is available
+*/
+- (void)onCombinedImageAvailable:(nullable MBImage *)dewarpedImage;
+
+/**
+ * Called when recognizer classifies document.
+ *  @param isDocumentSupported - true if supported, false otherwise
+*/
+- (void)onCombinedDocumentSupportStatus:(BOOL)isDocumentSupported;
+
+/**
+ * Called when recognizer classifies document as a supported class.
+ * Enables filtering based on class.
+ * @param classInfo - classInfo of the document
+*/
+- (BOOL)combinedClassInfoFilter:(nullable MBClassInfo *)classInfo;
+
+@end
 
 NS_ASSUME_NONNULL_END

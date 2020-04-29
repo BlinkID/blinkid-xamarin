@@ -8,6 +8,7 @@
 
 #import "Foundation/Foundation.h"
 #import "CoreMedia/CoreMedia.h"
+#import <UIKit/UIKit.h>
 #import "MBMicroblinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN

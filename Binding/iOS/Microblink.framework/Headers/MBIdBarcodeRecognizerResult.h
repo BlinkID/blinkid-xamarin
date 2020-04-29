@@ -10,13 +10,15 @@
 #import "MBBarcodeResult.h"
 #import "MBIdBarcodeDocumentType.h"
 
+#import "MBAgeResult.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
 * The ID Barcode Recognizer is used for scanning ID Barcode.
 */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBIdBarcodeRecognizerResult : MBRecognizerResult<NSCopying>
+@interface MBIdBarcodeRecognizerResult : MBRecognizerResult<NSCopying, MBAgeResult>
 
 MB_INIT_UNAVAILABLE
 

@@ -75,3 +75,7 @@
 #import "MBEncodeSignatureImage.h"
 #import "MBSignatureImageDpi.h"
 #import "MBQuadDetectorSubview.h"
+
+// Age
+#import "MBAgeLimitStatus.h"
+#import "MBAgeResult.h"

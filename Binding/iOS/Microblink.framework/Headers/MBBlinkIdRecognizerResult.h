@@ -8,6 +8,7 @@
 #import "MBRecognizerResult.h"
 #import "MBDateResult.h"
 #import "MBMrzResult.h"
+#import "MBClassInfo.h"
 
 #import "MBFullDocumentImageResult.h"
 #import "MBEncodedFullDocumentImageResult.h"
@@ -15,6 +16,9 @@
 #import "MBEncodedFaceImageResult.h"
 
 #import "MBDriverLicenseDetailedInfo.h"
+#import "MBDocumentImageColorStatus.h"
+
+#import "MBAgeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 * The Blink ID Recognizer is used for scanning Blink ID.
 */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBBlinkIdRecognizerResult : MBRecognizerResult<NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult>
+@interface MBBlinkIdRecognizerResult : MBRecognizerResult<NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, MBAgeResult>
 
 MB_INIT_UNAVAILABLE
 
@@ -160,6 +164,16 @@ MB_INIT_UNAVAILABLE
  * The driver license conditions.
  */
 @property (nonatomic, readonly, nullable) NSString *conditions;
+
+/**
+ * The classification information.
+ */
+@property (nonatomic, readonly, nullable) MBClassInfo *classInfo;
+
+/**
+ * Defines possible color statuses determined from scanned image.
+ */
+@property (nonatomic, readonly) MBDocumentImageColorStatus documentImageColorStatus;
 
 @end
 

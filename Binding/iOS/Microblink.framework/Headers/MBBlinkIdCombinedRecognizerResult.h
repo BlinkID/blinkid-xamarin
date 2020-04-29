@@ -18,6 +18,10 @@
 #import "MBEncodedCombinedFullDocumentImageResult.h"
 
 #import "MBDriverLicenseDetailedInfo.h"
+#import "MBClassInfo.h"
+#import "MBDocumentImageColorStatus.h"
+
+#import "MBAgeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Recognizer which can scan front and back side of the United States driver license.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult>
+@interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBAgeResult>
 
 MB_INIT_UNAVAILABLE
 
@@ -163,6 +167,21 @@ MB_INIT_UNAVAILABLE
  * The driver license conditions.
  */
 @property (nonatomic, readonly, nullable) NSString *conditions;
+
+/**
+ * The classification information.
+ */
+@property (nonatomic, readonly, nullable) MBClassInfo *classInfo;
+
+/**
+ * Defines possible color statuses determined from scanned image.
+ */
+@property (nonatomic, readonly) MBDocumentImageColorStatus documentFrontImageColorStatus;
+
+/**
+ * Defines possible color statuses determined from scanned image.
+ */
+@property (nonatomic, readonly) MBDocumentImageColorStatus documentBackImageColorStatus;
 
 @end
 

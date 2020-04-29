@@ -8,6 +8,8 @@
 #import "MBMicroblinkDefines.h"
 #import "MBDateResult.h"
 
+#import "MBAgeResult.h"
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -33,7 +35,7 @@ typedef NS_ENUM(NSUInteger, MBMrtdDocumentType) {
 };
 
 MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
-@interface MBMrzResult : NSObject
+@interface MBMrzResult : NSObject<MBAgeResult>
 
 MB_INIT_UNAVAILABLE
 

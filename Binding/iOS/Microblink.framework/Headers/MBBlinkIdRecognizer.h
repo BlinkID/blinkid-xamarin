@@ -7,6 +7,7 @@
 
 #import "MBRecognizer.h"
 #import "MBBlinkIdRecognizerResult.h"
+#import "MBClassInfo.h"
 
 #import "MBFaceImage.h"
 #import "MBEncodeFaceImage.h"
@@ -34,14 +35,19 @@ MB_INIT
 @property (nonatomic, strong, readonly) MBBlinkIdRecognizerResult *result;
 
 /**
-* Full document dewarped imagedelegate
+ * Full document dewarped imagedelegate
 */
 @property (nonatomic, nullable, weak) id<MBBlinkIdRecognizerDelegate> dewarpedImageDelegate;
 
 /**
-* Document not supported classifier delegate
+ * Document not supported classifier delegate
 */
 @property (nonatomic, nullable, weak) id<MBBlinkIdRecognizerDelegate> classifierDelegate;
+
+/**
+ * Class filter delegate
+ */
+@property (nonatomic, nullable, weak) id<MBBlinkIdRecognizerDelegate> classFilterDelegate;
 
 /**
  * Defines whether blured frames filtering is allowed
@@ -65,12 +71,38 @@ MB_INIT
  */
 @property (nonatomic, assign) BOOL allowUnverifiedMrzResults;
 
+/**
+ * Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
+ * padding edge and image edge are the same.
+ * Recommended value is 0.02f.
+ *
+ * Default: 0.0f
+ */
+@property (nonatomic, assign) CGFloat paddingEdge;
+
 @end
 
 @protocol MBBlinkIdRecognizerDelegate <NSObject>
 @optional
+
+/**
+ * Called when dewarped full document image is available
+*/
 - (void)onImageAvailable:(nullable MBImage *)dewarpedImage;
+
+/**
+ * Called when recognizer classifies document.
+ *  @param isDocumentSupported - true if supported, false otherwise
+*/
 - (void)onDocumentSupportStatus:(BOOL)isDocumentSupported;
+
+/**
+ * Called when recognizer classifies document as a supported class.
+ * Enables filtering based on class.
+ * @param classInfo - classInfo of the document
+*/
+- (BOOL)classInfoFilter:(nullable MBClassInfo *)classInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
