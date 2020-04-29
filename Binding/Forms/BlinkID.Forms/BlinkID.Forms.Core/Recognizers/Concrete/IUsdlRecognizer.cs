@@ -136,5 +136,10 @@
         /// The document date of expiry of the United States driver license.
         /// </summary>
         IDate DateOfExpiry { get; }
+
+        /// <summary>
+        /// The current age of the document owner in years
+        /// </summary>The current age of the document owner in years.</value>
+        int Age { get ; }
     }
 }

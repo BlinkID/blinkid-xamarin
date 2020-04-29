@@ -217,6 +217,11 @@ namespace Microblink.Forms.Core.Recognizers
         /// <value>Sanitized document number.</value>
         string SanitizedDocumentNumber { get; }
 
+        /// <summary>
+        /// The current age of the document owner in years
+        /// </summary>The current age of the document owner in years.</value>
+        int Age { get ; }
+
     }
 
     /// <summary>
