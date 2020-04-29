@@ -2398,11 +2398,11 @@ namespace Microblink
         NSData EncodedFullDocumentImage { get; }
     }
 
-    // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult>
+    // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult, IMBAgeResult>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBUsdlCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult
+    interface MBUsdlCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult, IMBAgeResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export ("firstName")]
@@ -2500,7 +2500,7 @@ namespace Microblink
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBUsdlRecognizerResult : INSCopying
+    interface MBUsdlRecognizerResult : INSCopying, IMBAgeResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export ("firstName")]
