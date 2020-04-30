@@ -65,6 +65,17 @@
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
+        /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
+        /// padding edge and image edge are the same.
+        /// Recommended value is 0.02f.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '0.0f'
+        /// </summary>
+        float PaddingEdge { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  
@@ -90,6 +101,15 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool SignResult { get; set; }
+        
+        /// <summary>
+        /// Skip back side capture and processing step when back side of the document is not supported
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool SkipUnsupportedBack { get; set; }
         
 
         /// <summary>
@@ -117,6 +137,18 @@
         /// The address of the document owner. 
         /// </summary>
         string Address { get; }
+        
+        /// <summary>
+        /// The current age of the document owner in years. It is calculated difference
+        /// between now and date of birth. Now is current time on the device.
+        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
+        /// </summary>
+        int Age { get; }
+        
+        /// <summary>
+        /// The classification information. 
+        /// </summary>
+        IClassInfo ClassInfo { get; }
         
         /// <summary>
         /// The driver license conditions. 
@@ -159,12 +191,22 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
+        /// Defines possible color statuses determined from scanned image. 
+        /// </summary>
+        DocumentImageColorStatus DocumentBackImageColorStatus { get; }
+        
+        /// <summary>
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
         /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
         /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
         /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same. 
         /// </summary>
         DataMatchResult DocumentDataMatch { get; }
+        
+        /// <summary>
+        /// Defines possible color statuses determined from scanned image. 
+        /// </summary>
+        DocumentImageColorStatus DocumentFrontImageColorStatus { get; }
         
         /// <summary>
         /// The document number. 

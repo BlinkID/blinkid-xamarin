@@ -10,7 +10,7 @@ using Microblink.Forms.Droid.Recognizers;
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentVerificationOverlaySettingsFactory))]
 namespace Microblink.Forms.Droid.Overlays.Implementations
 {
-    public sealed class DocumentVerificationOverlaySettings : OverlaySettings, IDocumentVerificationOverlaySettings
+    public sealed class DocumentVerificationOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentVerificationOverlaySettings
     {
         public override UISettings NativeUISettings { 
             get {

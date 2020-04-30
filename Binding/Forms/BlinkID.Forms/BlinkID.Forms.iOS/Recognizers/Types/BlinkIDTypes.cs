@@ -61,6 +61,8 @@ namespace Microblink.Forms.iOS.Recognizers
         public string SanitizedDocumentCode => nativeMrzResult.SanitizedDocumentCode;
 
         public string SanitizedDocumentNumber => nativeMrzResult.SanitizedDocumentNumber;
+
+        public int Age => nativeMrzResult.Age;
     }
 
     public sealed class ImageExtensionFactors : IImageExtensionFactors
@@ -100,6 +102,23 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Endorsements => nativeDlDetailedInfo.Endorsements;
 
         public string VehicleClass => nativeDlDetailedInfo.VehicleClass;
+
+    }
+
+    public sealed class ClassInfo : IClassInfo
+    {
+        MBClassInfo nativeClassInfo;
+
+        public ClassInfo(MBClassInfo nativeClassInfo)
+        {
+            this.nativeClassInfo = nativeClassInfo;
+        }
+
+        public Country Country => (Country)nativeClassInfo.Country;
+
+        public Region Region => (Region)nativeClassInfo.Region;
+
+        public Type Type => (Type)nativeClassInfo.Type;
 
     }
 }

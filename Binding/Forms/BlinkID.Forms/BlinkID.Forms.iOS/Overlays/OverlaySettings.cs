@@ -9,12 +9,10 @@ namespace Microblink.Forms.iOS.Overlays
 	public abstract class OverlaySettings : IOverlaySettings
     {
         public MBOverlaySettings NativeOverlaySettings { get; }
-        public IRecognizerCollection RecognizerCollection { get; }
 
-        protected OverlaySettings(MBOverlaySettings nativeOverlaySettings, IRecognizerCollection recognizerCollection)
+        protected OverlaySettings(MBOverlaySettings nativeOverlaySettings)
         {
             NativeOverlaySettings = nativeOverlaySettings;
-            RecognizerCollection = recognizerCollection;
         }
 
         public abstract MBOverlayViewController CreateOverlayViewController(IOverlayVCDelegate overlayVCDelegate);

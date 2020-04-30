@@ -43,6 +43,12 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 @property(nonatomic, strong) NSString *firstSideInstructionsText;
 
 /**
+* Message that is shown after fornt side of the USDL document is scanned.
+* Default: Scan the barcode
+*/
+@property(nonatomic, strong) NSString *scanBarcodeText;
+
+/**
 * Instructions to flip document, shown when scanning of the first side is done, before scanning the second
 * side of the document.
 * Default: Flip the card
@@ -60,6 +66,12 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 * Default: Move farther
 */
 @property(nonatomic, strong) NSString *errorMoveFarther;
+
+/**
+* Instructions for the user to move the document from the edge.
+* Default: Move the document from the edge
+*/
+@property(nonatomic, strong) NSString *errorDocumentTooCloseToEdge;
 
 /**
 * Title of the dialog, which is shown when scanned document sides are not from the same document.

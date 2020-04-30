@@ -34,6 +34,13 @@
         string Address { get; }
         
         /// <summary>
+        /// The current age of the document owner in years. It is calculated difference
+        /// between now and date of birth. Now is current time on the device.
+        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
+        /// </summary>
+        int Age { get; }
+        
+        /// <summary>
         /// Type of the barcode scanned
         /// 
         ///  @return Type of the barcode 

@@ -21,6 +21,12 @@ typedef NS_ENUM(NSUInteger, MBCameraPreset) {
 
     /** 720p video will always be used */
     MBCameraPreset720p,
+    
+    /** 1080p video will always be used */
+    MBCameraPreset1080p,
+    
+    /** 4K video will always be used */
+    MBCameraPreset4K,
 
     /** The library will calculate optimal resolution based on the use case and device used */
     MBCameraPresetOptimal,

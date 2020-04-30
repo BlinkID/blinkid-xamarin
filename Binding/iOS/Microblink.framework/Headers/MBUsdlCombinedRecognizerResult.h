@@ -22,6 +22,8 @@
 
 #import "MBDateResult.h"
 
+#import "MBAgeResult.h"
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -30,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Class representing values obtained when scanning both front and back side of US Driver's License.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBUsdlCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult>
+@interface MBUsdlCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult, MBAgeResult>
 
 MB_INIT_UNAVAILABLE
 

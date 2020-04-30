@@ -7,7 +7,7 @@ using Microblink;
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays
 {
-    public sealed class DocumentOverlaySettings : OverlaySettings, IDocumentOverlaySettings
+    public sealed class DocumentOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentOverlaySettings
     {
         readonly MBDocumentOverlaySettings nativeDocumentOverlaySettings;
 

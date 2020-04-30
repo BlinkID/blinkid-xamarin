@@ -39,4 +39,7 @@ typedef NS_OPTIONS(NSInteger, MBDetectionStatus) {
     
     /** Object was successfully detected, but the camera is too near to the object for processing */
     MBDetectionStatusCameraTooNear = 1 << 10,
+    
+    /** Document detected, but document is too close to the edge of the frame */
+    MBDetectionStatusDocumentTooCloseToEdge = 1 << 11,
 };

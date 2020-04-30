@@ -5,6 +5,8 @@
 //  Created by Dino on 19/06/2018.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
+
 /**
  * Struct which describes image extension factors. Each factors denotes by what percentage is image extended.
  * For example, value of top = 0.3f means that top side of the image is extended by 30% of cards height,

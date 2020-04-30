@@ -8,7 +8,7 @@ using System;
 [assembly: Xamarin.Forms.Dependency(typeof(BlinkIdOverlaySettingsFactory))]
 namespace Microblink.Forms.iOS.Overlays
 {
-    public sealed class BlinkIdOverlaySettings : OverlaySettings, IBlinkIdOverlaySettings
+    public sealed class BlinkIdOverlaySettings : RecognizerCollectionOverlaySettings, IBlinkIdOverlaySettings
     {
         readonly MBBlinkIdOverlaySettings nativeBlinkIdOverlaySettings;
 
@@ -150,6 +150,24 @@ namespace Microblink.Forms.iOS.Overlays
             }
             set {
                 nativeBlinkIdOverlaySettings.BackSideScanningTimeout = Convert.ToDouble(value / 1000.0);
+            }  
+        }
+
+        public string ScanBarcodeText { 
+            get {
+                return nativeBlinkIdOverlaySettings.ScanBarcodeText;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ScanBarcodeText = value;
+            }  
+        }
+
+        public string ErrorDocumentTooCloseToEdge { 
+            get {
+                return nativeBlinkIdOverlaySettings.ErrorDocumentTooCloseToEdge;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ErrorDocumentTooCloseToEdge = value;
             }  
         }
     }

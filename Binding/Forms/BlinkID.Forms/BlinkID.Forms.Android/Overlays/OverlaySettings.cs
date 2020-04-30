@@ -16,12 +16,9 @@ namespace Microblink.Forms.Droid.Overlays
             }
         }
 
-        public IRecognizerCollection RecognizerCollection { get; }
-
-        protected OverlaySettings(UISettings nativeUISettings, IRecognizerCollection recognizerCollection)
+        protected OverlaySettings(UISettings nativeUISettings)
         {
             _nativeUISEttings = nativeUISettings;
-            RecognizerCollection = recognizerCollection;
         }
     }
 }

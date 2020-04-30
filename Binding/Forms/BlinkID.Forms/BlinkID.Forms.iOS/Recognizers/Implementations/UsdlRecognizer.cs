@@ -70,5 +70,7 @@ namespace Microblink.Forms.iOS.Recognizers
         {
             return nativeResult.GetField((MBUsdlKeys)key);
         }
+
+        public int Age => nativeResult.Age;
     }
 }

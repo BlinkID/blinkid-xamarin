@@ -3,7 +3,9 @@ using Microblink.Forms.iOS;
 using UIKit;
 using Microblink.Forms.Core.Overlays;
 using Microblink.Forms.iOS.Overlays;
+using Microblink.Forms.Core.Recognizers;
 using Microblink.Forms.Core;
+using Microblink.Forms.iOS.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
 namespace Microblink.Forms.iOS
@@ -14,6 +16,8 @@ namespace Microblink.Forms.iOS
         IMBRecognizerRunnerViewController recognizerRunnerViewController;
         // ensure OverlaySettings don't get GC-ed while they are required for ObjC code
         IOverlaySettings overlaySettings;
+
+        MBImage highResImage;
 
         public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
@@ -53,6 +57,10 @@ namespace Microblink.Forms.iOS
         {
             MessagingCenter.Send(new Microblink.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = true }, Microblink.Forms.Core.Messages.ScanningDoneMessageId);
             overlayViewController.DismissViewController(true, null);
+        }
+
+        public void ScanningFinishedWithHighResolutionImage(MBOverlayViewController overlayViewController, MBImage highResImage, MBRecognizerResultState state) 
+        {
         }
 
     }

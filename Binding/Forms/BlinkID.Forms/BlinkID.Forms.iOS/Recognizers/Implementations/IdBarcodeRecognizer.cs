@@ -34,6 +34,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
+        public int Age => (int)nativeResult.Age;
         public BarcodeType BarcodeType => (BarcodeType)nativeResult.BarcodeType;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
