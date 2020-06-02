@@ -84,11 +84,13 @@ namespace Microblink.Forms.Droid
 
         public void Scan(IOverlaySettings overlaySettings)
         {
+            recognizerBundle = null;
+
             androidHostActivity.ScanningStarted(this);
             var aOverlaySettings = (OverlaySettings)overlaySettings;
-            // assume given recognizerColelction was also used for constructing overlaySettings
-            recognizerBundle = ((RecognizerCollection)((RecognizerCollectionOverlaySettings)aOverlaySettings).RecognizerCollection).NativeRecognizerBundle;
 
+            // assume given recognizerCollection was also used for constructing overlaySettings
+            recognizerBundle = ((RecognizerCollection)((RecognizerCollectionOverlaySettings)aOverlaySettings).RecognizerCollection).NativeRecognizerBundle;
             ActivityRunner.StartActivityForResult(androidHostActivity.HostActivity, androidHostActivity.ScanActivityRequestCode, ((OverlaySettings)overlaySettings).NativeUISettings);
         }
     }
@@ -120,4 +122,3 @@ namespace Microblink.Forms.Droid
         }
     }
 }
-

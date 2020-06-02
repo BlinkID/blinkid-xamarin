@@ -43,6 +43,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IdBarcodeDocumentType DocumentType => (IdBarcodeDocumentType)nativeResult.DocumentType.Ordinal();
         public string Employer => nativeResult.Employer;
+        public string Endorsements => nativeResult.Endorsements;
         public string FirstName => nativeResult.FirstName;
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
@@ -56,8 +57,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public byte[] RawData => nativeResult.GetRawData();
         public string Religion => nativeResult.Religion;
         public string ResidentialStatus => nativeResult.ResidentialStatus;
+        public string Restrictions => nativeResult.Restrictions;
         public string Sex => nativeResult.Sex;
         public string StringData => nativeResult.StringData;
         public bool Uncertain => nativeResult.IsUncertain;
+        public string VehicleClass => nativeResult.VehicleClass;
     }
 }

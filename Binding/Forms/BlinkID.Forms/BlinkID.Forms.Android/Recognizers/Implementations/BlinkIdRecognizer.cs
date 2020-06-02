@@ -39,6 +39,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetAllowUnverifiedMrzResults(value);
         }
         
+        public bool AnonymizeImage 
+        { 
+            get => nativeRecognizer.ShouldAnonymizeImage(); 
+            set => nativeRecognizer.SetAnonymizeImage(value);
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -75,6 +81,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
+        public bool ValidateResultCharacters 
+        { 
+            get => nativeRecognizer.ShouldValidateResultCharacters(); 
+            set => nativeRecognizer.SetValidateResultCharacters(value);
+        }
+        
     }
 
     public sealed class BlinkIdRecognizerResult : RecognizerResult, IBlinkIdRecognizerResult
@@ -97,6 +109,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentImageColorStatus.Ordinal();
+        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentImageMoireStatus.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
