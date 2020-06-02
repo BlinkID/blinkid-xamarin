@@ -567,6 +567,14 @@ namespace Microblink
 	}
 
 	[Native]
+	public enum MBDocumentImageMoireStatus : ulong
+	{
+		NotAvailable = 0,
+		NotDetected,
+		Detected
+	}
+
+	[Native]
 	public enum MBAgeLimitStatus : ulong
 	{
 		NotAvailable,

@@ -39,6 +39,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
         
+        public bool AnonymizeImage
+        {
+            get => nativeRecognizer.AnonymizeImage;
+            set => nativeRecognizer.AnonymizeImage = value;
+        }
+
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -87,6 +93,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.SkipUnsupportedBack = value;
         }
         
+        public bool ValidateResultCharacters
+        {
+            get => nativeRecognizer.ValidateResultCharacters;
+            set => nativeRecognizer.ValidateResultCharacters = value;
+        }
+
     }
 
     public sealed class BlinkIdCombinedRecognizerResult : RecognizerResult, IBlinkIdCombinedRecognizerResult
@@ -111,8 +123,10 @@ namespace Microblink.Forms.iOS.Recognizers
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DocumentImageColorStatus DocumentBackImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentBackImageColorStatus;
+        public DocumentImageMoireStatus DocumentBackImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentBackImageMoireStatus;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
         public DocumentImageColorStatus DocumentFrontImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentFrontImageColorStatus;
+        public DocumentImageMoireStatus DocumentFrontImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentFrontImageMoireStatus;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
