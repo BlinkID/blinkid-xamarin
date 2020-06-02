@@ -495,6 +495,9 @@ namespace Microblink.Forms.Core.Recognizers
         Ukraine,
         Usa,
         Vietnam,
+        Brazil,
+        Norway,
+        Oman,
     }
 
     /// <summary>
@@ -599,6 +602,9 @@ namespace Microblink.Forms.Core.Recognizers
         VoterId,
         WorkPermit,
         iKad,
+        MilitaryId,
+        MyKas,
+        SocialSecurityCard,
     }
 
     /// <summary>
@@ -615,4 +621,20 @@ namespace Microblink.Forms.Core.Recognizers
         // Color image scanned
         Color,
     }
+
+    /// <summary>
+    /// Defines possible states of Moire pattern detection.
+    /// </summary>
+    public enum DocumentImageMoireStatus
+    {
+        // Detection of Moire patterns was not performed.
+        NotAvailable,
+
+        // Moire pattern not detected on input image.
+        NotDetected,
+
+        // Moire pattern detected on input image.
+        Detected
+    }
+
 }

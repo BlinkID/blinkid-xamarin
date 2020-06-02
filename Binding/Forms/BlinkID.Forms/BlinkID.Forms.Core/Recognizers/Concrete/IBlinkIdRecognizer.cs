@@ -1,97 +1,87 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// The Blink ID Recognizer is used for scanning Blink ID.
+    /// Generic BlinkID recognizer.
     /// </summary>
     public interface IBlinkIdRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether blured frames filtering is allowed
-        /// 
-        ///  
+        /// Defines whether blured frames filtering is allowed" 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowBlurFilter { get; set; }
         
         /// <summary>
-        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
-        /// 
-        ///  
+        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool AllowUnparsedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed
-        /// Unverified MRZ is parsed, but check digits are incorrect
-        /// 
-        ///  
+        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// Whether sensitive data should be anonymized in full document image result. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AnonymizeImage { get; set; }
+        
+        /// <summary>
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
-        /// padding edge and image edge are the same.
-        /// Recommended value is 0.02f.
-        /// 
-        ///  
+        /// Padding is a minimum distance from the edge of the frame and it is defined 
         ///
-        /// By default, this is set to '0.0f'
+        /// By default, this is set to '0.0'
         /// </summary>
         float PaddingEdge { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
+        
+        /// <summary>
+        /// Whether result characters validatation is performed. 
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ValidateResultCharacters { get; set; }
         
 
         /// <summary>
@@ -106,7 +96,7 @@
     public interface IBlinkIdRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional address information of the document owner. 
+        /// The additional name information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -121,14 +111,12 @@
         string Address { get; }
         
         /// <summary>
-        /// The current age of the document owner in years. It is calculated difference
-        /// between now and date of birth. Now is current time on the device.
-        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
+        /// The current age of the document owner in years. It is calculated difference 
         /// </summary>
         int Age { get; }
         
         /// <summary>
-        /// The classification information. 
+        /// The document class information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
         
@@ -163,9 +151,14 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// Defines possible color statuses determined from scanned image. 
+        /// The color status determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentImageColorStatus { get; }
+        
+        /// <summary>
+        /// The Moire pattern detection status determined from the scanned image. 
+        /// </summary>
+        DocumentImageMoireStatus DocumentImageMoireStatus { get; }
         
         /// <summary>
         /// The document number. 
@@ -183,7 +176,7 @@
         string Employer { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -193,7 +186,7 @@
         string FirstName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
@@ -223,7 +216,7 @@
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
         IMrzResult MrzResult { get; }
         
