@@ -36,14 +36,14 @@
         /// <summary>
         /// The current age of the document owner in years. It is calculated difference
         /// between now and date of birth. Now is current time on the device.
-        /// @return current age of the document owner in years or -1 if date of birth is unknown.
+        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
         /// </summary>
         int Age { get; }
         
         /// <summary>
         /// Type of the barcode scanned
-        ///
-        ///  @return Type of the barcode
+        /// 
+        ///  @return Type of the barcode 
         /// </summary>
         BarcodeType BarcodeType { get; }
         
@@ -74,8 +74,8 @@
         
         /// <summary>
         /// The document type deduced from the recognized barcode
-        ///
-        ///  @return Type of the document
+        /// 
+        ///  @return Type of the document 
         /// </summary>
         IdBarcodeDocumentType DocumentType { get; }
         
@@ -140,7 +140,7 @@
         string Race { get; }
         
         /// <summary>
-        /// Byte array with result of the scan
+        /// Byte array with result of the scan 
         /// </summary>
         byte[] RawData { get; }
         
@@ -150,7 +150,7 @@
         string Religion { get; }
         
         /// <summary>
-        /// The residential stauts of the document owner.
+        /// The residential stauts of the document owner. 
         /// </summary>
         string ResidentialStatus { get; }
         
@@ -165,13 +165,13 @@
         string Sex { get; }
         
         /// <summary>
-        /// Retrieves string content of scanned data
+        /// Retrieves string content of scanned data 
         /// </summary>
         string StringData { get; }
         
         /// <summary>
         /// Flag indicating uncertain scanning data
-        /// E.g obtained from damaged barcode.
+        /// E.g obtained from damaged barcode. 
         /// </summary>
         bool Uncertain { get; }
         

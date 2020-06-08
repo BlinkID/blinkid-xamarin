@@ -8,8 +8,8 @@
         
         /// <summary>
         /// Defines whether blured frames filtering is allowed
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -17,8 +17,8 @@
         
         /// <summary>
         /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -27,8 +27,8 @@
         /// <summary>
         /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed
         /// Unverified MRZ is parsed, but check digits are incorrect
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -37,8 +37,8 @@
         /// <summary>
         /// Defines whether sensitive data should be anonymized in full document image result.
         /// The setting only applies to certain documents
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -47,8 +47,8 @@
         /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -57,8 +57,8 @@
         /// <summary>
         /// Property for setting DPI for full document images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to '250'
         /// </summary>
@@ -66,9 +66,9 @@
         
         /// <summary>
         /// Image extension factors for full document image.
-        ///
+        /// 
         /// @see ImageExtensionFactors
-        ///
+        ///  
         ///
         /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
@@ -78,8 +78,8 @@
         /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
         /// padding edge and image edge are the same.
         /// Recommended value is 0.02f.
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to '0.0f'
         /// </summary>
@@ -87,8 +87,8 @@
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -96,8 +96,8 @@
         
         /// <summary>
         /// Sets whether full document image of ID card should be extracted.
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -105,8 +105,8 @@
         
         /// <summary>
         /// Whether or not recognition result should be signed.
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -114,8 +114,8 @@
         
         /// <summary>
         /// Skip back side capture and processing step when back side of the document is not supported
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'false'
         /// </summary>
@@ -124,8 +124,8 @@
         /// <summary>
         /// Defines whether result characters validatation is performed.
         /// If a result member contains invalid character, the result state cannot be valid
-        ///
-        ///
+        /// 
+        ///  
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -144,7 +144,7 @@
     public interface IBlinkIdCombinedRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional address information of the document owner.
+        /// The additional address information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -161,12 +161,12 @@
         /// <summary>
         /// The current age of the document owner in years. It is calculated difference
         /// between now and date of birth. Now is current time on the device.
-        /// @return current age of the document owner in years or -1 if date of birth is unknown.
+        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
         /// </summary>
         int Age { get; }
         
         /// <summary>
-        /// The classification information.
+        /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
         
@@ -196,12 +196,12 @@
         IDate DateOfIssue { get; }
         
         /// <summary>
-        /// Digital signature of the recognition result. Available only if enabled with signResult property.
+        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
         /// </summary>
         byte[] DigitalSignature { get; }
         
         /// <summary>
-        /// Version of the digital signature. Available only if enabled with signResult property.
+        /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
         uint DigitalSignatureVersion { get; }
         
@@ -211,12 +211,12 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// Defines possible color statuses determined from scanned image.
+        /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentBackImageColorStatus { get; }
         
         /// <summary>
-        /// Defines possible moire statuses determined from scanned image.
+        /// Defines possible moire statuses determined from scanned image. 
         /// </summary>
         DocumentImageMoireStatus DocumentBackImageMoireStatus { get; }
         
@@ -224,17 +224,17 @@
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
         /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
         /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
-        /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same.
+        /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same. 
         /// </summary>
         DataMatchResult DocumentDataMatch { get; }
         
         /// <summary>
-        /// Defines possible color statuses determined from scanned image.
+        /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentFrontImageColorStatus { get; }
         
         /// <summary>
-        /// Defines possible moire statuses determined from scanned image.
+        /// Defines possible moire statuses determined from scanned image. 
         /// </summary>
         DocumentImageMoireStatus DocumentFrontImageMoireStatus { get; }
         
@@ -254,7 +254,7 @@
         string Employer { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property.
+        /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -264,12 +264,12 @@
         string FirstName { get; }
         
         /// <summary>
-        /// back side image of the document if enabled with returnFullDocumentImage property.
+        /// back side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentBackImage { get; }
         
         /// <summary>
-        /// front side image of the document if enabled with returnFullDocumentImage property.
+        /// front side image of the document if enabled with returnFullDocumentImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentFrontImage { get; }
         
@@ -299,7 +299,7 @@
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone
+        /// The data extracted from the machine readable zone 
         /// </summary>
         IMrzResult MrzResult { get; }
         
@@ -340,7 +340,7 @@
         
         /// <summary>
         /// Returns true if recognizer has finished scanning first side and is now scanning back side,
-        /// false if it's still scanning first side.
+        /// false if it's still scanning first side. 
         /// </summary>
         bool ScanningFirstSideDone { get; }
         

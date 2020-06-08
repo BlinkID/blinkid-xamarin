@@ -39,12 +39,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
         
-        public bool AnonymizeImage
-        {
-            get => nativeRecognizer.AnonymizeImage;
+        public bool AnonymizeImage 
+        { 
+            get => nativeRecognizer.AnonymizeImage; 
             set => nativeRecognizer.AnonymizeImage = value;
         }
-
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -81,12 +81,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
-        public bool ValidateResultCharacters
-        {
-            get => nativeRecognizer.ValidateResultCharacters;
+        public bool ValidateResultCharacters 
+        { 
+            get => nativeRecognizer.ValidateResultCharacters; 
             set => nativeRecognizer.ValidateResultCharacters = value;
         }
-
+        
     }
 
     public sealed class BlinkIdRecognizerResult : RecognizerResult, IBlinkIdRecognizerResult

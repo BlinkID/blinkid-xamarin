@@ -63,12 +63,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
-        public bool SignResult
-        {
-            get => nativeRecognizer.SignResult;
+        public bool SignResult 
+        { 
+            get => nativeRecognizer.SignResult; 
             set => nativeRecognizer.SignResult = value;
         }
-
+        
     }
 
     public sealed class PassportRecognizerResult : RecognizerResult, IPassportRecognizerResult
