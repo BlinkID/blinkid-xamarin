@@ -1839,6 +1839,10 @@ namespace Microblink
 		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentImageColorStatus;
 		[Export ("documentImageColorStatus")]
 		MBDocumentImageColorStatus DocumentImageColorStatus { get; }
+
+        // @property (readonly, nonatomic) MBDocumentImageMoireStatus documentImageMoireStatus;
+		[Export ("documentImageMoireStatus")]
+		MBDocumentImageMoireStatus DocumentImageMoireStatus { get; }
 	}
 
 
@@ -1870,6 +1874,14 @@ namespace Microblink
         // @property (assign, nonatomic) CGFloat paddingEdge;
 		[Export ("paddingEdge")]
 		nfloat PaddingEdge { get; set; }
+
+        // @property (assign, nonatomic) BOOL validateResultCharacters;
+		[Export ("validateResultCharacters")]
+		bool ValidateResultCharacters { get; set; }
+
+		// @property (assign, nonatomic) BOOL anonymizeImage;
+		[Export ("anonymizeImage")]
+		bool AnonymizeImage { get; set; }
 	}
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -1884,6 +1896,14 @@ namespace Microblink
         // @optional -(void)onDocumentSupportStatus:(BOOL)isDocumentSupported;
         [Export ("onDocumentSupportStatus:")]
         void OnDocumentSupportStatus (bool isDocumentSupported);
+
+        // @optional -(BOOL)classInfoFilter:(MBClassInfo * _Nullable)classInfo;
+		[Export ("classInfoFilter:")]
+		bool ClassInfoFilter ([NullAllowed] MBClassInfo classInfo);
+
+		// @optional -(void)onBarcodeScanningStarted;
+		[Export ("onBarcodeScanningStarted")]
+		void OnBarcodeScanningStarted ();
     }
 
     // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, IMBAgeResult>
@@ -2011,6 +2031,14 @@ namespace Microblink
 		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentBackImageColorStatus;
 		[Export ("documentBackImageColorStatus")]
 		MBDocumentImageColorStatus DocumentBackImageColorStatus { get; }
+
+        // @property (readonly, nonatomic) MBDocumentImageMoireStatus documentFrontImageMoireStatus;
+		[Export ("documentFrontImageMoireStatus")]
+		MBDocumentImageMoireStatus DocumentFrontImageMoireStatus { get; }
+
+		// @property (readonly, nonatomic) MBDocumentImageMoireStatus documentBackImageMoireStatus;
+		[Export ("documentBackImageMoireStatus")]
+		MBDocumentImageMoireStatus DocumentBackImageMoireStatus { get; }
 	}
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -2041,6 +2069,14 @@ namespace Microblink
 		// @property (assign, nonatomic) BOOL skipUnsupportedBack;
 		[Export ("skipUnsupportedBack")]
 		bool SkipUnsupportedBack { get; set; }
+
+        // @property (assign, nonatomic) BOOL validateResultCharacters;
+		[Export ("validateResultCharacters")]
+		bool ValidateResultCharacters { get; set; }
+
+		// @property (assign, nonatomic) BOOL anonymizeImage;
+		[Export ("anonymizeImage")]
+		bool AnonymizeImage { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
@@ -2055,6 +2091,14 @@ namespace Microblink
         // @optional -(void)onCombinedDocumentSupportStatus:(BOOL)isDocumentSupported;
         [Export ("onCombinedDocumentSupportStatus:")]
         void OnCombinedDocumentSupportStatus (bool isDocumentSupported);
+
+        // @optional -(BOOL)combinedClassInfoFilter:(MBClassInfo * _Nullable)classInfo;
+		[Export ("combinedClassInfoFilter:")]
+		bool CombinedClassInfoFilter ([NullAllowed] MBClassInfo classInfo);
+
+		// @optional -(void)onCombinedBarcodeScanningStarted;
+		[Export ("onCombinedBarcodeScanningStarted")]
+		void OnCombinedBarcodeScanningStarted ();
     }
 
     // @interface MBIdBarcodeRecognizerResult : MBRecognizerResult <NSCopying>
@@ -2170,6 +2214,18 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) MBIdBarcodeDocumentType documentType;
 		[Export ("documentType", ArgumentSemantic.Assign)]
 		MBIdBarcodeDocumentType DocumentType { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull restrictions;
+		[Export ("restrictions")]
+		string Restrictions { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull endorsements;
+		[Export ("endorsements")]
+		string Endorsements { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull vehicleClass;
+		[Export ("vehicleClass")]
+		string VehicleClass { get; }
 	}
 
 	// @interface MBIdBarcodeRecognizer : MBRecognizer <NSCopying>
@@ -2346,7 +2402,7 @@ namespace Microblink
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    interface MBPassportRecognizerResult : INSCopying, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
         [Export ("mrzResult")]
@@ -2356,7 +2412,7 @@ namespace Microblink
     // @interface MBPassportRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizer))]
-    interface MBPassportRecognizer : INSCopying, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    interface MBPassportRecognizer : INSCopying, IMBDigitalSignature, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
     {
         // @property (readonly, nonatomic, strong) MBPassportRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]

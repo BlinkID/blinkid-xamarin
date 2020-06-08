@@ -39,6 +39,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
         
+        public bool AnonymizeImage 
+        { 
+            get => nativeRecognizer.AnonymizeImage; 
+            set => nativeRecognizer.AnonymizeImage = value;
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -75,6 +81,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
+        public bool ValidateResultCharacters 
+        { 
+            get => nativeRecognizer.ValidateResultCharacters; 
+            set => nativeRecognizer.ValidateResultCharacters = value;
+        }
+        
     }
 
     public sealed class BlinkIdRecognizerResult : RecognizerResult, IBlinkIdRecognizerResult
@@ -97,6 +109,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentImageColorStatus;
+        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentImageMoireStatus;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;

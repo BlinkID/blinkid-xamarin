@@ -63,6 +63,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnFullDocumentImage(value);
         }
         
+        public bool SignResult 
+        { 
+            get => nativeRecognizer.ShouldSignResult(); 
+            set => nativeRecognizer.SetSignResult(value);
+        }
+        
     }
 
     public sealed class PassportRecognizerResult : RecognizerResult, IPassportRecognizerResult
@@ -73,6 +79,8 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
+        public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
+        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);

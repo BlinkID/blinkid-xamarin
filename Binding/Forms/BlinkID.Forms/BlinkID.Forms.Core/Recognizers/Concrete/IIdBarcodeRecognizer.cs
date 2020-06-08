@@ -85,6 +85,11 @@
         string Employer { get; }
         
         /// <summary>
+        /// The additional privileges granted to the driver license owner. 
+        /// </summary>
+        string Endorsements { get; }
+        
+        /// <summary>
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
@@ -150,6 +155,11 @@
         string ResidentialStatus { get; }
         
         /// <summary>
+        /// The restrictions to driving privileges for the driver license owner. 
+        /// </summary>
+        string Restrictions { get; }
+        
+        /// <summary>
         /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
@@ -164,6 +174,11 @@
         /// E.g obtained from damaged barcode. 
         /// </summary>
         bool Uncertain { get; }
+        
+        /// <summary>
+        /// The type of vehicle the driver license owner has privilege to drive. 
+        /// </summary>
+        string VehicleClass { get; }
         
     }
 }

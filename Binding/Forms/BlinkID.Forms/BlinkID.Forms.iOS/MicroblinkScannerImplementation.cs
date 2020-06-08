@@ -17,8 +17,6 @@ namespace Microblink.Forms.iOS
         // ensure OverlaySettings don't get GC-ed while they are required for ObjC code
         IOverlaySettings overlaySettings;
 
-        MBImage highResImage;
-
         public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
             MBMicroblinkSDK.SharedInstance.ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
@@ -59,10 +57,6 @@ namespace Microblink.Forms.iOS
             overlayViewController.DismissViewController(true, null);
         }
 
-        public void ScanningFinishedWithHighResolutionImage(MBOverlayViewController overlayViewController, MBImage highResImage, MBRecognizerResultState state) 
-        {
-        }
-
     }
 
     public sealed class MicroblinkScannerFactoryImplementation : IMicroblinkScannerFactory
@@ -78,4 +72,3 @@ namespace Microblink.Forms.iOS
         }
     }
 }
-

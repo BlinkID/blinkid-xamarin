@@ -35,6 +35,16 @@
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
+        /// Defines whether sensitive data should be anonymized in full document image result.
+        /// The setting only applies to certain documents
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AnonymizeImage { get; set; }
+        
+        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
@@ -92,6 +102,16 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
+        
+        /// <summary>
+        /// Defines whether result characters validatation is performed.
+        /// If a result member contains invalid character, the result state cannot be valid
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ValidateResultCharacters { get; set; }
         
 
         /// <summary>
@@ -166,6 +186,11 @@
         /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentImageColorStatus { get; }
+        
+        /// <summary>
+        /// Defines possible moire statuses determined from scanned image. 
+        /// </summary>
+        DocumentImageMoireStatus DocumentImageMoireStatus { get; }
         
         /// <summary>
         /// The document number. 

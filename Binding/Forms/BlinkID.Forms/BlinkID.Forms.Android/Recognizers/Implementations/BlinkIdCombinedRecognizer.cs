@@ -39,6 +39,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetAllowUnverifiedMrzResults(value);
         }
         
+        public bool AnonymizeImage 
+        { 
+            get => nativeRecognizer.ShouldAnonymizeImage(); 
+            set => nativeRecognizer.SetAnonymizeImage(value);
+        }
+        
         public uint FaceImageDpi 
         { 
             get => (uint)nativeRecognizer.FaceImageDpi; 
@@ -87,6 +93,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetSkipUnsupportedBack(value);
         }
         
+        public bool ValidateResultCharacters 
+        { 
+            get => nativeRecognizer.ShouldValidateResultCharacters(); 
+            set => nativeRecognizer.SetValidateResultCharacters(value);
+        }
+        
     }
 
     public sealed class BlinkIdCombinedRecognizerResult : RecognizerResult, IBlinkIdCombinedRecognizerResult
@@ -111,8 +123,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DocumentImageColorStatus DocumentBackImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentBackImageColorStatus.Ordinal();
+        public DocumentImageMoireStatus DocumentBackImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentBackImageMoireStatus.Ordinal();
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public DocumentImageColorStatus DocumentFrontImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentFrontImageColorStatus.Ordinal();
+        public DocumentImageMoireStatus DocumentFrontImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentFrontImageMoireStatus.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;

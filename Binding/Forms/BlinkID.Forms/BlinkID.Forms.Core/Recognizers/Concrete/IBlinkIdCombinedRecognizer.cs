@@ -35,6 +35,16 @@
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
+        /// Defines whether sensitive data should be anonymized in full document image result.
+        /// The setting only applies to certain documents
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool AnonymizeImage { get; set; }
+        
+        /// <summary>
         /// Property for setting DPI for face images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 
@@ -110,6 +120,16 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool SkipUnsupportedBack { get; set; }
+        
+        /// <summary>
+        /// Defines whether result characters validatation is performed.
+        /// If a result member contains invalid character, the result state cannot be valid
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'true'
+        /// </summary>
+        bool ValidateResultCharacters { get; set; }
         
 
         /// <summary>
@@ -196,6 +216,11 @@
         DocumentImageColorStatus DocumentBackImageColorStatus { get; }
         
         /// <summary>
+        /// Defines possible moire statuses determined from scanned image. 
+        /// </summary>
+        DocumentImageMoireStatus DocumentBackImageMoireStatus { get; }
+        
+        /// <summary>
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
         /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
         /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
@@ -207,6 +232,11 @@
         /// Defines possible color statuses determined from scanned image. 
         /// </summary>
         DocumentImageColorStatus DocumentFrontImageColorStatus { get; }
+        
+        /// <summary>
+        /// Defines possible moire statuses determined from scanned image. 
+        /// </summary>
+        DocumentImageMoireStatus DocumentFrontImageMoireStatus { get; }
         
         /// <summary>
         /// The document number. 

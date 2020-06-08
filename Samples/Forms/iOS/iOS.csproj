@@ -86,13 +86,13 @@
       <HintPath>..\packages\Xamarin.Forms.4.4.0.991640\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="iOSBinding">
-      <HintPath>..\packages\BlinkID.iOS.Binding.5.4.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.iOS.Binding.5.5.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.4.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.5.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.iOS.5.4.0\lib\xamarinios10\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.iOS.5.5.0\lib\xamarinios10\BlinkID.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

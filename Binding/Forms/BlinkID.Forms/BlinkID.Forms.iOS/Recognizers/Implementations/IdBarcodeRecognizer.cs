@@ -43,6 +43,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IdBarcodeDocumentType DocumentType => (IdBarcodeDocumentType)nativeResult.DocumentType;
         public string Employer => nativeResult.Employer;
+        public string Endorsements => nativeResult.Endorsements;
         public string FirstName => nativeResult.FirstName;
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
@@ -56,8 +57,10 @@ namespace Microblink.Forms.iOS.Recognizers
         public byte[] RawData => nativeResult.RawData != null ? nativeResult.RawData.ToArray() : null;
         public string Religion => nativeResult.Religion;
         public string ResidentialStatus => nativeResult.ResidentialStatus;
+        public string Restrictions => nativeResult.Restrictions;
         public string Sex => nativeResult.Sex;
         public string StringData => nativeResult.StringData;
         public bool Uncertain => nativeResult.Uncertain;
+        public string VehicleClass => nativeResult.VehicleClass;
     }
 }
