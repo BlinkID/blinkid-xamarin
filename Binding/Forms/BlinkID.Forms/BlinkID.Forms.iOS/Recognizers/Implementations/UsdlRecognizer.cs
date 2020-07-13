@@ -20,6 +20,7 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public bool UncertainDecoding { get => nativeRecognizer.ScanUncertain; set => nativeRecognizer.ScanUncertain = value; }
         public bool NullQuietZoneAllowed { get => nativeRecognizer.AllowNullQuietZone; set => nativeRecognizer.AllowNullQuietZone = value; }
+        public bool EnableCompactParser { get => nativeRecognizer.EnableCompactParser; set => nativeRecognizer.EnableCompactParser = value; }
 
         public IUsdlRecognizerResult Result => result;
     }
@@ -72,5 +73,13 @@ namespace Microblink.Forms.iOS.Recognizers
         }
 
         public int Age => nativeResult.Age;
+
+        public string Street => nativeResult.Street;
+
+        public string PostalCode => nativeResult.PostalCode;
+
+        public string City => nativeResult.City;
+
+        public string Jurisdiction => nativeResult.Jurisdiction;
     }
 }

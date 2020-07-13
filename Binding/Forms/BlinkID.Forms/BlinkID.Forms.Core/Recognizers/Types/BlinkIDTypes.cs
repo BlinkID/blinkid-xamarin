@@ -747,7 +747,7 @@ namespace Microblink.Forms.Core.Recognizers
         /// <summary>
         /// Gets the nationality of the documet owner.
         /// </summary>
-        /// <value>TThe nationality of the documet owner.</value>
+        /// <value>The nationality of the documet owner.</value>
         string Nationality { get; }
 
         /// <summary>
@@ -855,7 +855,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// The driver license detailed info.
-        /// </summary>TThe driver license detailed info.</value>
+        /// </summary>The driver license detailed info.</value>
         IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get ; }
 
         /// <summary>
@@ -920,7 +920,7 @@ namespace Microblink.Forms.Core.Recognizers
         /// <summary>
         /// Gets the nationality of the documet owner.
         /// </summary>
-        /// <value>TThe nationality of the documet owner.</value>
+        /// <value>The nationality of the documet owner.</value>
         string Nationality { get; }
 
         /// <summary>
@@ -1004,7 +1004,7 @@ namespace Microblink.Forms.Core.Recognizers
         /// <summary>
         /// The additional personal identification number.
         /// </summary>
-        /// <value>TThe additional personal identification number.</value>
+        /// <value>The additional personal identification number.</value>
         string AdditionalPersonalIdNumber { get; }
 
         /// <summary>
@@ -1014,7 +1014,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// The driver license detailed info.
-        /// </summary>TThe driver license detailed info.</value>
+        /// </summary>The driver license detailed info.</value>
         IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get ; }
 
         /// <summary>

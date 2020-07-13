@@ -455,7 +455,13 @@ namespace Microblink
 		Uk,
 		Ukraine,
 		Usa,
-		Vietnam
+		Vietnam,
+		Brazil,
+		Norway,
+		Oman,
+		Ecuador,
+		ElSalvador,
+		SriLanka
 	}
 
 	[Native]
@@ -539,13 +545,13 @@ namespace Microblink
 		ConsularId,
 		Dl,
 		DlPublicServicesCard,
-		FinCard,
 		EmploymentPass,
-		GreenCard,
+		FinCard,
 		Id,
 		MultipurposeId,
 		MyKad,
 		MyKid,
+		MyPR,
 		MyTentera,
 		PanCard,
 		ProfessionalId,
@@ -555,7 +561,11 @@ namespace Microblink
 		TemporaryResidencePermit,
 		VoterId,
 		WorkPermit,
-		iKad
+		iKad,
+		MilitaryId,
+		MyKas,
+		SocialSecurityCard,
+		HealthInsuranceCard
 	}
 
 	[Native]
@@ -580,6 +590,15 @@ namespace Microblink
 		NotAvailable,
 		BelowAgeLimit,
 		OverAgeLimit
+	}
+
+	[Native]
+	public enum MBAnonymizationMode : ulong
+	{
+		None = 0,
+		ImageOnly,
+		ResultFieldsOnly,
+		FullResult
 	}
 
 	[Native]

@@ -39,10 +39,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
         
-        public bool AnonymizeImage 
+        public AnonymizationMode AnonymizationMode 
         { 
-            get => nativeRecognizer.AnonymizeImage; 
-            set => nativeRecognizer.AnonymizeImage = value;
+            get => (AnonymizationMode)nativeRecognizer.AnonymizationMode; 
+            set => nativeRecognizer.AnonymizationMode = (MBAnonymizationMode)value;
         }
         
         public uint FaceImageDpi 
@@ -101,6 +101,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => new ClassInfo(nativeResult.ClassInfo);
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
@@ -108,15 +109,15 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
-        public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentImageColorStatus;
-        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentImageMoireStatus;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
+        public bool Expired => nativeResult.Expired;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public string FullName => nativeResult.FullName;
+        public IImageAnalysisResult ImageAnalysisResult => new ImageAnalysisResult(nativeResult.ImageAnalysisResult);
         public string IssuingAuthority => nativeResult.IssuingAuthority;
         public string LastName => nativeResult.LastName;
         public string LocalizedName => nativeResult.LocalizedName;
@@ -130,5 +131,6 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Religion => nativeResult.Religion;
         public string ResidentialStatus => nativeResult.ResidentialStatus;
         public string Sex => nativeResult.Sex;
+        public IVizResult VizResult => new VizResult(nativeResult.VizResult);
     }
 }
