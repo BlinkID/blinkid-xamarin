@@ -31,11 +31,11 @@ namespace Microblink.Forms.Droid.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
         public BarcodeType BarcodeType => (BarcodeType)nativeResult.BarcodeType.Ordinal();
+        public string City => nativeResult.City;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
@@ -44,14 +44,17 @@ namespace Microblink.Forms.Droid.Recognizers
         public IdBarcodeDocumentType DocumentType => (IdBarcodeDocumentType)nativeResult.DocumentType.Ordinal();
         public string Employer => nativeResult.Employer;
         public string Endorsements => nativeResult.Endorsements;
+        public bool Expired => nativeResult.IsExpired;
         public string FirstName => nativeResult.FirstName;
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;
+        public string Jurisdiction => nativeResult.Jurisdiction;
         public string LastName => nativeResult.LastName;
         public string MaritalStatus => nativeResult.MaritalStatus;
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public string PostalCode => nativeResult.PostalCode;
         public string Profession => nativeResult.Profession;
         public string Race => nativeResult.Race;
         public byte[] RawData => nativeResult.GetRawData();
@@ -59,6 +62,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public string ResidentialStatus => nativeResult.ResidentialStatus;
         public string Restrictions => nativeResult.Restrictions;
         public string Sex => nativeResult.Sex;
+        public string Street => nativeResult.Street;
         public string StringData => nativeResult.StringData;
         public bool Uncertain => nativeResult.IsUncertain;
         public string VehicleClass => nativeResult.VehicleClass;

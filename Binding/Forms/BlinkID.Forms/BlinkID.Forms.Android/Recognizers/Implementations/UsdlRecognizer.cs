@@ -20,6 +20,7 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public bool UncertainDecoding { get => nativeRecognizer.UncertainDecoding; set => nativeRecognizer.UncertainDecoding = value; }
         public bool NullQuietZoneAllowed { get => nativeRecognizer.NullQuietZoneAllowed; set => nativeRecognizer.NullQuietZoneAllowed = value; }
+        public bool EnableCompactParser { get => nativeRecognizer.EnableCompactParser; set => nativeRecognizer.EnableCompactParser = value; }
 
         public IUsdlRecognizerResult Result => result;
     }
@@ -54,6 +55,14 @@ namespace Microblink.Forms.Droid.Recognizers
         public string FullName => nativeResult.FullName;
 
         public string Address => nativeResult.Address;
+
+        public string Street => nativeResult.Street;
+
+        public string PostalCode => nativeResult.PostalCode;
+
+        public string City => nativeResult.City;
+
+        public string Jurisdiction => nativeResult.Jurisdiction;
 
         public string DocumentNumber => nativeResult.DocumentNumber;
 
