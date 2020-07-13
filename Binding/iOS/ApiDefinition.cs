@@ -1381,7 +1381,7 @@ namespace Microblink
 		// @required -(BOOL)isExpired;
 		[Abstract]
 		[Export ("isExpired")]
-		bool IsExpired { get; }
+		bool Expired { get; }
 	}
 
    // @interface MBMrzResult : NSObject
