@@ -1,5 +1,5 @@
 //
-//  MBBarcodeResult.h
+//  MBVizResult.h
 //  MicroblinkDev
 //
 //  Created by Jura Skrlec on 08/07/2020.
@@ -7,40 +7,18 @@
 
 #import <Foundation/Foundation.h>
 #import "MBMicroblinkDefines.h"
-#import "MBBarcodeType.h"
 #import "MBDateResult.h"
 #import "MBDriverLicenseDetailedInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * MBVizResult contains data extracted from the Visual Inspection Zone.
+ */
 MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
-@interface MBBarcodeResult : NSObject
+@interface MBVizResult : NSObject
 
 MB_INIT_UNAVAILABLE
-
-/**
- * Byte array with result of the scan
- */
-@property(nonatomic, strong, readonly, nullable) NSData* rawData;
-
-/**
- * Retrieves string content of scanned data
- */
-@property(nonatomic, strong, readonly, nullable) NSString* stringData;
-
-/**
- * Flag indicating uncertain scanning data
- * E.g obtained from damaged barcode.
- */
-@property(nonatomic, assign, readonly) BOOL uncertain;
-
-/**
- * Type of the barcode scanned
- *
- *  @return Type of the barcode
- */
-@property(nonatomic, assign, readonly) MBBarcodeType barcodeType;
-
 
 /**
 * The first name of the document owner.
@@ -63,9 +41,19 @@ MB_INIT_UNAVAILABLE
 @property (nonatomic, readonly) NSString *additionalNameInformation;
 
 /**
+* The localized name of the document owner.
+*/
+@property (nonatomic, readonly) NSString *localizedName;
+
+/**
 * The address of the document owner.
 */
 @property (nonatomic, readonly) NSString *address;
+
+/**
+* The additional address information of the document owner.
+*/
+@property (nonatomic, readonly) NSString *additionalAddressInformation;
 
 /**
 * The place of birth of the document owner.
@@ -143,34 +131,24 @@ MB_INIT_UNAVAILABLE
 @property (nonatomic, readonly) NSString *documentAdditionalNumber;
 
 /**
+* TThe additional personal identification number.
+*/
+@property (nonatomic, readonly) NSString *additionalPersonalIdNumber;
+
+/**
 * The issuing authority of the document.
 */
 @property (nonatomic, readonly) NSString *issuingAuthority;
 
 /**
-* The street address portion of the document owner.
-*/
-@property (nonatomic, readonly) NSString *street;
-
-/**
-* The postal code address portion of the document owner.
-*/
-@property (nonatomic, readonly) NSString *postalCode;
-
-/**
-* The city address portion of the document owner.
-*/
-@property (nonatomic, readonly) NSString *city;
-
-/**
-* The jurisdiction code address portion of the document owner.
-*/
-@property (nonatomic, readonly) NSString *jurisdiction;
-
-/**
  * The driver license detailed info.
  */
 @property (nonatomic, readonly, nullable) MBDriverLicenseDetailedInfo *driverLicenseDetailedInfo;
+
+/**
+* The driver license conditions.
+*/
+@property (nonatomic, readonly) NSString *conditions;
 
 /**
  * Flag that indicates if barcode result is empty
