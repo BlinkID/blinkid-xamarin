@@ -19,11 +19,6 @@
     public interface IIdBarcodeRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// THe additional address information of the document owner. 
-        /// </summary>
-        string AdditionalAddressInformation { get; }
-        
-        /// <summary>
         /// The additional name information of the document owner. 
         /// </summary>
         string AdditionalNameInformation { get; }
@@ -46,6 +41,11 @@
         ///  @return Type of the barcode 
         /// </summary>
         BarcodeType BarcodeType { get; }
+        
+        /// <summary>
+        /// The city address portion of the document owner. 
+        /// </summary>
+        string City { get; }
         
         /// <summary>
         /// The date of birth of the document owner. 
@@ -90,6 +90,17 @@
         string Endorsements { get; }
         
         /// <summary>
+        /// Checks whether the document has expired or not by comparing the current
+        /// time on the device with the date of expiry.
+        /// 
+        /// @return true if the document has expired, false in following cases:
+        /// document does not expire (date of expiry is permanent)
+        /// date of expiry has passed
+        /// date of expiry is unknown and it is not permanent 
+        /// </summary>
+        bool Expired { get; }
+        
+        /// <summary>
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
@@ -103,6 +114,11 @@
         /// The issuing authority of the document. 
         /// </summary>
         string IssuingAuthority { get; }
+        
+        /// <summary>
+        /// The jurisdiction code address portion of the document owner. 
+        /// </summary>
+        string Jurisdiction { get; }
         
         /// <summary>
         /// The last name of the document owner. 
@@ -128,6 +144,11 @@
         /// The place of birth of the document owner. 
         /// </summary>
         string PlaceOfBirth { get; }
+        
+        /// <summary>
+        /// The postal code address portion of the document owner. 
+        /// </summary>
+        string PostalCode { get; }
         
         /// <summary>
         /// The profession of the document owner. 
@@ -163,6 +184,11 @@
         /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// The street address portion of the document owner. 
+        /// </summary>
+        string Street { get; }
         
         /// <summary>
         /// Retrieves string content of scanned data 

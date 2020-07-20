@@ -498,6 +498,9 @@ namespace Microblink.Forms.Core.Recognizers
         Brazil,
         Norway,
         Oman,
+        Ecuador,
+        ElSalvador,
+        SriLanka,
     }
 
     /// <summary>
@@ -605,6 +608,28 @@ namespace Microblink.Forms.Core.Recognizers
         MilitaryId,
         MyKas,
         SocialSecurityCard,
+        HealthInsuranceCard,
+    }
+
+    /// <summary>
+    /// Defines possible color and moire statuses determined from scanned image.
+    /// </summary>
+    public interface IImageAnalysisResult
+    {
+        /// <summary>
+        /// Whether the image is blurred.
+        /// </summary>
+        bool Blurred { get; }
+
+        /// <summary>
+        /// The color status determined from scanned image.
+        /// </summary>
+        DocumentImageColorStatus DocumentImageColorStatus { get; }
+
+        /// <summary>
+        /// The Moire pattern detection status determined from the scanned image.
+        /// </summary>
+        DocumentImageMoireStatus DocumentImageMoireStatus { get; }
     }
 
     /// <summary>
@@ -635,6 +660,372 @@ namespace Microblink.Forms.Core.Recognizers
 
         // Moire pattern detected on input image.
         Detected
+    }
+
+    /// <summary>
+    /// AnonymizationMode is used to define level of anonymization performed on recognizer result.
+    /// </summary>
+    public enum AnonymizationMode
+    {
+        // Anonymization will not be performed.
+        None,
+
+        // ImageOnly is anonymized with black boxes covering sensitive data.
+        ImageOnly,
+
+        // Result fields containing sensitive data are removed from result.
+        ResultFieldsOnly,
+
+        // This mode is combination of ImageOnly and ResultFieldsOnly modes.
+        FullResult
+    }
+
+    /// <summary>
+    /// Defines the data extracted from the barcode.
+    /// </summary>
+    public interface IBarcodeResult
+    {
+        /// <summary>
+        /// Type of the barcode scanned
+        /// 
+        ///  @return Type of the barcode 
+        /// </summary>
+        BarcodeType BarcodeType { get; }
+        
+        /// <summary>
+        /// Byte array with result of the scan 
+        /// </summary>
+        byte[] RawData { get; }
+        
+        /// <summary>
+        /// Retrieves string content of scanned data 
+        /// </summary>
+        string StringData { get; }
+        
+        /// <summary>
+        /// Flag indicating uncertain scanning data
+        /// E.g obtained from damaged barcode. 
+        /// </summary>
+        bool Uncertain { get; }
+        
+        /// <summary>
+        /// Gets the first name of the document owner.
+        /// </summary>
+        /// <value>The first name of the document owner.</value>
+        string FirstName { get; }
+
+        /// <summary>
+        /// Gets the last name of the document owner.
+        /// </summary>
+        /// <value>The last name of the document owner.</value>
+        string LastName { get; }
+
+        /// <summary>
+        /// Gets the full name of the document owner.
+        /// </summary>
+        /// <value>The full name.</value>
+        string FullName { get; }
+
+        /// <summary>
+        /// Gets the additional name information of the document owner.
+        /// </summary>
+        /// <value>The additional name information of the document owner..</value>
+        string AdditionalNameInformation { get; }
+
+        /// <summary>
+        /// Gets the address of the document owner.
+        /// </summary>
+        /// <value>The document code.</value>
+        string Address { get; }
+
+        /// <summary>
+        /// Gets the place of birth of the document owner.
+        /// </summary>
+        /// <value>The place of birth of the document owner.</value>
+        string PlaceOfBirth { get; }
+
+        /// <summary>
+        /// Gets the nationality of the documet owner.
+        /// </summary>
+        /// <value>The nationality of the documet owner.</value>
+        string Nationality { get; }
+
+        /// <summary>
+        /// Gets the race of the document owner.
+        /// </summary>
+        /// <value>The race of the document owner.</value>
+        string Race { get; }
+
+        /// <summary>
+        /// Gets the religion of the document owner.
+        /// </summary>
+        /// <value>The religion of the document owner.</value>
+        string Religion { get; }
+
+        /// <summary>
+        /// Gets the profession of the document owner.
+        /// </summary>
+        /// <value>The profession of the document owner.</value>
+        string Profession { get; }
+
+        /// <summary>
+        /// Gets the marital status of the document owner.
+        /// </summary>
+        /// <value>The marital status of the document owner.</value>
+        string MaritalStatus { get; }
+
+        /// <summary>
+        /// Gets the residential stauts of the document owner.
+        /// </summary>
+        /// <value>The residential stauts of the document owner.</value>
+        string ResidentialStatus { get; }
+
+        /// <summary>
+        /// Gets the employer of the document owner.
+        /// </summary>
+        /// <value>The employer of the document owner.</value>
+        string Employer { get; }
+
+        /// <summary>
+        /// Gets the sex of the document owner.
+        /// </summary>
+        /// <value>The sex of the document owner.</value>
+        string Sex { get; }
+
+        /// <summary>
+        /// The date of birth of the document owner.
+        /// </summary>
+        /// <value>The date of birth of the document owner.</value>
+        IDate DateOfBirth { get; }
+
+        /// <summary>
+        /// The date of issue of the document.
+        /// </summary>
+        /// <value>The date of issue of the document.</value>
+        IDate DateOfIssue { get; }
+
+        /// <summary>
+        /// The date of expiry of the document.
+        /// </summary>
+        /// <value>The date of expiry of the document.</value>
+        IDate DateOfExpiry { get; }
+
+        /// <summary>
+        /// The document number.
+        /// </summary>
+        /// <value>The document number.</value>
+        string DocumentNumber { get; }
+
+        /// <summary>
+        /// The personal identification number.
+        /// </summary>
+        /// <value>The personal identification number.</value>
+        string PersonalIdNumber { get; }
+
+        /// <summary>
+        /// The additional number of the document.
+        /// </summary>
+        /// <value>The additional number of the document.</value>
+        string DocumentAdditionalNumber { get; }
+
+        /// <summary>
+        /// The issuing authority of the document.
+        /// </summary>The issuing authority of the document.</value>
+        string IssuingAuthority { get ; }
+
+        /// <summary>
+        /// The street address portion of the document owner.
+        /// </summary>The street address portion of the document owner.</value>
+        string Street { get ; }
+
+        /// <summary>
+        /// The postal code address portion of the document owner.
+        /// </summary>The postal code address portion of the document owner.</value>
+        string PostalCode { get ; }
+
+        /// <summary>
+        /// The city address portion of the document owner.
+        /// </summary>The city address portion of the document owner.</value>
+        string City { get ; }
+
+        /// <summary>
+        /// The jurisdiction code address portion of the document owner.
+        /// </summary>The jurisdiction code address portion of the document owner.</value>
+        string Jurisdiction { get ; }
+
+        /// <summary>
+        /// The driver license detailed info.
+        /// </summary>The driver license detailed info.</value>
+        IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get ; }
+
+        /// <summary>
+        /// Flag that indicates if barcode result is empty
+        /// </summary>Flag that indicates if barcode result is empty</value>
+        bool Empty { get ; }
+    }
+
+    /// <summary>
+    /// Defines the data extracted from the visual inspection zone
+    /// </summary>
+    public interface IVizResult
+    {
+        /// <summary>
+        /// Gets the first name of the document owner.
+        /// </summary>
+        /// <value>The first name of the document owner.</value>
+        string FirstName { get; }
+
+        /// <summary>
+        /// Gets the last name of the document owner.
+        /// </summary>
+        /// <value>The last name of the document owner.</value>
+        string LastName { get; }
+
+        /// <summary>
+        /// Gets the full name of the document owner.
+        /// </summary>
+        /// <value>The full name.</value>
+        string FullName { get; }
+
+        /// <summary>
+        /// Gets the additional name information of the document owner.
+        /// </summary>
+        /// <value>The additional name information of the document owner..</value>
+        string AdditionalNameInformation { get; }
+
+        /// <summary>
+        /// Gets the localized name of the document owner.
+        /// </summary>
+        /// <value>The localized name of the document owner.</value>
+        string LocalizedName { get; }
+
+        /// <summary>
+        /// Gets the address of the document owner.
+        /// </summary>
+        /// <value>The document code.</value>
+        string Address { get; }
+
+        /// <summary>
+        /// Gets the additional address information of the document owner.
+        /// </summary>
+        /// <value>The additional address information of the document owner.</value>
+        string AdditionalAddressInformation { get; }
+
+        /// <summary>
+        /// Gets the place of birth of the document owner.
+        /// </summary>
+        /// <value>The place of birth of the document owner.</value>
+        string PlaceOfBirth { get; }
+
+        /// <summary>
+        /// Gets the nationality of the documet owner.
+        /// </summary>
+        /// <value>The nationality of the documet owner.</value>
+        string Nationality { get; }
+
+        /// <summary>
+        /// Gets the race of the document owner.
+        /// </summary>
+        /// <value>The race of the document owner.</value>
+        string Race { get; }
+
+        /// <summary>
+        /// Gets the religion of the document owner.
+        /// </summary>
+        /// <value>The religion of the document owner.</value>
+        string Religion { get; }
+
+        /// <summary>
+        /// Gets the profession of the document owner.
+        /// </summary>
+        /// <value>The profession of the document owner.</value>
+        string Profession { get; }
+
+        /// <summary>
+        /// Gets the marital status of the document owner.
+        /// </summary>
+        /// <value>The marital status of the document owner.</value>
+        string MaritalStatus { get; }
+
+        /// <summary>
+        /// Gets the residential stauts of the document owner.
+        /// </summary>
+        /// <value>The residential stauts of the document owner.</value>
+        string ResidentialStatus { get; }
+
+        /// <summary>
+        /// Gets the employer of the document owner.
+        /// </summary>
+        /// <value>The employer of the document owner.</value>
+        string Employer { get; }
+
+        /// <summary>
+        /// Gets the sex of the document owner.
+        /// </summary>
+        /// <value>The sex of the document owner.</value>
+        string Sex { get; }
+
+        /// <summary>
+        /// The date of birth of the document owner.
+        /// </summary>
+        /// <value>The date of birth of the document owner.</value>
+        IDate DateOfBirth { get; }
+
+        /// <summary>
+        /// The date of issue of the document.
+        /// </summary>
+        /// <value>The date of issue of the document.</value>
+        IDate DateOfIssue { get; }
+
+        /// <summary>
+        /// The date of expiry of the document.
+        /// </summary>
+        /// <value>The date of expiry of the document.</value>
+        IDate DateOfExpiry { get; }
+
+        /// <summary>
+        /// The document number.
+        /// </summary>
+        /// <value>The document number.</value>
+        string DocumentNumber { get; }
+
+        /// <summary>
+        /// The personal identification number.
+        /// </summary>
+        /// <value>The personal identification number.</value>
+        string PersonalIdNumber { get; }
+
+        /// <summary>
+        /// The additional number of the document.
+        /// </summary>
+        /// <value>The additional number of the document.</value>
+        string DocumentAdditionalNumber { get; }
+
+        /// <summary>
+        /// The additional personal identification number.
+        /// </summary>
+        /// <value>The additional personal identification number.</value>
+        string AdditionalPersonalIdNumber { get; }
+
+        /// <summary>
+        /// The issuing authority of the document.
+        /// </summary>The issuing authority of the document.</value>
+        string IssuingAuthority { get ; }
+
+        /// <summary>
+        /// The driver license detailed info.
+        /// </summary>The driver license detailed info.</value>
+        IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get ; }
+
+        /// <summary>
+        /// The driver license conditions.
+        /// </summary>The driver license conditions.</value>
+        string Conditions { get ; }
+
+        /// <summary>
+        /// Flag that indicates if barcode result is empty
+        /// </summary>Flag that indicates if barcode result is empty</value>
+        bool Empty { get ; }
     }
 
 }

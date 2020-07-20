@@ -5,7 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
-    <PackageReference Include="BlinkID.Forms" Version="5.5.0" />
+    <PackageReference Include="BlinkID.Forms" Version="5.6.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />

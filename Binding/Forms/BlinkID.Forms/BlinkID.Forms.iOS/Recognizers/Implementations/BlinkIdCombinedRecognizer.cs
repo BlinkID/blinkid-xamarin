@@ -39,10 +39,10 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
         
-        public bool AnonymizeImage 
+        public AnonymizationMode AnonymizationMode 
         { 
-            get => nativeRecognizer.AnonymizeImage; 
-            set => nativeRecognizer.AnonymizeImage = value;
+            get => (AnonymizationMode)nativeRecognizer.AnonymizationMode; 
+            set => nativeRecognizer.AnonymizationMode = (MBAnonymizationMode)value;
         }
         
         public uint FaceImageDpi 
@@ -113,6 +113,9 @@ namespace Microblink.Forms.iOS.Recognizers
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public IImageAnalysisResult BackImageAnalysisResult => new ImageAnalysisResult(nativeResult.BackImageAnalysisResult);
+        public IVizResult BackVizResult => new VizResult(nativeResult.BackVizResult);
+        public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => new ClassInfo(nativeResult.ClassInfo);
         public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
@@ -122,16 +125,15 @@ namespace Microblink.Forms.iOS.Recognizers
         public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
         public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
-        public DocumentImageColorStatus DocumentBackImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentBackImageColorStatus;
-        public DocumentImageMoireStatus DocumentBackImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentBackImageMoireStatus;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
-        public DocumentImageColorStatus DocumentFrontImageColorStatus => (DocumentImageColorStatus)nativeResult.DocumentFrontImageColorStatus;
-        public DocumentImageMoireStatus DocumentFrontImageMoireStatus => (DocumentImageMoireStatus)nativeResult.DocumentFrontImageMoireStatus;
         public string DocumentNumber => nativeResult.DocumentNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
+        public bool Expired => nativeResult.Expired;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FirstName => nativeResult.FirstName;
+        public IImageAnalysisResult FrontImageAnalysisResult => new ImageAnalysisResult(nativeResult.FrontImageAnalysisResult);
+        public IVizResult FrontVizResult => new VizResult(nativeResult.FrontVizResult);
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentFrontImage.Image) : null;
         public string FullName => nativeResult.FullName;

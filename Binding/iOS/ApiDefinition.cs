@@ -1374,6 +1374,16 @@ namespace Microblink
         int Age { get; set; }
     }
 
+    // @protocol MBDocumentExpirationCheckResult
+	[Protocol]
+	interface IMBDocumentExpirationCheckResult
+	{
+		// @required -(BOOL)isExpired;
+		[Abstract]
+		[Export ("isExpired")]
+		bool Expired { get; }
+	}
+
    // @interface MBMrzResult : NSObject
 	[iOS (8,0)]
 	[BaseType (typeof(NSObject))]
@@ -1718,11 +1728,276 @@ namespace Microblink
         string VehicleClass { get; }
     }
 
+    // @interface MBImageAnalysisResult : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBImageAnalysisResult
+	{
+		// @property (readonly, assign, nonatomic) BOOL blurred;
+		[Export ("blurred")]
+		bool Blurred { get; }
+
+		// @property (readonly, assign, nonatomic) MBDocumentImageColorStatus documentImageColorStatus;
+		[Export ("documentImageColorStatus", ArgumentSemantic.Assign)]
+		MBDocumentImageColorStatus DocumentImageColorStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBDocumentImageMoireStatus documentImageMoireStatus;
+		[Export ("documentImageMoireStatus", ArgumentSemantic.Assign)]
+		MBDocumentImageMoireStatus DocumentImageMoireStatus { get; }
+	}
+
+    // @interface MBBarcodeResult : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBBarcodeResult
+	{
+		// @property (readonly, nonatomic, strong) NSData * _Nullable rawData;
+		[NullAllowed, Export ("rawData", ArgumentSemantic.Strong)]
+		NSData RawData { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nullable stringData;
+		[NullAllowed, Export ("stringData", ArgumentSemantic.Strong)]
+		string StringData { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL uncertain;
+		[Export ("uncertain")]
+		bool Uncertain { get; }
+
+		// @property (readonly, assign, nonatomic) MBBarcodeType barcodeType;
+		[Export ("barcodeType", ArgumentSemantic.Assign)]
+		MBBarcodeType BarcodeType { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull firstName;
+		[Export ("firstName")]
+		string FirstName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull lastName;
+		[Export ("lastName")]
+		string LastName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull fullName;
+		[Export ("fullName")]
+		string FullName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
+		[Export ("additionalNameInformation")]
+		string AdditionalNameInformation { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull address;
+		[Export ("address")]
+		string Address { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
+		[Export ("placeOfBirth")]
+		string PlaceOfBirth { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull nationality;
+		[Export ("nationality")]
+		string Nationality { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull race;
+		[Export ("race")]
+		string Race { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull religion;
+		[Export ("religion")]
+		string Religion { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull profession;
+		[Export ("profession")]
+		string Profession { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull maritalStatus;
+		[Export ("maritalStatus")]
+		string MaritalStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull residentialStatus;
+		[Export ("residentialStatus")]
+		string ResidentialStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull employer;
+		[Export ("employer")]
+		string Employer { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull sex;
+		[Export ("sex")]
+		string Sex { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
+		[Export ("dateOfBirth")]
+		MBDateResult DateOfBirth { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfIssue;
+		[Export ("dateOfIssue")]
+		MBDateResult DateOfIssue { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfExpiry;
+		[Export ("dateOfExpiry")]
+		MBDateResult DateOfExpiry { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
+		[Export ("documentNumber")]
+		string DocumentNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull personalIdNumber;
+		[Export ("personalIdNumber")]
+		string PersonalIdNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull documentAdditionalNumber;
+		[Export ("documentAdditionalNumber")]
+		string DocumentAdditionalNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull issuingAuthority;
+		[Export ("issuingAuthority")]
+		string IssuingAuthority { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull street;
+		[Export ("street")]
+		string Street { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull postalCode;
+		[Export ("postalCode")]
+		string PostalCode { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull city;
+		[Export ("city")]
+		string City { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull jurisdiction;
+		[Export ("jurisdiction")]
+		string Jurisdiction { get; }
+
+		// @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
+		[NullAllowed, Export ("driverLicenseDetailedInfo")]
+		MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL empty;
+		[Export ("empty")]
+		bool Empty { get; }
+	}
+
+	// @interface MBVizResult : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBVizResult
+	{
+		// @property (readonly, nonatomic) NSString * _Nonnull firstName;
+		[Export ("firstName")]
+		string FirstName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull lastName;
+		[Export ("lastName")]
+		string LastName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull fullName;
+		[Export ("fullName")]
+		string FullName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
+		[Export ("additionalNameInformation")]
+		string AdditionalNameInformation { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull localizedName;
+		[Export ("localizedName")]
+		string LocalizedName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull address;
+		[Export ("address")]
+		string Address { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull additionalAddressInformation;
+		[Export ("additionalAddressInformation")]
+		string AdditionalAddressInformation { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
+		[Export ("placeOfBirth")]
+		string PlaceOfBirth { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull nationality;
+		[Export ("nationality")]
+		string Nationality { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull race;
+		[Export ("race")]
+		string Race { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull religion;
+		[Export ("religion")]
+		string Religion { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull profession;
+		[Export ("profession")]
+		string Profession { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull maritalStatus;
+		[Export ("maritalStatus")]
+		string MaritalStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull residentialStatus;
+		[Export ("residentialStatus")]
+		string ResidentialStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull employer;
+		[Export ("employer")]
+		string Employer { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull sex;
+		[Export ("sex")]
+		string Sex { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfBirth;
+		[Export ("dateOfBirth")]
+		MBDateResult DateOfBirth { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfIssue;
+		[Export ("dateOfIssue")]
+		MBDateResult DateOfIssue { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull dateOfExpiry;
+		[Export ("dateOfExpiry")]
+		MBDateResult DateOfExpiry { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull documentNumber;
+		[Export ("documentNumber")]
+		string DocumentNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull personalIdNumber;
+		[Export ("personalIdNumber")]
+		string PersonalIdNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull documentAdditionalNumber;
+		[Export ("documentAdditionalNumber")]
+		string DocumentAdditionalNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull additionalPersonalIdNumber;
+		[Export ("additionalPersonalIdNumber")]
+		string AdditionalPersonalIdNumber { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull issuingAuthority;
+		[Export ("issuingAuthority")]
+		string IssuingAuthority { get; }
+
+		// @property (readonly, nonatomic) MBDriverLicenseDetailedInfo * _Nullable driverLicenseDetailedInfo;
+		[NullAllowed, Export ("driverLicenseDetailedInfo")]
+		MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull conditions;
+		[Export ("conditions")]
+		string Conditions { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL empty;
+		[Export ("empty")]
+		bool Empty { get; }
+	}
+
    // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, IMBAgeResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult
+	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -1832,17 +2107,21 @@ namespace Microblink
 		[NullAllowed, Export ("conditions")]
 		string Conditions { get; }
 
-        // @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
+		// @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
 		[NullAllowed, Export ("classInfo")]
 		MBClassInfo ClassInfo { get; }
 
-		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentImageColorStatus;
-		[Export ("documentImageColorStatus")]
-		MBDocumentImageColorStatus DocumentImageColorStatus { get; }
+		// @property (readonly, nonatomic) MBImageAnalysisResult * _Nullable imageAnalysisResult;
+		[NullAllowed, Export ("imageAnalysisResult")]
+		MBImageAnalysisResult ImageAnalysisResult { get; }
 
-        // @property (readonly, nonatomic) MBDocumentImageMoireStatus documentImageMoireStatus;
-		[Export ("documentImageMoireStatus")]
-		MBDocumentImageMoireStatus DocumentImageMoireStatus { get; }
+		// @property (readonly, nonatomic) MBBarcodeResult * _Nullable barcodeResult;
+		[NullAllowed, Export ("barcodeResult")]
+		MBBarcodeResult BarcodeResult { get; }
+
+		// @property (readonly, nonatomic) MBVizResult * _Nullable vizResult;
+		[NullAllowed, Export ("vizResult")]
+		MBVizResult VizResult { get; }
 	}
 
 
@@ -1879,9 +2158,9 @@ namespace Microblink
 		[Export ("validateResultCharacters")]
 		bool ValidateResultCharacters { get; set; }
 
-		// @property (assign, nonatomic) BOOL anonymizeImage;
-		[Export ("anonymizeImage")]
-		bool AnonymizeImage { get; set; }
+		// @property (assign, nonatomic) MBAnonymizationMode anonymizationMode;
+		[Export ("anonymizationMode", ArgumentSemantic.Assign)]
+		MBAnonymizationMode AnonymizationMode { get; set; }
 	}
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -1910,7 +2189,7 @@ namespace Microblink
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult
+	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -2020,25 +2299,29 @@ namespace Microblink
 		[NullAllowed, Export ("conditions")]
 		string Conditions { get; }
 
-        // @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
+		// @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
 		[NullAllowed, Export ("classInfo")]
 		MBClassInfo ClassInfo { get; }
 
-		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentFrontImageColorStatus;
-		[Export ("documentFrontImageColorStatus")]
-		MBDocumentImageColorStatus DocumentFrontImageColorStatus { get; }
+		// @property (readonly, nonatomic) MBImageAnalysisResult * _Nullable frontImageAnalysisResult;
+		[NullAllowed, Export ("frontImageAnalysisResult")]
+		MBImageAnalysisResult FrontImageAnalysisResult { get; }
 
-		// @property (readonly, nonatomic) MBDocumentImageColorStatus documentBackImageColorStatus;
-		[Export ("documentBackImageColorStatus")]
-		MBDocumentImageColorStatus DocumentBackImageColorStatus { get; }
+		// @property (readonly, nonatomic) MBImageAnalysisResult * _Nullable backImageAnalysisResult;
+		[NullAllowed, Export ("backImageAnalysisResult")]
+		MBImageAnalysisResult BackImageAnalysisResult { get; }
 
-        // @property (readonly, nonatomic) MBDocumentImageMoireStatus documentFrontImageMoireStatus;
-		[Export ("documentFrontImageMoireStatus")]
-		MBDocumentImageMoireStatus DocumentFrontImageMoireStatus { get; }
+		// @property (readonly, nonatomic) MBBarcodeResult * _Nullable barcodeResult;
+		[NullAllowed, Export ("barcodeResult")]
+		MBBarcodeResult BarcodeResult { get; }
 
-		// @property (readonly, nonatomic) MBDocumentImageMoireStatus documentBackImageMoireStatus;
-		[Export ("documentBackImageMoireStatus")]
-		MBDocumentImageMoireStatus DocumentBackImageMoireStatus { get; }
+		// @property (readonly, nonatomic) MBVizResult * _Nullable frontVizResult;
+		[NullAllowed, Export ("frontVizResult")]
+		MBVizResult FrontVizResult { get; }
+
+		// @property (readonly, nonatomic) MBVizResult * _Nullable backVizResult;
+		[NullAllowed, Export ("backVizResult")]
+		MBVizResult BackVizResult { get; }
 	}
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -2074,9 +2357,9 @@ namespace Microblink
 		[Export ("validateResultCharacters")]
 		bool ValidateResultCharacters { get; set; }
 
-		// @property (assign, nonatomic) BOOL anonymizeImage;
-		[Export ("anonymizeImage")]
-		bool AnonymizeImage { get; set; }
+		// @property (assign, nonatomic) MBAnonymizationMode anonymizationMode;
+		[Export ("anonymizationMode", ArgumentSemantic.Assign)]
+		MBAnonymizationMode AnonymizationMode { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
@@ -2105,12 +2388,8 @@ namespace Microblink
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBIdBarcodeRecognizerResult : INSCopying, IMBAgeResult
+	interface MBIdBarcodeRecognizerResult : INSCopying, IMBAgeResult, IMBDocumentExpirationCheckResult
 	{
-		// @property (readonly, nonatomic) NSString * _Nonnull additionalAddressInformation;
-		[Export ("additionalAddressInformation")]
-		string AdditionalAddressInformation { get; }
-
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
 		[Export ("additionalNameInformation")]
 		string AdditionalNameInformation { get; }
@@ -2215,7 +2494,7 @@ namespace Microblink
 		[Export ("documentType", ArgumentSemantic.Assign)]
 		MBIdBarcodeDocumentType DocumentType { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nonnull restrictions;
+		// @property (readonly, nonatomic) NSString * _Nonnull restrictions;
 		[Export ("restrictions")]
 		string Restrictions { get; }
 
@@ -2226,6 +2505,22 @@ namespace Microblink
 		// @property (readonly, nonatomic) NSString * _Nonnull vehicleClass;
 		[Export ("vehicleClass")]
 		string VehicleClass { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull street;
+		[Export ("street")]
+		string Street { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull postalCode;
+		[Export ("postalCode")]
+		string PostalCode { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull city;
+		[Export ("city")]
+		string City { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull jurisdiction;
+		[Export ("jurisdiction")]
+		string Jurisdiction { get; }
 	}
 
 	// @interface MBIdBarcodeRecognizer : MBRecognizer <NSCopying>
@@ -2543,6 +2838,10 @@ namespace Microblink
         [Export ("allowNullQuietZone")]
         bool AllowNullQuietZone { get; set; }
 
+        // @property (assign, nonatomic) BOOL enableCompactParser;
+		[Export ("enableCompactParser")]
+		bool EnableCompactParser { get; set; }
+
         // @property (assign, nonatomic) MBDocumentFaceDetectorType type;
         [Export ("type", ArgumentSemantic.Assign)]
         MBDocumentFaceDetectorType Type { get; set; }
@@ -2606,6 +2905,22 @@ namespace Microblink
         [NullAllowed, Export ("vehicleClass")]
         string VehicleClass { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable street;
+		[NullAllowed, Export ("street")]
+		string Street { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable postalCode;
+		[NullAllowed, Export ("postalCode")]
+		string PostalCode { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable city;
+		[NullAllowed, Export ("city")]
+		string City { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable jurisdiction;
+		[NullAllowed, Export ("jurisdiction")]
+		string Jurisdiction { get; }
+
         // -(NSData * _Nullable)data;
         [NullAllowed, Export ("data")]
         NSData Data { get; }
@@ -2640,6 +2955,10 @@ namespace Microblink
         // @property (assign, nonatomic) BOOL allowNullQuietZone;
         [Export ("allowNullQuietZone")]
         bool AllowNullQuietZone { get; set; }
+
+        // @property (assign, nonatomic) BOOL enableCompactParser;
+		[Export ("enableCompactParser")]
+		bool EnableCompactParser { get; set; }
     }
 
 

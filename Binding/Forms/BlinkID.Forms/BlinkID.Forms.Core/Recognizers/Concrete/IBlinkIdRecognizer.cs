@@ -35,14 +35,14 @@
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether sensitive data should be anonymized in full document image result.
+        /// Defines whether sensitive data should be removed from images, result fields or both.
         /// The setting only applies to certain documents
         /// 
         ///  
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to 'MBAnonymizationModeFullResult'
         /// </summary>
-        bool AnonymizeImage { get; set; }
+        AnonymizationMode AnonymizationMode { get; set; }
         
         /// <summary>
         /// Property for setting DPI for face images
@@ -148,6 +148,11 @@
         int Age { get; }
         
         /// <summary>
+        /// Defines the data extracted from the barcode. 
+        /// </summary>
+        IBarcodeResult BarcodeResult { get; }
+        
+        /// <summary>
         /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
@@ -183,16 +188,6 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// Defines possible color statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageColorStatus DocumentImageColorStatus { get; }
-        
-        /// <summary>
-        /// Defines possible moire statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageMoireStatus DocumentImageMoireStatus { get; }
-        
-        /// <summary>
         /// The document number. 
         /// </summary>
         string DocumentNumber { get; }
@@ -206,6 +201,17 @@
         /// The employer of the document owner. 
         /// </summary>
         string Employer { get; }
+        
+        /// <summary>
+        /// Checks whether the document has expired or not by comparing the current
+        /// time on the device with the date of expiry.
+        /// 
+        /// @return true if the document has expired, false in following cases:
+        /// document does not expire (date of expiry is permanent)
+        /// date of expiry has passed
+        /// date of expiry is unknown and it is not permanent 
+        /// </summary>
+        bool Expired { get; }
         
         /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
@@ -226,6 +232,11 @@
         /// The full name of the document owner. 
         /// </summary>
         string FullName { get; }
+        
+        /// <summary>
+        /// Defines possible color and moire statuses determined from scanned image. 
+        /// </summary>
+        IImageAnalysisResult ImageAnalysisResult { get; }
         
         /// <summary>
         /// The issuing authority of the document. 
@@ -291,6 +302,11 @@
         /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// Defines the data extracted from the visual inspection zone 
+        /// </summary>
+        IVizResult VizResult { get; }
         
     }
 }

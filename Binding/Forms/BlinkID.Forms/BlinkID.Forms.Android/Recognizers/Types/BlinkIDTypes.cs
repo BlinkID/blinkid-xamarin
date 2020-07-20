@@ -122,4 +122,157 @@ namespace Microblink.Forms.Droid.Recognizers
         public Type Type => (Type)nativeClassInfo.Type.Ordinal();
 
     }
+
+    public sealed class ImageAnalysisResult : IImageAnalysisResult
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Generic.Imageanalysis.ImageAnalysisResult nativeImageAnalysisResult;
+
+        public ImageAnalysisResult(Com.Microblink.Entities.Recognizers.Blinkid.Generic.Imageanalysis.ImageAnalysisResult nativeImageAnalysisResult)
+        {
+            this.nativeImageAnalysisResult = nativeImageAnalysisResult;
+        }
+
+        public bool Blurred => nativeImageAnalysisResult.IsBlurred;
+
+        public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeImageAnalysisResult.DocumentImageColorStatus.Ordinal();
+
+        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeImageAnalysisResult.DocumentImageMoireStatus.Ordinal();
+    }
+
+    public sealed class BarcodeResult : IBarcodeResult
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Generic.Barcode.BarcodeResult nativeBarcodeResult;
+
+        public BarcodeResult(Com.Microblink.Entities.Recognizers.Blinkid.Generic.Barcode.BarcodeResult nativeBarcodeResult)
+        {
+            this.nativeBarcodeResult = nativeBarcodeResult;
+        }
+
+        public BarcodeType BarcodeType => (BarcodeType)nativeBarcodeResult.BarcodeType.Ordinal();
+
+        public byte[] RawData => nativeBarcodeResult.GetRawData() ;
+
+        public string StringData => nativeBarcodeResult.StringData;
+
+        public bool Uncertain => nativeBarcodeResult.IsUncertain;
+
+        public string FirstName => nativeBarcodeResult.FirstName;
+
+        public string LastName => nativeBarcodeResult.LastName;
+
+        public string FullName => nativeBarcodeResult.FullName;
+
+        public string AdditionalNameInformation => nativeBarcodeResult.AdditionalNameInformation;
+
+        public string Address => nativeBarcodeResult.Address;
+
+        public string PlaceOfBirth => nativeBarcodeResult.PlaceOfBirth;
+
+        public string Nationality => nativeBarcodeResult.Nationality;
+
+        public string Race => nativeBarcodeResult.Race;
+
+        public string Religion => nativeBarcodeResult.Religion;
+
+        public string Profession => nativeBarcodeResult.Profession;
+
+        public string MaritalStatus => nativeBarcodeResult.MaritalStatus;
+
+        public string ResidentialStatus => nativeBarcodeResult.ResidentialStatus;
+
+        public string Employer => nativeBarcodeResult.Employer;
+
+        public string Sex => nativeBarcodeResult.Sex;
+
+        public IDate DateOfBirth => nativeBarcodeResult.DateOfBirth.Date != null ? new Date(nativeBarcodeResult.DateOfBirth.Date) : null;
+
+        public IDate DateOfIssue => nativeBarcodeResult.DateOfIssue.Date != null ? new Date(nativeBarcodeResult.DateOfIssue.Date) : null;
+
+        public IDate DateOfExpiry => nativeBarcodeResult.DateOfExpiry.Date != null ? new Date(nativeBarcodeResult.DateOfExpiry.Date) : null;
+
+        public string DocumentNumber => nativeBarcodeResult.DocumentNumber;
+
+        public string PersonalIdNumber => nativeBarcodeResult.PersonalIdNumber;
+
+        public string DocumentAdditionalNumber => nativeBarcodeResult.DocumentAdditionalNumber;
+
+        public string IssuingAuthority => nativeBarcodeResult.IssuingAuthority;
+
+        public string Street => nativeBarcodeResult.Street;
+
+        public string PostalCode => nativeBarcodeResult.PostalCode;
+
+        public string City => nativeBarcodeResult.City;
+
+        public string Jurisdiction => nativeBarcodeResult.Jurisdiction;
+
+        public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeBarcodeResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeBarcodeResult.DriverLicenseDetailedInfo) : null;
+
+        public bool Empty => nativeBarcodeResult.IsEmpty;
+    }
+
+    public sealed class VizResult : IVizResult
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Generic.Viz.VizResult nativeVizResult;
+
+        public VizResult(Com.Microblink.Entities.Recognizers.Blinkid.Generic.Viz.VizResult nativeVizResult)
+        {
+            this.nativeVizResult = nativeVizResult;
+        }
+
+        public string FirstName => nativeVizResult.FirstName;
+
+        public string LastName => nativeVizResult.LastName;
+
+        public string FullName => nativeVizResult.FullName;
+
+        public string AdditionalNameInformation => nativeVizResult.AdditionalNameInformation;
+
+        public string LocalizedName => nativeVizResult.LocalizedName;
+
+        public string Address => nativeVizResult.Address;
+
+        public string AdditionalAddressInformation => nativeVizResult.AdditionalAddressInformation;
+
+        public string PlaceOfBirth => nativeVizResult.PlaceOfBirth;
+
+        public string Nationality => nativeVizResult.Nationality;
+
+        public string Race => nativeVizResult.Race;
+
+        public string Religion => nativeVizResult.Religion;
+
+        public string Profession => nativeVizResult.Profession;
+
+        public string MaritalStatus => nativeVizResult.MaritalStatus;
+
+        public string ResidentialStatus => nativeVizResult.ResidentialStatus;
+
+        public string Employer => nativeVizResult.Employer;
+
+        public string Sex => nativeVizResult.Sex;
+
+        public IDate DateOfBirth => nativeVizResult.DateOfBirth.Date != null ? new Date(nativeVizResult.DateOfBirth.Date) : null;
+
+        public IDate DateOfIssue => nativeVizResult.DateOfIssue.Date != null ? new Date(nativeVizResult.DateOfIssue.Date) : null;
+
+        public IDate DateOfExpiry => nativeVizResult.DateOfExpiry.Date != null ? new Date(nativeVizResult.DateOfExpiry.Date) : null;
+
+        public string DocumentNumber => nativeVizResult.DocumentNumber;
+
+        public string PersonalIdNumber => nativeVizResult.PersonalIdNumber;
+
+        public string DocumentAdditionalNumber => nativeVizResult.DocumentAdditionalNumber;
+
+        public string AdditionalPersonalIdNumber => nativeVizResult.AdditionalPersonalIdNumber;
+
+        public string IssuingAuthority => nativeVizResult.IssuingAuthority;
+
+        public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeVizResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeVizResult.DriverLicenseDetailedInfo) : null;
+
+        public string Conditions => nativeVizResult.Conditions;
+
+        public bool Empty => nativeVizResult.IsEmpty;
+    }
+
 }

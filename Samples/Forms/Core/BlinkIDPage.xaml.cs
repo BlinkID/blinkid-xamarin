@@ -47,7 +47,7 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.xamarin.blinkid
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAxuT68395gDk/7Mq5ytCEf87GUT5gvFVnl5eDcHI1VR1xoNH95JN7slq28uRvhyNoeePDhR1Li8I7nEuzRZX5xV4Hhzi+sSK8vT/cZ+oRzQawRI8PxHNNKxfAd0YKlhxRgr0C4ZtTmSf1AoCCT52TnPZOb70oFkY8EQrRJgNjNCwzv2Rppeh0kaFf6LjTDhHjG+eMw7pPn+55uP3BUaaGWsns3k71elZvoHQPONNuULKzObDCh4cbXLIfpcK6";
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwAT48xKHWuWvt1WuSNXEeJhgq+O+erX0YbBRPn5xYU7BAdiHkVmn5ZC3GQqGDSD/mdcPRhPHmB4c1mHpeRwnppoHN3/qfsigqt0iqk3PJW0y0W9zhC5y3sfmnGusBxVKxQhhjLz9c1eyceCcoVV7Nq1ewAbtwSW5BL2N9VV824gQU6FmB0rJjZDSujM1SvZDwZruwms8T2vRnt1iUqDzU3NJaubpRHnveLbxJhsOgE+i7jZRCn5Wg8btkXtO";
             }
             else
             {

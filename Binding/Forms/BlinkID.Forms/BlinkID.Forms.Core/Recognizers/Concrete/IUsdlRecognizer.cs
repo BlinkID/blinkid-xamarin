@@ -26,6 +26,13 @@
         bool NullQuietZoneAllowed { get; set; }
 
         /// <summary>
+        /// Enables parsing of compact barcode encoding format.
+        /// By default, this is set to <c>false</c>
+        /// </summary>
+        /// <value><c>true</c> if parsing is allowed; otherwise, <c>false</c>.</value>
+        bool EnableCompactParser { get; set; }
+
+        /// <summary>
         /// Gets the result.
         /// </summary>
         /// <value>The result.</value>
@@ -141,5 +148,25 @@
         /// The current age of the document owner in years
         /// </summary>The current age of the document owner in years.</value>
         int Age { get ; }
+
+        /// <summary>
+        /// The street address portion of the United States driver license owner.
+        /// </summary>
+        string Street { get; }
+
+        /// <summary>
+        /// The postal code address portion of the United States driver license owner.
+        /// </summary>
+        string PostalCode { get; }
+
+        /// <summary>
+        /// The city address portion of the United States driver license owner.
+        /// </summary>
+        string City { get; }
+
+        /// <summary>
+        /// The jurisdiction code address portion of the United States driver license owner.
+        /// </summary>
+        string Jurisdiction { get; }
     }
 }

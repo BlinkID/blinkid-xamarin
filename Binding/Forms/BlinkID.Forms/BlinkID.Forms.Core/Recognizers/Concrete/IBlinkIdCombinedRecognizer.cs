@@ -35,14 +35,14 @@
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether sensitive data should be anonymized in full document image result.
+        /// Defines whether sensitive data should be removed from images, result fields or both.
         /// The setting only applies to certain documents
         /// 
         ///  
         ///
-        /// By default, this is set to 'true'
+        /// By default, this is set to 'MBAnonymizationModeFullResult'
         /// </summary>
-        bool AnonymizeImage { get; set; }
+        AnonymizationMode AnonymizationMode { get; set; }
         
         /// <summary>
         /// Property for setting DPI for face images
@@ -166,6 +166,21 @@
         int Age { get; }
         
         /// <summary>
+        /// Defines possible color and moire statuses determined from scanned back image. 
+        /// </summary>
+        IImageAnalysisResult BackImageAnalysisResult { get; }
+        
+        /// <summary>
+        /// Defines the data extracted from the back side visual inspection zone. 
+        /// </summary>
+        IVizResult BackVizResult { get; }
+        
+        /// <summary>
+        /// Defines the data extracted from the barcode. 
+        /// </summary>
+        IBarcodeResult BarcodeResult { get; }
+        
+        /// <summary>
         /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
@@ -211,32 +226,12 @@
         string DocumentAdditionalNumber { get; }
         
         /// <summary>
-        /// Defines possible color statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageColorStatus DocumentBackImageColorStatus { get; }
-        
-        /// <summary>
-        /// Defines possible moire statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageMoireStatus DocumentBackImageMoireStatus { get; }
-        
-        /// <summary>
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,
         /// DataMatchResultFailed otherwise. For example if date of expiry is scanned from the front and back side
         /// of the document and values do not match, this method will return DataMatchResultFailed. Result will
         /// be DataMatchResultSuccess only if scanned values for all fields that are compared are the same. 
         /// </summary>
         DataMatchResult DocumentDataMatch { get; }
-        
-        /// <summary>
-        /// Defines possible color statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageColorStatus DocumentFrontImageColorStatus { get; }
-        
-        /// <summary>
-        /// Defines possible moire statuses determined from scanned image. 
-        /// </summary>
-        DocumentImageMoireStatus DocumentFrontImageMoireStatus { get; }
         
         /// <summary>
         /// The document number. 
@@ -254,6 +249,17 @@
         string Employer { get; }
         
         /// <summary>
+        /// Checks whether the document has expired or not by comparing the current
+        /// time on the device with the date of expiry.
+        /// 
+        /// @return true if the document has expired, false in following cases:
+        /// document does not expire (date of expiry is permanent)
+        /// date of expiry has passed
+        /// date of expiry is unknown and it is not permanent 
+        /// </summary>
+        bool Expired { get; }
+        
+        /// <summary>
         /// face image from the document if enabled with returnFaceImage property. 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
@@ -262,6 +268,16 @@
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
+        
+        /// <summary>
+        /// Defines possible color and moire statuses determined from scanned front image. 
+        /// </summary>
+        IImageAnalysisResult FrontImageAnalysisResult { get; }
+        
+        /// <summary>
+        /// Defines the data extracted from the front side visual inspection zone. 
+        /// </summary>
+        IVizResult FrontVizResult { get; }
         
         /// <summary>
         /// back side image of the document if enabled with returnFullDocumentImage property. 
