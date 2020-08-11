@@ -8,7 +8,7 @@
             <Editor x:Name="resultsEditor"
                 IsEnabled="true" 
                 Text=""
-                HeightRequest="150" 
+                HeightRequest="300" 
                 TextColor="Black" 
                 BackgroundColor="White" 
                 FontSize="Medium" />
