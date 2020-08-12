@@ -83,38 +83,41 @@ namespace iOS
                 if (me.blinkIdRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
                     var blinkidResult = me.blinkIdRecognizer.Result;
 					message += "BlinkID recognizer result:\n" +
-						"FirstName: " + blinkidResult.FirstName + "\n" +
-						"LastName: " + blinkidResult.LastName + "\n" +
-						"Address: " + blinkidResult.Address + "\n" +
-						"DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
-						"Sex: " + blinkidResult.Sex + "\n";
-					var dob = blinkidResult.DateOfBirth;
-					if (dob != null)
-					{
-						message +=
-							"DateOfBirth: " + dob.Day + "." +
-											  dob.Month + "." +
-											  dob.Year + ".\n";
-					}
-					var doi = blinkidResult.DateOfIssue;
-					if (doi != null)
-					{
-						message +=
-							"DateOfIssue: " + doi.Day + "." +
-											  doi.Month + "." +
-											  doi.Year + ".\n";
+                        BuildResult(blinkidResult.FirstName, "First name") +
+                        BuildResult(blinkidResult.LastName, "Last name") +
+                        BuildResult(blinkidResult.FullName, "Full name") +
+                        BuildResult(blinkidResult.LocalizedName, "Localized name") +
+                        BuildResult(blinkidResult.AdditionalNameInformation, "Additional name info") +
+                        BuildResult(blinkidResult.Address, "Address") +
+                        BuildResult(blinkidResult.AdditionalAddressInformation, "Additional address info") +
+                        BuildResult(blinkidResult.DocumentNumber, "Document number") +
+                        BuildResult(blinkidResult.DocumentAdditionalNumber, "Additional document number") +
+                        BuildResult(blinkidResult.Sex, "Sex") +
+                        BuildResult(blinkidResult.IssuingAuthority, "Issuing authority") +
+                        BuildResult(blinkidResult.Nationality, "Nationality") +
+                        BuildResult(blinkidResult.DateOfBirth, "DateOfBirth") +
+                        BuildResult(blinkidResult.Age, "Age") +
+                        BuildResult(blinkidResult.DateOfIssue, "Date of issue") +
+                        BuildResult(blinkidResult.DateOfExpiry, "Date of expiry") +
+                        BuildResult(blinkidResult.DateOfExpiryPermanent, "Date of expiry permanent") +
+                        BuildResult(blinkidResult.MaritalStatus, "Martial status") +
+                        BuildResult(blinkidResult.PersonalIdNumber, "Personal Id Number") +
+                        BuildResult(blinkidResult.Profession, "Profession") +
+                        BuildResult(blinkidResult.Race, "Race") +
+                        BuildResult(blinkidResult.Religion, "Religion") +
+                        BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
+                        BuildResult(blinkidResult.Conditions, "Conditions");
 
-					}
-					var doe = blinkidResult.DateOfExpiry;
-					if (doe != null)
-					{
-						message +=
-							"DateOfExpiry: " + doe.Day + "." +
-											   doe.Month + "." +
-											   doe.Year + ".\n";
+                    MBDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
+                    if (licenceInfo != null)
+                    {
+                        message +=
+                            BuildResult(licenceInfo.Restrictions, "Restrictions") +
+                            BuildResult(licenceInfo.Endorsements, "Endorsements") +
+                            BuildResult(licenceInfo.VehicleClass, "Vehicle class");
+                    }
 
-					}
-				}
+                }
 
                 UIApplication.SharedApplication.InvokeOnMainThread(delegate
                 {
@@ -136,6 +139,49 @@ namespace iOS
             public override void BlinkIdOverlayViewControllerDidTapClose(MBBlinkIdOverlayViewController blinkIdOverlayViewController)
             {
                 me.DismissViewController(true, null);
+            }
+
+            private string BuildResult(string result, string propertyName)
+            {
+                if (result == null || result.Length == 0)
+                {
+                    return "";
+                }
+
+                return propertyName + ": " + result + "\n";
+            }
+
+            private string BuildResult(Boolean result, string propertyName)
+            {
+                if (result)
+                {
+                    return propertyName + ": YES" + "\n";
+                }
+
+                return propertyName + ": NO" + "\n";
+            }
+
+            private string BuildResult(int result, string propertyName)
+            {
+                if (result < 0)
+                {
+                    return "";
+                }
+
+                return propertyName + ": " + result + "\n";
+            }
+
+            private string BuildResult(MBDateResult result, string propertyName)
+            {
+                if (result == null || result.Year == 0)
+                {
+                    return "";
+                }
+
+                DateTime date = new DateTime(Convert.ToInt32(result.Year),
+                                            Convert.ToInt32(result.Month),
+                                            Convert.ToInt32(result.Day));
+                return propertyName + ": " + date.ToShortDateString() + "\n";
             }
         }
 	}

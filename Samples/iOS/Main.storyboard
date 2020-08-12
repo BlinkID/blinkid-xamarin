@@ -1,66 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="226" y="90" width="148" height="55"/>
-                                <state key="normal" title="Start scanning">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                                <rect key="frame" x="133" y="114" width="148" height="55"/>
                                 <constraints>
-                                    <constraint id="6" firstAttribute="width" constant="148"/>
-                                    <constraint id="7" firstAttribute="height" constant="55"/>
+                                    <constraint firstAttribute="width" constant="148" id="6"/>
+                                    <constraint firstAttribute="height" constant="55" id="7"/>
                                 </constraints>
+                                <state key="normal" title="Start scanning">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="StartScanningButton_TouchUpInside:" destination="BYZ-38-t0r" id="12" eventType="touchUpInside"/>
+                                    <action selector="StartScanningButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="12"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="24" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="200" y="220" width="200" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="45">
+                                <rect key="frame" x="130.5" y="179" width="153" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint id="35" firstAttribute="width" constant="200"/>
-                                    <constraint id="36" firstAttribute="height" constant="200"/>
+                                    <constraint firstAttribute="width" constant="153" id="51"/>
+                                    <constraint firstAttribute="height" constant="45" id="52"/>
                                 </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="45" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="224" y="140" width="153" height="45"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <constraints>
-                                    <constraint id="51" firstAttribute="width" constant="153"/>
-                                    <constraint id="52" firstAttribute="height" constant="45"/>
-                                </constraints>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="24">
+                                <rect key="frame" x="107" y="234" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="35"/>
+                                    <constraint firstAttribute="height" constant="200" id="36"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="20" firstItem="3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
-                            <constraint id="21" firstItem="3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70"/>
-                            <constraint id="40" firstItem="24" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="220"/>
-                            <constraint id="41" firstItem="24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
-                            <constraint id="50" firstItem="45" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="140"/>
-                            <constraint id="55" firstItem="45" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint firstItem="3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="20"/>
+                            <constraint firstItem="3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="21"/>
+                            <constraint firstItem="24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="41"/>
+                            <constraint firstItem="45" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="55"/>
+                            <constraint firstItem="24" firstAttribute="top" secondItem="45" secondAttribute="bottom" constant="10" id="Nah-aM-B6S"/>
+                            <constraint firstItem="45" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="10" id="sK7-gZ-m99"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startScanningButton" destination="3" id="name-outlet-3"/>
                         <outlet property="metadataImageView" destination="24" id="name-outlet-24"/>
                         <outlet property="metadataTextView" destination="45" id="name-outlet-45"/>
+                        <outlet property="startScanningButton" destination="3" id="name-outlet-3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

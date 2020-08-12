@@ -83,38 +83,39 @@ namespace BlinkIDApp
                         var blinkidResult = blinkidRecognizer.Result;
                         stringResult =
                             "BlinkID recognizer result:\n" +
-                            "FirstName: " + blinkidResult.FirstName + "\n" +
-                            "LastName: " + blinkidResult.LastName + "\n" +
-                            "Address: " + blinkidResult.Address + "\n" +
-                            "DocumentNumber: " + blinkidResult.DocumentNumber + "\n" +
-                            "Sex: " + blinkidResult.Sex + "\n";
-                        var dob = blinkidResult.DateOfBirth;
-                        if (dob != null)
-                        {
-                            stringResult +=
-                                "DateOfBirth: " + dob.Day + "." +
-                                                  dob.Month + "." +
-                                                  dob.Year + ".\n";
-                        }
-                        var doi = blinkidResult.DateOfIssue;
-                        if (doi != null)
-                        {
-                            stringResult +=
-                                "DateOfIssue: " + doi.Day + "." +
-                                                  doi.Month + "." +
-                                                  doi.Year + ".\n";
+                            BuildResult(blinkidResult.FirstName, "First name") +
+                            BuildResult(blinkidResult.LastName, "Last name") +
+                            BuildResult(blinkidResult.FullName, "Full name") +
+                            BuildResult(blinkidResult.LocalizedName, "Localized name") +
+                            BuildResult(blinkidResult.AdditionalNameInformation, "Additional name info") +
+                            BuildResult(blinkidResult.Address, "Address") +
+                            BuildResult(blinkidResult.AdditionalAddressInformation, "Additional address info") +
+                            BuildResult(blinkidResult.DocumentNumber, "Document number") +
+                            BuildResult(blinkidResult.DocumentAdditionalNumber, "Additional document number") +
+                            BuildResult(blinkidResult.Sex, "Sex") +
+                            BuildResult(blinkidResult.IssuingAuthority, "Issuing authority") +
+                            BuildResult(blinkidResult.Nationality, "Nationality") +
+                            BuildResult(blinkidResult.DateOfBirth, "DateOfBirth") +
+                            BuildResult(blinkidResult.Age, "Age") +
+                            BuildResult(blinkidResult.DateOfIssue, "Date of issue") +
+                            BuildResult(blinkidResult.DateOfExpiry, "Date of expiry") +
+                            BuildResult(blinkidResult.DateOfExpiryPermanent, "Date of expiry permanent") +
+                            BuildResult(blinkidResult.MaritalStatus, "Martial status") +
+                            BuildResult(blinkidResult.PersonalIdNumber, "Personal Id Number") +
+                            BuildResult(blinkidResult.Profession, "Profession") +
+                            BuildResult(blinkidResult.Race, "Race") +
+                            BuildResult(blinkidResult.Religion, "Religion") +
+                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
+                            BuildResult(blinkidResult.Conditions, "Conditions");
 
-                        }
-                        var doe = blinkidResult.DateOfExpiry;
-                        if (doe != null)
+                        IDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
+                        if (licenceInfo != null)
                         {
                             stringResult +=
-                                "DateOfExpiry: " + doe.Day + "." +
-                                                   doe.Month + "." +
-                                                   doe.Year + ".\n";
-
+                                BuildResult(licenceInfo.Restrictions, "Restrictions") +
+                                BuildResult(licenceInfo.Endorsements, "Endorsements") +
+                                BuildResult(licenceInfo.VehicleClass, "Vehicle class");
                         }
-                        // there are other fields to extract
 
                         fullDocumentFrontImageSource = blinkidResult.FullDocumentFrontImage;
                         fullDocumentBackImageSource = blinkidResult.FullDocumentBackImage;
@@ -161,6 +162,47 @@ namespace BlinkIDApp
 
             });
 
+        }
+
+        private string BuildResult(string result, string propertyName)
+        {
+            if (result == null || result.Length == 0)
+            {
+                return "";
+            }
+
+            return propertyName + ": " + result + "\n";
+        }
+
+        private string BuildResult(Boolean result, string propertyName)
+        {
+            if (result)
+            {
+                return propertyName + ": YES" + "\n";
+            }
+
+            return propertyName + ": NO" + "\n";
+        }
+
+        private string BuildResult(int result, string propertyName)
+        {
+            if (result < 0)
+            {
+                return "";
+            }
+
+            return propertyName + ": " + result + "\n";
+        }
+
+        private string BuildResult(IDate result, string propertyName)
+        {
+            if (result == null || result.Year == 0)
+            {
+                return "";
+            }
+
+            DateTime date = new DateTime(result.Year, result.Month, result.Day);
+            return propertyName + ": " + date.ToShortDateString() + "\n";
         }
 
         /// <summary>
