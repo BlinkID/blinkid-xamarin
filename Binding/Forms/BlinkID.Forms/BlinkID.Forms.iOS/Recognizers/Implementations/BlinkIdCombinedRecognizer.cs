@@ -69,6 +69,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.PaddingEdge = value;
         }
         
+        public IRecognitionModeFilter RecognitionModeFilter 
+        { 
+            get => new RecognitionModeFilter(nativeRecognizer.RecognitionModeFilter); 
+            set => nativeRecognizer.RecognitionModeFilter = (value as RecognitionModeFilter).NativeFilter;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
@@ -117,7 +123,6 @@ namespace Microblink.Forms.iOS.Recognizers
         public IVizResult BackVizResult => new VizResult(nativeResult.BackVizResult);
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => new ClassInfo(nativeResult.ClassInfo);
-        public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
@@ -145,8 +150,10 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public ProcessingStatus ProcessingStatus => (ProcessingStatus)nativeResult.ProcessingStatus;
         public string Profession => nativeResult.Profession;
         public string Race => nativeResult.Race;
+        public RecognitionMode RecognitionMode => (RecognitionMode)nativeResult.RecognitionMode;
         public string Religion => nativeResult.Religion;
         public string ResidentialStatus => nativeResult.ResidentialStatus;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;

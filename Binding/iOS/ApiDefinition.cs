@@ -1726,6 +1726,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nullable vehicleClass;
         [NullAllowed, Export ("vehicleClass")]
         string VehicleClass { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable conditions;
+		[NullAllowed, Export ("conditions")]
+		string Conditions { get; }
     }
 
     // @interface MBImageAnalysisResult : NSObject
@@ -1742,9 +1746,21 @@ namespace Microblink
 		[Export ("documentImageColorStatus", ArgumentSemantic.Assign)]
 		MBDocumentImageColorStatus DocumentImageColorStatus { get; }
 
-		// @property (readonly, assign, nonatomic) MBDocumentImageMoireStatus documentImageMoireStatus;
+		// @property (readonly, assign, nonatomic) MBImageAnalysisDetectionStatus documentImageMoireStatus;
 		[Export ("documentImageMoireStatus", ArgumentSemantic.Assign)]
-		MBDocumentImageMoireStatus DocumentImageMoireStatus { get; }
+		MBImageAnalysisDetectionStatus DocumentImageMoireStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBImageAnalysisDetectionStatus faceDetectionStatus;
+		[Export ("faceDetectionStatus", ArgumentSemantic.Assign)]
+		MBImageAnalysisDetectionStatus FaceDetectionStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBImageAnalysisDetectionStatus mrzDetectionStatus;
+		[Export ("mrzDetectionStatus", ArgumentSemantic.Assign)]
+		MBImageAnalysisDetectionStatus MrzDetectionStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBImageAnalysisDetectionStatus barcodeDetectionStatus;
+		[Export ("barcodeDetectionStatus", ArgumentSemantic.Assign)]
+		MBImageAnalysisDetectionStatus BarcodeDetectionStatus { get; }
 	}
 
     // @interface MBBarcodeResult : NSObject
@@ -1984,13 +2000,35 @@ namespace Microblink
 		[NullAllowed, Export ("driverLicenseDetailedInfo")]
 		MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nonnull conditions;
-		[Export ("conditions")]
-		string Conditions { get; }
-
 		// @property (readonly, assign, nonatomic) BOOL empty;
 		[Export ("empty")]
 		bool Empty { get; }
+	}
+
+    // @interface MBRecognitionModeFilter : NSObject <NSCopying>
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	interface MBRecognitionModeFilter : INSCopying
+	{
+		// @property (assign, nonatomic) BOOL enableMrzId;
+		[Export ("enableMrzId")]
+		bool EnableMrzId { get; set; }
+
+		// @property (assign, nonatomic) BOOL enableMrzVisa;
+		[Export ("enableMrzVisa")]
+		bool EnableMrzVisa { get; set; }
+
+		// @property (assign, nonatomic) BOOL enableMrzPassport;
+		[Export ("enableMrzPassport")]
+		bool EnableMrzPassport { get; set; }
+
+		// @property (assign, nonatomic) BOOL enablePhotoId;
+		[Export ("enablePhotoId")]
+		bool EnablePhotoId { get; set; }
+
+		// @property (assign, nonatomic) BOOL enableFullDocumentRecognition;
+		[Export ("enableFullDocumentRecognition")]
+		bool EnableFullDocumentRecognition { get; set; }
 	}
 
    // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, IMBAgeResult>
@@ -2103,10 +2141,6 @@ namespace Microblink
 		[NullAllowed, Export ("driverLicenseDetailedInfo")]
 		MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nullable conditions;
-		[NullAllowed, Export ("conditions")]
-		string Conditions { get; }
-
 		// @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
 		[NullAllowed, Export ("classInfo")]
 		MBClassInfo ClassInfo { get; }
@@ -2122,6 +2156,14 @@ namespace Microblink
 		// @property (readonly, nonatomic) MBVizResult * _Nullable vizResult;
 		[NullAllowed, Export ("vizResult")]
 		MBVizResult VizResult { get; }
+
+		// @property (readonly, assign, nonatomic) MBProcessingStatus processingStatus;
+		[Export ("processingStatus", ArgumentSemantic.Assign)]
+		MBProcessingStatus ProcessingStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBRecognitionMode recognitionMode;
+		[Export ("recognitionMode", ArgumentSemantic.Assign)]
+		MBRecognitionMode RecognitionMode { get; }
 	}
 
 
@@ -2161,6 +2203,10 @@ namespace Microblink
 		// @property (assign, nonatomic) MBAnonymizationMode anonymizationMode;
 		[Export ("anonymizationMode", ArgumentSemantic.Assign)]
 		MBAnonymizationMode AnonymizationMode { get; set; }
+
+        // @property (nonatomic, strong) MBRecognitionModeFilter * _Nonnull recognitionModeFilter;
+		[Export ("recognitionModeFilter", ArgumentSemantic.Strong)]
+		MBRecognitionModeFilter RecognitionModeFilter { get; set; }
 	}
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -2295,10 +2341,6 @@ namespace Microblink
 		[NullAllowed, Export ("driverLicenseDetailedInfo")]
 		MBDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nullable conditions;
-		[NullAllowed, Export ("conditions")]
-		string Conditions { get; }
-
 		// @property (readonly, nonatomic) MBClassInfo * _Nullable classInfo;
 		[NullAllowed, Export ("classInfo")]
 		MBClassInfo ClassInfo { get; }
@@ -2322,6 +2364,14 @@ namespace Microblink
 		// @property (readonly, nonatomic) MBVizResult * _Nullable backVizResult;
 		[NullAllowed, Export ("backVizResult")]
 		MBVizResult BackVizResult { get; }
+
+        // @property (readonly, assign, nonatomic) MBProcessingStatus processingStatus;
+		[Export ("processingStatus", ArgumentSemantic.Assign)]
+		MBProcessingStatus ProcessingStatus { get; }
+
+		// @property (readonly, assign, nonatomic) MBRecognitionMode recognitionMode;
+		[Export ("recognitionMode", ArgumentSemantic.Assign)]
+		MBRecognitionMode RecognitionMode { get; }
 	}
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -2360,6 +2410,10 @@ namespace Microblink
 		// @property (assign, nonatomic) MBAnonymizationMode anonymizationMode;
 		[Export ("anonymizationMode", ArgumentSemantic.Assign)]
 		MBAnonymizationMode AnonymizationMode { get; set; }
+
+        // @property (nonatomic, strong) MBRecognitionModeFilter * _Nonnull recognitionModeFilter;
+		[Export ("recognitionModeFilter", ArgumentSemantic.Strong)]
+		MBRecognitionModeFilter RecognitionModeFilter { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
