@@ -72,7 +72,7 @@ namespace Microblink.Forms.Droid.Recognizers
         public IRecognitionModeFilter RecognitionModeFilter 
         { 
             get => new RecognitionModeFilter(nativeRecognizer.RecognitionModeFilter); 
-            set => nativeRecognizer.RecognitionModeFilter = (value as recognitionModeFilter).NativeFilter;
+            set => nativeRecognizer.RecognitionModeFilter = (value as RecognitionModeFilter).NativeFilter;
         }
         
         public bool ReturnFaceImage 

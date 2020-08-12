@@ -277,8 +277,6 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeVizResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeVizResult.DriverLicenseDetailedInfo) : null;
 
-        public string Conditions => nativeVizResult.Conditions;
-
         public bool Empty => nativeVizResult.IsEmpty;
     }
 
@@ -291,20 +289,20 @@ namespace Microblink.Forms.Droid.Recognizers
             NativeFilter = nativeFilter;
         }
 
-        public bool EnableMrzId => NativeFilter.enableMrzId;
-        public bool EnableMrzVisa => NativeFilter.enableMrzVisa;
-        public bool EnableMrzPassport => NativeFilter.enableMrzPassport;
-        public bool EnablePhotoId => NativeFilter.enablePhotoId;
-        public bool EnableFullDocumentRecognition => NativeFilter.enableFullDocumentRecognition;
+        public bool EnableMrzId => NativeFilter.EnableMrzId;
+        public bool EnableMrzVisa => NativeFilter.EnableMrzVisa;
+        public bool EnableMrzPassport => NativeFilter.EnableMrzPassport;
+        public bool EnablePhotoId => NativeFilter.EnablePhotoId;
+        public bool EnableFullDocumentRecognition => NativeFilter.EnableFullDocumentRecognition;
     }
 
     public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
     {
         public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
         {
-            return new RecognitionModeFilter(new RecognitionModeFilter(Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter(
+            return new RecognitionModeFilter(new Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter(
                         enableMrzId, enableMrzVisa, enableMrzPassport, enablePhotoId, enableFullDocumentRecognition
-            )));
+            ));
         }
     }
 
