@@ -275,4 +275,30 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool Empty => nativeVizResult.IsEmpty;
     }
 
+    public sealed class RecognitionModeFilter : IRecognitionModeFilter
+    {
+        public Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter NativeFilter { get; }
+
+        public RecognitionModeFilter(Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter nativeFilter)
+        {
+            NativeFilter = nativeFilter;
+        }
+
+        public bool EnableMrzId => NativeFilter.enableMrzId;
+        public bool EnableMrzVisa => NativeFilter.enableMrzVisa;
+        public bool EnableMrzPassport => NativeFilter.enableMrzPassport;
+        public bool EnablePhotoId => NativeFilter.enablePhotoId;
+        public bool EnableFullDocumentRecognition => NativeFilter.enableFullDocumentRecognition;
+    }
+
+    public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
+    {
+        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
+        {
+            return new RecognitionModeFilter(new RecognitionModeFilter(Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter(
+                        enableMrzId, enableMrzVisa, enableMrzPassport, enablePhotoId, enableFullDocumentRecognition
+            )));
+        }
+    }
+
 }

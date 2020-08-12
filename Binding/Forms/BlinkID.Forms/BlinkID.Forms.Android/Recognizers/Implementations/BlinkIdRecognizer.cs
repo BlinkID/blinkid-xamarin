@@ -69,6 +69,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.PaddingEdge = value;
         }
         
+        public IRecognitionModeFilter RecognitionModeFilter 
+        { 
+            get => new RecognitionModeFilter(nativeRecognizer.RecognitionModeFilter); 
+            set => nativeRecognizer.RecognitionModeFilter = (value as recognitionModeFilter).NativeFilter;
+        }
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ShouldReturnFaceImage(); 
@@ -103,7 +109,6 @@ namespace Microblink.Forms.Droid.Recognizers
         public int Age => (int)nativeResult.Age;
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
-        public string Conditions => nativeResult.Conditions;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
@@ -126,8 +131,10 @@ namespace Microblink.Forms.Droid.Recognizers
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;
+        public ProcessingStatus ProcessingStatus => (ProcessingStatus)nativeResult.ProcessingStatus.Ordinal();
         public string Profession => nativeResult.Profession;
         public string Race => nativeResult.Race;
+        public RecognitionMode RecognitionMode => (RecognitionMode)nativeResult.RecognitionMode.Ordinal();
         public string Religion => nativeResult.Religion;
         public string ResidentialStatus => nativeResult.ResidentialStatus;
         public string Sex => nativeResult.Sex;
