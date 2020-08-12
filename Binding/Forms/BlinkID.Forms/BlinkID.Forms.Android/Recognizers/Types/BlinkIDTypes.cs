@@ -73,12 +73,13 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeDlDetailedInfo = nativeDlDetailedInfo;
         }
 
-
         public string Restrictions => nativeDlDetailedInfo.Restrictions;
 
         public string Endorsements => nativeDlDetailedInfo.Endorsements;
 
         public string VehicleClass => nativeDlDetailedInfo.VehicleClass;
+
+        public string Conditions => nativeDlDetailedInfo.Conditions;
 
     }
 
@@ -136,7 +137,13 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeImageAnalysisResult.DocumentImageColorStatus.Ordinal();
 
-        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeImageAnalysisResult.DocumentImageMoireStatus.Ordinal();
+        public ImageAnalysisDetectionStatus DocumentImageMoireStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.DocumentImageMoireStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus FaceDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.FaceDetectionStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus MrzDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.MrzDetectionStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus BarcodeDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.BarcodeDetectionStatus.Ordinal();
     }
 
     public sealed class BarcodeResult : IBarcodeResult
