@@ -246,6 +246,11 @@ namespace Microblink.Forms.Core.Recognizers
         /// </summary>
         /// <value>The type of vehicle the driver license owner has privilege to drive.</value>
         string VehicleClass { get; }
+
+        /// <summary>
+        /// The driver license conditions.
+        /// </summary>The driver license conditions.</value>
+        string Conditions { get ; }
     }
 
     /// <summary>
@@ -629,7 +634,22 @@ namespace Microblink.Forms.Core.Recognizers
         /// <summary>
         /// The Moire pattern detection status determined from the scanned image.
         /// </summary>
-        DocumentImageMoireStatus DocumentImageMoireStatus { get; }
+        ImageAnalysisDetectionStatus DocumentImageMoireStatus { get; }
+
+        /// <summary>
+        /// Face detection status determined from the scanned image.
+        /// </summary>
+        ImageAnalysisDetectionStatus FaceDetectionStatus { get; }
+
+        /// <summary>
+        /// Mrz detection status determined from the scanned image.
+        /// </summary>
+        ImageAnalysisDetectionStatus MrzDetectionStatus { get; }
+
+        /// <summary>
+        /// Barcode detection status determined from the scanned image.
+        /// </summary>
+        ImageAnalysisDetectionStatus BarcodeDetectionStatus { get; }
     }
 
     /// <summary>
@@ -648,17 +668,17 @@ namespace Microblink.Forms.Core.Recognizers
     }
 
     /// <summary>
-    /// Defines possible states of Moire pattern detection.
+    /// Defines possible states of detection.
     /// </summary>
-    public enum DocumentImageMoireStatus
+    public enum ImageAnalysisDetectionStatus
     {
-        // Detection of Moire patterns was not performed.
+        // Detection was not performed.
         NotAvailable,
 
-        // Moire pattern not detected on input image.
+        // Not detected on input image.
         NotDetected,
 
-        // Moire pattern detected on input image.
+        // Detected on input image.
         Detected
     }
 
@@ -1018,14 +1038,135 @@ namespace Microblink.Forms.Core.Recognizers
         IDriverLicenseDetailedInfo DriverLicenseDetailedInfo { get ; }
 
         /// <summary>
-        /// The driver license conditions.
-        /// </summary>The driver license conditions.</value>
-        string Conditions { get ; }
-
-        /// <summary>
         /// Flag that indicates if barcode result is empty
         /// </summary>Flag that indicates if barcode result is empty</value>
         bool Empty { get ; }
+    }
+
+    /// <summary>
+    /// ProcessingStatus defines status of the last recognition process.
+    /// </summary>
+    public enum ProcessingStatus
+    {
+        // Recognition was successful.
+        Success,
+
+        // Detection of the document failed.
+        DetectionFailed,
+
+        // Preprocessing of the input image has failed. 
+        ImagePreprocessingFailed,
+
+        // Recognizer has inconsistent results. 
+        StabilityTestFailed,
+
+        // Wrong side of the document has been scanned. 
+        ScanningWrongSide,
+
+        // Identification of the fields present on the document has failed. 
+        FieldIdentificationFailed,
+
+        // Mandatory field for the specific document is missing. 
+        MandatoryFieldMissing,
+
+        // Result contains invalid characters in some of the fields. 
+        InvalidCharactersFound,
+
+        // Failed to return a requested image. 
+        ImageReturnFailed,
+
+        // Reading or parsing of the barcode has failed. 
+        BarcodeRecognitionFailed,
+
+        // Parsing of the MRZ has failed. 
+        MrzParsingFailed,
+
+        // Document class has been filtered out. 
+        ClassFiltered,
+
+        // Document currently not supported by the recognizer. 
+        UnsupportedClass,
+
+        // License for the detected document is missing. 
+        UnsupportedByLicense
+    }
+
+    /// <summary>
+    /// RecognitionMode defines possible recognition modes by BlinkID(Combined)Recognizer.
+    /// </summary>
+    public enum RecognitionMode
+    {
+        // No recognition performed. 
+        None,
+
+        // Recognition of mrz document (does not include visa and passport) 
+        MrzId,
+
+        // Recognition of visa mrz. 
+        MrzVisa,
+
+        // Recognition of passport mrz. 
+        MrzPassport,
+
+        // Recognition of documents that have face photo on the front. 
+        PhotoId,
+
+        // Detailed document recognition. 
+        FullRecognition
+    }
+
+    /// <summary>
+    /// IRecognitionModeFilter is used to enable/disable recognition of specific document groups.
+    /// Setting is taken into account only if the right for that document is purchased.
+    /// </summary>
+    public interface IRecognitionModeFilter
+    {
+        /// <summary>
+        /// Enable scanning of MRZ IDs. Setting is taken into account only if the mrz_id right is purchased.
+        /// </summary>
+        /// <value>Enable Mrz.</value>
+        bool EnableMrzId { get; }
+
+        /// <summary>
+        /// Enable scanning of visa MRZ. Setting is taken into account only if the visa right is purchased.
+        /// </summary>
+        /// <value>Enable Mrz Visa.</value>
+        bool EnableMrzVisa { get; }
+
+        /// <summary>
+        /// Enable scanning of Passport MRZ. Setting is taken into account only if the passport right is purchased.
+        /// </summary>
+        /// <value>Enable Mrz Passport.</value>
+        bool EnableMrzPassport { get; }
+
+        /// <summary>
+        /// Enable scanning of Photo ID. Setting is taken into account only if the photo_id right is purchased.
+        /// </summary>
+        /// <value>Enable Photo ID.</value>
+        bool EnablePhotoId { get; }
+
+        /// <summary>
+        /// Enable full document recognition. Setting is taken into account only if the document right to scan that document is purchased.
+        /// </summary>
+        /// <value>Enable Full Document Recognition.</value>
+        bool EnableFullDocumentRecognition { get; }
+    }
+
+    /// <summary>
+    /// Recognition mode filter factory. Use this to create an instance of IRecognitionModeFilter.
+    /// </summary>
+    public interface IRecognitionModeFilterFactory
+    {
+        /// <summary>
+        /// Creates the recognition mode filter,
+        /// </summary>
+        /// <returns>The recognition mode filters.</returns>
+        /// <param name="enableMrzId">enable scanning of MRZ IDs. Setting is taken into account only if the mrz_id right is purchased.</param>
+        /// <param name="enableMrzVisa">enable scanning of visa MRZ. Setting is taken into account only if the visa right is purchased.</param>
+        /// <param name="enableMrzPassport">enable scanning of Passport MRZ. Setting is taken into account only if the passport right is purchased.</param>
+        /// <param name="enablePhotoId">enable scanning of Photo ID. Setting is taken into account only if the photo_id right is purchased.</param>
+        /// <param name="enableFullDocumentRecognition">enable full document recognition. Setting is taken into account only if the document right to scan that document is purchased.</param>
+        IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true);
     }
 
 }

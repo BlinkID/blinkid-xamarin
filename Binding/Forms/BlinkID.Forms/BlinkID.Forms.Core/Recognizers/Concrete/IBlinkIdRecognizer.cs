@@ -1,113 +1,90 @@
 ﻿namespace Microblink.Forms.Core.Recognizers
 {
     /// <summary>
-    /// The Blink ID Recognizer is used for scanning Blink ID.
+    /// Generic BlinkID recognizer.
     /// </summary>
     public interface IBlinkIdRecognizer : IRecognizer
     {
         
         /// <summary>
-        /// Defines whether blured frames filtering is allowed
-        /// 
-        ///  
+        /// Defines whether blured frames filtering is allowed" 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowBlurFilter { get; set; }
         
         /// <summary>
-        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
-        /// 
-        ///  
+        /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool AllowUnparsedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed
-        /// Unverified MRZ is parsed, but check digits are incorrect
-        /// 
-        ///  
+        /// Defines whether returning unverified MRZ (Machine Readable Zone) results is allowed. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
         bool AllowUnverifiedMrzResults { get; set; }
         
         /// <summary>
-        /// Defines whether sensitive data should be removed from images, result fields or both.
-        /// The setting only applies to certain documents
-        /// 
-        ///  
+        /// Whether sensitive data should be removed from images, result fields or both. 
         ///
-        /// By default, this is set to 'MBAnonymizationModeFullResult'
+        /// By default, this is set to 'FullResult'
         /// </summary>
         AnonymizationMode AnonymizationMode { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for face images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for face image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FaceImageDpi { get; set; }
         
         /// <summary>
-        /// Property for setting DPI for full document images
-        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
-        /// 
-        ///  
+        /// The DPI (Dots Per Inch) for full document image that should be returned. 
         ///
         /// By default, this is set to '250'
         /// </summary>
         uint FullDocumentImageDpi { get; set; }
         
         /// <summary>
-        /// Image extension factors for full document image.
-        /// 
-        /// @see ImageExtensionFactors
-        ///  
+        /// The extension factors for full document image. 
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
         /// <summary>
-        /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
-        /// padding edge and image edge are the same.
-        /// Recommended value is 0.02f.
-        /// 
-        ///  
+        /// Padding is a minimum distance from the edge of the frame and it is defined 
         ///
-        /// By default, this is set to '0.0f'
+        /// By default, this is set to '0.0'
         /// </summary>
         float PaddingEdge { get; set; }
         
         /// <summary>
-        /// Sets whether face image from ID card should be extracted
-        /// 
-        ///  
+        /// Currently set recognition mode filter. 
+        ///
+        /// By default, this is set to '[true, true, true, true, true]'
+        /// </summary>
+        IRecognitionModeFilter RecognitionModeFilter { get; set; }
+        
+        /// <summary>
+        /// Defines whether face image will be available in result. 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFaceImage { get; set; }
         
         /// <summary>
-        /// Sets whether full document image of ID card should be extracted.
-        /// 
-        ///  
+        /// Defines whether full document image will be available in 
         ///
         /// By default, this is set to 'false'
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
-        /// Defines whether result characters validatation is performed.
-        /// If a result member contains invalid character, the result state cannot be valid
-        /// 
-        ///  
+        /// Whether result characters validatation is performed. 
         ///
         /// By default, this is set to 'true'
         /// </summary>
@@ -126,7 +103,7 @@
     public interface IBlinkIdRecognizerResult : IRecognizerResult {
         
         /// <summary>
-        /// The additional address information of the document owner. 
+        /// The additional name information of the document owner. 
         /// </summary>
         string AdditionalAddressInformation { get; }
         
@@ -141,26 +118,19 @@
         string Address { get; }
         
         /// <summary>
-        /// The current age of the document owner in years. It is calculated difference
-        /// between now and date of birth. Now is current time on the device.
-        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
+        /// The current age of the document owner in years. It is calculated difference 
         /// </summary>
         int Age { get; }
         
         /// <summary>
-        /// Defines the data extracted from the barcode. 
+        /// The data extracted from the barcode. 
         /// </summary>
         IBarcodeResult BarcodeResult { get; }
         
         /// <summary>
-        /// The classification information. 
+        /// The document class information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
-        
-        /// <summary>
-        /// The driver license conditions. 
-        /// </summary>
-        string Conditions { get; }
         
         /// <summary>
         /// The date of birth of the document owner. 
@@ -203,18 +173,12 @@
         string Employer { get; }
         
         /// <summary>
-        /// Checks whether the document has expired or not by comparing the current
-        /// time on the device with the date of expiry.
-        /// 
-        /// @return true if the document has expired, false in following cases:
-        /// document does not expire (date of expiry is permanent)
-        /// date of expiry has passed
-        /// date of expiry is unknown and it is not permanent 
+        /// Checks whether the document has expired or not by comparing the current 
         /// </summary>
         bool Expired { get; }
         
         /// <summary>
-        /// face image from the document if enabled with returnFaceImage property. 
+        /// Face image from the document 
         /// </summary>
         Xamarin.Forms.ImageSource FaceImage { get; }
         
@@ -224,7 +188,7 @@
         string FirstName { get; }
         
         /// <summary>
-        /// full document image if enabled with returnFullDocumentImage property. 
+        /// Image of the full document 
         /// </summary>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
         
@@ -234,7 +198,7 @@
         string FullName { get; }
         
         /// <summary>
-        /// Defines possible color and moire statuses determined from scanned image. 
+        /// Image analysis result for the scanned document image 
         /// </summary>
         IImageAnalysisResult ImageAnalysisResult { get; }
         
@@ -259,7 +223,7 @@
         string MaritalStatus { get; }
         
         /// <summary>
-        /// The data extracted from the machine readable zone 
+        /// The data extracted from the machine readable zone. 
         /// </summary>
         IMrzResult MrzResult { get; }
         
@@ -279,6 +243,11 @@
         string PlaceOfBirth { get; }
         
         /// <summary>
+        /// Status of the last recognition process. 
+        /// </summary>
+        ProcessingStatus ProcessingStatus { get; }
+        
+        /// <summary>
         /// The profession of the document owner. 
         /// </summary>
         string Profession { get; }
@@ -287,6 +256,11 @@
         /// The race of the document owner. 
         /// </summary>
         string Race { get; }
+        
+        /// <summary>
+        /// Recognition mode used to scan current document. 
+        /// </summary>
+        RecognitionMode RecognitionMode { get; }
         
         /// <summary>
         /// The religion of the document owner. 
@@ -304,7 +278,7 @@
         string Sex { get; }
         
         /// <summary>
-        /// Defines the data extracted from the visual inspection zone 
+        /// The data extracted from the visual inspection zone. 
         /// </summary>
         IVizResult VizResult { get; }
         
