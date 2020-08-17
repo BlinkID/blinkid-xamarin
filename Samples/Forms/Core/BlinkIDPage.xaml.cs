@@ -51,7 +51,7 @@ namespace BlinkIDApp
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZcscFOYyUlLke1ZiqgwkZx/Dyk8Or0HKnFCPP6DbTOm3WwRVbDBmFZauNfhVx3XthgG7UTyYkdHLeron+9Xc2XM2h5Kvs2zndbtpYgPJy6hASKV7sUfnvTFvqmDB6xNgH41NHRayHomLMTPirpYRUkOGBEL5JBXIUrD68uXHsw15p6nSvrlGJUST5BqEPzf/AnwFE/P1o82hNHwnU2XmXk3sDhk5x/AM1QGxYVXCAWEJKsbbwgBdADb5aBCK";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZzMdFPkH87ttoFMhCDqzUDuu/tP1IfUA5DxK1jJ4m9LoknTzi8LQ1rf0tOt3KEdzRaCkG16tu0sHFqVcoFekZchPOq1QP3h42TP2ONAOfHLQEAEfB1abAvf+7TnthnGk16VURD/Xh0N+XfRNvSAQTM+vZH75+1tC3729FHl3nhxXVzmR/64Gp3vq/z/22ABv6qSQwpZdKO1iUCgmiLlWtD/Z8RYYrxtUpn693g+BgLFycIq8wXGtgChdrA==";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -105,8 +105,7 @@ namespace BlinkIDApp
                             BuildResult(blinkidResult.Profession, "Profession") +
                             BuildResult(blinkidResult.Race, "Race") +
                             BuildResult(blinkidResult.Religion, "Religion") +
-                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
-                            BuildResult(blinkidResult.Conditions, "Conditions");
+                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status");
 
                         IDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
                         if (licenceInfo != null)
@@ -114,7 +113,9 @@ namespace BlinkIDApp
                             stringResult +=
                                 BuildResult(licenceInfo.Restrictions, "Restrictions") +
                                 BuildResult(licenceInfo.Endorsements, "Endorsements") +
-                                BuildResult(licenceInfo.VehicleClass, "Vehicle class");
+                                BuildResult(licenceInfo.VehicleClass, "Vehicle class") +
+                                BuildResult(licenceInfo.Conditions, "Conditions");
+
                         }
 
                         fullDocumentFrontImageSource = blinkidResult.FullDocumentFrontImage;
