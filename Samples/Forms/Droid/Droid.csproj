@@ -168,7 +168,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>..\packages\BlinkID.Android.Binding.5.5.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Android.Binding.5.7.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
@@ -181,10 +181,10 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.MediaRouter.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.5.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.7.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.5.5.0\lib\monoandroid90\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Android.5.7.0\lib\monoandroid90\BlinkID.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.Android.Support.CustomTabs">

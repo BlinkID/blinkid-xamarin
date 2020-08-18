@@ -577,7 +577,7 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBDocumentImageMoireStatus : ulong
+	public enum MBImageAnalysisDetectionStatus : ulong
 	{
 		NotAvailable = 0,
 		NotDetected,
@@ -705,11 +705,41 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBRecognitionMode : ulong
+	public enum MBRecognitionDebugMode : ulong
 	{
 		Default,
 		Test,
 		DetectionTest
+	}
+
+	[Native]
+	public enum MBRecognitionMode : ulong
+	{
+		None,
+		MrzId,
+		MrzVisa,
+		MrzPassport,
+		PhotoId,
+		FullRecognition
+	}
+
+	[Native]
+	public enum MBProcessingStatus : ulong
+	{
+		Success,
+		DetectionFailed,
+		ImagePreprocessingFailed,
+		StabilityTestFailed,
+		ScanningWrongSide,
+		FieldIdentificationFailed,
+		MandatoryFieldMissing,
+		InvalidCharactersFound,
+		ImageReturnFailed,
+		BarcodeRecognitionFailed,
+		MrzParsingFailed,
+		ClassFiltered,
+		UnsupportedClass,
+		UnsupportedByLicense
 	}
 
 	[Native]

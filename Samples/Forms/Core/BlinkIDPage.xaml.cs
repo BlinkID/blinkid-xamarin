@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.xamarin.blinkid
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwAT48xKHWuWvt1WuSNXEeJhgq+O+erX0YbBRPn5xYU7BAdiHkVmn5ZC3GQqGDSD/mdcPRhPHmB4c1mHpeRwnppoHN3/qfsigqt0iqk3PJW0y0W9zhC5y3sfmnGusBxVKxQhhjLz9c1eyceCcoVV7Nq1ewAbtwSW5BL2N9VV824gQU6FmB0rJjZDSujM1SvZDwZruwms8T2vRnt1iUqDzU3NJaubpRHnveLbxJhsOgE+i7jZRCn5Wg8btkXtO";
+                licenseKey = "sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAxDz/89jThOweSJfzxPUeJ0sFU65e+CfIAF0w7d+iKwpar7gRd14KwHEcGyMYlOYb27X2jMldwrjEVv3OfE2BZOWmkI1ZRxY2BmJrs2Hg99Ya/bZQmEehNd7Gzata8ENHQcBb1vlCDS5rbAx1/fhKJILjm6tn0sw1jwsc2gxXvCTjeuuSSqMrJW7rA1l/n75unfGXgKCsnuBG+a4qumJKXBFAX708736plT2NO4zM/3D0zoT4udMzeVW1OQ==";
             }
             else
             {
-                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZcscFOYyUlLke1ZiqgwkZx/Dyk8Or0HKnFCPP6DbTOm3WwRVbDBmFZauNfhVx3XthgG7UTyYkdHLeron+9Xc2XM2h5Kvs2zndbtpYgPJy6hASKV7sUfnvTFvqmDB6xNgH41NHRayHomLMTPirpYRUkOGBEL5JBXIUrD68uXHsw15p6nSvrlGJUST5BqEPzf/AnwFE/P1o82hNHwnU2XmXk3sDhk5x/AM1QGxYVXCAWEJKsbbwgBdADb5aBCK";
+                licenseKey = "sRwAAAAeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lke7qv4mAhH4ywlU8/ZzMdFPkH87ttoFMhCDqzUDuu/tP1IfUA5DxK1jJ4m9LoknTzi8LQ1rf0tOt3KEdzRaCkG16tu0sHFqVcoFekZchPOq1QP3h42TP2ONAOfHLQEAEfB1abAvf+7TnthnGk16VURD/Xh0N+XfRNvSAQTM+vZH75+1tC3729FHl3nhxXVzmR/64Gp3vq/z/22ABv6qSQwpZdKO1iUCgmiLlWtD/Z8RYYrxtUpn693g+BgLFycIq8wXGtgChdrA==";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -105,8 +105,7 @@ namespace BlinkIDApp
                             BuildResult(blinkidResult.Profession, "Profession") +
                             BuildResult(blinkidResult.Race, "Race") +
                             BuildResult(blinkidResult.Religion, "Religion") +
-                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
-                            BuildResult(blinkidResult.Conditions, "Conditions");
+                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status");
 
                         IDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
                         if (licenceInfo != null)
@@ -114,7 +113,9 @@ namespace BlinkIDApp
                             stringResult +=
                                 BuildResult(licenceInfo.Restrictions, "Restrictions") +
                                 BuildResult(licenceInfo.Endorsements, "Endorsements") +
-                                BuildResult(licenceInfo.VehicleClass, "Vehicle class");
+                                BuildResult(licenceInfo.VehicleClass, "Vehicle class") +
+                                BuildResult(licenceInfo.Conditions, "Conditions");
+
                         }
 
                         fullDocumentFrontImageSource = blinkidResult.FullDocumentFrontImage;

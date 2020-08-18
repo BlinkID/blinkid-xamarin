@@ -73,12 +73,13 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeDlDetailedInfo = nativeDlDetailedInfo;
         }
 
-
         public string Restrictions => nativeDlDetailedInfo.Restrictions;
 
         public string Endorsements => nativeDlDetailedInfo.Endorsements;
 
         public string VehicleClass => nativeDlDetailedInfo.VehicleClass;
+
+        public string Conditions => nativeDlDetailedInfo.Conditions;
 
     }
 
@@ -136,7 +137,13 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeImageAnalysisResult.DocumentImageColorStatus.Ordinal();
 
-        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeImageAnalysisResult.DocumentImageMoireStatus.Ordinal();
+        public ImageAnalysisDetectionStatus DocumentImageMoireStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.DocumentImageMoireStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus FaceDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.FaceDetectionStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus MrzDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.MrzDetectionStatus.Ordinal();
+
+        public ImageAnalysisDetectionStatus BarcodeDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.BarcodeDetectionStatus.Ordinal();
     }
 
     public sealed class BarcodeResult : IBarcodeResult
@@ -270,9 +277,33 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeVizResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeVizResult.DriverLicenseDetailedInfo) : null;
 
-        public string Conditions => nativeVizResult.Conditions;
-
         public bool Empty => nativeVizResult.IsEmpty;
+    }
+
+    public sealed class RecognitionModeFilter : IRecognitionModeFilter
+    {
+        public Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter NativeFilter { get; }
+
+        public RecognitionModeFilter(Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter nativeFilter)
+        {
+            NativeFilter = nativeFilter;
+        }
+
+        public bool EnableMrzId => NativeFilter.EnableMrzId;
+        public bool EnableMrzVisa => NativeFilter.EnableMrzVisa;
+        public bool EnableMrzPassport => NativeFilter.EnableMrzPassport;
+        public bool EnablePhotoId => NativeFilter.EnablePhotoId;
+        public bool EnableFullDocumentRecognition => NativeFilter.EnableFullDocumentRecognition;
+    }
+
+    public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
+    {
+        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
+        {
+            return new RecognitionModeFilter(new Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter(
+                        enableMrzId, enableMrzVisa, enableMrzPassport, enablePhotoId, enableFullDocumentRecognition
+            ));
+        }
     }
 
 }

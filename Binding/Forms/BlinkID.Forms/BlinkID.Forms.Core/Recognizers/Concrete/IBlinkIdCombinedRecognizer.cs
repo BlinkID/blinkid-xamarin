@@ -86,6 +86,15 @@
         float PaddingEdge { get; set; }
         
         /// <summary>
+        /// Enable or disable recognition of specific document groups supported by the current license.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'all modes are enabled'
+        /// </summary>
+        IRecognitionModeFilter RecognitionModeFilter { get; set; }
+        
+        /// <summary>
         /// Sets whether face image from ID card should be extracted
         /// 
         ///  
@@ -184,11 +193,6 @@
         /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
-        
-        /// <summary>
-        /// The driver license conditions. 
-        /// </summary>
-        string Conditions { get; }
         
         /// <summary>
         /// The date of birth of the document owner. 
@@ -335,6 +339,11 @@
         string PlaceOfBirth { get; }
         
         /// <summary>
+        /// Defines status of the last recognition process. 
+        /// </summary>
+        ProcessingStatus ProcessingStatus { get; }
+        
+        /// <summary>
         /// The profession of the document owner. 
         /// </summary>
         string Profession { get; }
@@ -343,6 +352,11 @@
         /// The race of the document owner. 
         /// </summary>
         string Race { get; }
+        
+        /// <summary>
+        /// Recognition mode used to scan current document. 
+        /// </summary>
+        RecognitionMode RecognitionMode { get; }
         
         /// <summary>
         /// The religion of the document owner. 

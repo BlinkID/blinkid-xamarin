@@ -3,6 +3,7 @@ using Microblink.Forms.Core.Recognizers;
 using Microblink;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
+[assembly: Xamarin.Forms.Dependency(typeof(RecognitionModeFilterFactory))]
 namespace Microblink.Forms.iOS.Recognizers
 {
 	public sealed class MrzResult : IMrzResult
@@ -103,6 +104,7 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public string VehicleClass => nativeDlDetailedInfo.VehicleClass;
 
+        public string Conditions => nativeDlDetailedInfo.Conditions;
     }
 
     public sealed class ClassInfo : IClassInfo
@@ -135,7 +137,13 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public DocumentImageColorStatus DocumentImageColorStatus => (DocumentImageColorStatus)nativeImageAnalysisResult.DocumentImageColorStatus;
 
-        public DocumentImageMoireStatus DocumentImageMoireStatus => (DocumentImageMoireStatus)nativeImageAnalysisResult.DocumentImageMoireStatus;
+        public ImageAnalysisDetectionStatus DocumentImageMoireStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.DocumentImageMoireStatus;
+
+        public ImageAnalysisDetectionStatus FaceDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.FaceDetectionStatus;
+
+        public ImageAnalysisDetectionStatus MrzDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.MrzDetectionStatus;
+
+        public ImageAnalysisDetectionStatus BarcodeDetectionStatus => (ImageAnalysisDetectionStatus)nativeImageAnalysisResult.BarcodeDetectionStatus;
 
     }
 
@@ -270,8 +278,37 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeVizResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeVizResult.DriverLicenseDetailedInfo) : null;
 
-        public string Conditions => nativeVizResult.Conditions;
-
         public bool Empty => nativeVizResult.Empty;
+    }
+
+    public sealed class RecognitionModeFilter : IRecognitionModeFilter
+    {
+        public MBRecognitionModeFilter NativeFilter { get; }
+
+        public RecognitionModeFilter(MBRecognitionModeFilter nativeFilter)
+        {
+            NativeFilter = nativeFilter;
+        }
+
+        public bool EnableMrzId => NativeFilter.EnableMrzId;
+        public bool EnableMrzVisa => NativeFilter.EnableMrzVisa;
+        public bool EnableMrzPassport => NativeFilter.EnableMrzPassport;
+        public bool EnablePhotoId => NativeFilter.EnablePhotoId;
+        public bool EnableFullDocumentRecognition => NativeFilter.EnableFullDocumentRecognition;
+    }
+
+    public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
+    {
+        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
+        {
+            MBRecognitionModeFilter recognitionModeFilter = new MBRecognitionModeFilter();
+            recognitionModeFilter.EnableMrzId = enableMrzId;
+            recognitionModeFilter.EnableMrzVisa = enableMrzVisa;
+            recognitionModeFilter.EnableMrzPassport = enableMrzPassport;
+            recognitionModeFilter.EnablePhotoId = enablePhotoId;
+            recognitionModeFilter.EnableFullDocumentRecognition = enableFullDocumentRecognition;
+
+            return new RecognitionModeFilter(recognitionModeFilter);
+        }
     }
 }
