@@ -28,7 +28,7 @@ namespace iOS
             customDelegate = new CustomDelegate(this);
 
             // set license key for iOS with bundle ID com.microblink.xamarin.blinkid
-            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAwAT48xKHWuWvt1WuSNXEeJhgq+O+erX0YbBRPn5xYU7BAdiHkVmn5ZC3GQqGDSD/mdcPRhPHmB4c1mHpeRwnppoHN3/qfsigqt0iqk3PJW0y0W9zhC5y3sfmnGusBxVKxQhhjLz9c1eyceCcoVV7Nq1ewAbtwSW5BL2N9VV824gQU6FmB0rJjZDSujM1SvZDwZruwms8T2vRnt1iUqDzU3NJaubpRHnveLbxJhsOgE+i7jZRCn5Wg8btkXtO");
+            MBMicroblinkSDK.SharedInstance.SetLicenseKey("sRwAAAEeY29tLm1pY3JvYmxpbmsueGFtYXJpbi5ibGlua2lks3unDL+B9jpa6FeAxDz/89jThOweSJfzxPUeJ0sFU65e+CfIAF0w7d+iKwpar7gRd14KwHEcGyMYlOYb27X2jMldwrjEVv3OfE2BZOWmkI1ZRxY2BmJrs2Hg99Ya/bZQmEehNd7Gzata8ENHQcBb1vlCDS5rbAx1/fhKJILjm6tn0sw1jwsc2gxXvCTjeuuSSqMrJW7rA1l/n75unfGXgKCsnuBG+a4qumJKXBFAX708736plT2NO4zM/3D0zoT4udMzeVW1OQ==");
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -82,7 +82,7 @@ namespace iOS
                 // we can check ResultState property of the Result to see if the result contains scanned information
                 if (me.blinkIdRecognizer.Result.ResultState == MBRecognizerResultState.Valid) {
                     var blinkidResult = me.blinkIdRecognizer.Result;
-					message += "BlinkID recognizer result:\n" +
+                    message += "BlinkID recognizer result:\n" +
                         BuildResult(blinkidResult.FirstName, "First name") +
                         BuildResult(blinkidResult.LastName, "Last name") +
                         BuildResult(blinkidResult.FullName, "Full name") +
@@ -105,8 +105,7 @@ namespace iOS
                         BuildResult(blinkidResult.Profession, "Profession") +
                         BuildResult(blinkidResult.Race, "Race") +
                         BuildResult(blinkidResult.Religion, "Religion") +
-                        BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
-                        BuildResult(blinkidResult.Conditions, "Conditions");
+                        BuildResult(blinkidResult.ResidentialStatus, "Residential Status");
 
                     MBDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
                     if (licenceInfo != null)
@@ -114,7 +113,8 @@ namespace iOS
                         message +=
                             BuildResult(licenceInfo.Restrictions, "Restrictions") +
                             BuildResult(licenceInfo.Endorsements, "Endorsements") +
-                            BuildResult(licenceInfo.VehicleClass, "Vehicle class");
+                            BuildResult(licenceInfo.VehicleClass, "Vehicle class") +
+                            BuildResult(licenceInfo.Conditions, "Conditions");
                     }
 
                 }
