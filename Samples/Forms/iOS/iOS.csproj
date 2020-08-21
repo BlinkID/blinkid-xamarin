@@ -89,7 +89,7 @@
       <HintPath>..\packages\BlinkID.iOS.Binding.5.7.1\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.7.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.7.1\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
       <HintPath>..\packages\BlinkID.Forms.iOS.5.7.1\lib\xamarinios10\BlinkID.dll</HintPath>

@@ -15,7 +15,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <PackageId>BlinkID.Android.Binding</PackageId>
-    <PackageVersion>5.7.0</PackageVersion>
+    <PackageVersion>5.7.1</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
@@ -25,7 +25,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.7.0</PackageReleaseNo
     <Summary>A small, but powerful ID scanning library - native Android SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - native Android SDK binding package.</Description>
-    <ReleaseVersion>4.0.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
