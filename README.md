@@ -5,7 +5,12 @@
 _BlinkID_ Xamarin SDK
 ======================
 
-This is BlinkID Xamarin implementation based on native [iOS](https://github.com/BlinkID/blinkid-ios) and [Android](https://github.com/BlinkID/blinkid-android) BlinkID SDKs.
+Enhance your Xamarin cross-platform apps with an AI-driven mobile ID scanning software.
+
+Please note that, for maximum performance and full access to all features, it’s best to go with one of our native SDKs (for [iOS](https://github.com/BlinkID/blinkid-ios) or [Android](https://github.com/BlinkID/blinkid-android)).
+
+Below you can try out our sample app, read the integration guides for both Android and iOS and study advanced topics ⬇️
+
 
 # Integration into Xamarin Forms project
 
