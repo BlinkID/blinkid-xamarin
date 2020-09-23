@@ -79,6 +79,10 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public string FullName => nativeResult.FullName;
 
+        public string MiddleName => nativeResult.MiddleName;
+
+        public string NameSuffix => nativeResult.NameSuffix;
+
         public string Address => nativeResult.Address;
 
         public string DocumentNumber => nativeResult.DocumentNumber;

@@ -169,6 +169,8 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public string FullName => nativeBarcodeResult.FullName;
 
+        public string MiddleName => nativeBarcodeResult.MiddleName;
+
         public string AdditionalNameInformation => nativeBarcodeResult.AdditionalNameInformation;
 
         public string Address => nativeBarcodeResult.Address;
