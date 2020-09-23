@@ -75,6 +75,11 @@ namespace Microblink.Forms.Core.Overlays
         /// </summary>
         bool ShowNotSupportedDialog { get; set; }
         /// <summary>
+        /// Defines whether glare  warning will be displayed when user turn on a flashlight
+        /// Default true
+        /// </summary>
+        bool ShowFlashlightWarning { get; set; }
+        /// <summary>
         /// Option to configure back side scanning timeout.
         /// Default 17000.
         /// </summary>

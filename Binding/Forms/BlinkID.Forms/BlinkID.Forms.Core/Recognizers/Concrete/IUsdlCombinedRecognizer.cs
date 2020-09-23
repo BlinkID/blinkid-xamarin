@@ -33,7 +33,7 @@
         /// Default value is <c>[0.0, 0.0, 0.0, 0.0]</c>
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the minimum number of stable detections required for detection to be successful.
         /// Default value is <c>6</c>
@@ -66,13 +66,13 @@
     public interface IUsdlCombinedRecognizerResult : IRecognizerResult
     {
         /// <summary>
-        /// Gets the digital signature of the recognition result. Available only if enabled with SignResult property. 
+        /// Gets the digital signature of the recognition result. Available only if enabled with SignResult property.
         /// </summary>
         /// <value>The digital signature.</value>
         byte[] DigitalSignature { get; }
 
         /// <summary>
-        /// Gets the version of the digital signature. Available only if enabled with signResult property. 
+        /// Gets the version of the digital signature. Available only if enabled with signResult property.
         /// </summary>
         /// <value>The digital signature version.</value>
         uint DigitalSignatureVersion { get; }
@@ -81,32 +81,32 @@
         /// Returns true if data from scanned parts/sides of the document match,
         /// false otherwise. For example if date of expiry is scanned from the front and back side
         /// of the document and values do not match, this method will return false. Result will
-        /// be true only if scanned values for all fields that are compared are the same. 
+        /// be true only if scanned values for all fields that are compared are the same.
         /// </summary>
         /// <value><c>true</c> if document data match; otherwise, <c>false</c>.</value>
         DataMatchResult DocumentDataMatch { get; }
 
         /// <summary>
-        /// Gets the face image from the document if enabled with ReturnFaceImage property. 
+        /// Gets the face image from the document if enabled with ReturnFaceImage property.
         /// </summary>
         /// <value>The face image.</value>
         Xamarin.Forms.ImageSource FaceImage { get; }
 
         /// <summary>
-        /// Gets the full document image if enabled with returnFullDocumentImage property. 
+        /// Gets the full document image if enabled with returnFullDocumentImage property.
         /// </summary>
         /// <value>The full document image.</value>
         Xamarin.Forms.ImageSource FullDocumentImage { get; }
 
         /// <summary>
         /// Returns true if recognizer has finished scanning first side and is now scanning back side,
-        /// false if it's still scanning first side. 
+        /// false if it's still scanning first side.
         /// </summary>
         /// <value><c>true</c> if scanning first side done; otherwise, <c>false</c>.</value>
         bool ScanningFirstSideDone { get; }
 
         /// <summary>
-        /// Gets a value indicating whether this result is uncertain, i.e. if scanned barcode 
+        /// Gets a value indicating whether this result is uncertain, i.e. if scanned barcode
         /// was incomplete (i.e. (has parts of it missing).
         /// </summary>
         /// <value><c>true</c> if uncertain; otherwise, <c>false</c>.</value>
@@ -150,6 +150,11 @@
         string FirstName { get; }
 
         /// <summary>
+        /// The middle name of the United States driver license owner.
+        /// </summary>
+        string MiddleName { get; }
+
+        /// <summary>
         /// The last name of the United States driver license owner.
         /// </summary>
         string LastName { get; }
@@ -158,6 +163,11 @@
         /// The full name of the United States driver license owner.
         /// </summary>
         string FullName { get; }
+
+        /// <summary>
+        /// The name suffix of the United States driver license owner.
+        /// </summary>
+        string NameSuffix { get; }
 
         /// <summary>
         /// The full address of the United States driver license owner.

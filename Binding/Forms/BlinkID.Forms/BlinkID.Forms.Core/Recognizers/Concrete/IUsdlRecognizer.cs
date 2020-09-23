@@ -46,7 +46,7 @@
     {
 
         /// <summary>
-        /// Gets a value indicating whether this result is uncertain, i.e. if scanned barcode 
+        /// Gets a value indicating whether this result is uncertain, i.e. if scanned barcode
         /// was incomplete (i.e. (has parts of it missing).
         /// </summary>
         /// <value><c>true</c> if uncertain; otherwise, <c>false</c>.</value>
@@ -90,6 +90,11 @@
         string FirstName { get; }
 
         /// <summary>
+        /// The middle name of the United States driver license owner.
+        /// </summary>
+        string MiddleName { get; }
+
+        /// <summary>
         /// The last name of the United States driver license owner.
         /// </summary>
         string LastName { get; }
@@ -98,6 +103,11 @@
         /// The full name of the United States driver license owner.
         /// </summary>
         string FullName { get; }
+
+        /// <summary>
+        /// The name suffix of the United States driver license owner.
+        /// </summary>
+        string NameSuffix { get; }
 
         /// <summary>
         /// The full address of the United States driver license owner.

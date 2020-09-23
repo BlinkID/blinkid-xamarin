@@ -57,9 +57,9 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// Gets the issuer of the document.
-        /// The issuer is three-letter or two-letter code which indicate the issuing State. 
-        /// Three-letter codes are based on Aplha-3 codes for entities specified in ISO 3166-1, 
-        /// with extensions for certain States. Two-letter codes are based on Alpha-2 codes for 
+        /// The issuer is three-letter or two-letter code which indicate the issuing State.
+        /// Three-letter codes are based on Aplha-3 codes for entities specified in ISO 3166-1,
+        /// with extensions for certain States. Two-letter codes are based on Alpha-2 codes for
         /// entities specified in ISO 3166-1, with extensions for certain States.
         /// </summary>
         /// <value>The issuer.</value>
@@ -73,7 +73,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// Gets the document number.
-        /// Document number contains up to 9 characters. Element does not exist on US 
+        /// Document number contains up to 9 characters. Element does not exist on US
         /// Green Card. To see which document was scanned use DocumentType property.
         /// </summary>
         /// <value>The document number.</value>
@@ -99,7 +99,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// Gets the document code.
-        /// Document code contains two characters. For MRTD the first character shall 
+        /// Document code contains two characters. For MRTD the first character shall
         /// be A, C or I.The second character shall be discretion of the issuing State or organization except
         /// that V shall not be used, and `C` shall not be used after `A` except in the crew member certificate.
         /// On machine-readable passports (MRP) first character shall be `P` to designate an MRP. One additional
@@ -118,7 +118,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// Gets the first optional data.
-        /// Contains empty string if not available. 
+        /// Contains empty string if not available.
         /// Element does not exist on US Green Card.
         /// To see which document was scanned use the DocumentType property.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Microblink.Forms.Core.Recognizers
 
         /// <summary>
         /// Gets the second optional data.
-        /// Contains empty string if not available. 
+        /// Contains empty string if not available.
         /// Element does not exist on US Green Card.
         /// To see which document was scanned use the DocumentType property.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Microblink.Forms.Core.Recognizers
         string ImmigrantCaseNumber { get; }
 
         /// <summary>
-        /// Gets entire Machine Readable Zone text from ID. This text is usually 
+        /// Gets entire Machine Readable Zone text from ID. This text is usually
         /// used for parsing other elements.
         /// NOTE: This string is available only if OCR result was parsed successfully.
         /// </summary>
@@ -506,6 +506,8 @@ namespace Microblink.Forms.Core.Recognizers
         Ecuador,
         ElSalvador,
         SriLanka,
+        Peru,
+        Uruguay
     }
 
     /// <summary>
@@ -582,6 +584,10 @@ namespace Microblink.Forms.Core.Recognizers
         Wisconsin,
         Wyoming,
         Yukon,
+        CiudadDeMexico,
+        Jalisco,
+        NewfoundlandAndLabrador,
+        NuevoLeon
     }
 
     /// <summary>
@@ -593,13 +599,13 @@ namespace Microblink.Forms.Core.Recognizers
         ConsularId,
         Dl,
         DlPublicServicesCard,
-        FinCard,
         EmploymentPass,
-        GreenCard,
+        FinCard,
         Id,
         MultipurposeId,
         MyKad,
         MyKid,
+        MyPr,
         MyTentera,
         PanCard,
         ProfessionalId,
@@ -614,6 +620,8 @@ namespace Microblink.Forms.Core.Recognizers
         MyKas,
         SocialSecurityCard,
         HealthInsuranceCard,
+        Passport,
+        SPass
     }
 
     /// <summary>
@@ -707,32 +715,38 @@ namespace Microblink.Forms.Core.Recognizers
     {
         /// <summary>
         /// Type of the barcode scanned
-        /// 
-        ///  @return Type of the barcode 
+        ///
+        ///  @return Type of the barcode
         /// </summary>
         BarcodeType BarcodeType { get; }
-        
+
         /// <summary>
-        /// Byte array with result of the scan 
+        /// Byte array with result of the scan
         /// </summary>
         byte[] RawData { get; }
-        
+
         /// <summary>
-        /// Retrieves string content of scanned data 
+        /// Retrieves string content of scanned data
         /// </summary>
         string StringData { get; }
-        
+
         /// <summary>
         /// Flag indicating uncertain scanning data
-        /// E.g obtained from damaged barcode. 
+        /// E.g obtained from damaged barcode.
         /// </summary>
         bool Uncertain { get; }
-        
+
         /// <summary>
         /// Gets the first name of the document owner.
         /// </summary>
         /// <value>The first name of the document owner.</value>
         string FirstName { get; }
+
+        /// <summary>
+        /// Gets the middle name of the document owner.
+        /// </summary>
+        /// <value>The middle name of the document owner.</value>
+        string MiddleName { get; }
 
         /// <summary>
         /// Gets the last name of the document owner.
@@ -1054,40 +1068,40 @@ namespace Microblink.Forms.Core.Recognizers
         // Detection of the document failed.
         DetectionFailed,
 
-        // Preprocessing of the input image has failed. 
+        // Preprocessing of the input image has failed.
         ImagePreprocessingFailed,
 
-        // Recognizer has inconsistent results. 
+        // Recognizer has inconsistent results.
         StabilityTestFailed,
 
-        // Wrong side of the document has been scanned. 
+        // Wrong side of the document has been scanned.
         ScanningWrongSide,
 
-        // Identification of the fields present on the document has failed. 
+        // Identification of the fields present on the document has failed.
         FieldIdentificationFailed,
 
-        // Mandatory field for the specific document is missing. 
+        // Mandatory field for the specific document is missing.
         MandatoryFieldMissing,
 
-        // Result contains invalid characters in some of the fields. 
+        // Result contains invalid characters in some of the fields.
         InvalidCharactersFound,
 
-        // Failed to return a requested image. 
+        // Failed to return a requested image.
         ImageReturnFailed,
 
-        // Reading or parsing of the barcode has failed. 
+        // Reading or parsing of the barcode has failed.
         BarcodeRecognitionFailed,
 
-        // Parsing of the MRZ has failed. 
+        // Parsing of the MRZ has failed.
         MrzParsingFailed,
 
-        // Document class has been filtered out. 
+        // Document class has been filtered out.
         ClassFiltered,
 
-        // Document currently not supported by the recognizer. 
+        // Document currently not supported by the recognizer.
         UnsupportedClass,
 
-        // License for the detected document is missing. 
+        // License for the detected document is missing.
         UnsupportedByLicense
     }
 
@@ -1096,22 +1110,22 @@ namespace Microblink.Forms.Core.Recognizers
     /// </summary>
     public enum RecognitionMode
     {
-        // No recognition performed. 
+        // No recognition performed.
         None,
 
-        // Recognition of mrz document (does not include visa and passport) 
+        // Recognition of mrz document (does not include visa and passport)
         MrzId,
 
-        // Recognition of visa mrz. 
+        // Recognition of visa mrz.
         MrzVisa,
 
-        // Recognition of passport mrz. 
+        // Recognition of passport mrz.
         MrzPassport,
 
-        // Recognition of documents that have face photo on the front. 
+        // Recognition of documents that have face photo on the front.
         PhotoId,
 
-        // Detailed document recognition. 
+        // Detailed document recognition.
         FullRecognition
     }
 
