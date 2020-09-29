@@ -143,7 +143,7 @@
       <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.28.0.0.3\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>packages\BlinkID.Android.Binding.5.7.1\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.Android.Binding.5.8.0\lib\monoandroid90\BlinkIDAARBinding.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
