@@ -202,58 +202,61 @@ namespace Microblink
         IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
     }
 
-    // @interface MBMicroblinkSDK : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    interface MBMicroblinkSDK
-    {
-        // +(instancetype _Nonnull)sharedInstance;
-        [Static]
-        [Export("sharedInstance")]
-        MBMicroblinkSDK SharedInstance { get; }
+    // typedef void (^MBLicenseErrorBlock)(MBLicenseError);
+	delegate void MBLicenseErrorBlock (MBLicenseError arg0);
 
-        // @property (assign, nonatomic) BOOL showLicenseKeyTimeLimitedWarning;
-        [Export("showLicenseKeyTimeLimitedWarning")]
-        bool ShowLicenseKeyTimeLimitedWarning { get; set; }
+	// @interface MBMicroblinkSDK : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	interface MBMicroblinkSDK
+	{
+		// +(instancetype _Nonnull)sharedInstance;
+		[Static]
+		[Export ("sharedInstance")]
+		MBMicroblinkSDK SharedInstance ();
 
-        // @property (nonatomic, strong) NSBundle * _Nonnull resourcesBundle;
-        [Export("resourcesBundle", ArgumentSemantic.Strong)]
-        NSBundle ResourcesBundle { get; set; }
+		// @property (assign, nonatomic) BOOL showLicenseKeyTimeLimitedWarning;
+		[Export ("showLicenseKeyTimeLimitedWarning")]
+		bool ShowLicenseKeyTimeLimitedWarning { get; set; }
 
-        // -(void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer;
-        [Export("setLicenseBuffer:")]
-        void SetLicenseBuffer(NSData licenseBuffer);
+		// @property (nonatomic, strong) NSBundle * _Nonnull resourcesBundle;
+		[Export ("resourcesBundle", ArgumentSemantic.Strong)]
+		NSBundle ResourcesBundle { get; set; }
 
-        // -(void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer andLicensee:(NSString * _Nonnull)licensee;
-        [Export("setLicenseBuffer:andLicensee:")]
-        void SetLicenseBuffer(NSData licenseBuffer, string licensee);
+		// -(void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseBuffer:errorCallback:")]
+		void SetLicenseBuffer (NSData licenseBuffer, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // -(void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey;
-        [Export("setLicenseKey:")]
-        void SetLicenseKey(string base64LicenseKey);
+		// -(void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer andLicensee:(NSString * _Nonnull)licensee errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseBuffer:andLicensee:errorCallback:")]
+		void SetLicenseBuffer (NSData licenseBuffer, string licensee, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // -(void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey andLicensee:(NSString * _Nonnull)licensee;
-        [Export("setLicenseKey:andLicensee:")]
-        void SetLicenseKey(string base64LicenseKey, string licensee);
+		// -(void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseKey:errorCallback:")]
+		void SetLicenseKey (string base64LicenseKey, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // -(void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle;
-        [Export("setLicenseResource:withExtension:inSubdirectory:forBundle:")]
-        void SetLicenseResource(string fileName, [NullAllowed] string extension, [NullAllowed] string subdirectory, NSBundle bundle);
+		// -(void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey andLicensee:(NSString * _Nonnull)licensee errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseKey:andLicensee:errorCallback:")]
+		void SetLicenseKey (string base64LicenseKey, string licensee, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // -(void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle andLicensee:(NSString * _Nonnull)licensee;
-        [Export("setLicenseResource:withExtension:inSubdirectory:forBundle:andLicensee:")]
-        void SetLicenseResource(string fileName, [NullAllowed] string extension, [NullAllowed] string subdirectory, NSBundle bundle, string licensee);
+		// -(void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseResource:withExtension:inSubdirectory:forBundle:errorCallback:")]
+		void SetLicenseResource (string fileName, [NullAllowed] string extension, [NullAllowed] string subdirectory, NSBundle bundle, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // +(NSString * _Nonnull)buildVersionString;
-        [Static]
-        [Export("buildVersionString")]
-        string BuildVersionString { get; }
+		// -(void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle andLicensee:(NSString * _Nonnull)licensee errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
+		[Export ("setLicenseResource:withExtension:inSubdirectory:forBundle:andLicensee:errorCallback:")]
+		void SetLicenseResource (string fileName, [NullAllowed] string extension, [NullAllowed] string subdirectory, NSBundle bundle, string licensee, [NullAllowed] MBLicenseErrorBlock errorCallback);
 
-        // +(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error;
-        [Static]
-        [Export("isScanningUnsupportedForCameraType:error:")]
-        bool IsScanningUnsupportedForCameraType (MBCameraType type, [NullAllowed] out NSError error);
-    }
+		// +(NSString * _Nonnull)buildVersionString;
+		[Static]
+		[Export ("buildVersionString")]
+		string BuildVersionString { get; }
+
+		// +(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error;
+		[Static]
+		[Export ("isScanningUnsupportedForCameraType:error:")]
+		bool IsScanningUnsupportedForCameraType (MBCameraType type, [NullAllowed] out NSError error);
+	}
 
     [Static]
     partial interface Constants
@@ -1789,6 +1792,10 @@ namespace Microblink
 		[Export ("firstName")]
 		string FirstName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nonnull middleName;
+		[Export ("middleName")]
+		string MiddleName { get; }
+
 		// @property (readonly, nonatomic) NSString * _Nonnull lastName;
 		[Export ("lastName")]
 		string LastName { get; }
@@ -2035,7 +2042,7 @@ namespace Microblink
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult
+	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -2170,7 +2177,7 @@ namespace Microblink
     // @interface MBBlinkIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizer))]
-	interface MBBlinkIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+	interface MBBlinkIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage
 	{
 		// @property (readonly, nonatomic, strong) MBBlinkIdRecognizerResult * _Nonnull result;
 		[Export ("result", ArgumentSemantic.Strong)]
@@ -2235,7 +2242,7 @@ namespace Microblink
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult
+	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -2377,7 +2384,7 @@ namespace Microblink
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizer))]
-    interface MBBlinkIdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBDigitalSignature, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    interface MBBlinkIdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBDigitalSignature, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage
     {
         // @property (readonly, nonatomic, strong) MBBlinkIdCombinedRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
@@ -2479,6 +2486,10 @@ namespace Microblink
 		// @property (readonly, nonatomic) NSString * _Nonnull firstName;
 		[Export ("firstName")]
 		string FirstName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull middleName;
+		[Export ("middleName")]
+		string MiddleName { get; }
 
 		// @property (readonly, nonatomic) NSString * _Nonnull fullName;
 		[Export ("fullName")]
@@ -2813,9 +2824,17 @@ namespace Microblink
         [NullAllowed, Export ("firstName")]
         string FirstName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable middleName;
+		[NullAllowed, Export ("middleName")]
+		string MiddleName { get; }
+
         // @property (readonly, nonatomic) NSString * _Nullable lastName;
         [NullAllowed, Export ("lastName")]
         string LastName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable nameSuffix;
+		[NullAllowed, Export ("nameSuffix")]
+		string NameSuffix { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable fullName;
         [NullAllowed, Export ("fullName")]
@@ -2915,6 +2934,10 @@ namespace Microblink
         [NullAllowed, Export ("firstName")]
         string FirstName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable middleName;
+		[NullAllowed, Export ("middleName")]
+		string MiddleName { get; }
+
         // @property (readonly, nonatomic) NSString * _Nullable lastName;
         [NullAllowed, Export ("lastName")]
         string LastName { get; }
@@ -2922,6 +2945,10 @@ namespace Microblink
         // @property (readonly, nonatomic) NSString * _Nullable fullName;
         [NullAllowed, Export ("fullName")]
         string FullName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable nameSuffix;
+		[NullAllowed, Export ("nameSuffix")]
+		string NameSuffix { get; }
 
         // @property (readonly, nonatomic) NSString * _Nullable address;
         [NullAllowed, Export ("address")]
@@ -3552,6 +3579,10 @@ namespace Microblink
 		// @property (assign, nonatomic) BOOL showNotSupportedDialog;
 		[Export ("showNotSupportedDialog")]
 		bool ShowNotSupportedDialog { get; set; }
+
+        // @property (assign, nonatomic) BOOL showFlashlightWarning;
+		[Export ("showFlashlightWarning")]
+		bool ShowFlashlightWarning { get; set; }
 
 		// @property (assign, nonatomic) NSTimeInterval backSideScanningTimeout;
 		[Export ("backSideScanningTimeout")]

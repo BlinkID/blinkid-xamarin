@@ -166,6 +166,8 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public string FirstName => nativeBarcodeResult.FirstName;
 
+        public string MiddleName => nativeBarcodeResult.MiddleName;
+
         public string LastName => nativeBarcodeResult.LastName;
 
         public string FullName => nativeBarcodeResult.FullName;

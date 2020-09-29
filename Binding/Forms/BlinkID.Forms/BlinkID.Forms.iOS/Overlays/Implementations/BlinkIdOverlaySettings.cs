@@ -27,148 +27,157 @@ namespace Microblink.Forms.iOS.Overlays
             return new MBBlinkIdOverlayViewController(nativeBlinkIdOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, blinkIdOverlayVCDelegate);
         }
 
-        public string FirstSideInstructionsText { 
+        public string FirstSideInstructionsText {
             get {
                 return nativeBlinkIdOverlaySettings.FirstSideInstructionsText;
             }
             set {
                 nativeBlinkIdOverlaySettings.FirstSideInstructionsText = value;
-            } 
+            }
         }
 
-        public string FlipInstructions { 
+        public string FlipInstructions {
             get {
                 return nativeBlinkIdOverlaySettings.FlipInstructions;
             }
             set {
                 nativeBlinkIdOverlaySettings.FlipInstructions = value;
-            }  
+            }
         }
 
-        public string ErrorMoveCloser { 
+        public string ErrorMoveCloser {
             get {
                 return nativeBlinkIdOverlaySettings.ErrorMoveCloser;
             }
             set {
                 nativeBlinkIdOverlaySettings.ErrorMoveCloser = value;
-            }  
+            }
         }
 
-        public string ErrorMoveFarther { 
+        public string ErrorMoveFarther {
             get {
                 return nativeBlinkIdOverlaySettings.ErrorMoveFarther;
             }
             set {
                 nativeBlinkIdOverlaySettings.ErrorMoveFarther = value;
-            }  
+            }
         }
 
-        public string SidesNotMatchingTitle { 
+        public string SidesNotMatchingTitle {
             get {
                 return nativeBlinkIdOverlaySettings.SidesNotMatchingTitle;
             }
             set {
                 nativeBlinkIdOverlaySettings.SidesNotMatchingTitle = value;
-            }  
+            }
         }
 
-        public string SidesNotMatchingMessage { 
+        public string SidesNotMatchingMessage {
             get {
                 return nativeBlinkIdOverlaySettings.SidesNotMatchingMessage;
             }
             set {
                 nativeBlinkIdOverlaySettings.SidesNotMatchingMessage = value;
-            }  
+            }
         }
 
-        public string UnsupportedDocumentTitle { 
+        public string UnsupportedDocumentTitle {
             get {
                 return nativeBlinkIdOverlaySettings.UnsupportedDocumentTitle;
             }
             set {
                 nativeBlinkIdOverlaySettings.UnsupportedDocumentTitle = value;
-            }  
+            }
         }
 
-        public string UnsupportedDocumentMessage { 
+        public string UnsupportedDocumentMessage {
             get {
                 return nativeBlinkIdOverlaySettings.UnsupportedDocumentMessage;
             }
             set {
                 nativeBlinkIdOverlaySettings.UnsupportedDocumentMessage = value;
-            }  
+            }
         }
 
-        public string RecognitionTimeoutTitle { 
+        public string RecognitionTimeoutTitle {
             get {
                 return nativeBlinkIdOverlaySettings.RecognitionTimeoutTitle;
             }
             set {
                 nativeBlinkIdOverlaySettings.RecognitionTimeoutTitle = value;
-            }  
+            }
         }
 
-        public string RecognitionTimeoutMessage { 
+        public string RecognitionTimeoutMessage {
             get {
                 return nativeBlinkIdOverlaySettings.RecognitionTimeoutMessage;
             }
             set {
                 nativeBlinkIdOverlaySettings.RecognitionTimeoutMessage = value;
-            }  
+            }
         }
 
-        public string RetryButtonText { 
+        public string RetryButtonText {
             get {
                 return nativeBlinkIdOverlaySettings.RetryButtonText;
             }
             set {
                 nativeBlinkIdOverlaySettings.RetryButtonText = value;
-            }  
+            }
         }
 
-        public bool RequireDocumentSidesDataMatch { 
+        public bool RequireDocumentSidesDataMatch {
             get {
                 return nativeBlinkIdOverlaySettings.RequireDocumentSidesDataMatch;
             }
             set {
                 nativeBlinkIdOverlaySettings.RequireDocumentSidesDataMatch = value;
-            }  
+            }
         }
 
-        public bool ShowNotSupportedDialog { 
+        public bool ShowNotSupportedDialog {
             get {
                 return nativeBlinkIdOverlaySettings.ShowNotSupportedDialog;
             }
             set {
                 nativeBlinkIdOverlaySettings.ShowNotSupportedDialog = value;
-            }  
+            }
         }
 
-        public long BackSideScanningTimeoutMilliseconds { 
+        public bool ShowFlashlightWarning {
+            get {
+                return nativeBlinkIdOverlaySettings.ShowFlashlightWarning;
+            }
+            set {
+                nativeBlinkIdOverlaySettings.ShowFlashlightWarning = value;
+            }
+        }
+
+        public long BackSideScanningTimeoutMilliseconds {
             get {
                 return Convert.ToInt64(nativeBlinkIdOverlaySettings.BackSideScanningTimeout * 1000);
             }
             set {
                 nativeBlinkIdOverlaySettings.BackSideScanningTimeout = Convert.ToDouble(value / 1000.0);
-            }  
+            }
         }
 
-        public string ScanBarcodeText { 
+        public string ScanBarcodeText {
             get {
                 return nativeBlinkIdOverlaySettings.ScanBarcodeText;
             }
             set {
                 nativeBlinkIdOverlaySettings.ScanBarcodeText = value;
-            }  
+            }
         }
 
-        public string ErrorDocumentTooCloseToEdge { 
+        public string ErrorDocumentTooCloseToEdge {
             get {
                 return nativeBlinkIdOverlaySettings.ErrorDocumentTooCloseToEdge;
             }
             set {
                 nativeBlinkIdOverlaySettings.ErrorDocumentTooCloseToEdge = value;
-            }  
+            }
         }
     }
 

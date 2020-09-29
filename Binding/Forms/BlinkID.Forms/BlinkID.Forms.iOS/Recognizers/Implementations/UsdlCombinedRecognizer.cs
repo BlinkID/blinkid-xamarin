@@ -27,9 +27,9 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ReturnFullDocumentImage; set => nativeRecognizer.ReturnFullDocumentImage = value; }
         public bool SignResult { get => nativeRecognizer.SignResult; set => nativeRecognizer.SignResult = value; }
         public uint NumStableDetectionsThreshold { get => (uint)nativeRecognizer.NumStableDetectionsThreshold; set => nativeRecognizer.NumStableDetectionsThreshold = value; }
-        public IImageExtensionFactors FullDocumentImageExtensionFactors 
-        { 
-            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
+        public IImageExtensionFactors FullDocumentImageExtensionFactors
+        {
+            get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors);
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
     }
@@ -46,9 +46,13 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public string FirstName => nativeResult.FirstName;
 
+        public string MiddleName => nativeResult.MiddleName;
+
         public string LastName => nativeResult.LastName;
 
         public string FullName => nativeResult.FullName;
+
+        public string NameSuffix => nativeResult.NameSuffix;
 
         public string Address => nativeResult.Address;
 

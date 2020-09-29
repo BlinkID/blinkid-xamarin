@@ -221,6 +221,15 @@ namespace Microblink
 	// }
 
 	[Native]
+	public enum MBLicenseError : ulong
+	{
+		NetworkRequired,
+		UnableToDoRemoteLicenceCheck,
+		LicenseIsLocked,
+		LicenseCheckFailed
+	}
+
+	[Native]
 	public enum MBMrtdDocumentType : ulong
 	{
 		Unknown,
@@ -461,7 +470,9 @@ namespace Microblink
 		Oman,
 		Ecuador,
 		ElSalvador,
-		SriLanka
+		SriLanka,
+		Peru,
+		Uruguay
 	}
 
 	[Native]
@@ -535,7 +546,11 @@ namespace Microblink
 		WestVirginia,
 		Wisconsin,
 		Wyoming,
-		Yukon
+		Yukon,
+		CiudadDeMexico,
+		Jalisco,
+		NewfoundlandAndLabrador,
+		NuevoLeon
 	}
 
 	[Native]
@@ -565,7 +580,9 @@ namespace Microblink
 		MilitaryId,
 		MyKas,
 		SocialSecurityCard,
-		HealthInsuranceCard
+		HealthInsuranceCard,
+		Passport,
+		SPass
 	}
 
 	[Native]
