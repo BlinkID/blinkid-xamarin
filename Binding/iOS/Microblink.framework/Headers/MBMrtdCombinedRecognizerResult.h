@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Class representing values obtained when scanning both front and back side of Croatian ID.
  */
-MB_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_DEPRECATED("Use MBBlinkIdCombinedRecognizerResult with mrz_id, mrz_visa, mrz_passport rights.")
 @interface MBMrtdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult, MBDigitalSignatureResult>
 
 MB_INIT_UNAVAILABLE
