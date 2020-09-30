@@ -51,6 +51,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Jurisdiction => nativeResult.Jurisdiction;
         public string LastName => nativeResult.LastName;
         public string MaritalStatus => nativeResult.MaritalStatus;
+        public string MiddleName => nativeResult.MiddleName;
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;
         public string PlaceOfBirth => nativeResult.PlaceOfBirth;

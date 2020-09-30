@@ -19,6 +19,7 @@ namespace Microblink.Forms.Droid.Overlays
 
                 concreteUISettings.SetDocumentDataMatchRequired(RequireDocumentSidesDataMatch);
                 concreteUISettings.SetShowNotSupportedDialog(ShowNotSupportedDialog);
+                concreteUISettings.SetShowFlashlightWarning(ShowFlashlightWarning);
                 concreteUISettings.SetBackSideScanningTimeoutMs(BackSideScanningTimeoutMilliseconds);
 
                 var overlayStringsBuilder = new ReticleOverlayStrings.Builder(Android.App.Application.Context);
@@ -95,6 +96,8 @@ namespace Microblink.Forms.Droid.Overlays
         public bool RequireDocumentSidesDataMatch { get; set; } = true;
 
         public bool ShowNotSupportedDialog { get; set; } = true;
+
+        public bool ShowFlashlightWarning { get; set; } = true;
 
         public long BackSideScanningTimeoutMilliseconds { get; set; } = 17000;
 

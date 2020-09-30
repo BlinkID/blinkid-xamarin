@@ -131,6 +131,11 @@
         string MaritalStatus { get; }
         
         /// <summary>
+        /// The middle name of the document owner. 
+        /// </summary>
+        string MiddleName { get; }
+        
+        /// <summary>
         /// The nationality of the documet owner. 
         /// </summary>
         string Nationality { get; }

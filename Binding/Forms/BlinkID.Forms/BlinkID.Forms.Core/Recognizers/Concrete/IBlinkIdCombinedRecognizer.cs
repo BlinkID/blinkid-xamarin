@@ -113,6 +113,15 @@
         bool ReturnFullDocumentImage { get; set; }
         
         /// <summary>
+        /// Sets whether signature image from ID card should be extracted.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ReturnSignatureImage { get; set; }
+        
+        /// <summary>
         /// Whether or not recognition result should be signed.
         /// 
         ///  
@@ -120,6 +129,16 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool SignResult { get; set; }
+        
+        /// <summary>
+        /// Property for setting DPI for signature images
+        /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '250'
+        /// </summary>
+        uint SignatureImageDpi { get; set; }
         
         /// <summary>
         /// Skip back side capture and processing step when back side of the document is not supported
@@ -378,6 +397,11 @@
         /// The sex of the document owner. 
         /// </summary>
         string Sex { get; }
+        
+        /// <summary>
+        /// image of the signature if enabled with returnSignatureImage property. 
+        /// </summary>
+        Xamarin.Forms.ImageSource SignatureImage { get; }
         
     }
 }

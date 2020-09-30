@@ -87,10 +87,22 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
+        public bool ReturnSignatureImage 
+        { 
+            get => nativeRecognizer.ReturnSignatureImage; 
+            set => nativeRecognizer.ReturnSignatureImage = value;
+        }
+        
         public bool SignResult 
         { 
             get => nativeRecognizer.SignResult; 
             set => nativeRecognizer.SignResult = value;
+        }
+        
+        public uint SignatureImageDpi 
+        { 
+            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            set => nativeRecognizer.SignatureImageDpi = value;
         }
         
         public bool SkipUnsupportedBack 
@@ -158,5 +170,6 @@ namespace Microblink.Forms.iOS.Recognizers
         public string ResidentialStatus => nativeResult.ResidentialStatus;
         public bool ScanningFirstSideDone => nativeResult.ScanningFirstSideDone;
         public string Sex => nativeResult.Sex;
+        public Xamarin.Forms.ImageSource SignatureImage => nativeResult.SignatureImage != null ? Utils.ConvertUIImage(nativeResult.SignatureImage.Image) : null;
     }
 }

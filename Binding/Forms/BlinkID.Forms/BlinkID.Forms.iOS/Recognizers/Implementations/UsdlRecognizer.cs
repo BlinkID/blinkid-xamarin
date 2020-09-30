@@ -37,9 +37,13 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public string FirstName => nativeResult.FirstName;
 
+        public string MiddleName => nativeResult.MiddleName;
+
         public string LastName => nativeResult.LastName;
 
         public string FullName => nativeResult.FullName;
+
+        public string NameSuffix => nativeResult.NameSuffix;
 
         public string Address => nativeResult.Address;
 

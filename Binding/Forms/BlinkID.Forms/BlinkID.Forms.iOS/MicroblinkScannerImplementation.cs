@@ -19,14 +19,14 @@ namespace Microblink.Forms.iOS
 
         public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
         {
-            MBMicroblinkSDK.SharedInstance.ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
-            if (licensee == null) 
+            MBMicroblinkSDK.SharedInstance().ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
+            if (licensee == null)
             {
-                MBMicroblinkSDK.SharedInstance.SetLicenseKey(licenseKey);
+                MBMicroblinkSDK.SharedInstance().SetLicenseKey(licenseKey, null);
             }
             else
             {
-                MBMicroblinkSDK.SharedInstance.SetLicenseKey(licenseKey, licensee);
+                MBMicroblinkSDK.SharedInstance().SetLicenseKey(licenseKey, licensee, null);
             }
         }
 

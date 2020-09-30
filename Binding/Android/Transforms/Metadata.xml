@@ -34,4 +34,6 @@
     
     <remove-node path="/api/package[@name='com.microblink.fragment']/class[@name='RecognizerRunnerFragment']/method[@name='onRequestPermissionsResult' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String[]'] and parameter[3][@type='int[]']]" />
 
+    <remove-node path="/api/package[@name='com.microblink.licence']/class[@name!='InvalidLicenceKeyException' and @name!='LicenceKeyException' and @name!='LicenceLockedException' and @name!='NetworkRequiredException' and @name!='RemoteLicenceCheckException']" />
+
 </metadata>
