@@ -47,7 +47,7 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP+dpSuS/38LVOOaNNacdy5kvOjARlS+ZYUJequcG+Hqo27AnV1Dsb+chCYtaeZSdPijWBCYJ51tohlnyZoEVBy/6a1OH/bRSNy8cPbh6GEjWK5XsLOJGggpwhNMoId3hXJpEJisHYvwiArC5tvWBUZzgr5rmupFObXTd67RaHytuIBa1ENEiLqT9RRHho05ftVuEcfE0Qk/eKv1vbL+LyowK80VS2pZNoOCd/g8K7iHW5XhGdeCqu0C7izVQ+kROfheTZf8I";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP+dpSuS/38JVP6aKNaBKXyOa0lx8FMppKnmLvzN4FxHDuhb/iU7ojs9ZV2HHMGkgO+lMeHXvwTM9jNX3cTyExpXVaxJ06Ki8O5II97dgREuRvs8ZoV7qGSMhZtLe9b4wPe69vbvgkmGrUPLzNGJX8uxTtpRgLOtFSpNXshQZ/nnRhxi/F2d9sY7sYI1jTYAMoacu0AWrciTcSFTYe57lLkTFH6wtJTmGzzPF18NqhltfO7+5Bwk5/9AQ9blIOOBFr5s=";
             }
             else
             {
