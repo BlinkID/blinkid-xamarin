@@ -15,10 +15,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.microblink.entities.recognizers.RecognizerBundle;
 import com.microblink.hardware.SuccessCallback;
-import com.microblink.hardware.camera.CameraPermissionManagerResources;
 import com.microblink.hardware.orientation.Orientation;
 import com.microblink.metadata.MetadataCallbacks;
 import com.microblink.metadata.detection.FailedDetectionCallback;
@@ -133,7 +133,7 @@ public final class MyScanActivity extends Activity implements ScanResultListener
         mRecognizerView.setAspectMode(CameraAspectMode.ASPECT_FILL);
 
         // instantiate the camera permission manager
-        mCameraPermissionManager = new CameraPermissionManager(this, new CameraPermissionManagerResources());
+        mCameraPermissionManager = new CameraPermissionManager(this);
         // get the built in layout that should be displayed when camera permission is not given
         View v = mCameraPermissionManager.getAskPermissionOverlay();
         if (v != null) {
@@ -295,6 +295,12 @@ public final class MyScanActivity extends Activity implements ScanResultListener
         Intent resultIntent = new Intent();
         recognizerBundle.saveToIntent(resultIntent);
         setResult(RESULT_OK, resultIntent);
+        finish();
+    }
+
+    @Override
+    public void onUnrecoverableError(@NonNull Throwable throwable) {
+        Toast.makeText(this, throwable.toString(), Toast.LENGTH_SHORT).show();
         finish();
     }
 
