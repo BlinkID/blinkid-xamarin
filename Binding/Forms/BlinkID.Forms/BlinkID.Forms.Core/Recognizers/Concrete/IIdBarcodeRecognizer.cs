@@ -29,16 +29,12 @@
         string Address { get; }
         
         /// <summary>
-        /// The current age of the document owner in years. It is calculated difference
-        /// between now and date of birth. Now is current time on the device.
-        /// @return current age of the document owner in years or -1 if date of birth is unknown. 
+        /// The current age of the document owner in years. It is calculated difference 
         /// </summary>
         int Age { get; }
         
         /// <summary>
-        /// Type of the barcode scanned
-        /// 
-        ///  @return Type of the barcode 
+        /// The format of the scanned barcode. 
         /// </summary>
         BarcodeType BarcodeType { get; }
         
@@ -73,9 +69,7 @@
         string DocumentNumber { get; }
         
         /// <summary>
-        /// The document type deduced from the recognized barcode
-        /// 
-        ///  @return Type of the document 
+        /// The document type deduced from the recognized barcode 
         /// </summary>
         IdBarcodeDocumentType DocumentType { get; }
         
@@ -90,13 +84,7 @@
         string Endorsements { get; }
         
         /// <summary>
-        /// Checks whether the document has expired or not by comparing the current
-        /// time on the device with the date of expiry.
-        /// 
-        /// @return true if the document has expired, false in following cases:
-        /// document does not expire (date of expiry is permanent)
-        /// date of expiry has passed
-        /// date of expiry is unknown and it is not permanent 
+        /// Checks whether the document has expired or not by comparing the current 
         /// </summary>
         bool Expired { get; }
         
@@ -166,7 +154,7 @@
         string Race { get; }
         
         /// <summary>
-        /// Byte array with result of the scan 
+        /// The raw bytes contained inside barcode. 
         /// </summary>
         byte[] RawData { get; }
         
@@ -176,7 +164,7 @@
         string Religion { get; }
         
         /// <summary>
-        /// The residential stauts of the document owner. 
+        /// The residential status of the document owner. 
         /// </summary>
         string ResidentialStatus { get; }
         
@@ -196,13 +184,12 @@
         string Street { get; }
         
         /// <summary>
-        /// Retrieves string content of scanned data 
+        /// String representation of data inside barcode. 
         /// </summary>
         string StringData { get; }
         
         /// <summary>
-        /// Flag indicating uncertain scanning data
-        /// E.g obtained from damaged barcode. 
+        /// True if returned result is uncertain, i.e. if scanned barcode was incomplete (i.e. 
         /// </summary>
         bool Uncertain { get; }
         
