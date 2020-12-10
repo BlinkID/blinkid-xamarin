@@ -44,7 +44,8 @@ namespace Microblink
 	{
 		Empty,
 		Uncertain,
-		Valid
+		Valid,
+		StageValid
 	}
 
 	[Native]
@@ -472,7 +473,21 @@ namespace Microblink
 		ElSalvador,
 		SriLanka,
 		Peru,
-		Uruguay
+		Uruguay,
+		Bahamas,
+		Bermuda,
+		Bolivia,
+		China,
+		EuropeanUnion,
+		Haiti,
+		Honduras,
+		Iceland,
+		Japan,
+		Luxembourg,
+		Montenegro,
+		Nicaragua,
+		SouthKorea,
+		Venezuela
 	}
 
 	[Native]
@@ -550,7 +565,16 @@ namespace Microblink
 		CiudadDeMexico,
 		Jalisco,
 		NewfoundlandAndLabrador,
-		NuevoLeon
+		NuevoLeon,
+		BajaCalifornia,
+		Chihuahua,
+		Guanajuato,
+		Guerrero,
+		Mexico,
+		Michoacan,
+		NewYorkCity,
+		Tamaulipas,
+		Veracruz
 	}
 
 	[Native]
@@ -582,7 +606,16 @@ namespace Microblink
 		SocialSecurityCard,
 		HealthInsuranceCard,
 		Passport,
-		SPass
+		SPass,
+		AddressCard,
+		AlienId,
+		AlienPassport,
+		GreenCard,
+		MinorsId,
+		PostalId,
+		ProfessionalDl,
+		TaxId,
+		WeaponPermit
 	}
 
 	[Native]

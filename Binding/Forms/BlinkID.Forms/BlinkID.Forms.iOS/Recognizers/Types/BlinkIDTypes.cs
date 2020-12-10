@@ -281,6 +281,8 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeVizResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeVizResult.DriverLicenseDetailedInfo) : null;
 
         public bool Empty => nativeVizResult.Empty;
+
+        public string DocumentOptionalAdditionalNumber => nativeVizResult.DocumentOptionalAdditionalNumber;
     }
 
     public sealed class RecognitionModeFilter : IRecognitionModeFilter

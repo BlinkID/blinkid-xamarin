@@ -27,15 +27,15 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectorType = (MBDocumentFaceDetectorType)value;
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => (int)nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => (int)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
@@ -45,9 +45,9 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
-        public uint NumStableDetectionsThreshold 
+        public int NumStableDetectionsThreshold 
         { 
-            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            get => (int)nativeRecognizer.NumStableDetectionsThreshold; 
             set => nativeRecognizer.NumStableDetectionsThreshold = value;
         }
         
