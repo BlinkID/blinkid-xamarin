@@ -52,7 +52,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FaceImageDpi { get; set; }
+        int FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -62,7 +62,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FullDocumentImageDpi { get; set; }
+        int FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Image extension factors for full document image.
@@ -138,7 +138,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint SignatureImageDpi { get; set; }
+        int SignatureImageDpi { get; set; }
         
         /// <summary>
         /// Skip back side capture and processing step when back side of the document is not supported
@@ -241,7 +241,7 @@
         /// <summary>
         /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
-        uint DigitalSignatureVersion { get; }
+        int DigitalSignatureVersion { get; }
         
         /// <summary>
         /// The additional number of the document. 
@@ -260,6 +260,11 @@
         /// The document number. 
         /// </summary>
         string DocumentNumber { get; }
+        
+        /// <summary>
+        /// The one more additional number of the document. 
+        /// </summary>
+        string DocumentOptionalAdditionalNumber { get; }
         
         /// <summary>
         /// The driver license detailed info. 

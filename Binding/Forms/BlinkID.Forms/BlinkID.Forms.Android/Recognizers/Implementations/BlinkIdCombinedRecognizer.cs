@@ -45,15 +45,15 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.AnonymizationMode = Com.Microblink.Entities.Recognizers.Blinkid.Generic.AnonymizationMode.Values()[(int)value];
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
@@ -99,9 +99,9 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetSignResult(value);
         }
         
-        public uint SignatureImageDpi 
+        public int SignatureImageDpi 
         { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            get => nativeRecognizer.SignatureImageDpi; 
             set => nativeRecognizer.SignatureImageDpi = (int)value;
         }
         
@@ -140,10 +140,11 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
-        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
+        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
+        public string DocumentOptionalAdditionalNumber => nativeResult.DocumentOptionalAdditionalNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
         public bool Expired => nativeResult.IsExpired;

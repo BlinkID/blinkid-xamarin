@@ -45,15 +45,15 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.AnonymizationMode = (MBAnonymizationMode)value;
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => (int)nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => (int)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
@@ -93,9 +93,9 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
-        public uint SignatureImageDpi 
+        public int SignatureImageDpi 
         { 
-            get => (uint)nativeRecognizer.SignatureImageDpi; 
+            get => (int)nativeRecognizer.SignatureImageDpi; 
             set => nativeRecognizer.SignatureImageDpi = value;
         }
         
@@ -127,6 +127,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public string DocumentNumber => nativeResult.DocumentNumber;
+        public string DocumentOptionalAdditionalNumber => nativeResult.DocumentOptionalAdditionalNumber;
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => new DriverLicenseDetailedInfo(nativeResult.DriverLicenseDetailedInfo);
         public string Employer => nativeResult.Employer;
         public bool Expired => nativeResult.Expired;

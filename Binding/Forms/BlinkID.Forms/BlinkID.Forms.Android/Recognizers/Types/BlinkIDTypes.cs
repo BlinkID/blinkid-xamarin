@@ -269,6 +269,8 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public string DocumentNumber => nativeVizResult.DocumentNumber;
 
+        public string DocumentOptionalAdditionalNumber => nativeVizResult.DocumentOptionalAdditionalNumber;
+
         public string PersonalIdNumber => nativeVizResult.PersonalIdNumber;
 
         public string DocumentAdditionalNumber => nativeVizResult.DocumentAdditionalNumber;

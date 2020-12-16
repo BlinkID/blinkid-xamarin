@@ -53,7 +53,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FaceImageDpi { get; set; }
+        int FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -63,7 +63,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FullDocumentImageDpi { get; set; }
+        int FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Image extension factors for full document image.
@@ -85,7 +85,7 @@
         ///
         /// By default, this is set to '6'
         /// </summary>
-        uint NumStableDetectionsThreshold { get; set; }
+        int NumStableDetectionsThreshold { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted
@@ -134,7 +134,7 @@
         /// <summary>
         /// Version of the digital signature. Available only if enabled with signResult property. 
         /// </summary>
-        uint DigitalSignatureVersion { get; }
+        int DigitalSignatureVersion { get; }
         
         /// <summary>
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,

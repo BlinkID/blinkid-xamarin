@@ -19,21 +19,25 @@ namespace Microblink.Forms.Core.Recognizers
     /// Recognizer result state. This enum contains possible states in which
     /// Recognizer's result can be.
     /// </summary>
-    public enum RecognizerResultState 
+    public enum RecognizerResultState
     {
         /// <summary>
         /// Recognizer result is empty.
         /// </summary>
         Empty,
         /// <summary>
-        /// Recognizer result contains some values, but is incomplete or it 
+        /// Recognizer result contains some values, but is incomplete or it
         /// contains all values, but some are uncertain
         /// </summary>
         Uncertain,
         /// <summary>
         /// Recognizer result contains all required values.
         /// </summary>
-        Valid
+        Valid,
+        /// <summary>
+        /// Recognizer result contains all required fields first side.
+        /// </summary>
+        StageValid
     }
 
     /// <summary>

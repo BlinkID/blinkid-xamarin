@@ -12,7 +12,7 @@
         /// Default value is <c>250</c>
         /// </summary>
         /// <value>The face image dpi.</value>
-        uint FaceImageDpi { get; set; }
+        int FaceImageDpi { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether face image from ID card should be extracted
@@ -26,7 +26,7 @@
         /// Default value is <c>250</c>
         /// </summary>
         /// <value>The full document image dpi.</value>
-        uint FullDocumentImageDpi { get; set; }
+        int FullDocumentImageDpi { get; set; }
 
         /// <summary>
         /// Gets or sets the extension factors for full document image.
@@ -38,7 +38,7 @@
         /// Gets or sets the minimum number of stable detections required for detection to be successful.
         /// Default value is <c>6</c>
         /// </summary>
-        uint NumStableDetectionsThreshold { get; set; }
+        int NumStableDetectionsThreshold { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether full document image of ID card should be extracted
@@ -75,7 +75,7 @@
         /// Gets the version of the digital signature. Available only if enabled with signResult property.
         /// </summary>
         /// <value>The digital signature version.</value>
-        uint DigitalSignatureVersion { get; }
+        int DigitalSignatureVersion { get; }
 
         /// <summary>
         /// Returns true if data from scanned parts/sides of the document match,

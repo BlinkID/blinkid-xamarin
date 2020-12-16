@@ -21,18 +21,18 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public IUsdlCombinedRecognizerResult Result => result;
 
-        public uint FaceImageDpi { get => (uint)nativeRecognizer.FaceImageDpi; set => nativeRecognizer.FaceImageDpi = (int)value; }
+        public int FaceImageDpi { get => (int)nativeRecognizer.FaceImageDpi; set => nativeRecognizer.FaceImageDpi = (int)value; }
         public bool ReturnFaceImage { get => nativeRecognizer.ShouldReturnFaceImage(); set => nativeRecognizer.SetReturnFaceImage(value); }
-        public uint FullDocumentImageDpi { get => (uint)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = (int)value; }
+        public int FullDocumentImageDpi { get => (int)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = (int)value; }
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ShouldReturnFullDocumentImage(); set => nativeRecognizer.SetReturnFullDocumentImage(value); }
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
             get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
-        public uint NumStableDetectionsThreshold 
+        public int NumStableDetectionsThreshold
         { 
-            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            get => (int)nativeRecognizer.NumStableDetectionsThreshold;
             set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
         }
         public bool SignResult { get => nativeRecognizer.ShouldSignResult(); set => nativeRecognizer.SetSignResult(value); }
@@ -58,7 +58,7 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
 
-        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
+        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
 
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
 

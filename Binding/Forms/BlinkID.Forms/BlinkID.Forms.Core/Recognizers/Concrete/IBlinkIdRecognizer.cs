@@ -52,7 +52,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FaceImageDpi { get; set; }
+        int FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -62,7 +62,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FullDocumentImageDpi { get; set; }
+        int FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Image extension factors for full document image.
@@ -129,7 +129,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint SignatureImageDpi { get; set; }
+        int SignatureImageDpi { get; set; }
         
         /// <summary>
         /// Defines whether result characters validatation is performed.
@@ -214,6 +214,11 @@
         /// The document number. 
         /// </summary>
         string DocumentNumber { get; }
+        
+        /// <summary>
+        /// The one more additional number of the document. 
+        /// </summary>
+        string DocumentOptionalAdditionalNumber { get; }
         
         /// <summary>
         /// The driver license detailed info. 

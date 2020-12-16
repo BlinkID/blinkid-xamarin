@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-    <PackageReference Include="BlinkID.Forms" Version="5.8.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="BlinkID.Forms" Version="5.9.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Properties\AssemblyInfo.cs" />

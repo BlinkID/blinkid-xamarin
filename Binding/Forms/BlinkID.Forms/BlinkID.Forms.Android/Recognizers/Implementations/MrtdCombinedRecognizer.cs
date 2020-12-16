@@ -45,15 +45,15 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.DetectorType = Com.Microblink.Entities.Recognizers.Blinkid.Documentface.DocumentFaceDetectorType.Values()[(int)value];
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
@@ -63,9 +63,9 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
-        public uint NumStableDetectionsThreshold 
+        public int NumStableDetectionsThreshold 
         { 
-            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            get => nativeRecognizer.NumStableDetectionsThreshold; 
             set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
         }
         
@@ -98,7 +98,7 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
-        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
+        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;

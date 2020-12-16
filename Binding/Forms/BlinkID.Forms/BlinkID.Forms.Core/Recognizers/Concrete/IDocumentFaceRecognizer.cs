@@ -25,7 +25,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FaceImageDpi { get; set; }
+        int FaceImageDpi { get; set; }
         
         /// <summary>
         /// Property for setting DPI for full document images
@@ -35,7 +35,7 @@
         ///
         /// By default, this is set to '250'
         /// </summary>
-        uint FullDocumentImageDpi { get; set; }
+        int FullDocumentImageDpi { get; set; }
         
         /// <summary>
         /// Image extension factors for full document image.
@@ -57,7 +57,7 @@
         ///
         /// By default, this is set to '6'
         /// </summary>
-        uint NumStableDetectionsThreshold { get; set; }
+        int NumStableDetectionsThreshold { get; set; }
         
         /// <summary>
         /// Sets whether face image from ID card should be extracted

@@ -507,7 +507,21 @@ namespace Microblink.Forms.Core.Recognizers
         ElSalvador,
         SriLanka,
         Peru,
-        Uruguay
+        Uruguay,
+        Bahamas,
+        Bermuda,
+        Bolivia,
+        China,
+        EuropeanUnion,
+        Haiti,
+        Honduras,
+        Iceland,
+        Japan,
+        Luxembourg,
+        Montenegro,
+        Nicaragua,
+        SouthKorea,
+        Venezuela
     }
 
     /// <summary>
@@ -587,7 +601,16 @@ namespace Microblink.Forms.Core.Recognizers
         CiudadDeMexico,
         Jalisco,
         NewfoundlandAndLabrador,
-        NuevoLeon
+        NuevoLeon,
+        BajaCalifornia,
+        Chihuahua,
+        Guanajuato,
+        Guerrero,
+        Mexico,
+        Michoacan,
+        NewYorkCity,
+        Tamaulipas,
+        Veracruz
     }
 
     /// <summary>
@@ -621,7 +644,16 @@ namespace Microblink.Forms.Core.Recognizers
         SocialSecurityCard,
         HealthInsuranceCard,
         Passport,
-        SPass
+        SPass,
+        AddressCard,
+        AlienId,
+        AlienPassport,
+        GreenCard,
+        MinorsId,
+        PostalId,
+        ProfessionalDl,
+        TaxId,
+        WeaponPermit
     }
 
     /// <summary>
@@ -1055,6 +1087,11 @@ namespace Microblink.Forms.Core.Recognizers
         /// Flag that indicates if barcode result is empty
         /// </summary>Flag that indicates if barcode result is empty</value>
         bool Empty { get ; }
+
+        /// <summary>
+        /// The one more additional number of the document.
+        /// </summary>The one more additional number of the document.</value>
+        string DocumentOptionalAdditionalNumber { get; }
     }
 
     /// <summary>

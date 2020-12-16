@@ -27,15 +27,15 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.DetectorType = Com.Microblink.Entities.Recognizers.Blinkid.Documentface.DocumentFaceDetectorType.Values()[(int)value];
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
@@ -45,9 +45,9 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
         }
         
-        public uint NumStableDetectionsThreshold 
+        public int NumStableDetectionsThreshold 
         { 
-            get => (uint)nativeRecognizer.NumStableDetectionsThreshold; 
+            get => nativeRecognizer.NumStableDetectionsThreshold; 
             set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
         }
         

@@ -33,15 +33,15 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetDetectGlare(value);
         }
         
-        public uint FaceImageDpi 
+        public int FaceImageDpi 
         { 
-            get => (uint)nativeRecognizer.FaceImageDpi; 
+            get => nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = (int)value;
         }
         
-        public uint FullDocumentImageDpi 
+        public int FullDocumentImageDpi 
         { 
-            get => (uint)nativeRecognizer.FullDocumentImageDpi; 
+            get => nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = (int)value;
         }
         
@@ -80,7 +80,7 @@ namespace Microblink.Forms.Droid.Recognizers
             this.nativeResult = nativeResult;
         }
         public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
-        public uint DigitalSignatureVersion => (uint)nativeResult.DigitalSignatureVersion;
+        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);

@@ -430,11 +430,11 @@ namespace Microblink
         // -(instancetype _Nonnull)initWithDewarpHeight:(NSUInteger)dewarpHeight __attribute__((objc_designated_initializer));
         [Export ("initWithDewarpHeight:")]
         [DesignatedInitializer]
-        IntPtr Constructor (nuint dewarpHeight);
+        IntPtr Constructor (nint dewarpHeight);
 
         // @property (readonly, assign, nonatomic) NSUInteger dewarpHeight;
         [Export ("dewarpHeight")]
-        nuint DewarpHeight { get; }
+        nint DewarpHeight { get; }
     }
 
     // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
@@ -445,11 +445,11 @@ namespace Microblink
         // -(instancetype _Nonnull)initWithDesiredDPI:(NSUInteger)desiredDPI __attribute__((objc_designated_initializer));
         [Export ("initWithDesiredDPI:")]
         [DesignatedInitializer]
-        IntPtr Constructor (nuint desiredDPI);
+        IntPtr Constructor (nint desiredDPI);
 
         // @property (readonly, assign, nonatomic) NSUInteger desiredDPI;
         [Export ("desiredDPI")]
-        nuint DesiredDPI { get; }
+        nint DesiredDPI { get; }
     }
 
     // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
@@ -460,11 +460,11 @@ namespace Microblink
         // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSUInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
         [Export ("initWithMaxAllowedDewarpHeight:")]
         [DesignatedInitializer]
-        IntPtr Constructor (nuint maxAllowedDewarpHeight);
+        IntPtr Constructor (nint maxAllowedDewarpHeight);
 
         // @property (readonly, assign, nonatomic) NSUInteger maxAllowedDewarpHeight;
         [Export ("maxAllowedDewarpHeight")]
-        nuint MaxAllowedDewarpHeight { get; }
+        nint MaxAllowedDewarpHeight { get; }
     }
 
     // @protocol MBOcrRecognizerRunnerViewControllerDelegate <NSObject>
@@ -1361,10 +1361,10 @@ namespace Microblink
     [Protocol]
     interface IMBFullDocumentImageDpi
     {
-        // @required @property (assign, nonatomic) NSUInteger fullDocumentImageDpi;
+        // @required @property (assign, nonatomic) NSInteger fullDocumentImageDpi;
         [Abstract]
         [Export("fullDocumentImageDpi")]
-        nuint FullDocumentImageDpi { get; set; }
+        nint FullDocumentImageDpi { get; set; }
     }
 
     // @protocol IMBAgeResult
@@ -1544,7 +1544,7 @@ namespace Microblink
         // @required @property (assign, nonatomic) NSUInteger faceImageDpi;
         [Abstract]
         [Export("faceImageDpi")]
-        nuint FaceImageDpi { get; set; }
+        nint FaceImageDpi { get; set; }
     }
 
     // @protocol MBSignatureImageDpi
@@ -1554,7 +1554,7 @@ namespace Microblink
         // @required @property (assign, nonatomic) NSUInteger signatureImageDpi;
         [Abstract]
         [Export("signatureImageDpi")]
-        nuint SignatureImageDpi { get; set; }
+        nint SignatureImageDpi { get; set; }
     }
 
     // @protocol MBEncodeFaceImage
@@ -1579,7 +1579,7 @@ namespace Microblink
         // @required @property (readonly, nonatomic) NSUInteger digitalSignatureVersion;
         [Abstract]
         [Export("digitalSignatureVersion")]
-        nuint DigitalSignatureVersion { get; }
+        nint DigitalSignatureVersion { get; }
     }
 
     // @protocol MBCombinedFullDocumentImageResult
@@ -1709,7 +1709,7 @@ namespace Microblink
 
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
         [Export ("numStableDetectionsThreshold")]
-        nuint NumStableDetectionsThreshold { get; set; }
+        nint NumStableDetectionsThreshold { get; set; }
     }
 
     // @interface MBDriverLicenseDetailedInfo : NSObject
@@ -2010,6 +2010,10 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) BOOL empty;
 		[Export ("empty")]
 		bool Empty { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
+		[Export ("documentOptionalAdditionalNumber")]
+		string DocumentOptionalAdditionalNumber { get; }
 	}
 
     // @interface MBRecognitionModeFilter : NSObject <NSCopying>
@@ -2171,6 +2175,10 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) MBRecognitionMode recognitionMode;
 		[Export ("recognitionMode", ArgumentSemantic.Assign)]
 		MBRecognitionMode RecognitionMode { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
+		[NullAllowed, Export ("documentOptionalAdditionalNumber")]
+		string DocumentOptionalAdditionalNumber { get; }
 	}
 
 
@@ -2379,6 +2387,10 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) MBRecognitionMode recognitionMode;
 		[Export ("recognitionMode", ArgumentSemantic.Assign)]
 		MBRecognitionMode RecognitionMode { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
+		[NullAllowed, Export ("documentOptionalAdditionalNumber")]
+		string DocumentOptionalAdditionalNumber { get; }
 	}
 
     // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
@@ -2703,7 +2715,7 @@ namespace Microblink
         // @required @property (assign, nonatomic) NSUInteger mrzImageDpi;
         [Abstract]
         [Export ("mrzImageDpi")]
-        nuint MrzImageDpi { get; set; }
+        nint MrzImageDpi { get; set; }
     }
 
 
@@ -2751,7 +2763,7 @@ namespace Microblink
 
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
         [Export ("numStableDetectionsThreshold")]
-		nuint NumStableDetectionsThreshold { get; set; }
+		nint NumStableDetectionsThreshold { get; set; }
 
 		// @property (assign, nonatomic) MBDocumentFaceDetectorType detectorType;
 		[Export ("detectorType", ArgumentSemantic.Assign)]
@@ -2921,7 +2933,7 @@ namespace Microblink
 
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
         [Export ("numStableDetectionsThreshold")]
-        nuint NumStableDetectionsThreshold { get; set; }
+        nint NumStableDetectionsThreshold { get; set; }
     }
 
     // @interface MBUsdlRecognizerResult : MBRecognizerResult <NSCopying>
@@ -3316,7 +3328,7 @@ namespace Microblink
 
         // @property (assign, nonatomic) NSUInteger dotCount;
         [Export("dotCount")]
-        nuint DotCount { get; set; }
+        nint DotCount { get; set; }
     }
 
         // @interface MBDisplayableQuadDetection : MBDisplayableDetection
