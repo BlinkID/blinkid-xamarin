@@ -47,10 +47,10 @@ namespace Microblink.Forms.Droid
 
         RecognizerBundle recognizerBundle;
 
-        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning, IMicroblinkScannerAndroidHostActivity androidHostActivity) 
+        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTrialLicenseWarning, IMicroblinkScannerAndroidHostActivity androidHostActivity)
         {
             this.androidHostActivity = androidHostActivity;
-            MicroblinkSDK.SetShowTimeLimitedLicenseWarning(showTimeLimitedLicenseWarning);
+            MicroblinkSDK.SetShowTrialLicenseWarning(showTrialLicenseWarning);
             if (licensee == null)
             {
                 MicroblinkSDK.SetLicenseKey(licenseKey, androidHostActivity.HostActivity);

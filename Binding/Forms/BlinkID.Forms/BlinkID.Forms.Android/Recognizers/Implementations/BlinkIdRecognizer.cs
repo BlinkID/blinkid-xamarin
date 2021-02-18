@@ -93,6 +93,12 @@ namespace Microblink.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public bool ScanCroppedDocumentImage 
+        { 
+            get => nativeRecognizer.ShouldScanCroppedDocumentImage(); 
+            set => nativeRecognizer.SetScanCroppedDocumentImage(value);
+        }
+        
         public int SignatureImageDpi 
         { 
             get => nativeRecognizer.SignatureImageDpi; 

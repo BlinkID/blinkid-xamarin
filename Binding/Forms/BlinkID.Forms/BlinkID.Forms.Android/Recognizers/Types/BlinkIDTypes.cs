@@ -122,6 +122,34 @@ namespace Microblink.Forms.Droid.Recognizers
 
         public Type Type => (Type)nativeClassInfo.Type.Ordinal();
 
+        public string CountryName => nativeClassInfo.CountryName;
+
+        public string IsoNumericCountryCode => nativeClassInfo.IsoNumericCountryCode;
+
+        public string IsoAlpha2CountryCode => nativeClassInfo.IsoAlpha2CountryCode;
+
+        public string IsoAlpha3CountryCode => nativeClassInfo.IsoAlpha3CountryCode;
+
+        public bool Empty => nativeClassInfo.IsEmpty;
+
+    }
+
+    public sealed class BarcodeElements : IBarcodeElements
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Idbarcode.BarcodeElements nativeBarcodeElements;
+
+        public BarcodeElements(Com.Microblink.Entities.Recognizers.Blinkid.Idbarcode.BarcodeElements nativeBarcodeElements)
+        {
+            this.nativeBarcodeElements = nativeBarcodeElements;
+        }
+
+        public string GetValue(BarcodeElementKey key)
+        {
+            return nativeBarcodeElements.GetValue(Com.Microblink.Entities.Recognizers.Blinkid.Idbarcode.BarcodeElementKey.Values()[(int)key]);
+        }
+
+        public bool Empty => nativeBarcodeElements.IsEmpty;
+
     }
 
     public sealed class ImageAnalysisResult : IImageAnalysisResult
@@ -216,6 +244,8 @@ namespace Microblink.Forms.Droid.Recognizers
         public string Jurisdiction => nativeBarcodeResult.Jurisdiction;
 
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeBarcodeResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeBarcodeResult.DriverLicenseDetailedInfo) : null;
+
+        public IBarcodeElements ExtendedElements => nativeBarcodeResult.ExtendedElements != null ? new BarcodeElements(nativeBarcodeResult.ExtendedElements) : null;
 
         public bool Empty => nativeBarcodeResult.IsEmpty;
     }
