@@ -93,6 +93,12 @@ namespace Microblink.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        public bool ScanCroppedDocumentImage 
+        { 
+            get => nativeRecognizer.ScanCroppedDocumentImage; 
+            set => nativeRecognizer.ScanCroppedDocumentImage = value;
+        }
+        
         public bool SignResult 
         { 
             get => nativeRecognizer.SignResult; 
