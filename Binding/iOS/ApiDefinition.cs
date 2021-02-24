@@ -215,9 +215,9 @@ namespace Microblink
 		[Export ("sharedInstance")]
 		MBMicroblinkSDK SharedInstance ();
 
-		// @property (assign, nonatomic) BOOL showLicenseKeyTimeLimitedWarning;
-		[Export ("showLicenseKeyTimeLimitedWarning")]
-		bool ShowLicenseKeyTimeLimitedWarning { get; set; }
+		// @property (assign, nonatomic) BOOL showTrialLicenseWarning;
+		[Export ("showTrialLicenseWarning")]
+		bool ShowTrialLicenseWarning { get; set; }
 
 		// @property (nonatomic, strong) NSBundle * _Nonnull resourcesBundle;
 		[Export ("resourcesBundle", ArgumentSemantic.Strong)]
@@ -1515,6 +1515,26 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) MBType type;
 		[Export ("type", ArgumentSemantic.Assign)]
 		MBType Type { get; }
+
+        // @property (readonly, assign, nonatomic) BOOL empty;
+		[Export ("empty")]
+		bool Empty { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable countryName;
+		[NullAllowed, Export ("countryName")]
+		string CountryName { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable isoNumericCountryCode;
+		[NullAllowed, Export ("isoNumericCountryCode")]
+		string IsoNumericCountryCode { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable isoAlpha2CountryCode;
+		[NullAllowed, Export ("isoAlpha2CountryCode")]
+		string IsoAlpha2CountryCode { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nullable isoAlpha3CountryCode;
+		[NullAllowed, Export ("isoAlpha3CountryCode")]
+		string IsoAlpha3CountryCode { get; }
 	}
 
     // @protocol MBGlareDetection
@@ -1766,6 +1786,21 @@ namespace Microblink
 		MBImageAnalysisDetectionStatus BarcodeDetectionStatus { get; }
 	}
 
+    // @interface MBBarcodeElements : NSObject <NSCopying>
+	[iOS (9,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBBarcodeElements : INSCopying
+	{
+		// @property (readonly, assign, nonatomic) BOOL empty;
+		[Export ("empty")]
+		bool Empty { get; }
+
+		// -(NSString * _Nonnull)getValue:(MBBarcodeElementKey)key;
+		[Export ("getValue:")]
+		string GetValue (MBBarcodeElementKey key);
+	}
+
     // @interface MBBarcodeResult : NSObject
 	[iOS (8,0)]
 	[BaseType (typeof(NSObject))]
@@ -1899,6 +1934,10 @@ namespace Microblink
 		// @property (readonly, assign, nonatomic) BOOL empty;
 		[Export ("empty")]
 		bool Empty { get; }
+
+		// @property (readonly, nonatomic) MBBarcodeElements * _Nullable extendedElements;
+		[NullAllowed, Export ("extendedElements")]
+		MBBarcodeElements ExtendedElements { get; }
 	}
 
 	// @interface MBVizResult : NSObject
@@ -2222,6 +2261,10 @@ namespace Microblink
         // @property (nonatomic, strong) MBRecognitionModeFilter * _Nonnull recognitionModeFilter;
 		[Export ("recognitionModeFilter", ArgumentSemantic.Strong)]
 		MBRecognitionModeFilter RecognitionModeFilter { get; set; }
+
+        // @property (assign, nonatomic) BOOL scanCroppedDocumentImage;
+		[Export ("scanCroppedDocumentImage")]
+		bool ScanCroppedDocumentImage { get; set; }
 	}
 
     // @protocol MBBlinkIdRecognizerDelegate <NSObject>
@@ -2433,6 +2476,10 @@ namespace Microblink
         // @property (nonatomic, strong) MBRecognitionModeFilter * _Nonnull recognitionModeFilter;
 		[Export ("recognitionModeFilter", ArgumentSemantic.Strong)]
 		MBRecognitionModeFilter RecognitionModeFilter { get; set; }
+
+        // @property (assign, nonatomic) BOOL scanCroppedDocumentImage;
+		[Export ("scanCroppedDocumentImage")]
+		bool ScanCroppedDocumentImage { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>
@@ -2598,6 +2645,10 @@ namespace Microblink
 		// @property (readonly, nonatomic) NSString * _Nonnull jurisdiction;
 		[Export ("jurisdiction")]
 		string Jurisdiction { get; }
+
+        // @property (readonly, nonatomic) MBBarcodeElements * _Nonnull extendedElements;
+		[Export ("extendedElements")]
+		MBBarcodeElements ExtendedElements { get; }
 	}
 
 	// @interface MBIdBarcodeRecognizer : MBRecognizer <NSCopying>

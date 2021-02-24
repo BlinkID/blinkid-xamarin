@@ -17,9 +17,9 @@ namespace Microblink.Forms.iOS
         // ensure OverlaySettings don't get GC-ed while they are required for ObjC code
         IOverlaySettings overlaySettings;
 
-        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
+        public MicroblinkScannerImplementation(string licenseKey, string licensee, bool showTrialLicenseWarning)
         {
-            MBMicroblinkSDK.SharedInstance().ShowLicenseKeyTimeLimitedWarning = showTimeLimitedLicenseWarning;
+            MBMicroblinkSDK.SharedInstance().ShowTrialLicenseWarning = showTrialLicenseWarning;
             if (licensee == null)
             {
                 MBMicroblinkSDK.SharedInstance().SetLicenseKey(licenseKey, null);
@@ -61,14 +61,14 @@ namespace Microblink.Forms.iOS
 
     public sealed class MicroblinkScannerFactoryImplementation : IMicroblinkScannerFactory
     {
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTimeLimitedLicenseWarning)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTrialLicenseWarning)
         {
-            return new MicroblinkScannerImplementation(licenseKey, null, showTimeLimitedLicenseWarning);
+            return new MicroblinkScannerImplementation(licenseKey, null, showTrialLicenseWarning);
         }
 
-        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning)
+        public IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTrialLicenseWarning)
         {
-            return new MicroblinkScannerImplementation(licenseKey, licensee, showTimeLimitedLicenseWarning);
+            return new MicroblinkScannerImplementation(licenseKey, licensee, showTrialLicenseWarning);
         }
     }
 }

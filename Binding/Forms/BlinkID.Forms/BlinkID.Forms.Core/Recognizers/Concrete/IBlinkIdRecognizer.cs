@@ -122,6 +122,16 @@
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
+        /// Configure the recognizer to only work on already cropped and dewarped images.
+        /// This only works for still images - video feeds will ignore this setting.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool ScanCroppedDocumentImage { get; set; }
+        
+        /// <summary>
         /// Property for setting DPI for signature images
         /// Valid ranges are [100,400]. Setting DPI out of valid ranges throws an exception
         /// 

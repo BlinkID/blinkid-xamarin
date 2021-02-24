@@ -25,8 +25,8 @@ namespace Microblink.Forms.Core
         /// </summary>
         /// <returns>The microblink scanner.</returns>
         /// <param name="licenseKey">License key for unlocking the scanning feature.</param>
-        /// <param name="showTimeLimitedLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
-        IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTimeLimitedLicenseWarning = true);
+        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
+        IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTrialLicenseWarning = true);
 
         /// <summary>
         /// Creates the microblink scanner using provided <paramref name="licenseKey"/>. The license key used must be bound to
@@ -35,8 +35,8 @@ namespace Microblink.Forms.Core
         /// <returns>The microblink scanner.</returns>
         /// <param name="licenseKey">License key for unlocking the scanning feature</param>
         /// <param name="licensee">Licensee to which provided <paramref name="licenseKey"/> is bound.</param>
-        /// <param name="showTimeLimitedLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
-        IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTimeLimitedLicenseWarning = true);
+        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
+        IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTrialLicenseWarning = true);
     }
 
 }

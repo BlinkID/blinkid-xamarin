@@ -45,6 +45,7 @@ namespace Microblink.Forms.iOS.Recognizers
         public string Employer => nativeResult.Employer;
         public string Endorsements => nativeResult.Endorsements;
         public bool Expired => nativeResult.Expired;
+        public IBarcodeElements ExtendedElements => new BarcodeElements(nativeResult.ExtendedElements);
         public string FirstName => nativeResult.FirstName;
         public string FullName => nativeResult.FullName;
         public string IssuingAuthority => nativeResult.IssuingAuthority;

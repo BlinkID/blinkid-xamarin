@@ -122,6 +122,16 @@ namespace Microblink.Forms.iOS.Recognizers
 
         public Type Type => (Type)nativeClassInfo.Type;
 
+        public bool Empty => nativeClassInfo.Empty;
+
+        public string CountryName => nativeClassInfo.CountryName;
+
+        public string IsoNumericCountryCode => nativeClassInfo.IsoNumericCountryCode;
+
+        public string IsoAlpha2CountryCode => nativeClassInfo.IsoAlpha2CountryCode;
+
+        public string IsoAlpha3CountryCode => nativeClassInfo.IsoAlpha3CountryCode;
+
     }
 
     public sealed class ImageAnalysisResult : IImageAnalysisResult
@@ -219,6 +229,8 @@ namespace Microblink.Forms.iOS.Recognizers
         public IDriverLicenseDetailedInfo DriverLicenseDetailedInfo => nativeBarcodeResult.DriverLicenseDetailedInfo != null ? new DriverLicenseDetailedInfo(nativeBarcodeResult.DriverLicenseDetailedInfo) : null;
 
         public bool Empty => nativeBarcodeResult.Empty;
+
+        public IBarcodeElements ExtendedElements => nativeBarcodeResult.ExtendedElements != null ? new BarcodeElements(nativeBarcodeResult.ExtendedElements) : null;
     }
 
     public sealed class VizResult : IVizResult
@@ -313,6 +325,23 @@ namespace Microblink.Forms.iOS.Recognizers
             recognitionModeFilter.EnableFullDocumentRecognition = enableFullDocumentRecognition;
 
             return new RecognitionModeFilter(recognitionModeFilter);
+        }
+    }
+
+    public sealed class BarcodeElements : IBarcodeElements
+    {
+        MBBarcodeElements nativeBarcodeElements;
+
+        public BarcodeElements(MBBarcodeElements nativeBarcodeElements)
+        {
+            this.nativeBarcodeElements = nativeBarcodeElements;
+        }
+
+        public bool Empty => nativeBarcodeElements.Empty;
+
+        public string GetValue(BarcodeElementKey key)
+        {
+            return nativeBarcodeElements.GetValue((MBBarcodeElementKey)key);
         }
     }
 }
