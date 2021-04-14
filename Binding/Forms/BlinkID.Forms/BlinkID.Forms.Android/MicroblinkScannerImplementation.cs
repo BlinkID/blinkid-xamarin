@@ -1,20 +1,20 @@
-﻿using Microblink.Forms.Droid;
+﻿using BlinkID.Forms.Droid;
 using Xamarin.Forms;
-using Microblink.Forms.Core;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
+using BlinkID.Forms.Core;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
 using Com.Microblink;
 using Com.Microblink.Uisettings;
-using Microblink.Forms.Droid.Overlays;
+using BlinkID.Forms.Droid.Overlays;
 using Com.Microblink.Entities.Recognizers;
 using Android.App;
 using Android.Content;
-using Microblink.Forms.Droid.Recognizers;
+using BlinkID.Forms.Droid.Recognizers;
 using Com.Microblink.Intent;
 using System;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
-namespace Microblink.Forms.Droid
+namespace BlinkID.Forms.Droid
 {
     public interface IMicroblinkScannerAndroidHostActivity
     {

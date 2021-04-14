@@ -1,8 +1,8 @@
 ﻿using System;
-using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Core.Recognizers;
+using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public abstract class Recognizer : IRecognizer
     {

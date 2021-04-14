@@ -1,9 +1,9 @@
-﻿using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.Droid.Recognizers;
+﻿using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.Droid.Recognizers;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SuccessFrameGrabberRecognizerFactory))]
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public sealed class SuccessFrameGrabberRecognizer : Recognizer, ISuccessFrameGrabberRecognizer
     {

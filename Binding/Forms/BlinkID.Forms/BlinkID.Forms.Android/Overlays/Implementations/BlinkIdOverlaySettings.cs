@@ -2,14 +2,14 @@
 using Android.Content;
 using Com.Microblink.Uisettings;
 using Com.Microblink.Fragment.Overlay.Blinkid.Reticleui;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.Droid.Overlays.Implementations;
-using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Droid.Overlays;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.Droid.Overlays.Implementations;
+using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Droid.Overlays;
 
 [assembly: Xamarin.Forms.Dependency(typeof(BlinkIdOverlaySettingsFactory))]
-namespace Microblink.Forms.Droid.Overlays
+namespace BlinkID.Forms.Droid.Overlays
 {
     public sealed class BlinkIdOverlaySettings : RecognizerCollectionOverlaySettings, IBlinkIdOverlaySettings
     {

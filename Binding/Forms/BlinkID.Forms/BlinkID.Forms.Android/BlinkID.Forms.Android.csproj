@@ -9,10 +9,12 @@
     <ProjectGuid>{EDDC7CF7-5D2A-40CF-A660-CE81A6580A34}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Microblink.Forms.Droid</RootNamespace>
+    <RootNamespace>BlinkID.Forms.Droid</RootNamespace>
     <AssemblyName>BlinkID</AssemblyName>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <PackageId>BlinkID.Forms.Android</PackageId>
     <PackageVersion>5.10.0</PackageVersion>
@@ -206,6 +208,7 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.10.0</PackageReleaseN
     <Compile Include="Overlays/Implementations/BlinkIdOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentOverlaySettings.cs" />
     <Compile Include="Overlays/Implementations/DocumentVerificationOverlaySettings.cs" />
+    <Compile Include="Resources/Resource.designer.cs" />
     <Compile Include="Properties/AssemblyInfo.cs" />
     <Compile Include="Recognizers/Recognizer.cs" />
     <Compile Include="Recognizers/RecognizerCollection.cs" />
@@ -236,6 +239,9 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.10.0</PackageReleaseN
       <Project>{80F7D444-771D-4C21-A8AC-D575A7712E55}</Project>
       <Name>AndroidBinding</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\beep.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />

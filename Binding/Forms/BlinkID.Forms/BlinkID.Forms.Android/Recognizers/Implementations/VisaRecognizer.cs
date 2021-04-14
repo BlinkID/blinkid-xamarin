@@ -1,8 +1,8 @@
-﻿using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(VisaRecognizer))]
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public sealed class VisaRecognizer : Recognizer, IVisaRecognizer
     {

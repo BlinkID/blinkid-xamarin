@@ -1,9 +1,9 @@
-﻿using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
-	public sealed class Date : IDate
+    public sealed class Date : IDate
     {
         Com.Microblink.Results.Date.Date nativeDate;
 
@@ -23,7 +23,7 @@ namespace Microblink.Forms.Droid.Recognizers
     {
         Com.Microblink.Geometry.Point nativePoint;
 
-        public Point(Com.Microblink.Geometry.Point nativePoint) 
+        public Point(Com.Microblink.Geometry.Point nativePoint)
         {
             this.nativePoint = nativePoint;
         }
@@ -36,7 +36,7 @@ namespace Microblink.Forms.Droid.Recognizers
     {
         Com.Microblink.Geometry.Quadrilateral nativeQuad;
 
-        public Quadrilateral(Com.Microblink.Geometry.Quadrilateral nativeQuad) 
+        public Quadrilateral(Com.Microblink.Geometry.Quadrilateral nativeQuad)
         {
             this.nativeQuad = nativeQuad;
         }

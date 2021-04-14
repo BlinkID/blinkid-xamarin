@@ -1,8 +1,9 @@
-﻿using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
-namespace Microblink.Forms.Droid.Recognizers
+[assembly: Xamarin.Forms.Dependency(typeof(RecognitionModeFilterFactory))]
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public sealed class MrzResult : IMrzResult
     {
@@ -327,15 +328,16 @@ namespace Microblink.Forms.Droid.Recognizers
         public bool EnableMrzVisa => NativeFilter.EnableMrzVisa;
         public bool EnableMrzPassport => NativeFilter.EnableMrzPassport;
         public bool EnablePhotoId => NativeFilter.EnablePhotoId;
+        public bool EnableBarcodeId => NativeFilter.EnableBarcodeId;
         public bool EnableFullDocumentRecognition => NativeFilter.EnableFullDocumentRecognition;
     }
 
     public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
     {
-        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
+        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableBarcodeId = true, bool enableFullDocumentRecognition = true)
         {
             return new RecognitionModeFilter(new Com.Microblink.Entities.Recognizers.Blinkid.Generic.RecognitionModeFilter(
-                        enableMrzId, enableMrzVisa, enableMrzPassport, enablePhotoId, enableFullDocumentRecognition
+                        enableMrzId, enableMrzVisa, enableMrzPassport, enablePhotoId, enableBarcodeId, enableFullDocumentRecognition
             ));
         }
     }

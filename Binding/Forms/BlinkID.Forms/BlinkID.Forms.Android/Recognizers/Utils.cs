@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Android.Graphics;
 using Xamarin.Forms;
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public abstract class Utils
     {
