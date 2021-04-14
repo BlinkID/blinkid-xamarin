@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+﻿namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// Recognizer that scan 2D barcodes from United States Driver License.

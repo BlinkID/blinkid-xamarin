@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+﻿namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// ISuccessFrameGrabberRecognizer can wrap any other recognizer and obtain camera

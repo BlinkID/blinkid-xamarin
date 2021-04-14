@@ -1,13 +1,14 @@
 ﻿using System;
-using Microblink.Forms.Core.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
-namespace Microblink.Forms.Core.Overlays
+namespace BlinkID.Forms.Core.Overlays
 {
     /// <summary>
     /// Document verification overlay settings. This overlay is best for scanning with combined recognizers 
     /// that perform scanning of both front and back side of the document.
     /// </summary>
-    public interface IDocumentVerificationOverlaySettings : IOverlaySettings {
+    public interface IDocumentVerificationOverlaySettings : IOverlaySettings, IScanSoundOverlaySettings
+    {
         /// <summary>
         /// Splash message that is shown before scanning the first side of the document, while starting camera.
         /// If null, default value will be used.

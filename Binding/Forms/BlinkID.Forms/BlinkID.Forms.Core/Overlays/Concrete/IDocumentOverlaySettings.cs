@@ -1,11 +1,11 @@
-﻿using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Core.Recognizers;
 
-namespace Microblink.Forms.Core.Overlays
+namespace BlinkID.Forms.Core.Overlays
 {
     /// <summary>
     /// Document overlay settings. This overlay is best for scanning various ID documents.
     /// </summary>
-    public interface IDocumentOverlaySettings : IOverlaySettings
+    public interface IDocumentOverlaySettings : IOverlaySettings, IScanSoundOverlaySettings
     {}
 
     /// <summary>
