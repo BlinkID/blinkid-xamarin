@@ -3,71 +3,8 @@ using System.Runtime.InteropServices;
 using CoreGraphics;
 using ObjCRuntime;
 
-namespace Microblink
+namespace BlinkID
 {
-	[Native]
-	public enum MBCameraPreset : ulong
-	{
-		MBCameraPreset480p,
-		MBCameraPreset720p,
-		Optimal,
-		Max,
-		Photo
-	}
-
-	[Native]
-	public enum MBCameraType : ulong
-	{
-		Back,
-		Front
-	}
-
-	[Native]
-	public enum MBCameraAutofocusRestriction : ulong
-	{
-		None,
-		Near,
-		Far
-	}
-
-	[Native]
-	public enum MBProcessingOrientation : ulong
-	{
-		Up,
-		Right,
-		Down,
-		Left
-	}
-
-	[Native]
-	public enum MBRecognizerResultState : ulong
-	{
-		Empty,
-		Uncertain,
-		Valid,
-		StageValid
-	}
-
-	[Native]
-	public enum MBDocumentFaceDetectorType : ulong
-	{
-		Td1 = 0,
-		Td2,
-		PassportsAndVisas
-	}
-
-	[StructLayout (LayoutKind.Sequential)]
-	public struct MBImageExtensionFactors
-	{
-		public nfloat top;
-
-		public nfloat right;
-
-		public nfloat bottom;
-
-		public nfloat left;
-	}
-
 	// static class CFunctions
 	// {
 	// 	// MBImageExtensionFactors MBMakeImageExtensionFactors (CGFloat top, CGFloat right, CGFloat bottom, CGFloat left) __attribute__((always_inline));
@@ -222,12 +159,86 @@ namespace Microblink
 	// }
 
 	[Native]
+	public enum MBCameraPreset : ulong
+	{
+		MBCameraPreset480p,
+		MBCameraPreset720p,
+		MBCameraPreset1080p,
+		MBCameraPreset4K,
+		Optimal,
+		Max,
+		Photo
+	}
+
+	[Native]
+	public enum MBCameraType : ulong
+	{
+		Back,
+		Front
+	}
+
+	[Native]
+	public enum MBCameraAutofocusRestriction : ulong
+	{
+		None,
+		Near,
+		Far
+	}
+
+	[Native]
 	public enum MBLicenseError : ulong
 	{
 		NetworkRequired,
 		UnableToDoRemoteLicenceCheck,
 		LicenseIsLocked,
-		LicenseCheckFailed
+		LicenseCheckFailed,
+		InvalidLicense
+	}
+
+	[Native]
+	public enum MBProcessingOrientation : ulong
+	{
+		Up,
+		Right,
+		Down,
+		Left
+	}
+
+	[Native]
+	public enum MBRecognizerResultState : ulong
+	{
+		Empty,
+		Uncertain,
+		Valid,
+		StageValid
+	}
+
+	[Native]
+	public enum MBDocumentFaceDetectorType : ulong
+	{
+		Td1 = 0,
+		Td2,
+		PassportsAndVisas
+	}
+
+	[StructLayout (LayoutKind.Sequential)]
+	public struct MBImageExtensionFactors
+	{
+		public nfloat top;
+
+		public nfloat right;
+
+		public nfloat bottom;
+
+		public nfloat left;
+	}
+
+	[Native]
+	public enum MBAgeLimitStatus : ulong
+	{
+		NotAvailable,
+		BelowAgeLimit,
+		OverAgeLimit
 	}
 
 	[Native]
@@ -237,237 +248,10 @@ namespace Microblink
 		IdentityCard,
 		Passport,
 		Visa,
-		GreenCard
-	}
-
-	[Native]
-	public enum MBDataMatchResult : ulong
-	{
-		NotPerformed = 0,
-		Failed,
-		Success
-	}
-
-	[Native]
-	public enum MBMrtdSpecificationPreset : ulong
-	{
-		MBMrtdSpecificationTd1,
-		MBMrtdSpecificationTd2,
-		MBMrtdSpecificationTd3
-	}
-
-	[Native]
-	public enum MBBarcodeType : ulong
-	{
-		None = 0,
-		TypeQR,
-		TypeDataMatrix,
-		TypeUPCE,
-		TypeUPCA,
-		TypeEAN8,
-		TypeEAN13,
-		TypeCode128,
-		TypeCode39,
-		TypeITF,
-		TypeAztec,
-		TypePdf417
-	}
-
-	[Native]
-	public enum MBBarcodeElementKey : ulong
-	{
-		DocumentType = 0,
-		StandardVersionNumber,
-		CustomerFamilyName,
-		CustomerFirstName,
-		CustomerFullName,
-		DateOfBirth,
-		Sex,
-		EyeColor,
-		AddressStreet,
-		AddressCity,
-		AddressJurisdictionCode,
-		AddressPostalCode,
-		FullAddress,
-		Height,
-		HeightIn,
-		HeightCm,
-		CustomerMiddleName,
-		HairColor,
-		NameSuffix,
-		AKAFullName,
-		AKAFamilyName,
-		AKAGivenName,
-		AKASuffixName,
-		WeightRange,
-		WeightPounds,
-		WeightKilograms,
-		CustomerIdNumber,
-		FamilyNameTruncation,
-		FirstNameTruncation,
-		MiddleNameTruncation,
-		PlaceOfBirth,
-		AddressStreet2,
-		RaceEthnicity,
-		NamePrefix,
-		CountryIdentification,
-		ResidenceStreetAddress,
-		ResidenceStreetAddress2,
-		ResidenceCity,
-		ResidenceJurisdictionCode,
-		ResidencePostalCode,
-		ResidenceFullAddress,
-		Under18,
-		Under19,
-		Under21,
-		SocialSecurityNumber,
-		AKASocialSecurityNumber,
-		AKAMiddleName,
-		AKAPrefixName,
-		OrganDonor,
-		Veteran,
-		AKADateOfBirth,
-		IssuerIdentificationNumber,
-		DocumentExpirationDate,
-		JurisdictionVersionNumber,
-		JurisdictionVehicleClass,
-		JurisdictionRestrictionCodes,
-		JurisdictionEndorsementCodes,
-		DocumentIssueDate,
-		FederalCommercialVehicleCodes,
-		IssuingJurisdiction,
-		StandardVehicleClassification,
-		IssuingJurisdictionName,
-		StandardEndorsementCode,
-		StandardRestrictionCode,
-		JurisdictionVehicleClassificationDescription,
-		JurisdictionEndorsmentCodeDescription,
-		JurisdictionRestrictionCodeDescription,
-		InventoryControlNumber,
-		CardRevisionDate,
-		DocumentDiscriminator,
-		LimitedDurationDocument,
-		AuditInformation,
-		ComplianceType,
-		IssueTimestamp,
-		PermitExpirationDate,
-		PermitIdentifier,
-		PermitIssueDate,
-		NumberOfDuplicates,
-		HAZMATExpirationDate,
-		MedicalIndicator,
-		NonResident,
-		UniqueCustomerId,
-		DataDiscriminator,
-		DocumentExpirationMonth,
-		DocumentNonexpiring,
-		SecurityVersion
-	}
-
-	[Native]
-	public enum MBIdBarcodeDocumentType : ulong
-	{
-		None = 0,
-		AAMVACompliant,
-		ArgentinaID,
-		ArgentinaDL,
-		ColombiaID,
-		ColombiaDL,
-		NigeriaVoterID,
-		NigeriaDL,
-		PanamaID,
-		SouthAfricaID
-	}
-
-	[Native]
-	public enum MBUsdlKeys : ulong
-	{
-		DocumentType,
-		StandardVersionNumber,
-		CustomerFamilyName,
-		CustomerFirstName,
-		CustomerFullName,
-		DateOfBirth,
-		Sex,
-		EyeColor,
-		AddressStreet,
-		AddressCity,
-		AddressJurisdictionCode,
-		AddressPostalCode,
-		FullAddress,
-		Height,
-		HeightIn,
-		HeightCm,
-		CustomerMiddleName,
-		HairColor,
-		NameSuffix,
-		AKAFullName,
-		AKAFamilyName,
-		AKAGivenName,
-		AKASuffixName,
-		WeightRange,
-		WeightPounds,
-		WeightKilograms,
-		CustomerIdNumber,
-		FamilyNameTruncation,
-		FirstNameTruncation,
-		MiddleNameTruncation,
-		PlaceOfBirth,
-		AddressStreet2,
-		RaceEthnicity,
-		NamePrefix,
-		CountryIdentification,
-		ResidenceStreetAddress,
-		ResidenceStreetAddress2,
-		ResidenceCity,
-		ResidenceJurisdictionCode,
-		ResidencePostalCode,
-		ResidenceFullAddress,
-		Under18,
-		Under19,
-		Under21,
-		SocialSecurityNumber,
-		AKASocialSecurityNumber,
-		AKAMiddleName,
-		AKAPrefixName,
-		OrganDonor,
-		Veteran,
-		AKADateOfBirth,
-		IssuerIdentificationNumber,
-		DocumentExpirationDate,
-		JurisdictionVersionNumber,
-		JurisdictionVehicleClass,
-		JurisdictionRestrictionCodes,
-		JurisdictionEndorsementCodes,
-		DocumentIssueDate,
-		FederalCommercialVehicleCodes,
-		IssuingJurisdiction,
-		StandardVehicleClassification,
-		IssuingJurisdictionName,
-		StandardEndorsementCode,
-		StandardRestrictionCode,
-		JurisdictionVehicleClassificationDescription,
-		JurisdictionEndorsmentCodeDescription,
-		JurisdictionRestrictionCodeDescription,
-		InventoryControlNumber,
-		CardRevisionDate,
-		DocumentDiscriminator,
-		LimitedDurationDocument,
-		AuditInformation,
-		ComplianceType,
-		IssueTimestamp,
-		PermitExpirationDate,
-		PermitIdentifier,
-		PermitIssueDate,
-		NumberOfDuplicates,
-		HAZMATExpirationDate,
-		MedicalIndicator,
-		NonResident,
-		UniqueCustomerId,
-		DataDiscriminator,
-		DocumentExpirationMonth,
-		DocumentNonexpiring,
-		SecurityVersion
+		GreenCard,
+		MysPassIMM13P,
+		Dl,
+		InternalTravelDocument
 	}
 
 	[Native]
@@ -860,6 +644,145 @@ namespace Microblink
 	}
 
 	[Native]
+	public enum MBBarcodeType : ulong
+	{
+		None = 0,
+		TypeQR,
+		TypeDataMatrix,
+		TypeUPCE,
+		TypeUPCA,
+		TypeEAN8,
+		TypeEAN13,
+		TypeCode128,
+		TypeCode39,
+		TypeITF,
+		TypeAztec,
+		TypePdf417
+	}
+
+	[Native]
+	public enum MBBarcodeElementKey : ulong
+	{
+		DocumentType = 0,
+		StandardVersionNumber,
+		CustomerFamilyName,
+		CustomerFirstName,
+		CustomerFullName,
+		DateOfBirth,
+		Sex,
+		EyeColor,
+		AddressStreet,
+		AddressCity,
+		AddressJurisdictionCode,
+		AddressPostalCode,
+		FullAddress,
+		Height,
+		HeightIn,
+		HeightCm,
+		CustomerMiddleName,
+		HairColor,
+		NameSuffix,
+		AKAFullName,
+		AKAFamilyName,
+		AKAGivenName,
+		AKASuffixName,
+		WeightRange,
+		WeightPounds,
+		WeightKilograms,
+		CustomerIdNumber,
+		FamilyNameTruncation,
+		FirstNameTruncation,
+		MiddleNameTruncation,
+		PlaceOfBirth,
+		AddressStreet2,
+		RaceEthnicity,
+		NamePrefix,
+		CountryIdentification,
+		ResidenceStreetAddress,
+		ResidenceStreetAddress2,
+		ResidenceCity,
+		ResidenceJurisdictionCode,
+		ResidencePostalCode,
+		ResidenceFullAddress,
+		Under18,
+		Under19,
+		Under21,
+		SocialSecurityNumber,
+		AKASocialSecurityNumber,
+		AKAMiddleName,
+		AKAPrefixName,
+		OrganDonor,
+		Veteran,
+		AKADateOfBirth,
+		IssuerIdentificationNumber,
+		DocumentExpirationDate,
+		JurisdictionVersionNumber,
+		JurisdictionVehicleClass,
+		JurisdictionRestrictionCodes,
+		JurisdictionEndorsementCodes,
+		DocumentIssueDate,
+		FederalCommercialVehicleCodes,
+		IssuingJurisdiction,
+		StandardVehicleClassification,
+		IssuingJurisdictionName,
+		StandardEndorsementCode,
+		StandardRestrictionCode,
+		JurisdictionVehicleClassificationDescription,
+		JurisdictionEndorsmentCodeDescription,
+		JurisdictionRestrictionCodeDescription,
+		InventoryControlNumber,
+		CardRevisionDate,
+		DocumentDiscriminator,
+		LimitedDurationDocument,
+		AuditInformation,
+		ComplianceType,
+		IssueTimestamp,
+		PermitExpirationDate,
+		PermitIdentifier,
+		PermitIssueDate,
+		NumberOfDuplicates,
+		HAZMATExpirationDate,
+		MedicalIndicator,
+		NonResident,
+		UniqueCustomerId,
+		DataDiscriminator,
+		DocumentExpirationMonth,
+		DocumentNonexpiring,
+		SecurityVersion
+	}
+
+	[Native]
+	public enum MBProcessingStatus : ulong
+	{
+		Success,
+		DetectionFailed,
+		ImagePreprocessingFailed,
+		StabilityTestFailed,
+		ScanningWrongSide,
+		FieldIdentificationFailed,
+		MandatoryFieldMissing,
+		InvalidCharactersFound,
+		ImageReturnFailed,
+		BarcodeRecognitionFailed,
+		MrzParsingFailed,
+		ClassFiltered,
+		UnsupportedClass,
+		UnsupportedByLicense,
+		AwaitingOtherSide
+	}
+
+	[Native]
+	public enum MBRecognitionMode : ulong
+	{
+		None,
+		MrzId,
+		MrzVisa,
+		MrzPassport,
+		PhotoId,
+		FullRecognition
+	}
+
+	[Native]
 	public enum MBDocumentImageColorStatus : ulong
 	{
 		NotAvailable = 0,
@@ -876,20 +799,134 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBAgeLimitStatus : ulong
-	{
-		NotAvailable,
-		BelowAgeLimit,
-		OverAgeLimit
-	}
-
-	[Native]
 	public enum MBAnonymizationMode : ulong
 	{
 		None = 0,
 		ImageOnly,
 		ResultFieldsOnly,
 		FullResult
+	}
+
+	[Native]
+	public enum MBDataMatchResult : ulong
+	{
+		NotPerformed = 0,
+		Failed,
+		Success
+	}
+
+	[Native]
+	public enum MBIdBarcodeDocumentType : ulong
+	{
+		None = 0,
+		AAMVACompliant,
+		ArgentinaID,
+		ArgentinaDL,
+		ColombiaID,
+		ColombiaDL,
+		NigeriaVoterID,
+		NigeriaDL,
+		PanamaID,
+		SouthAfricaID
+	}
+
+	[Native]
+	public enum MBMrtdSpecificationPreset : ulong
+	{
+		MBMrtdSpecificationTd1,
+		MBMrtdSpecificationTd2,
+		MBMrtdSpecificationTd3
+	}
+
+	[Native]
+	public enum MBUsdlKeys : ulong
+	{
+		DocumentType,
+		StandardVersionNumber,
+		CustomerFamilyName,
+		CustomerFirstName,
+		CustomerFullName,
+		DateOfBirth,
+		Sex,
+		EyeColor,
+		AddressStreet,
+		AddressCity,
+		AddressJurisdictionCode,
+		AddressPostalCode,
+		FullAddress,
+		Height,
+		HeightIn,
+		HeightCm,
+		CustomerMiddleName,
+		HairColor,
+		NameSuffix,
+		AKAFullName,
+		AKAFamilyName,
+		AKAGivenName,
+		AKASuffixName,
+		WeightRange,
+		WeightPounds,
+		WeightKilograms,
+		CustomerIdNumber,
+		FamilyNameTruncation,
+		FirstNameTruncation,
+		MiddleNameTruncation,
+		PlaceOfBirth,
+		AddressStreet2,
+		RaceEthnicity,
+		NamePrefix,
+		CountryIdentification,
+		ResidenceStreetAddress,
+		ResidenceStreetAddress2,
+		ResidenceCity,
+		ResidenceJurisdictionCode,
+		ResidencePostalCode,
+		ResidenceFullAddress,
+		Under18,
+		Under19,
+		Under21,
+		SocialSecurityNumber,
+		AKASocialSecurityNumber,
+		AKAMiddleName,
+		AKAPrefixName,
+		OrganDonor,
+		Veteran,
+		AKADateOfBirth,
+		IssuerIdentificationNumber,
+		DocumentExpirationDate,
+		JurisdictionVersionNumber,
+		JurisdictionVehicleClass,
+		JurisdictionRestrictionCodes,
+		JurisdictionEndorsementCodes,
+		DocumentIssueDate,
+		FederalCommercialVehicleCodes,
+		IssuingJurisdiction,
+		StandardVehicleClassification,
+		IssuingJurisdictionName,
+		StandardEndorsementCode,
+		StandardRestrictionCode,
+		JurisdictionVehicleClassificationDescription,
+		JurisdictionEndorsmentCodeDescription,
+		JurisdictionRestrictionCodeDescription,
+		InventoryControlNumber,
+		CardRevisionDate,
+		DocumentDiscriminator,
+		LimitedDurationDocument,
+		AuditInformation,
+		ComplianceType,
+		IssueTimestamp,
+		PermitExpirationDate,
+		PermitIdentifier,
+		PermitIssueDate,
+		NumberOfDuplicates,
+		HAZMATExpirationDate,
+		MedicalIndicator,
+		NonResident,
+		UniqueCustomerId,
+		DataDiscriminator,
+		DocumentExpirationMonth,
+		DocumentNonexpiring,
+		SecurityVersion
 	}
 
 	[Native]
@@ -987,6 +1024,22 @@ namespace Microblink
 		FeSchrift
 	}
 
+	[Native]
+	public enum MBDetectionStatus : ulong
+	{
+		Success = 1 << 0,
+		Fail = 1 << 1,
+		CameraTooHigh = 1 << 2,
+		CameraAtAngle = 1 << 3,
+		CameraRotated = 1 << 4,
+		QRSuccess = 1 << 6,
+		Pdf417Success = 1 << 7,
+		FallbackSuccess = 1 << 8,
+		PartialForm = 1 << 9,
+		CameraTooNear = 1 << 10,
+		DocumentTooCloseToEdge = 1 << 11
+	}
+
 	[StructLayout (LayoutKind.Sequential)]
 	public struct CGLine
 	{
@@ -1001,37 +1054,6 @@ namespace Microblink
 		Default,
 		Test,
 		DetectionTest
-	}
-
-	[Native]
-	public enum MBRecognitionMode : ulong
-	{
-		None,
-		MrzId,
-		MrzVisa,
-		MrzPassport,
-		PhotoId,
-		FullRecognition
-	}
-
-	[Native]
-	public enum MBProcessingStatus : ulong
-	{
-		Success,
-		DetectionFailed,
-		ImagePreprocessingFailed,
-		StabilityTestFailed,
-		ScanningWrongSide,
-		FieldIdentificationFailed,
-		MandatoryFieldMissing,
-		InvalidCharactersFound,
-		ImageReturnFailed,
-		BarcodeRecognitionFailed,
-		MrzParsingFailed,
-		ClassFiltered,
-		UnsupportedClass,
-		UnsupportedByLicense,
-		AwaitingOtherSide
 	}
 
 	[Native]
@@ -1050,17 +1072,12 @@ namespace Microblink
 	}
 
 	[Native]
-	public enum MBDetectionStatus : ulong
+	public enum MBLogLevel : ulong
 	{
-		Success = 1 << 0,
-		Fail = 1 << 1,
-		CameraTooHigh = 1 << 2,
-		CameraAtAngle = 1 << 3,
-		CameraRotated = 1 << 4,
-		QRSuccess = 1 << 6,
-		Pdf417Success = 1 << 7,
-		FallbackSuccess = 1 << 8,
-		PartialForm = 1 << 9,
-		CameraTooNear = 1 << 10
+		Error,
+		Warning,
+		Info,
+		Debug,
+		Verbose
 	}
 }

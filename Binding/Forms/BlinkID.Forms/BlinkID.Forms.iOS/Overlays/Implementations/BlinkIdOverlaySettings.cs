@@ -1,12 +1,12 @@
-using Microblink.Forms.iOS.Overlays;
-using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
-using Microblink;
+using BlinkID.Forms.iOS.Overlays;
+using BlinkID.Forms.iOS.Recognizers;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID;
 using System;
 
 [assembly: Xamarin.Forms.Dependency(typeof(BlinkIdOverlaySettingsFactory))]
-namespace Microblink.Forms.iOS.Overlays
+namespace BlinkID.Forms.iOS.Overlays
 {
     public sealed class BlinkIdOverlaySettings : RecognizerCollectionOverlaySettings, IBlinkIdOverlaySettings
     {

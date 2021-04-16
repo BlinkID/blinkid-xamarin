@@ -1,9 +1,9 @@
-﻿using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.iOS.Recognizers;
+﻿using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.iOS.Recognizers;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(UsdlCombinedRecognizer))]
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
     public sealed class UsdlCombinedRecognizer : Recognizer, IUsdlCombinedRecognizer
     {

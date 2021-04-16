@@ -1,8 +1,8 @@
-﻿using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Core.Recognizers;
 using CoreGraphics;
 using Foundation;
 
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
 	public sealed class Date : IDate
     {

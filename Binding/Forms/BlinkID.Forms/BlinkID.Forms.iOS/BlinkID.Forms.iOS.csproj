@@ -71,6 +71,7 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.11.0</PackageReleaseNotes
   <ItemGroup>
     <Compile Include="MicroblinkScannerImplementation.cs" />
     <Compile Include="Overlays/OverlaySettings.cs" />
+    <Compile Include="Overlays/BaseOverlaySettings.cs" />
     <Compile Include="Overlays/RecognizerCollectionOverlaySettings.cs" />
     <Compile Include="Overlays/OverlayVCDelegate.cs" />
     <Compile Include="Overlays/Implementations/BlinkIdOverlaySettings.cs" />

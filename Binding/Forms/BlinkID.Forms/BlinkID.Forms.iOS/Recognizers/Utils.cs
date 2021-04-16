@@ -1,6 +1,6 @@
 ﻿using UIKit;
 using Xamarin.Forms;
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
     public abstract class Utils
     {
