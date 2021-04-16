@@ -18,7 +18,7 @@ Steps for integrating BlinkID into your Xamarin Forms project:
 
 1. In both your `Core`, `Droid` and `iOS` projects, add `BlinkID.Forms` NuGet package as a reference.
 2. In your `Droid` project, update your `MainActivity.cs` in a following way:
-    - update your `MainActivity` class so that it implements `Microblink.Forms.Droid.IMicroblinkScannerAndroidHostActivity`. This interface specifies 2 properties and 1 method that you must implement:
+    - update your `MainActivity` class so that it implements `BlinkID.Forms.Droid.IMicroblinkScannerAndroidHostActivity`. This interface specifies 2 properties and 1 method that you must implement:
         - `HostActivity` property must return reference to current host activity.
         - `ScanActivityRequestCode` property must return integer that will be used as request code for Android's `StartActivityForResult` invocation
         - `ScanningStarted` method will be called just before scanning starts. It will receive currently used `MicroblinkScannerImplementation` as a parameter. You should save a reference to this object because you will need it later in your implementation of `OnActivityResult`
