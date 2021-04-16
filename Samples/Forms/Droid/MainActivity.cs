@@ -4,12 +4,12 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Microblink.Forms.Droid;
+using BlinkID.Forms.Droid;
 
 namespace BlinkIDApp
 {
 	[Activity (Label = "BlinkIDFormsSample.Droid", Icon = "@drawable/icon", HardwareAccelerated = true, MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, global::Microblink.Forms.Droid.IMicroblinkScannerAndroidHostActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, global::BlinkID.Forms.Droid.IMicroblinkScannerAndroidHostActivity
 	{
         public MicroblinkScannerImplementation currentScannerImplementation;
 
