@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+﻿namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// The Blink ID Recognizer is used for scanning Blink ID.

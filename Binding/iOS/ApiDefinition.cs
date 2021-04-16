@@ -3,65 +3,125 @@ using AVFoundation;
 using CoreAnimation;
 using CoreGraphics;
 using CoreMedia;
+using CoreVideo;
 using Foundation;
+using BlinkID;
 using ObjCRuntime;
 using UIKit;
-using Microblink;
-using System.Runtime.InteropServices;
+// using System.Runtime.InteropServices;
 
-namespace Microblink
+namespace BlinkID
 {
+    // typedef void (^MBBlock)();
+	delegate void MBBlock ();
+
     // @interface MBMicroblinkApp : NSObject
-    
     [BaseType(typeof(NSObject))]
     interface MBMicroblinkApp
     {
         // @property (nonatomic) NSString * language;
-        [Export("language")]
+        [Export ("language")]
         string Language { get; set; }
 
         // @property (nonatomic) NSBundle * resourcesBundle;
-        [Export("resourcesBundle", ArgumentSemantic.Assign)]
+        [Export ("resourcesBundle", ArgumentSemantic.Assign)]
         NSBundle ResourcesBundle { get; set; }
 
-        // +(instancetype)instance;
+        // @property (nonatomic) NSBundle * customResourcesBundle;
+		[Export ("customResourcesBundle", ArgumentSemantic.Assign)]
+		NSBundle CustomResourcesBundle { get; set; }
+
+		// @property (nonatomic) NSString * customLocalizationFileName;
+		[Export ("customLocalizationFileName")]
+		string CustomLocalizationFileName { get; set; }
+
+		// +(instancetype)sharedInstance __attribute__((swift_name("shared()")));
         [Static]
-        [Export("instance")]
-        MBMicroblinkApp Instance { get; }
+        [Export("sharedInstance")]
+        MBMicroblinkApp SharedInstance();
 
         // -(void)setDefaultLanguage;
-        [Export("setDefaultLanguage")]
+        [Export ("setDefaultLanguage")]
         void SetDefaultLanguage();
 
         // -(void)pushStatusBarStyle:(UIStatusBarStyle)statusBarStyle;
-        [Export("pushStatusBarStyle:")]
+        [Export ("pushStatusBarStyle:")]
         void PushStatusBarStyle(UIStatusBarStyle statusBarStyle);
 
         // -(void)popStatusBarStyle;
-        [Export("popStatusBarStyle")]
+        [Export ("popStatusBarStyle")]
         void PopStatusBarStyle();
 
         // -(void)pushStatusBarHidden:(BOOL)hidden;
-        [Export("pushStatusBarHidden:")]
+        [Export ("pushStatusBarHidden:")]
         void PushStatusBarHidden(bool hidden);
 
         // -(void)popStatusBarHidden;
-        [Export("popStatusBarHidden")]
+        [Export ("popStatusBarHidden")]
         void PopStatusBarHidden();
 
         // -(void)setHelpShown:(BOOL)value;
-        [Export("setHelpShown:")]
+        [Export ("setHelpShown:")]
         void SetHelpShown(bool value);
 
         // -(BOOL)isHelpShown;
-        [Export("isHelpShown")]
+        [Export ("isHelpShown")]
         bool IsHelpShown { get; }
 
-        // +(NSBundle *)verifyAndGetDefaultResourcesBundle;
+        // +(NSBundle *)getDefaultResourcesBundle;
         [Static]
-        [Export("verifyAndGetDefaultResourcesBundle")]
-        NSBundle VerifyAndGetDefaultResourcesBundle();
+        [Export ("getDefaultResourcesBundle")]
+        NSBundle DefaultResourcesBundle();
     }
+
+       // @interface MBCameraSettings : NSObject <NSCopying>
+    [iOS (8,0)]
+    [BaseType(typeof(NSObject))]
+    interface MBCameraSettings : INSCopying
+    {
+        // @property (assign, nonatomic) MBCameraPreset cameraPreset;
+        [Export ("cameraPreset", ArgumentSemantic.Assign)]
+        MBCameraPreset CameraPreset { get; set; }
+
+        // @property (assign, nonatomic) MBCameraType cameraType;
+        [Export ("cameraType", ArgumentSemantic.Assign)]
+        MBCameraType CameraType { get; set; }
+
+        // @property (assign, nonatomic) NSTimeInterval autofocusInterval;
+        [Export ("autofocusInterval")]
+        double AutofocusInterval { get; set; }
+
+        // @property (assign, nonatomic) MBCameraAutofocusRestriction cameraAutofocusRestriction;
+        [Export ("cameraAutofocusRestriction", ArgumentSemantic.Assign)]
+        MBCameraAutofocusRestriction CameraAutofocusRestriction { get; set; }
+
+        // @property (nonatomic, weak) NSString * videoGravity;
+        [Export ("videoGravity", ArgumentSemantic.Weak)]
+        string VideoGravity { get; set; }
+
+        // @property (assign, nonatomic) CGPoint focusPoint;
+        [Export ("focusPoint", ArgumentSemantic.Assign)]
+        CGPoint FocusPoint { get; set; }
+
+        // @property (nonatomic) BOOL cameraMirroredHorizontally;
+        [Export ("cameraMirroredHorizontally")]
+        bool CameraMirroredHorizontally { get; set; }
+
+        // @property (nonatomic) BOOL cameraMirroredVertically;
+        [Export ("cameraMirroredVertically")]
+        bool CameraMirroredVertically { get; set; }
+
+        // -(NSString *)calcSessionPreset;
+        [Export ("calcSessionPreset")]
+        string CalcSessionPreset { get; }
+
+        // -(AVCaptureAutoFocusRangeRestriction)calcAutofocusRangeRestriction;
+        [Export ("calcAutofocusRangeRestriction")]
+        AVCaptureAutoFocusRangeRestriction CalcAutofocusRangeRestriction { get; }
+    }
+
+    // typedef void (^MBCaptureHighResImage)(MBImage * _Nullable);
+    delegate void MBCaptureHighResImage ([NullAllowed] MBImage arg0);
 
     interface IMBRecognizerRunnerViewController {}
 
@@ -95,10 +155,10 @@ namespace Microblink
         [Export ("resumeScanningAndResetState:")]
         void ResumeScanningAndResetState (bool resetState);
 
-        // @required -(BOOL)resumeCamera;
+        // @required -(void)resumeCamera:(void (^ _Nullable)(void))completion;
         [Abstract]
-        [Export ("resumeCamera")]
-        bool ResumeCamera { get; }
+        [Export ("resumeCamera:")]
+        void ResumeCamera ([NullAllowed] Action completion);
 
         // @required -(BOOL)pauseCamera;
         [Abstract]
@@ -131,46 +191,43 @@ namespace Microblink
         void CaptureHighResImage (MBCaptureHighResImage highResoulutionImageCaptured);
     }
 
-    // typedef void (^MBCaptureHighResImage)(MBImage * _Nullable);
-    delegate void MBCaptureHighResImage ([NullAllowed] MBImage arg0);
-
     // @protocol MBOverlayContainerViewController <MBRecognizerRunnerViewController>
     [Protocol]
     interface MBOverlayContainerViewController : MBRecognizerRunnerViewController
     {
         // @required -(void)overlayViewControllerWillCloseCamera:(MBOverlayViewController *)overlayViewController;
         [Abstract]
-        [Export("overlayViewControllerWillCloseCamera:")]
+        [Export ("overlayViewControllerWillCloseCamera:")]
         void OverlayViewControllerWillCloseCamera(MBOverlayViewController overlayViewController);
 
         // @required -(BOOL)overlayViewControllerShouldDisplayTorch:(MBOverlayViewController *)overlayViewController;
         [Abstract]
-        [Export("overlayViewControllerShouldDisplayTorch:")]
+        [Export ("overlayViewControllerShouldDisplayTorch:")]
         bool OverlayViewControllerShouldDisplayTorch(MBOverlayViewController overlayViewController);
 
         // @required -(BOOL)overlayViewController:(MBOverlayViewController *)overlayViewController willSetTorch:(BOOL)isTorchOn;
         [Abstract]
-        [Export("overlayViewController:willSetTorch:")]
+        [Export ("overlayViewController:willSetTorch:")]
         bool OverlayViewController(MBOverlayViewController overlayViewController, bool isTorchOn);
 
         // @required -(BOOL)shouldDisplayHelpButton;
         [Abstract]
-        [Export("shouldDisplayHelpButton")]
+        [Export ("shouldDisplayHelpButton")]
         bool ShouldDisplayHelpButton { get; }
 
         // @required -(BOOL)isStatusBarPresented;
         [Abstract]
-        [Export("isStatusBarPresented")]
+        [Export ("isStatusBarPresented")]
         bool IsStatusBarPresented { get; }
 
         // @required -(BOOL)isTorchOn;
         [Abstract]
-        [Export("isTorchOn")]
+        [Export ("isTorchOn")]
         bool IsTorchOn { get; }
 
         // @required -(BOOL)isCameraAuthorized;
         [Abstract]
-        [Export("isCameraAuthorized")]
+        [Export ("isCameraAuthorized")]
         bool IsCameraAuthorized { get; }
     }
 
@@ -185,10 +242,6 @@ namespace Microblink
         // @property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> * _Nullable recognizerRunnerViewController;
         [NullAllowed, Export("recognizerRunnerViewController", ArgumentSemantic.Weak)]
         IMBOverlayContainerViewController RecognizerRunnerViewController { get; set; }
-
-        // @property (nonatomic, strong) UIView * _Nullable cameraPausedView;
-        [NullAllowed, Export("cameraPausedView", ArgumentSemantic.Strong)]
-        UIView CameraPausedView { get; set; }
     }
 
     // @interface MBViewControllerFactory : NSObject
@@ -196,9 +249,9 @@ namespace Microblink
     [BaseType(typeof(NSObject))]
     interface MBViewControllerFactory
     {
-        // +(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController * _Nonnull)overlayViewController;
+        // +(UIViewController<MBRecognizerRunnerViewController> * _Nullable)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController * _Nonnull)overlayViewController;
         [Static]
-        [Export("recognizerRunnerViewControllerWithOverlayViewController:")]
+        [Export ("recognizerRunnerViewControllerWithOverlayViewController:")]
         IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
     }
 
@@ -296,90 +349,100 @@ namespace Microblink
     interface MBImage
     {
         // @property (readonly, nonatomic) UIImage * _Nonnull image;
-        [Export("image")]
+        [Export ("image")]
         UIImage Image { get; }
 
         // @property (nonatomic) CGRect roi;
-        [Export("roi", ArgumentSemantic.Assign)]
+        [Export ("roi", ArgumentSemantic.Assign)]
         CGRect Roi { get; set; }
 
         // @property (nonatomic) MBProcessingOrientation orientation;
-        [Export("orientation", ArgumentSemantic.Assign)]
+        [Export ("orientation", ArgumentSemantic.Assign)]
         MBProcessingOrientation Orientation { get; set; }
 
         // @property (nonatomic) BOOL mirroredHorizontally;
-        [Export("mirroredHorizontally")]
+        [Export ("mirroredHorizontally")]
         bool MirroredHorizontally { get; set; }
 
         // @property (nonatomic) BOOL mirroredVertically;
-        [Export("mirroredVertically")]
+        [Export ("mirroredVertically")]
         bool MirroredVertically { get; set; }
 
         // @property (nonatomic) BOOL estimateFrameQuality;
-        [Export("estimateFrameQuality")]
+        [Export ("estimateFrameQuality")]
         bool EstimateFrameQuality { get; set; }
 
         // @property (nonatomic) BOOL cameraFrame;
-        [Export("cameraFrame")]
+        [Export ("cameraFrame")]
         bool CameraFrame { get; set; }
 
         // +(instancetype _Nonnull)imageWithUIImage:(UIImage * _Nonnull)image;
         [Static]
-        [Export("imageWithUIImage:")]
+        [Export ("imageWithUIImage:")]
         MBImage ImageWithUIImage(UIImage image);
 
         // +(instancetype _Nonnull)imageWithCmSampleBuffer:(CMSampleBufferRef _Nonnull)buffer;
         [Static]
-        [Export("imageWithCmSampleBuffer:")]
+        [Export ("imageWithCmSampleBuffer:")]
         unsafe MBImage ImageWithCmSampleBuffer(CMSampleBuffer buffer);
+
+        // +(instancetype _Nonnull)imageWithCvPixelBuffer:(CVPixelBufferRef _Nonnull)buffer;
+		[Static]
+		[Export ("imageWithCvPixelBuffer:")]
+		MBImage ImageWithCvPixelBuffer (CVPixelBuffer buffer);
     }
 
-   // @interface MBCameraSettings : NSObject <NSCopying>
-    [iOS (8,0)]
-    [BaseType(typeof(NSObject))]
-    interface MBCameraSettings : INSCopying
+        // @protocol MBNativeResult
+    [Protocol]
+    interface MBNativeResult
     {
-        // @property (assign, nonatomic) MBCameraPreset cameraPreset;
-        [Export("cameraPreset", ArgumentSemantic.Assign)]
-        MBCameraPreset CameraPreset { get; set; }
+        // @required -(NSObject * _Nullable)nativeResult;
+        [Abstract]
+        [NullAllowed, Export("nativeResult")]
+        NSObject NativeResult { get; }
 
-        // @property (assign, nonatomic) MBCameraType cameraType;
-        [Export("cameraType", ArgumentSemantic.Assign)]
-        MBCameraType CameraType { get; set; }
-
-        // @property (assign, nonatomic) NSTimeInterval autofocusInterval;
-        [Export("autofocusInterval")]
-        double AutofocusInterval { get; set; }
-
-        // @property (assign, nonatomic) MBCameraAutofocusRestriction cameraAutofocusRestriction;
-        [Export("cameraAutofocusRestriction", ArgumentSemantic.Assign)]
-        MBCameraAutofocusRestriction CameraAutofocusRestriction { get; set; }
-
-        // @property (nonatomic, weak) NSString * videoGravity;
-        [Export("videoGravity", ArgumentSemantic.Weak)]
-        string VideoGravity { get; set; }
-
-        // @property (assign, nonatomic) CGPoint focusPoint;
-        [Export("focusPoint", ArgumentSemantic.Assign)]
-        CGPoint FocusPoint { get; set; }
-
-        // @property (nonatomic) BOOL cameraMirroredHorizontally;
-        [Export("cameraMirroredHorizontally")]
-        bool CameraMirroredHorizontally { get; set; }
-
-        // @property (nonatomic) BOOL cameraMirroredVertically;
-        [Export("cameraMirroredVertically")]
-        bool CameraMirroredVertically { get; set; }
-
-        // -(NSString *)calcSessionPreset;
-        [Export("calcSessionPreset")]
-        string CalcSessionPreset { get; }
-
-        // -(AVCaptureAutoFocusRangeRestriction)calcAutofocusRangeRestriction;
-        [Export("calcAutofocusRangeRestriction")]
-        AVCaptureAutoFocusRangeRestriction CalcAutofocusRangeRestriction { get; }
+        // @required -(NSString * _Nullable)stringResult;
+        [Abstract]
+        [NullAllowed, Export("stringResult")]
+        string StringResult { get; }
     }
 
+    // @interface MBDateResult : NSObject <MBNativeResult>
+    
+    [BaseType(typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBDateResult : MBNativeResult
+    {
+        // -(instancetype _Nonnull)initWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString __attribute__((objc_designated_initializer));
+        [Export ("initWithDay:month:year:originalDateString:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(nint day, nint month, nint year, [NullAllowed] string originalDateString);
+
+        // @property (readonly, nonatomic) NSString * _Nullable originalDateString;
+        [NullAllowed, Export("originalDateString")]
+        string OriginalDateString { get; }
+
+        // @property (readonly, nonatomic) NSDate * _Nonnull date;
+        [Export ("date")]
+        NSDate Date { get; }
+
+        // @property (readonly, assign, nonatomic) NSInteger day;
+        [Export ("day")]
+        nint Day { get; }
+
+        // @property (readonly, assign, nonatomic) NSInteger month;
+        [Export ("month")]
+        nint Month { get; }
+
+        // @property (readonly, assign, nonatomic) NSInteger year;
+        [Export ("year")]
+        nint Year { get; }
+
+        // +(instancetype _Nonnull)dateResultWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString;
+        [Static]
+        [Export ("dateResultWithDay:month:year:originalDateString:")]
+        MBDateResult DateResultWithDay(nint day, nint month, nint year, [NullAllowed] string originalDateString);
+    }
 
     // @protocol MBDebugRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
@@ -388,12 +451,12 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugImage:(MBImage * _Nonnull)image;
         [Abstract]
-        [Export("recognizerRunnerViewController:didOutputDebugImage:")]
+        [Export ("recognizerRunnerViewController:didOutputDebugImage:")]
         void DidOutputDebugImage(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBImage image);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugText:(NSString * _Nonnull)text;
         [Abstract]
-        [Export("recognizerRunnerViewController:didOutputDebugText:")]
+        [Export ("recognizerRunnerViewController:didOutputDebugText:")]
         void DidOutputDebugText(IMBRecognizerRunnerViewController recognizerRunnerViewController, string text);
     }
 
@@ -403,15 +466,15 @@ namespace Microblink
     interface MBDetectionRecognizerRunnerViewControllerDelegate
     {
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayableQuad:(MBDisplayableQuadDetection * _Nonnull)displayableQuad;
-        [Export("recognizerRunnerViewController:didFinishDetectionWithDisplayableQuad:")]
+        [Export ("recognizerRunnerViewController:didFinishDetectionWithDisplayableQuad:")]
         void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayableQuadDetection displayableQuad);
 
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayablePoints:(MBDisplayablePointsDetection * _Nonnull)displayablePoints;
-        [Export("recognizerRunnerViewController:didFinishDetectionWithDisplayablePoints:")]
+        [Export ("recognizerRunnerViewController:didFinishDetectionWithDisplayablePoints:")]
         void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayablePointsDetection displayablePoints);
 
         // @optional -(void)recognizerRunnerViewControllerDidFailDetection:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
-        [Export("recognizerRunnerViewControllerDidFailDetection:")]
+        [Export ("recognizerRunnerViewControllerDidFailDetection:")]
         void RecognizerRunnerViewControllerDidFailDetection(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
@@ -474,7 +537,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didObtainOcrResult:(MBOcrLayout * _Nonnull)ocrResult withResultName:(NSString * _Nonnull)resultName;
         [Abstract]
-        [Export("recognizerRunnerViewController:didObtainOcrResult:withResultName:")]
+        [Export ("recognizerRunnerViewController:didObtainOcrResult:withResultName:")]
         void DidObtainOcrResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBOcrLayout ocrResult, string resultName);
     }
 
@@ -485,7 +548,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishGlareDetectionWithResult:(BOOL)glareFound;
         [Abstract]
-        [Export("recognizerRunnerViewController:didFinishGlareDetectionWithResult:")]
+        [Export ("recognizerRunnerViewController:didFinishGlareDetectionWithResult:")]
         void DidFinishGlareDetectionWithResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, bool glareFound);
     }
 
@@ -496,7 +559,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:")]
+        [Export ("recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:")]
         void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
@@ -553,32 +616,32 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewControllerUnauthorizedCamera:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerUnauthorizedCamera:")]
+        [Export ("recognizerRunnerViewControllerUnauthorizedCamera:")]
         void RecognizerRunnerViewControllerUnauthorizedCamera(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFindError:(NSError * _Nonnull)error;
         [Abstract]
-        [Export("recognizerRunnerViewController:didFindError:")]
+        [Export ("recognizerRunnerViewController:didFindError:")]
         void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, NSError error);
 
         // @required -(void)recognizerRunnerViewControllerDidClose:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerDidClose:")]
+        [Export ("recognizerRunnerViewControllerDidClose:")]
         void RecognizerRunnerViewControllerDidClose(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerWillPresentHelp:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerWillPresentHelp:")]
+        [Export ("recognizerRunnerViewControllerWillPresentHelp:")]
         void RecognizerRunnerViewControllerWillPresentHelp(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidResumeScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerDidResumeScanning:")]
+        [Export ("recognizerRunnerViewControllerDidResumeScanning:")]
         void RecognizerRunnerViewControllerDidResumeScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidStopScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
-        [Export("recognizerRunnerViewControllerDidStopScanning:")]
+        [Export ("recognizerRunnerViewControllerDidStopScanning:")]
         void RecognizerRunnerViewControllerDidStopScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
@@ -589,7 +652,7 @@ namespace Microblink
     interface MBRecognizerResult
     {
         // @property (readonly, assign, nonatomic) MBRecognizerResultState resultState;
-        [Export("resultState", ArgumentSemantic.Assign)]
+        [Export ("resultState", ArgumentSemantic.Assign)]
         MBRecognizerResultState ResultState { get; }
     }
 
@@ -600,7 +663,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishScanningWithState:(MBRecognizerResultState)state;
         [Abstract]
-        [Export("recognizerRunnerViewController:didFinishScanningWithState:")]
+        [Export ("recognizerRunnerViewController:didFinishScanningWithState:")]
         void DidFinishScanningWithState(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
     }
 
@@ -610,11 +673,11 @@ namespace Microblink
     interface MBDebugRecognizerRunnerDelegate
     {
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didOutputDebugImage:(MBImage * _Nonnull)image;
-        [Export("recognizerRunner:didOutputDebugImage:")]
+        [Export ("recognizerRunner:didOutputDebugImage:")]
         void DidOutputDebugImage(MBRecognizerRunner recognizerRunner, MBImage image);
 
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didOutputDebugText:(NSString * _Nonnull)text;
-        [Export("recognizerRunner:didOutputDebugText:")]
+        [Export ("recognizerRunner:didOutputDebugText:")]
         void DidOutputDebugText(MBRecognizerRunner recognizerRunner, string text);
     }
 
@@ -624,15 +687,15 @@ namespace Microblink
     interface MBDetectionRecognizerRunnerDelegate
     {
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishDetectionWithDisplayableQuad:(MBDisplayableQuadDetection * _Nonnull)displayableQuad;
-        [Export("recognizerRunner:didFinishDetectionWithDisplayableQuad:")]
+        [Export ("recognizerRunner:didFinishDetectionWithDisplayableQuad:")]
         void RecognizerRunner(MBRecognizerRunner recognizerRunner, MBDisplayableQuadDetection displayableQuad);
 
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishDetectionWithDisplayablePoints:(MBDisplayablePointsDetection * _Nonnull)displayablePoints;
-        [Export("recognizerRunner:didFinishDetectionWithDisplayablePoints:")]
+        [Export ("recognizerRunner:didFinishDetectionWithDisplayablePoints:")]
         void RecognizerRunner(MBRecognizerRunner recognizerRunner, MBDisplayablePointsDetection displayablePoints);
 
         // @optional -(void)recognizerRunnerDidFailDetection:(MBRecognizerRunner * _Nonnull)recognizerRunner;
-        [Export("recognizerRunnerDidFailDetection:")]
+        [Export ("recognizerRunnerDidFailDetection:")]
         void RecognizerRunnerDidFailDetection(MBRecognizerRunner recognizerRunner);
     }
 
@@ -643,7 +706,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didObtainOcrResult:(MBOcrLayout * _Nonnull)ocrResult withResultName:(NSString * _Nonnull)resultName;
         [Abstract]
-        [Export("recognizerRunner:didObtainOcrResult:withResultName:")]
+        [Export ("recognizerRunner:didObtainOcrResult:withResultName:")]
         void DidObtainOcrResult(MBRecognizerRunner recognizerRunner, MBOcrLayout ocrResult, string resultName);
     }
 
@@ -654,7 +717,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishGlareDetectionWithResult:(BOOL)glareFound;
         [Abstract]
-        [Export("recognizerRunner:didFinishGlareDetectionWithResult:")]
+        [Export ("recognizerRunner:didFinishGlareDetectionWithResult:")]
         void DidFinishGlareDetectionWithResult(MBRecognizerRunner recognizerRunner, bool glareFound);
     }
 
@@ -665,7 +728,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunnerDidFinishRecognitionOfFirstSide:(MBRecognizerRunner * _Nonnull)recognizerRunner;
         [Abstract]
-        [Export("recognizerRunnerDidFinishRecognitionOfFirstSide:")]
+        [Export ("recognizerRunnerDidFinishRecognitionOfFirstSide:")]
         void RecognizerRunnerDidFinishRecognitionOfFirstSide(MBRecognizerRunner recognizerRunner);
     }
 
@@ -722,7 +785,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state;
         [Abstract]
-        [Export("recognizerRunner:didFinishScanningWithState:")]
+        [Export ("recognizerRunner:didFinishScanningWithState:")]
         void DidFinishScanningWithState(MBRecognizerRunner recognizerRunner, MBRecognizerResultState state);
     }
 
@@ -733,7 +796,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishProcessingImage:(MBImage * _Nonnull)image;
         [Abstract]
-        [Export("recognizerRunner:didFinishProcessingImage:")]
+        [Export ("recognizerRunner:didFinishProcessingImage:")]
         void DidFinishProcessingImage(MBRecognizerRunner recognizerRunner, MBImage image);
     }
 
@@ -744,7 +807,7 @@ namespace Microblink
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishProcessingString:(NSString * _Nonnull)string;
         [Abstract]
-        [Export("recognizerRunner:didFinishProcessingString:")]
+        [Export ("recognizerRunner:didFinishProcessingString:")]
         void DidFinishProcessingString(MBRecognizerRunner recognizerRunner, string @string);
     }
 
@@ -755,7 +818,7 @@ namespace Microblink
     interface MBRecognizerRunner
     {
         // @property (readonly, nonatomic, strong) MBRecognizerRunnerMetadataDelegates * _Nonnull metadataDelegates;
-        [Export("metadataDelegates", ArgumentSemantic.Strong)]
+        [Export ("metadataDelegates", ArgumentSemantic.Strong)]
         MBRecognizerRunnerMetadataDelegates MetadataDelegates { get; }
 
         [Wrap("WeakScanningRecognizerRunnerDelegate")]
@@ -783,32 +846,32 @@ namespace Microblink
         NSObject WeakStringProcessingRecognizerRunnerDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithRecognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection __attribute__((objc_designated_initializer));
-        [Export("initWithRecognizerCollection:")]
+        [Export ("initWithRecognizerCollection:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBRecognizerCollection recognizerCollection);
 
         // -(void)resetState;
-        [Export("resetState")]
+        [Export ("resetState")]
         void ResetState();
 
         // -(void)resetState:(BOOL)hard;
-        [Export("resetState:")]
+        [Export ("resetState:")]
         void ResetState(bool hard);
 
         // -(void)cancelProcessing;
-        [Export("cancelProcessing")]
+        [Export ("cancelProcessing")]
         void CancelProcessing();
 
         // -(void)processImage:(MBImage * _Nonnull)image;
-        [Export("processImage:")]
+        [Export ("processImage:")]
         void ProcessImage(MBImage image);
 
         // -(void)processString:(NSString * _Nonnull)string;
-        [Export("processString:")]
+        [Export ("processString:")]
         void ProcessString(string @string);
 
         // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
-        [Export("reconfigureRecognizers:")]
+        [Export ("reconfigureRecognizers:")]
         void ReconfigureRecognizers(MBRecognizerCollection recognizerCollection);
     }
 
@@ -825,7 +888,7 @@ namespace Microblink
     interface MBRecognizer
     {
         // @property (getter = isEnabled, nonatomic) BOOL enabled;
-        [Export("enabled")]
+        [Export ("enabled")]
         bool Enabled { [Bind("isEnabled")] get; set; }
 
         // @property (readonly, nonatomic, weak) MBRecognizerResult * _Nullable baseResult;
@@ -833,7 +896,7 @@ namespace Microblink
         MBRecognizerResult BaseResult { get; }
 
         // -(UIInterfaceOrientationMask)getOptimalHudOrientation;
-        [Export("getOptimalHudOrientation")]
+        [Export ("getOptimalHudOrientation")]
         UIInterfaceOrientationMask OptimalHudOrientation { get; }
     }
 
@@ -844,15 +907,15 @@ namespace Microblink
     interface MBFrameGrabberRecognizer : INSCopying
     {
         // -(instancetype _Nonnull)initWithFrameGrabberDelegate:(id<MBFrameGrabberRecognizerDelegate> _Nonnull)frameGrabberDelegate;
-        [Export("initWithFrameGrabberDelegate:")]
+        [Export ("initWithFrameGrabberDelegate:")]
         IntPtr Constructor(MBFrameGrabberRecognizerDelegate frameGrabberDelegate);
 
         // @property (assign, nonatomic) BOOL grabFocusedFrames;
-        [Export("grabFocusedFrames")]
+        [Export ("grabFocusedFrames")]
         bool GrabFocusedFrames { get; set; }
 
         // @property (assign, nonatomic) BOOL grabUnfocusedFrames;
-        [Export("grabUnfocusedFrames")]
+        [Export ("grabUnfocusedFrames")]
         bool GrabUnfocusedFrames { get; set; }
     }
 
@@ -863,7 +926,7 @@ namespace Microblink
     {
         // @required -(void)onFrameAvailable:(MBImage * _Nonnull)cameraFrame isFocused:(BOOL)focused frameQuality:(CGFloat)frameQuality;
         [Abstract]
-        [Export("onFrameAvailable:isFocused:frameQuality:")]
+        [Export ("onFrameAvailable:isFocused:frameQuality:")]
         void IsFocused(MBImage cameraFrame, bool focused, nfloat frameQuality);
     }
 
@@ -874,7 +937,7 @@ namespace Microblink
     interface MBSuccessFrameGrabberRecognizerResult : INSCopying
     {
         // @property (readonly, nonatomic, strong) MBImage * _Nonnull successFrame;
-        [Export("successFrame", ArgumentSemantic.Strong)]
+        [Export ("successFrame", ArgumentSemantic.Strong)]
         MBImage SuccessFrame { get; }
     }
 
@@ -885,16 +948,16 @@ namespace Microblink
     interface MBSuccessFrameGrabberRecognizer : INSCopying
     {
         // -(instancetype _Nonnull)initWithRecognizer:(MBRecognizer * _Nonnull)recognizer __attribute__((objc_designated_initializer));
-        [Export("initWithRecognizer:")]
+        [Export ("initWithRecognizer:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBRecognizer recognizer);
 
         // @property (readonly, nonatomic, strong) MBSuccessFrameGrabberRecognizerResult * _Nonnull result;
-        [Export("result", ArgumentSemantic.Strong)]
+        [Export ("result", ArgumentSemantic.Strong)]
         MBSuccessFrameGrabberRecognizerResult Result { get; }
 
         // @property (readonly, nonatomic, strong) MBRecognizer * _Nonnull slaveRecognizer;
-        [Export("slaveRecognizer", ArgumentSemantic.Strong)]
+        [Export ("slaveRecognizer", ArgumentSemantic.Strong)]
         MBRecognizer SlaveRecognizer { get; }
     }
 
@@ -904,35 +967,35 @@ namespace Microblink
     interface MBQuadrangle
     {
         // @property (assign, nonatomic) CGPoint upperLeft;
-        [Export("upperLeft", ArgumentSemantic.Assign)]
+        [Export ("upperLeft", ArgumentSemantic.Assign)]
         CGPoint UpperLeft { get; set; }
 
         // @property (assign, nonatomic) CGPoint upperRight;
-        [Export("upperRight", ArgumentSemantic.Assign)]
+        [Export ("upperRight", ArgumentSemantic.Assign)]
         CGPoint UpperRight { get; set; }
 
         // @property (assign, nonatomic) CGPoint lowerLeft;
-        [Export("lowerLeft", ArgumentSemantic.Assign)]
+        [Export ("lowerLeft", ArgumentSemantic.Assign)]
         CGPoint LowerLeft { get; set; }
 
         // @property (assign, nonatomic) CGPoint lowerRight;
-        [Export("lowerRight", ArgumentSemantic.Assign)]
+        [Export ("lowerRight", ArgumentSemantic.Assign)]
         CGPoint LowerRight { get; set; }
 
         // -(instancetype _Nonnull)initWithUpperLeft:(CGPoint)upperLeft upperRight:(CGPoint)upperRight lowerLeft:(CGPoint)lowerLeft lowerRight:(CGPoint)lowerRight;
-        [Export("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
+        [Export ("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
         IntPtr Constructor(CGPoint upperLeft, CGPoint upperRight, CGPoint lowerLeft, CGPoint lowerRight);
 
         // -(NSArray * _Nonnull)toPointsArray;
-        [Export("toPointsArray")]
+        [Export ("toPointsArray")]
         NSValue[] ToPointsArray { get; }
 
         // -(instancetype _Nonnull)quadrangleWithTransformation:(CGAffineTransform)transform;
-        [Export("quadrangleWithTransformation:")]
+        [Export ("quadrangleWithTransformation:")]
         MBQuadrangle QuadrangleWithTransformation(CGAffineTransform transform);
 
         // -(CGPoint)center;
-        [Export("center")]
+        [Export ("center")]
         CGPoint Center { get; }
     }
 
@@ -944,60 +1007,8 @@ namespace Microblink
     {
         // +(instancetype _Nonnull)createFromPreset:(MBMrtdSpecificationPreset)preset;
         [Static]
-        [Export("createFromPreset:")]
+        [Export ("createFromPreset:")]
         MBMrtdSpecification CreateFromPreset(MBMrtdSpecificationPreset preset);
-    }
-
-    // @protocol MBNativeResult
-    [Protocol]
-    interface MBNativeResult
-    {
-        // @required -(NSObject * _Nullable)nativeResult;
-        [Abstract]
-        [NullAllowed, Export("nativeResult")]
-        NSObject NativeResult { get; }
-
-        // @required -(NSString * _Nullable)stringResult;
-        [Abstract]
-        [NullAllowed, Export("stringResult")]
-        string StringResult { get; }
-    }
-
-    // @interface MBDateResult : NSObject <MBNativeResult>
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBDateResult : MBNativeResult
-    {
-        // -(instancetype _Nonnull)initWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString __attribute__((objc_designated_initializer));
-        [Export("initWithDay:month:year:originalDateString:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(nint day, nint month, nint year, [NullAllowed] string originalDateString);
-
-        // @property (readonly, nonatomic) NSString * _Nullable originalDateString;
-        [NullAllowed, Export("originalDateString")]
-        string OriginalDateString { get; }
-
-        // @property (readonly, nonatomic) NSDate * _Nonnull date;
-        [Export("date")]
-        NSDate Date { get; }
-
-        // @property (readonly, assign, nonatomic) NSInteger day;
-        [Export("day")]
-        nint Day { get; }
-
-        // @property (readonly, assign, nonatomic) NSInteger month;
-        [Export("month")]
-        nint Month { get; }
-
-        // @property (readonly, assign, nonatomic) NSInteger year;
-        [Export("year")]
-        nint Year { get; }
-
-        // +(instancetype _Nonnull)dateResultWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString;
-        [Static]
-        [Export("dateResultWithDay:month:year:originalDateString:")]
-        MBDateResult DateResultWithDay(nint day, nint month, nint year, [NullAllowed] string originalDateString);
     }
 
     // @interface MBTemplatingClass : NSObject
@@ -1006,7 +1017,7 @@ namespace Microblink
     interface MBTemplatingClass
     {
         // -(void)setTemplatingClassifier:(id<MBTemplatingClassifier> _Nullable)templatingClassifier;
-        [Export("setTemplatingClassifier:")]
+        [Export ("setTemplatingClassifier:")]
         void SetTemplatingClassifier([NullAllowed] MBTemplatingClassifier templatingClassifier);
     }
 
@@ -1017,7 +1028,7 @@ namespace Microblink
     {
         // @required -(BOOL)classify;
         [Abstract]
-        [Export("classify")]
+        [Export ("classify")]
         bool Classify();
     }
 
@@ -1039,11 +1050,11 @@ namespace Microblink
     interface MBTemplatingRecognizer
     {
         // @property (readonly, nonatomic, strong) MBTemplatingRecognizerResult * _Nonnull templatingResult;
-        [Export("templatingResult", ArgumentSemantic.Strong)]
+        [Export ("templatingResult", ArgumentSemantic.Strong)]
         MBTemplatingRecognizerResult TemplatingResult { get; }
 
         // @property (assign, nonatomic) BOOL useGlareDetector;
-        [Export("useGlareDetector")]
+        [Export ("useGlareDetector")]
         bool UseGlareDetector { get; set; }
 
         // @property (readonly, nonatomic, strong) NSArray<__kindof MBTemplatingClass *> * _Nullable templatingClasses;
@@ -1051,7 +1062,7 @@ namespace Microblink
         MBTemplatingClass[] TemplatingClasses { get; }
 
         // -(void)setTemplatingClasses:(NSArray<__kindof MBTemplatingClass *> * _Nullable)templatingClasses;
-        [Export("setTemplatingClasses:")]
+        [Export ("setTemplatingClasses:")]
         void SetTemplatingClasses([NullAllowed] MBTemplatingClass[] templatingClasses);
     }
 
@@ -1062,7 +1073,7 @@ namespace Microblink
     interface MBProcessorResult
     {
         // @property (readonly, assign, nonatomic) MBProcessorResultState resultState;
-        [Export("resultState", ArgumentSemantic.Assign)]
+        [Export ("resultState", ArgumentSemantic.Assign)]
         MBProcessorResultState ResultState { get; }
     }
 
@@ -1083,40 +1094,40 @@ namespace Microblink
     interface MBOcrLayout
     {
         // @property (nonatomic) CGRect box;
-        [Export("box", ArgumentSemantic.Assign)]
+        [Export ("box", ArgumentSemantic.Assign)]
         CGRect Box { get; set; }
 
         // @property (nonatomic) NSArray<MBOcrBlock *> * _Nonnull blocks;
-        [Export("blocks", ArgumentSemantic.Assign)]
+        [Export ("blocks", ArgumentSemantic.Assign)]
         MBOcrBlock[] Blocks { get; set; }
 
         // @property (nonatomic) CGAffineTransform transform;
-        [Export("transform", ArgumentSemantic.Assign)]
+        [Export ("transform", ArgumentSemantic.Assign)]
         CGAffineTransform Transform { get; set; }
 
         // @property (nonatomic) BOOL transformInvalid;
-        [Export("transformInvalid")]
+        [Export ("transformInvalid")]
         bool TransformInvalid { get; set; }
 
         // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export("position", ArgumentSemantic.Assign)]
+        [Export ("position", ArgumentSemantic.Assign)]
         MBPosition Position { get; set; }
 
         // @property (nonatomic) BOOL flipped;
-        [Export("flipped")]
+        [Export ("flipped")]
         bool Flipped { get; set; }
 
         // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray<MBOcrBlock *> * _Nonnull)ocrBlocks transform:(CGAffineTransform)transform box:(CGRect)box flipped:(BOOL)flipped __attribute__((objc_designated_initializer));
-        [Export("initWithOcrBlocks:transform:box:flipped:")]
+        [Export ("initWithOcrBlocks:transform:box:flipped:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBOcrBlock[] ocrBlocks, CGAffineTransform transform, CGRect box, bool flipped);
 
         // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray * _Nonnull)ocrBlocks;
-        [Export("initWithOcrBlocks:")]
+        [Export ("initWithOcrBlocks:")]
         IntPtr Constructor(MBOcrBlock[] ocrBlocks);
 
         // -(NSString * _Nonnull)string;
-        [Export("string")]
+        [Export ("string")]
         string String { get; }
     }
 
@@ -1127,20 +1138,20 @@ namespace Microblink
     interface MBOcrBlock
     {
         // @property (nonatomic) NSArray<MBOcrLine *> * _Nonnull lines;
-        [Export("lines", ArgumentSemantic.Assign)]
+        [Export ("lines", ArgumentSemantic.Assign)]
         MBOcrLine[] Lines { get; set; }
 
         // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export("position", ArgumentSemantic.Assign)]
+        [Export ("position", ArgumentSemantic.Assign)]
         MBPosition Position { get; set; }
 
         // -(instancetype _Nonnull)initWithOcrLines:(NSArray<MBOcrLine *> * _Nonnull)ocrLines position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
-        [Export("initWithOcrLines:position:")]
+        [Export ("initWithOcrLines:position:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBOcrLine[] ocrLines, MBPosition position);
 
         // -(NSString * _Nonnull)string;
-        [Export("string")]
+        [Export ("string")]
         string String { get; }
     }
 
@@ -1151,20 +1162,20 @@ namespace Microblink
     interface MBOcrLine
     {
         // @property (nonatomic) NSArray<MBCharWithVariants *> * _Nonnull chars;
-        [Export("chars", ArgumentSemantic.Assign)]
+        [Export ("chars", ArgumentSemantic.Assign)]
         MBCharWithVariants[] Chars { get; set; }
 
         // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export("position", ArgumentSemantic.Assign)]
+        [Export ("position", ArgumentSemantic.Assign)]
         MBPosition Position { get; set; }
 
         // -(instancetype _Nonnull)initWithOcrChars:(NSArray<MBCharWithVariants *> * _Nonnull)ocrChars position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
-        [Export("initWithOcrChars:position:")]
+        [Export ("initWithOcrChars:position:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBCharWithVariants[] ocrChars, MBPosition position);
 
         // -(NSString * _Nonnull)string;
-        [Export("string")]
+        [Export ("string")]
         string String { get; }
     }
 
@@ -1175,15 +1186,15 @@ namespace Microblink
     interface MBCharWithVariants
     {
         // @property (nonatomic) MBOcrChar * _Nonnull character;
-        [Export("character", ArgumentSemantic.Assign)]
+        [Export ("character", ArgumentSemantic.Assign)]
         MBOcrChar Character { get; set; }
 
         // @property (nonatomic) NSSet * _Nonnull variants;
-        [Export("variants", ArgumentSemantic.Assign)]
+        [Export ("variants", ArgumentSemantic.Assign)]
         NSSet Variants { get; set; }
 
         // -(instancetype _Nonnull)initWithValue:(MBOcrChar * _Nonnull)character __attribute__((objc_designated_initializer));
-        [Export("initWithValue:")]
+        [Export ("initWithValue:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBOcrChar character);
     }
@@ -1195,31 +1206,31 @@ namespace Microblink
     interface MBOcrChar
     {
         // @property (nonatomic) unichar value;
-        [Export("value")]
+        [Export ("value")]
         ushort Value { get; set; }
 
         // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export("position", ArgumentSemantic.Assign)]
+        [Export ("position", ArgumentSemantic.Assign)]
         MBPosition Position { get; set; }
 
         // @property (nonatomic) CGFloat height;
-        [Export("height")]
+        [Export ("height")]
         nfloat Height { get; set; }
 
         // @property (getter = isUncertain, nonatomic) BOOL uncertain;
-        [Export("uncertain")]
+        [Export ("uncertain")]
         bool Uncertain { [Bind("isUncertain")] get; set; }
 
         // @property (nonatomic) NSInteger quality;
-        [Export("quality")]
+        [Export ("quality")]
         nint Quality { get; set; }
 
         // @property (nonatomic) MBOcrFont font;
-        [Export("font", ArgumentSemantic.Assign)]
+        [Export ("font", ArgumentSemantic.Assign)]
         MBOcrFont Font { get; set; }
 
         // -(instancetype _Nonnull)initWithValue:(unichar)value position:(MBPosition * _Nonnull)position height:(CGFloat)height __attribute__((objc_designated_initializer));
-        [Export("initWithValue:position:height:")]
+        [Export ("initWithValue:position:height:")]
         [DesignatedInitializer]
         IntPtr Constructor(ushort value, MBPosition position, nfloat height);
     }
@@ -1231,40 +1242,40 @@ namespace Microblink
     interface MBPosition
     {
         // @property (nonatomic) CGPoint ul;
-        [Export("ul", ArgumentSemantic.Assign)]
+        [Export ("ul", ArgumentSemantic.Assign)]
         CGPoint Ul { get; set; }
 
         // @property (nonatomic) CGPoint ur;
-        [Export("ur", ArgumentSemantic.Assign)]
+        [Export ("ur", ArgumentSemantic.Assign)]
         CGPoint Ur { get; set; }
 
         // @property (nonatomic) CGPoint ll;
-        [Export("ll", ArgumentSemantic.Assign)]
+        [Export ("ll", ArgumentSemantic.Assign)]
         CGPoint Ll { get; set; }
 
         // @property (nonatomic) CGPoint lr;
-        [Export("lr", ArgumentSemantic.Assign)]
+        [Export ("lr", ArgumentSemantic.Assign)]
         CGPoint Lr { get; set; }
 
         // -(instancetype _Nonnull)initWithUpperLeft:(CGPoint)ul upperRight:(CGPoint)ur lowerLeft:(CGPoint)ll lowerRight:(CGPoint)lr __attribute__((objc_designated_initializer));
-        [Export("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
+        [Export ("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
         [DesignatedInitializer]
         IntPtr Constructor(CGPoint ul, CGPoint ur, CGPoint ll, CGPoint lr);
 
         // -(MBPosition * _Nonnull)positionWithOffset:(CGPoint)offset;
-        [Export("positionWithOffset:")]
+        [Export ("positionWithOffset:")]
         MBPosition PositionWithOffset(CGPoint offset);
 
         // -(CGRect)rect;
-        [Export("rect")]
+        [Export ("rect")]
         CGRect Rect { get; }
 
         // -(CGPoint)center;
-        [Export("center")]
+        [Export ("center")]
         CGPoint Center { get; }
 
         // -(CGFloat)height;
-        [Export("height")]
+        [Export ("height")]
         nfloat Height { get; }
     }
 
@@ -1289,11 +1300,11 @@ namespace Microblink
     interface MBImageReturnProcessor : INSCopying
     {
         // @property (readonly, nonatomic, strong) MBImageReturnProcessorResult * _Nonnull result;
-        [Export("result", ArgumentSemantic.Strong)]
+        [Export ("result", ArgumentSemantic.Strong)]
         MBImageReturnProcessorResult Result { get; }
 
         // @property (assign, nonatomic) BOOL encodeImage;
-        [Export("encodeImage")]
+        [Export ("encodeImage")]
         bool EncodeImage { get; set; }
     }
 
@@ -1333,7 +1344,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL returnFaceImage;
         [Abstract]
-        [Export("returnFaceImage")]
+        [Export ("returnFaceImage")]
         bool ReturnFaceImage { get; set; }
     }
 
@@ -1343,7 +1354,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL returnSignatureImage;
         [Abstract]
-        [Export("returnSignatureImage")]
+        [Export ("returnSignatureImage")]
         bool ReturnSignatureImage { get; set; }
     }
 
@@ -1353,7 +1364,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL returnFullDocumentImage;
         [Abstract]
-        [Export("returnFullDocumentImage")]
+        [Export ("returnFullDocumentImage")]
         bool ReturnFullDocumentImage { get; set; }
     }
 
@@ -1363,7 +1374,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) NSInteger fullDocumentImageDpi;
         [Abstract]
-        [Export("fullDocumentImageDpi")]
+        [Export ("fullDocumentImageDpi")]
         nint FullDocumentImageDpi { get; set; }
     }
 
@@ -1373,7 +1384,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) NSInteger fullDocumentImageDpi;
         [Abstract]
-        [Export("age")]
+        [Export ("age")]
         int Age { get; set; }
     }
 
@@ -1543,7 +1554,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL detectGlare;
         [Abstract]
-        [Export("detectGlare")]
+        [Export ("detectGlare")]
         bool DetectGlare { get; set; }
     }
 
@@ -1563,7 +1574,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) NSUInteger faceImageDpi;
         [Abstract]
-        [Export("faceImageDpi")]
+        [Export ("faceImageDpi")]
         nint FaceImageDpi { get; set; }
     }
 
@@ -1573,7 +1584,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) NSUInteger signatureImageDpi;
         [Abstract]
-        [Export("signatureImageDpi")]
+        [Export ("signatureImageDpi")]
         nint SignatureImageDpi { get; set; }
     }
 
@@ -1583,7 +1594,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL encodeFaceImage;
         [Abstract]
-        [Export("encodeFaceImage")]
+        [Export ("encodeFaceImage")]
         bool EncodeFaceImage { get; set; }
     }
 
@@ -1598,7 +1609,7 @@ namespace Microblink
 
         // @required @property (readonly, nonatomic) NSUInteger digitalSignatureVersion;
         [Abstract]
-        [Export("digitalSignatureVersion")]
+        [Export ("digitalSignatureVersion")]
         nint DigitalSignatureVersion { get; }
     }
 
@@ -1655,7 +1666,7 @@ namespace Microblink
 
         // @required @property (readonly, assign, nonatomic) BOOL scanningFirstSideDone;
         [Abstract]
-        [Export("scanningFirstSideDone")]
+        [Export ("scanningFirstSideDone")]
         bool ScanningFirstSideDone { get; }
     }
 
@@ -1665,7 +1676,7 @@ namespace Microblink
     {
         // @required @property (readonly, nonatomic) MBRecognizerResult<MBCombinedRecognizerResult> * combinedResult;
         [Abstract]
-        [Export("combinedResult")]
+        [Export ("combinedResult")]
         IMBCombinedRecognizerResult CombinedResult { get; }
     }
 
@@ -1675,7 +1686,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL signResult;
         [Abstract]
-        [Export("signResult")]
+        [Export ("signResult")]
         bool SignResult { get; set; }
     }
 
@@ -1685,7 +1696,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL encodeFullDocumentImage;
         [Abstract]
-        [Export("encodeFullDocumentImage")]
+        [Export ("encodeFullDocumentImage")]
         bool EncodeFullDocumentImage { get; set; }
     }
 
@@ -1695,7 +1706,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL encodeSignatureImage;
         [Abstract]
-        [Export("encodeSignatureImage")]
+        [Export ("encodeSignatureImage")]
         bool EncodeSignatureImage { get; set; }
     }
 
@@ -2075,6 +2086,10 @@ namespace Microblink
 		// @property (assign, nonatomic) BOOL enablePhotoId;
 		[Export ("enablePhotoId")]
 		bool EnablePhotoId { get; set; }
+
+        // @property (assign, nonatomic) BOOL enableBarcodeId;
+		[Export ("enableBarcodeId")]
+		bool EnableBarcodeId { get; set; }
 
 		// @property (assign, nonatomic) BOOL enableFullDocumentRecognition;
 		[Export ("enableFullDocumentRecognition")]
@@ -2667,7 +2682,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) MBImageExtensionFactors fullDocumentImageExtensionFactors;
         [Abstract]
-        [Export("fullDocumentImageExtensionFactors", ArgumentSemantic.Assign)]
+        [Export ("fullDocumentImageExtensionFactors", ArgumentSemantic.Assign)]
         MBImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
     }
 
@@ -2704,7 +2719,7 @@ namespace Microblink
 		bool AllowUnverifiedResults { get; set; }
 
         // @property (assign, nonatomic) BOOL allowSpecialCharacters;
-        [Export("allowSpecialCharacters")]
+        [Export ("allowSpecialCharacters")]
         bool AllowSpecialCharacters { get; set; }
 
         // -(void)setMrtdSpecifications:(NSArray<__kindof MBMrtdSpecification *> * _Nullable)mrtdSpecifications;
@@ -2723,7 +2738,7 @@ namespace Microblink
     {
         // @required -(BOOL)mrzFilter;
         [Abstract]
-        [Export("mrzFilter")]
+        [Export ("mrzFilter")]
         bool MrzFilter();
     }
 
@@ -2754,7 +2769,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL returnMrzImage;
         [Abstract]
-        [Export("returnMrzImage")]
+        [Export ("returnMrzImage")]
         bool ReturnMrzImage { get; set; }
     }
 
@@ -2776,7 +2791,7 @@ namespace Microblink
     {
         // @required @property (assign, nonatomic) BOOL encodeMrzImage;
         [Abstract]
-        [Export("encodeMrzImage")]
+        [Export ("encodeMrzImage")]
         bool EncodeMrzImage { get; set; }
     }
 
@@ -2809,7 +2824,7 @@ namespace Microblink
 		bool AllowUnverifiedResults { get; set; }
 
         // @property (assign, nonatomic) BOOL allowSpecialCharacters;
-        [Export("allowSpecialCharacters")]
+        [Export ("allowSpecialCharacters")]
         bool AllowSpecialCharacters { get; set; }
 
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
@@ -3120,28 +3135,28 @@ namespace Microblink
     interface MBRecognizerCollection : INSCopying
     {
         // -(instancetype _Nonnull)initWithRecognizers:(NSArray<MBRecognizer *> * _Nonnull)recognizers __attribute__((objc_designated_initializer));
-        [Export("initWithRecognizers:")]
+        [Export ("initWithRecognizers:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBRecognizer[] recognizers);
 
         // @property (nonatomic, strong) NSArray<MBRecognizer *> * _Nonnull recognizerList;
-        [Export("recognizerList", ArgumentSemantic.Strong)]
+        [Export ("recognizerList", ArgumentSemantic.Strong)]
         MBRecognizer[] RecognizerList { get; set; }
 
         // @property (nonatomic) BOOL allowMultipleResults;
-        [Export("allowMultipleResults")]
+        [Export ("allowMultipleResults")]
         bool AllowMultipleResults { get; set; }
 
         // @property (nonatomic) NSTimeInterval partialRecognitionTimeout;
-        [Export("partialRecognitionTimeout")]
+        [Export ("partialRecognitionTimeout")]
         double PartialRecognitionTimeout { get; set; }
 
         // @property (nonatomic) MBRecognitionMode recognitionMode;
-        [Export("recognitionMode", ArgumentSemantic.Assign)]
+        [Export ("recognitionMode", ArgumentSemantic.Assign)]
         MBRecognitionMode RecognitionMode { get; set; }
 
         // @property (nonatomic) MBFrameQualityEstimationMode frameQualityEstimationMode;
-        [Export("frameQualityEstimationMode", ArgumentSemantic.Assign)]
+        [Export ("frameQualityEstimationMode", ArgumentSemantic.Assign)]
         MBFrameQualityEstimationMode FrameQualityEstimationMode { get; set; }
     }
 
@@ -3155,7 +3170,7 @@ namespace Microblink
         string Language { get; set; }
 
         // @property (nonatomic, strong) MBCameraSettings * _Nonnull cameraSettings;
-        [Export("cameraSettings", ArgumentSemantic.Strong)]
+        [Export ("cameraSettings", ArgumentSemantic.Strong)]
         MBCameraSettings CameraSettings { get; set; }
     }
 
@@ -3165,15 +3180,15 @@ namespace Microblink
     interface MBBaseOverlaySettings
     {
         // @property (assign, nonatomic) BOOL autorotateOverlay;
-        [Export("autorotateOverlay")]
+        [Export ("autorotateOverlay")]
         bool AutorotateOverlay { get; set; }
 
         // @property (assign, nonatomic) BOOL showStatusBar;
-        [Export("showStatusBar")]
+        [Export ("showStatusBar")]
         bool ShowStatusBar { get; set; }
 
         // @property (assign, nonatomic) NSUInteger supportedOrientations;
-        [Export("supportedOrientations")]
+        [Export ("supportedOrientations")]
         nuint SupportedOrientations { get; set; }
 
         // @property (nonatomic, strong) NSString * _Nullable soundFilePath;
@@ -3181,11 +3196,11 @@ namespace Microblink
         string SoundFilePath { get; set; }
 
         // @property (assign, nonatomic) BOOL displayCancelButton;
-        [Export("displayCancelButton")]
+        [Export ("displayCancelButton")]
         bool DisplayCancelButton { get; set; }
 
         // @property (assign, nonatomic) BOOL displayTorchButton;
-        [Export("displayTorchButton")]
+        [Export ("displayTorchButton")]
         bool DisplayTorchButton { get; set; }
     }
 
@@ -3195,15 +3210,15 @@ namespace Microblink
     interface MBCustomOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBRecognizerCollection * _Nonnull recognizerCollection;
-        [Export("recognizerCollection", ArgumentSemantic.Strong)]
+        [Export ("recognizerCollection", ArgumentSemantic.Strong)]
         MBRecognizerCollection RecognizerCollection { get; }
 
         // @property (readonly, nonatomic, strong) MBCameraSettings * _Nonnull cameraSettings;
-        [Export("cameraSettings", ArgumentSemantic.Strong)]
+        [Export ("cameraSettings", ArgumentSemantic.Strong)]
         MBCameraSettings CameraSettings { get; }
 
         // @property (nonatomic, strong) MBRecognizerRunnerViewControllerMetadataDelegates * _Nonnull metadataDelegates;
-        [Export("metadataDelegates", ArgumentSemantic.Strong)]
+        [Export ("metadataDelegates", ArgumentSemantic.Strong)]
         MBRecognizerRunnerViewControllerMetadataDelegates MetadataDelegates { get; set; }
 
         [Wrap("WeakScanningRecognizerRunnerViewControllerDelegate")]
@@ -3223,28 +3238,28 @@ namespace Microblink
         NSObject WeakRecognizerRunnerViewControllerDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithRecognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection cameraSettings:(MBCameraSettings * _Nonnull)cameraSettings __attribute__((objc_designated_initializer));
-        [Export("initWithRecognizerCollection:cameraSettings:")]
+        [Export ("initWithRecognizerCollection:cameraSettings:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBRecognizerCollection recognizerCollection, MBCameraSettings cameraSettings);
 
         // @property (nonatomic) CGRect scanningRegion;
-        [Export("scanningRegion", ArgumentSemantic.Assign)]
+        [Export ("scanningRegion", ArgumentSemantic.Assign)]
         CGRect ScanningRegion { get; set; }
 
         // @property (assign, nonatomic) BOOL autorotateOverlay;
-        [Export("autorotateOverlay")]
+        [Export ("autorotateOverlay")]
         bool AutorotateOverlay { get; set; }
 
         // @property (assign, nonatomic) BOOL showStatusBar;
-        [Export("showStatusBar")]
+        [Export ("showStatusBar")]
         bool ShowStatusBar { get; set; }
 
         // @property (assign, nonatomic) NSUInteger supportedOrientations;
-        [Export("supportedOrientations")]
+        [Export ("supportedOrientations")]
         nuint SupportedOrientations { get; set; }
 
         // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
-        [Export("reconfigureRecognizers:")]
+        [Export ("reconfigureRecognizers:")]
         void ReconfigureRecognizers(MBRecognizerCollection recognizerCollection);
     }
 
@@ -3269,12 +3284,12 @@ namespace Microblink
     {
         // @required -(void)subviewAnimationDidStart:(MBSubview * _Nonnull)subview;
         [Abstract]
-        [Export("subviewAnimationDidStart:")]
+        [Export ("subviewAnimationDidStart:")]
         void SubviewAnimationDidStart(MBSubview subview);
 
         // @required -(void)subviewAnimationDidFinish:(MBSubview * _Nonnull)subview;
         [Abstract]
-        [Export("subviewAnimationDidFinish:")]
+        [Export ("subviewAnimationDidFinish:")]
         void SubviewAnimationDidFinish(MBSubview subview);
     }
 
@@ -3284,7 +3299,7 @@ namespace Microblink
     interface MBDisplayableObject
     {
         // @property (assign, nonatomic) CGAffineTransform transform;
-        [Export("transform", ArgumentSemantic.Assign)]
+        [Export ("transform", ArgumentSemantic.Assign)]
         CGAffineTransform Transform { get; set; }
     }
 
@@ -3295,12 +3310,12 @@ namespace Microblink
     interface MBDisplayableDetection
     {
         // -(instancetype _Nonnull)initWithDetectionStatus:(MBDetectionStatus)status __attribute__((objc_designated_initializer));
-        [Export("initWithDetectionStatus:")]
+        [Export ("initWithDetectionStatus:")]
         [DesignatedInitializer]
         IntPtr Constructor(MBDetectionStatus status);
 
         // @property (readonly, assign, nonatomic) MBDetectionStatus detectionStatus;
-        [Export("detectionStatus", ArgumentSemantic.Assign)]
+        [Export ("detectionStatus", ArgumentSemantic.Assign)]
         MBDetectionStatus DetectionStatus { get; }
     }
 
@@ -3310,7 +3325,7 @@ namespace Microblink
     interface MBDisplayablePointsDetection
     {
         // @property (nonatomic) NSArray * _Nonnull points;
-        [Export("points", ArgumentSemantic.Assign)]
+        [Export ("points", ArgumentSemantic.Assign)]
         NSValue[] Points { get; set; }
     }
 
@@ -3321,7 +3336,7 @@ namespace Microblink
     {
         // @required -(void)detectionFinishedWithDisplayablePoints:(MBDisplayablePointsDetection *)displayablePointsDetection;
         [Abstract]
-        [Export("detectionFinishedWithDisplayablePoints:")]
+        [Export ("detectionFinishedWithDisplayablePoints:")]
         void DetectionFinishedWithDisplayablePoints(MBDisplayablePointsDetection displayablePointsDetection);
     }
 
@@ -3331,27 +3346,27 @@ namespace Microblink
     interface MBDotsSubview : IMBPointDetectorSubview
     {
         // @property (nonatomic, strong) CAShapeLayer * _Nonnull dotsLayer;
-        [Export("dotsLayer", ArgumentSemantic.Strong)]
+        [Export ("dotsLayer", ArgumentSemantic.Strong)]
         CAShapeLayer DotsLayer { get; set; }
 
         // @property (nonatomic, strong) UIColor * _Nonnull dotsColor;
-        [Export("dotsColor", ArgumentSemantic.Strong)]
+        [Export ("dotsColor", ArgumentSemantic.Strong)]
         UIColor DotsColor { get; set; }
 
         // @property (assign, nonatomic) CGFloat dotsStrokeWidth;
-        [Export("dotsStrokeWidth")]
+        [Export ("dotsStrokeWidth")]
         nfloat DotsStrokeWidth { get; set; }
 
         // @property (assign, nonatomic) CGFloat dotsRadius;
-        [Export("dotsRadius")]
+        [Export ("dotsRadius")]
         nfloat DotsRadius { get; set; }
 
         // @property (assign, nonatomic) CGFloat animationDuration;
-        [Export("animationDuration")]
+        [Export ("animationDuration")]
         nfloat AnimationDuration { get; set; }
 
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
-        [Export("initWithFrame:")]
+        [Export ("initWithFrame:")]
         [DesignatedInitializer]
         IntPtr Constructor(CGRect frame);
     }
@@ -3362,23 +3377,23 @@ namespace Microblink
     interface MBDotsResultSubview : IMBPointDetectorSubview
     {
         // @property (nonatomic, strong) UIColor * _Nonnull foregroundColor;
-        [Export("foregroundColor", ArgumentSemantic.Strong)]
+        [Export ("foregroundColor", ArgumentSemantic.Strong)]
         UIColor ForegroundColor { get; set; }
 
         // @property (nonatomic, strong) UIColor * _Nonnull tintColor;
-        [Export("tintColor", ArgumentSemantic.Strong)]
+        [Export ("tintColor", ArgumentSemantic.Strong)]
         UIColor TintColor { get; set; }
 
         // @property (assign, nonatomic) BOOL shouldIgnoreFastResults;
-        [Export("shouldIgnoreFastResults")]
+        [Export ("shouldIgnoreFastResults")]
         bool ShouldIgnoreFastResults { get; set; }
 
         // @property (assign, nonatomic) CGFloat charFadeInDuration;
-        [Export("charFadeInDuration")]
+        [Export ("charFadeInDuration")]
         nfloat CharFadeInDuration { get; set; }
 
         // @property (assign, nonatomic) NSUInteger dotCount;
-        [Export("dotCount")]
+        [Export ("dotCount")]
         nint DotCount { get; set; }
     }
 
@@ -3388,7 +3403,7 @@ namespace Microblink
     interface MBDisplayableQuadDetection
     {
         // @property (nonatomic, strong) MBQuadrangle * _Nonnull detectionLocation;
-        [Export("detectionLocation", ArgumentSemantic.Strong)]
+        [Export ("detectionLocation", ArgumentSemantic.Strong)]
         MBQuadrangle DetectionLocation { get; set; }
     }
 
@@ -3398,12 +3413,12 @@ namespace Microblink
     interface MBTapToFocusSubview
     {
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
-        [Export("initWithFrame:")]
+        [Export ("initWithFrame:")]
         [DesignatedInitializer]
         IntPtr Constructor(CGRect frame);
 
         // -(void)willFocusAtPoint:(CGPoint)point;
-        [Export("willFocusAtPoint:")]
+        [Export ("willFocusAtPoint:")]
         void WillFocusAtPoint(CGPoint point);
     }
 
@@ -3414,7 +3429,7 @@ namespace Microblink
     {
         // @required -(void)scanningFinishedWithState:(MBRecognizerResultState)state;
         [Abstract]
-        [Export("scanningFinishedWithState:")]
+        [Export ("scanningFinishedWithState:")]
         void ScanningFinishedWithState(MBRecognizerResultState state);
     }
 
@@ -3425,16 +3440,16 @@ namespace Microblink
     interface MBGlareStatusSubview
     {
         // @property (nonatomic) UILabel * _Nonnull label;
-        [Export("label", ArgumentSemantic.Assign)]
+        [Export ("label", ArgumentSemantic.Assign)]
         UILabel Label { get; set; }
 
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
-        [Export("initWithFrame:")]
+        [Export ("initWithFrame:")]
         [DesignatedInitializer]
         IntPtr Constructor(CGRect frame);
 
         // -(void)glareDetectionFinishedWithResult:(BOOL)glareFound;
-        [Export("glareDetectionFinishedWithResult:")]
+        [Export ("glareDetectionFinishedWithResult:")]
         void GlareDetectionFinishedWithResult(bool glareFound);
     }
 
@@ -3444,7 +3459,7 @@ namespace Microblink
     interface MBBaseOcrOverlaySettings
     {
         // @property (nonatomic) BOOL showOcrDots;
-        [Export("showOcrDots")]
+        [Export ("showOcrDots")]
         bool ShowOcrDots { get; set; }
     }
 
@@ -3454,11 +3469,11 @@ namespace Microblink
     interface MBDocumentOverlaySettings
     {
         // @property (nonatomic, strong) NSString * _Nonnull tooltipText;
-        [Export("tooltipText", ArgumentSemantic.Strong)]
+        [Export ("tooltipText", ArgumentSemantic.Strong)]
         string TooltipText { get; set; }
 
         // @property (assign, nonatomic) BOOL showTooltip;
-        [Export("showTooltip")]
+        [Export ("showTooltip")]
         bool ShowTooltip { get; set; }
     }
 
@@ -3468,7 +3483,7 @@ namespace Microblink
     interface MBDocumentOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBDocumentOverlaySettings * _Nonnull settings;
-        [Export("settings", ArgumentSemantic.Strong)]
+        [Export ("settings", ArgumentSemantic.Strong)]
         MBDocumentOverlaySettings Settings { get; }
 
         [Wrap("WeakDelegate")]
@@ -3480,7 +3495,7 @@ namespace Microblink
         NSObject WeakDelegate { get; }
 
         // -(instancetype _Nonnull)initWithSettings:(MBDocumentOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBDocumentOverlayViewControllerDelegate> _Nonnull)delegate;
-        [Export("initWithSettings:recognizerCollection:delegate:")]
+        [Export ("initWithSettings:recognizerCollection:delegate:")]
         IntPtr Constructor(MBDocumentOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBDocumentOverlayViewControllerDelegate @delegate);
     }
 
@@ -3491,12 +3506,12 @@ namespace Microblink
     {
         // @required -(void)documentOverlayViewControllerDidFinishScanning:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
-        [Export("documentOverlayViewControllerDidFinishScanning:state:")]
+        [Export ("documentOverlayViewControllerDidFinishScanning:state:")]
         void DocumentOverlayViewControllerDidFinishScanning(MBDocumentOverlayViewController documentOverlayViewController, MBRecognizerResultState state);
 
         // @required -(void)documentOverlayViewControllerDidTapClose:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController;
         [Abstract]
-        [Export("documentOverlayViewControllerDidTapClose:")]
+        [Export ("documentOverlayViewControllerDidTapClose:")]
         void DocumentOverlayViewControllerDidTapClose(MBDocumentOverlayViewController documentOverlayViewController);
     }
 
@@ -3552,7 +3567,7 @@ namespace Microblink
     interface MBDocumentVerificationOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBDocumentVerificationOverlaySettings * _Nonnull settings;
-        [Export("settings", ArgumentSemantic.Strong)]
+        [Export ("settings", ArgumentSemantic.Strong)]
         MBDocumentVerificationOverlaySettings Settings { get; }
 
         [Wrap("WeakDelegate")]
@@ -3564,7 +3579,7 @@ namespace Microblink
         NSObject WeakDelegate { get; }
 
         // -(instancetype _Nonnull)initWithSettings:(MBDocumentVerificationOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBDocumentVerificationOverlayViewControllerDelegate> _Nonnull)delegate;
-        [Export("initWithSettings:recognizerCollection:delegate:")]
+        [Export ("initWithSettings:recognizerCollection:delegate:")]
         IntPtr Constructor(MBDocumentVerificationOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBDocumentVerificationOverlayViewControllerDelegate @delegate);
     }
 
@@ -3575,16 +3590,16 @@ namespace Microblink
     {
         // @required -(void)documentVerificationOverlayViewControllerDidFinishScanning:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
-        [Export("documentVerificationOverlayViewControllerDidFinishScanning:state:")]
+        [Export ("documentVerificationOverlayViewControllerDidFinishScanning:state:")]
         void DocumentVerificationOverlayViewControllerDidFinishScanning (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state);
 
         // @required -(void)documentVerificationOverlayViewControllerDidTapClose:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
         [Abstract]
-        [Export("documentVerificationOverlayViewControllerDidTapClose:")]
+        [Export ("documentVerificationOverlayViewControllerDidTapClose:")]
         void DocumentVerificationOverlayViewControllerDidTapClose (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
 
         // @optional -(void)documentVerificationOverlayViewControllerDidFinishScanningFirstSide:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
-        [Export("documentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
+        [Export ("documentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
         void DocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
     }
 
@@ -3710,19 +3725,19 @@ namespace Microblink
     interface MBDocumentSubview
     {
         // @property (nonatomic) UIView * _Nonnull viewfinderView;
-        [Export("viewfinderView", ArgumentSemantic.Assign)]
+        [Export ("viewfinderView", ArgumentSemantic.Assign)]
         UIView ViewfinderView { get; set; }
 
         // @property (nonatomic) CGFloat viewfinderWidthToHeightRatio;
-        [Export("viewfinderWidthToHeightRatio")]
+        [Export ("viewfinderWidthToHeightRatio")]
         nfloat ViewfinderWidthToHeightRatio { get; set; }
 
         // @property (nonatomic) UILabel * _Nonnull tooltipLabel;
-        [Export("tooltipLabel", ArgumentSemantic.Assign)]
+        [Export ("tooltipLabel", ArgumentSemantic.Assign)]
         UILabel TooltipLabel { get; set; }
 
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
-        [Export("initWithFrame:")]
+        [Export ("initWithFrame:")]
         [DesignatedInitializer]
         IntPtr Constructor(CGRect frame);
     }
@@ -3733,15 +3748,15 @@ namespace Microblink
     interface MBDocumentVerificationSubview
     {
         // @property (nonatomic) UILabel * _Nonnull helpLabel;
-        [Export("helpLabel", ArgumentSemantic.Assign)]
+        [Export ("helpLabel", ArgumentSemantic.Assign)]
         UILabel HelpLabel { get; set; }
 
         // @property (nonatomic) UIImageView * _Nonnull helpImageView;
-        [Export("helpImageView", ArgumentSemantic.Assign)]
+        [Export ("helpImageView", ArgumentSemantic.Assign)]
         UIImageView HelpImageView { get; set; }
 
         // -(void)animateHelp;
-        [Export("animateHelp")]
+        [Export ("animateHelp")]
         void AnimateHelp();
 
         [Wrap("WeakDocumentVerificationSubviewDelegate")]
@@ -3760,7 +3775,7 @@ namespace Microblink
     {
         // @required -(void)documentVerificationSubviewDidFinishAnimation:(MBDocumentVerificationSubview * _Nonnull)documentVerificationSubview;
         [Abstract]
-        [Export("documentVerificationSubviewDidFinishAnimation:")]
+        [Export ("documentVerificationSubviewDidFinishAnimation:")]
         void DocumentVerificationSubviewDidFinishAnimation(MBDocumentVerificationSubview documentVerificationSubview);
     }
 
@@ -3770,11 +3785,11 @@ namespace Microblink
     interface MBDocumentVerificationInstructionsSubview
     {
         // @property (nonatomic) UILabel * _Nonnull instructionsLabel;
-        [Export("instructionsLabel", ArgumentSemantic.Assign)]
+        [Export ("instructionsLabel", ArgumentSemantic.Assign)]
         UILabel InstructionsLabel { get; set; }
 
         // @property (nonatomic) UIImageView * _Nonnull instructionsImageView;
-        [Export("instructionsImageView", ArgumentSemantic.Assign)]
+        [Export ("instructionsImageView", ArgumentSemantic.Assign)]
         UIImageView InstructionsImageView { get; set; }
     }
 }

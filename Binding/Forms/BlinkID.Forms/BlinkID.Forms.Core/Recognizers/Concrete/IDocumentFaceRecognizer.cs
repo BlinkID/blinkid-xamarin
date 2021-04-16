@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+﻿namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// Class for configuring Document Face Recognizer Recognizer.

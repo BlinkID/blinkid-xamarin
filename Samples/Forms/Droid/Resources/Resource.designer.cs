@@ -25,6 +25,3028 @@ namespace BlinkIDFormsSample.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_fade_in = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_fade_in;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_fade_out = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_fade_out;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_popup_enter = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_popup_enter;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_popup_exit = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_popup_exit;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_slide_in_bottom = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_slide_in_top = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_slide_in_top;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_slide_out_bottom = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_slide_out_top = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_slide_out_top;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_tooltip_enter = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_tooltip_enter;
+			global::BlinkID.Forms.Droid.Resource.Animation.abc_tooltip_exit = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_tooltip_exit;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::BlinkIDFormsSample.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::BlinkID.Forms.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::BlinkIDFormsSample.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::BlinkID.Forms.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::BlinkIDFormsSample.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::BlinkID.Forms.Droid.Resource.Animation.design_snackbar_in = global::BlinkIDFormsSample.Droid.Resource.Animation.design_snackbar_in;
+			global::BlinkID.Forms.Droid.Resource.Animation.design_snackbar_out = global::BlinkIDFormsSample.Droid.Resource.Animation.design_snackbar_out;
+			global::BlinkID.Forms.Droid.Resource.Animation.EnterFromLeft = global::BlinkIDFormsSample.Droid.Resource.Animation.EnterFromLeft;
+			global::BlinkID.Forms.Droid.Resource.Animation.EnterFromRight = global::BlinkIDFormsSample.Droid.Resource.Animation.EnterFromRight;
+			global::BlinkID.Forms.Droid.Resource.Animation.ExitToLeft = global::BlinkIDFormsSample.Droid.Resource.Animation.ExitToLeft;
+			global::BlinkID.Forms.Droid.Resource.Animation.ExitToRight = global::BlinkIDFormsSample.Droid.Resource.Animation.ExitToRight;
+			global::BlinkID.Forms.Droid.Resource.Animation.mb_hide_text = global::BlinkIDFormsSample.Droid.Resource.Animation.mb_hide_text;
+			global::BlinkID.Forms.Droid.Resource.Animation.mb_show_text = global::BlinkIDFormsSample.Droid.Resource.Animation.mb_show_text;
+			global::BlinkID.Forms.Droid.Resource.Animation.mb_snackbar_in = global::BlinkIDFormsSample.Droid.Resource.Animation.mb_snackbar_in;
+			global::BlinkID.Forms.Droid.Resource.Animation.mb_snackbar_out = global::BlinkIDFormsSample.Droid.Resource.Animation.mb_snackbar_out;
+			global::BlinkID.Forms.Droid.Resource.Animator.design_appbar_state_list_animator = global::BlinkIDFormsSample.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::BlinkID.Forms.Droid.Resource.Animator.design_fab_hide_motion_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.design_fab_hide_motion_spec;
+			global::BlinkID.Forms.Droid.Resource.Animator.design_fab_show_motion_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.design_fab_show_motion_spec;
+			global::BlinkID.Forms.Droid.Resource.Animator.mb_card_flip_blinkid_1 = global::BlinkIDFormsSample.Droid.Resource.Animator.mb_card_flip_blinkid_1;
+			global::BlinkID.Forms.Droid.Resource.Animator.mb_card_flip_blinkid_2 = global::BlinkIDFormsSample.Droid.Resource.Animator.mb_card_flip_blinkid_2;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_btn_state_list_anim = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_btn_state_list_anim;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_chip_state_list_anim = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_fab_hide_motion_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_fab_show_motion_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
+			global::BlinkID.Forms.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec = global::BlinkIDFormsSample.Droid.Resource.Animator.mtrl_fab_transformation_sheet_expand_spec;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarDivider = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarDivider;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarItemBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarItemBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarPopupTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarSplitStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarTabBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarTabStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarTabStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarTabTextStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionBarWidgetTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionDropDownStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionDropDownStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionMenuTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionMenuTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionMenuTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeCloseDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeCopyDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeCutDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeFindDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModePasteDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModePopupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeShareDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeSplitBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionOverflowButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionOverflowMenuStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionProviderClass = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionProviderClass;
+			global::BlinkID.Forms.Droid.Resource.Attribute.actionViewClass = global::BlinkIDFormsSample.Droid.Resource.Attribute.actionViewClass;
+			global::BlinkID.Forms.Droid.Resource.Attribute.activityChooserViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alertDialogCenterButtons = global::BlinkIDFormsSample.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alertDialogStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.alertDialogStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alertDialogTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.alertDialogTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.allowStacking = global::BlinkIDFormsSample.Droid.Resource.Attribute.allowStacking;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alpha = global::BlinkIDFormsSample.Droid.Resource.Attribute.alpha;
+			global::BlinkID.Forms.Droid.Resource.Attribute.alphabeticModifiers = global::BlinkIDFormsSample.Droid.Resource.Attribute.alphabeticModifiers;
+			global::BlinkID.Forms.Droid.Resource.Attribute.arrowHeadLength = global::BlinkIDFormsSample.Droid.Resource.Attribute.arrowHeadLength;
+			global::BlinkID.Forms.Droid.Resource.Attribute.arrowShaftLength = global::BlinkIDFormsSample.Droid.Resource.Attribute.arrowShaftLength;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoSizeMaxTextSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoSizeMinTextSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoSizePresetSizes = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoSizeStepGranularity = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.autoSizeTextType = global::BlinkIDFormsSample.Droid.Resource.Attribute.autoSizeTextType;
+			global::BlinkID.Forms.Droid.Resource.Attribute.background = global::BlinkIDFormsSample.Droid.Resource.Attribute.background;
+			global::BlinkID.Forms.Droid.Resource.Attribute.backgroundSplit = global::BlinkIDFormsSample.Droid.Resource.Attribute.backgroundSplit;
+			global::BlinkID.Forms.Droid.Resource.Attribute.backgroundStacked = global::BlinkIDFormsSample.Droid.Resource.Attribute.backgroundStacked;
+			global::BlinkID.Forms.Droid.Resource.Attribute.backgroundTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.backgroundTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.backgroundTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.backgroundTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.barLength = global::BlinkIDFormsSample.Droid.Resource.Attribute.barLength;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_autoHide = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_autoHide;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_fitToContents = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_fitToContents;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_hideable = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_hideable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_overlapTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_overlapTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_peekHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_peekHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.behavior_skipCollapsed = global::BlinkIDFormsSample.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::BlinkID.Forms.Droid.Resource.Attribute.borderlessButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.borderWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.borderWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.bottomAppBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.bottomAppBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.bottomNavigationStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.bottomNavigationStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.bottomSheetDialogTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.bottomSheetStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.bottomSheetStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxBackgroundMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxBackgroundMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxCollapsedPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxCollapsedPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxCornerRadiusBottomEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxCornerRadiusBottomEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxCornerRadiusBottomStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxCornerRadiusBottomStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxCornerRadiusTopEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxCornerRadiusTopStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxCornerRadiusTopStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxStrokeColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxStrokeColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.boxStrokeWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.boxStrokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonBarButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonIconDimen = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonIconDimen;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonPanelSideLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonStyleSmall = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonStyleSmall;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.buttonTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.buttonTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardElevation = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardElevation;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardMaxElevation = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardMaxElevation;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardPreventCornerOverlap = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardUseCompatPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cardViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.cardViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkboxStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkboxStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkedChip = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkedChip;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkedIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkedIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkedIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkedIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkedIconVisible = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkedIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Attribute.checkedTextViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipEndPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipGroupStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipGroupStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipIconSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipIconSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipIconTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipIconTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipIconVisible = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipMinHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipMinHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipSpacing = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipSpacing;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipSpacingHorizontal = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipSpacingHorizontal;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipSpacingVertical = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipSpacingVertical;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipStandaloneStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipStandaloneStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipStartPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipStrokeColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipStrokeColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipStrokeWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipStrokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.chipStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.chipStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconEndPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconStartPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeIconVisible = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Attribute.closeItemLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.closeItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.collapseContentDescription = global::BlinkIDFormsSample.Droid.Resource.Attribute.collapseContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Attribute.collapsedTitleGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.collapseIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.collapseIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.color = global::BlinkIDFormsSample.Droid.Resource.Attribute.color;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorAccent = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorAccent;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorBackgroundFloating = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorButtonNormal = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorButtonNormal;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorControlActivated = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorControlActivated;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorControlHighlight = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorControlHighlight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorControlNormal = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorControlNormal;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorError = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorError;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorPrimary = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorPrimary;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorPrimaryDark = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorPrimaryDark;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorSecondary = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorSecondary;
+			global::BlinkID.Forms.Droid.Resource.Attribute.colorSwitchThumbNormal = global::BlinkIDFormsSample.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::BlinkID.Forms.Droid.Resource.Attribute.commitIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.commitIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentDescription = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentDescription;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetEndWithActions = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetLeft = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetLeft;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetRight = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetRight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentPaddingBottom = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentPaddingBottom;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentPaddingLeft = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentPaddingLeft;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentPaddingRight = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentPaddingRight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.contentScrim = global::BlinkIDFormsSample.Droid.Resource.Attribute.contentScrim;
+			global::BlinkID.Forms.Droid.Resource.Attribute.controlBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.controlBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.coordinatorLayoutStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.cornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.cornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.counterEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.counterEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.counterMaxLength = global::BlinkIDFormsSample.Droid.Resource.Attribute.counterMaxLength;
+			global::BlinkID.Forms.Droid.Resource.Attribute.counterOverflowTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.counterTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.counterTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.customNavigationLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.customNavigationLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.defaultQueryHint = global::BlinkIDFormsSample.Droid.Resource.Attribute.defaultQueryHint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dialogCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.dialogCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dialogPreferredPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dialogTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.dialogTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.displayOptions = global::BlinkIDFormsSample.Droid.Resource.Attribute.displayOptions;
+			global::BlinkID.Forms.Droid.Resource.Attribute.divider = global::BlinkIDFormsSample.Droid.Resource.Attribute.divider;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dividerHorizontal = global::BlinkIDFormsSample.Droid.Resource.Attribute.dividerHorizontal;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dividerPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.dividerPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dividerVertical = global::BlinkIDFormsSample.Droid.Resource.Attribute.dividerVertical;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableBottomCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableBottomCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableEndCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableEndCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableLeftCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableLeftCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableRightCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableRightCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableStartCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableStartCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawableTopCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawableTopCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.drawerArrowStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.drawerArrowStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.dropDownListViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.editTextBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.editTextBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.editTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.editTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.editTextStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.editTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.elevation = global::BlinkIDFormsSample.Droid.Resource.Attribute.elevation;
+			global::BlinkID.Forms.Droid.Resource.Attribute.enforceMaterialTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.enforceMaterialTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.enforceTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.enforceTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.errorEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.errorEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.errorTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.errorTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expanded = global::BlinkIDFormsSample.Droid.Resource.Attribute.expanded;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleMargin = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleMargin;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleMarginBottom = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleMarginEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleMarginStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleMarginTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.expandedTitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabAlignmentMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabAlignmentMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabCradleMargin = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabCradleMargin;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabCradleRoundedCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabCradleVerticalOffset = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabCradleVerticalOffset;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabCustomSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabCustomSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fabSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.fabSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fastScrollEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.fastScrollEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.firstBaselineToTopHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.firstBaselineToTopHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.floatingActionButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.floatingActionButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.font = global::BlinkIDFormsSample.Droid.Resource.Attribute.font;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontFamily = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontFamily;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderAuthority = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderAuthority;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderCerts = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderCerts;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderFetchStrategy = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderFetchTimeout = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderPackage = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderPackage;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontProviderQuery = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontProviderQuery;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontVariationSettings = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontVariationSettings;
+			global::BlinkID.Forms.Droid.Resource.Attribute.fontWeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.fontWeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.foregroundInsidePadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.gapBetweenBars = global::BlinkIDFormsSample.Droid.Resource.Attribute.gapBetweenBars;
+			global::BlinkID.Forms.Droid.Resource.Attribute.goIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.goIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.headerLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.headerLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.height = global::BlinkIDFormsSample.Droid.Resource.Attribute.height;
+			global::BlinkID.Forms.Droid.Resource.Attribute.helperText = global::BlinkIDFormsSample.Droid.Resource.Attribute.helperText;
+			global::BlinkID.Forms.Droid.Resource.Attribute.helperTextEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.helperTextEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.helperTextTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hideMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Attribute.hideMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hideOnContentScroll = global::BlinkIDFormsSample.Droid.Resource.Attribute.hideOnContentScroll;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hideOnScroll = global::BlinkIDFormsSample.Droid.Resource.Attribute.hideOnScroll;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hintAnimationEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hintEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.hintEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hintTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.hintTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.homeAsUpIndicator = global::BlinkIDFormsSample.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::BlinkID.Forms.Droid.Resource.Attribute.homeLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.homeLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.hoveredFocusedTranslationZ = global::BlinkIDFormsSample.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
+			global::BlinkID.Forms.Droid.Resource.Attribute.icon = global::BlinkIDFormsSample.Droid.Resource.Attribute.icon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconEndPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconifiedByDefault = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconifiedByDefault;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconStartPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.iconTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.iconTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.imageButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.imageButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.indeterminateProgressStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.initialActivityCount = global::BlinkIDFormsSample.Droid.Resource.Attribute.initialActivityCount;
+			global::BlinkID.Forms.Droid.Resource.Attribute.insetForeground = global::BlinkIDFormsSample.Droid.Resource.Attribute.insetForeground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.isLightTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.isLightTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemHorizontalPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemHorizontalPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemHorizontalTranslationEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemIconPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemIconPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemIconSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemIconSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemIconTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemIconTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemSpacing = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemSpacing;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemTextAppearanceActive = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemTextAppearanceActive;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemTextAppearanceInactive = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemTextAppearanceInactive;
+			global::BlinkID.Forms.Droid.Resource.Attribute.itemTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.itemTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.keylines = global::BlinkIDFormsSample.Droid.Resource.Attribute.keylines;
+			global::BlinkID.Forms.Droid.Resource.Attribute.labelVisibilityMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.labelVisibilityMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.lastBaselineToBottomHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.lastBaselineToBottomHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layoutManager = global::BlinkIDFormsSample.Droid.Resource.Attribute.layoutManager;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_anchor = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_anchor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_anchorGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_anchorGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_behavior = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_behavior;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_collapseMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_collapseMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_insetEdge = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_insetEdge;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_keyline = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_keyline;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_scrollFlags = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_scrollFlags;
+			global::BlinkID.Forms.Droid.Resource.Attribute.layout_scrollInterpolator = global::BlinkIDFormsSample.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::BlinkID.Forms.Droid.Resource.Attribute.liftOnScroll = global::BlinkIDFormsSample.Droid.Resource.Attribute.liftOnScroll;
+			global::BlinkID.Forms.Droid.Resource.Attribute.lineHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.lineHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.lineSpacing = global::BlinkIDFormsSample.Droid.Resource.Attribute.lineSpacing;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::BlinkIDFormsSample.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::BlinkIDFormsSample.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::BlinkIDFormsSample.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listDividerAlertDialog = global::BlinkIDFormsSample.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listItemLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.listItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.listLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listMenuViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.listMenuViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPopupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemPaddingEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.listPreferredItemPaddingStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.listPreferredItemPaddingStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.logo = global::BlinkIDFormsSample.Droid.Resource.Attribute.logo;
+			global::BlinkID.Forms.Droid.Resource.Attribute.logoDescription = global::BlinkIDFormsSample.Droid.Resource.Attribute.logoDescription;
+			global::BlinkID.Forms.Droid.Resource.Attribute.materialButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.materialButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.materialCardViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.materialCardViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.maxActionInlineWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.maxButtonHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.maxButtonHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.maxImageSize = global::BlinkIDFormsSample.Droid.Resource.Attribute.maxImageSize;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_animateRotation = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_animateRotation;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_animationDuration = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_animationDuration;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_aspectRatio = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_aspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_backSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_backSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_backSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_backSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditConfirmButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditConfirmButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditDividerColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditDividerColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditErrorColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditErrorColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditErrorTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditErrorTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditLabelTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditLabelTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditLabelTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditLabelTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditToolbarBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditToolbarBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditToolbarNavigationIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditToolbarNavigationIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditToolbarTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditToolbarTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditValueHintColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditValueHintColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditValueTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditValueTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_blinkcardEditValueTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_blinkcardEditValueTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_borderColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_borderColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_borderWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_borderWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_btnCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_btnCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_btnTimeoutColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_btnTimeoutColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_btnTimeoutTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_btnTimeoutTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_captureButtonDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_captureButtonDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_cardBackDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_cardBackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_cardFrontDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_cardFrontDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_circleCheckFailedColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_circleCheckFailedColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_circleColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_circleColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_circleOuterColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_circleOuterColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_circleProgressColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_circleProgressColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_circleSuccessColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_circleSuccessColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_cornerRadius = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_cornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_detectionRectangleColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_detectionRectangleColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_errorHookColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_errorHookColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_errorIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_errorIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_flashlightWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_flashlightWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_flashlightWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_flashlightWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_flipCardColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_flipCardColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_frontSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_frontSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_frontSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_frontSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_glareWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_glareWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_glareWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_glareWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_hookColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_hookColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_innerColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_innerColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_instructionsBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_instructionsBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_outerColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_outerColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_overlayColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_overlayColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_progressDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_progressDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_pulseColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_pulseColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_reticleDefaultDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_reticleDefaultDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_reticleErrorDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_reticleErrorDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_reticleSuccessDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_reticleSuccessDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_rotatable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_rotatable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_scanLineColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_scanLineColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_shapeType = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_shapeType;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_successFlashColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_successFlashColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_successIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_successIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.mb_viewfinderAspectRatio = global::BlinkIDFormsSample.Droid.Resource.Attribute.mb_viewfinderAspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Attribute.measureWithLargestChild = global::BlinkIDFormsSample.Droid.Resource.Attribute.measureWithLargestChild;
+			global::BlinkID.Forms.Droid.Resource.Attribute.menu = global::BlinkIDFormsSample.Droid.Resource.Attribute.menu;
+			global::BlinkID.Forms.Droid.Resource.Attribute.multiChoiceItemLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.navigationContentDescription = global::BlinkIDFormsSample.Droid.Resource.Attribute.navigationContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Attribute.navigationIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.navigationIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.navigationMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.navigationMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.navigationViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.navigationViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.numericModifiers = global::BlinkIDFormsSample.Droid.Resource.Attribute.numericModifiers;
+			global::BlinkID.Forms.Droid.Resource.Attribute.overlapAnchor = global::BlinkIDFormsSample.Droid.Resource.Attribute.overlapAnchor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.paddingBottomNoButtons = global::BlinkIDFormsSample.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::BlinkID.Forms.Droid.Resource.Attribute.paddingEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.paddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.paddingStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.paddingStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.paddingTopNoTitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.panelBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.panelBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.panelMenuListTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.panelMenuListTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.panelMenuListWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.panelMenuListWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.passwordToggleContentDescription = global::BlinkIDFormsSample.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Attribute.passwordToggleDrawable = global::BlinkIDFormsSample.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.passwordToggleEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.passwordToggleTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.passwordToggleTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.passwordToggleTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.popupMenuStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.popupMenuStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.popupTheme = global::BlinkIDFormsSample.Droid.Resource.Attribute.popupTheme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.popupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.popupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.preserveIconSpacing = global::BlinkIDFormsSample.Droid.Resource.Attribute.preserveIconSpacing;
+			global::BlinkID.Forms.Droid.Resource.Attribute.pressedTranslationZ = global::BlinkIDFormsSample.Droid.Resource.Attribute.pressedTranslationZ;
+			global::BlinkID.Forms.Droid.Resource.Attribute.progressBarPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.progressBarPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.progressBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.progressBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.queryBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.queryBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.queryHint = global::BlinkIDFormsSample.Droid.Resource.Attribute.queryHint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.radioButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.radioButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.ratingBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.ratingBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.ratingBarStyleIndicator = global::BlinkIDFormsSample.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::BlinkID.Forms.Droid.Resource.Attribute.ratingBarStyleSmall = global::BlinkIDFormsSample.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::BlinkID.Forms.Droid.Resource.Attribute.recyclerViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.recyclerViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.reverseLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.reverseLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.rippleColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.rippleColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.scrimAnimationDuration = global::BlinkIDFormsSample.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::BlinkID.Forms.Droid.Resource.Attribute.scrimBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.scrimBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::BlinkIDFormsSample.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::BlinkID.Forms.Droid.Resource.Attribute.searchHintIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.searchHintIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.searchIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.searchIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.searchViewStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.searchViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.seekBarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.seekBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.selectableItemBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.selectableItemBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::BlinkIDFormsSample.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::BlinkID.Forms.Droid.Resource.Attribute.showAsAction = global::BlinkIDFormsSample.Droid.Resource.Attribute.showAsAction;
+			global::BlinkID.Forms.Droid.Resource.Attribute.showDividers = global::BlinkIDFormsSample.Droid.Resource.Attribute.showDividers;
+			global::BlinkID.Forms.Droid.Resource.Attribute.showMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Attribute.showMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Attribute.showText = global::BlinkIDFormsSample.Droid.Resource.Attribute.showText;
+			global::BlinkID.Forms.Droid.Resource.Attribute.showTitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.showTitle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.singleChoiceItemLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.singleLine = global::BlinkIDFormsSample.Droid.Resource.Attribute.singleLine;
+			global::BlinkID.Forms.Droid.Resource.Attribute.singleSelection = global::BlinkIDFormsSample.Droid.Resource.Attribute.singleSelection;
+			global::BlinkID.Forms.Droid.Resource.Attribute.snackbarButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.snackbarButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.snackbarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.snackbarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.spanCount = global::BlinkIDFormsSample.Droid.Resource.Attribute.spanCount;
+			global::BlinkID.Forms.Droid.Resource.Attribute.spinBars = global::BlinkIDFormsSample.Droid.Resource.Attribute.spinBars;
+			global::BlinkID.Forms.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.spinnerStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.spinnerStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.splitTrack = global::BlinkIDFormsSample.Droid.Resource.Attribute.splitTrack;
+			global::BlinkID.Forms.Droid.Resource.Attribute.srcCompat = global::BlinkIDFormsSample.Droid.Resource.Attribute.srcCompat;
+			global::BlinkID.Forms.Droid.Resource.Attribute.stackFromEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.stackFromEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.state_above_anchor = global::BlinkIDFormsSample.Droid.Resource.Attribute.state_above_anchor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.state_collapsed = global::BlinkIDFormsSample.Droid.Resource.Attribute.state_collapsed;
+			global::BlinkID.Forms.Droid.Resource.Attribute.state_collapsible = global::BlinkIDFormsSample.Droid.Resource.Attribute.state_collapsible;
+			global::BlinkID.Forms.Droid.Resource.Attribute.state_liftable = global::BlinkIDFormsSample.Droid.Resource.Attribute.state_liftable;
+			global::BlinkID.Forms.Droid.Resource.Attribute.state_lifted = global::BlinkIDFormsSample.Droid.Resource.Attribute.state_lifted;
+			global::BlinkID.Forms.Droid.Resource.Attribute.statusBarBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.statusBarBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.statusBarScrim = global::BlinkIDFormsSample.Droid.Resource.Attribute.statusBarScrim;
+			global::BlinkID.Forms.Droid.Resource.Attribute.strokeColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.strokeColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.strokeWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.strokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.subMenuArrow = global::BlinkIDFormsSample.Droid.Resource.Attribute.subMenuArrow;
+			global::BlinkID.Forms.Droid.Resource.Attribute.submitBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.submitBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.subtitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.subtitle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.subtitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.subtitleTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.subtitleTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.subtitleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.subtitleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.suggestionRowLayout = global::BlinkIDFormsSample.Droid.Resource.Attribute.suggestionRowLayout;
+			global::BlinkID.Forms.Droid.Resource.Attribute.switchMinWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.switchMinWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.switchPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.switchPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.switchStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.switchStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.switchTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.switchTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabContentStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabContentStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIconTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIconTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIconTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIconTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicator = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicator;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicatorAnimationDuration = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicatorAnimationDuration;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicatorColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicatorColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicatorFullWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicatorFullWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicatorGravity = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicatorGravity;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabIndicatorHeight = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabInlineLabel = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabInlineLabel;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabMaxWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabMaxWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabMinWidth = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabMinWidth;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabPaddingBottom = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabPaddingBottom;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabPaddingEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabPaddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabPaddingStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabPaddingStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabRippleColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabRippleColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabSelectedTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tabUnboundedRipple = global::BlinkIDFormsSample.Droid.Resource.Attribute.tabUnboundedRipple;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAllCaps = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAllCaps;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceBody1 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceBody1;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceBody2 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceBody2;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceButton = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceButton;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceCaption = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceCaption;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline1 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline1;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline2 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline2;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline3 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline3;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline4 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline4;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline5 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline5;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceHeadline6 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceHeadline6;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceListItem = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceListItem;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceListItemSmall = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceOverline = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceOverline;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceSubtitle1 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceSubtitle1;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textAppearanceSubtitle2 = global::BlinkIDFormsSample.Droid.Resource.Attribute.textAppearanceSubtitle2;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textColorAlertDialogListItem = global::BlinkIDFormsSample.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textColorSearchUrl = global::BlinkIDFormsSample.Droid.Resource.Attribute.textColorSearchUrl;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textEndPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.textEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textInputStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.textInputStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textLocale = global::BlinkIDFormsSample.Droid.Resource.Attribute.textLocale;
+			global::BlinkID.Forms.Droid.Resource.Attribute.textStartPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.textStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.theme = global::BlinkIDFormsSample.Droid.Resource.Attribute.theme;
+			global::BlinkID.Forms.Droid.Resource.Attribute.thickness = global::BlinkIDFormsSample.Droid.Resource.Attribute.thickness;
+			global::BlinkID.Forms.Droid.Resource.Attribute.thumbTextPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.thumbTextPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.thumbTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.thumbTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.thumbTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.thumbTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tickMark = global::BlinkIDFormsSample.Droid.Resource.Attribute.tickMark;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tickMarkTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.tickMarkTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tickMarkTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.tickMarkTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tint = global::BlinkIDFormsSample.Droid.Resource.Attribute.tint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.tintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.title = global::BlinkIDFormsSample.Droid.Resource.Attribute.title;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleEnabled = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleEnabled;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMargin = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMargin;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMarginBottom = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMarginBottom;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMarginEnd = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMarginEnd;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMargins = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMargins;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMarginStart = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMarginStart;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleMarginTop = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleMarginTop;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleTextColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleTextColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.titleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.titleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.toolbarId = global::BlinkIDFormsSample.Droid.Resource.Attribute.toolbarId;
+			global::BlinkID.Forms.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.toolbarStyle = global::BlinkIDFormsSample.Droid.Resource.Attribute.toolbarStyle;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tooltipForegroundColor = global::BlinkIDFormsSample.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tooltipFrameBackground = global::BlinkIDFormsSample.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::BlinkID.Forms.Droid.Resource.Attribute.tooltipText = global::BlinkIDFormsSample.Droid.Resource.Attribute.tooltipText;
+			global::BlinkID.Forms.Droid.Resource.Attribute.track = global::BlinkIDFormsSample.Droid.Resource.Attribute.track;
+			global::BlinkID.Forms.Droid.Resource.Attribute.trackTint = global::BlinkIDFormsSample.Droid.Resource.Attribute.trackTint;
+			global::BlinkID.Forms.Droid.Resource.Attribute.trackTintMode = global::BlinkIDFormsSample.Droid.Resource.Attribute.trackTintMode;
+			global::BlinkID.Forms.Droid.Resource.Attribute.ttcIndex = global::BlinkIDFormsSample.Droid.Resource.Attribute.ttcIndex;
+			global::BlinkID.Forms.Droid.Resource.Attribute.useCompatPadding = global::BlinkIDFormsSample.Droid.Resource.Attribute.useCompatPadding;
+			global::BlinkID.Forms.Droid.Resource.Attribute.viewInflaterClass = global::BlinkIDFormsSample.Droid.Resource.Attribute.viewInflaterClass;
+			global::BlinkID.Forms.Droid.Resource.Attribute.voiceIcon = global::BlinkIDFormsSample.Droid.Resource.Attribute.voiceIcon;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowActionBar = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowActionBar;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowActionBarOverlay = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowActionModeOverlay = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowFixedHeightMajor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowFixedHeightMinor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowFixedWidthMajor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowFixedWidthMinor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowMinWidthMajor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowMinWidthMinor = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::BlinkID.Forms.Droid.Resource.Attribute.windowNoTitle = global::BlinkIDFormsSample.Droid.Resource.Attribute.windowNoTitle;
+			global::BlinkID.Forms.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::BlinkIDFormsSample.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::BlinkID.Forms.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::BlinkIDFormsSample.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::BlinkID.Forms.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::BlinkIDFormsSample.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::BlinkID.Forms.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps = global::BlinkIDFormsSample.Droid.Resource.Boolean.mtrl_btn_textappearance_all_caps;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::BlinkIDFormsSample.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_btn_colored_text_material = global::BlinkIDFormsSample.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_color_highlight_material = global::BlinkIDFormsSample.Droid.Resource.Color.abc_color_highlight_material;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_hint_foreground_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_hint_foreground_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_primary_text_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_primary_text_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.abc_primary_text_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_search_url_text = global::BlinkIDFormsSample.Droid.Resource.Color.abc_search_url_text;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_search_url_text_normal = global::BlinkIDFormsSample.Droid.Resource.Color.abc_search_url_text_normal;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_search_url_text_pressed = global::BlinkIDFormsSample.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_search_url_text_selected = global::BlinkIDFormsSample.Droid.Resource.Color.abc_search_url_text_selected;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_secondary_text_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_secondary_text_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_btn_checkable = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_default = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_default;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_edittext = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_edittext;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_seek_thumb = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_spinner = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_spinner;
+			global::BlinkID.Forms.Droid.Resource.Color.abc_tint_switch_track = global::BlinkIDFormsSample.Droid.Resource.Color.abc_tint_switch_track;
+			global::BlinkID.Forms.Droid.Resource.Color.accent_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.accent_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.accent_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.accent_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.background_floating_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.background_floating_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.background_floating_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.background_floating_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.background_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.background_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.background_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.background_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_disabled_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_inverse_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.bright_foreground_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.bright_foreground_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.browser_actions_bg_grey = global::BlinkIDFormsSample.Droid.Resource.Color.browser_actions_bg_grey;
+			global::BlinkID.Forms.Droid.Resource.Color.browser_actions_divider_color = global::BlinkIDFormsSample.Droid.Resource.Color.browser_actions_divider_color;
+			global::BlinkID.Forms.Droid.Resource.Color.browser_actions_text_color = global::BlinkIDFormsSample.Droid.Resource.Color.browser_actions_text_color;
+			global::BlinkID.Forms.Droid.Resource.Color.browser_actions_title_color = global::BlinkIDFormsSample.Droid.Resource.Color.browser_actions_title_color;
+			global::BlinkID.Forms.Droid.Resource.Color.button_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.button_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.button_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.button_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.cardview_dark_background = global::BlinkIDFormsSample.Droid.Resource.Color.cardview_dark_background;
+			global::BlinkID.Forms.Droid.Resource.Color.cardview_light_background = global::BlinkIDFormsSample.Droid.Resource.Color.cardview_light_background;
+			global::BlinkID.Forms.Droid.Resource.Color.cardview_shadow_end_color = global::BlinkIDFormsSample.Droid.Resource.Color.cardview_shadow_end_color;
+			global::BlinkID.Forms.Droid.Resource.Color.cardview_shadow_start_color = global::BlinkIDFormsSample.Droid.Resource.Color.cardview_shadow_start_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_default_color_primary = global::BlinkIDFormsSample.Droid.Resource.Color.design_default_color_primary;
+			global::BlinkID.Forms.Droid.Resource.Color.design_default_color_primary_dark = global::BlinkIDFormsSample.Droid.Resource.Color.design_default_color_primary_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.design_error = global::BlinkIDFormsSample.Droid.Resource.Color.design_error;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_shadow_end_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_shadow_mid_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_shadow_start_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::BlinkID.Forms.Droid.Resource.Color.design_snackbar_background_color = global::BlinkIDFormsSample.Droid.Resource.Color.design_snackbar_background_color;
+			global::BlinkID.Forms.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.dim_foreground_disabled_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.dim_foreground_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.dim_foreground_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.dim_foreground_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.dim_foreground_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.error_color_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.error_color_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.error_color_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.error_color_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.foreground_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.foreground_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.foreground_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.foreground_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.highlighted_text_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.highlighted_text_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.highlighted_text_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.highlighted_text_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.material_blue_grey_800 = global::BlinkIDFormsSample.Droid.Resource.Color.material_blue_grey_800;
+			global::BlinkID.Forms.Droid.Resource.Color.material_blue_grey_900 = global::BlinkIDFormsSample.Droid.Resource.Color.material_blue_grey_900;
+			global::BlinkID.Forms.Droid.Resource.Color.material_blue_grey_950 = global::BlinkIDFormsSample.Droid.Resource.Color.material_blue_grey_950;
+			global::BlinkID.Forms.Droid.Resource.Color.material_deep_teal_200 = global::BlinkIDFormsSample.Droid.Resource.Color.material_deep_teal_200;
+			global::BlinkID.Forms.Droid.Resource.Color.material_deep_teal_500 = global::BlinkIDFormsSample.Droid.Resource.Color.material_deep_teal_500;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_100 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_100;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_300 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_300;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_50 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_50;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_600 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_600;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_800 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_800;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_850 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_850;
+			global::BlinkID.Forms.Droid.Resource.Color.material_grey_900 = global::BlinkIDFormsSample.Droid.Resource.Color.material_grey_900;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_background = global::BlinkIDFormsSample.Droid.Resource.Color.mb_background;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_bg_status_message = global::BlinkIDFormsSample.Droid.Resource.Color.mb_bg_status_message;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_black = global::BlinkIDFormsSample.Droid.Resource.Color.mb_black;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_blinkid_status_bg = global::BlinkIDFormsSample.Droid.Resource.Color.mb_blinkid_status_bg;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_blinkid_status_bg_error = global::BlinkIDFormsSample.Droid.Resource.Color.mb_blinkid_status_bg_error;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_blinkid_status_text = global::BlinkIDFormsSample.Droid.Resource.Color.mb_blinkid_status_text;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_blue = global::BlinkIDFormsSample.Droid.Resource.Color.mb_blue;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_blue_dark = global::BlinkIDFormsSample.Droid.Resource.Color.mb_blue_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_default_frame = global::BlinkIDFormsSample.Droid.Resource.Color.mb_default_frame;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_default_selfie_overlay_shape_border_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_default_selfie_overlay_shape_border_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_default_selfie_overlay_shape_inner_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_default_selfie_overlay_shape_inner_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_default_selfie_overlay_shape_outer_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_default_selfie_overlay_shape_outer_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_document_detection_quad = global::BlinkIDFormsSample.Droid.Resource.Color.mb_document_detection_quad;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_max_quality_ocr_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_max_quality_ocr_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_med_quality_ocr_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_med_quality_ocr_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_min_quality_ocr_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_min_quality_ocr_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_mrz_point_color = global::BlinkIDFormsSample.Droid.Resource.Color.mb_mrz_point_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_overlay_camera_translucent = global::BlinkIDFormsSample.Droid.Resource.Color.mb_overlay_camera_translucent;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_recognized_frame = global::BlinkIDFormsSample.Droid.Resource.Color.mb_recognized_frame;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_snackbar_bg = global::BlinkIDFormsSample.Droid.Resource.Color.mb_snackbar_bg;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_status_background = global::BlinkIDFormsSample.Droid.Resource.Color.mb_status_background;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_status_foreground = global::BlinkIDFormsSample.Droid.Resource.Color.mb_status_foreground;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_transparent = global::BlinkIDFormsSample.Droid.Resource.Color.mb_transparent;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_viewfinder_inner_splash = global::BlinkIDFormsSample.Droid.Resource.Color.mb_viewfinder_inner_splash;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_viewfinder_inner_transparent = global::BlinkIDFormsSample.Droid.Resource.Color.mb_viewfinder_inner_transparent;
+			global::BlinkID.Forms.Droid.Resource.Color.mb_white = global::BlinkIDFormsSample.Droid.Resource.Color.mb_white;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_bottom_nav_item_tint = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_bg_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_bg_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_ripple_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_ripple_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_stroke_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_text_color_disabled = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_text_color_disabled;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_text_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_text_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_btn_transparent_bg_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_chip_background_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_chip_background_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_chip_close_icon_tint = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_chip_close_icon_tint;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_chip_text_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_chip_text_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_fab_ripple_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_scrim_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_scrim_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_tabs_colored_ripple_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_tabs_icon_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_tabs_ripple_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_textinput_disabled_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_textinput_disabled_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
+			global::BlinkID.Forms.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::BlinkIDFormsSample.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
+			global::BlinkID.Forms.Droid.Resource.Color.notification_action_color_filter = global::BlinkIDFormsSample.Droid.Resource.Color.notification_action_color_filter;
+			global::BlinkID.Forms.Droid.Resource.Color.notification_icon_bg_color = global::BlinkIDFormsSample.Droid.Resource.Color.notification_icon_bg_color;
+			global::BlinkID.Forms.Droid.Resource.Color.notification_material_background_media_default_color = global::BlinkIDFormsSample.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_dark_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.primary_dark_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_dark_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.primary_dark_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.primary_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.primary_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_text_default_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.primary_text_default_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_text_default_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.primary_text_default_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_text_disabled_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.primary_text_disabled_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.ripple_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.ripple_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.ripple_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.ripple_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.secondary_text_default_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.secondary_text_default_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.secondary_text_default_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.secondary_text_disabled_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.secondary_text_disabled_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_disabled_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_normal_material_dark = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.switch_thumb_normal_material_light = global::BlinkIDFormsSample.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::BlinkID.Forms.Droid.Resource.Color.tooltip_background_dark = global::BlinkIDFormsSample.Droid.Resource.Color.tooltip_background_dark;
+			global::BlinkID.Forms.Droid.Resource.Color.tooltip_background_light = global::BlinkIDFormsSample.Droid.Resource.Color.tooltip_background_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_button_min_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_button_min_width_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_alert_dialog_button_dimen = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_alert_dialog_button_dimen;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_control_corner_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_control_corner_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_control_inset_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_control_inset_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_control_padding_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_control_padding_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_corner_radius_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_corner_radius_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_min_width_major = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_padding_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_floating_window_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_floating_window_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_list_item_height_large_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_list_item_height_large_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_list_item_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_list_item_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_list_item_height_small_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_list_item_height_small_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_panel_menu_list_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_progress_bar_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_search_view_preferred_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_search_view_preferred_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_switch_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_switch_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_body_1_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_body_2_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_button_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_caption_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_display_1_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_display_2_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_display_3_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_display_4_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_headline_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_large_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_medium_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_menu_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_small_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_subhead_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_title_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::BlinkIDFormsSample.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::BlinkID.Forms.Droid.Resource.Dimension.browser_actions_context_menu_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.browser_actions_context_menu_min_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::BlinkIDFormsSample.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::BlinkID.Forms.Droid.Resource.Dimension.cardview_default_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.cardview_default_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.cardview_default_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.cardview_default_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_control_corner_material = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_control_corner_material;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_notification_large_icon_max_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.compat_notification_large_icon_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_appbar_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_appbar_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_icon_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_icon_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_border_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_border_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_image_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_image_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_size_mini = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_size_mini;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_size_normal = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_size_normal;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_translation_z_hovered_focused;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_icon_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_icon_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_item_horizontal_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_item_horizontal_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_item_icon_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_item_icon_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_padding_bottom = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_min_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_snackbar_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_tab_max_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_tab_max_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_tab_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_tab_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_tab_text_size_2line = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::BlinkID.Forms.Droid.Resource.Dimension.design_textinput_caption_translate_y = global::BlinkIDFormsSample.Droid.Resource.Dimension.design_textinput_caption_translate_y;
+			global::BlinkID.Forms.Droid.Resource.Dimension.disabled_alpha_material_dark = global::BlinkIDFormsSample.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Dimension.disabled_alpha_material_light = global::BlinkIDFormsSample.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.fastscroll_default_thickness = global::BlinkIDFormsSample.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::BlinkID.Forms.Droid.Resource.Dimension.fastscroll_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.fastscroll_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.fastscroll_minimum_range = global::BlinkIDFormsSample.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::BlinkID.Forms.Droid.Resource.Dimension.highlight_alpha_material_colored = global::BlinkIDFormsSample.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::BlinkID.Forms.Droid.Resource.Dimension.highlight_alpha_material_dark = global::BlinkIDFormsSample.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Dimension.highlight_alpha_material_light = global::BlinkIDFormsSample.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.hint_alpha_material_dark = global::BlinkIDFormsSample.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Dimension.hint_alpha_material_light = global::BlinkIDFormsSample.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::BlinkIDFormsSample.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::BlinkID.Forms.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::BlinkIDFormsSample.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::BlinkID.Forms.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::BlinkIDFormsSample.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::BlinkID.Forms.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::BlinkIDFormsSample.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::BlinkID.Forms.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::BlinkIDFormsSample.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_activity_horizontal_margin_verification_flow = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_activity_horizontal_margin_verification_flow;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_button_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_button_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_default_selfie_overlay_shape_border_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_default_selfie_overlay_shape_border_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_default_selfie_overlay_shape_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_default_selfie_overlay_shape_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_instructions_line_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_instructions_line_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_instructions_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_instructions_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_margin_tooltip = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_margin_tooltip;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_margin_torch_button = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_margin_torch_button;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_padding_small = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_padding_small;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_padding_standard = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_padding_standard;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_padding_tooltip = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_padding_tooltip;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_pulse_size_offset = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_pulse_size_offset;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_pulse_stroke_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_pulse_stroke_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_radius_status_msg_background = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_radius_status_msg_background;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_snackbar_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_snackbar_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_snackbar_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_snackbar_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_snackbar_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_snackbar_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mb_snackbar_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.mb_snackbar_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_bottomappbar_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_bottomappbar_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_dialog_btn_min_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_disabled_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_disabled_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_disabled_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_disabled_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_focused_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_focused_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_hovered_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_hovered_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_icon_btn_padding_left;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_icon_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_icon_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_inset = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_inset;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_letter_spacing = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_letter_spacing;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_padding_bottom = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_padding_bottom;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_padding_left = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_padding_left;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_padding_right = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_padding_right;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_padding_top = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_padding_top;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_pressed_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_pressed_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_stroke_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_stroke_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_text_btn_icon_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_left;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_btn_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_btn_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_card_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_card_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_card_spacing = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_card_spacing;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_chip_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_fab_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_navigation_elevation = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_navigation_elevation;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_snackbar_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.mtrl_toolbar_default_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_action_icon_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_action_icon_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_action_text_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_action_text_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_big_circle_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_content_margin_start = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_content_margin_start;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_large_icon_height = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_large_icon_height;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_large_icon_width = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_large_icon_width;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_main_column_padding_top = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_media_narrow_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_right_icon_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_right_icon_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_right_side_padding_top = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_small_icon_background_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_subtext_size = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_subtext_size;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_top_pad = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_top_pad;
+			global::BlinkID.Forms.Droid.Resource.Dimension.notification_top_pad_large_text = global::BlinkIDFormsSample.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_corner_radius = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_horizontal_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_margin = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_margin;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_vertical_padding = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::BlinkID.Forms.Droid.Resource.Dimension.tooltip_y_offset_touch = global::BlinkIDFormsSample.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_borderless_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_check_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_check_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_check_material_anim = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_check_material_anim;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_colored_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_radio_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_radio_material_anim = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_radio_material_anim;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_cab_background_top_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_control_background_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_control_background_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_dialog_material_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_edit_text_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_edit_text_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_ab_back_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_clear_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_search_api_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_item_background_holo_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_item_background_holo_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_divider_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_divider_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_focused_holo = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_longpressed_holo = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_list_selector_holo_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ratingbar_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_ratingbar_small_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_seekbar_track_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_switch_thumb_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_tab_indicator_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_textfield_search_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_cursor_material = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::BlinkID.Forms.Droid.Resource.Drawable.abc_vector_test = global::BlinkIDFormsSample.Droid.Resource.Drawable.abc_vector_test;
+			global::BlinkID.Forms.Droid.Resource.Drawable.avd_hide_password = global::BlinkIDFormsSample.Droid.Resource.Drawable.avd_hide_password;
+			global::BlinkID.Forms.Droid.Resource.Drawable.avd_show_password = global::BlinkIDFormsSample.Droid.Resource.Drawable.avd_show_password;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_checkbox_checked_mtrl = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_radio_off_mtrl = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_radio_off_mtrl;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_radio_on_mtrl = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_radio_on_mtrl;
+			global::BlinkID.Forms.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::BlinkIDFormsSample.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_fab_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_fab_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_ic_visibility = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_ic_visibility;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_ic_visibility_off = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_password_eye = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_password_eye;
+			global::BlinkID.Forms.Droid.Resource.Drawable.design_snackbar_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.design_snackbar_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.ic_mtrl_chip_checked_black = global::BlinkIDFormsSample.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
+			global::BlinkID.Forms.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle = global::BlinkIDFormsSample.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
+			global::BlinkID.Forms.Droid.Resource.Drawable.ic_mtrl_chip_close_circle = global::BlinkIDFormsSample.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_backid_white = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_backid_white;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_bg_status_msg_verification_flow = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_bg_status_msg_verification_flow;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_blinkid_status_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_blinkid_status_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_camera_denied = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_camera_denied;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_card_back = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_card_back;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_card_front = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_card_front;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_dot = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_dot;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_frontid_white = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_frontid_white;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_gradient_overlay = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_gradient_overlay;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_help = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_help;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_help_default = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_help_default;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_help_pressed = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_help_pressed;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_ic_exit = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_ic_exit;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_ic_flash_off_24dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_ic_flash_off_24dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_ic_flash_on_24dp = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_ic_flash_on_24dp;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_powered_by = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_powered_by;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_reticle_default = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_reticle_default;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_reticle_error = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_reticle_error;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_reticle_progress = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_reticle_progress;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_reticle_success = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_reticle_success;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_rounded_border = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_rounded_border;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mb_snackbar_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.mb_snackbar_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.mtrl_tabs_default_indicator = global::BlinkIDFormsSample.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
+			global::BlinkID.Forms.Droid.Resource.Drawable.navigation_empty_icon = global::BlinkIDFormsSample.Droid.Resource.Drawable.navigation_empty_icon;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_action_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_action_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg_low = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg_low;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg_low_normal = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg_low_pressed = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg_normal = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg_normal;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_bg_normal_pressed = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_icon_background = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_icon_background;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_template_icon_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_template_icon_low_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notification_tile_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.notification_tile_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::BlinkIDFormsSample.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::BlinkID.Forms.Droid.Resource.Drawable.tooltip_frame_dark = global::BlinkIDFormsSample.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::BlinkID.Forms.Droid.Resource.Drawable.tooltip_frame_light = global::BlinkIDFormsSample.Droid.Resource.Drawable.tooltip_frame_light;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_action_clickable_span = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_0 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_0;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_1 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_1;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_10 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_10;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_11 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_11;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_12 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_12;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_13 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_13;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_14 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_14;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_15 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_15;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_16 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_16;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_17 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_17;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_18 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_18;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_19 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_19;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_2 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_2;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_20 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_20;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_21 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_21;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_22 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_22;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_23 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_23;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_24 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_24;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_25 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_25;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_26 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_26;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_27 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_27;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_28 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_28;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_29 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_29;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_3 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_3;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_30 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_30;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_31 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_31;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_4 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_4;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_5 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_5;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_6 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_6;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_7 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_7;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_8 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_8;
+			global::BlinkID.Forms.Droid.Resource.Id.accessibility_custom_action_9 = global::BlinkIDFormsSample.Droid.Resource.Id.accessibility_custom_action_9;
+			global::BlinkID.Forms.Droid.Resource.Id.action0 = global::BlinkIDFormsSample.Droid.Resource.Id.action0;
+			global::BlinkID.Forms.Droid.Resource.Id.actions = global::BlinkIDFormsSample.Droid.Resource.Id.actions;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_activity_content = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_activity_content;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_container = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_container;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_root = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_root;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_spinner = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_spinner;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_subtitle = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_subtitle;
+			global::BlinkID.Forms.Droid.Resource.Id.action_bar_title = global::BlinkIDFormsSample.Droid.Resource.Id.action_bar_title;
+			global::BlinkID.Forms.Droid.Resource.Id.action_container = global::BlinkIDFormsSample.Droid.Resource.Id.action_container;
+			global::BlinkID.Forms.Droid.Resource.Id.action_context_bar = global::BlinkIDFormsSample.Droid.Resource.Id.action_context_bar;
+			global::BlinkID.Forms.Droid.Resource.Id.action_divider = global::BlinkIDFormsSample.Droid.Resource.Id.action_divider;
+			global::BlinkID.Forms.Droid.Resource.Id.action_image = global::BlinkIDFormsSample.Droid.Resource.Id.action_image;
+			global::BlinkID.Forms.Droid.Resource.Id.action_menu_divider = global::BlinkIDFormsSample.Droid.Resource.Id.action_menu_divider;
+			global::BlinkID.Forms.Droid.Resource.Id.action_menu_presenter = global::BlinkIDFormsSample.Droid.Resource.Id.action_menu_presenter;
+			global::BlinkID.Forms.Droid.Resource.Id.action_mode_bar = global::BlinkIDFormsSample.Droid.Resource.Id.action_mode_bar;
+			global::BlinkID.Forms.Droid.Resource.Id.action_mode_bar_stub = global::BlinkIDFormsSample.Droid.Resource.Id.action_mode_bar_stub;
+			global::BlinkID.Forms.Droid.Resource.Id.action_mode_close_button = global::BlinkIDFormsSample.Droid.Resource.Id.action_mode_close_button;
+			global::BlinkID.Forms.Droid.Resource.Id.action_text = global::BlinkIDFormsSample.Droid.Resource.Id.action_text;
+			global::BlinkID.Forms.Droid.Resource.Id.activity_chooser_view_content = global::BlinkIDFormsSample.Droid.Resource.Id.activity_chooser_view_content;
+			global::BlinkID.Forms.Droid.Resource.Id.add = global::BlinkIDFormsSample.Droid.Resource.Id.add;
+			global::BlinkID.Forms.Droid.Resource.Id.alertTitle = global::BlinkIDFormsSample.Droid.Resource.Id.alertTitle;
+			global::BlinkID.Forms.Droid.Resource.Id.all = global::BlinkIDFormsSample.Droid.Resource.Id.all;
+			global::BlinkID.Forms.Droid.Resource.Id.ALT = global::BlinkIDFormsSample.Droid.Resource.Id.ALT;
+			global::BlinkID.Forms.Droid.Resource.Id.always = global::BlinkIDFormsSample.Droid.Resource.Id.always;
+			global::BlinkID.Forms.Droid.Resource.Id.async = global::BlinkIDFormsSample.Droid.Resource.Id.async;
+			global::BlinkID.Forms.Droid.Resource.Id.auto = global::BlinkIDFormsSample.Droid.Resource.Id.auto;
+			global::BlinkID.Forms.Droid.Resource.Id.beginning = global::BlinkIDFormsSample.Droid.Resource.Id.beginning;
+			global::BlinkID.Forms.Droid.Resource.Id.blocking = global::BlinkIDFormsSample.Droid.Resource.Id.blocking;
+			global::BlinkID.Forms.Droid.Resource.Id.bottom = global::BlinkIDFormsSample.Droid.Resource.Id.bottom;
+			global::BlinkID.Forms.Droid.Resource.Id.bottomtab_navarea = global::BlinkIDFormsSample.Droid.Resource.Id.bottomtab_navarea;
+			global::BlinkID.Forms.Droid.Resource.Id.bottomtab_tabbar = global::BlinkIDFormsSample.Droid.Resource.Id.bottomtab_tabbar;
+			global::BlinkID.Forms.Droid.Resource.Id.browser_actions_header_text = global::BlinkIDFormsSample.Droid.Resource.Id.browser_actions_header_text;
+			global::BlinkID.Forms.Droid.Resource.Id.browser_actions_menu_items = global::BlinkIDFormsSample.Droid.Resource.Id.browser_actions_menu_items;
+			global::BlinkID.Forms.Droid.Resource.Id.browser_actions_menu_item_icon = global::BlinkIDFormsSample.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::BlinkID.Forms.Droid.Resource.Id.browser_actions_menu_item_text = global::BlinkIDFormsSample.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::BlinkID.Forms.Droid.Resource.Id.browser_actions_menu_view = global::BlinkIDFormsSample.Droid.Resource.Id.browser_actions_menu_view;
+			global::BlinkID.Forms.Droid.Resource.Id.buttonPanel = global::BlinkIDFormsSample.Droid.Resource.Id.buttonPanel;
+			global::BlinkID.Forms.Droid.Resource.Id.camera_ask_main = global::BlinkIDFormsSample.Droid.Resource.Id.camera_ask_main;
+			global::BlinkID.Forms.Droid.Resource.Id.camera_ask_permission_button = global::BlinkIDFormsSample.Droid.Resource.Id.camera_ask_permission_button;
+			global::BlinkID.Forms.Droid.Resource.Id.cancel_action = global::BlinkIDFormsSample.Droid.Resource.Id.cancel_action;
+			global::BlinkID.Forms.Droid.Resource.Id.cardAnimationView = global::BlinkIDFormsSample.Droid.Resource.Id.cardAnimationView;
+			global::BlinkID.Forms.Droid.Resource.Id.center = global::BlinkIDFormsSample.Droid.Resource.Id.center;
+			global::BlinkID.Forms.Droid.Resource.Id.center_horizontal = global::BlinkIDFormsSample.Droid.Resource.Id.center_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Id.center_vertical = global::BlinkIDFormsSample.Droid.Resource.Id.center_vertical;
+			global::BlinkID.Forms.Droid.Resource.Id.checkbox = global::BlinkIDFormsSample.Droid.Resource.Id.checkbox;
+			global::BlinkID.Forms.Droid.Resource.Id.@checked = global::BlinkIDFormsSample.Droid.Resource.Id.@checked;
+			global::BlinkID.Forms.Droid.Resource.Id.chronometer = global::BlinkIDFormsSample.Droid.Resource.Id.chronometer;
+			global::BlinkID.Forms.Droid.Resource.Id.circle = global::BlinkIDFormsSample.Droid.Resource.Id.circle;
+			global::BlinkID.Forms.Droid.Resource.Id.clip_horizontal = global::BlinkIDFormsSample.Droid.Resource.Id.clip_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Id.clip_vertical = global::BlinkIDFormsSample.Droid.Resource.Id.clip_vertical;
+			global::BlinkID.Forms.Droid.Resource.Id.collapseActionView = global::BlinkIDFormsSample.Droid.Resource.Id.collapseActionView;
+			global::BlinkID.Forms.Droid.Resource.Id.container = global::BlinkIDFormsSample.Droid.Resource.Id.container;
+			global::BlinkID.Forms.Droid.Resource.Id.content = global::BlinkIDFormsSample.Droid.Resource.Id.content;
+			global::BlinkID.Forms.Droid.Resource.Id.contentPanel = global::BlinkIDFormsSample.Droid.Resource.Id.contentPanel;
+			global::BlinkID.Forms.Droid.Resource.Id.coordinator = global::BlinkIDFormsSample.Droid.Resource.Id.coordinator;
+			global::BlinkID.Forms.Droid.Resource.Id.CTRL = global::BlinkIDFormsSample.Droid.Resource.Id.CTRL;
+			global::BlinkID.Forms.Droid.Resource.Id.custom = global::BlinkIDFormsSample.Droid.Resource.Id.custom;
+			global::BlinkID.Forms.Droid.Resource.Id.customPanel = global::BlinkIDFormsSample.Droid.Resource.Id.customPanel;
+			global::BlinkID.Forms.Droid.Resource.Id.decor_content_parent = global::BlinkIDFormsSample.Droid.Resource.Id.decor_content_parent;
+			global::BlinkID.Forms.Droid.Resource.Id.defaultBackButton = global::BlinkIDFormsSample.Droid.Resource.Id.defaultBackButton;
+			global::BlinkID.Forms.Droid.Resource.Id.defaultHelpButton = global::BlinkIDFormsSample.Droid.Resource.Id.defaultHelpButton;
+			global::BlinkID.Forms.Droid.Resource.Id.defaultStatusTextSwitcher = global::BlinkIDFormsSample.Droid.Resource.Id.defaultStatusTextSwitcher;
+			global::BlinkID.Forms.Droid.Resource.Id.defaultTorchButton = global::BlinkIDFormsSample.Droid.Resource.Id.defaultTorchButton;
+			global::BlinkID.Forms.Droid.Resource.Id.default_activity_button = global::BlinkIDFormsSample.Droid.Resource.Id.default_activity_button;
+			global::BlinkID.Forms.Droid.Resource.Id.default_photopay_viewfinder = global::BlinkIDFormsSample.Droid.Resource.Id.default_photopay_viewfinder;
+			global::BlinkID.Forms.Droid.Resource.Id.design_bottom_sheet = global::BlinkIDFormsSample.Droid.Resource.Id.design_bottom_sheet;
+			global::BlinkID.Forms.Droid.Resource.Id.design_menu_item_action_area = global::BlinkIDFormsSample.Droid.Resource.Id.design_menu_item_action_area;
+			global::BlinkID.Forms.Droid.Resource.Id.design_menu_item_action_area_stub = global::BlinkIDFormsSample.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::BlinkID.Forms.Droid.Resource.Id.design_menu_item_text = global::BlinkIDFormsSample.Droid.Resource.Id.design_menu_item_text;
+			global::BlinkID.Forms.Droid.Resource.Id.design_navigation_view = global::BlinkIDFormsSample.Droid.Resource.Id.design_navigation_view;
+			global::BlinkID.Forms.Droid.Resource.Id.dialog_button = global::BlinkIDFormsSample.Droid.Resource.Id.dialog_button;
+			global::BlinkID.Forms.Droid.Resource.Id.disableHome = global::BlinkIDFormsSample.Droid.Resource.Id.disableHome;
+			global::BlinkID.Forms.Droid.Resource.Id.documentScanInstructions = global::BlinkIDFormsSample.Droid.Resource.Id.documentScanInstructions;
+			global::BlinkID.Forms.Droid.Resource.Id.edit_query = global::BlinkIDFormsSample.Droid.Resource.Id.edit_query;
+			global::BlinkID.Forms.Droid.Resource.Id.end = global::BlinkIDFormsSample.Droid.Resource.Id.end;
+			global::BlinkID.Forms.Droid.Resource.Id.end_padder = global::BlinkIDFormsSample.Droid.Resource.Id.end_padder;
+			global::BlinkID.Forms.Droid.Resource.Id.enterAlways = global::BlinkIDFormsSample.Droid.Resource.Id.enterAlways;
+			global::BlinkID.Forms.Droid.Resource.Id.enterAlwaysCollapsed = global::BlinkIDFormsSample.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::BlinkID.Forms.Droid.Resource.Id.exitUntilCollapsed = global::BlinkIDFormsSample.Droid.Resource.Id.exitUntilCollapsed;
+			global::BlinkID.Forms.Droid.Resource.Id.expanded_menu = global::BlinkIDFormsSample.Droid.Resource.Id.expanded_menu;
+			global::BlinkID.Forms.Droid.Resource.Id.expand_activities_button = global::BlinkIDFormsSample.Droid.Resource.Id.expand_activities_button;
+			global::BlinkID.Forms.Droid.Resource.Id.fill = global::BlinkIDFormsSample.Droid.Resource.Id.fill;
+			global::BlinkID.Forms.Droid.Resource.Id.filled = global::BlinkIDFormsSample.Droid.Resource.Id.filled;
+			global::BlinkID.Forms.Droid.Resource.Id.fill_horizontal = global::BlinkIDFormsSample.Droid.Resource.Id.fill_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Id.fill_vertical = global::BlinkIDFormsSample.Droid.Resource.Id.fill_vertical;
+			global::BlinkID.Forms.Droid.Resource.Id.@fixed = global::BlinkIDFormsSample.Droid.Resource.Id.@fixed;
+			global::BlinkID.Forms.Droid.Resource.Id.flyoutcontent_appbar = global::BlinkIDFormsSample.Droid.Resource.Id.flyoutcontent_appbar;
+			global::BlinkID.Forms.Droid.Resource.Id.forever = global::BlinkIDFormsSample.Droid.Resource.Id.forever;
+			global::BlinkID.Forms.Droid.Resource.Id.FUNCTION = global::BlinkIDFormsSample.Droid.Resource.Id.FUNCTION;
+			global::BlinkID.Forms.Droid.Resource.Id.ghost_view = global::BlinkIDFormsSample.Droid.Resource.Id.ghost_view;
+			global::BlinkID.Forms.Droid.Resource.Id.ghost_view_holder = global::BlinkIDFormsSample.Droid.Resource.Id.ghost_view_holder;
+			global::BlinkID.Forms.Droid.Resource.Id.group_divider = global::BlinkIDFormsSample.Droid.Resource.Id.group_divider;
+			global::BlinkID.Forms.Droid.Resource.Id.home = global::BlinkIDFormsSample.Droid.Resource.Id.home;
+			global::BlinkID.Forms.Droid.Resource.Id.homeAsUp = global::BlinkIDFormsSample.Droid.Resource.Id.homeAsUp;
+			global::BlinkID.Forms.Droid.Resource.Id.icon = global::BlinkIDFormsSample.Droid.Resource.Id.icon;
+			global::BlinkID.Forms.Droid.Resource.Id.icon_group = global::BlinkIDFormsSample.Droid.Resource.Id.icon_group;
+			global::BlinkID.Forms.Droid.Resource.Id.ifRoom = global::BlinkIDFormsSample.Droid.Resource.Id.ifRoom;
+			global::BlinkID.Forms.Droid.Resource.Id.image = global::BlinkIDFormsSample.Droid.Resource.Id.image;
+			global::BlinkID.Forms.Droid.Resource.Id.info = global::BlinkIDFormsSample.Droid.Resource.Id.info;
+			global::BlinkID.Forms.Droid.Resource.Id.instructionsView = global::BlinkIDFormsSample.Droid.Resource.Id.instructionsView;
+			global::BlinkID.Forms.Droid.Resource.Id.italic = global::BlinkIDFormsSample.Droid.Resource.Id.italic;
+			global::BlinkID.Forms.Droid.Resource.Id.item_touch_helper_previous_elevation = global::BlinkIDFormsSample.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::BlinkID.Forms.Droid.Resource.Id.ivCardIcon = global::BlinkIDFormsSample.Droid.Resource.Id.ivCardIcon;
+			global::BlinkID.Forms.Droid.Resource.Id.labeled = global::BlinkIDFormsSample.Droid.Resource.Id.labeled;
+			global::BlinkID.Forms.Droid.Resource.Id.largeLabel = global::BlinkIDFormsSample.Droid.Resource.Id.largeLabel;
+			global::BlinkID.Forms.Droid.Resource.Id.left = global::BlinkIDFormsSample.Droid.Resource.Id.left;
+			global::BlinkID.Forms.Droid.Resource.Id.line1 = global::BlinkIDFormsSample.Droid.Resource.Id.line1;
+			global::BlinkID.Forms.Droid.Resource.Id.line3 = global::BlinkIDFormsSample.Droid.Resource.Id.line3;
+			global::BlinkID.Forms.Droid.Resource.Id.listMode = global::BlinkIDFormsSample.Droid.Resource.Id.listMode;
+			global::BlinkID.Forms.Droid.Resource.Id.list_item = global::BlinkIDFormsSample.Droid.Resource.Id.list_item;
+			global::BlinkID.Forms.Droid.Resource.Id.main_appbar = global::BlinkIDFormsSample.Droid.Resource.Id.main_appbar;
+			global::BlinkID.Forms.Droid.Resource.Id.main_tablayout = global::BlinkIDFormsSample.Droid.Resource.Id.main_tablayout;
+			global::BlinkID.Forms.Droid.Resource.Id.main_toolbar = global::BlinkIDFormsSample.Droid.Resource.Id.main_toolbar;
+			global::BlinkID.Forms.Droid.Resource.Id.main_viewpager = global::BlinkIDFormsSample.Droid.Resource.Id.main_viewpager;
+			global::BlinkID.Forms.Droid.Resource.Id.masked = global::BlinkIDFormsSample.Droid.Resource.Id.masked;
+			global::BlinkID.Forms.Droid.Resource.Id.media_actions = global::BlinkIDFormsSample.Droid.Resource.Id.media_actions;
+			global::BlinkID.Forms.Droid.Resource.Id.message = global::BlinkIDFormsSample.Droid.Resource.Id.message;
+			global::BlinkID.Forms.Droid.Resource.Id.META = global::BlinkIDFormsSample.Droid.Resource.Id.META;
+			global::BlinkID.Forms.Droid.Resource.Id.middle = global::BlinkIDFormsSample.Droid.Resource.Id.middle;
+			global::BlinkID.Forms.Droid.Resource.Id.mini = global::BlinkIDFormsSample.Droid.Resource.Id.mini;
+			global::BlinkID.Forms.Droid.Resource.Id.mtrl_child_content_container = global::BlinkIDFormsSample.Droid.Resource.Id.mtrl_child_content_container;
+			global::BlinkID.Forms.Droid.Resource.Id.mtrl_internal_children_alpha_tag = global::BlinkIDFormsSample.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::BlinkID.Forms.Droid.Resource.Id.multiply = global::BlinkIDFormsSample.Droid.Resource.Id.multiply;
+			global::BlinkID.Forms.Droid.Resource.Id.navigation_header_container = global::BlinkIDFormsSample.Droid.Resource.Id.navigation_header_container;
+			global::BlinkID.Forms.Droid.Resource.Id.never = global::BlinkIDFormsSample.Droid.Resource.Id.never;
+			global::BlinkID.Forms.Droid.Resource.Id.none = global::BlinkIDFormsSample.Droid.Resource.Id.none;
+			global::BlinkID.Forms.Droid.Resource.Id.normal = global::BlinkIDFormsSample.Droid.Resource.Id.normal;
+			global::BlinkID.Forms.Droid.Resource.Id.notification_background = global::BlinkIDFormsSample.Droid.Resource.Id.notification_background;
+			global::BlinkID.Forms.Droid.Resource.Id.notification_main_column = global::BlinkIDFormsSample.Droid.Resource.Id.notification_main_column;
+			global::BlinkID.Forms.Droid.Resource.Id.notification_main_column_container = global::BlinkIDFormsSample.Droid.Resource.Id.notification_main_column_container;
+			global::BlinkID.Forms.Droid.Resource.Id.off = global::BlinkIDFormsSample.Droid.Resource.Id.off;
+			global::BlinkID.Forms.Droid.Resource.Id.on = global::BlinkIDFormsSample.Droid.Resource.Id.on;
+			global::BlinkID.Forms.Droid.Resource.Id.outline = global::BlinkIDFormsSample.Droid.Resource.Id.outline;
+			global::BlinkID.Forms.Droid.Resource.Id.parallax = global::BlinkIDFormsSample.Droid.Resource.Id.parallax;
+			global::BlinkID.Forms.Droid.Resource.Id.parentPanel = global::BlinkIDFormsSample.Droid.Resource.Id.parentPanel;
+			global::BlinkID.Forms.Droid.Resource.Id.parent_matrix = global::BlinkIDFormsSample.Droid.Resource.Id.parent_matrix;
+			global::BlinkID.Forms.Droid.Resource.Id.pin = global::BlinkIDFormsSample.Droid.Resource.Id.pin;
+			global::BlinkID.Forms.Droid.Resource.Id.poweredByMicroblinkView = global::BlinkIDFormsSample.Droid.Resource.Id.poweredByMicroblinkView;
+			global::BlinkID.Forms.Droid.Resource.Id.progressBar = global::BlinkIDFormsSample.Droid.Resource.Id.progressBar;
+			global::BlinkID.Forms.Droid.Resource.Id.progress_circular = global::BlinkIDFormsSample.Droid.Resource.Id.progress_circular;
+			global::BlinkID.Forms.Droid.Resource.Id.progress_horizontal = global::BlinkIDFormsSample.Droid.Resource.Id.progress_horizontal;
+			global::BlinkID.Forms.Droid.Resource.Id.pulseView = global::BlinkIDFormsSample.Droid.Resource.Id.pulseView;
+			global::BlinkID.Forms.Droid.Resource.Id.radio = global::BlinkIDFormsSample.Droid.Resource.Id.radio;
+			global::BlinkID.Forms.Droid.Resource.Id.recognizer_runner_view_container = global::BlinkIDFormsSample.Droid.Resource.Id.recognizer_runner_view_container;
+			global::BlinkID.Forms.Droid.Resource.Id.rectangle = global::BlinkIDFormsSample.Droid.Resource.Id.rectangle;
+			global::BlinkID.Forms.Droid.Resource.Id.reticleView = global::BlinkIDFormsSample.Droid.Resource.Id.reticleView;
+			global::BlinkID.Forms.Droid.Resource.Id.right = global::BlinkIDFormsSample.Droid.Resource.Id.right;
+			global::BlinkID.Forms.Droid.Resource.Id.right_icon = global::BlinkIDFormsSample.Droid.Resource.Id.right_icon;
+			global::BlinkID.Forms.Droid.Resource.Id.right_side = global::BlinkIDFormsSample.Droid.Resource.Id.right_side;
+			global::BlinkID.Forms.Droid.Resource.Id.save_non_transition_alpha = global::BlinkIDFormsSample.Droid.Resource.Id.save_non_transition_alpha;
+			global::BlinkID.Forms.Droid.Resource.Id.save_overlay_view = global::BlinkIDFormsSample.Droid.Resource.Id.save_overlay_view;
+			global::BlinkID.Forms.Droid.Resource.Id.scanOcr = global::BlinkIDFormsSample.Droid.Resource.Id.scanOcr;
+			global::BlinkID.Forms.Droid.Resource.Id.screen = global::BlinkIDFormsSample.Droid.Resource.Id.screen;
+			global::BlinkID.Forms.Droid.Resource.Id.scroll = global::BlinkIDFormsSample.Droid.Resource.Id.scroll;
+			global::BlinkID.Forms.Droid.Resource.Id.scrollable = global::BlinkIDFormsSample.Droid.Resource.Id.scrollable;
+			global::BlinkID.Forms.Droid.Resource.Id.scrollIndicatorDown = global::BlinkIDFormsSample.Droid.Resource.Id.scrollIndicatorDown;
+			global::BlinkID.Forms.Droid.Resource.Id.scrollIndicatorUp = global::BlinkIDFormsSample.Droid.Resource.Id.scrollIndicatorUp;
+			global::BlinkID.Forms.Droid.Resource.Id.scrollView = global::BlinkIDFormsSample.Droid.Resource.Id.scrollView;
+			global::BlinkID.Forms.Droid.Resource.Id.search_badge = global::BlinkIDFormsSample.Droid.Resource.Id.search_badge;
+			global::BlinkID.Forms.Droid.Resource.Id.search_bar = global::BlinkIDFormsSample.Droid.Resource.Id.search_bar;
+			global::BlinkID.Forms.Droid.Resource.Id.search_button = global::BlinkIDFormsSample.Droid.Resource.Id.search_button;
+			global::BlinkID.Forms.Droid.Resource.Id.search_close_btn = global::BlinkIDFormsSample.Droid.Resource.Id.search_close_btn;
+			global::BlinkID.Forms.Droid.Resource.Id.search_edit_frame = global::BlinkIDFormsSample.Droid.Resource.Id.search_edit_frame;
+			global::BlinkID.Forms.Droid.Resource.Id.search_go_btn = global::BlinkIDFormsSample.Droid.Resource.Id.search_go_btn;
+			global::BlinkID.Forms.Droid.Resource.Id.search_mag_icon = global::BlinkIDFormsSample.Droid.Resource.Id.search_mag_icon;
+			global::BlinkID.Forms.Droid.Resource.Id.search_plate = global::BlinkIDFormsSample.Droid.Resource.Id.search_plate;
+			global::BlinkID.Forms.Droid.Resource.Id.search_src_text = global::BlinkIDFormsSample.Droid.Resource.Id.search_src_text;
+			global::BlinkID.Forms.Droid.Resource.Id.search_voice_btn = global::BlinkIDFormsSample.Droid.Resource.Id.search_voice_btn;
+			global::BlinkID.Forms.Droid.Resource.Id.selected = global::BlinkIDFormsSample.Droid.Resource.Id.selected;
+			global::BlinkID.Forms.Droid.Resource.Id.select_dialog_listview = global::BlinkIDFormsSample.Droid.Resource.Id.select_dialog_listview;
+			global::BlinkID.Forms.Droid.Resource.Id.shadowLeft = global::BlinkIDFormsSample.Droid.Resource.Id.shadowLeft;
+			global::BlinkID.Forms.Droid.Resource.Id.shadowRight = global::BlinkIDFormsSample.Droid.Resource.Id.shadowRight;
+			global::BlinkID.Forms.Droid.Resource.Id.shellcontent_appbar = global::BlinkIDFormsSample.Droid.Resource.Id.shellcontent_appbar;
+			global::BlinkID.Forms.Droid.Resource.Id.shellcontent_toolbar = global::BlinkIDFormsSample.Droid.Resource.Id.shellcontent_toolbar;
+			global::BlinkID.Forms.Droid.Resource.Id.SHIFT = global::BlinkIDFormsSample.Droid.Resource.Id.SHIFT;
+			global::BlinkID.Forms.Droid.Resource.Id.shortcut = global::BlinkIDFormsSample.Droid.Resource.Id.shortcut;
+			global::BlinkID.Forms.Droid.Resource.Id.showCustom = global::BlinkIDFormsSample.Droid.Resource.Id.showCustom;
+			global::BlinkID.Forms.Droid.Resource.Id.showHome = global::BlinkIDFormsSample.Droid.Resource.Id.showHome;
+			global::BlinkID.Forms.Droid.Resource.Id.showTitle = global::BlinkIDFormsSample.Droid.Resource.Id.showTitle;
+			global::BlinkID.Forms.Droid.Resource.Id.sliding_tabs = global::BlinkIDFormsSample.Droid.Resource.Id.sliding_tabs;
+			global::BlinkID.Forms.Droid.Resource.Id.smallLabel = global::BlinkIDFormsSample.Droid.Resource.Id.smallLabel;
+			global::BlinkID.Forms.Droid.Resource.Id.snackbarViewSwitcher = global::BlinkIDFormsSample.Droid.Resource.Id.snackbarViewSwitcher;
+			global::BlinkID.Forms.Droid.Resource.Id.snackbar_action = global::BlinkIDFormsSample.Droid.Resource.Id.snackbar_action;
+			global::BlinkID.Forms.Droid.Resource.Id.snackbar_text = global::BlinkIDFormsSample.Droid.Resource.Id.snackbar_text;
+			global::BlinkID.Forms.Droid.Resource.Id.snap = global::BlinkIDFormsSample.Droid.Resource.Id.snap;
+			global::BlinkID.Forms.Droid.Resource.Id.snapMargins = global::BlinkIDFormsSample.Droid.Resource.Id.snapMargins;
+			global::BlinkID.Forms.Droid.Resource.Id.spacer = global::BlinkIDFormsSample.Droid.Resource.Id.spacer;
+			global::BlinkID.Forms.Droid.Resource.Id.split_action_bar = global::BlinkIDFormsSample.Droid.Resource.Id.split_action_bar;
+			global::BlinkID.Forms.Droid.Resource.Id.src_atop = global::BlinkIDFormsSample.Droid.Resource.Id.src_atop;
+			global::BlinkID.Forms.Droid.Resource.Id.src_in = global::BlinkIDFormsSample.Droid.Resource.Id.src_in;
+			global::BlinkID.Forms.Droid.Resource.Id.src_over = global::BlinkIDFormsSample.Droid.Resource.Id.src_over;
+			global::BlinkID.Forms.Droid.Resource.Id.start = global::BlinkIDFormsSample.Droid.Resource.Id.start;
+			global::BlinkID.Forms.Droid.Resource.Id.status_bar_latest_event_content = global::BlinkIDFormsSample.Droid.Resource.Id.status_bar_latest_event_content;
+			global::BlinkID.Forms.Droid.Resource.Id.stretch = global::BlinkIDFormsSample.Droid.Resource.Id.stretch;
+			global::BlinkID.Forms.Droid.Resource.Id.submenuarrow = global::BlinkIDFormsSample.Droid.Resource.Id.submenuarrow;
+			global::BlinkID.Forms.Droid.Resource.Id.submit_area = global::BlinkIDFormsSample.Droid.Resource.Id.submit_area;
+			global::BlinkID.Forms.Droid.Resource.Id.successFlashView = global::BlinkIDFormsSample.Droid.Resource.Id.successFlashView;
+			global::BlinkID.Forms.Droid.Resource.Id.SYM = global::BlinkIDFormsSample.Droid.Resource.Id.SYM;
+			global::BlinkID.Forms.Droid.Resource.Id.tabMode = global::BlinkIDFormsSample.Droid.Resource.Id.tabMode;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_accessibility_actions = global::BlinkIDFormsSample.Droid.Resource.Id.tag_accessibility_actions;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_accessibility_clickable_spans = global::BlinkIDFormsSample.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_accessibility_heading = global::BlinkIDFormsSample.Droid.Resource.Id.tag_accessibility_heading;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_accessibility_pane_title = global::BlinkIDFormsSample.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_screen_reader_focusable = global::BlinkIDFormsSample.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_transition_group = global::BlinkIDFormsSample.Droid.Resource.Id.tag_transition_group;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_unhandled_key_event_manager = global::BlinkIDFormsSample.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::BlinkID.Forms.Droid.Resource.Id.tag_unhandled_key_listeners = global::BlinkIDFormsSample.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::BlinkID.Forms.Droid.Resource.Id.text = global::BlinkIDFormsSample.Droid.Resource.Id.text;
+			global::BlinkID.Forms.Droid.Resource.Id.text2 = global::BlinkIDFormsSample.Droid.Resource.Id.text2;
+			global::BlinkID.Forms.Droid.Resource.Id.textinput_counter = global::BlinkIDFormsSample.Droid.Resource.Id.textinput_counter;
+			global::BlinkID.Forms.Droid.Resource.Id.textinput_error = global::BlinkIDFormsSample.Droid.Resource.Id.textinput_error;
+			global::BlinkID.Forms.Droid.Resource.Id.textinput_helper_text = global::BlinkIDFormsSample.Droid.Resource.Id.textinput_helper_text;
+			global::BlinkID.Forms.Droid.Resource.Id.textSpacerNoButtons = global::BlinkIDFormsSample.Droid.Resource.Id.textSpacerNoButtons;
+			global::BlinkID.Forms.Droid.Resource.Id.textSpacerNoTitle = global::BlinkIDFormsSample.Droid.Resource.Id.textSpacerNoTitle;
+			global::BlinkID.Forms.Droid.Resource.Id.textStart = global::BlinkIDFormsSample.Droid.Resource.Id.textStart;
+			global::BlinkID.Forms.Droid.Resource.Id.time = global::BlinkIDFormsSample.Droid.Resource.Id.time;
+			global::BlinkID.Forms.Droid.Resource.Id.title = global::BlinkIDFormsSample.Droid.Resource.Id.title;
+			global::BlinkID.Forms.Droid.Resource.Id.titleDividerNoCustom = global::BlinkIDFormsSample.Droid.Resource.Id.titleDividerNoCustom;
+			global::BlinkID.Forms.Droid.Resource.Id.title_template = global::BlinkIDFormsSample.Droid.Resource.Id.title_template;
+			global::BlinkID.Forms.Droid.Resource.Id.toolbar = global::BlinkIDFormsSample.Droid.Resource.Id.toolbar;
+			global::BlinkID.Forms.Droid.Resource.Id.top = global::BlinkIDFormsSample.Droid.Resource.Id.top;
+			global::BlinkID.Forms.Droid.Resource.Id.topPanel = global::BlinkIDFormsSample.Droid.Resource.Id.topPanel;
+			global::BlinkID.Forms.Droid.Resource.Id.torchContainer = global::BlinkIDFormsSample.Droid.Resource.Id.torchContainer;
+			global::BlinkID.Forms.Droid.Resource.Id.touch_outside = global::BlinkIDFormsSample.Droid.Resource.Id.touch_outside;
+			global::BlinkID.Forms.Droid.Resource.Id.transition_current_scene = global::BlinkIDFormsSample.Droid.Resource.Id.transition_current_scene;
+			global::BlinkID.Forms.Droid.Resource.Id.transition_layout_save = global::BlinkIDFormsSample.Droid.Resource.Id.transition_layout_save;
+			global::BlinkID.Forms.Droid.Resource.Id.transition_position = global::BlinkIDFormsSample.Droid.Resource.Id.transition_position;
+			global::BlinkID.Forms.Droid.Resource.Id.transition_scene_layoutid_cache = global::BlinkIDFormsSample.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::BlinkID.Forms.Droid.Resource.Id.transition_transform = global::BlinkIDFormsSample.Droid.Resource.Id.transition_transform;
+			global::BlinkID.Forms.Droid.Resource.Id.tvCardMessage = global::BlinkIDFormsSample.Droid.Resource.Id.tvCardMessage;
+			global::BlinkID.Forms.Droid.Resource.Id.tvGlareMessage = global::BlinkIDFormsSample.Droid.Resource.Id.tvGlareMessage;
+			global::BlinkID.Forms.Droid.Resource.Id.tvSnackbarMessage = global::BlinkIDFormsSample.Droid.Resource.Id.tvSnackbarMessage;
+			global::BlinkID.Forms.Droid.Resource.Id.@unchecked = global::BlinkIDFormsSample.Droid.Resource.Id.@unchecked;
+			global::BlinkID.Forms.Droid.Resource.Id.uniform = global::BlinkIDFormsSample.Droid.Resource.Id.uniform;
+			global::BlinkID.Forms.Droid.Resource.Id.unlabeled = global::BlinkIDFormsSample.Droid.Resource.Id.unlabeled;
+			global::BlinkID.Forms.Droid.Resource.Id.up = global::BlinkIDFormsSample.Droid.Resource.Id.up;
+			global::BlinkID.Forms.Droid.Resource.Id.useLogo = global::BlinkIDFormsSample.Droid.Resource.Id.useLogo;
+			global::BlinkID.Forms.Droid.Resource.Id.viewfinder = global::BlinkIDFormsSample.Droid.Resource.Id.viewfinder;
+			global::BlinkID.Forms.Droid.Resource.Id.viewfinderContainer = global::BlinkIDFormsSample.Droid.Resource.Id.viewfinderContainer;
+			global::BlinkID.Forms.Droid.Resource.Id.viewfinderMarginTop = global::BlinkIDFormsSample.Droid.Resource.Id.viewfinderMarginTop;
+			global::BlinkID.Forms.Droid.Resource.Id.viewfinderRectangle = global::BlinkIDFormsSample.Droid.Resource.Id.viewfinderRectangle;
+			global::BlinkID.Forms.Droid.Resource.Id.view_offset_helper = global::BlinkIDFormsSample.Droid.Resource.Id.view_offset_helper;
+			global::BlinkID.Forms.Droid.Resource.Id.visible = global::BlinkIDFormsSample.Droid.Resource.Id.visible;
+			global::BlinkID.Forms.Droid.Resource.Id.withText = global::BlinkIDFormsSample.Droid.Resource.Id.withText;
+			global::BlinkID.Forms.Droid.Resource.Id.wrap_content = global::BlinkIDFormsSample.Droid.Resource.Id.wrap_content;
+			global::BlinkID.Forms.Droid.Resource.Integer.abc_config_activityDefaultDur = global::BlinkIDFormsSample.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::BlinkID.Forms.Droid.Resource.Integer.abc_config_activityShortDur = global::BlinkIDFormsSample.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::BlinkID.Forms.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.bottom_sheet_slide_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.cancel_button_image_alpha = global::BlinkIDFormsSample.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::BlinkID.Forms.Droid.Resource.Integer.config_tooltipAnimTime = global::BlinkIDFormsSample.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::BlinkID.Forms.Droid.Resource.Integer.design_snackbar_text_max_lines = global::BlinkIDFormsSample.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::BlinkID.Forms.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms = global::BlinkIDFormsSample.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
+			global::BlinkID.Forms.Droid.Resource.Integer.hide_password_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.hide_password_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_blinkid_card_flip_fade_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_blinkid_card_flip_fade_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_blinkid_card_flip_fade_out_offset = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_blinkid_card_flip_fade_out_offset;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_blinkid_card_flip_rotation_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_blinkid_card_flip_rotation_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_blinkid_card_scale_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_blinkid_card_scale_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_blinkid_card_scale_half_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_blinkid_card_scale_half_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_default_shape_type = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_default_shape_type;
+			global::BlinkID.Forms.Droid.Resource.Integer.mb_snackbar_animation_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mb_snackbar_animation_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mtrl_btn_anim_delay_ms = global::BlinkIDFormsSample.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
+			global::BlinkID.Forms.Droid.Resource.Integer.mtrl_btn_anim_duration_ms = global::BlinkIDFormsSample.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::BlinkID.Forms.Droid.Resource.Integer.mtrl_chip_anim_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.mtrl_chip_anim_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::BlinkIDFormsSample.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
+			global::BlinkID.Forms.Droid.Resource.Integer.show_password_duration = global::BlinkIDFormsSample.Droid.Resource.Integer.show_password_duration;
+			global::BlinkID.Forms.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::BlinkIDFormsSample.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::BlinkIDFormsSample.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.fast_out_slow_in = global::BlinkIDFormsSample.Droid.Resource.Interpolator.fast_out_slow_in;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.mtrl_fast_out_linear_in = global::BlinkIDFormsSample.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.mtrl_fast_out_slow_in = global::BlinkIDFormsSample.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.mtrl_linear = global::BlinkIDFormsSample.Droid.Resource.Interpolator.mtrl_linear;
+			global::BlinkID.Forms.Droid.Resource.Interpolator.mtrl_linear_out_slow_in = global::BlinkIDFormsSample.Droid.Resource.Interpolator.mtrl_linear_out_slow_in;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_bar_title_item = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_bar_up_container = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_menu_item_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_menu_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_menu_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_mode_bar = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_mode_bar;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_action_mode_close_item_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_activity_chooser_view = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_alert_dialog_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_alert_dialog_title_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_cascading_menu_item_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_cascading_menu_item_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_dialog_title_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_dialog_title_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_expanded_menu_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_list_menu_item_icon = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_list_menu_item_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_list_menu_item_radio = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_popup_menu_item_layout = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_screen_content_include = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_screen_content_include;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_screen_simple = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_screen_simple;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_screen_toolbar = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_screen_toolbar;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_search_view = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_search_view;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_select_dialog_material = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_select_dialog_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.abc_tooltip = global::BlinkIDFormsSample.Droid.Resource.Layout.abc_tooltip;
+			global::BlinkID.Forms.Droid.Resource.Layout.BottomTabLayout = global::BlinkIDFormsSample.Droid.Resource.Layout.BottomTabLayout;
+			global::BlinkID.Forms.Droid.Resource.Layout.browser_actions_context_menu_page = global::BlinkIDFormsSample.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::BlinkID.Forms.Droid.Resource.Layout.browser_actions_context_menu_row = global::BlinkIDFormsSample.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::BlinkID.Forms.Droid.Resource.Layout.custom_dialog = global::BlinkIDFormsSample.Droid.Resource.Layout.custom_dialog;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_bottom_navigation_item = global::BlinkIDFormsSample.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_bottom_sheet_dialog = global::BlinkIDFormsSample.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_layout_snackbar = global::BlinkIDFormsSample.Droid.Resource.Layout.design_layout_snackbar;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_layout_snackbar_include = global::BlinkIDFormsSample.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_layout_tab_icon = global::BlinkIDFormsSample.Droid.Resource.Layout.design_layout_tab_icon;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_layout_tab_text = global::BlinkIDFormsSample.Droid.Resource.Layout.design_layout_tab_text;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_menu_item_action_area = global::BlinkIDFormsSample.Droid.Resource.Layout.design_menu_item_action_area;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_item = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_item_header = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_item_header;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_item_separator = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_item_separator;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_item_subheader = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_menu = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_menu;
+			global::BlinkID.Forms.Droid.Resource.Layout.design_navigation_menu_item = global::BlinkIDFormsSample.Droid.Resource.Layout.design_navigation_menu_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.FallbackTabbarDoNotUse = global::BlinkIDFormsSample.Droid.Resource.Layout.FallbackTabbarDoNotUse;
+			global::BlinkID.Forms.Droid.Resource.Layout.FallbackToolbarDoNotUse = global::BlinkIDFormsSample.Droid.Resource.Layout.FallbackToolbarDoNotUse;
+			global::BlinkID.Forms.Droid.Resource.Layout.FlyoutContent = global::BlinkIDFormsSample.Droid.Resource.Layout.FlyoutContent;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_activity_scan = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_activity_scan;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_camera_permission_overlay = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_camera_permission_overlay;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_camera_splash = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_camera_splash;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_default_camera_overlay = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_default_camera_overlay;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_default_camera_overlay_with_status = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_default_camera_overlay_with_status;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_overlay_blink_id = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_overlay_blink_id;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_snackbar_content = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_snackbar_content;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_top_button_bar = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_top_button_bar;
+			global::BlinkID.Forms.Droid.Resource.Layout.mb_verification_document_camera_overlay = global::BlinkIDFormsSample.Droid.Resource.Layout.mb_verification_document_camera_overlay;
+			global::BlinkID.Forms.Droid.Resource.Layout.mtrl_layout_snackbar = global::BlinkIDFormsSample.Droid.Resource.Layout.mtrl_layout_snackbar;
+			global::BlinkID.Forms.Droid.Resource.Layout.mtrl_layout_snackbar_include = global::BlinkIDFormsSample.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_action = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_action;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_action_tombstone = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_action_tombstone;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_media_action = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_media_action;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_media_cancel_action = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_media_cancel_action;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_big_media = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_big_media;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_big_media_custom = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_big_media_narrow = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_custom_big = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_custom_big;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_icon_group = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_icon_group;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_lines_media = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_lines_media;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_media = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_media;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_media_custom = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_media_custom;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_part_chronometer = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::BlinkID.Forms.Droid.Resource.Layout.notification_template_part_time = global::BlinkIDFormsSample.Droid.Resource.Layout.notification_template_part_time;
+			global::BlinkID.Forms.Droid.Resource.Layout.RootLayout = global::BlinkIDFormsSample.Droid.Resource.Layout.RootLayout;
+			global::BlinkID.Forms.Droid.Resource.Layout.select_dialog_item_material = global::BlinkIDFormsSample.Droid.Resource.Layout.select_dialog_item_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.select_dialog_multichoice_material = global::BlinkIDFormsSample.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.select_dialog_singlechoice_material = global::BlinkIDFormsSample.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::BlinkID.Forms.Droid.Resource.Layout.ShellContent = global::BlinkIDFormsSample.Droid.Resource.Layout.ShellContent;
+			global::BlinkID.Forms.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::BlinkIDFormsSample.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::BlinkID.Forms.Droid.Resource.Layout.Tabbar = global::BlinkIDFormsSample.Droid.Resource.Layout.Tabbar;
+			global::BlinkID.Forms.Droid.Resource.Layout.Toolbar = global::BlinkIDFormsSample.Droid.Resource.Layout.Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Raw.beep = global::BlinkIDFormsSample.Droid.Resource.Raw.beep;
+			global::BlinkID.Forms.Droid.Resource.String.abc_action_bar_home_description = global::BlinkIDFormsSample.Droid.Resource.String.abc_action_bar_home_description;
+			global::BlinkID.Forms.Droid.Resource.String.abc_action_bar_up_description = global::BlinkIDFormsSample.Droid.Resource.String.abc_action_bar_up_description;
+			global::BlinkID.Forms.Droid.Resource.String.abc_action_menu_overflow_description = global::BlinkIDFormsSample.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::BlinkID.Forms.Droid.Resource.String.abc_action_mode_done = global::BlinkIDFormsSample.Droid.Resource.String.abc_action_mode_done;
+			global::BlinkID.Forms.Droid.Resource.String.abc_activitychooserview_choose_application = global::BlinkIDFormsSample.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::BlinkID.Forms.Droid.Resource.String.abc_activity_chooser_view_see_all = global::BlinkIDFormsSample.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::BlinkID.Forms.Droid.Resource.String.abc_capital_off = global::BlinkIDFormsSample.Droid.Resource.String.abc_capital_off;
+			global::BlinkID.Forms.Droid.Resource.String.abc_capital_on = global::BlinkIDFormsSample.Droid.Resource.String.abc_capital_on;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_alt_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_alt_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_ctrl_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_ctrl_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_delete_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_delete_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_enter_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_enter_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_function_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_function_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_meta_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_meta_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_shift_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_shift_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_space_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_space_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_menu_sym_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_menu_sym_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_prepend_shortcut_label = global::BlinkIDFormsSample.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::BlinkID.Forms.Droid.Resource.String.abc_searchview_description_clear = global::BlinkIDFormsSample.Droid.Resource.String.abc_searchview_description_clear;
+			global::BlinkID.Forms.Droid.Resource.String.abc_searchview_description_query = global::BlinkIDFormsSample.Droid.Resource.String.abc_searchview_description_query;
+			global::BlinkID.Forms.Droid.Resource.String.abc_searchview_description_search = global::BlinkIDFormsSample.Droid.Resource.String.abc_searchview_description_search;
+			global::BlinkID.Forms.Droid.Resource.String.abc_searchview_description_submit = global::BlinkIDFormsSample.Droid.Resource.String.abc_searchview_description_submit;
+			global::BlinkID.Forms.Droid.Resource.String.abc_searchview_description_voice = global::BlinkIDFormsSample.Droid.Resource.String.abc_searchview_description_voice;
+			global::BlinkID.Forms.Droid.Resource.String.abc_search_hint = global::BlinkIDFormsSample.Droid.Resource.String.abc_search_hint;
+			global::BlinkID.Forms.Droid.Resource.String.abc_shareactionprovider_share_with = global::BlinkIDFormsSample.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::BlinkID.Forms.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::BlinkIDFormsSample.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::BlinkID.Forms.Droid.Resource.String.abc_toolbar_collapse_description = global::BlinkIDFormsSample.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::BlinkID.Forms.Droid.Resource.String.appbar_scrolling_view_behavior = global::BlinkIDFormsSample.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::BlinkID.Forms.Droid.Resource.String.bottom_sheet_behavior = global::BlinkIDFormsSample.Droid.Resource.String.bottom_sheet_behavior;
+			global::BlinkID.Forms.Droid.Resource.String.character_counter_content_description = global::BlinkIDFormsSample.Droid.Resource.String.character_counter_content_description;
+			global::BlinkID.Forms.Droid.Resource.String.character_counter_pattern = global::BlinkIDFormsSample.Droid.Resource.String.character_counter_pattern;
+			global::BlinkID.Forms.Droid.Resource.String.fab_transformation_scrim_behavior = global::BlinkIDFormsSample.Droid.Resource.String.fab_transformation_scrim_behavior;
+			global::BlinkID.Forms.Droid.Resource.String.fab_transformation_sheet_behavior = global::BlinkIDFormsSample.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::BlinkID.Forms.Droid.Resource.String.hide_bottom_view_on_scroll_behavior = global::BlinkIDFormsSample.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::BlinkID.Forms.Droid.Resource.String.mb_activity_title_step_back_side = global::BlinkIDFormsSample.Droid.Resource.String.mb_activity_title_step_back_side;
+			global::BlinkID.Forms.Droid.Resource.String.mb_activity_title_step_front_side = global::BlinkIDFormsSample.Droid.Resource.String.mb_activity_title_step_front_side;
+			global::BlinkID.Forms.Droid.Resource.String.mb_autofocus_fail = global::BlinkIDFormsSample.Droid.Resource.String.mb_autofocus_fail;
+			global::BlinkID.Forms.Droid.Resource.String.mb_blinkid_back_instructions_barcode = global::BlinkIDFormsSample.Droid.Resource.String.mb_blinkid_back_instructions_barcode;
+			global::BlinkID.Forms.Droid.Resource.String.mb_blinkid_camera_flip_document = global::BlinkIDFormsSample.Droid.Resource.String.mb_blinkid_camera_flip_document;
+			global::BlinkID.Forms.Droid.Resource.String.mb_blinkid_document_not_fully_visible = global::BlinkIDFormsSample.Droid.Resource.String.mb_blinkid_document_not_fully_visible;
+			global::BlinkID.Forms.Droid.Resource.String.mb_blinkid_document_too_close_to_edge = global::BlinkIDFormsSample.Droid.Resource.String.mb_blinkid_document_too_close_to_edge;
+			global::BlinkID.Forms.Droid.Resource.String.mb_blinkid_front_instructions = global::BlinkIDFormsSample.Droid.Resource.String.mb_blinkid_front_instructions;
+			global::BlinkID.Forms.Droid.Resource.String.mb_camera_not_allowed = global::BlinkIDFormsSample.Droid.Resource.String.mb_camera_not_allowed;
+			global::BlinkID.Forms.Droid.Resource.String.mb_camera_not_ready = global::BlinkIDFormsSample.Droid.Resource.String.mb_camera_not_ready;
+			global::BlinkID.Forms.Droid.Resource.String.mb_camera_permission_required = global::BlinkIDFormsSample.Droid.Resource.String.mb_camera_permission_required;
+			global::BlinkID.Forms.Droid.Resource.String.mb_custom_ui_forbidden = global::BlinkIDFormsSample.Droid.Resource.String.mb_custom_ui_forbidden;
+			global::BlinkID.Forms.Droid.Resource.String.mb_data_not_match_msg = global::BlinkIDFormsSample.Droid.Resource.String.mb_data_not_match_msg;
+			global::BlinkID.Forms.Droid.Resource.String.mb_data_not_match_retry_button = global::BlinkIDFormsSample.Droid.Resource.String.mb_data_not_match_retry_button;
+			global::BlinkID.Forms.Droid.Resource.String.mb_data_not_match_title = global::BlinkIDFormsSample.Droid.Resource.String.mb_data_not_match_title;
+			global::BlinkID.Forms.Droid.Resource.String.mb_dismiss_error_dialog = global::BlinkIDFormsSample.Droid.Resource.String.mb_dismiss_error_dialog;
+			global::BlinkID.Forms.Droid.Resource.String.mb_enable_camera = global::BlinkIDFormsSample.Droid.Resource.String.mb_enable_camera;
+			global::BlinkID.Forms.Droid.Resource.String.mb_enable_permission_help = global::BlinkIDFormsSample.Droid.Resource.String.mb_enable_permission_help;
+			global::BlinkID.Forms.Droid.Resource.String.mb_enable_permission_help_instant_app = global::BlinkIDFormsSample.Droid.Resource.String.mb_enable_permission_help_instant_app;
+			global::BlinkID.Forms.Droid.Resource.String.mb_error_camera_high = global::BlinkIDFormsSample.Droid.Resource.String.mb_error_camera_high;
+			global::BlinkID.Forms.Droid.Resource.String.mb_error_camera_near = global::BlinkIDFormsSample.Droid.Resource.String.mb_error_camera_near;
+			global::BlinkID.Forms.Droid.Resource.String.mb_error_initializing = global::BlinkIDFormsSample.Droid.Resource.String.mb_error_initializing;
+			global::BlinkID.Forms.Droid.Resource.String.mb_feature_unsupported_android_version = global::BlinkIDFormsSample.Droid.Resource.String.mb_feature_unsupported_android_version;
+			global::BlinkID.Forms.Droid.Resource.String.mb_feature_unsupported_autofocus = global::BlinkIDFormsSample.Droid.Resource.String.mb_feature_unsupported_autofocus;
+			global::BlinkID.Forms.Droid.Resource.String.mb_feature_unsupported_device = global::BlinkIDFormsSample.Droid.Resource.String.mb_feature_unsupported_device;
+			global::BlinkID.Forms.Droid.Resource.String.mb_flashlight_warning_message = global::BlinkIDFormsSample.Droid.Resource.String.mb_flashlight_warning_message;
+			global::BlinkID.Forms.Droid.Resource.String.mb_invalid_license = global::BlinkIDFormsSample.Droid.Resource.String.mb_invalid_license;
+			global::BlinkID.Forms.Droid.Resource.String.mb_licence_check_device_offline = global::BlinkIDFormsSample.Droid.Resource.String.mb_licence_check_device_offline;
+			global::BlinkID.Forms.Droid.Resource.String.mb_licence_check_failed = global::BlinkIDFormsSample.Droid.Resource.String.mb_licence_check_failed;
+			global::BlinkID.Forms.Droid.Resource.String.mb_licence_locked = global::BlinkIDFormsSample.Droid.Resource.String.mb_licence_locked;
+			global::BlinkID.Forms.Droid.Resource.String.mb_recognition_timeout_dialog_message = global::BlinkIDFormsSample.Droid.Resource.String.mb_recognition_timeout_dialog_message;
+			global::BlinkID.Forms.Droid.Resource.String.mb_recognition_timeout_dialog_retry_button = global::BlinkIDFormsSample.Droid.Resource.String.mb_recognition_timeout_dialog_retry_button;
+			global::BlinkID.Forms.Droid.Resource.String.mb_recognition_timeout_dialog_title = global::BlinkIDFormsSample.Droid.Resource.String.mb_recognition_timeout_dialog_title;
+			global::BlinkID.Forms.Droid.Resource.String.mb_splash_msg_id_back = global::BlinkIDFormsSample.Droid.Resource.String.mb_splash_msg_id_back;
+			global::BlinkID.Forms.Droid.Resource.String.mb_splash_msg_id_front = global::BlinkIDFormsSample.Droid.Resource.String.mb_splash_msg_id_front;
+			global::BlinkID.Forms.Droid.Resource.String.mb_tooltip_back_id = global::BlinkIDFormsSample.Droid.Resource.String.mb_tooltip_back_id;
+			global::BlinkID.Forms.Droid.Resource.String.mb_tooltip_front_id = global::BlinkIDFormsSample.Droid.Resource.String.mb_tooltip_front_id;
+			global::BlinkID.Forms.Droid.Resource.String.mb_tooltip_glare = global::BlinkIDFormsSample.Droid.Resource.String.mb_tooltip_glare;
+			global::BlinkID.Forms.Droid.Resource.String.mb_unsupported_document_message = global::BlinkIDFormsSample.Droid.Resource.String.mb_unsupported_document_message;
+			global::BlinkID.Forms.Droid.Resource.String.mb_unsupported_document_title = global::BlinkIDFormsSample.Droid.Resource.String.mb_unsupported_document_title;
+			global::BlinkID.Forms.Droid.Resource.String.mb_warning_title = global::BlinkIDFormsSample.Droid.Resource.String.mb_warning_title;
+			global::BlinkID.Forms.Droid.Resource.String.mtrl_chip_close_icon_content_description = global::BlinkIDFormsSample.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::BlinkID.Forms.Droid.Resource.String.password_toggle_content_description = global::BlinkIDFormsSample.Droid.Resource.String.password_toggle_content_description;
+			global::BlinkID.Forms.Droid.Resource.String.path_password_eye = global::BlinkIDFormsSample.Droid.Resource.String.path_password_eye;
+			global::BlinkID.Forms.Droid.Resource.String.path_password_eye_mask_strike_through = global::BlinkIDFormsSample.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::BlinkID.Forms.Droid.Resource.String.path_password_eye_mask_visible = global::BlinkIDFormsSample.Droid.Resource.String.path_password_eye_mask_visible;
+			global::BlinkID.Forms.Droid.Resource.String.path_password_strike_through = global::BlinkIDFormsSample.Droid.Resource.String.path_password_strike_through;
+			global::BlinkID.Forms.Droid.Resource.String.search_menu_title = global::BlinkIDFormsSample.Droid.Resource.String.search_menu_title;
+			global::BlinkID.Forms.Droid.Resource.String.status_bar_notification_info_overflow = global::BlinkIDFormsSample.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.AlertDialog_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Animation_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::BlinkIDFormsSample.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::BlinkID.Forms.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::BlinkIDFormsSample.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::BlinkID.Forms.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.AppCompatDialogStyle = global::BlinkIDFormsSample.Droid.Resource.Style.AppCompatDialogStyle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_CardView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_CardView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::BlinkIDFormsSample.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V28_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V28_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_TextView = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
+			global::BlinkID.Forms.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.CardView = global::BlinkIDFormsSample.Droid.Resource.Style.CardView;
+			global::BlinkID.Forms.Droid.Resource.Style.CardView_Dark = global::BlinkIDFormsSample.Droid.Resource.Style.CardView_Dark;
+			global::BlinkID.Forms.Droid.Resource.Style.CardView_Light = global::BlinkIDFormsSample.Droid.Resource.Style.CardView_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.MainTheme = global::BlinkIDFormsSample.Droid.Resource.Style.MainTheme;
+			global::BlinkID.Forms.Droid.Resource.Style.MainTheme_Base = global::BlinkIDFormsSample.Droid.Resource.Style.MainTheme_Base;
+			global::BlinkID.Forms.Droid.Resource.Style.MBVerificationInstructions = global::BlinkIDFormsSample.Droid.Resource.Style.MBVerificationInstructions;
+			global::BlinkID.Forms.Droid.Resource.Style.MBVerificationInstructions_Text = global::BlinkIDFormsSample.Droid.Resource.Style.MBVerificationInstructions_Text;
+			global::BlinkID.Forms.Droid.Resource.Style.MBVerificationSplashText = global::BlinkIDFormsSample.Droid.Resource.Style.MBVerificationSplashText;
+			global::BlinkID.Forms.Droid.Resource.Style.MBViewfinderShape = global::BlinkIDFormsSample.Droid.Resource.Style.MBViewfinderShape;
+			global::BlinkID.Forms.Droid.Resource.Style.MBViewfinderShape_Document = global::BlinkIDFormsSample.Droid.Resource.Style.MBViewfinderShape_Document;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_blinkid_instructions_text = global::BlinkIDFormsSample.Droid.Resource.Style.MB_blinkid_instructions_text;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_default_reticle_overlay_style = global::BlinkIDFormsSample.Droid.Resource.Style.MB_default_reticle_overlay_style;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_default_scan_box_overlay_style = global::BlinkIDFormsSample.Droid.Resource.Style.MB_default_scan_box_overlay_style;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_default_simple_box_overlay_style = global::BlinkIDFormsSample.Droid.Resource.Style.MB_default_simple_box_overlay_style;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_glare_message_text = global::BlinkIDFormsSample.Droid.Resource.Style.MB_glare_message_text;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_scan_status_text = global::BlinkIDFormsSample.Droid.Resource.Style.MB_scan_status_text;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_snackbar_text = global::BlinkIDFormsSample.Droid.Resource.Style.MB_snackbar_text;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_theme = global::BlinkIDFormsSample.Droid.Resource.Style.MB_theme;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_top_button = global::BlinkIDFormsSample.Droid.Resource.Style.MB_top_button;
+			global::BlinkID.Forms.Droid.Resource.Style.MB_top_button_bar = global::BlinkIDFormsSample.Droid.Resource.Style.MB_top_button_bar;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_MaterialComponents = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_MaterialComponents;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_MaterialComponents_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_MaterialComponents_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_MaterialComponents_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_V21_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_V25_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::BlinkIDFormsSample.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Counter = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Error = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_HelperText = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_HelperText;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Hint = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Design_Tab = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Button = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Caption;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Chip;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline1;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline3;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline4;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline5;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Headline6;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::BlinkID.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::BlinkIDFormsSample.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::BlinkID.Forms.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_Design_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::BlinkIDFormsSample.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_EditText = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ListView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_SearchView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_TextView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_TextView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_AppBarLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_NavigationView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_Snackbar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_TabLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Design_TextInputLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_CardView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_NavigationView = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Snackbar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TabLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_MaterialComponents_Toolbar = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Style.Widget_Support_CoordinatorLayout = global::BlinkIDFormsSample.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBarLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBarLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_background = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_background;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_displayOptions = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_divider = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_divider;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_height = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_height;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_homeLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_icon = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_icon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_itemPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_logo = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_logo;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_navigationMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_popupTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_subtitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_title = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_title;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMenuItemView = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMenuItemView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMenuView = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMenuView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_background = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_background;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_height = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_height;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActivityChooserView = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActivityChooserView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::BlinkIDFormsSample.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_android_layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_buttonIconDimen = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_buttonIconDimen;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_listLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_showTitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_constantSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_dither;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_enterFadeDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_exitFadeDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_variablePadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableCompat_android_visible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_drawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableItem_android_id;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableTransition = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableTransition;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_drawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_fromId;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::BlinkIDFormsSample.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayoutStates = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_android_background = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_expanded = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatImageView = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatImageView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatImageView_android_src = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatImageView_tint = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatSeekBar = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_lineHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTextView_textLocale = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTextView_textLocale;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorError = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dialogCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_viewInflaterClass;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AspectRatioFrameLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.AspectRatioFrameLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.AspectRatioFrameLayout_mb_aspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.AspectRatioFrameLayout_mb_aspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditConfirmButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditConfirmButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditDividerColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditDividerColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditErrorColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditErrorColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditErrorTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditErrorTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditLabelTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditLabelTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditLabelTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditLabelTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarNavigationIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarNavigationIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditToolbarTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueHintColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueHintColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardEditScreen_mb_blinkcardEditValueTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_glareWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_glareWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_glareWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_glareWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_errorHookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_errorHookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_flipCardColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_flipCardColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_hookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_hookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_overlayColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_overlayColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_scanLineColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_scanLineColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_viewfinderAspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_viewfinderAspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardBackDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardBackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardFrontDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardFrontDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_flashlightWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_flashlightWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_flashlightWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_flashlightWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_instructionsBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_instructionsBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_progressDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_progressDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_pulseColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_pulseColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleDefaultDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleDefaultDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleErrorDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleErrorDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleSuccessDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_reticleSuccessDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_successFlashColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_successFlashColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_backSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_backSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_backSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_backSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_frontSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_frontSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_frontSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_frontSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdScanBoxOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdSimpleBoxOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_backgroundTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomAppBar_hideOnScroll = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemIconSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomNavigationView_menu = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::BlinkIDFormsSample.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ButtonBarLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ButtonBarLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::BlinkIDFormsSample.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CameraViewGroup = global::BlinkIDFormsSample.Droid.Resource.Styleable.CameraViewGroup;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CameraViewGroup_LayoutParams = global::BlinkIDFormsSample.Droid.Resource.Styleable.CameraViewGroup_LayoutParams;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CameraViewGroup_LayoutParams_mb_rotatable = global::BlinkIDFormsSample.Droid.Resource.Styleable.CameraViewGroup_LayoutParams_mb_rotatable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CameraViewGroup_mb_animateRotation = global::BlinkIDFormsSample.Droid.Resource.Styleable.CameraViewGroup_mb_animateRotation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CameraViewGroup_mb_animationDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.CameraViewGroup_mb_animationDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_android_minHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_android_minWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardElevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardElevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardMaxElevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_contentPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_contentPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_contentPaddingRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CardView_contentPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_checkedChip = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_singleLine = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ChipGroup_singleSelection = global::BlinkIDFormsSample.Droid.Resource.Styleable.ChipGroup_singleSelection;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_android_checkable = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_android_checkable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_android_ellipsize = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_android_ellipsize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_android_maxWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_android_maxWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_android_text = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_android_text;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_android_textAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_checkedIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_checkedIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_checkedIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_checkedIconVisible = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_checkedIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipEndPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipIconSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipIconSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipIconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipIconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipIconVisible = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipMinHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipStartPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipStrokeColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipStrokeColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_chipStrokeWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconEndPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconStartPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_closeIconVisible = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_hideMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_hideMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_iconEndPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_iconEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_iconStartPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_iconStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_rippleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_rippleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_showMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_showMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_textEndPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_textEndPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Chip_textStartPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::BlinkIDFormsSample.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ColorStateListItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.ColorStateListItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ColorStateListItem_alpha = global::BlinkIDFormsSample.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::BlinkIDFormsSample.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ColorStateListItem_android_color = global::BlinkIDFormsSample.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CompoundButton = global::BlinkIDFormsSample.Droid.Resource.Styleable.CompoundButton;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CompoundButton_android_button = global::BlinkIDFormsSample.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CompoundButton_buttonCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.CompoundButton_buttonCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CompoundButton_buttonTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::BlinkID.Forms.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_captureButtonDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_captureButtonDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_detectionRectangleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_detectionRectangleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_instructionsBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_instructionsBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_successFlashColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_successFlashColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.DocumentCaptureDetectionOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_color = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::BlinkID.Forms.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::BlinkIDFormsSample.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_hoveredFocusedTranslationZ;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_maxImageSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FlowLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.FlowLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FlowLayout_itemSpacing = global::BlinkIDFormsSample.Droid.Resource.Styleable.FlowLayout_itemSpacing;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FlowLayout_lineSpacing = global::BlinkIDFormsSample.Droid.Resource.Styleable.FlowLayout_lineSpacing;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_android_font = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_font = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamilyFont_ttcIndex = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::BlinkID.Forms.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::BlinkIDFormsSample.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ForegroundLinearLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::BlinkIDFormsSample.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_animateRotation = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_animateRotation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_animationDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_animationDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_aspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_aspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_backSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_backSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_backSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_backSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditConfirmButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditConfirmButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditDividerColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditDividerColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditErrorColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditErrorColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditErrorTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditErrorTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditLabelTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditLabelTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditLabelTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditLabelTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarNavigationIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarNavigationIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditToolbarTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueHintColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueHintColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_blinkcardEditValueTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_btnCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_btnCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_btnTimeoutColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_btnTimeoutColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_btnTimeoutTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_btnTimeoutTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_captureButtonDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_captureButtonDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_cardBackDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_cardBackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_cardFrontDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_cardFrontDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_circleCheckFailedColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_circleCheckFailedColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_circleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_circleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_circleOuterColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_circleOuterColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_circleProgressColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_circleProgressColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_circleSuccessColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_circleSuccessColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_detectionRectangleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_detectionRectangleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_errorHookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_errorHookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_errorIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_errorIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_flashlightWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_flashlightWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_flashlightWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_flashlightWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_flipCardColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_flipCardColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_frontSideInstructionsDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_frontSideInstructionsDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_frontSideSplashDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_frontSideSplashDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_glareWarningBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_glareWarningBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_glareWarningTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_glareWarningTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_hookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_hookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_instructionsBackgroundDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_instructionsBackgroundDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_overlayColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_overlayColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_progressDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_progressDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_pulseColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_pulseColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_reticleDefaultDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_reticleDefaultDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_reticleErrorDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_reticleErrorDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_reticleSuccessDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_reticleSuccessDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_rotatable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_rotatable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_scanLineColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_scanLineColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_successFlashColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_successFlashColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_successIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_successIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GlobalAttrs_mb_viewfinderAspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.GlobalAttrs_mb_viewfinderAspectRatio;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColorItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColorItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColorItem_android_color = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColorItem_android_offset = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_centerColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_centerX = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_centerY = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_endColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_endX = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_endY = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_gradientRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_startColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_startX = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_startY = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_tileMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.GradientColor_android_type = global::BlinkIDFormsSample.Droid.Resource.Styleable.GradientColor_android_type;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::BlinkIDFormsSample.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ListPopupWindow = global::BlinkIDFormsSample.Droid.Resource.Styleable.ListPopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::BlinkIDFormsSample.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::BlinkIDFormsSample.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_btnCornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_btnCornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_btnTimeoutColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_btnTimeoutColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_btnTimeoutTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_btnTimeoutTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_circleCheckFailedColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_circleCheckFailedColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_circleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_circleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_circleOuterColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_circleOuterColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_circleProgressColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_circleProgressColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_circleSuccessColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_circleSuccessColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_errorIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_errorIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_exitScanDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_exitScanDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_instructionsTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_successFlashColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_successFlashColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_successIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_successIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_torchOffDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.LivenessOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.LivenessOverlay_mb_torchOnDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_android_insetBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_android_insetLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_android_insetRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_android_insetRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_android_insetTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_android_insetTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_backgroundTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_backgroundTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_backgroundTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_cornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_icon = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_icon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_iconGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_iconGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_iconPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_iconPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_iconSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_iconSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_iconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_iconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_iconTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_iconTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_rippleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_strokeColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_strokeColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialButton_strokeWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialCardView = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialCardView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialCardView_strokeColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialCardView_strokeColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MaterialCardView_strokeWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_enabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_id = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuGroup_android_visible = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_actionLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_actionViewClass = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_checkable = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_checked = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_enabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_icon = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_id = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_id;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_onClick = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_title = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_title;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_android_visible = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_contentDescription = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_iconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_iconTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_numericModifiers = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_showAsAction = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuItem_tooltipText = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_headerBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_itemBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::BlinkID.Forms.Droid.Resource.Styleable.MenuView_subMenuArrow = global::BlinkIDFormsSample.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_android_background = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_android_background;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_headerLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemIconPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemIconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_itemTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.NavigationView_menu = global::BlinkIDFormsSample.Droid.Resource.Styleable.NavigationView_menu;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindow = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindow;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindowBackgroundState = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::BlinkIDFormsSample.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecycleListView = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecycleListView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_android_clipToPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_android_orientation = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_layoutManager = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_spanCount = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_android_focusable = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_android_imeOptions = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_android_inputType = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_android_maxWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_closeIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_commitIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_goIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_goIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_queryBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_queryHint = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_queryHint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_searchHintIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_searchIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_submitBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SearchView_voiceIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Snackbar = global::BlinkIDFormsSample.Droid.Resource.Styleable.Snackbar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SnackbarLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.SnackbarLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SnackbarLayout_elevation = global::BlinkIDFormsSample.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner_android_entries = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner_android_entries;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner_android_popupBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner_android_prompt = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Spinner_popupTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawableItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawableItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawableItem_android_drawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_constantSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_dither = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_dither;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_variablePadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.StateListDrawable_android_visible = global::BlinkIDFormsSample.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_showText = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_track = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_track;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_trackTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabItem = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabItem;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabItem_android_icon = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabItem_android_icon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabItem_android_layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabItem_android_layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabItem_android_text = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabItem_android_text;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabBackground = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabContentStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIconTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIconTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIconTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIconTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicator = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicator;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicatorAnimationDuration;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicatorFullWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicatorGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabInlineLabel = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabInlineLabel;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabPadding = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabRippleColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabRippleColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple = global::BlinkIDFormsSample.Droid.Resource.Styleable.TabLayout_tabUnboundedRipple;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textFontWeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textSize = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_android_typeface = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_fontFamily = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_fontVariationSettings = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextAppearance_textLocale = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextAppearance_textLocale;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_android_hint = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxBackgroundMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxCollapsedPaddingTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusBottomStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_helperText = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_helperText;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ThemeEnforcement = global::BlinkIDFormsSample.Droid.Resource.Styleable.ThemeEnforcement;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.ThemeEnforcement_enforceTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_android_gravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_android_minHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_buttonGravity = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_collapseIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_logo = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_logo;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_logoDescription = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_menu = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_menu;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_navigationIcon = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_popupTheme = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_subtitle = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_title = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_title;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMargin = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMargins = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::BlinkID.Forms.Droid.Resource.Styleable.Toolbar_titleTextColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View = global::BlinkIDFormsSample.Droid.Resource.Styleable.View;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewBackgroundHelper = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_borderColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_borderColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_borderWidth = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_borderWidth;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_cornerRadius = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_cornerRadius;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_innerColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_innerColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_outerColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_outerColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewfinderShapeView_mb_shapeType = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewfinderShapeView_mb_shapeType;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewStubCompat = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewStubCompat;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewStubCompat_android_id = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View_android_focusable = global::BlinkIDFormsSample.Droid.Resource.Styleable.View_android_focusable;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View_android_theme = global::BlinkIDFormsSample.Droid.Resource.Styleable.View_android_theme;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View_paddingEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.View_paddingEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View_paddingStart = global::BlinkIDFormsSample.Droid.Resource.Styleable.View_paddingStart;
+			global::BlinkID.Forms.Droid.Resource.Styleable.View_theme = global::BlinkIDFormsSample.Droid.Resource.Styleable.View_theme;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::BlinkIDFormsSample.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -15849,6 +18871,22 @@ namespace BlinkIDFormsSample.Droid
 			}
 		}
 		
+		public partial class Raw
+		{
+			
+			// aapt resource value: 0x7F0D0000
+			public const int beep = 2131558400;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
 		public partial class Plurals
 		{
 			
@@ -15868,515 +18906,515 @@ namespace BlinkIDFormsSample.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F0D0000
-			public const int abc_action_bar_home_description = 2131558400;
+			// aapt resource value: 0x7F0E0000
+			public const int abc_action_bar_home_description = 2131623936;
 			
-			// aapt resource value: 0x7F0D0001
-			public const int abc_action_bar_up_description = 2131558401;
+			// aapt resource value: 0x7F0E0001
+			public const int abc_action_bar_up_description = 2131623937;
 			
-			// aapt resource value: 0x7F0D0002
-			public const int abc_action_menu_overflow_description = 2131558402;
+			// aapt resource value: 0x7F0E0002
+			public const int abc_action_menu_overflow_description = 2131623938;
 			
-			// aapt resource value: 0x7F0D0003
-			public const int abc_action_mode_done = 2131558403;
+			// aapt resource value: 0x7F0E0003
+			public const int abc_action_mode_done = 2131623939;
 			
-			// aapt resource value: 0x7F0D0005
-			public const int abc_activitychooserview_choose_application = 2131558405;
+			// aapt resource value: 0x7F0E0005
+			public const int abc_activitychooserview_choose_application = 2131623941;
 			
-			// aapt resource value: 0x7F0D0004
-			public const int abc_activity_chooser_view_see_all = 2131558404;
+			// aapt resource value: 0x7F0E0004
+			public const int abc_activity_chooser_view_see_all = 2131623940;
 			
-			// aapt resource value: 0x7F0D0006
-			public const int abc_capital_off = 2131558406;
+			// aapt resource value: 0x7F0E0006
+			public const int abc_capital_off = 2131623942;
 			
-			// aapt resource value: 0x7F0D0007
-			public const int abc_capital_on = 2131558407;
+			// aapt resource value: 0x7F0E0007
+			public const int abc_capital_on = 2131623943;
 			
-			// aapt resource value: 0x7F0D0008
-			public const int abc_menu_alt_shortcut_label = 2131558408;
+			// aapt resource value: 0x7F0E0008
+			public const int abc_menu_alt_shortcut_label = 2131623944;
 			
-			// aapt resource value: 0x7F0D0009
-			public const int abc_menu_ctrl_shortcut_label = 2131558409;
+			// aapt resource value: 0x7F0E0009
+			public const int abc_menu_ctrl_shortcut_label = 2131623945;
 			
-			// aapt resource value: 0x7F0D000A
-			public const int abc_menu_delete_shortcut_label = 2131558410;
+			// aapt resource value: 0x7F0E000A
+			public const int abc_menu_delete_shortcut_label = 2131623946;
 			
-			// aapt resource value: 0x7F0D000B
-			public const int abc_menu_enter_shortcut_label = 2131558411;
+			// aapt resource value: 0x7F0E000B
+			public const int abc_menu_enter_shortcut_label = 2131623947;
 			
-			// aapt resource value: 0x7F0D000C
-			public const int abc_menu_function_shortcut_label = 2131558412;
+			// aapt resource value: 0x7F0E000C
+			public const int abc_menu_function_shortcut_label = 2131623948;
 			
-			// aapt resource value: 0x7F0D000D
-			public const int abc_menu_meta_shortcut_label = 2131558413;
+			// aapt resource value: 0x7F0E000D
+			public const int abc_menu_meta_shortcut_label = 2131623949;
 			
-			// aapt resource value: 0x7F0D000E
-			public const int abc_menu_shift_shortcut_label = 2131558414;
+			// aapt resource value: 0x7F0E000E
+			public const int abc_menu_shift_shortcut_label = 2131623950;
 			
-			// aapt resource value: 0x7F0D000F
-			public const int abc_menu_space_shortcut_label = 2131558415;
+			// aapt resource value: 0x7F0E000F
+			public const int abc_menu_space_shortcut_label = 2131623951;
 			
-			// aapt resource value: 0x7F0D0010
-			public const int abc_menu_sym_shortcut_label = 2131558416;
+			// aapt resource value: 0x7F0E0010
+			public const int abc_menu_sym_shortcut_label = 2131623952;
 			
-			// aapt resource value: 0x7F0D0011
-			public const int abc_prepend_shortcut_label = 2131558417;
+			// aapt resource value: 0x7F0E0011
+			public const int abc_prepend_shortcut_label = 2131623953;
 			
-			// aapt resource value: 0x7F0D0013
-			public const int abc_searchview_description_clear = 2131558419;
+			// aapt resource value: 0x7F0E0013
+			public const int abc_searchview_description_clear = 2131623955;
 			
-			// aapt resource value: 0x7F0D0014
-			public const int abc_searchview_description_query = 2131558420;
+			// aapt resource value: 0x7F0E0014
+			public const int abc_searchview_description_query = 2131623956;
 			
-			// aapt resource value: 0x7F0D0015
-			public const int abc_searchview_description_search = 2131558421;
+			// aapt resource value: 0x7F0E0015
+			public const int abc_searchview_description_search = 2131623957;
 			
-			// aapt resource value: 0x7F0D0016
-			public const int abc_searchview_description_submit = 2131558422;
+			// aapt resource value: 0x7F0E0016
+			public const int abc_searchview_description_submit = 2131623958;
 			
-			// aapt resource value: 0x7F0D0017
-			public const int abc_searchview_description_voice = 2131558423;
+			// aapt resource value: 0x7F0E0017
+			public const int abc_searchview_description_voice = 2131623959;
 			
-			// aapt resource value: 0x7F0D0012
-			public const int abc_search_hint = 2131558418;
+			// aapt resource value: 0x7F0E0012
+			public const int abc_search_hint = 2131623954;
 			
-			// aapt resource value: 0x7F0D0018
-			public const int abc_shareactionprovider_share_with = 2131558424;
+			// aapt resource value: 0x7F0E0018
+			public const int abc_shareactionprovider_share_with = 2131623960;
 			
-			// aapt resource value: 0x7F0D0019
-			public const int abc_shareactionprovider_share_with_application = 2131558425;
+			// aapt resource value: 0x7F0E0019
+			public const int abc_shareactionprovider_share_with_application = 2131623961;
 			
-			// aapt resource value: 0x7F0D001A
-			public const int abc_toolbar_collapse_description = 2131558426;
+			// aapt resource value: 0x7F0E001A
+			public const int abc_toolbar_collapse_description = 2131623962;
 			
-			// aapt resource value: 0x7F0D001B
-			public const int appbar_scrolling_view_behavior = 2131558427;
+			// aapt resource value: 0x7F0E001B
+			public const int appbar_scrolling_view_behavior = 2131623963;
 			
-			// aapt resource value: 0x7F0D001D
-			public const int bottomsheet_action_expand_halfway = 2131558429;
+			// aapt resource value: 0x7F0E001D
+			public const int bottomsheet_action_expand_halfway = 2131623965;
 			
-			// aapt resource value: 0x7F0D001C
-			public const int bottom_sheet_behavior = 2131558428;
+			// aapt resource value: 0x7F0E001C
+			public const int bottom_sheet_behavior = 2131623964;
 			
-			// aapt resource value: 0x7F0D001E
-			public const int character_counter_content_description = 2131558430;
+			// aapt resource value: 0x7F0E001E
+			public const int character_counter_content_description = 2131623966;
 			
-			// aapt resource value: 0x7F0D001F
-			public const int character_counter_overflowed_content_description = 2131558431;
+			// aapt resource value: 0x7F0E001F
+			public const int character_counter_overflowed_content_description = 2131623967;
 			
-			// aapt resource value: 0x7F0D0020
-			public const int character_counter_pattern = 2131558432;
+			// aapt resource value: 0x7F0E0020
+			public const int character_counter_pattern = 2131623968;
 			
-			// aapt resource value: 0x7F0D0021
-			public const int chip_text = 2131558433;
+			// aapt resource value: 0x7F0E0021
+			public const int chip_text = 2131623969;
 			
-			// aapt resource value: 0x7F0D0022
-			public const int clear_text_end_icon_content_description = 2131558434;
+			// aapt resource value: 0x7F0E0022
+			public const int clear_text_end_icon_content_description = 2131623970;
 			
-			// aapt resource value: 0x7F0D0023
-			public const int copy_toast_msg = 2131558435;
+			// aapt resource value: 0x7F0E0023
+			public const int copy_toast_msg = 2131623971;
 			
-			// aapt resource value: 0x7F0D0024
-			public const int error_icon_content_description = 2131558436;
+			// aapt resource value: 0x7F0E0024
+			public const int error_icon_content_description = 2131623972;
 			
-			// aapt resource value: 0x7F0D0025
-			public const int exposed_dropdown_menu_content_description = 2131558437;
+			// aapt resource value: 0x7F0E0025
+			public const int exposed_dropdown_menu_content_description = 2131623973;
 			
-			// aapt resource value: 0x7F0D0026
-			public const int fab_transformation_scrim_behavior = 2131558438;
+			// aapt resource value: 0x7F0E0026
+			public const int fab_transformation_scrim_behavior = 2131623974;
 			
-			// aapt resource value: 0x7F0D0027
-			public const int fab_transformation_sheet_behavior = 2131558439;
+			// aapt resource value: 0x7F0E0027
+			public const int fab_transformation_sheet_behavior = 2131623975;
 			
-			// aapt resource value: 0x7F0D0028
-			public const int fallback_menu_item_copy_link = 2131558440;
+			// aapt resource value: 0x7F0E0028
+			public const int fallback_menu_item_copy_link = 2131623976;
 			
-			// aapt resource value: 0x7F0D0029
-			public const int fallback_menu_item_open_in_browser = 2131558441;
+			// aapt resource value: 0x7F0E0029
+			public const int fallback_menu_item_open_in_browser = 2131623977;
 			
-			// aapt resource value: 0x7F0D002A
-			public const int fallback_menu_item_share_link = 2131558442;
+			// aapt resource value: 0x7F0E002A
+			public const int fallback_menu_item_share_link = 2131623978;
 			
-			// aapt resource value: 0x7F0D002B
-			public const int hide_bottom_view_on_scroll_behavior = 2131558443;
+			// aapt resource value: 0x7F0E002B
+			public const int hide_bottom_view_on_scroll_behavior = 2131623979;
 			
-			// aapt resource value: 0x7F0D002C
-			public const int icon_content_description = 2131558444;
+			// aapt resource value: 0x7F0E002C
+			public const int icon_content_description = 2131623980;
 			
-			// aapt resource value: 0x7F0D002D
-			public const int item_view_role_description = 2131558445;
+			// aapt resource value: 0x7F0E002D
+			public const int item_view_role_description = 2131623981;
 			
-			// aapt resource value: 0x7F0D002E
-			public const int material_clock_display_divider = 2131558446;
+			// aapt resource value: 0x7F0E002E
+			public const int material_clock_display_divider = 2131623982;
 			
-			// aapt resource value: 0x7F0D002F
-			public const int material_clock_toggle_content_description = 2131558447;
+			// aapt resource value: 0x7F0E002F
+			public const int material_clock_toggle_content_description = 2131623983;
 			
-			// aapt resource value: 0x7F0D0030
-			public const int material_hour_selection = 2131558448;
+			// aapt resource value: 0x7F0E0030
+			public const int material_hour_selection = 2131623984;
 			
-			// aapt resource value: 0x7F0D0031
-			public const int material_hour_suffix = 2131558449;
+			// aapt resource value: 0x7F0E0031
+			public const int material_hour_suffix = 2131623985;
 			
-			// aapt resource value: 0x7F0D0032
-			public const int material_minute_selection = 2131558450;
+			// aapt resource value: 0x7F0E0032
+			public const int material_minute_selection = 2131623986;
 			
-			// aapt resource value: 0x7F0D0033
-			public const int material_minute_suffix = 2131558451;
+			// aapt resource value: 0x7F0E0033
+			public const int material_minute_suffix = 2131623987;
 			
-			// aapt resource value: 0x7F0D0034
-			public const int material_slider_range_end = 2131558452;
+			// aapt resource value: 0x7F0E0034
+			public const int material_slider_range_end = 2131623988;
 			
-			// aapt resource value: 0x7F0D0035
-			public const int material_slider_range_start = 2131558453;
+			// aapt resource value: 0x7F0E0035
+			public const int material_slider_range_start = 2131623989;
 			
-			// aapt resource value: 0x7F0D0036
-			public const int material_timepicker_am = 2131558454;
+			// aapt resource value: 0x7F0E0036
+			public const int material_timepicker_am = 2131623990;
 			
-			// aapt resource value: 0x7F0D0037
-			public const int material_timepicker_clock_mode_description = 2131558455;
+			// aapt resource value: 0x7F0E0037
+			public const int material_timepicker_clock_mode_description = 2131623991;
 			
-			// aapt resource value: 0x7F0D0038
-			public const int material_timepicker_hour = 2131558456;
+			// aapt resource value: 0x7F0E0038
+			public const int material_timepicker_hour = 2131623992;
 			
-			// aapt resource value: 0x7F0D0039
-			public const int material_timepicker_minute = 2131558457;
+			// aapt resource value: 0x7F0E0039
+			public const int material_timepicker_minute = 2131623993;
 			
-			// aapt resource value: 0x7F0D003A
-			public const int material_timepicker_pm = 2131558458;
+			// aapt resource value: 0x7F0E003A
+			public const int material_timepicker_pm = 2131623994;
 			
-			// aapt resource value: 0x7F0D003B
-			public const int material_timepicker_select_time = 2131558459;
+			// aapt resource value: 0x7F0E003B
+			public const int material_timepicker_select_time = 2131623995;
 			
-			// aapt resource value: 0x7F0D003C
-			public const int material_timepicker_text_input_mode_description = 2131558460;
+			// aapt resource value: 0x7F0E003C
+			public const int material_timepicker_text_input_mode_description = 2131623996;
 			
-			// aapt resource value: 0x7F0D003D
-			public const int mb_activity_title_step_back_side = 2131558461;
+			// aapt resource value: 0x7F0E003D
+			public const int mb_activity_title_step_back_side = 2131623997;
 			
-			// aapt resource value: 0x7F0D003E
-			public const int mb_activity_title_step_front_side = 2131558462;
+			// aapt resource value: 0x7F0E003E
+			public const int mb_activity_title_step_front_side = 2131623998;
 			
-			// aapt resource value: 0x7F0D003F
-			public const int mb_autofocus_fail = 2131558463;
+			// aapt resource value: 0x7F0E003F
+			public const int mb_autofocus_fail = 2131623999;
 			
-			// aapt resource value: 0x7F0D0040
-			public const int mb_blinkid_back_instructions_barcode = 2131558464;
+			// aapt resource value: 0x7F0E0040
+			public const int mb_blinkid_back_instructions_barcode = 2131624000;
 			
-			// aapt resource value: 0x7F0D0041
-			public const int mb_blinkid_camera_flip_document = 2131558465;
+			// aapt resource value: 0x7F0E0041
+			public const int mb_blinkid_camera_flip_document = 2131624001;
 			
-			// aapt resource value: 0x7F0D0042
-			public const int mb_blinkid_document_not_fully_visible = 2131558466;
+			// aapt resource value: 0x7F0E0042
+			public const int mb_blinkid_document_not_fully_visible = 2131624002;
 			
-			// aapt resource value: 0x7F0D0043
-			public const int mb_blinkid_document_too_close_to_edge = 2131558467;
+			// aapt resource value: 0x7F0E0043
+			public const int mb_blinkid_document_too_close_to_edge = 2131624003;
 			
-			// aapt resource value: 0x7F0D0044
-			public const int mb_blinkid_front_instructions = 2131558468;
+			// aapt resource value: 0x7F0E0044
+			public const int mb_blinkid_front_instructions = 2131624004;
 			
-			// aapt resource value: 0x7F0D0045
-			public const int mb_camera_not_allowed = 2131558469;
+			// aapt resource value: 0x7F0E0045
+			public const int mb_camera_not_allowed = 2131624005;
 			
-			// aapt resource value: 0x7F0D0046
-			public const int mb_camera_not_ready = 2131558470;
+			// aapt resource value: 0x7F0E0046
+			public const int mb_camera_not_ready = 2131624006;
 			
-			// aapt resource value: 0x7F0D0047
-			public const int mb_camera_permission_required = 2131558471;
+			// aapt resource value: 0x7F0E0047
+			public const int mb_camera_permission_required = 2131624007;
 			
-			// aapt resource value: 0x7F0D0048
-			public const int mb_custom_ui_forbidden = 2131558472;
+			// aapt resource value: 0x7F0E0048
+			public const int mb_custom_ui_forbidden = 2131624008;
 			
-			// aapt resource value: 0x7F0D0049
-			public const int mb_data_not_match_msg = 2131558473;
+			// aapt resource value: 0x7F0E0049
+			public const int mb_data_not_match_msg = 2131624009;
 			
-			// aapt resource value: 0x7F0D004A
-			public const int mb_data_not_match_retry_button = 2131558474;
+			// aapt resource value: 0x7F0E004A
+			public const int mb_data_not_match_retry_button = 2131624010;
 			
-			// aapt resource value: 0x7F0D004B
-			public const int mb_data_not_match_title = 2131558475;
+			// aapt resource value: 0x7F0E004B
+			public const int mb_data_not_match_title = 2131624011;
 			
-			// aapt resource value: 0x7F0D004C
-			public const int mb_dismiss_error_dialog = 2131558476;
+			// aapt resource value: 0x7F0E004C
+			public const int mb_dismiss_error_dialog = 2131624012;
 			
-			// aapt resource value: 0x7F0D004D
-			public const int mb_enable_camera = 2131558477;
+			// aapt resource value: 0x7F0E004D
+			public const int mb_enable_camera = 2131624013;
 			
-			// aapt resource value: 0x7F0D004E
-			public const int mb_enable_permission_help = 2131558478;
+			// aapt resource value: 0x7F0E004E
+			public const int mb_enable_permission_help = 2131624014;
 			
-			// aapt resource value: 0x7F0D004F
-			public const int mb_enable_permission_help_instant_app = 2131558479;
+			// aapt resource value: 0x7F0E004F
+			public const int mb_enable_permission_help_instant_app = 2131624015;
 			
-			// aapt resource value: 0x7F0D0050
-			public const int mb_error_camera_high = 2131558480;
+			// aapt resource value: 0x7F0E0050
+			public const int mb_error_camera_high = 2131624016;
 			
-			// aapt resource value: 0x7F0D0051
-			public const int mb_error_camera_near = 2131558481;
+			// aapt resource value: 0x7F0E0051
+			public const int mb_error_camera_near = 2131624017;
 			
-			// aapt resource value: 0x7F0D0052
-			public const int mb_error_initializing = 2131558482;
+			// aapt resource value: 0x7F0E0052
+			public const int mb_error_initializing = 2131624018;
 			
-			// aapt resource value: 0x7F0D0053
-			public const int mb_feature_unsupported_android_version = 2131558483;
+			// aapt resource value: 0x7F0E0053
+			public const int mb_feature_unsupported_android_version = 2131624019;
 			
-			// aapt resource value: 0x7F0D0054
-			public const int mb_feature_unsupported_autofocus = 2131558484;
+			// aapt resource value: 0x7F0E0054
+			public const int mb_feature_unsupported_autofocus = 2131624020;
 			
-			// aapt resource value: 0x7F0D0055
-			public const int mb_feature_unsupported_device = 2131558485;
+			// aapt resource value: 0x7F0E0055
+			public const int mb_feature_unsupported_device = 2131624021;
 			
-			// aapt resource value: 0x7F0D0056
-			public const int mb_flashlight_warning_message = 2131558486;
+			// aapt resource value: 0x7F0E0056
+			public const int mb_flashlight_warning_message = 2131624022;
 			
-			// aapt resource value: 0x7F0D0057
-			public const int mb_invalid_license = 2131558487;
+			// aapt resource value: 0x7F0E0057
+			public const int mb_invalid_license = 2131624023;
 			
-			// aapt resource value: 0x7F0D0058
-			public const int mb_licence_check_device_offline = 2131558488;
+			// aapt resource value: 0x7F0E0058
+			public const int mb_licence_check_device_offline = 2131624024;
 			
-			// aapt resource value: 0x7F0D0059
-			public const int mb_licence_check_failed = 2131558489;
+			// aapt resource value: 0x7F0E0059
+			public const int mb_licence_check_failed = 2131624025;
 			
-			// aapt resource value: 0x7F0D005A
-			public const int mb_licence_locked = 2131558490;
+			// aapt resource value: 0x7F0E005A
+			public const int mb_licence_locked = 2131624026;
 			
-			// aapt resource value: 0x7F0D005B
-			public const int mb_recognition_timeout_dialog_message = 2131558491;
+			// aapt resource value: 0x7F0E005B
+			public const int mb_recognition_timeout_dialog_message = 2131624027;
 			
-			// aapt resource value: 0x7F0D005C
-			public const int mb_recognition_timeout_dialog_retry_button = 2131558492;
+			// aapt resource value: 0x7F0E005C
+			public const int mb_recognition_timeout_dialog_retry_button = 2131624028;
 			
-			// aapt resource value: 0x7F0D005D
-			public const int mb_recognition_timeout_dialog_title = 2131558493;
+			// aapt resource value: 0x7F0E005D
+			public const int mb_recognition_timeout_dialog_title = 2131624029;
 			
-			// aapt resource value: 0x7F0D005E
-			public const int mb_splash_msg_id_back = 2131558494;
+			// aapt resource value: 0x7F0E005E
+			public const int mb_splash_msg_id_back = 2131624030;
 			
-			// aapt resource value: 0x7F0D005F
-			public const int mb_splash_msg_id_front = 2131558495;
+			// aapt resource value: 0x7F0E005F
+			public const int mb_splash_msg_id_front = 2131624031;
 			
-			// aapt resource value: 0x7F0D0060
-			public const int mb_tooltip_back_id = 2131558496;
+			// aapt resource value: 0x7F0E0060
+			public const int mb_tooltip_back_id = 2131624032;
 			
-			// aapt resource value: 0x7F0D0061
-			public const int mb_tooltip_front_id = 2131558497;
+			// aapt resource value: 0x7F0E0061
+			public const int mb_tooltip_front_id = 2131624033;
 			
-			// aapt resource value: 0x7F0D0062
-			public const int mb_tooltip_glare = 2131558498;
+			// aapt resource value: 0x7F0E0062
+			public const int mb_tooltip_glare = 2131624034;
 			
-			// aapt resource value: 0x7F0D0063
-			public const int mb_unsupported_document_message = 2131558499;
+			// aapt resource value: 0x7F0E0063
+			public const int mb_unsupported_document_message = 2131624035;
 			
-			// aapt resource value: 0x7F0D0064
-			public const int mb_unsupported_document_title = 2131558500;
+			// aapt resource value: 0x7F0E0064
+			public const int mb_unsupported_document_title = 2131624036;
 			
-			// aapt resource value: 0x7F0D0065
-			public const int mb_warning_title = 2131558501;
+			// aapt resource value: 0x7F0E0065
+			public const int mb_warning_title = 2131624037;
 			
-			// aapt resource value: 0x7F0D0066
-			public const int mr_button_content_description = 2131558502;
+			// aapt resource value: 0x7F0E0066
+			public const int mr_button_content_description = 2131624038;
 			
-			// aapt resource value: 0x7F0D0067
-			public const int mr_cast_button_connected = 2131558503;
+			// aapt resource value: 0x7F0E0067
+			public const int mr_cast_button_connected = 2131624039;
 			
-			// aapt resource value: 0x7F0D0068
-			public const int mr_cast_button_connecting = 2131558504;
+			// aapt resource value: 0x7F0E0068
+			public const int mr_cast_button_connecting = 2131624040;
 			
-			// aapt resource value: 0x7F0D0069
-			public const int mr_cast_button_disconnected = 2131558505;
+			// aapt resource value: 0x7F0E0069
+			public const int mr_cast_button_disconnected = 2131624041;
 			
-			// aapt resource value: 0x7F0D006A
-			public const int mr_cast_dialog_title_view_placeholder = 2131558506;
+			// aapt resource value: 0x7F0E006A
+			public const int mr_cast_dialog_title_view_placeholder = 2131624042;
 			
-			// aapt resource value: 0x7F0D006B
-			public const int mr_chooser_searching = 2131558507;
+			// aapt resource value: 0x7F0E006B
+			public const int mr_chooser_searching = 2131624043;
 			
-			// aapt resource value: 0x7F0D006C
-			public const int mr_chooser_title = 2131558508;
+			// aapt resource value: 0x7F0E006C
+			public const int mr_chooser_title = 2131624044;
 			
-			// aapt resource value: 0x7F0D006D
-			public const int mr_controller_album_art = 2131558509;
+			// aapt resource value: 0x7F0E006D
+			public const int mr_controller_album_art = 2131624045;
 			
-			// aapt resource value: 0x7F0D006E
-			public const int mr_controller_casting_screen = 2131558510;
+			// aapt resource value: 0x7F0E006E
+			public const int mr_controller_casting_screen = 2131624046;
 			
-			// aapt resource value: 0x7F0D006F
-			public const int mr_controller_close_description = 2131558511;
+			// aapt resource value: 0x7F0E006F
+			public const int mr_controller_close_description = 2131624047;
 			
-			// aapt resource value: 0x7F0D0070
-			public const int mr_controller_collapse_group = 2131558512;
+			// aapt resource value: 0x7F0E0070
+			public const int mr_controller_collapse_group = 2131624048;
 			
-			// aapt resource value: 0x7F0D0071
-			public const int mr_controller_disconnect = 2131558513;
+			// aapt resource value: 0x7F0E0071
+			public const int mr_controller_disconnect = 2131624049;
 			
-			// aapt resource value: 0x7F0D0072
-			public const int mr_controller_expand_group = 2131558514;
+			// aapt resource value: 0x7F0E0072
+			public const int mr_controller_expand_group = 2131624050;
 			
-			// aapt resource value: 0x7F0D0073
-			public const int mr_controller_no_info_available = 2131558515;
+			// aapt resource value: 0x7F0E0073
+			public const int mr_controller_no_info_available = 2131624051;
 			
-			// aapt resource value: 0x7F0D0074
-			public const int mr_controller_no_media_selected = 2131558516;
+			// aapt resource value: 0x7F0E0074
+			public const int mr_controller_no_media_selected = 2131624052;
 			
-			// aapt resource value: 0x7F0D0075
-			public const int mr_controller_pause = 2131558517;
+			// aapt resource value: 0x7F0E0075
+			public const int mr_controller_pause = 2131624053;
 			
-			// aapt resource value: 0x7F0D0076
-			public const int mr_controller_play = 2131558518;
+			// aapt resource value: 0x7F0E0076
+			public const int mr_controller_play = 2131624054;
 			
-			// aapt resource value: 0x7F0D0077
-			public const int mr_controller_stop = 2131558519;
+			// aapt resource value: 0x7F0E0077
+			public const int mr_controller_stop = 2131624055;
 			
-			// aapt resource value: 0x7F0D0078
-			public const int mr_controller_stop_casting = 2131558520;
+			// aapt resource value: 0x7F0E0078
+			public const int mr_controller_stop_casting = 2131624056;
 			
-			// aapt resource value: 0x7F0D0079
-			public const int mr_controller_volume_slider = 2131558521;
+			// aapt resource value: 0x7F0E0079
+			public const int mr_controller_volume_slider = 2131624057;
 			
-			// aapt resource value: 0x7F0D007A
-			public const int mr_dialog_default_group_name = 2131558522;
+			// aapt resource value: 0x7F0E007A
+			public const int mr_dialog_default_group_name = 2131624058;
 			
-			// aapt resource value: 0x7F0D007B
-			public const int mr_dialog_groupable_header = 2131558523;
+			// aapt resource value: 0x7F0E007B
+			public const int mr_dialog_groupable_header = 2131624059;
 			
-			// aapt resource value: 0x7F0D007C
-			public const int mr_dialog_transferable_header = 2131558524;
+			// aapt resource value: 0x7F0E007C
+			public const int mr_dialog_transferable_header = 2131624060;
 			
-			// aapt resource value: 0x7F0D007D
-			public const int mr_system_route_name = 2131558525;
+			// aapt resource value: 0x7F0E007D
+			public const int mr_system_route_name = 2131624061;
 			
-			// aapt resource value: 0x7F0D007E
-			public const int mr_user_route_category_name = 2131558526;
+			// aapt resource value: 0x7F0E007E
+			public const int mr_user_route_category_name = 2131624062;
 			
-			// aapt resource value: 0x7F0D007F
-			public const int mtrl_badge_numberless_content_description = 2131558527;
+			// aapt resource value: 0x7F0E007F
+			public const int mtrl_badge_numberless_content_description = 2131624063;
 			
-			// aapt resource value: 0x7F0D0080
-			public const int mtrl_chip_close_icon_content_description = 2131558528;
+			// aapt resource value: 0x7F0E0080
+			public const int mtrl_chip_close_icon_content_description = 2131624064;
 			
-			// aapt resource value: 0x7F0D0081
-			public const int mtrl_exceed_max_badge_number_content_description = 2131558529;
+			// aapt resource value: 0x7F0E0081
+			public const int mtrl_exceed_max_badge_number_content_description = 2131624065;
 			
-			// aapt resource value: 0x7F0D0082
-			public const int mtrl_exceed_max_badge_number_suffix = 2131558530;
+			// aapt resource value: 0x7F0E0082
+			public const int mtrl_exceed_max_badge_number_suffix = 2131624066;
 			
-			// aapt resource value: 0x7F0D0083
-			public const int mtrl_picker_a11y_next_month = 2131558531;
+			// aapt resource value: 0x7F0E0083
+			public const int mtrl_picker_a11y_next_month = 2131624067;
 			
-			// aapt resource value: 0x7F0D0084
-			public const int mtrl_picker_a11y_prev_month = 2131558532;
+			// aapt resource value: 0x7F0E0084
+			public const int mtrl_picker_a11y_prev_month = 2131624068;
 			
-			// aapt resource value: 0x7F0D0085
-			public const int mtrl_picker_announce_current_selection = 2131558533;
+			// aapt resource value: 0x7F0E0085
+			public const int mtrl_picker_announce_current_selection = 2131624069;
 			
-			// aapt resource value: 0x7F0D0086
-			public const int mtrl_picker_cancel = 2131558534;
+			// aapt resource value: 0x7F0E0086
+			public const int mtrl_picker_cancel = 2131624070;
 			
-			// aapt resource value: 0x7F0D0087
-			public const int mtrl_picker_confirm = 2131558535;
+			// aapt resource value: 0x7F0E0087
+			public const int mtrl_picker_confirm = 2131624071;
 			
-			// aapt resource value: 0x7F0D0088
-			public const int mtrl_picker_date_header_selected = 2131558536;
+			// aapt resource value: 0x7F0E0088
+			public const int mtrl_picker_date_header_selected = 2131624072;
 			
-			// aapt resource value: 0x7F0D0089
-			public const int mtrl_picker_date_header_title = 2131558537;
+			// aapt resource value: 0x7F0E0089
+			public const int mtrl_picker_date_header_title = 2131624073;
 			
-			// aapt resource value: 0x7F0D008A
-			public const int mtrl_picker_date_header_unselected = 2131558538;
+			// aapt resource value: 0x7F0E008A
+			public const int mtrl_picker_date_header_unselected = 2131624074;
 			
-			// aapt resource value: 0x7F0D008B
-			public const int mtrl_picker_day_of_week_column_header = 2131558539;
+			// aapt resource value: 0x7F0E008B
+			public const int mtrl_picker_day_of_week_column_header = 2131624075;
 			
-			// aapt resource value: 0x7F0D008C
-			public const int mtrl_picker_invalid_format = 2131558540;
+			// aapt resource value: 0x7F0E008C
+			public const int mtrl_picker_invalid_format = 2131624076;
 			
-			// aapt resource value: 0x7F0D008D
-			public const int mtrl_picker_invalid_format_example = 2131558541;
+			// aapt resource value: 0x7F0E008D
+			public const int mtrl_picker_invalid_format_example = 2131624077;
 			
-			// aapt resource value: 0x7F0D008E
-			public const int mtrl_picker_invalid_format_use = 2131558542;
+			// aapt resource value: 0x7F0E008E
+			public const int mtrl_picker_invalid_format_use = 2131624078;
 			
-			// aapt resource value: 0x7F0D008F
-			public const int mtrl_picker_invalid_range = 2131558543;
+			// aapt resource value: 0x7F0E008F
+			public const int mtrl_picker_invalid_range = 2131624079;
 			
-			// aapt resource value: 0x7F0D0090
-			public const int mtrl_picker_navigate_to_year_description = 2131558544;
+			// aapt resource value: 0x7F0E0090
+			public const int mtrl_picker_navigate_to_year_description = 2131624080;
 			
-			// aapt resource value: 0x7F0D0091
-			public const int mtrl_picker_out_of_range = 2131558545;
+			// aapt resource value: 0x7F0E0091
+			public const int mtrl_picker_out_of_range = 2131624081;
 			
-			// aapt resource value: 0x7F0D0092
-			public const int mtrl_picker_range_header_only_end_selected = 2131558546;
+			// aapt resource value: 0x7F0E0092
+			public const int mtrl_picker_range_header_only_end_selected = 2131624082;
 			
-			// aapt resource value: 0x7F0D0093
-			public const int mtrl_picker_range_header_only_start_selected = 2131558547;
+			// aapt resource value: 0x7F0E0093
+			public const int mtrl_picker_range_header_only_start_selected = 2131624083;
 			
-			// aapt resource value: 0x7F0D0094
-			public const int mtrl_picker_range_header_selected = 2131558548;
+			// aapt resource value: 0x7F0E0094
+			public const int mtrl_picker_range_header_selected = 2131624084;
 			
-			// aapt resource value: 0x7F0D0095
-			public const int mtrl_picker_range_header_title = 2131558549;
+			// aapt resource value: 0x7F0E0095
+			public const int mtrl_picker_range_header_title = 2131624085;
 			
-			// aapt resource value: 0x7F0D0096
-			public const int mtrl_picker_range_header_unselected = 2131558550;
+			// aapt resource value: 0x7F0E0096
+			public const int mtrl_picker_range_header_unselected = 2131624086;
 			
-			// aapt resource value: 0x7F0D0097
-			public const int mtrl_picker_save = 2131558551;
+			// aapt resource value: 0x7F0E0097
+			public const int mtrl_picker_save = 2131624087;
 			
-			// aapt resource value: 0x7F0D0098
-			public const int mtrl_picker_text_input_date_hint = 2131558552;
+			// aapt resource value: 0x7F0E0098
+			public const int mtrl_picker_text_input_date_hint = 2131624088;
 			
-			// aapt resource value: 0x7F0D0099
-			public const int mtrl_picker_text_input_date_range_end_hint = 2131558553;
+			// aapt resource value: 0x7F0E0099
+			public const int mtrl_picker_text_input_date_range_end_hint = 2131624089;
 			
-			// aapt resource value: 0x7F0D009A
-			public const int mtrl_picker_text_input_date_range_start_hint = 2131558554;
+			// aapt resource value: 0x7F0E009A
+			public const int mtrl_picker_text_input_date_range_start_hint = 2131624090;
 			
-			// aapt resource value: 0x7F0D009B
-			public const int mtrl_picker_text_input_day_abbr = 2131558555;
+			// aapt resource value: 0x7F0E009B
+			public const int mtrl_picker_text_input_day_abbr = 2131624091;
 			
-			// aapt resource value: 0x7F0D009C
-			public const int mtrl_picker_text_input_month_abbr = 2131558556;
+			// aapt resource value: 0x7F0E009C
+			public const int mtrl_picker_text_input_month_abbr = 2131624092;
 			
-			// aapt resource value: 0x7F0D009D
-			public const int mtrl_picker_text_input_year_abbr = 2131558557;
+			// aapt resource value: 0x7F0E009D
+			public const int mtrl_picker_text_input_year_abbr = 2131624093;
 			
-			// aapt resource value: 0x7F0D009E
-			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131558558;
+			// aapt resource value: 0x7F0E009E
+			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131624094;
 			
-			// aapt resource value: 0x7F0D009F
-			public const int mtrl_picker_toggle_to_day_selection = 2131558559;
+			// aapt resource value: 0x7F0E009F
+			public const int mtrl_picker_toggle_to_day_selection = 2131624095;
 			
-			// aapt resource value: 0x7F0D00A0
-			public const int mtrl_picker_toggle_to_text_input_mode = 2131558560;
+			// aapt resource value: 0x7F0E00A0
+			public const int mtrl_picker_toggle_to_text_input_mode = 2131624096;
 			
-			// aapt resource value: 0x7F0D00A1
-			public const int mtrl_picker_toggle_to_year_selection = 2131558561;
+			// aapt resource value: 0x7F0E00A1
+			public const int mtrl_picker_toggle_to_year_selection = 2131624097;
 			
-			// aapt resource value: 0x7F0D00A2
-			public const int overflow_tab_title = 2131558562;
+			// aapt resource value: 0x7F0E00A2
+			public const int overflow_tab_title = 2131624098;
 			
-			// aapt resource value: 0x7F0D00A3
-			public const int password_toggle_content_description = 2131558563;
+			// aapt resource value: 0x7F0E00A3
+			public const int password_toggle_content_description = 2131624099;
 			
-			// aapt resource value: 0x7F0D00A4
-			public const int path_password_eye = 2131558564;
+			// aapt resource value: 0x7F0E00A4
+			public const int path_password_eye = 2131624100;
 			
-			// aapt resource value: 0x7F0D00A5
-			public const int path_password_eye_mask_strike_through = 2131558565;
+			// aapt resource value: 0x7F0E00A5
+			public const int path_password_eye_mask_strike_through = 2131624101;
 			
-			// aapt resource value: 0x7F0D00A6
-			public const int path_password_eye_mask_visible = 2131558566;
+			// aapt resource value: 0x7F0E00A6
+			public const int path_password_eye_mask_visible = 2131624102;
 			
-			// aapt resource value: 0x7F0D00A7
-			public const int path_password_strike_through = 2131558567;
+			// aapt resource value: 0x7F0E00A7
+			public const int path_password_strike_through = 2131624103;
 			
-			// aapt resource value: 0x7F0D00A8
-			public const int search_menu_title = 2131558568;
+			// aapt resource value: 0x7F0E00A8
+			public const int search_menu_title = 2131624104;
 			
-			// aapt resource value: 0x7F0D00A9
-			public const int status_bar_notification_info_overflow = 2131558569;
+			// aapt resource value: 0x7F0E00A9
+			public const int status_bar_notification_info_overflow = 2131624105;
 			
 			static String()
 			{
@@ -16391,2279 +19429,2279 @@ namespace BlinkIDFormsSample.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7F0E0000
-			public const int AlertDialog_AppCompat = 2131623936;
+			// aapt resource value: 0x7F0F0000
+			public const int AlertDialog_AppCompat = 2131689472;
 			
-			// aapt resource value: 0x7F0E0001
-			public const int AlertDialog_AppCompat_Light = 2131623937;
+			// aapt resource value: 0x7F0F0001
+			public const int AlertDialog_AppCompat_Light = 2131689473;
 			
-			// aapt resource value: 0x7F0E0002
-			public const int AndroidThemeColorAccentYellow = 2131623938;
+			// aapt resource value: 0x7F0F0002
+			public const int AndroidThemeColorAccentYellow = 2131689474;
 			
-			// aapt resource value: 0x7F0E0003
-			public const int Animation_AppCompat_Dialog = 2131623939;
+			// aapt resource value: 0x7F0F0003
+			public const int Animation_AppCompat_Dialog = 2131689475;
 			
-			// aapt resource value: 0x7F0E0004
-			public const int Animation_AppCompat_DropDownUp = 2131623940;
+			// aapt resource value: 0x7F0F0004
+			public const int Animation_AppCompat_DropDownUp = 2131689476;
 			
-			// aapt resource value: 0x7F0E0005
-			public const int Animation_AppCompat_Tooltip = 2131623941;
+			// aapt resource value: 0x7F0F0005
+			public const int Animation_AppCompat_Tooltip = 2131689477;
 			
-			// aapt resource value: 0x7F0E0006
-			public const int Animation_Design_BottomSheetDialog = 2131623942;
+			// aapt resource value: 0x7F0F0006
+			public const int Animation_Design_BottomSheetDialog = 2131689478;
 			
-			// aapt resource value: 0x7F0E0007
-			public const int Animation_MaterialComponents_BottomSheetDialog = 2131623943;
+			// aapt resource value: 0x7F0F0007
+			public const int Animation_MaterialComponents_BottomSheetDialog = 2131689479;
 			
-			// aapt resource value: 0x7F0E0008
-			public const int AppCompatDialogStyle = 2131623944;
+			// aapt resource value: 0x7F0F0008
+			public const int AppCompatDialogStyle = 2131689480;
 			
-			// aapt resource value: 0x7F0E0009
-			public const int Base_AlertDialog_AppCompat = 2131623945;
+			// aapt resource value: 0x7F0F0009
+			public const int Base_AlertDialog_AppCompat = 2131689481;
 			
-			// aapt resource value: 0x7F0E000A
-			public const int Base_AlertDialog_AppCompat_Light = 2131623946;
+			// aapt resource value: 0x7F0F000A
+			public const int Base_AlertDialog_AppCompat_Light = 2131689482;
 			
-			// aapt resource value: 0x7F0E000B
-			public const int Base_Animation_AppCompat_Dialog = 2131623947;
+			// aapt resource value: 0x7F0F000B
+			public const int Base_Animation_AppCompat_Dialog = 2131689483;
 			
-			// aapt resource value: 0x7F0E000C
-			public const int Base_Animation_AppCompat_DropDownUp = 2131623948;
+			// aapt resource value: 0x7F0F000C
+			public const int Base_Animation_AppCompat_DropDownUp = 2131689484;
 			
-			// aapt resource value: 0x7F0E000D
-			public const int Base_Animation_AppCompat_Tooltip = 2131623949;
+			// aapt resource value: 0x7F0F000D
+			public const int Base_Animation_AppCompat_Tooltip = 2131689485;
 			
-			// aapt resource value: 0x7F0E000E
-			public const int Base_CardView = 2131623950;
+			// aapt resource value: 0x7F0F000E
+			public const int Base_CardView = 2131689486;
 			
-			// aapt resource value: 0x7F0E0010
-			public const int Base_DialogWindowTitleBackground_AppCompat = 2131623952;
+			// aapt resource value: 0x7F0F0010
+			public const int Base_DialogWindowTitleBackground_AppCompat = 2131689488;
 			
-			// aapt resource value: 0x7F0E000F
-			public const int Base_DialogWindowTitle_AppCompat = 2131623951;
+			// aapt resource value: 0x7F0F000F
+			public const int Base_DialogWindowTitle_AppCompat = 2131689487;
 			
-			// aapt resource value: 0x7F0E0011
-			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Icon = 2131623953;
+			// aapt resource value: 0x7F0F0011
+			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Icon = 2131689489;
 			
-			// aapt resource value: 0x7F0E0012
-			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Panel = 2131623954;
+			// aapt resource value: 0x7F0F0012
+			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Panel = 2131689490;
 			
-			// aapt resource value: 0x7F0E0013
-			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Text = 2131623955;
+			// aapt resource value: 0x7F0F0013
+			public const int Base_MaterialAlertDialog_MaterialComponents_Title_Text = 2131689491;
 			
-			// aapt resource value: 0x7F0E0014
-			public const int Base_TextAppearance_AppCompat = 2131623956;
+			// aapt resource value: 0x7F0F0014
+			public const int Base_TextAppearance_AppCompat = 2131689492;
 			
-			// aapt resource value: 0x7F0E0015
-			public const int Base_TextAppearance_AppCompat_Body1 = 2131623957;
+			// aapt resource value: 0x7F0F0015
+			public const int Base_TextAppearance_AppCompat_Body1 = 2131689493;
 			
-			// aapt resource value: 0x7F0E0016
-			public const int Base_TextAppearance_AppCompat_Body2 = 2131623958;
+			// aapt resource value: 0x7F0F0016
+			public const int Base_TextAppearance_AppCompat_Body2 = 2131689494;
 			
-			// aapt resource value: 0x7F0E0017
-			public const int Base_TextAppearance_AppCompat_Button = 2131623959;
+			// aapt resource value: 0x7F0F0017
+			public const int Base_TextAppearance_AppCompat_Button = 2131689495;
 			
-			// aapt resource value: 0x7F0E0018
-			public const int Base_TextAppearance_AppCompat_Caption = 2131623960;
+			// aapt resource value: 0x7F0F0018
+			public const int Base_TextAppearance_AppCompat_Caption = 2131689496;
 			
-			// aapt resource value: 0x7F0E0019
-			public const int Base_TextAppearance_AppCompat_Display1 = 2131623961;
+			// aapt resource value: 0x7F0F0019
+			public const int Base_TextAppearance_AppCompat_Display1 = 2131689497;
 			
-			// aapt resource value: 0x7F0E001A
-			public const int Base_TextAppearance_AppCompat_Display2 = 2131623962;
+			// aapt resource value: 0x7F0F001A
+			public const int Base_TextAppearance_AppCompat_Display2 = 2131689498;
 			
-			// aapt resource value: 0x7F0E001B
-			public const int Base_TextAppearance_AppCompat_Display3 = 2131623963;
+			// aapt resource value: 0x7F0F001B
+			public const int Base_TextAppearance_AppCompat_Display3 = 2131689499;
 			
-			// aapt resource value: 0x7F0E001C
-			public const int Base_TextAppearance_AppCompat_Display4 = 2131623964;
+			// aapt resource value: 0x7F0F001C
+			public const int Base_TextAppearance_AppCompat_Display4 = 2131689500;
 			
-			// aapt resource value: 0x7F0E001D
-			public const int Base_TextAppearance_AppCompat_Headline = 2131623965;
+			// aapt resource value: 0x7F0F001D
+			public const int Base_TextAppearance_AppCompat_Headline = 2131689501;
 			
-			// aapt resource value: 0x7F0E001E
-			public const int Base_TextAppearance_AppCompat_Inverse = 2131623966;
+			// aapt resource value: 0x7F0F001E
+			public const int Base_TextAppearance_AppCompat_Inverse = 2131689502;
 			
-			// aapt resource value: 0x7F0E001F
-			public const int Base_TextAppearance_AppCompat_Large = 2131623967;
+			// aapt resource value: 0x7F0F001F
+			public const int Base_TextAppearance_AppCompat_Large = 2131689503;
 			
-			// aapt resource value: 0x7F0E0020
-			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131623968;
+			// aapt resource value: 0x7F0F0020
+			public const int Base_TextAppearance_AppCompat_Large_Inverse = 2131689504;
 			
-			// aapt resource value: 0x7F0E0021
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131623969;
+			// aapt resource value: 0x7F0F0021
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131689505;
 			
-			// aapt resource value: 0x7F0E0022
-			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131623970;
+			// aapt resource value: 0x7F0F0022
+			public const int Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131689506;
 			
-			// aapt resource value: 0x7F0E0023
-			public const int Base_TextAppearance_AppCompat_Medium = 2131623971;
+			// aapt resource value: 0x7F0F0023
+			public const int Base_TextAppearance_AppCompat_Medium = 2131689507;
 			
-			// aapt resource value: 0x7F0E0024
-			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131623972;
+			// aapt resource value: 0x7F0F0024
+			public const int Base_TextAppearance_AppCompat_Medium_Inverse = 2131689508;
 			
-			// aapt resource value: 0x7F0E0025
-			public const int Base_TextAppearance_AppCompat_Menu = 2131623973;
+			// aapt resource value: 0x7F0F0025
+			public const int Base_TextAppearance_AppCompat_Menu = 2131689509;
 			
-			// aapt resource value: 0x7F0E0026
-			public const int Base_TextAppearance_AppCompat_SearchResult = 2131623974;
+			// aapt resource value: 0x7F0F0026
+			public const int Base_TextAppearance_AppCompat_SearchResult = 2131689510;
 			
-			// aapt resource value: 0x7F0E0027
-			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131623975;
+			// aapt resource value: 0x7F0F0027
+			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131689511;
 			
-			// aapt resource value: 0x7F0E0028
-			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131623976;
+			// aapt resource value: 0x7F0F0028
+			public const int Base_TextAppearance_AppCompat_SearchResult_Title = 2131689512;
 			
-			// aapt resource value: 0x7F0E0029
-			public const int Base_TextAppearance_AppCompat_Small = 2131623977;
+			// aapt resource value: 0x7F0F0029
+			public const int Base_TextAppearance_AppCompat_Small = 2131689513;
 			
-			// aapt resource value: 0x7F0E002A
-			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131623978;
+			// aapt resource value: 0x7F0F002A
+			public const int Base_TextAppearance_AppCompat_Small_Inverse = 2131689514;
 			
-			// aapt resource value: 0x7F0E002B
-			public const int Base_TextAppearance_AppCompat_Subhead = 2131623979;
+			// aapt resource value: 0x7F0F002B
+			public const int Base_TextAppearance_AppCompat_Subhead = 2131689515;
 			
-			// aapt resource value: 0x7F0E002C
-			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131623980;
+			// aapt resource value: 0x7F0F002C
+			public const int Base_TextAppearance_AppCompat_Subhead_Inverse = 2131689516;
 			
-			// aapt resource value: 0x7F0E002D
-			public const int Base_TextAppearance_AppCompat_Title = 2131623981;
+			// aapt resource value: 0x7F0F002D
+			public const int Base_TextAppearance_AppCompat_Title = 2131689517;
 			
-			// aapt resource value: 0x7F0E002E
-			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131623982;
+			// aapt resource value: 0x7F0F002E
+			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131689518;
 			
-			// aapt resource value: 0x7F0E002F
-			public const int Base_TextAppearance_AppCompat_Tooltip = 2131623983;
+			// aapt resource value: 0x7F0F002F
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2131689519;
 			
-			// aapt resource value: 0x7F0E0030
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131623984;
+			// aapt resource value: 0x7F0F0030
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131689520;
 			
-			// aapt resource value: 0x7F0E0031
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131623985;
+			// aapt resource value: 0x7F0F0031
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131689521;
 			
-			// aapt resource value: 0x7F0E0032
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131623986;
+			// aapt resource value: 0x7F0F0032
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131689522;
 			
-			// aapt resource value: 0x7F0E0033
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131623987;
+			// aapt resource value: 0x7F0F0033
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131689523;
 			
-			// aapt resource value: 0x7F0E0034
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131623988;
+			// aapt resource value: 0x7F0F0034
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131689524;
 			
-			// aapt resource value: 0x7F0E0035
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131623989;
+			// aapt resource value: 0x7F0F0035
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131689525;
 			
-			// aapt resource value: 0x7F0E0036
-			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131623990;
+			// aapt resource value: 0x7F0F0036
+			public const int Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131689526;
 			
-			// aapt resource value: 0x7F0E0037
-			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131623991;
+			// aapt resource value: 0x7F0F0037
+			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131689527;
 			
-			// aapt resource value: 0x7F0E0038
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131623992;
+			// aapt resource value: 0x7F0F0038
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131689528;
 			
-			// aapt resource value: 0x7F0E0039
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131623993;
+			// aapt resource value: 0x7F0F0039
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131689529;
 			
-			// aapt resource value: 0x7F0E003A
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131623994;
+			// aapt resource value: 0x7F0F003A
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131689530;
 			
-			// aapt resource value: 0x7F0E003B
-			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131623995;
+			// aapt resource value: 0x7F0F003B
+			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131689531;
 			
-			// aapt resource value: 0x7F0E003C
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131623996;
+			// aapt resource value: 0x7F0F003C
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131689532;
 			
-			// aapt resource value: 0x7F0E003D
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131623997;
+			// aapt resource value: 0x7F0F003D
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131689533;
 			
-			// aapt resource value: 0x7F0E003E
-			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131623998;
+			// aapt resource value: 0x7F0F003E
+			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131689534;
 			
-			// aapt resource value: 0x7F0E003F
-			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131623999;
+			// aapt resource value: 0x7F0F003F
+			public const int Base_TextAppearance_AppCompat_Widget_Switch = 2131689535;
 			
-			// aapt resource value: 0x7F0E0040
-			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131624000;
+			// aapt resource value: 0x7F0F0040
+			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131689536;
 			
-			// aapt resource value: 0x7F0E0041
-			public const int Base_TextAppearance_MaterialComponents_Badge = 2131624001;
+			// aapt resource value: 0x7F0F0041
+			public const int Base_TextAppearance_MaterialComponents_Badge = 2131689537;
 			
-			// aapt resource value: 0x7F0E0042
-			public const int Base_TextAppearance_MaterialComponents_Button = 2131624002;
+			// aapt resource value: 0x7F0F0042
+			public const int Base_TextAppearance_MaterialComponents_Button = 2131689538;
 			
-			// aapt resource value: 0x7F0E0043
-			public const int Base_TextAppearance_MaterialComponents_Headline6 = 2131624003;
+			// aapt resource value: 0x7F0F0043
+			public const int Base_TextAppearance_MaterialComponents_Headline6 = 2131689539;
 			
-			// aapt resource value: 0x7F0E0044
-			public const int Base_TextAppearance_MaterialComponents_Subtitle2 = 2131624004;
+			// aapt resource value: 0x7F0F0044
+			public const int Base_TextAppearance_MaterialComponents_Subtitle2 = 2131689540;
 			
-			// aapt resource value: 0x7F0E0045
-			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131624005;
+			// aapt resource value: 0x7F0F0045
+			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131689541;
 			
-			// aapt resource value: 0x7F0E0046
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131624006;
+			// aapt resource value: 0x7F0F0046
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131689542;
 			
-			// aapt resource value: 0x7F0E0047
-			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131624007;
+			// aapt resource value: 0x7F0F0047
+			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131689543;
 			
-			// aapt resource value: 0x7F0E0069
-			public const int Base_ThemeOverlay_AppCompat = 2131624041;
+			// aapt resource value: 0x7F0F0069
+			public const int Base_ThemeOverlay_AppCompat = 2131689577;
 			
-			// aapt resource value: 0x7F0E006A
-			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131624042;
+			// aapt resource value: 0x7F0F006A
+			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131689578;
 			
-			// aapt resource value: 0x7F0E006B
-			public const int Base_ThemeOverlay_AppCompat_Dark = 2131624043;
+			// aapt resource value: 0x7F0F006B
+			public const int Base_ThemeOverlay_AppCompat_Dark = 2131689579;
 			
-			// aapt resource value: 0x7F0E006C
-			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131624044;
+			// aapt resource value: 0x7F0F006C
+			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131689580;
 			
-			// aapt resource value: 0x7F0E006D
-			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131624045;
+			// aapt resource value: 0x7F0F006D
+			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131689581;
 			
-			// aapt resource value: 0x7F0E006E
-			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131624046;
+			// aapt resource value: 0x7F0F006E
+			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131689582;
 			
-			// aapt resource value: 0x7F0E006F
-			public const int Base_ThemeOverlay_AppCompat_Light = 2131624047;
+			// aapt resource value: 0x7F0F006F
+			public const int Base_ThemeOverlay_AppCompat_Light = 2131689583;
 			
-			// aapt resource value: 0x7F0E0070
-			public const int Base_ThemeOverlay_MaterialComponents_Dialog = 2131624048;
+			// aapt resource value: 0x7F0F0070
+			public const int Base_ThemeOverlay_MaterialComponents_Dialog = 2131689584;
 			
-			// aapt resource value: 0x7F0E0071
-			public const int Base_ThemeOverlay_MaterialComponents_Dialog_Alert = 2131624049;
+			// aapt resource value: 0x7F0F0071
+			public const int Base_ThemeOverlay_MaterialComponents_Dialog_Alert = 2131689585;
 			
-			// aapt resource value: 0x7F0E0072
-			public const int Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131624050;
+			// aapt resource value: 0x7F0F0072
+			public const int Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131689586;
 			
-			// aapt resource value: 0x7F0E0073
-			public const int Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131624051;
+			// aapt resource value: 0x7F0F0073
+			public const int Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131689587;
 			
-			// aapt resource value: 0x7F0E0074
-			public const int Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131624052;
+			// aapt resource value: 0x7F0F0074
+			public const int Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131689588;
 			
-			// aapt resource value: 0x7F0E0048
-			public const int Base_Theme_AppCompat = 2131624008;
+			// aapt resource value: 0x7F0F0048
+			public const int Base_Theme_AppCompat = 2131689544;
 			
-			// aapt resource value: 0x7F0E0049
-			public const int Base_Theme_AppCompat_CompactMenu = 2131624009;
+			// aapt resource value: 0x7F0F0049
+			public const int Base_Theme_AppCompat_CompactMenu = 2131689545;
 			
-			// aapt resource value: 0x7F0E004A
-			public const int Base_Theme_AppCompat_Dialog = 2131624010;
+			// aapt resource value: 0x7F0F004A
+			public const int Base_Theme_AppCompat_Dialog = 2131689546;
 			
-			// aapt resource value: 0x7F0E004E
-			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131624014;
+			// aapt resource value: 0x7F0F004E
+			public const int Base_Theme_AppCompat_DialogWhenLarge = 2131689550;
 			
-			// aapt resource value: 0x7F0E004B
-			public const int Base_Theme_AppCompat_Dialog_Alert = 2131624011;
+			// aapt resource value: 0x7F0F004B
+			public const int Base_Theme_AppCompat_Dialog_Alert = 2131689547;
 			
-			// aapt resource value: 0x7F0E004C
-			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131624012;
+			// aapt resource value: 0x7F0F004C
+			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131689548;
 			
-			// aapt resource value: 0x7F0E004D
-			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131624013;
+			// aapt resource value: 0x7F0F004D
+			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131689549;
 			
-			// aapt resource value: 0x7F0E004F
-			public const int Base_Theme_AppCompat_Light = 2131624015;
+			// aapt resource value: 0x7F0F004F
+			public const int Base_Theme_AppCompat_Light = 2131689551;
 			
-			// aapt resource value: 0x7F0E0050
-			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131624016;
+			// aapt resource value: 0x7F0F0050
+			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131689552;
 			
-			// aapt resource value: 0x7F0E0051
-			public const int Base_Theme_AppCompat_Light_Dialog = 2131624017;
+			// aapt resource value: 0x7F0F0051
+			public const int Base_Theme_AppCompat_Light_Dialog = 2131689553;
 			
-			// aapt resource value: 0x7F0E0055
-			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131624021;
+			// aapt resource value: 0x7F0F0055
+			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131689557;
 			
-			// aapt resource value: 0x7F0E0052
-			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131624018;
+			// aapt resource value: 0x7F0F0052
+			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131689554;
 			
-			// aapt resource value: 0x7F0E0053
-			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131624019;
+			// aapt resource value: 0x7F0F0053
+			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131689555;
 			
-			// aapt resource value: 0x7F0E0054
-			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131624020;
+			// aapt resource value: 0x7F0F0054
+			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131689556;
 			
-			// aapt resource value: 0x7F0E0056
-			public const int Base_Theme_MaterialComponents = 2131624022;
+			// aapt resource value: 0x7F0F0056
+			public const int Base_Theme_MaterialComponents = 2131689558;
 			
-			// aapt resource value: 0x7F0E0057
-			public const int Base_Theme_MaterialComponents_Bridge = 2131624023;
+			// aapt resource value: 0x7F0F0057
+			public const int Base_Theme_MaterialComponents_Bridge = 2131689559;
 			
-			// aapt resource value: 0x7F0E0058
-			public const int Base_Theme_MaterialComponents_CompactMenu = 2131624024;
+			// aapt resource value: 0x7F0F0058
+			public const int Base_Theme_MaterialComponents_CompactMenu = 2131689560;
 			
-			// aapt resource value: 0x7F0E0059
-			public const int Base_Theme_MaterialComponents_Dialog = 2131624025;
+			// aapt resource value: 0x7F0F0059
+			public const int Base_Theme_MaterialComponents_Dialog = 2131689561;
 			
-			// aapt resource value: 0x7F0E005E
-			public const int Base_Theme_MaterialComponents_DialogWhenLarge = 2131624030;
+			// aapt resource value: 0x7F0F005E
+			public const int Base_Theme_MaterialComponents_DialogWhenLarge = 2131689566;
 			
-			// aapt resource value: 0x7F0E005A
-			public const int Base_Theme_MaterialComponents_Dialog_Alert = 2131624026;
+			// aapt resource value: 0x7F0F005A
+			public const int Base_Theme_MaterialComponents_Dialog_Alert = 2131689562;
 			
-			// aapt resource value: 0x7F0E005B
-			public const int Base_Theme_MaterialComponents_Dialog_Bridge = 2131624027;
+			// aapt resource value: 0x7F0F005B
+			public const int Base_Theme_MaterialComponents_Dialog_Bridge = 2131689563;
 			
-			// aapt resource value: 0x7F0E005C
-			public const int Base_Theme_MaterialComponents_Dialog_FixedSize = 2131624028;
+			// aapt resource value: 0x7F0F005C
+			public const int Base_Theme_MaterialComponents_Dialog_FixedSize = 2131689564;
 			
-			// aapt resource value: 0x7F0E005D
-			public const int Base_Theme_MaterialComponents_Dialog_MinWidth = 2131624029;
+			// aapt resource value: 0x7F0F005D
+			public const int Base_Theme_MaterialComponents_Dialog_MinWidth = 2131689565;
 			
-			// aapt resource value: 0x7F0E005F
-			public const int Base_Theme_MaterialComponents_Light = 2131624031;
+			// aapt resource value: 0x7F0F005F
+			public const int Base_Theme_MaterialComponents_Light = 2131689567;
 			
-			// aapt resource value: 0x7F0E0060
-			public const int Base_Theme_MaterialComponents_Light_Bridge = 2131624032;
+			// aapt resource value: 0x7F0F0060
+			public const int Base_Theme_MaterialComponents_Light_Bridge = 2131689568;
 			
-			// aapt resource value: 0x7F0E0061
-			public const int Base_Theme_MaterialComponents_Light_DarkActionBar = 2131624033;
+			// aapt resource value: 0x7F0F0061
+			public const int Base_Theme_MaterialComponents_Light_DarkActionBar = 2131689569;
 			
-			// aapt resource value: 0x7F0E0062
-			public const int Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131624034;
+			// aapt resource value: 0x7F0F0062
+			public const int Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131689570;
 			
-			// aapt resource value: 0x7F0E0063
-			public const int Base_Theme_MaterialComponents_Light_Dialog = 2131624035;
+			// aapt resource value: 0x7F0F0063
+			public const int Base_Theme_MaterialComponents_Light_Dialog = 2131689571;
 			
-			// aapt resource value: 0x7F0E0068
-			public const int Base_Theme_MaterialComponents_Light_DialogWhenLarge = 2131624040;
+			// aapt resource value: 0x7F0F0068
+			public const int Base_Theme_MaterialComponents_Light_DialogWhenLarge = 2131689576;
 			
-			// aapt resource value: 0x7F0E0064
-			public const int Base_Theme_MaterialComponents_Light_Dialog_Alert = 2131624036;
+			// aapt resource value: 0x7F0F0064
+			public const int Base_Theme_MaterialComponents_Light_Dialog_Alert = 2131689572;
 			
-			// aapt resource value: 0x7F0E0065
-			public const int Base_Theme_MaterialComponents_Light_Dialog_Bridge = 2131624037;
+			// aapt resource value: 0x7F0F0065
+			public const int Base_Theme_MaterialComponents_Light_Dialog_Bridge = 2131689573;
 			
-			// aapt resource value: 0x7F0E0066
-			public const int Base_Theme_MaterialComponents_Light_Dialog_FixedSize = 2131624038;
+			// aapt resource value: 0x7F0F0066
+			public const int Base_Theme_MaterialComponents_Light_Dialog_FixedSize = 2131689574;
 			
-			// aapt resource value: 0x7F0E0067
-			public const int Base_Theme_MaterialComponents_Light_Dialog_MinWidth = 2131624039;
+			// aapt resource value: 0x7F0F0067
+			public const int Base_Theme_MaterialComponents_Light_Dialog_MinWidth = 2131689575;
 			
-			// aapt resource value: 0x7F0E007E
-			public const int Base_V14_ThemeOverlay_MaterialComponents_Dialog = 2131624062;
+			// aapt resource value: 0x7F0F007E
+			public const int Base_V14_ThemeOverlay_MaterialComponents_Dialog = 2131689598;
 			
-			// aapt resource value: 0x7F0E007F
-			public const int Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = 2131624063;
+			// aapt resource value: 0x7F0F007F
+			public const int Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = 2131689599;
 			
-			// aapt resource value: 0x7F0E0080
-			public const int Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131624064;
+			// aapt resource value: 0x7F0F0080
+			public const int Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131689600;
 			
-			// aapt resource value: 0x7F0E0075
-			public const int Base_V14_Theme_MaterialComponents = 2131624053;
+			// aapt resource value: 0x7F0F0075
+			public const int Base_V14_Theme_MaterialComponents = 2131689589;
 			
-			// aapt resource value: 0x7F0E0076
-			public const int Base_V14_Theme_MaterialComponents_Bridge = 2131624054;
+			// aapt resource value: 0x7F0F0076
+			public const int Base_V14_Theme_MaterialComponents_Bridge = 2131689590;
 			
-			// aapt resource value: 0x7F0E0077
-			public const int Base_V14_Theme_MaterialComponents_Dialog = 2131624055;
+			// aapt resource value: 0x7F0F0077
+			public const int Base_V14_Theme_MaterialComponents_Dialog = 2131689591;
 			
-			// aapt resource value: 0x7F0E0078
-			public const int Base_V14_Theme_MaterialComponents_Dialog_Bridge = 2131624056;
+			// aapt resource value: 0x7F0F0078
+			public const int Base_V14_Theme_MaterialComponents_Dialog_Bridge = 2131689592;
 			
-			// aapt resource value: 0x7F0E0079
-			public const int Base_V14_Theme_MaterialComponents_Light = 2131624057;
+			// aapt resource value: 0x7F0F0079
+			public const int Base_V14_Theme_MaterialComponents_Light = 2131689593;
 			
-			// aapt resource value: 0x7F0E007A
-			public const int Base_V14_Theme_MaterialComponents_Light_Bridge = 2131624058;
+			// aapt resource value: 0x7F0F007A
+			public const int Base_V14_Theme_MaterialComponents_Light_Bridge = 2131689594;
 			
-			// aapt resource value: 0x7F0E007B
-			public const int Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131624059;
+			// aapt resource value: 0x7F0F007B
+			public const int Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131689595;
 			
-			// aapt resource value: 0x7F0E007C
-			public const int Base_V14_Theme_MaterialComponents_Light_Dialog = 2131624060;
+			// aapt resource value: 0x7F0F007C
+			public const int Base_V14_Theme_MaterialComponents_Light_Dialog = 2131689596;
 			
-			// aapt resource value: 0x7F0E007D
-			public const int Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = 2131624061;
+			// aapt resource value: 0x7F0F007D
+			public const int Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = 2131689597;
 			
-			// aapt resource value: 0x7F0E0089
-			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131624073;
+			// aapt resource value: 0x7F0F0089
+			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131689609;
 			
-			// aapt resource value: 0x7F0E0081
-			public const int Base_V21_Theme_AppCompat = 2131624065;
+			// aapt resource value: 0x7F0F0081
+			public const int Base_V21_Theme_AppCompat = 2131689601;
 			
-			// aapt resource value: 0x7F0E0082
-			public const int Base_V21_Theme_AppCompat_Dialog = 2131624066;
+			// aapt resource value: 0x7F0F0082
+			public const int Base_V21_Theme_AppCompat_Dialog = 2131689602;
 			
-			// aapt resource value: 0x7F0E0083
-			public const int Base_V21_Theme_AppCompat_Light = 2131624067;
+			// aapt resource value: 0x7F0F0083
+			public const int Base_V21_Theme_AppCompat_Light = 2131689603;
 			
-			// aapt resource value: 0x7F0E0084
-			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131624068;
+			// aapt resource value: 0x7F0F0084
+			public const int Base_V21_Theme_AppCompat_Light_Dialog = 2131689604;
 			
-			// aapt resource value: 0x7F0E0085
-			public const int Base_V21_Theme_MaterialComponents = 2131624069;
+			// aapt resource value: 0x7F0F0085
+			public const int Base_V21_Theme_MaterialComponents = 2131689605;
 			
-			// aapt resource value: 0x7F0E0086
-			public const int Base_V21_Theme_MaterialComponents_Dialog = 2131624070;
+			// aapt resource value: 0x7F0F0086
+			public const int Base_V21_Theme_MaterialComponents_Dialog = 2131689606;
 			
-			// aapt resource value: 0x7F0E0087
-			public const int Base_V21_Theme_MaterialComponents_Light = 2131624071;
+			// aapt resource value: 0x7F0F0087
+			public const int Base_V21_Theme_MaterialComponents_Light = 2131689607;
 			
-			// aapt resource value: 0x7F0E0088
-			public const int Base_V21_Theme_MaterialComponents_Light_Dialog = 2131624072;
+			// aapt resource value: 0x7F0F0088
+			public const int Base_V21_Theme_MaterialComponents_Light_Dialog = 2131689608;
 			
-			// aapt resource value: 0x7F0E008A
-			public const int Base_V22_Theme_AppCompat = 2131624074;
+			// aapt resource value: 0x7F0F008A
+			public const int Base_V22_Theme_AppCompat = 2131689610;
 			
-			// aapt resource value: 0x7F0E008B
-			public const int Base_V22_Theme_AppCompat_Light = 2131624075;
+			// aapt resource value: 0x7F0F008B
+			public const int Base_V22_Theme_AppCompat_Light = 2131689611;
 			
-			// aapt resource value: 0x7F0E008C
-			public const int Base_V23_Theme_AppCompat = 2131624076;
+			// aapt resource value: 0x7F0F008C
+			public const int Base_V23_Theme_AppCompat = 2131689612;
 			
-			// aapt resource value: 0x7F0E008D
-			public const int Base_V23_Theme_AppCompat_Light = 2131624077;
+			// aapt resource value: 0x7F0F008D
+			public const int Base_V23_Theme_AppCompat_Light = 2131689613;
 			
-			// aapt resource value: 0x7F0E008E
-			public const int Base_V26_Theme_AppCompat = 2131624078;
+			// aapt resource value: 0x7F0F008E
+			public const int Base_V26_Theme_AppCompat = 2131689614;
 			
-			// aapt resource value: 0x7F0E008F
-			public const int Base_V26_Theme_AppCompat_Light = 2131624079;
+			// aapt resource value: 0x7F0F008F
+			public const int Base_V26_Theme_AppCompat_Light = 2131689615;
 			
-			// aapt resource value: 0x7F0E0090
-			public const int Base_V26_Widget_AppCompat_Toolbar = 2131624080;
+			// aapt resource value: 0x7F0F0090
+			public const int Base_V26_Widget_AppCompat_Toolbar = 2131689616;
 			
-			// aapt resource value: 0x7F0E0091
-			public const int Base_V28_Theme_AppCompat = 2131624081;
+			// aapt resource value: 0x7F0F0091
+			public const int Base_V28_Theme_AppCompat = 2131689617;
 			
-			// aapt resource value: 0x7F0E0092
-			public const int Base_V28_Theme_AppCompat_Light = 2131624082;
+			// aapt resource value: 0x7F0F0092
+			public const int Base_V28_Theme_AppCompat_Light = 2131689618;
 			
-			// aapt resource value: 0x7F0E0097
-			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131624087;
+			// aapt resource value: 0x7F0F0097
+			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131689623;
 			
-			// aapt resource value: 0x7F0E0093
-			public const int Base_V7_Theme_AppCompat = 2131624083;
+			// aapt resource value: 0x7F0F0093
+			public const int Base_V7_Theme_AppCompat = 2131689619;
 			
-			// aapt resource value: 0x7F0E0094
-			public const int Base_V7_Theme_AppCompat_Dialog = 2131624084;
+			// aapt resource value: 0x7F0F0094
+			public const int Base_V7_Theme_AppCompat_Dialog = 2131689620;
 			
-			// aapt resource value: 0x7F0E0095
-			public const int Base_V7_Theme_AppCompat_Light = 2131624085;
+			// aapt resource value: 0x7F0F0095
+			public const int Base_V7_Theme_AppCompat_Light = 2131689621;
 			
-			// aapt resource value: 0x7F0E0096
-			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131624086;
+			// aapt resource value: 0x7F0F0096
+			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131689622;
 			
-			// aapt resource value: 0x7F0E0098
-			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131624088;
+			// aapt resource value: 0x7F0F0098
+			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131689624;
 			
-			// aapt resource value: 0x7F0E0099
-			public const int Base_V7_Widget_AppCompat_EditText = 2131624089;
+			// aapt resource value: 0x7F0F0099
+			public const int Base_V7_Widget_AppCompat_EditText = 2131689625;
 			
-			// aapt resource value: 0x7F0E009A
-			public const int Base_V7_Widget_AppCompat_Toolbar = 2131624090;
+			// aapt resource value: 0x7F0F009A
+			public const int Base_V7_Widget_AppCompat_Toolbar = 2131689626;
 			
-			// aapt resource value: 0x7F0E009B
-			public const int Base_Widget_AppCompat_ActionBar = 2131624091;
+			// aapt resource value: 0x7F0F009B
+			public const int Base_Widget_AppCompat_ActionBar = 2131689627;
 			
-			// aapt resource value: 0x7F0E009C
-			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131624092;
+			// aapt resource value: 0x7F0F009C
+			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131689628;
 			
-			// aapt resource value: 0x7F0E009D
-			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131624093;
+			// aapt resource value: 0x7F0F009D
+			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131689629;
 			
-			// aapt resource value: 0x7F0E009E
-			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131624094;
+			// aapt resource value: 0x7F0F009E
+			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131689630;
 			
-			// aapt resource value: 0x7F0E009F
-			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131624095;
+			// aapt resource value: 0x7F0F009F
+			public const int Base_Widget_AppCompat_ActionBar_TabView = 2131689631;
 			
-			// aapt resource value: 0x7F0E00A0
-			public const int Base_Widget_AppCompat_ActionButton = 2131624096;
+			// aapt resource value: 0x7F0F00A0
+			public const int Base_Widget_AppCompat_ActionButton = 2131689632;
 			
-			// aapt resource value: 0x7F0E00A1
-			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131624097;
+			// aapt resource value: 0x7F0F00A1
+			public const int Base_Widget_AppCompat_ActionButton_CloseMode = 2131689633;
 			
-			// aapt resource value: 0x7F0E00A2
-			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131624098;
+			// aapt resource value: 0x7F0F00A2
+			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131689634;
 			
-			// aapt resource value: 0x7F0E00A3
-			public const int Base_Widget_AppCompat_ActionMode = 2131624099;
+			// aapt resource value: 0x7F0F00A3
+			public const int Base_Widget_AppCompat_ActionMode = 2131689635;
 			
-			// aapt resource value: 0x7F0E00A4
-			public const int Base_Widget_AppCompat_ActivityChooserView = 2131624100;
+			// aapt resource value: 0x7F0F00A4
+			public const int Base_Widget_AppCompat_ActivityChooserView = 2131689636;
 			
-			// aapt resource value: 0x7F0E00A5
-			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131624101;
+			// aapt resource value: 0x7F0F00A5
+			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131689637;
 			
-			// aapt resource value: 0x7F0E00A6
-			public const int Base_Widget_AppCompat_Button = 2131624102;
+			// aapt resource value: 0x7F0F00A6
+			public const int Base_Widget_AppCompat_Button = 2131689638;
 			
-			// aapt resource value: 0x7F0E00AC
-			public const int Base_Widget_AppCompat_ButtonBar = 2131624108;
+			// aapt resource value: 0x7F0F00AC
+			public const int Base_Widget_AppCompat_ButtonBar = 2131689644;
 			
-			// aapt resource value: 0x7F0E00AD
-			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131624109;
+			// aapt resource value: 0x7F0F00AD
+			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131689645;
 			
-			// aapt resource value: 0x7F0E00A7
-			public const int Base_Widget_AppCompat_Button_Borderless = 2131624103;
+			// aapt resource value: 0x7F0F00A7
+			public const int Base_Widget_AppCompat_Button_Borderless = 2131689639;
 			
-			// aapt resource value: 0x7F0E00A8
-			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131624104;
+			// aapt resource value: 0x7F0F00A8
+			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131689640;
 			
-			// aapt resource value: 0x7F0E00A9
-			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624105;
+			// aapt resource value: 0x7F0F00A9
+			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131689641;
 			
-			// aapt resource value: 0x7F0E00AA
-			public const int Base_Widget_AppCompat_Button_Colored = 2131624106;
+			// aapt resource value: 0x7F0F00AA
+			public const int Base_Widget_AppCompat_Button_Colored = 2131689642;
 			
-			// aapt resource value: 0x7F0E00AB
-			public const int Base_Widget_AppCompat_Button_Small = 2131624107;
+			// aapt resource value: 0x7F0F00AB
+			public const int Base_Widget_AppCompat_Button_Small = 2131689643;
 			
-			// aapt resource value: 0x7F0E00AE
-			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131624110;
+			// aapt resource value: 0x7F0F00AE
+			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131689646;
 			
-			// aapt resource value: 0x7F0E00AF
-			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131624111;
+			// aapt resource value: 0x7F0F00AF
+			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131689647;
 			
-			// aapt resource value: 0x7F0E00B0
-			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131624112;
+			// aapt resource value: 0x7F0F00B0
+			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131689648;
 			
-			// aapt resource value: 0x7F0E00B1
-			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131624113;
+			// aapt resource value: 0x7F0F00B1
+			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131689649;
 			
-			// aapt resource value: 0x7F0E00B2
-			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131624114;
+			// aapt resource value: 0x7F0F00B2
+			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131689650;
 			
-			// aapt resource value: 0x7F0E00B3
-			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131624115;
+			// aapt resource value: 0x7F0F00B3
+			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131689651;
 			
-			// aapt resource value: 0x7F0E00B4
-			public const int Base_Widget_AppCompat_EditText = 2131624116;
+			// aapt resource value: 0x7F0F00B4
+			public const int Base_Widget_AppCompat_EditText = 2131689652;
 			
-			// aapt resource value: 0x7F0E00B5
-			public const int Base_Widget_AppCompat_ImageButton = 2131624117;
+			// aapt resource value: 0x7F0F00B5
+			public const int Base_Widget_AppCompat_ImageButton = 2131689653;
 			
-			// aapt resource value: 0x7F0E00B6
-			public const int Base_Widget_AppCompat_Light_ActionBar = 2131624118;
+			// aapt resource value: 0x7F0F00B6
+			public const int Base_Widget_AppCompat_Light_ActionBar = 2131689654;
 			
-			// aapt resource value: 0x7F0E00B7
-			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131624119;
+			// aapt resource value: 0x7F0F00B7
+			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131689655;
 			
-			// aapt resource value: 0x7F0E00B8
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131624120;
+			// aapt resource value: 0x7F0F00B8
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131689656;
 			
-			// aapt resource value: 0x7F0E00B9
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131624121;
+			// aapt resource value: 0x7F0F00B9
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131689657;
 			
-			// aapt resource value: 0x7F0E00BA
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624122;
+			// aapt resource value: 0x7F0F00BA
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131689658;
 			
-			// aapt resource value: 0x7F0E00BB
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131624123;
+			// aapt resource value: 0x7F0F00BB
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabView = 2131689659;
 			
-			// aapt resource value: 0x7F0E00BC
-			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131624124;
+			// aapt resource value: 0x7F0F00BC
+			public const int Base_Widget_AppCompat_Light_PopupMenu = 2131689660;
 			
-			// aapt resource value: 0x7F0E00BD
-			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131624125;
+			// aapt resource value: 0x7F0F00BD
+			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131689661;
 			
-			// aapt resource value: 0x7F0E00BE
-			public const int Base_Widget_AppCompat_ListMenuView = 2131624126;
+			// aapt resource value: 0x7F0F00BE
+			public const int Base_Widget_AppCompat_ListMenuView = 2131689662;
 			
-			// aapt resource value: 0x7F0E00BF
-			public const int Base_Widget_AppCompat_ListPopupWindow = 2131624127;
+			// aapt resource value: 0x7F0F00BF
+			public const int Base_Widget_AppCompat_ListPopupWindow = 2131689663;
 			
-			// aapt resource value: 0x7F0E00C0
-			public const int Base_Widget_AppCompat_ListView = 2131624128;
+			// aapt resource value: 0x7F0F00C0
+			public const int Base_Widget_AppCompat_ListView = 2131689664;
 			
-			// aapt resource value: 0x7F0E00C1
-			public const int Base_Widget_AppCompat_ListView_DropDown = 2131624129;
+			// aapt resource value: 0x7F0F00C1
+			public const int Base_Widget_AppCompat_ListView_DropDown = 2131689665;
 			
-			// aapt resource value: 0x7F0E00C2
-			public const int Base_Widget_AppCompat_ListView_Menu = 2131624130;
+			// aapt resource value: 0x7F0F00C2
+			public const int Base_Widget_AppCompat_ListView_Menu = 2131689666;
 			
-			// aapt resource value: 0x7F0E00C3
-			public const int Base_Widget_AppCompat_PopupMenu = 2131624131;
+			// aapt resource value: 0x7F0F00C3
+			public const int Base_Widget_AppCompat_PopupMenu = 2131689667;
 			
-			// aapt resource value: 0x7F0E00C4
-			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131624132;
+			// aapt resource value: 0x7F0F00C4
+			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131689668;
 			
-			// aapt resource value: 0x7F0E00C5
-			public const int Base_Widget_AppCompat_PopupWindow = 2131624133;
+			// aapt resource value: 0x7F0F00C5
+			public const int Base_Widget_AppCompat_PopupWindow = 2131689669;
 			
-			// aapt resource value: 0x7F0E00C6
-			public const int Base_Widget_AppCompat_ProgressBar = 2131624134;
+			// aapt resource value: 0x7F0F00C6
+			public const int Base_Widget_AppCompat_ProgressBar = 2131689670;
 			
-			// aapt resource value: 0x7F0E00C7
-			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131624135;
+			// aapt resource value: 0x7F0F00C7
+			public const int Base_Widget_AppCompat_ProgressBar_Horizontal = 2131689671;
 			
-			// aapt resource value: 0x7F0E00C8
-			public const int Base_Widget_AppCompat_RatingBar = 2131624136;
+			// aapt resource value: 0x7F0F00C8
+			public const int Base_Widget_AppCompat_RatingBar = 2131689672;
 			
-			// aapt resource value: 0x7F0E00C9
-			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131624137;
+			// aapt resource value: 0x7F0F00C9
+			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131689673;
 			
-			// aapt resource value: 0x7F0E00CA
-			public const int Base_Widget_AppCompat_RatingBar_Small = 2131624138;
+			// aapt resource value: 0x7F0F00CA
+			public const int Base_Widget_AppCompat_RatingBar_Small = 2131689674;
 			
-			// aapt resource value: 0x7F0E00CB
-			public const int Base_Widget_AppCompat_SearchView = 2131624139;
+			// aapt resource value: 0x7F0F00CB
+			public const int Base_Widget_AppCompat_SearchView = 2131689675;
 			
-			// aapt resource value: 0x7F0E00CC
-			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131624140;
+			// aapt resource value: 0x7F0F00CC
+			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131689676;
 			
-			// aapt resource value: 0x7F0E00CD
-			public const int Base_Widget_AppCompat_SeekBar = 2131624141;
+			// aapt resource value: 0x7F0F00CD
+			public const int Base_Widget_AppCompat_SeekBar = 2131689677;
 			
-			// aapt resource value: 0x7F0E00CE
-			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131624142;
+			// aapt resource value: 0x7F0F00CE
+			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131689678;
 			
-			// aapt resource value: 0x7F0E00CF
-			public const int Base_Widget_AppCompat_Spinner = 2131624143;
+			// aapt resource value: 0x7F0F00CF
+			public const int Base_Widget_AppCompat_Spinner = 2131689679;
 			
-			// aapt resource value: 0x7F0E00D0
-			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131624144;
+			// aapt resource value: 0x7F0F00D0
+			public const int Base_Widget_AppCompat_Spinner_Underlined = 2131689680;
 			
-			// aapt resource value: 0x7F0E00D1
-			public const int Base_Widget_AppCompat_TextView = 2131624145;
+			// aapt resource value: 0x7F0F00D1
+			public const int Base_Widget_AppCompat_TextView = 2131689681;
 			
-			// aapt resource value: 0x7F0E00D2
-			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131624146;
+			// aapt resource value: 0x7F0F00D2
+			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131689682;
 			
-			// aapt resource value: 0x7F0E00D3
-			public const int Base_Widget_AppCompat_Toolbar = 2131624147;
+			// aapt resource value: 0x7F0F00D3
+			public const int Base_Widget_AppCompat_Toolbar = 2131689683;
 			
-			// aapt resource value: 0x7F0E00D4
-			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131624148;
+			// aapt resource value: 0x7F0F00D4
+			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131689684;
 			
-			// aapt resource value: 0x7F0E00D5
-			public const int Base_Widget_Design_TabLayout = 2131624149;
+			// aapt resource value: 0x7F0F00D5
+			public const int Base_Widget_Design_TabLayout = 2131689685;
 			
-			// aapt resource value: 0x7F0E00D6
-			public const int Base_Widget_MaterialComponents_AutoCompleteTextView = 2131624150;
+			// aapt resource value: 0x7F0F00D6
+			public const int Base_Widget_MaterialComponents_AutoCompleteTextView = 2131689686;
 			
-			// aapt resource value: 0x7F0E00D7
-			public const int Base_Widget_MaterialComponents_CheckedTextView = 2131624151;
+			// aapt resource value: 0x7F0F00D7
+			public const int Base_Widget_MaterialComponents_CheckedTextView = 2131689687;
 			
-			// aapt resource value: 0x7F0E00D8
-			public const int Base_Widget_MaterialComponents_Chip = 2131624152;
+			// aapt resource value: 0x7F0F00D8
+			public const int Base_Widget_MaterialComponents_Chip = 2131689688;
 			
-			// aapt resource value: 0x7F0E00D9
-			public const int Base_Widget_MaterialComponents_MaterialCalendar_NavigationButton = 2131624153;
+			// aapt resource value: 0x7F0F00D9
+			public const int Base_Widget_MaterialComponents_MaterialCalendar_NavigationButton = 2131689689;
 			
-			// aapt resource value: 0x7F0E00DA
-			public const int Base_Widget_MaterialComponents_PopupMenu = 2131624154;
+			// aapt resource value: 0x7F0F00DA
+			public const int Base_Widget_MaterialComponents_PopupMenu = 2131689690;
 			
-			// aapt resource value: 0x7F0E00DB
-			public const int Base_Widget_MaterialComponents_PopupMenu_ContextMenu = 2131624155;
+			// aapt resource value: 0x7F0F00DB
+			public const int Base_Widget_MaterialComponents_PopupMenu_ContextMenu = 2131689691;
 			
-			// aapt resource value: 0x7F0E00DC
-			public const int Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131624156;
+			// aapt resource value: 0x7F0F00DC
+			public const int Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131689692;
 			
-			// aapt resource value: 0x7F0E00DD
-			public const int Base_Widget_MaterialComponents_PopupMenu_Overflow = 2131624157;
+			// aapt resource value: 0x7F0F00DD
+			public const int Base_Widget_MaterialComponents_PopupMenu_Overflow = 2131689693;
 			
-			// aapt resource value: 0x7F0E00DE
-			public const int Base_Widget_MaterialComponents_Slider = 2131624158;
+			// aapt resource value: 0x7F0F00DE
+			public const int Base_Widget_MaterialComponents_Slider = 2131689694;
 			
-			// aapt resource value: 0x7F0E00DF
-			public const int Base_Widget_MaterialComponents_Snackbar = 2131624159;
+			// aapt resource value: 0x7F0F00DF
+			public const int Base_Widget_MaterialComponents_Snackbar = 2131689695;
 			
-			// aapt resource value: 0x7F0E00E0
-			public const int Base_Widget_MaterialComponents_TextInputEditText = 2131624160;
+			// aapt resource value: 0x7F0F00E0
+			public const int Base_Widget_MaterialComponents_TextInputEditText = 2131689696;
 			
-			// aapt resource value: 0x7F0E00E1
-			public const int Base_Widget_MaterialComponents_TextInputLayout = 2131624161;
+			// aapt resource value: 0x7F0F00E1
+			public const int Base_Widget_MaterialComponents_TextInputLayout = 2131689697;
 			
-			// aapt resource value: 0x7F0E00E2
-			public const int Base_Widget_MaterialComponents_TextView = 2131624162;
+			// aapt resource value: 0x7F0F00E2
+			public const int Base_Widget_MaterialComponents_TextView = 2131689698;
 			
-			// aapt resource value: 0x7F0E00E3
-			public const int CardView = 2131624163;
+			// aapt resource value: 0x7F0F00E3
+			public const int CardView = 2131689699;
 			
-			// aapt resource value: 0x7F0E00E4
-			public const int CardView_Dark = 2131624164;
+			// aapt resource value: 0x7F0F00E4
+			public const int CardView_Dark = 2131689700;
 			
-			// aapt resource value: 0x7F0E00E5
-			public const int CardView_Light = 2131624165;
+			// aapt resource value: 0x7F0F00E5
+			public const int CardView_Light = 2131689701;
 			
-			// aapt resource value: 0x7F0E02F3
-			public const int collectionViewTheme = 2131624691;
+			// aapt resource value: 0x7F0F02F3
+			public const int collectionViewTheme = 2131690227;
 			
-			// aapt resource value: 0x7F0E00E6
-			public const int EmptyTheme = 2131624166;
+			// aapt resource value: 0x7F0F00E6
+			public const int EmptyTheme = 2131689702;
 			
-			// aapt resource value: 0x7F0E00F6
-			public const int MainTheme = 2131624182;
+			// aapt resource value: 0x7F0F00F6
+			public const int MainTheme = 2131689718;
 			
-			// aapt resource value: 0x7F0E00F7
-			public const int MainTheme_Base = 2131624183;
+			// aapt resource value: 0x7F0F00F7
+			public const int MainTheme_Base = 2131689719;
 			
-			// aapt resource value: 0x7F0E00F8
-			public const int MaterialAlertDialog_MaterialComponents = 2131624184;
+			// aapt resource value: 0x7F0F00F8
+			public const int MaterialAlertDialog_MaterialComponents = 2131689720;
 			
-			// aapt resource value: 0x7F0E00F9
-			public const int MaterialAlertDialog_MaterialComponents_Body_Text = 2131624185;
+			// aapt resource value: 0x7F0F00F9
+			public const int MaterialAlertDialog_MaterialComponents_Body_Text = 2131689721;
 			
-			// aapt resource value: 0x7F0E00FA
-			public const int MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = 2131624186;
+			// aapt resource value: 0x7F0F00FA
+			public const int MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = 2131689722;
 			
-			// aapt resource value: 0x7F0E00FB
-			public const int MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = 2131624187;
+			// aapt resource value: 0x7F0F00FB
+			public const int MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = 2131689723;
 			
-			// aapt resource value: 0x7F0E00FC
-			public const int MaterialAlertDialog_MaterialComponents_Title_Icon = 2131624188;
+			// aapt resource value: 0x7F0F00FC
+			public const int MaterialAlertDialog_MaterialComponents_Title_Icon = 2131689724;
 			
-			// aapt resource value: 0x7F0E00FD
-			public const int MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = 2131624189;
+			// aapt resource value: 0x7F0F00FD
+			public const int MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = 2131689725;
 			
-			// aapt resource value: 0x7F0E00FE
-			public const int MaterialAlertDialog_MaterialComponents_Title_Panel = 2131624190;
+			// aapt resource value: 0x7F0F00FE
+			public const int MaterialAlertDialog_MaterialComponents_Title_Panel = 2131689726;
 			
-			// aapt resource value: 0x7F0E00FF
-			public const int MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = 2131624191;
+			// aapt resource value: 0x7F0F00FF
+			public const int MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = 2131689727;
 			
-			// aapt resource value: 0x7F0E0100
-			public const int MaterialAlertDialog_MaterialComponents_Title_Text = 2131624192;
+			// aapt resource value: 0x7F0F0100
+			public const int MaterialAlertDialog_MaterialComponents_Title_Text = 2131689728;
 			
-			// aapt resource value: 0x7F0E0101
-			public const int MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = 2131624193;
+			// aapt resource value: 0x7F0F0101
+			public const int MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = 2131689729;
 			
-			// aapt resource value: 0x7F0E00E7
-			public const int MBVerificationInstructions = 2131624167;
+			// aapt resource value: 0x7F0F00E7
+			public const int MBVerificationInstructions = 2131689703;
 			
-			// aapt resource value: 0x7F0E00E8
-			public const int MBVerificationInstructions_Text = 2131624168;
+			// aapt resource value: 0x7F0F00E8
+			public const int MBVerificationInstructions_Text = 2131689704;
 			
-			// aapt resource value: 0x7F0E00E9
-			public const int MBVerificationSplashText = 2131624169;
+			// aapt resource value: 0x7F0F00E9
+			public const int MBVerificationSplashText = 2131689705;
 			
-			// aapt resource value: 0x7F0E00EA
-			public const int MBViewfinderShape = 2131624170;
+			// aapt resource value: 0x7F0F00EA
+			public const int MBViewfinderShape = 2131689706;
 			
-			// aapt resource value: 0x7F0E00EB
-			public const int MBViewfinderShape_Document = 2131624171;
+			// aapt resource value: 0x7F0F00EB
+			public const int MBViewfinderShape_Document = 2131689707;
 			
-			// aapt resource value: 0x7F0E00EC
-			public const int MB_blinkid_instructions_text = 2131624172;
+			// aapt resource value: 0x7F0F00EC
+			public const int MB_blinkid_instructions_text = 2131689708;
 			
-			// aapt resource value: 0x7F0E00ED
-			public const int MB_default_reticle_overlay_style = 2131624173;
+			// aapt resource value: 0x7F0F00ED
+			public const int MB_default_reticle_overlay_style = 2131689709;
 			
-			// aapt resource value: 0x7F0E00EE
-			public const int MB_default_scan_box_overlay_style = 2131624174;
+			// aapt resource value: 0x7F0F00EE
+			public const int MB_default_scan_box_overlay_style = 2131689710;
 			
-			// aapt resource value: 0x7F0E00EF
-			public const int MB_default_simple_box_overlay_style = 2131624175;
+			// aapt resource value: 0x7F0F00EF
+			public const int MB_default_simple_box_overlay_style = 2131689711;
 			
-			// aapt resource value: 0x7F0E00F0
-			public const int MB_glare_message_text = 2131624176;
+			// aapt resource value: 0x7F0F00F0
+			public const int MB_glare_message_text = 2131689712;
 			
-			// aapt resource value: 0x7F0E00F1
-			public const int MB_scan_status_text = 2131624177;
+			// aapt resource value: 0x7F0F00F1
+			public const int MB_scan_status_text = 2131689713;
 			
-			// aapt resource value: 0x7F0E00F2
-			public const int MB_snackbar_text = 2131624178;
+			// aapt resource value: 0x7F0F00F2
+			public const int MB_snackbar_text = 2131689714;
 			
-			// aapt resource value: 0x7F0E00F3
-			public const int MB_theme = 2131624179;
+			// aapt resource value: 0x7F0F00F3
+			public const int MB_theme = 2131689715;
 			
-			// aapt resource value: 0x7F0E00F4
-			public const int MB_top_button = 2131624180;
+			// aapt resource value: 0x7F0F00F4
+			public const int MB_top_button = 2131689716;
 			
-			// aapt resource value: 0x7F0E00F5
-			public const int MB_top_button_bar = 2131624181;
+			// aapt resource value: 0x7F0F00F5
+			public const int MB_top_button_bar = 2131689717;
 			
-			// aapt resource value: 0x7F0E0102
-			public const int Platform_AppCompat = 2131624194;
+			// aapt resource value: 0x7F0F0102
+			public const int Platform_AppCompat = 2131689730;
 			
-			// aapt resource value: 0x7F0E0103
-			public const int Platform_AppCompat_Light = 2131624195;
+			// aapt resource value: 0x7F0F0103
+			public const int Platform_AppCompat_Light = 2131689731;
 			
-			// aapt resource value: 0x7F0E0104
-			public const int Platform_MaterialComponents = 2131624196;
+			// aapt resource value: 0x7F0F0104
+			public const int Platform_MaterialComponents = 2131689732;
 			
-			// aapt resource value: 0x7F0E0105
-			public const int Platform_MaterialComponents_Dialog = 2131624197;
+			// aapt resource value: 0x7F0F0105
+			public const int Platform_MaterialComponents_Dialog = 2131689733;
 			
-			// aapt resource value: 0x7F0E0106
-			public const int Platform_MaterialComponents_Light = 2131624198;
+			// aapt resource value: 0x7F0F0106
+			public const int Platform_MaterialComponents_Light = 2131689734;
 			
-			// aapt resource value: 0x7F0E0107
-			public const int Platform_MaterialComponents_Light_Dialog = 2131624199;
+			// aapt resource value: 0x7F0F0107
+			public const int Platform_MaterialComponents_Light_Dialog = 2131689735;
 			
-			// aapt resource value: 0x7F0E0108
-			public const int Platform_ThemeOverlay_AppCompat = 2131624200;
+			// aapt resource value: 0x7F0F0108
+			public const int Platform_ThemeOverlay_AppCompat = 2131689736;
 			
-			// aapt resource value: 0x7F0E0109
-			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131624201;
+			// aapt resource value: 0x7F0F0109
+			public const int Platform_ThemeOverlay_AppCompat_Dark = 2131689737;
 			
-			// aapt resource value: 0x7F0E010A
-			public const int Platform_ThemeOverlay_AppCompat_Light = 2131624202;
+			// aapt resource value: 0x7F0F010A
+			public const int Platform_ThemeOverlay_AppCompat_Light = 2131689738;
 			
-			// aapt resource value: 0x7F0E010B
-			public const int Platform_V21_AppCompat = 2131624203;
+			// aapt resource value: 0x7F0F010B
+			public const int Platform_V21_AppCompat = 2131689739;
 			
-			// aapt resource value: 0x7F0E010C
-			public const int Platform_V21_AppCompat_Light = 2131624204;
+			// aapt resource value: 0x7F0F010C
+			public const int Platform_V21_AppCompat_Light = 2131689740;
 			
-			// aapt resource value: 0x7F0E010D
-			public const int Platform_V25_AppCompat = 2131624205;
+			// aapt resource value: 0x7F0F010D
+			public const int Platform_V25_AppCompat = 2131689741;
 			
-			// aapt resource value: 0x7F0E010E
-			public const int Platform_V25_AppCompat_Light = 2131624206;
+			// aapt resource value: 0x7F0F010E
+			public const int Platform_V25_AppCompat_Light = 2131689742;
 			
-			// aapt resource value: 0x7F0E010F
-			public const int Platform_Widget_AppCompat_Spinner = 2131624207;
+			// aapt resource value: 0x7F0F010F
+			public const int Platform_Widget_AppCompat_Spinner = 2131689743;
 			
-			// aapt resource value: 0x7F0E0110
-			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131624208;
+			// aapt resource value: 0x7F0F0110
+			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131689744;
 			
-			// aapt resource value: 0x7F0E0111
-			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131624209;
+			// aapt resource value: 0x7F0F0111
+			public const int RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131689745;
 			
-			// aapt resource value: 0x7F0E0112
-			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131624210;
+			// aapt resource value: 0x7F0F0112
+			public const int RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131689746;
 			
-			// aapt resource value: 0x7F0E0113
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131624211;
+			// aapt resource value: 0x7F0F0113
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131689747;
 			
-			// aapt resource value: 0x7F0E0114
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131624212;
+			// aapt resource value: 0x7F0F0114
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131689748;
 			
-			// aapt resource value: 0x7F0E0115
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131624213;
+			// aapt resource value: 0x7F0F0115
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Shortcut = 2131689749;
 			
-			// aapt resource value: 0x7F0E0116
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131624214;
+			// aapt resource value: 0x7F0F0116
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = 2131689750;
 			
-			// aapt resource value: 0x7F0E0117
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131624215;
+			// aapt resource value: 0x7F0F0117
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131689751;
 			
-			// aapt resource value: 0x7F0E0118
-			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131624216;
+			// aapt resource value: 0x7F0F0118
+			public const int RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = 2131689752;
 			
-			// aapt resource value: 0x7F0E011E
-			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131624222;
+			// aapt resource value: 0x7F0F011E
+			public const int RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131689758;
 			
-			// aapt resource value: 0x7F0E0119
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131624217;
+			// aapt resource value: 0x7F0F0119
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown = 2131689753;
 			
-			// aapt resource value: 0x7F0E011A
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131624218;
+			// aapt resource value: 0x7F0F011A
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131689754;
 			
-			// aapt resource value: 0x7F0E011B
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131624219;
+			// aapt resource value: 0x7F0F011B
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131689755;
 			
-			// aapt resource value: 0x7F0E011C
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131624220;
+			// aapt resource value: 0x7F0F011C
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131689756;
 			
-			// aapt resource value: 0x7F0E011D
-			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131624221;
+			// aapt resource value: 0x7F0F011D
+			public const int RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131689757;
 			
-			// aapt resource value: 0x7F0E011F
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131624223;
+			// aapt resource value: 0x7F0F011F
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton = 2131689759;
 			
-			// aapt resource value: 0x7F0E0120
-			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624224;
+			// aapt resource value: 0x7F0F0120
+			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131689760;
 			
-			// aapt resource value: 0x7F0E02F4
-			public const int scrollViewScrollBars = 2131624692;
+			// aapt resource value: 0x7F0F02F4
+			public const int scrollViewScrollBars = 2131690228;
 			
-			// aapt resource value: 0x7F0E02F5
-			public const int scrollViewTheme = 2131624693;
+			// aapt resource value: 0x7F0F02F5
+			public const int scrollViewTheme = 2131690229;
 			
-			// aapt resource value: 0x7F0E0127
-			public const int ShapeAppearanceOverlay = 2131624231;
+			// aapt resource value: 0x7F0F0127
+			public const int ShapeAppearanceOverlay = 2131689767;
 			
-			// aapt resource value: 0x7F0E0128
-			public const int ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = 2131624232;
+			// aapt resource value: 0x7F0F0128
+			public const int ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = 2131689768;
 			
-			// aapt resource value: 0x7F0E0129
-			public const int ShapeAppearanceOverlay_BottomRightCut = 2131624233;
+			// aapt resource value: 0x7F0F0129
+			public const int ShapeAppearanceOverlay_BottomRightCut = 2131689769;
 			
-			// aapt resource value: 0x7F0E012A
-			public const int ShapeAppearanceOverlay_Cut = 2131624234;
+			// aapt resource value: 0x7F0F012A
+			public const int ShapeAppearanceOverlay_Cut = 2131689770;
 			
-			// aapt resource value: 0x7F0E012B
-			public const int ShapeAppearanceOverlay_DifferentCornerSize = 2131624235;
+			// aapt resource value: 0x7F0F012B
+			public const int ShapeAppearanceOverlay_DifferentCornerSize = 2131689771;
 			
-			// aapt resource value: 0x7F0E012C
-			public const int ShapeAppearanceOverlay_MaterialComponents_BottomSheet = 2131624236;
+			// aapt resource value: 0x7F0F012C
+			public const int ShapeAppearanceOverlay_MaterialComponents_BottomSheet = 2131689772;
 			
-			// aapt resource value: 0x7F0E012D
-			public const int ShapeAppearanceOverlay_MaterialComponents_Chip = 2131624237;
+			// aapt resource value: 0x7F0F012D
+			public const int ShapeAppearanceOverlay_MaterialComponents_Chip = 2131689773;
 			
-			// aapt resource value: 0x7F0E012E
-			public const int ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = 2131624238;
+			// aapt resource value: 0x7F0F012E
+			public const int ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = 2131689774;
 			
-			// aapt resource value: 0x7F0E012F
-			public const int ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = 2131624239;
+			// aapt resource value: 0x7F0F012F
+			public const int ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = 2131689775;
 			
-			// aapt resource value: 0x7F0E0130
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131624240;
+			// aapt resource value: 0x7F0F0130
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689776;
 			
-			// aapt resource value: 0x7F0E0131
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = 2131624241;
+			// aapt resource value: 0x7F0F0131
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = 2131689777;
 			
-			// aapt resource value: 0x7F0E0132
-			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = 2131624242;
+			// aapt resource value: 0x7F0F0132
+			public const int ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = 2131689778;
 			
-			// aapt resource value: 0x7F0E0133
-			public const int ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = 2131624243;
+			// aapt resource value: 0x7F0F0133
+			public const int ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = 2131689779;
 			
-			// aapt resource value: 0x7F0E0134
-			public const int ShapeAppearanceOverlay_TopLeftCut = 2131624244;
+			// aapt resource value: 0x7F0F0134
+			public const int ShapeAppearanceOverlay_TopLeftCut = 2131689780;
 			
-			// aapt resource value: 0x7F0E0135
-			public const int ShapeAppearanceOverlay_TopRightDifferentCornerSize = 2131624245;
+			// aapt resource value: 0x7F0F0135
+			public const int ShapeAppearanceOverlay_TopRightDifferentCornerSize = 2131689781;
 			
-			// aapt resource value: 0x7F0E0121
-			public const int ShapeAppearance_MaterialComponents = 2131624225;
+			// aapt resource value: 0x7F0F0121
+			public const int ShapeAppearance_MaterialComponents = 2131689761;
 			
-			// aapt resource value: 0x7F0E0122
-			public const int ShapeAppearance_MaterialComponents_LargeComponent = 2131624226;
+			// aapt resource value: 0x7F0F0122
+			public const int ShapeAppearance_MaterialComponents_LargeComponent = 2131689762;
 			
-			// aapt resource value: 0x7F0E0123
-			public const int ShapeAppearance_MaterialComponents_MediumComponent = 2131624227;
+			// aapt resource value: 0x7F0F0123
+			public const int ShapeAppearance_MaterialComponents_MediumComponent = 2131689763;
 			
-			// aapt resource value: 0x7F0E0124
-			public const int ShapeAppearance_MaterialComponents_SmallComponent = 2131624228;
+			// aapt resource value: 0x7F0F0124
+			public const int ShapeAppearance_MaterialComponents_SmallComponent = 2131689764;
 			
-			// aapt resource value: 0x7F0E0125
-			public const int ShapeAppearance_MaterialComponents_Test = 2131624229;
+			// aapt resource value: 0x7F0F0125
+			public const int ShapeAppearance_MaterialComponents_Test = 2131689765;
 			
-			// aapt resource value: 0x7F0E0126
-			public const int ShapeAppearance_MaterialComponents_Tooltip = 2131624230;
+			// aapt resource value: 0x7F0F0126
+			public const int ShapeAppearance_MaterialComponents_Tooltip = 2131689766;
 			
-			// aapt resource value: 0x7F0E013B
-			public const int TestStyleWithLineHeight = 2131624251;
+			// aapt resource value: 0x7F0F013B
+			public const int TestStyleWithLineHeight = 2131689787;
 			
-			// aapt resource value: 0x7F0E013C
-			public const int TestStyleWithLineHeightAppearance = 2131624252;
+			// aapt resource value: 0x7F0F013C
+			public const int TestStyleWithLineHeightAppearance = 2131689788;
 			
-			// aapt resource value: 0x7F0E013E
-			public const int TestStyleWithoutLineHeight = 2131624254;
+			// aapt resource value: 0x7F0F013E
+			public const int TestStyleWithoutLineHeight = 2131689790;
 			
-			// aapt resource value: 0x7F0E013D
-			public const int TestStyleWithThemeLineHeightAttribute = 2131624253;
+			// aapt resource value: 0x7F0F013D
+			public const int TestStyleWithThemeLineHeightAttribute = 2131689789;
 			
-			// aapt resource value: 0x7F0E013F
-			public const int TestThemeWithLineHeight = 2131624255;
+			// aapt resource value: 0x7F0F013F
+			public const int TestThemeWithLineHeight = 2131689791;
 			
-			// aapt resource value: 0x7F0E0140
-			public const int TestThemeWithLineHeightDisabled = 2131624256;
+			// aapt resource value: 0x7F0F0140
+			public const int TestThemeWithLineHeightDisabled = 2131689792;
 			
-			// aapt resource value: 0x7F0E0136
-			public const int Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131624246;
+			// aapt resource value: 0x7F0F0136
+			public const int Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = 2131689782;
 			
-			// aapt resource value: 0x7F0E0137
-			public const int Test_Theme_MaterialComponents_MaterialCalendar = 2131624247;
+			// aapt resource value: 0x7F0F0137
+			public const int Test_Theme_MaterialComponents_MaterialCalendar = 2131689783;
 			
-			// aapt resource value: 0x7F0E0138
-			public const int Test_Widget_MaterialComponents_MaterialCalendar = 2131624248;
+			// aapt resource value: 0x7F0F0138
+			public const int Test_Widget_MaterialComponents_MaterialCalendar = 2131689784;
 			
-			// aapt resource value: 0x7F0E0139
-			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day = 2131624249;
+			// aapt resource value: 0x7F0F0139
+			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day = 2131689785;
 			
-			// aapt resource value: 0x7F0E013A
-			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131624250;
+			// aapt resource value: 0x7F0F013A
+			public const int Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131689786;
 			
-			// aapt resource value: 0x7F0E0141
-			public const int TextAppearance_AppCompat = 2131624257;
+			// aapt resource value: 0x7F0F0141
+			public const int TextAppearance_AppCompat = 2131689793;
 			
-			// aapt resource value: 0x7F0E0142
-			public const int TextAppearance_AppCompat_Body1 = 2131624258;
+			// aapt resource value: 0x7F0F0142
+			public const int TextAppearance_AppCompat_Body1 = 2131689794;
 			
-			// aapt resource value: 0x7F0E0143
-			public const int TextAppearance_AppCompat_Body2 = 2131624259;
+			// aapt resource value: 0x7F0F0143
+			public const int TextAppearance_AppCompat_Body2 = 2131689795;
 			
-			// aapt resource value: 0x7F0E0144
-			public const int TextAppearance_AppCompat_Button = 2131624260;
+			// aapt resource value: 0x7F0F0144
+			public const int TextAppearance_AppCompat_Button = 2131689796;
 			
-			// aapt resource value: 0x7F0E0145
-			public const int TextAppearance_AppCompat_Caption = 2131624261;
+			// aapt resource value: 0x7F0F0145
+			public const int TextAppearance_AppCompat_Caption = 2131689797;
 			
-			// aapt resource value: 0x7F0E0146
-			public const int TextAppearance_AppCompat_Display1 = 2131624262;
+			// aapt resource value: 0x7F0F0146
+			public const int TextAppearance_AppCompat_Display1 = 2131689798;
 			
-			// aapt resource value: 0x7F0E0147
-			public const int TextAppearance_AppCompat_Display2 = 2131624263;
+			// aapt resource value: 0x7F0F0147
+			public const int TextAppearance_AppCompat_Display2 = 2131689799;
 			
-			// aapt resource value: 0x7F0E0148
-			public const int TextAppearance_AppCompat_Display3 = 2131624264;
+			// aapt resource value: 0x7F0F0148
+			public const int TextAppearance_AppCompat_Display3 = 2131689800;
 			
-			// aapt resource value: 0x7F0E0149
-			public const int TextAppearance_AppCompat_Display4 = 2131624265;
+			// aapt resource value: 0x7F0F0149
+			public const int TextAppearance_AppCompat_Display4 = 2131689801;
 			
-			// aapt resource value: 0x7F0E014A
-			public const int TextAppearance_AppCompat_Headline = 2131624266;
+			// aapt resource value: 0x7F0F014A
+			public const int TextAppearance_AppCompat_Headline = 2131689802;
 			
-			// aapt resource value: 0x7F0E014B
-			public const int TextAppearance_AppCompat_Inverse = 2131624267;
+			// aapt resource value: 0x7F0F014B
+			public const int TextAppearance_AppCompat_Inverse = 2131689803;
 			
-			// aapt resource value: 0x7F0E014C
-			public const int TextAppearance_AppCompat_Large = 2131624268;
+			// aapt resource value: 0x7F0F014C
+			public const int TextAppearance_AppCompat_Large = 2131689804;
 			
-			// aapt resource value: 0x7F0E014D
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131624269;
+			// aapt resource value: 0x7F0F014D
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131689805;
 			
-			// aapt resource value: 0x7F0E014E
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131624270;
+			// aapt resource value: 0x7F0F014E
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131689806;
 			
-			// aapt resource value: 0x7F0E014F
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131624271;
+			// aapt resource value: 0x7F0F014F
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131689807;
 			
-			// aapt resource value: 0x7F0E0150
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131624272;
+			// aapt resource value: 0x7F0F0150
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131689808;
 			
-			// aapt resource value: 0x7F0E0151
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131624273;
+			// aapt resource value: 0x7F0F0151
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131689809;
 			
-			// aapt resource value: 0x7F0E0152
-			public const int TextAppearance_AppCompat_Medium = 2131624274;
+			// aapt resource value: 0x7F0F0152
+			public const int TextAppearance_AppCompat_Medium = 2131689810;
 			
-			// aapt resource value: 0x7F0E0153
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131624275;
+			// aapt resource value: 0x7F0F0153
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131689811;
 			
-			// aapt resource value: 0x7F0E0154
-			public const int TextAppearance_AppCompat_Menu = 2131624276;
+			// aapt resource value: 0x7F0F0154
+			public const int TextAppearance_AppCompat_Menu = 2131689812;
 			
-			// aapt resource value: 0x7F0E0155
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131624277;
+			// aapt resource value: 0x7F0F0155
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131689813;
 			
-			// aapt resource value: 0x7F0E0156
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131624278;
+			// aapt resource value: 0x7F0F0156
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131689814;
 			
-			// aapt resource value: 0x7F0E0157
-			public const int TextAppearance_AppCompat_Small = 2131624279;
+			// aapt resource value: 0x7F0F0157
+			public const int TextAppearance_AppCompat_Small = 2131689815;
 			
-			// aapt resource value: 0x7F0E0158
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131624280;
+			// aapt resource value: 0x7F0F0158
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131689816;
 			
-			// aapt resource value: 0x7F0E0159
-			public const int TextAppearance_AppCompat_Subhead = 2131624281;
+			// aapt resource value: 0x7F0F0159
+			public const int TextAppearance_AppCompat_Subhead = 2131689817;
 			
-			// aapt resource value: 0x7F0E015A
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131624282;
+			// aapt resource value: 0x7F0F015A
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131689818;
 			
-			// aapt resource value: 0x7F0E015B
-			public const int TextAppearance_AppCompat_Title = 2131624283;
+			// aapt resource value: 0x7F0F015B
+			public const int TextAppearance_AppCompat_Title = 2131689819;
 			
-			// aapt resource value: 0x7F0E015C
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131624284;
+			// aapt resource value: 0x7F0F015C
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131689820;
 			
-			// aapt resource value: 0x7F0E015D
-			public const int TextAppearance_AppCompat_Tooltip = 2131624285;
+			// aapt resource value: 0x7F0F015D
+			public const int TextAppearance_AppCompat_Tooltip = 2131689821;
 			
-			// aapt resource value: 0x7F0E015E
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131624286;
+			// aapt resource value: 0x7F0F015E
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131689822;
 			
-			// aapt resource value: 0x7F0E015F
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131624287;
+			// aapt resource value: 0x7F0F015F
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131689823;
 			
-			// aapt resource value: 0x7F0E0160
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131624288;
+			// aapt resource value: 0x7F0F0160
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131689824;
 			
-			// aapt resource value: 0x7F0E0161
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131624289;
+			// aapt resource value: 0x7F0F0161
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131689825;
 			
-			// aapt resource value: 0x7F0E0162
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131624290;
+			// aapt resource value: 0x7F0F0162
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131689826;
 			
-			// aapt resource value: 0x7F0E0163
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131624291;
+			// aapt resource value: 0x7F0F0163
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131689827;
 			
-			// aapt resource value: 0x7F0E0164
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131624292;
+			// aapt resource value: 0x7F0F0164
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131689828;
 			
-			// aapt resource value: 0x7F0E0165
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131624293;
+			// aapt resource value: 0x7F0F0165
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131689829;
 			
-			// aapt resource value: 0x7F0E0166
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131624294;
+			// aapt resource value: 0x7F0F0166
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131689830;
 			
-			// aapt resource value: 0x7F0E0167
-			public const int TextAppearance_AppCompat_Widget_Button = 2131624295;
+			// aapt resource value: 0x7F0F0167
+			public const int TextAppearance_AppCompat_Widget_Button = 2131689831;
 			
-			// aapt resource value: 0x7F0E0168
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131624296;
+			// aapt resource value: 0x7F0F0168
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131689832;
 			
-			// aapt resource value: 0x7F0E0169
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131624297;
+			// aapt resource value: 0x7F0F0169
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131689833;
 			
-			// aapt resource value: 0x7F0E016A
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131624298;
+			// aapt resource value: 0x7F0F016A
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131689834;
 			
-			// aapt resource value: 0x7F0E016B
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131624299;
+			// aapt resource value: 0x7F0F016B
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131689835;
 			
-			// aapt resource value: 0x7F0E016C
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131624300;
+			// aapt resource value: 0x7F0F016C
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131689836;
 			
-			// aapt resource value: 0x7F0E016D
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131624301;
+			// aapt resource value: 0x7F0F016D
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131689837;
 			
-			// aapt resource value: 0x7F0E016E
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131624302;
+			// aapt resource value: 0x7F0F016E
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131689838;
 			
-			// aapt resource value: 0x7F0E016F
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131624303;
+			// aapt resource value: 0x7F0F016F
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131689839;
 			
-			// aapt resource value: 0x7F0E0170
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131624304;
+			// aapt resource value: 0x7F0F0170
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131689840;
 			
-			// aapt resource value: 0x7F0E0171
-			public const int TextAppearance_Compat_Notification = 2131624305;
+			// aapt resource value: 0x7F0F0171
+			public const int TextAppearance_Compat_Notification = 2131689841;
 			
-			// aapt resource value: 0x7F0E0172
-			public const int TextAppearance_Compat_Notification_Info = 2131624306;
+			// aapt resource value: 0x7F0F0172
+			public const int TextAppearance_Compat_Notification_Info = 2131689842;
 			
-			// aapt resource value: 0x7F0E0173
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131624307;
+			// aapt resource value: 0x7F0F0173
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131689843;
 			
-			// aapt resource value: 0x7F0E0174
-			public const int TextAppearance_Compat_Notification_Line2 = 2131624308;
+			// aapt resource value: 0x7F0F0174
+			public const int TextAppearance_Compat_Notification_Line2 = 2131689844;
 			
-			// aapt resource value: 0x7F0E0175
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131624309;
+			// aapt resource value: 0x7F0F0175
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131689845;
 			
-			// aapt resource value: 0x7F0E0176
-			public const int TextAppearance_Compat_Notification_Media = 2131624310;
+			// aapt resource value: 0x7F0F0176
+			public const int TextAppearance_Compat_Notification_Media = 2131689846;
 			
-			// aapt resource value: 0x7F0E0177
-			public const int TextAppearance_Compat_Notification_Time = 2131624311;
+			// aapt resource value: 0x7F0F0177
+			public const int TextAppearance_Compat_Notification_Time = 2131689847;
 			
-			// aapt resource value: 0x7F0E0178
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131624312;
+			// aapt resource value: 0x7F0F0178
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131689848;
 			
-			// aapt resource value: 0x7F0E0179
-			public const int TextAppearance_Compat_Notification_Title = 2131624313;
+			// aapt resource value: 0x7F0F0179
+			public const int TextAppearance_Compat_Notification_Title = 2131689849;
 			
-			// aapt resource value: 0x7F0E017A
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131624314;
+			// aapt resource value: 0x7F0F017A
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131689850;
 			
-			// aapt resource value: 0x7F0E017B
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131624315;
+			// aapt resource value: 0x7F0F017B
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131689851;
 			
-			// aapt resource value: 0x7F0E017C
-			public const int TextAppearance_Design_Counter = 2131624316;
+			// aapt resource value: 0x7F0F017C
+			public const int TextAppearance_Design_Counter = 2131689852;
 			
-			// aapt resource value: 0x7F0E017D
-			public const int TextAppearance_Design_Counter_Overflow = 2131624317;
+			// aapt resource value: 0x7F0F017D
+			public const int TextAppearance_Design_Counter_Overflow = 2131689853;
 			
-			// aapt resource value: 0x7F0E017E
-			public const int TextAppearance_Design_Error = 2131624318;
+			// aapt resource value: 0x7F0F017E
+			public const int TextAppearance_Design_Error = 2131689854;
 			
-			// aapt resource value: 0x7F0E017F
-			public const int TextAppearance_Design_HelperText = 2131624319;
+			// aapt resource value: 0x7F0F017F
+			public const int TextAppearance_Design_HelperText = 2131689855;
 			
-			// aapt resource value: 0x7F0E0180
-			public const int TextAppearance_Design_Hint = 2131624320;
+			// aapt resource value: 0x7F0F0180
+			public const int TextAppearance_Design_Hint = 2131689856;
 			
-			// aapt resource value: 0x7F0E0181
-			public const int TextAppearance_Design_Placeholder = 2131624321;
+			// aapt resource value: 0x7F0F0181
+			public const int TextAppearance_Design_Placeholder = 2131689857;
 			
-			// aapt resource value: 0x7F0E0182
-			public const int TextAppearance_Design_Prefix = 2131624322;
+			// aapt resource value: 0x7F0F0182
+			public const int TextAppearance_Design_Prefix = 2131689858;
 			
-			// aapt resource value: 0x7F0E0183
-			public const int TextAppearance_Design_Snackbar_Message = 2131624323;
+			// aapt resource value: 0x7F0F0183
+			public const int TextAppearance_Design_Snackbar_Message = 2131689859;
 			
-			// aapt resource value: 0x7F0E0184
-			public const int TextAppearance_Design_Suffix = 2131624324;
+			// aapt resource value: 0x7F0F0184
+			public const int TextAppearance_Design_Suffix = 2131689860;
 			
-			// aapt resource value: 0x7F0E0185
-			public const int TextAppearance_Design_Tab = 2131624325;
+			// aapt resource value: 0x7F0F0185
+			public const int TextAppearance_Design_Tab = 2131689861;
 			
-			// aapt resource value: 0x7F0E0186
-			public const int TextAppearance_MaterialComponents_Badge = 2131624326;
+			// aapt resource value: 0x7F0F0186
+			public const int TextAppearance_MaterialComponents_Badge = 2131689862;
 			
-			// aapt resource value: 0x7F0E0187
-			public const int TextAppearance_MaterialComponents_Body1 = 2131624327;
+			// aapt resource value: 0x7F0F0187
+			public const int TextAppearance_MaterialComponents_Body1 = 2131689863;
 			
-			// aapt resource value: 0x7F0E0188
-			public const int TextAppearance_MaterialComponents_Body2 = 2131624328;
+			// aapt resource value: 0x7F0F0188
+			public const int TextAppearance_MaterialComponents_Body2 = 2131689864;
 			
-			// aapt resource value: 0x7F0E0189
-			public const int TextAppearance_MaterialComponents_Button = 2131624329;
+			// aapt resource value: 0x7F0F0189
+			public const int TextAppearance_MaterialComponents_Button = 2131689865;
 			
-			// aapt resource value: 0x7F0E018A
-			public const int TextAppearance_MaterialComponents_Caption = 2131624330;
+			// aapt resource value: 0x7F0F018A
+			public const int TextAppearance_MaterialComponents_Caption = 2131689866;
 			
-			// aapt resource value: 0x7F0E018B
-			public const int TextAppearance_MaterialComponents_Chip = 2131624331;
+			// aapt resource value: 0x7F0F018B
+			public const int TextAppearance_MaterialComponents_Chip = 2131689867;
 			
-			// aapt resource value: 0x7F0E018C
-			public const int TextAppearance_MaterialComponents_Headline1 = 2131624332;
+			// aapt resource value: 0x7F0F018C
+			public const int TextAppearance_MaterialComponents_Headline1 = 2131689868;
 			
-			// aapt resource value: 0x7F0E018D
-			public const int TextAppearance_MaterialComponents_Headline2 = 2131624333;
+			// aapt resource value: 0x7F0F018D
+			public const int TextAppearance_MaterialComponents_Headline2 = 2131689869;
 			
-			// aapt resource value: 0x7F0E018E
-			public const int TextAppearance_MaterialComponents_Headline3 = 2131624334;
+			// aapt resource value: 0x7F0F018E
+			public const int TextAppearance_MaterialComponents_Headline3 = 2131689870;
 			
-			// aapt resource value: 0x7F0E018F
-			public const int TextAppearance_MaterialComponents_Headline4 = 2131624335;
+			// aapt resource value: 0x7F0F018F
+			public const int TextAppearance_MaterialComponents_Headline4 = 2131689871;
 			
-			// aapt resource value: 0x7F0E0190
-			public const int TextAppearance_MaterialComponents_Headline5 = 2131624336;
+			// aapt resource value: 0x7F0F0190
+			public const int TextAppearance_MaterialComponents_Headline5 = 2131689872;
 			
-			// aapt resource value: 0x7F0E0191
-			public const int TextAppearance_MaterialComponents_Headline6 = 2131624337;
+			// aapt resource value: 0x7F0F0191
+			public const int TextAppearance_MaterialComponents_Headline6 = 2131689873;
 			
-			// aapt resource value: 0x7F0E0192
-			public const int TextAppearance_MaterialComponents_Overline = 2131624338;
+			// aapt resource value: 0x7F0F0192
+			public const int TextAppearance_MaterialComponents_Overline = 2131689874;
 			
-			// aapt resource value: 0x7F0E0193
-			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131624339;
+			// aapt resource value: 0x7F0F0193
+			public const int TextAppearance_MaterialComponents_Subtitle1 = 2131689875;
 			
-			// aapt resource value: 0x7F0E0194
-			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131624340;
+			// aapt resource value: 0x7F0F0194
+			public const int TextAppearance_MaterialComponents_Subtitle2 = 2131689876;
 			
-			// aapt resource value: 0x7F0E0195
-			public const int TextAppearance_MaterialComponents_TimePicker_Title = 2131624341;
+			// aapt resource value: 0x7F0F0195
+			public const int TextAppearance_MaterialComponents_TimePicker_Title = 2131689877;
 			
-			// aapt resource value: 0x7F0E0196
-			public const int TextAppearance_MaterialComponents_Tooltip = 2131624342;
+			// aapt resource value: 0x7F0F0196
+			public const int TextAppearance_MaterialComponents_Tooltip = 2131689878;
 			
-			// aapt resource value: 0x7F0E0197
-			public const int TextAppearance_MediaRouter_Dynamic_Body = 2131624343;
+			// aapt resource value: 0x7F0F0197
+			public const int TextAppearance_MediaRouter_Dynamic_Body = 2131689879;
 			
-			// aapt resource value: 0x7F0E0198
-			public const int TextAppearance_MediaRouter_Dynamic_Body_Light = 2131624344;
+			// aapt resource value: 0x7F0F0198
+			public const int TextAppearance_MediaRouter_Dynamic_Body_Light = 2131689880;
 			
-			// aapt resource value: 0x7F0E0199
-			public const int TextAppearance_MediaRouter_Dynamic_Header = 2131624345;
+			// aapt resource value: 0x7F0F0199
+			public const int TextAppearance_MediaRouter_Dynamic_Header = 2131689881;
 			
-			// aapt resource value: 0x7F0E019A
-			public const int TextAppearance_MediaRouter_Dynamic_Header_Light = 2131624346;
+			// aapt resource value: 0x7F0F019A
+			public const int TextAppearance_MediaRouter_Dynamic_Header_Light = 2131689882;
 			
-			// aapt resource value: 0x7F0E019B
-			public const int TextAppearance_MediaRouter_Dynamic_Metadata_PrimaryText = 2131624347;
+			// aapt resource value: 0x7F0F019B
+			public const int TextAppearance_MediaRouter_Dynamic_Metadata_PrimaryText = 2131689883;
 			
-			// aapt resource value: 0x7F0E019C
-			public const int TextAppearance_MediaRouter_Dynamic_Metadata_SecondaryText = 2131624348;
+			// aapt resource value: 0x7F0F019C
+			public const int TextAppearance_MediaRouter_Dynamic_Metadata_SecondaryText = 2131689884;
 			
-			// aapt resource value: 0x7F0E019D
-			public const int TextAppearance_MediaRouter_PrimaryText = 2131624349;
+			// aapt resource value: 0x7F0F019D
+			public const int TextAppearance_MediaRouter_PrimaryText = 2131689885;
 			
-			// aapt resource value: 0x7F0E019E
-			public const int TextAppearance_MediaRouter_SecondaryText = 2131624350;
+			// aapt resource value: 0x7F0F019E
+			public const int TextAppearance_MediaRouter_SecondaryText = 2131689886;
 			
-			// aapt resource value: 0x7F0E019F
-			public const int TextAppearance_MediaRouter_Title = 2131624351;
+			// aapt resource value: 0x7F0F019F
+			public const int TextAppearance_MediaRouter_Title = 2131689887;
 			
-			// aapt resource value: 0x7F0E01A0
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131624352;
+			// aapt resource value: 0x7F0F01A0
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131689888;
 			
-			// aapt resource value: 0x7F0E01A1
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131624353;
+			// aapt resource value: 0x7F0F01A1
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131689889;
 			
-			// aapt resource value: 0x7F0E01A2
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131624354;
+			// aapt resource value: 0x7F0F01A2
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131689890;
 			
-			// aapt resource value: 0x7F0E0227
-			public const int ThemeOverlayColorAccentRed = 2131624487;
+			// aapt resource value: 0x7F0F0227
+			public const int ThemeOverlayColorAccentRed = 2131690023;
 			
-			// aapt resource value: 0x7F0E01F4
-			public const int ThemeOverlay_AppCompat = 2131624436;
+			// aapt resource value: 0x7F0F01F4
+			public const int ThemeOverlay_AppCompat = 2131689972;
 			
-			// aapt resource value: 0x7F0E01F5
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131624437;
+			// aapt resource value: 0x7F0F01F5
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131689973;
 			
-			// aapt resource value: 0x7F0E01F6
-			public const int ThemeOverlay_AppCompat_Dark = 2131624438;
+			// aapt resource value: 0x7F0F01F6
+			public const int ThemeOverlay_AppCompat_Dark = 2131689974;
 			
-			// aapt resource value: 0x7F0E01F7
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131624439;
+			// aapt resource value: 0x7F0F01F7
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131689975;
 			
-			// aapt resource value: 0x7F0E01F8
-			public const int ThemeOverlay_AppCompat_DayNight = 2131624440;
+			// aapt resource value: 0x7F0F01F8
+			public const int ThemeOverlay_AppCompat_DayNight = 2131689976;
 			
-			// aapt resource value: 0x7F0E01F9
-			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131624441;
+			// aapt resource value: 0x7F0F01F9
+			public const int ThemeOverlay_AppCompat_DayNight_ActionBar = 2131689977;
 			
-			// aapt resource value: 0x7F0E01FA
-			public const int ThemeOverlay_AppCompat_Dialog = 2131624442;
+			// aapt resource value: 0x7F0F01FA
+			public const int ThemeOverlay_AppCompat_Dialog = 2131689978;
 			
-			// aapt resource value: 0x7F0E01FB
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131624443;
+			// aapt resource value: 0x7F0F01FB
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131689979;
 			
-			// aapt resource value: 0x7F0E01FC
-			public const int ThemeOverlay_AppCompat_Light = 2131624444;
+			// aapt resource value: 0x7F0F01FC
+			public const int ThemeOverlay_AppCompat_Light = 2131689980;
 			
-			// aapt resource value: 0x7F0E01FD
-			public const int ThemeOverlay_Design_TextInputEditText = 2131624445;
+			// aapt resource value: 0x7F0F01FD
+			public const int ThemeOverlay_Design_TextInputEditText = 2131689981;
 			
-			// aapt resource value: 0x7F0E01FE
-			public const int ThemeOverlay_MaterialComponents = 2131624446;
+			// aapt resource value: 0x7F0F01FE
+			public const int ThemeOverlay_MaterialComponents = 2131689982;
 			
-			// aapt resource value: 0x7F0E01FF
-			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131624447;
+			// aapt resource value: 0x7F0F01FF
+			public const int ThemeOverlay_MaterialComponents_ActionBar = 2131689983;
 			
-			// aapt resource value: 0x7F0E0200
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131624448;
+			// aapt resource value: 0x7F0F0200
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Primary = 2131689984;
 			
-			// aapt resource value: 0x7F0E0201
-			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131624449;
+			// aapt resource value: 0x7F0F0201
+			public const int ThemeOverlay_MaterialComponents_ActionBar_Surface = 2131689985;
 			
-			// aapt resource value: 0x7F0E0202
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131624450;
+			// aapt resource value: 0x7F0F0202
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView = 2131689986;
 			
-			// aapt resource value: 0x7F0E0203
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131624451;
+			// aapt resource value: 0x7F0F0203
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = 2131689987;
 			
-			// aapt resource value: 0x7F0E0204
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131624452;
+			// aapt resource value: 0x7F0F0204
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131689988;
 			
-			// aapt resource value: 0x7F0E0205
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131624453;
+			// aapt resource value: 0x7F0F0205
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131689989;
 			
-			// aapt resource value: 0x7F0E0206
-			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131624454;
+			// aapt resource value: 0x7F0F0206
+			public const int ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131689990;
 			
-			// aapt resource value: 0x7F0E0207
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131624455;
+			// aapt resource value: 0x7F0F0207
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Primary = 2131689991;
 			
-			// aapt resource value: 0x7F0E0208
-			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131624456;
+			// aapt resource value: 0x7F0F0208
+			public const int ThemeOverlay_MaterialComponents_BottomAppBar_Surface = 2131689992;
 			
-			// aapt resource value: 0x7F0E0209
-			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131624457;
+			// aapt resource value: 0x7F0F0209
+			public const int ThemeOverlay_MaterialComponents_BottomSheetDialog = 2131689993;
 			
-			// aapt resource value: 0x7F0E020A
-			public const int ThemeOverlay_MaterialComponents_Dark = 2131624458;
+			// aapt resource value: 0x7F0F020A
+			public const int ThemeOverlay_MaterialComponents_Dark = 2131689994;
 			
-			// aapt resource value: 0x7F0E020B
-			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131624459;
+			// aapt resource value: 0x7F0F020B
+			public const int ThemeOverlay_MaterialComponents_Dark_ActionBar = 2131689995;
 			
-			// aapt resource value: 0x7F0E020C
-			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131624460;
+			// aapt resource value: 0x7F0F020C
+			public const int ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = 2131689996;
 			
-			// aapt resource value: 0x7F0E020D
-			public const int ThemeOverlay_MaterialComponents_Dialog = 2131624461;
+			// aapt resource value: 0x7F0F020D
+			public const int ThemeOverlay_MaterialComponents_Dialog = 2131689997;
 			
-			// aapt resource value: 0x7F0E020E
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131624462;
+			// aapt resource value: 0x7F0F020E
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert = 2131689998;
 			
-			// aapt resource value: 0x7F0E020F
-			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131624463;
+			// aapt resource value: 0x7F0F020F
+			public const int ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = 2131689999;
 			
-			// aapt resource value: 0x7F0E0210
-			public const int ThemeOverlay_MaterialComponents_Light = 2131624464;
+			// aapt resource value: 0x7F0F0210
+			public const int ThemeOverlay_MaterialComponents_Light = 2131690000;
 			
-			// aapt resource value: 0x7F0E0211
-			public const int ThemeOverlay_MaterialComponents_Light_BottomSheetDialog = 2131624465;
+			// aapt resource value: 0x7F0F0211
+			public const int ThemeOverlay_MaterialComponents_Light_BottomSheetDialog = 2131690001;
 			
-			// aapt resource value: 0x7F0E0212
-			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131624466;
+			// aapt resource value: 0x7F0F0212
+			public const int ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = 2131690002;
 			
-			// aapt resource value: 0x7F0E0213
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131624467;
+			// aapt resource value: 0x7F0F0213
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog = 2131690003;
 			
-			// aapt resource value: 0x7F0E0214
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131624468;
+			// aapt resource value: 0x7F0F0214
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = 2131690004;
 			
-			// aapt resource value: 0x7F0E0215
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131624469;
+			// aapt resource value: 0x7F0F0215
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = 2131690005;
 			
-			// aapt resource value: 0x7F0E0216
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131624470;
+			// aapt resource value: 0x7F0F0216
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = 2131690006;
 			
-			// aapt resource value: 0x7F0E0217
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131624471;
+			// aapt resource value: 0x7F0F0217
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = 2131690007;
 			
-			// aapt resource value: 0x7F0E0218
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131624472;
+			// aapt resource value: 0x7F0F0218
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = 2131690008;
 			
-			// aapt resource value: 0x7F0E0219
-			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131624473;
+			// aapt resource value: 0x7F0F0219
+			public const int ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = 2131690009;
 			
-			// aapt resource value: 0x7F0E021A
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131624474;
+			// aapt resource value: 0x7F0F021A
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar = 2131690010;
 			
-			// aapt resource value: 0x7F0E021B
-			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131624475;
+			// aapt resource value: 0x7F0F021B
+			public const int ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = 2131690011;
 			
-			// aapt resource value: 0x7F0E021C
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131624476;
+			// aapt resource value: 0x7F0F021C
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText = 2131690012;
 			
-			// aapt resource value: 0x7F0E021D
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131624477;
+			// aapt resource value: 0x7F0F021D
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = 2131690013;
 			
-			// aapt resource value: 0x7F0E021E
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624478;
+			// aapt resource value: 0x7F0F021E
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690014;
 			
-			// aapt resource value: 0x7F0E021F
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131624479;
+			// aapt resource value: 0x7F0F021F
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = 2131690015;
 			
-			// aapt resource value: 0x7F0E0220
-			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624480;
+			// aapt resource value: 0x7F0F0220
+			public const int ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690016;
 			
-			// aapt resource value: 0x7F0E0221
-			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131624481;
+			// aapt resource value: 0x7F0F0221
+			public const int ThemeOverlay_MaterialComponents_TimePicker = 2131690017;
 			
-			// aapt resource value: 0x7F0E0222
-			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131624482;
+			// aapt resource value: 0x7F0F0222
+			public const int ThemeOverlay_MaterialComponents_TimePicker_Display = 2131690018;
 			
-			// aapt resource value: 0x7F0E0223
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131624483;
+			// aapt resource value: 0x7F0F0223
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Primary = 2131690019;
 			
-			// aapt resource value: 0x7F0E0224
-			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131624484;
+			// aapt resource value: 0x7F0F0224
+			public const int ThemeOverlay_MaterialComponents_Toolbar_Surface = 2131690020;
 			
-			// aapt resource value: 0x7F0E0225
-			public const int ThemeOverlay_MediaRouter_Dark = 2131624485;
+			// aapt resource value: 0x7F0F0225
+			public const int ThemeOverlay_MediaRouter_Dark = 2131690021;
 			
-			// aapt resource value: 0x7F0E0226
-			public const int ThemeOverlay_MediaRouter_Light = 2131624486;
+			// aapt resource value: 0x7F0F0226
+			public const int ThemeOverlay_MediaRouter_Light = 2131690022;
 			
-			// aapt resource value: 0x7F0E01A3
-			public const int Theme_AppCompat = 2131624355;
+			// aapt resource value: 0x7F0F01A3
+			public const int Theme_AppCompat = 2131689891;
 			
-			// aapt resource value: 0x7F0E01A4
-			public const int Theme_AppCompat_CompactMenu = 2131624356;
+			// aapt resource value: 0x7F0F01A4
+			public const int Theme_AppCompat_CompactMenu = 2131689892;
 			
-			// aapt resource value: 0x7F0E01A5
-			public const int Theme_AppCompat_DayNight = 2131624357;
+			// aapt resource value: 0x7F0F01A5
+			public const int Theme_AppCompat_DayNight = 2131689893;
 			
-			// aapt resource value: 0x7F0E01A6
-			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131624358;
+			// aapt resource value: 0x7F0F01A6
+			public const int Theme_AppCompat_DayNight_DarkActionBar = 2131689894;
 			
-			// aapt resource value: 0x7F0E01A7
-			public const int Theme_AppCompat_DayNight_Dialog = 2131624359;
+			// aapt resource value: 0x7F0F01A7
+			public const int Theme_AppCompat_DayNight_Dialog = 2131689895;
 			
-			// aapt resource value: 0x7F0E01AA
-			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131624362;
+			// aapt resource value: 0x7F0F01AA
+			public const int Theme_AppCompat_DayNight_DialogWhenLarge = 2131689898;
 			
-			// aapt resource value: 0x7F0E01A8
-			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131624360;
+			// aapt resource value: 0x7F0F01A8
+			public const int Theme_AppCompat_DayNight_Dialog_Alert = 2131689896;
 			
-			// aapt resource value: 0x7F0E01A9
-			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131624361;
+			// aapt resource value: 0x7F0F01A9
+			public const int Theme_AppCompat_DayNight_Dialog_MinWidth = 2131689897;
 			
-			// aapt resource value: 0x7F0E01AB
-			public const int Theme_AppCompat_DayNight_NoActionBar = 2131624363;
+			// aapt resource value: 0x7F0F01AB
+			public const int Theme_AppCompat_DayNight_NoActionBar = 2131689899;
 			
-			// aapt resource value: 0x7F0E01AC
-			public const int Theme_AppCompat_Dialog = 2131624364;
+			// aapt resource value: 0x7F0F01AC
+			public const int Theme_AppCompat_Dialog = 2131689900;
 			
-			// aapt resource value: 0x7F0E01AF
-			public const int Theme_AppCompat_DialogWhenLarge = 2131624367;
+			// aapt resource value: 0x7F0F01AF
+			public const int Theme_AppCompat_DialogWhenLarge = 2131689903;
 			
-			// aapt resource value: 0x7F0E01AD
-			public const int Theme_AppCompat_Dialog_Alert = 2131624365;
+			// aapt resource value: 0x7F0F01AD
+			public const int Theme_AppCompat_Dialog_Alert = 2131689901;
 			
-			// aapt resource value: 0x7F0E01AE
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131624366;
+			// aapt resource value: 0x7F0F01AE
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131689902;
 			
-			// aapt resource value: 0x7F0E01B0
-			public const int Theme_AppCompat_Empty = 2131624368;
+			// aapt resource value: 0x7F0F01B0
+			public const int Theme_AppCompat_Empty = 2131689904;
 			
-			// aapt resource value: 0x7F0E01B1
-			public const int Theme_AppCompat_Light = 2131624369;
+			// aapt resource value: 0x7F0F01B1
+			public const int Theme_AppCompat_Light = 2131689905;
 			
-			// aapt resource value: 0x7F0E01B2
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131624370;
+			// aapt resource value: 0x7F0F01B2
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131689906;
 			
-			// aapt resource value: 0x7F0E01B3
-			public const int Theme_AppCompat_Light_Dialog = 2131624371;
+			// aapt resource value: 0x7F0F01B3
+			public const int Theme_AppCompat_Light_Dialog = 2131689907;
 			
-			// aapt resource value: 0x7F0E01B6
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131624374;
+			// aapt resource value: 0x7F0F01B6
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131689910;
 			
-			// aapt resource value: 0x7F0E01B4
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131624372;
+			// aapt resource value: 0x7F0F01B4
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131689908;
 			
-			// aapt resource value: 0x7F0E01B5
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131624373;
+			// aapt resource value: 0x7F0F01B5
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131689909;
 			
-			// aapt resource value: 0x7F0E01B7
-			public const int Theme_AppCompat_Light_NoActionBar = 2131624375;
+			// aapt resource value: 0x7F0F01B7
+			public const int Theme_AppCompat_Light_NoActionBar = 2131689911;
 			
-			// aapt resource value: 0x7F0E01B8
-			public const int Theme_AppCompat_NoActionBar = 2131624376;
+			// aapt resource value: 0x7F0F01B8
+			public const int Theme_AppCompat_NoActionBar = 2131689912;
 			
-			// aapt resource value: 0x7F0E01B9
-			public const int Theme_Design = 2131624377;
+			// aapt resource value: 0x7F0F01B9
+			public const int Theme_Design = 2131689913;
 			
-			// aapt resource value: 0x7F0E01BA
-			public const int Theme_Design_BottomSheetDialog = 2131624378;
+			// aapt resource value: 0x7F0F01BA
+			public const int Theme_Design_BottomSheetDialog = 2131689914;
 			
-			// aapt resource value: 0x7F0E01BB
-			public const int Theme_Design_Light = 2131624379;
+			// aapt resource value: 0x7F0F01BB
+			public const int Theme_Design_Light = 2131689915;
 			
-			// aapt resource value: 0x7F0E01BC
-			public const int Theme_Design_Light_BottomSheetDialog = 2131624380;
+			// aapt resource value: 0x7F0F01BC
+			public const int Theme_Design_Light_BottomSheetDialog = 2131689916;
 			
-			// aapt resource value: 0x7F0E01BD
-			public const int Theme_Design_Light_NoActionBar = 2131624381;
+			// aapt resource value: 0x7F0F01BD
+			public const int Theme_Design_Light_NoActionBar = 2131689917;
 			
-			// aapt resource value: 0x7F0E01BE
-			public const int Theme_Design_NoActionBar = 2131624382;
+			// aapt resource value: 0x7F0F01BE
+			public const int Theme_Design_NoActionBar = 2131689918;
 			
-			// aapt resource value: 0x7F0E01BF
-			public const int Theme_MaterialComponents = 2131624383;
+			// aapt resource value: 0x7F0F01BF
+			public const int Theme_MaterialComponents = 2131689919;
 			
-			// aapt resource value: 0x7F0E01C0
-			public const int Theme_MaterialComponents_BottomSheetDialog = 2131624384;
+			// aapt resource value: 0x7F0F01C0
+			public const int Theme_MaterialComponents_BottomSheetDialog = 2131689920;
 			
-			// aapt resource value: 0x7F0E01C1
-			public const int Theme_MaterialComponents_Bridge = 2131624385;
+			// aapt resource value: 0x7F0F01C1
+			public const int Theme_MaterialComponents_Bridge = 2131689921;
 			
-			// aapt resource value: 0x7F0E01C2
-			public const int Theme_MaterialComponents_CompactMenu = 2131624386;
+			// aapt resource value: 0x7F0F01C2
+			public const int Theme_MaterialComponents_CompactMenu = 2131689922;
 			
-			// aapt resource value: 0x7F0E01C3
-			public const int Theme_MaterialComponents_DayNight = 2131624387;
+			// aapt resource value: 0x7F0F01C3
+			public const int Theme_MaterialComponents_DayNight = 2131689923;
 			
-			// aapt resource value: 0x7F0E01C4
-			public const int Theme_MaterialComponents_DayNight_BottomSheetDialog = 2131624388;
+			// aapt resource value: 0x7F0F01C4
+			public const int Theme_MaterialComponents_DayNight_BottomSheetDialog = 2131689924;
 			
-			// aapt resource value: 0x7F0E01C5
-			public const int Theme_MaterialComponents_DayNight_Bridge = 2131624389;
+			// aapt resource value: 0x7F0F01C5
+			public const int Theme_MaterialComponents_DayNight_Bridge = 2131689925;
 			
-			// aapt resource value: 0x7F0E01C6
-			public const int Theme_MaterialComponents_DayNight_DarkActionBar = 2131624390;
+			// aapt resource value: 0x7F0F01C6
+			public const int Theme_MaterialComponents_DayNight_DarkActionBar = 2131689926;
 			
-			// aapt resource value: 0x7F0E01C7
-			public const int Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = 2131624391;
+			// aapt resource value: 0x7F0F01C7
+			public const int Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = 2131689927;
 			
-			// aapt resource value: 0x7F0E01C8
-			public const int Theme_MaterialComponents_DayNight_Dialog = 2131624392;
+			// aapt resource value: 0x7F0F01C8
+			public const int Theme_MaterialComponents_DayNight_Dialog = 2131689928;
 			
-			// aapt resource value: 0x7F0E01D0
-			public const int Theme_MaterialComponents_DayNight_DialogWhenLarge = 2131624400;
+			// aapt resource value: 0x7F0F01D0
+			public const int Theme_MaterialComponents_DayNight_DialogWhenLarge = 2131689936;
 			
-			// aapt resource value: 0x7F0E01C9
-			public const int Theme_MaterialComponents_DayNight_Dialog_Alert = 2131624393;
+			// aapt resource value: 0x7F0F01C9
+			public const int Theme_MaterialComponents_DayNight_Dialog_Alert = 2131689929;
 			
-			// aapt resource value: 0x7F0E01CA
-			public const int Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = 2131624394;
+			// aapt resource value: 0x7F0F01CA
+			public const int Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = 2131689930;
 			
-			// aapt resource value: 0x7F0E01CB
-			public const int Theme_MaterialComponents_DayNight_Dialog_Bridge = 2131624395;
+			// aapt resource value: 0x7F0F01CB
+			public const int Theme_MaterialComponents_DayNight_Dialog_Bridge = 2131689931;
 			
-			// aapt resource value: 0x7F0E01CC
-			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize = 2131624396;
+			// aapt resource value: 0x7F0F01CC
+			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize = 2131689932;
 			
-			// aapt resource value: 0x7F0E01CD
-			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = 2131624397;
+			// aapt resource value: 0x7F0F01CD
+			public const int Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = 2131689933;
 			
-			// aapt resource value: 0x7F0E01CE
-			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth = 2131624398;
+			// aapt resource value: 0x7F0F01CE
+			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth = 2131689934;
 			
-			// aapt resource value: 0x7F0E01CF
-			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = 2131624399;
+			// aapt resource value: 0x7F0F01CF
+			public const int Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = 2131689935;
 			
-			// aapt resource value: 0x7F0E01D1
-			public const int Theme_MaterialComponents_DayNight_NoActionBar = 2131624401;
+			// aapt resource value: 0x7F0F01D1
+			public const int Theme_MaterialComponents_DayNight_NoActionBar = 2131689937;
 			
-			// aapt resource value: 0x7F0E01D2
-			public const int Theme_MaterialComponents_DayNight_NoActionBar_Bridge = 2131624402;
+			// aapt resource value: 0x7F0F01D2
+			public const int Theme_MaterialComponents_DayNight_NoActionBar_Bridge = 2131689938;
 			
-			// aapt resource value: 0x7F0E01D3
-			public const int Theme_MaterialComponents_Dialog = 2131624403;
+			// aapt resource value: 0x7F0F01D3
+			public const int Theme_MaterialComponents_Dialog = 2131689939;
 			
-			// aapt resource value: 0x7F0E01DB
-			public const int Theme_MaterialComponents_DialogWhenLarge = 2131624411;
+			// aapt resource value: 0x7F0F01DB
+			public const int Theme_MaterialComponents_DialogWhenLarge = 2131689947;
 			
-			// aapt resource value: 0x7F0E01D4
-			public const int Theme_MaterialComponents_Dialog_Alert = 2131624404;
+			// aapt resource value: 0x7F0F01D4
+			public const int Theme_MaterialComponents_Dialog_Alert = 2131689940;
 			
-			// aapt resource value: 0x7F0E01D5
-			public const int Theme_MaterialComponents_Dialog_Alert_Bridge = 2131624405;
+			// aapt resource value: 0x7F0F01D5
+			public const int Theme_MaterialComponents_Dialog_Alert_Bridge = 2131689941;
 			
-			// aapt resource value: 0x7F0E01D6
-			public const int Theme_MaterialComponents_Dialog_Bridge = 2131624406;
+			// aapt resource value: 0x7F0F01D6
+			public const int Theme_MaterialComponents_Dialog_Bridge = 2131689942;
 			
-			// aapt resource value: 0x7F0E01D7
-			public const int Theme_MaterialComponents_Dialog_FixedSize = 2131624407;
+			// aapt resource value: 0x7F0F01D7
+			public const int Theme_MaterialComponents_Dialog_FixedSize = 2131689943;
 			
-			// aapt resource value: 0x7F0E01D8
-			public const int Theme_MaterialComponents_Dialog_FixedSize_Bridge = 2131624408;
+			// aapt resource value: 0x7F0F01D8
+			public const int Theme_MaterialComponents_Dialog_FixedSize_Bridge = 2131689944;
 			
-			// aapt resource value: 0x7F0E01D9
-			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131624409;
+			// aapt resource value: 0x7F0F01D9
+			public const int Theme_MaterialComponents_Dialog_MinWidth = 2131689945;
 			
-			// aapt resource value: 0x7F0E01DA
-			public const int Theme_MaterialComponents_Dialog_MinWidth_Bridge = 2131624410;
+			// aapt resource value: 0x7F0F01DA
+			public const int Theme_MaterialComponents_Dialog_MinWidth_Bridge = 2131689946;
 			
-			// aapt resource value: 0x7F0E01DC
-			public const int Theme_MaterialComponents_Light = 2131624412;
+			// aapt resource value: 0x7F0F01DC
+			public const int Theme_MaterialComponents_Light = 2131689948;
 			
-			// aapt resource value: 0x7F0E01DD
-			public const int Theme_MaterialComponents_Light_BarSize = 2131624413;
+			// aapt resource value: 0x7F0F01DD
+			public const int Theme_MaterialComponents_Light_BarSize = 2131689949;
 			
-			// aapt resource value: 0x7F0E01DE
-			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131624414;
+			// aapt resource value: 0x7F0F01DE
+			public const int Theme_MaterialComponents_Light_BottomSheetDialog = 2131689950;
 			
-			// aapt resource value: 0x7F0E01DF
-			public const int Theme_MaterialComponents_Light_Bridge = 2131624415;
+			// aapt resource value: 0x7F0F01DF
+			public const int Theme_MaterialComponents_Light_Bridge = 2131689951;
 			
-			// aapt resource value: 0x7F0E01E0
-			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131624416;
+			// aapt resource value: 0x7F0F01E0
+			public const int Theme_MaterialComponents_Light_DarkActionBar = 2131689952;
 			
-			// aapt resource value: 0x7F0E01E1
-			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131624417;
+			// aapt resource value: 0x7F0F01E1
+			public const int Theme_MaterialComponents_Light_DarkActionBar_Bridge = 2131689953;
 			
-			// aapt resource value: 0x7F0E01E2
-			public const int Theme_MaterialComponents_Light_Dialog = 2131624418;
+			// aapt resource value: 0x7F0F01E2
+			public const int Theme_MaterialComponents_Light_Dialog = 2131689954;
 			
-			// aapt resource value: 0x7F0E01EA
-			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131624426;
+			// aapt resource value: 0x7F0F01EA
+			public const int Theme_MaterialComponents_Light_DialogWhenLarge = 2131689962;
 			
-			// aapt resource value: 0x7F0E01E3
-			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131624419;
+			// aapt resource value: 0x7F0F01E3
+			public const int Theme_MaterialComponents_Light_Dialog_Alert = 2131689955;
 			
-			// aapt resource value: 0x7F0E01E4
-			public const int Theme_MaterialComponents_Light_Dialog_Alert_Bridge = 2131624420;
+			// aapt resource value: 0x7F0F01E4
+			public const int Theme_MaterialComponents_Light_Dialog_Alert_Bridge = 2131689956;
 			
-			// aapt resource value: 0x7F0E01E5
-			public const int Theme_MaterialComponents_Light_Dialog_Bridge = 2131624421;
+			// aapt resource value: 0x7F0F01E5
+			public const int Theme_MaterialComponents_Light_Dialog_Bridge = 2131689957;
 			
-			// aapt resource value: 0x7F0E01E6
-			public const int Theme_MaterialComponents_Light_Dialog_FixedSize = 2131624422;
+			// aapt resource value: 0x7F0F01E6
+			public const int Theme_MaterialComponents_Light_Dialog_FixedSize = 2131689958;
 			
-			// aapt resource value: 0x7F0E01E7
-			public const int Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = 2131624423;
+			// aapt resource value: 0x7F0F01E7
+			public const int Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = 2131689959;
 			
-			// aapt resource value: 0x7F0E01E8
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131624424;
+			// aapt resource value: 0x7F0F01E8
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth = 2131689960;
 			
-			// aapt resource value: 0x7F0E01E9
-			public const int Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = 2131624425;
+			// aapt resource value: 0x7F0F01E9
+			public const int Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = 2131689961;
 			
-			// aapt resource value: 0x7F0E01EB
-			public const int Theme_MaterialComponents_Light_LargeTouch = 2131624427;
+			// aapt resource value: 0x7F0F01EB
+			public const int Theme_MaterialComponents_Light_LargeTouch = 2131689963;
 			
-			// aapt resource value: 0x7F0E01EC
-			public const int Theme_MaterialComponents_Light_NoActionBar = 2131624428;
+			// aapt resource value: 0x7F0F01EC
+			public const int Theme_MaterialComponents_Light_NoActionBar = 2131689964;
 			
-			// aapt resource value: 0x7F0E01ED
-			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131624429;
+			// aapt resource value: 0x7F0F01ED
+			public const int Theme_MaterialComponents_Light_NoActionBar_Bridge = 2131689965;
 			
-			// aapt resource value: 0x7F0E01EE
-			public const int Theme_MaterialComponents_NoActionBar = 2131624430;
+			// aapt resource value: 0x7F0F01EE
+			public const int Theme_MaterialComponents_NoActionBar = 2131689966;
 			
-			// aapt resource value: 0x7F0E01EF
-			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131624431;
+			// aapt resource value: 0x7F0F01EF
+			public const int Theme_MaterialComponents_NoActionBar_Bridge = 2131689967;
 			
-			// aapt resource value: 0x7F0E01F0
-			public const int Theme_MediaRouter = 2131624432;
+			// aapt resource value: 0x7F0F01F0
+			public const int Theme_MediaRouter = 2131689968;
 			
-			// aapt resource value: 0x7F0E01F1
-			public const int Theme_MediaRouter_Light = 2131624433;
+			// aapt resource value: 0x7F0F01F1
+			public const int Theme_MediaRouter_Light = 2131689969;
 			
-			// aapt resource value: 0x7F0E01F3
-			public const int Theme_MediaRouter_LightControlPanel = 2131624435;
+			// aapt resource value: 0x7F0F01F3
+			public const int Theme_MediaRouter_LightControlPanel = 2131689971;
 			
-			// aapt resource value: 0x7F0E01F2
-			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131624434;
+			// aapt resource value: 0x7F0F01F2
+			public const int Theme_MediaRouter_Light_DarkControlPanel = 2131689970;
 			
-			// aapt resource value: 0x7F0E0228
-			public const int Widget_AppCompat_ActionBar = 2131624488;
+			// aapt resource value: 0x7F0F0228
+			public const int Widget_AppCompat_ActionBar = 2131690024;
 			
-			// aapt resource value: 0x7F0E0229
-			public const int Widget_AppCompat_ActionBar_Solid = 2131624489;
+			// aapt resource value: 0x7F0F0229
+			public const int Widget_AppCompat_ActionBar_Solid = 2131690025;
 			
-			// aapt resource value: 0x7F0E022A
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131624490;
+			// aapt resource value: 0x7F0F022A
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131690026;
 			
-			// aapt resource value: 0x7F0E022B
-			public const int Widget_AppCompat_ActionBar_TabText = 2131624491;
+			// aapt resource value: 0x7F0F022B
+			public const int Widget_AppCompat_ActionBar_TabText = 2131690027;
 			
-			// aapt resource value: 0x7F0E022C
-			public const int Widget_AppCompat_ActionBar_TabView = 2131624492;
+			// aapt resource value: 0x7F0F022C
+			public const int Widget_AppCompat_ActionBar_TabView = 2131690028;
 			
-			// aapt resource value: 0x7F0E022D
-			public const int Widget_AppCompat_ActionButton = 2131624493;
+			// aapt resource value: 0x7F0F022D
+			public const int Widget_AppCompat_ActionButton = 2131690029;
 			
-			// aapt resource value: 0x7F0E022E
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131624494;
+			// aapt resource value: 0x7F0F022E
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131690030;
 			
-			// aapt resource value: 0x7F0E022F
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131624495;
+			// aapt resource value: 0x7F0F022F
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131690031;
 			
-			// aapt resource value: 0x7F0E0230
-			public const int Widget_AppCompat_ActionMode = 2131624496;
+			// aapt resource value: 0x7F0F0230
+			public const int Widget_AppCompat_ActionMode = 2131690032;
 			
-			// aapt resource value: 0x7F0E0231
-			public const int Widget_AppCompat_ActivityChooserView = 2131624497;
+			// aapt resource value: 0x7F0F0231
+			public const int Widget_AppCompat_ActivityChooserView = 2131690033;
 			
-			// aapt resource value: 0x7F0E0232
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131624498;
+			// aapt resource value: 0x7F0F0232
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131690034;
 			
-			// aapt resource value: 0x7F0E0233
-			public const int Widget_AppCompat_Button = 2131624499;
+			// aapt resource value: 0x7F0F0233
+			public const int Widget_AppCompat_Button = 2131690035;
 			
-			// aapt resource value: 0x7F0E0239
-			public const int Widget_AppCompat_ButtonBar = 2131624505;
+			// aapt resource value: 0x7F0F0239
+			public const int Widget_AppCompat_ButtonBar = 2131690041;
 			
-			// aapt resource value: 0x7F0E023A
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131624506;
+			// aapt resource value: 0x7F0F023A
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131690042;
 			
-			// aapt resource value: 0x7F0E0234
-			public const int Widget_AppCompat_Button_Borderless = 2131624500;
+			// aapt resource value: 0x7F0F0234
+			public const int Widget_AppCompat_Button_Borderless = 2131690036;
 			
-			// aapt resource value: 0x7F0E0235
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131624501;
+			// aapt resource value: 0x7F0F0235
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131690037;
 			
-			// aapt resource value: 0x7F0E0236
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131624502;
+			// aapt resource value: 0x7F0F0236
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131690038;
 			
-			// aapt resource value: 0x7F0E0237
-			public const int Widget_AppCompat_Button_Colored = 2131624503;
+			// aapt resource value: 0x7F0F0237
+			public const int Widget_AppCompat_Button_Colored = 2131690039;
 			
-			// aapt resource value: 0x7F0E0238
-			public const int Widget_AppCompat_Button_Small = 2131624504;
+			// aapt resource value: 0x7F0F0238
+			public const int Widget_AppCompat_Button_Small = 2131690040;
 			
-			// aapt resource value: 0x7F0E023B
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131624507;
+			// aapt resource value: 0x7F0F023B
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131690043;
 			
-			// aapt resource value: 0x7F0E023C
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131624508;
+			// aapt resource value: 0x7F0F023C
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131690044;
 			
-			// aapt resource value: 0x7F0E023D
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131624509;
+			// aapt resource value: 0x7F0F023D
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131690045;
 			
-			// aapt resource value: 0x7F0E023E
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131624510;
+			// aapt resource value: 0x7F0F023E
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131690046;
 			
-			// aapt resource value: 0x7F0E023F
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131624511;
+			// aapt resource value: 0x7F0F023F
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131690047;
 			
-			// aapt resource value: 0x7F0E0240
-			public const int Widget_AppCompat_EditText = 2131624512;
+			// aapt resource value: 0x7F0F0240
+			public const int Widget_AppCompat_EditText = 2131690048;
 			
-			// aapt resource value: 0x7F0E0241
-			public const int Widget_AppCompat_ImageButton = 2131624513;
+			// aapt resource value: 0x7F0F0241
+			public const int Widget_AppCompat_ImageButton = 2131690049;
 			
-			// aapt resource value: 0x7F0E0242
-			public const int Widget_AppCompat_Light_ActionBar = 2131624514;
+			// aapt resource value: 0x7F0F0242
+			public const int Widget_AppCompat_Light_ActionBar = 2131690050;
 			
-			// aapt resource value: 0x7F0E0243
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131624515;
+			// aapt resource value: 0x7F0F0243
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131690051;
 			
-			// aapt resource value: 0x7F0E0244
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131624516;
+			// aapt resource value: 0x7F0F0244
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131690052;
 			
-			// aapt resource value: 0x7F0E0245
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131624517;
+			// aapt resource value: 0x7F0F0245
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131690053;
 			
-			// aapt resource value: 0x7F0E0246
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131624518;
+			// aapt resource value: 0x7F0F0246
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131690054;
 			
-			// aapt resource value: 0x7F0E0247
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131624519;
+			// aapt resource value: 0x7F0F0247
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131690055;
 			
-			// aapt resource value: 0x7F0E0248
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131624520;
+			// aapt resource value: 0x7F0F0248
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131690056;
 			
-			// aapt resource value: 0x7F0E0249
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131624521;
+			// aapt resource value: 0x7F0F0249
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131690057;
 			
-			// aapt resource value: 0x7F0E024A
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131624522;
+			// aapt resource value: 0x7F0F024A
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131690058;
 			
-			// aapt resource value: 0x7F0E024B
-			public const int Widget_AppCompat_Light_ActionButton = 2131624523;
+			// aapt resource value: 0x7F0F024B
+			public const int Widget_AppCompat_Light_ActionButton = 2131690059;
 			
-			// aapt resource value: 0x7F0E024C
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131624524;
+			// aapt resource value: 0x7F0F024C
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131690060;
 			
-			// aapt resource value: 0x7F0E024D
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131624525;
+			// aapt resource value: 0x7F0F024D
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131690061;
 			
-			// aapt resource value: 0x7F0E024E
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131624526;
+			// aapt resource value: 0x7F0F024E
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131690062;
 			
-			// aapt resource value: 0x7F0E024F
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131624527;
+			// aapt resource value: 0x7F0F024F
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131690063;
 			
-			// aapt resource value: 0x7F0E0250
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131624528;
+			// aapt resource value: 0x7F0F0250
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131690064;
 			
-			// aapt resource value: 0x7F0E0251
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131624529;
+			// aapt resource value: 0x7F0F0251
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131690065;
 			
-			// aapt resource value: 0x7F0E0252
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131624530;
+			// aapt resource value: 0x7F0F0252
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131690066;
 			
-			// aapt resource value: 0x7F0E0253
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131624531;
+			// aapt resource value: 0x7F0F0253
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131690067;
 			
-			// aapt resource value: 0x7F0E0254
-			public const int Widget_AppCompat_Light_PopupMenu = 2131624532;
+			// aapt resource value: 0x7F0F0254
+			public const int Widget_AppCompat_Light_PopupMenu = 2131690068;
 			
-			// aapt resource value: 0x7F0E0255
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131624533;
+			// aapt resource value: 0x7F0F0255
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131690069;
 			
-			// aapt resource value: 0x7F0E0256
-			public const int Widget_AppCompat_Light_SearchView = 2131624534;
+			// aapt resource value: 0x7F0F0256
+			public const int Widget_AppCompat_Light_SearchView = 2131690070;
 			
-			// aapt resource value: 0x7F0E0257
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131624535;
+			// aapt resource value: 0x7F0F0257
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131690071;
 			
-			// aapt resource value: 0x7F0E0258
-			public const int Widget_AppCompat_ListMenuView = 2131624536;
+			// aapt resource value: 0x7F0F0258
+			public const int Widget_AppCompat_ListMenuView = 2131690072;
 			
-			// aapt resource value: 0x7F0E0259
-			public const int Widget_AppCompat_ListPopupWindow = 2131624537;
+			// aapt resource value: 0x7F0F0259
+			public const int Widget_AppCompat_ListPopupWindow = 2131690073;
 			
-			// aapt resource value: 0x7F0E025A
-			public const int Widget_AppCompat_ListView = 2131624538;
+			// aapt resource value: 0x7F0F025A
+			public const int Widget_AppCompat_ListView = 2131690074;
 			
-			// aapt resource value: 0x7F0E025B
-			public const int Widget_AppCompat_ListView_DropDown = 2131624539;
+			// aapt resource value: 0x7F0F025B
+			public const int Widget_AppCompat_ListView_DropDown = 2131690075;
 			
-			// aapt resource value: 0x7F0E025C
-			public const int Widget_AppCompat_ListView_Menu = 2131624540;
+			// aapt resource value: 0x7F0F025C
+			public const int Widget_AppCompat_ListView_Menu = 2131690076;
 			
-			// aapt resource value: 0x7F0E025D
-			public const int Widget_AppCompat_PopupMenu = 2131624541;
+			// aapt resource value: 0x7F0F025D
+			public const int Widget_AppCompat_PopupMenu = 2131690077;
 			
-			// aapt resource value: 0x7F0E025E
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131624542;
+			// aapt resource value: 0x7F0F025E
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131690078;
 			
-			// aapt resource value: 0x7F0E025F
-			public const int Widget_AppCompat_PopupWindow = 2131624543;
+			// aapt resource value: 0x7F0F025F
+			public const int Widget_AppCompat_PopupWindow = 2131690079;
 			
-			// aapt resource value: 0x7F0E0260
-			public const int Widget_AppCompat_ProgressBar = 2131624544;
+			// aapt resource value: 0x7F0F0260
+			public const int Widget_AppCompat_ProgressBar = 2131690080;
 			
-			// aapt resource value: 0x7F0E0261
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131624545;
+			// aapt resource value: 0x7F0F0261
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131690081;
 			
-			// aapt resource value: 0x7F0E0262
-			public const int Widget_AppCompat_RatingBar = 2131624546;
+			// aapt resource value: 0x7F0F0262
+			public const int Widget_AppCompat_RatingBar = 2131690082;
 			
-			// aapt resource value: 0x7F0E0263
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131624547;
+			// aapt resource value: 0x7F0F0263
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131690083;
 			
-			// aapt resource value: 0x7F0E0264
-			public const int Widget_AppCompat_RatingBar_Small = 2131624548;
+			// aapt resource value: 0x7F0F0264
+			public const int Widget_AppCompat_RatingBar_Small = 2131690084;
 			
-			// aapt resource value: 0x7F0E0265
-			public const int Widget_AppCompat_SearchView = 2131624549;
+			// aapt resource value: 0x7F0F0265
+			public const int Widget_AppCompat_SearchView = 2131690085;
 			
-			// aapt resource value: 0x7F0E0266
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131624550;
+			// aapt resource value: 0x7F0F0266
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131690086;
 			
-			// aapt resource value: 0x7F0E0267
-			public const int Widget_AppCompat_SeekBar = 2131624551;
+			// aapt resource value: 0x7F0F0267
+			public const int Widget_AppCompat_SeekBar = 2131690087;
 			
-			// aapt resource value: 0x7F0E0268
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131624552;
+			// aapt resource value: 0x7F0F0268
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131690088;
 			
-			// aapt resource value: 0x7F0E0269
-			public const int Widget_AppCompat_Spinner = 2131624553;
+			// aapt resource value: 0x7F0F0269
+			public const int Widget_AppCompat_Spinner = 2131690089;
 			
-			// aapt resource value: 0x7F0E026A
-			public const int Widget_AppCompat_Spinner_DropDown = 2131624554;
+			// aapt resource value: 0x7F0F026A
+			public const int Widget_AppCompat_Spinner_DropDown = 2131690090;
 			
-			// aapt resource value: 0x7F0E026B
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131624555;
+			// aapt resource value: 0x7F0F026B
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131690091;
 			
-			// aapt resource value: 0x7F0E026C
-			public const int Widget_AppCompat_Spinner_Underlined = 2131624556;
+			// aapt resource value: 0x7F0F026C
+			public const int Widget_AppCompat_Spinner_Underlined = 2131690092;
 			
-			// aapt resource value: 0x7F0E026D
-			public const int Widget_AppCompat_TextView = 2131624557;
+			// aapt resource value: 0x7F0F026D
+			public const int Widget_AppCompat_TextView = 2131690093;
 			
-			// aapt resource value: 0x7F0E026E
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131624558;
+			// aapt resource value: 0x7F0F026E
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131690094;
 			
-			// aapt resource value: 0x7F0E026F
-			public const int Widget_AppCompat_Toolbar = 2131624559;
+			// aapt resource value: 0x7F0F026F
+			public const int Widget_AppCompat_Toolbar = 2131690095;
 			
-			// aapt resource value: 0x7F0E0270
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131624560;
+			// aapt resource value: 0x7F0F0270
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131690096;
 			
-			// aapt resource value: 0x7F0E0271
-			public const int Widget_Compat_NotificationActionContainer = 2131624561;
+			// aapt resource value: 0x7F0F0271
+			public const int Widget_Compat_NotificationActionContainer = 2131690097;
 			
-			// aapt resource value: 0x7F0E0272
-			public const int Widget_Compat_NotificationActionText = 2131624562;
+			// aapt resource value: 0x7F0F0272
+			public const int Widget_Compat_NotificationActionText = 2131690098;
 			
-			// aapt resource value: 0x7F0E0273
-			public const int Widget_Design_AppBarLayout = 2131624563;
+			// aapt resource value: 0x7F0F0273
+			public const int Widget_Design_AppBarLayout = 2131690099;
 			
-			// aapt resource value: 0x7F0E0274
-			public const int Widget_Design_BottomNavigationView = 2131624564;
+			// aapt resource value: 0x7F0F0274
+			public const int Widget_Design_BottomNavigationView = 2131690100;
 			
-			// aapt resource value: 0x7F0E0275
-			public const int Widget_Design_BottomSheet_Modal = 2131624565;
+			// aapt resource value: 0x7F0F0275
+			public const int Widget_Design_BottomSheet_Modal = 2131690101;
 			
-			// aapt resource value: 0x7F0E0276
-			public const int Widget_Design_CollapsingToolbar = 2131624566;
+			// aapt resource value: 0x7F0F0276
+			public const int Widget_Design_CollapsingToolbar = 2131690102;
 			
-			// aapt resource value: 0x7F0E0277
-			public const int Widget_Design_FloatingActionButton = 2131624567;
+			// aapt resource value: 0x7F0F0277
+			public const int Widget_Design_FloatingActionButton = 2131690103;
 			
-			// aapt resource value: 0x7F0E0278
-			public const int Widget_Design_NavigationView = 2131624568;
+			// aapt resource value: 0x7F0F0278
+			public const int Widget_Design_NavigationView = 2131690104;
 			
-			// aapt resource value: 0x7F0E0279
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131624569;
+			// aapt resource value: 0x7F0F0279
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131690105;
 			
-			// aapt resource value: 0x7F0E027A
-			public const int Widget_Design_Snackbar = 2131624570;
+			// aapt resource value: 0x7F0F027A
+			public const int Widget_Design_Snackbar = 2131690106;
 			
-			// aapt resource value: 0x7F0E027B
-			public const int Widget_Design_TabLayout = 2131624571;
+			// aapt resource value: 0x7F0F027B
+			public const int Widget_Design_TabLayout = 2131690107;
 			
-			// aapt resource value: 0x7F0E027C
-			public const int Widget_Design_TextInputEditText = 2131624572;
+			// aapt resource value: 0x7F0F027C
+			public const int Widget_Design_TextInputEditText = 2131690108;
 			
-			// aapt resource value: 0x7F0E027D
-			public const int Widget_Design_TextInputLayout = 2131624573;
+			// aapt resource value: 0x7F0F027D
+			public const int Widget_Design_TextInputLayout = 2131690109;
 			
-			// aapt resource value: 0x7F0E027E
-			public const int Widget_MaterialComponents_ActionBar_Primary = 2131624574;
+			// aapt resource value: 0x7F0F027E
+			public const int Widget_MaterialComponents_ActionBar_Primary = 2131690110;
 			
-			// aapt resource value: 0x7F0E027F
-			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131624575;
+			// aapt resource value: 0x7F0F027F
+			public const int Widget_MaterialComponents_ActionBar_PrimarySurface = 2131690111;
 			
-			// aapt resource value: 0x7F0E0280
-			public const int Widget_MaterialComponents_ActionBar_Solid = 2131624576;
+			// aapt resource value: 0x7F0F0280
+			public const int Widget_MaterialComponents_ActionBar_Solid = 2131690112;
 			
-			// aapt resource value: 0x7F0E0281
-			public const int Widget_MaterialComponents_ActionBar_Surface = 2131624577;
+			// aapt resource value: 0x7F0F0281
+			public const int Widget_MaterialComponents_ActionBar_Surface = 2131690113;
 			
-			// aapt resource value: 0x7F0E0282
-			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131624578;
+			// aapt resource value: 0x7F0F0282
+			public const int Widget_MaterialComponents_AppBarLayout_Primary = 2131690114;
 			
-			// aapt resource value: 0x7F0E0283
-			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131624579;
+			// aapt resource value: 0x7F0F0283
+			public const int Widget_MaterialComponents_AppBarLayout_PrimarySurface = 2131690115;
 			
-			// aapt resource value: 0x7F0E0284
-			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131624580;
+			// aapt resource value: 0x7F0F0284
+			public const int Widget_MaterialComponents_AppBarLayout_Surface = 2131690116;
 			
-			// aapt resource value: 0x7F0E0285
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131624581;
+			// aapt resource value: 0x7F0F0285
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox = 2131690117;
 			
-			// aapt resource value: 0x7F0E0286
-			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131624582;
+			// aapt resource value: 0x7F0F0286
+			public const int Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = 2131690118;
 			
-			// aapt resource value: 0x7F0E0287
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131624583;
+			// aapt resource value: 0x7F0F0287
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = 2131690119;
 			
-			// aapt resource value: 0x7F0E0288
-			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131624584;
+			// aapt resource value: 0x7F0F0288
+			public const int Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = 2131690120;
 			
-			// aapt resource value: 0x7F0E0289
-			public const int Widget_MaterialComponents_Badge = 2131624585;
+			// aapt resource value: 0x7F0F0289
+			public const int Widget_MaterialComponents_Badge = 2131690121;
 			
-			// aapt resource value: 0x7F0E028A
-			public const int Widget_MaterialComponents_BottomAppBar = 2131624586;
+			// aapt resource value: 0x7F0F028A
+			public const int Widget_MaterialComponents_BottomAppBar = 2131690122;
 			
-			// aapt resource value: 0x7F0E028B
-			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131624587;
+			// aapt resource value: 0x7F0F028B
+			public const int Widget_MaterialComponents_BottomAppBar_Colored = 2131690123;
 			
-			// aapt resource value: 0x7F0E028C
-			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131624588;
+			// aapt resource value: 0x7F0F028C
+			public const int Widget_MaterialComponents_BottomAppBar_PrimarySurface = 2131690124;
 			
-			// aapt resource value: 0x7F0E028D
-			public const int Widget_MaterialComponents_BottomNavigationView = 2131624589;
+			// aapt resource value: 0x7F0F028D
+			public const int Widget_MaterialComponents_BottomNavigationView = 2131690125;
 			
-			// aapt resource value: 0x7F0E028E
-			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131624590;
+			// aapt resource value: 0x7F0F028E
+			public const int Widget_MaterialComponents_BottomNavigationView_Colored = 2131690126;
 			
-			// aapt resource value: 0x7F0E028F
-			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131624591;
+			// aapt resource value: 0x7F0F028F
+			public const int Widget_MaterialComponents_BottomNavigationView_PrimarySurface = 2131690127;
 			
-			// aapt resource value: 0x7F0E0290
-			public const int Widget_MaterialComponents_BottomSheet = 2131624592;
+			// aapt resource value: 0x7F0F0290
+			public const int Widget_MaterialComponents_BottomSheet = 2131690128;
 			
-			// aapt resource value: 0x7F0E0291
-			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131624593;
+			// aapt resource value: 0x7F0F0291
+			public const int Widget_MaterialComponents_BottomSheet_Modal = 2131690129;
 			
-			// aapt resource value: 0x7F0E0292
-			public const int Widget_MaterialComponents_Button = 2131624594;
+			// aapt resource value: 0x7F0F0292
+			public const int Widget_MaterialComponents_Button = 2131690130;
 			
-			// aapt resource value: 0x7F0E0293
-			public const int Widget_MaterialComponents_Button_Icon = 2131624595;
+			// aapt resource value: 0x7F0F0293
+			public const int Widget_MaterialComponents_Button_Icon = 2131690131;
 			
-			// aapt resource value: 0x7F0E0294
-			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131624596;
+			// aapt resource value: 0x7F0F0294
+			public const int Widget_MaterialComponents_Button_OutlinedButton = 2131690132;
 			
-			// aapt resource value: 0x7F0E0295
-			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131624597;
+			// aapt resource value: 0x7F0F0295
+			public const int Widget_MaterialComponents_Button_OutlinedButton_Icon = 2131690133;
 			
-			// aapt resource value: 0x7F0E0296
-			public const int Widget_MaterialComponents_Button_TextButton = 2131624598;
+			// aapt resource value: 0x7F0F0296
+			public const int Widget_MaterialComponents_Button_TextButton = 2131690134;
 			
-			// aapt resource value: 0x7F0E0297
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131624599;
+			// aapt resource value: 0x7F0F0297
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog = 2131690135;
 			
-			// aapt resource value: 0x7F0E0298
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131624600;
+			// aapt resource value: 0x7F0F0298
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Flush = 2131690136;
 			
-			// aapt resource value: 0x7F0E0299
-			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131624601;
+			// aapt resource value: 0x7F0F0299
+			public const int Widget_MaterialComponents_Button_TextButton_Dialog_Icon = 2131690137;
 			
-			// aapt resource value: 0x7F0E029A
-			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131624602;
+			// aapt resource value: 0x7F0F029A
+			public const int Widget_MaterialComponents_Button_TextButton_Icon = 2131690138;
 			
-			// aapt resource value: 0x7F0E029B
-			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131624603;
+			// aapt resource value: 0x7F0F029B
+			public const int Widget_MaterialComponents_Button_TextButton_Snackbar = 2131690139;
 			
-			// aapt resource value: 0x7F0E029C
-			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131624604;
+			// aapt resource value: 0x7F0F029C
+			public const int Widget_MaterialComponents_Button_UnelevatedButton = 2131690140;
 			
-			// aapt resource value: 0x7F0E029D
-			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131624605;
+			// aapt resource value: 0x7F0F029D
+			public const int Widget_MaterialComponents_Button_UnelevatedButton_Icon = 2131690141;
 			
-			// aapt resource value: 0x7F0E029E
-			public const int Widget_MaterialComponents_CardView = 2131624606;
+			// aapt resource value: 0x7F0F029E
+			public const int Widget_MaterialComponents_CardView = 2131690142;
 			
-			// aapt resource value: 0x7F0E029F
-			public const int Widget_MaterialComponents_CheckedTextView = 2131624607;
+			// aapt resource value: 0x7F0F029F
+			public const int Widget_MaterialComponents_CheckedTextView = 2131690143;
 			
-			// aapt resource value: 0x7F0E02A4
-			public const int Widget_MaterialComponents_ChipGroup = 2131624612;
+			// aapt resource value: 0x7F0F02A4
+			public const int Widget_MaterialComponents_ChipGroup = 2131690148;
 			
-			// aapt resource value: 0x7F0E02A0
-			public const int Widget_MaterialComponents_Chip_Action = 2131624608;
+			// aapt resource value: 0x7F0F02A0
+			public const int Widget_MaterialComponents_Chip_Action = 2131690144;
 			
-			// aapt resource value: 0x7F0E02A1
-			public const int Widget_MaterialComponents_Chip_Choice = 2131624609;
+			// aapt resource value: 0x7F0F02A1
+			public const int Widget_MaterialComponents_Chip_Choice = 2131690145;
 			
-			// aapt resource value: 0x7F0E02A2
-			public const int Widget_MaterialComponents_Chip_Entry = 2131624610;
+			// aapt resource value: 0x7F0F02A2
+			public const int Widget_MaterialComponents_Chip_Entry = 2131690146;
 			
-			// aapt resource value: 0x7F0E02A3
-			public const int Widget_MaterialComponents_Chip_Filter = 2131624611;
+			// aapt resource value: 0x7F0F02A3
+			public const int Widget_MaterialComponents_Chip_Filter = 2131690147;
 			
-			// aapt resource value: 0x7F0E02A5
-			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131624613;
+			// aapt resource value: 0x7F0F02A5
+			public const int Widget_MaterialComponents_CircularProgressIndicator = 2131690149;
 			
-			// aapt resource value: 0x7F0E02A6
-			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131624614;
+			// aapt resource value: 0x7F0F02A6
+			public const int Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall = 2131690150;
 			
-			// aapt resource value: 0x7F0E02A7
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131624615;
+			// aapt resource value: 0x7F0F02A7
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Medium = 2131690151;
 			
-			// aapt resource value: 0x7F0E02A8
-			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131624616;
+			// aapt resource value: 0x7F0F02A8
+			public const int Widget_MaterialComponents_CircularProgressIndicator_Small = 2131690152;
 			
-			// aapt resource value: 0x7F0E02A9
-			public const int Widget_MaterialComponents_CollapsingToolbar = 2131624617;
+			// aapt resource value: 0x7F0F02A9
+			public const int Widget_MaterialComponents_CollapsingToolbar = 2131690153;
 			
-			// aapt resource value: 0x7F0E02AA
-			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131624618;
+			// aapt resource value: 0x7F0F02AA
+			public const int Widget_MaterialComponents_CompoundButton_CheckBox = 2131690154;
 			
-			// aapt resource value: 0x7F0E02AB
-			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131624619;
+			// aapt resource value: 0x7F0F02AB
+			public const int Widget_MaterialComponents_CompoundButton_RadioButton = 2131690155;
 			
-			// aapt resource value: 0x7F0E02AC
-			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131624620;
+			// aapt resource value: 0x7F0F02AC
+			public const int Widget_MaterialComponents_CompoundButton_Switch = 2131690156;
 			
-			// aapt resource value: 0x7F0E02AD
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131624621;
+			// aapt resource value: 0x7F0F02AD
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton = 2131690157;
 			
-			// aapt resource value: 0x7F0E02AE
-			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131624622;
+			// aapt resource value: 0x7F0F02AE
+			public const int Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = 2131690158;
 			
-			// aapt resource value: 0x7F0E02AF
-			public const int Widget_MaterialComponents_FloatingActionButton = 2131624623;
+			// aapt resource value: 0x7F0F02AF
+			public const int Widget_MaterialComponents_FloatingActionButton = 2131690159;
 			
-			// aapt resource value: 0x7F0E02B0
-			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131624624;
+			// aapt resource value: 0x7F0F02B0
+			public const int Widget_MaterialComponents_Light_ActionBar_Solid = 2131690160;
 			
-			// aapt resource value: 0x7F0E02B1
-			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131624625;
+			// aapt resource value: 0x7F0F02B1
+			public const int Widget_MaterialComponents_LinearProgressIndicator = 2131690161;
 			
-			// aapt resource value: 0x7F0E02B2
-			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131624626;
+			// aapt resource value: 0x7F0F02B2
+			public const int Widget_MaterialComponents_MaterialButtonToggleGroup = 2131690162;
 			
-			// aapt resource value: 0x7F0E02B3
-			public const int Widget_MaterialComponents_MaterialCalendar = 2131624627;
+			// aapt resource value: 0x7F0F02B3
+			public const int Widget_MaterialComponents_MaterialCalendar = 2131690163;
 			
-			// aapt resource value: 0x7F0E02B4
-			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131624628;
+			// aapt resource value: 0x7F0F02B4
+			public const int Widget_MaterialComponents_MaterialCalendar_Day = 2131690164;
 			
-			// aapt resource value: 0x7F0E02B8
-			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131624632;
+			// aapt resource value: 0x7F0F02B8
+			public const int Widget_MaterialComponents_MaterialCalendar_DayTextView = 2131690168;
 			
-			// aapt resource value: 0x7F0E02B5
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131624629;
+			// aapt resource value: 0x7F0F02B5
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Invalid = 2131690165;
 			
-			// aapt resource value: 0x7F0E02B6
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131624630;
+			// aapt resource value: 0x7F0F02B6
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Selected = 2131690166;
 			
-			// aapt resource value: 0x7F0E02B7
-			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131624631;
+			// aapt resource value: 0x7F0F02B7
+			public const int Widget_MaterialComponents_MaterialCalendar_Day_Today = 2131690167;
 			
-			// aapt resource value: 0x7F0E02B9
-			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131624633;
+			// aapt resource value: 0x7F0F02B9
+			public const int Widget_MaterialComponents_MaterialCalendar_Fullscreen = 2131690169;
 			
-			// aapt resource value: 0x7F0E02BA
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131624634;
+			// aapt resource value: 0x7F0F02BA
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderCancelButton = 2131690170;
 			
-			// aapt resource value: 0x7F0E02BB
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131624635;
+			// aapt resource value: 0x7F0F02BB
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = 2131690171;
 			
-			// aapt resource value: 0x7F0E02BC
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131624636;
+			// aapt resource value: 0x7F0F02BC
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderDivider = 2131690172;
 			
-			// aapt resource value: 0x7F0E02BD
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131624637;
+			// aapt resource value: 0x7F0F02BD
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderLayout = 2131690173;
 			
-			// aapt resource value: 0x7F0E02BE
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131624638;
+			// aapt resource value: 0x7F0F02BE
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection = 2131690174;
 			
-			// aapt resource value: 0x7F0E02BF
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131624639;
+			// aapt resource value: 0x7F0F02BF
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = 2131690175;
 			
-			// aapt resource value: 0x7F0E02C0
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131624640;
+			// aapt resource value: 0x7F0F02C0
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderTitle = 2131690176;
 			
-			// aapt resource value: 0x7F0E02C1
-			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131624641;
+			// aapt resource value: 0x7F0F02C1
+			public const int Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = 2131690177;
 			
-			// aapt resource value: 0x7F0E02C2
-			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131624642;
+			// aapt resource value: 0x7F0F02C2
+			public const int Widget_MaterialComponents_MaterialCalendar_Item = 2131690178;
 			
-			// aapt resource value: 0x7F0E02C3
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131624643;
+			// aapt resource value: 0x7F0F02C3
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthNavigationButton = 2131690179;
 			
-			// aapt resource value: 0x7F0E02C4
-			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131624644;
+			// aapt resource value: 0x7F0F02C4
+			public const int Widget_MaterialComponents_MaterialCalendar_MonthTextView = 2131690180;
 			
-			// aapt resource value: 0x7F0E02C5
-			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131624645;
+			// aapt resource value: 0x7F0F02C5
+			public const int Widget_MaterialComponents_MaterialCalendar_Year = 2131690181;
 			
-			// aapt resource value: 0x7F0E02C8
-			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131624648;
+			// aapt resource value: 0x7F0F02C8
+			public const int Widget_MaterialComponents_MaterialCalendar_YearNavigationButton = 2131690184;
 			
-			// aapt resource value: 0x7F0E02C6
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131624646;
+			// aapt resource value: 0x7F0F02C6
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Selected = 2131690182;
 			
-			// aapt resource value: 0x7F0E02C7
-			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131624647;
+			// aapt resource value: 0x7F0F02C7
+			public const int Widget_MaterialComponents_MaterialCalendar_Year_Today = 2131690183;
 			
-			// aapt resource value: 0x7F0E02C9
-			public const int Widget_MaterialComponents_NavigationView = 2131624649;
+			// aapt resource value: 0x7F0F02C9
+			public const int Widget_MaterialComponents_NavigationView = 2131690185;
 			
-			// aapt resource value: 0x7F0E02CA
-			public const int Widget_MaterialComponents_PopupMenu = 2131624650;
+			// aapt resource value: 0x7F0F02CA
+			public const int Widget_MaterialComponents_PopupMenu = 2131690186;
 			
-			// aapt resource value: 0x7F0E02CB
-			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131624651;
+			// aapt resource value: 0x7F0F02CB
+			public const int Widget_MaterialComponents_PopupMenu_ContextMenu = 2131690187;
 			
-			// aapt resource value: 0x7F0E02CC
-			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131624652;
+			// aapt resource value: 0x7F0F02CC
+			public const int Widget_MaterialComponents_PopupMenu_ListPopupWindow = 2131690188;
 			
-			// aapt resource value: 0x7F0E02CD
-			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131624653;
+			// aapt resource value: 0x7F0F02CD
+			public const int Widget_MaterialComponents_PopupMenu_Overflow = 2131690189;
 			
-			// aapt resource value: 0x7F0E02CE
-			public const int Widget_MaterialComponents_ProgressIndicator = 2131624654;
+			// aapt resource value: 0x7F0F02CE
+			public const int Widget_MaterialComponents_ProgressIndicator = 2131690190;
 			
-			// aapt resource value: 0x7F0E02CF
-			public const int Widget_MaterialComponents_ShapeableImageView = 2131624655;
+			// aapt resource value: 0x7F0F02CF
+			public const int Widget_MaterialComponents_ShapeableImageView = 2131690191;
 			
-			// aapt resource value: 0x7F0E02D0
-			public const int Widget_MaterialComponents_Slider = 2131624656;
+			// aapt resource value: 0x7F0F02D0
+			public const int Widget_MaterialComponents_Slider = 2131690192;
 			
-			// aapt resource value: 0x7F0E02D1
-			public const int Widget_MaterialComponents_Snackbar = 2131624657;
+			// aapt resource value: 0x7F0F02D1
+			public const int Widget_MaterialComponents_Snackbar = 2131690193;
 			
-			// aapt resource value: 0x7F0E02D2
-			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131624658;
+			// aapt resource value: 0x7F0F02D2
+			public const int Widget_MaterialComponents_Snackbar_FullWidth = 2131690194;
 			
-			// aapt resource value: 0x7F0E02D3
-			public const int Widget_MaterialComponents_Snackbar_TextView = 2131624659;
+			// aapt resource value: 0x7F0F02D3
+			public const int Widget_MaterialComponents_Snackbar_TextView = 2131690195;
 			
-			// aapt resource value: 0x7F0E02D4
-			public const int Widget_MaterialComponents_TabLayout = 2131624660;
+			// aapt resource value: 0x7F0F02D4
+			public const int Widget_MaterialComponents_TabLayout = 2131690196;
 			
-			// aapt resource value: 0x7F0E02D5
-			public const int Widget_MaterialComponents_TabLayout_Colored = 2131624661;
+			// aapt resource value: 0x7F0F02D5
+			public const int Widget_MaterialComponents_TabLayout_Colored = 2131690197;
 			
-			// aapt resource value: 0x7F0E02D6
-			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131624662;
+			// aapt resource value: 0x7F0F02D6
+			public const int Widget_MaterialComponents_TabLayout_PrimarySurface = 2131690198;
 			
-			// aapt resource value: 0x7F0E02D7
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131624663;
+			// aapt resource value: 0x7F0F02D7
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox = 2131690199;
 			
-			// aapt resource value: 0x7F0E02D8
-			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131624664;
+			// aapt resource value: 0x7F0F02D8
+			public const int Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = 2131690200;
 			
-			// aapt resource value: 0x7F0E02D9
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131624665;
+			// aapt resource value: 0x7F0F02D9
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox = 2131690201;
 			
-			// aapt resource value: 0x7F0E02DA
-			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131624666;
+			// aapt resource value: 0x7F0F02DA
+			public const int Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = 2131690202;
 			
-			// aapt resource value: 0x7F0E02DB
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131624667;
+			// aapt resource value: 0x7F0F02DB
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox = 2131690203;
 			
-			// aapt resource value: 0x7F0E02DC
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131624668;
+			// aapt resource value: 0x7F0F02DC
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = 2131690204;
 			
-			// aapt resource value: 0x7F0E02DD
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131624669;
+			// aapt resource value: 0x7F0F02DD
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = 2131690205;
 			
-			// aapt resource value: 0x7F0E02DE
-			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131624670;
+			// aapt resource value: 0x7F0F02DE
+			public const int Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = 2131690206;
 			
-			// aapt resource value: 0x7F0E02DF
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131624671;
+			// aapt resource value: 0x7F0F02DF
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox = 2131690207;
 			
-			// aapt resource value: 0x7F0E02E0
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131624672;
+			// aapt resource value: 0x7F0F02E0
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = 2131690208;
 			
-			// aapt resource value: 0x7F0E02E1
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131624673;
+			// aapt resource value: 0x7F0F02E1
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = 2131690209;
 			
-			// aapt resource value: 0x7F0E02E2
-			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131624674;
+			// aapt resource value: 0x7F0F02E2
+			public const int Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = 2131690210;
 			
-			// aapt resource value: 0x7F0E02E3
-			public const int Widget_MaterialComponents_TextView = 2131624675;
+			// aapt resource value: 0x7F0F02E3
+			public const int Widget_MaterialComponents_TextView = 2131690211;
 			
-			// aapt resource value: 0x7F0E02E4
-			public const int Widget_MaterialComponents_TimePicker = 2131624676;
+			// aapt resource value: 0x7F0F02E4
+			public const int Widget_MaterialComponents_TimePicker = 2131690212;
 			
-			// aapt resource value: 0x7F0E02E5
-			public const int Widget_MaterialComponents_TimePicker_Button = 2131624677;
+			// aapt resource value: 0x7F0F02E5
+			public const int Widget_MaterialComponents_TimePicker_Button = 2131690213;
 			
-			// aapt resource value: 0x7F0E02E6
-			public const int Widget_MaterialComponents_TimePicker_Clock = 2131624678;
+			// aapt resource value: 0x7F0F02E6
+			public const int Widget_MaterialComponents_TimePicker_Clock = 2131690214;
 			
-			// aapt resource value: 0x7F0E02E7
-			public const int Widget_MaterialComponents_TimePicker_Display = 2131624679;
+			// aapt resource value: 0x7F0F02E7
+			public const int Widget_MaterialComponents_TimePicker_Display = 2131690215;
 			
-			// aapt resource value: 0x7F0E02E8
-			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131624680;
+			// aapt resource value: 0x7F0F02E8
+			public const int Widget_MaterialComponents_TimePicker_Display_TextInputEditText = 2131690216;
 			
-			// aapt resource value: 0x7F0E02E9
-			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131624681;
+			// aapt resource value: 0x7F0F02E9
+			public const int Widget_MaterialComponents_TimePicker_ImageButton = 2131690217;
 			
-			// aapt resource value: 0x7F0E02EA
-			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131624682;
+			// aapt resource value: 0x7F0F02EA
+			public const int Widget_MaterialComponents_TimePicker_ImageButton_ShapeAppearance = 2131690218;
 			
-			// aapt resource value: 0x7F0E02EB
-			public const int Widget_MaterialComponents_Toolbar = 2131624683;
+			// aapt resource value: 0x7F0F02EB
+			public const int Widget_MaterialComponents_Toolbar = 2131690219;
 			
-			// aapt resource value: 0x7F0E02EC
-			public const int Widget_MaterialComponents_Toolbar_Primary = 2131624684;
+			// aapt resource value: 0x7F0F02EC
+			public const int Widget_MaterialComponents_Toolbar_Primary = 2131690220;
 			
-			// aapt resource value: 0x7F0E02ED
-			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131624685;
+			// aapt resource value: 0x7F0F02ED
+			public const int Widget_MaterialComponents_Toolbar_PrimarySurface = 2131690221;
 			
-			// aapt resource value: 0x7F0E02EE
-			public const int Widget_MaterialComponents_Toolbar_Surface = 2131624686;
+			// aapt resource value: 0x7F0F02EE
+			public const int Widget_MaterialComponents_Toolbar_Surface = 2131690222;
 			
-			// aapt resource value: 0x7F0E02EF
-			public const int Widget_MaterialComponents_Tooltip = 2131624687;
+			// aapt resource value: 0x7F0F02EF
+			public const int Widget_MaterialComponents_Tooltip = 2131690223;
 			
-			// aapt resource value: 0x7F0E02F0
-			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131624688;
+			// aapt resource value: 0x7F0F02F0
+			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131690224;
 			
-			// aapt resource value: 0x7F0E02F1
-			public const int Widget_MediaRouter_MediaRouteButton = 2131624689;
+			// aapt resource value: 0x7F0F02F1
+			public const int Widget_MediaRouter_MediaRouteButton = 2131690225;
 			
-			// aapt resource value: 0x7F0E02F2
-			public const int Widget_Support_CoordinatorLayout = 2131624690;
+			// aapt resource value: 0x7F0F02F2
+			public const int Widget_Support_CoordinatorLayout = 2131690226;
 			
 			static Style()
 			{
@@ -25592,23 +28630,23 @@ namespace BlinkIDFormsSample.Droid
 		public partial class Xml
 		{
 			
-			// aapt resource value: 0x7F100000
-			public const int image_share_filepaths = 2131755008;
+			// aapt resource value: 0x7F110000
+			public const int image_share_filepaths = 2131820544;
 			
-			// aapt resource value: 0x7F100001
-			public const int standalone_badge = 2131755009;
+			// aapt resource value: 0x7F110001
+			public const int standalone_badge = 2131820545;
 			
-			// aapt resource value: 0x7F100002
-			public const int standalone_badge_gravity_bottom_end = 2131755010;
+			// aapt resource value: 0x7F110002
+			public const int standalone_badge_gravity_bottom_end = 2131820546;
 			
-			// aapt resource value: 0x7F100003
-			public const int standalone_badge_gravity_bottom_start = 2131755011;
+			// aapt resource value: 0x7F110003
+			public const int standalone_badge_gravity_bottom_start = 2131820547;
 			
-			// aapt resource value: 0x7F100004
-			public const int standalone_badge_gravity_top_start = 2131755012;
+			// aapt resource value: 0x7F110004
+			public const int standalone_badge_gravity_top_start = 2131820548;
 			
-			// aapt resource value: 0x7F100005
-			public const int standalone_badge_offset = 2131755013;
+			// aapt resource value: 0x7F110005
+			public const int standalone_badge_offset = 2131820549;
 			
 			static Xml()
 			{

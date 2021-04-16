@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Microblink.Forms.Core.Recognizers
+namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// A collection of recognizer objects.

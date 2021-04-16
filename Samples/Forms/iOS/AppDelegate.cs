@@ -10,7 +10,7 @@ namespace BlinkIDFormsSample
 		{
 			global::Xamarin.Forms.Forms.Init ();
 
-            Xamarin.Forms.DependencyService.Register<Microblink.Forms.iOS.MicroblinkScannerFactoryImplementation>();
+            Xamarin.Forms.DependencyService.Register<BlinkID.Forms.iOS.MicroblinkScannerFactoryImplementation>();
 
 			LoadApplication (new BlinkIDApp.App());
 
@@ -18,4 +18,3 @@ namespace BlinkIDFormsSample
 		}
 	}
 }
-

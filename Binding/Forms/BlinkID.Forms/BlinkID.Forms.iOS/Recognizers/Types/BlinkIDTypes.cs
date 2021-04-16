@@ -1,10 +1,10 @@
-﻿using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Core.Recognizers;
-using Microblink;
+﻿using BlinkID.Forms.iOS.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
 [assembly: Xamarin.Forms.Dependency(typeof(RecognitionModeFilterFactory))]
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
 	public sealed class MrzResult : IMrzResult
     {
@@ -310,18 +310,20 @@ namespace Microblink.Forms.iOS.Recognizers
         public bool EnableMrzVisa => NativeFilter.EnableMrzVisa;
         public bool EnableMrzPassport => NativeFilter.EnableMrzPassport;
         public bool EnablePhotoId => NativeFilter.EnablePhotoId;
+        public bool EnableBarcodeId => NativeFilter.EnableBarcodeId;
         public bool EnableFullDocumentRecognition => NativeFilter.EnableFullDocumentRecognition;
     }
 
     public sealed class RecognitionModeFilterFactory : IRecognitionModeFilterFactory
     {
-        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true)
+        public IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableBarcodeId = true, bool enableFullDocumentRecognition = true)
         {
             MBRecognitionModeFilter recognitionModeFilter = new MBRecognitionModeFilter();
             recognitionModeFilter.EnableMrzId = enableMrzId;
             recognitionModeFilter.EnableMrzVisa = enableMrzVisa;
             recognitionModeFilter.EnableMrzPassport = enableMrzPassport;
             recognitionModeFilter.EnablePhotoId = enablePhotoId;
+            recognitionModeFilter.EnableBarcodeId = enableBarcodeId;
             recognitionModeFilter.EnableFullDocumentRecognition = enableFullDocumentRecognition;
 
             return new RecognitionModeFilter(recognitionModeFilter);

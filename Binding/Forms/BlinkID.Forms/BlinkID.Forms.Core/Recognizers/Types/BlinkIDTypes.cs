@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Microblink.Forms.Core.Recognizers
+namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// Possible types of Machine Readable Travel Documents (MRTDs)
@@ -784,7 +784,34 @@ namespace Microblink.Forms.Core.Recognizers
         Michoacan,
         NewYorkCity,
         Tamaulipas,
-        Veracruz
+        Veracruz,
+        Chiapas,
+        Coahuila,
+        Durango,
+        GuerreroCocula,
+        GuerreroJuchitan,
+        GuerreroTepecoacuilco,
+        GuerreroTlacoapa,
+        Gujarat,
+        Hidalgo,
+        Karnataka,
+        Kerala,
+        KhyberPakhtunkhwa,
+        MadhyaPradesh,
+        Maharashtra,
+        Morelos,
+        Nayarit,
+        Oaxaca,
+        Puebla,
+        Punjab,
+        Queretaro,
+        SanLuisPotosi,
+        Sinaloa,
+        Sonora,
+        Tabasco,
+        TamilNadu,
+        Yucatan,
+        Zacatecas
     }
 
     /// <summary>
@@ -828,7 +855,17 @@ namespace Microblink.Forms.Core.Recognizers
         ProfessionalDl,
         TaxId,
         WeaponPermit,
-        Visa
+        Visa,
+        BorderCrossingCard,
+        DriverCard,
+        GlobalEntryCard,
+        Mypolis,
+        NexusCard,
+        PassportCard,
+        ProofOfAgeCard,
+        RefugeeId,
+        TribalId,
+        VeteranId
     }
 
     /// <summary>
@@ -1348,7 +1385,10 @@ namespace Microblink.Forms.Core.Recognizers
         PhotoId,
 
         // Detailed document recognition.
-        FullRecognition
+        FullRecognition,
+
+        // Recognition of barcode document.
+        BarcodeId
     }
 
     /// <summary>
@@ -1382,6 +1422,12 @@ namespace Microblink.Forms.Core.Recognizers
         bool EnablePhotoId { get; }
 
         /// <summary>
+        /// Enable scanning of barcode IDs. Setting is taken into account only if the barcode right to scan that barcode is purchased.
+        /// </summary>
+        /// <value>Enable Barcode ID.</value>
+        bool EnableBarcodeId { get; }
+
+        /// <summary>
         /// Enable full document recognition. Setting is taken into account only if the document right to scan that document is purchased.
         /// </summary>
         /// <value>Enable Full Document Recognition.</value>
@@ -1401,8 +1447,9 @@ namespace Microblink.Forms.Core.Recognizers
         /// <param name="enableMrzVisa">enable scanning of visa MRZ. Setting is taken into account only if the visa right is purchased.</param>
         /// <param name="enableMrzPassport">enable scanning of Passport MRZ. Setting is taken into account only if the passport right is purchased.</param>
         /// <param name="enablePhotoId">enable scanning of Photo ID. Setting is taken into account only if the photo_id right is purchased.</param>
+        /// <param name="enableBarcodeId">enable scanning of barcode IDs. Setting is taken into account only if the barcode right to scan that barcode is purchased.</param>
         /// <param name="enableFullDocumentRecognition">enable full document recognition. Setting is taken into account only if the document right to scan that document is purchased.</param>
-        IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableFullDocumentRecognition = true);
+        IRecognitionModeFilter CreateRecognitionModeFilter(bool enableMrzId = true, bool enableMrzVisa = true, bool enableMrzPassport = true, bool enablePhotoId = true, bool enableBarcodeId = true, bool enableFullDocumentRecognition = true);
     }
 
     public enum BarcodeElementKey

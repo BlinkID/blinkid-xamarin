@@ -1,4 +1,4 @@
-﻿namespace Microblink.Forms.Core.Recognizers
+﻿namespace BlinkID.Forms.Core.Recognizers
 {
     /// <summary>
     /// The ID Barcode Recognizer is used for scanning ID Barcode.

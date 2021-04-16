@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Microblink.Forms.Core
+namespace BlinkID.Forms.Core
 {
     /// <summary>
     /// Contains messages that can be exchanged between Xamarin Forms app and 
@@ -25,4 +25,3 @@ namespace Microblink.Forms.Core
         }
 	}
 }
-

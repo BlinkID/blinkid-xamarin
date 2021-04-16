@@ -1,8 +1,8 @@
-﻿using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.Droid.Recognizers;
+﻿using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.Droid.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(UsdlRecognizer))]
-namespace Microblink.Forms.Droid.Recognizers
+namespace BlinkID.Forms.Droid.Recognizers
 {
     public sealed class UsdlRecognizer : Recognizer, IUsdlRecognizer
     {

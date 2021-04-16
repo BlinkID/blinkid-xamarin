@@ -1,11 +1,11 @@
-﻿using Microblink.Forms.Droid.Overlays;
-using Microblink.Forms.Droid.Recognizers;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.Droid.Overlays;
+using BlinkID.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
 using Com.Microblink.Uisettings;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentOverlaySettingsFactory))]
-namespace Microblink.Forms.Droid.Overlays
+namespace BlinkID.Forms.Droid.Overlays
 {
     public sealed class DocumentOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentOverlaySettings
     {

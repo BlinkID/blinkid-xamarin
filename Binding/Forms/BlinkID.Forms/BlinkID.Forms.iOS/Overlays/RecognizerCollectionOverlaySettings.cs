@@ -1,16 +1,16 @@
 ﻿
-using Microblink.Forms.iOS.Overlays;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
-using Microblink;
+using BlinkID.Forms.iOS.Overlays;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID;
 
-namespace Microblink.Forms.iOS.Overlays
+namespace BlinkID.Forms.iOS.Overlays
 {
-	public abstract class RecognizerCollectionOverlaySettings : OverlaySettings
+	public abstract class RecognizerCollectionOverlaySettings : BaseOverlaySettings
     {
         public IRecognizerCollection RecognizerCollection { get; }
 
-        protected RecognizerCollectionOverlaySettings(MBOverlaySettings nativeOverlaySettings, IRecognizerCollection recognizerCollection) : base(nativeOverlaySettings)
+        protected RecognizerCollectionOverlaySettings(MBBaseOverlaySettings nativeOverlaySettings, IRecognizerCollection recognizerCollection) : base(nativeOverlaySettings)
         {
             RecognizerCollection = recognizerCollection;
         }

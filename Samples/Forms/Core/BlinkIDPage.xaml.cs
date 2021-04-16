@@ -1,7 +1,7 @@
 ﻿using System;
-using Microblink.Forms.Core;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
+using BlinkID.Forms.Core;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
 
 using Xamarin.Forms;
 
@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOzajlIagplKYt2m23387sgExhEf8R1Nj6g8zc/NHNwGBZ7y6/T162y+gLSutWi72yRCl1m5VfqBpIihcqOJA2YBmPOqMX5l+MDSjvZze8rHu8rLWdfE+cqzhunkOBu3IvtvbSrNOGIkDpX+OI43TDqFEeor7qtn209ngMix3gyHLwtOi4CnO9Bj7MGbfrno9OfXsw22MPkxSmmJwSe6WrnU8kNbJ6bMOO6mckvAxFwmi7RMfCHfNx3IuoGEZ7t0kDBiOH0MCu6MHKRWtjkijMC9Uq20dqvW1kR9K2UhO2tT0DYnKwCsgxBeW";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOWaLMUMW+4CSRlPH5nVsy5f+xFjYutJX80GcvEyclw+SM7cjBwSazdaGilBWPcwulKICq141a1XBnYLt5nSyhDrP+PNnId8bqFT1ic1A71TubT8iroMgkbLhW7lnjNgPDyuw/2aqsS8U/pkkk8YgekN0IZm5M/0q1CSLtAehIswt5CoFtYcG1DIuGnaTvVNoRGUu7+HaVXAmxGFENiITmrOpLXFSJXFRdyBQHd3rfLgBDzIEPvTIGoGVD0ZUFFziRMkk+om4QIQE8bYHx0L8WFNbkXf5WMw2hlf3cUJmDOI04Xx1FYrTYKlbam6Q+5OsEHXjTIt5";
             }
             else
             {
-                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3PWNDZCRKoib86/jDvEWYMC/51y5A4qANi3EimZXGk7aJd5aTx2lX2PqHCy19TqjYZcS25ZJ6Z2+WgnSENeWlJUfw06KLhSZIH2tni+XvwviJe5cPBI9sE+5Sukc8fDgNT/SGgcxt0O+zocvqpRvIp5JjinSSeBsehgsN4BUMVolPdRDDDuKniSwobkdTwvPl9qdqE9VGyWyRxcFQHRQLlfG1tUzPtvt4/4xwDrgUXSLHVSFIkA97jsdfBDVyo+xXfeAQXQaqXHxZkWfQwh/aqXA8c/P5enUXuPM4lZ2obbJ1xhQ5oR20/WEisUI=";
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3ORtGZDC+pgWPewByA2mcAQzqNk16/kWSp2nLRQjfkEuG9yGoE/K0LrodsEN7Al0N7WPru283evPr/SeAo6r28d9ctFxOdHMT/FZIbSE5cEhVCXABiq9jHegOrfRcCpHF2C2yyiqnzFkP2vYDvfkmVJaGssG3isYCB57Oz3HSW5DkORMbQjkFtiHIZvcUZGRMMBkeT1TmK1YwVz85q6XMgC3+QMLOhpbNsYZg2DsO1kgC6PcTmkdwweXNoXJw+9i7gfKw7M/4u3LCcXCoPpBilJJND+BW+Qr9L+zDj2t8WnxCOa5yAUiED9QlTss086BIkmxov3Fs";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -239,4 +239,3 @@ namespace BlinkIDApp
         }
     }
 }
-

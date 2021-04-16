@@ -1,14 +1,14 @@
 ﻿using Xamarin.Forms;
-using Microblink.Forms.iOS;
+using BlinkID.Forms.iOS;
 using UIKit;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.iOS.Overlays;
-using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.Core;
-using Microblink.Forms.iOS.Recognizers;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.iOS.Overlays;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.Core;
+using BlinkID.Forms.iOS.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MicroblinkScannerFactoryImplementation))]
-namespace Microblink.Forms.iOS
+namespace BlinkID.Forms.iOS
 {
     public sealed class MicroblinkScannerImplementation : IMicroblinkScanner, IOverlayVCDelegate
     {
@@ -46,14 +46,14 @@ namespace Microblink.Forms.iOS
             overlayViewController.RecognizerRunnerViewController.PauseScanning();
 
             UIApplication.SharedApplication.InvokeOnMainThread(delegate {
-                MessagingCenter.Send(new Microblink.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = false }, Microblink.Forms.Core.Messages.ScanningDoneMessageId);
+                MessagingCenter.Send(new BlinkID.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = false }, BlinkID.Forms.Core.Messages.ScanningDoneMessageId);
                 overlayViewController.DismissViewController(true, null);
             });
         }
 
         public void CloseButtonTapped(MBOverlayViewController overlayViewController)
         {
-            MessagingCenter.Send(new Microblink.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = true }, Microblink.Forms.Core.Messages.ScanningDoneMessageId);
+            MessagingCenter.Send(new BlinkID.Forms.Core.Messages.ScanningDoneMessage { ScanningCancelled = true }, BlinkID.Forms.Core.Messages.ScanningDoneMessageId);
             overlayViewController.DismissViewController(true, null);
         }
 

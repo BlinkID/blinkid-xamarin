@@ -1,6 +1,6 @@
-﻿using Microblink;
+﻿using BlinkID;
 
-namespace Microblink.Forms.iOS.Overlays
+namespace BlinkID.Forms.iOS.Overlays
 {
     public interface IOverlayVCDelegate
     {

@@ -1,9 +1,9 @@
-﻿using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Core.Recognizers;
-using Microblink;
+﻿using BlinkID.Forms.iOS.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID;
 
 [assembly: Xamarin.Forms.Dependency(typeof(RecognizerCollectionFactory))]
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
     public class RecognizerCollection : IRecognizerCollection
     {

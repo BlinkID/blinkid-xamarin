@@ -2,13 +2,13 @@
 using Android.Content;
 using Com.Microblink.Uisettings;
 using Com.Microblink.Fragment.Overlay.Blinkid.Documentverification;
-using Microblink.Forms.Core.Overlays;
-using Microblink.Forms.Core.Recognizers;
-using Microblink.Forms.Droid.Overlays.Implementations;
-using Microblink.Forms.Droid.Recognizers;
+using BlinkID.Forms.Core.Overlays;
+using BlinkID.Forms.Core.Recognizers;
+using BlinkID.Forms.Droid.Overlays.Implementations;
+using BlinkID.Forms.Droid.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DocumentVerificationOverlaySettingsFactory))]
-namespace Microblink.Forms.Droid.Overlays.Implementations
+namespace BlinkID.Forms.Droid.Overlays.Implementations
 {
     public sealed class DocumentVerificationOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentVerificationOverlaySettings
     {

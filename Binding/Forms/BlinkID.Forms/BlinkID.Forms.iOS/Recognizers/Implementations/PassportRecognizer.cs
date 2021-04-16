@@ -1,8 +1,8 @@
-﻿using Microblink.Forms.iOS.Recognizers;
-using Microblink.Forms.Core.Recognizers;
+﻿using BlinkID.Forms.iOS.Recognizers;
+using BlinkID.Forms.Core.Recognizers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(PassportRecognizer))]
-namespace Microblink.Forms.iOS.Recognizers
+namespace BlinkID.Forms.iOS.Recognizers
 {
     public sealed class PassportRecognizer : Recognizer, IPassportRecognizer
     {

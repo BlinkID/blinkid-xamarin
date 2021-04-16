@@ -1,6 +1,6 @@
-﻿using Microblink.Forms.Core.Overlays;
+﻿using BlinkID.Forms.Core.Overlays;
 
-namespace Microblink.Forms.Core
+namespace BlinkID.Forms.Core
 {
     /// <summary>
     /// A main scanner object that will be used for performing the scan.
@@ -25,7 +25,7 @@ namespace Microblink.Forms.Core
         /// </summary>
         /// <returns>The microblink scanner.</returns>
         /// <param name="licenseKey">License key for unlocking the scanning feature.</param>
-        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
+        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for trial license key will be shown.</param>
         IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, bool showTrialLicenseWarning = true);
 
         /// <summary>
@@ -35,9 +35,8 @@ namespace Microblink.Forms.Core
         /// <returns>The microblink scanner.</returns>
         /// <param name="licenseKey">License key for unlocking the scanning feature</param>
         /// <param name="licensee">Licensee to which provided <paramref name="licenseKey"/> is bound.</param>
-        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for time limited license key will be shown.</param>
+        /// <param name="showTrialLicenseWarning">Flag which indicates whether warning for trial license key will be shown.</param>
         IMicroblinkScanner CreateMicroblinkScanner(string licenseKey, string licensee, bool showTrialLicenseWarning = true);
     }
 
 }
-
