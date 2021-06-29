@@ -27,6 +27,12 @@ namespace BlinkID.Forms.Droid.Recognizers
             set => nativeRecognizer.SetAllowBlurFilter(value);
         }
         
+        public bool AllowUncertainFrontSideScan 
+        { 
+            get => nativeRecognizer.ShouldAllowUncertainFrontSideScan(); 
+            set => nativeRecognizer.SetAllowUncertainFrontSideScan(value);
+        }
+        
         public bool AllowUnparsedMrzResults 
         { 
             get => nativeRecognizer.ShouldAllowUnparsedMrzResults(); 
@@ -61,6 +67,12 @@ namespace BlinkID.Forms.Droid.Recognizers
         { 
             get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeImageExtensionFactors;
+        }
+        
+        public int MaxAllowedMismatchesPerField 
+        { 
+            get => nativeRecognizer.MaxAllowedMismatchesPerField; 
+            set => nativeRecognizer.MaxAllowedMismatchesPerField = (int)value;
         }
         
         public float PaddingEdge 
@@ -138,6 +150,7 @@ namespace BlinkID.Forms.Droid.Recognizers
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
         public IImageAnalysisResult BackImageAnalysisResult => new ImageAnalysisResult(nativeResult.BackImageAnalysisResult);
+        public ProcessingStatus BackProcessingStatus => (ProcessingStatus)nativeResult.BackProcessingStatus.Ordinal();
         public IVizResult BackVizResult => new VizResult(nativeResult.BackVizResult);
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
@@ -157,6 +170,7 @@ namespace BlinkID.Forms.Droid.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FirstName => nativeResult.FirstName;
         public IImageAnalysisResult FrontImageAnalysisResult => new ImageAnalysisResult(nativeResult.FrontImageAnalysisResult);
+        public ProcessingStatus FrontProcessingStatus => (ProcessingStatus)nativeResult.FrontProcessingStatus.Ordinal();
         public IVizResult FrontVizResult => new VizResult(nativeResult.FrontVizResult);
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentBackImage.ConvertToBitmap()) : null;
         public Xamarin.Forms.ImageSource FullDocumentFrontImage => nativeResult.FullDocumentFrontImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentFrontImage.ConvertToBitmap()) : null;
