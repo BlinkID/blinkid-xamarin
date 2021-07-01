@@ -67,7 +67,7 @@ namespace Android
         private void initBlinkId()
         {
             // set license key for Android with package name com.microblink.xamarin.blinkid
-            MicroblinkSDK.SetLicenseKey("sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3ORtGZDC+pgWPewByA2mcAQzqNk16/kWSp2nLRQjfkEuG9yGoE/K0LrodsEN7Al0N7WPru283evPr/SeAo6r28d9ctFxOdHMT/FZIbSE5cEhVCXABiq9jHegOrfRcCpHF2C2yyiqnzFkP2vYDvfkmVJaGssG3isYCB57Oz3HSW5DkORMbQjkFtiHIZvcUZGRMMBkeT1TmK1YwVz85q6XMgC3+QMLOhpbNsYZg2DsO1kgC6PcTmkdwweXNoXJw+9i7gfKw7M/4u3LCcXCoPpBilJJND+BW+Qr9L+zDj2t8WnxCOa5yAUiED9QlTss086BIkmxov3Fs", this);
+            MicroblinkSDK.SetLicenseKey("sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3PothwzEeJq78CAjevTsub3sPOZo6P+9AzBIoO5QOR96yGE8YeEsVQRBu4qgvi8Xxqyt7r2juzRr/EBiYNdUAtbR4qBRUsrFYOyBjJ8UzqNJYsCRubqwS+jO2tHCHeiIQultnuo25otREh0b71IWNpKC8PUml8n5FvkJaq23y7qP7kulYb48HHCLFdUvu1L4ZQz46v6X1FQZ9YJ++gj93xW0i4fqja8Cxdy1FckGnRA57GaRqTRWrtzzMyf37UrpMN7CEV+KGr9YU0se7DkpfYeMKm6K3auTdrsSjo7FO6AycvdPE0RmzQ68V+b3DsDmgbE+gQLoIIw==", this);
 
             // Since we plan to transfer large data between activities, we need to enable
             // PersistedOptimised intent data transfer mode.
