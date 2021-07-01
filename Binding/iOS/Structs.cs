@@ -192,7 +192,11 @@ namespace BlinkID
 		UnableToDoRemoteLicenceCheck,
 		LicenseIsLocked,
 		LicenseCheckFailed,
-		InvalidLicense
+		InvalidLicense,
+		PermissionExpired,
+		PayloadCorrupted,
+		PayloadSignatureVerificationFailed,
+		IncorrectTokenState
 	}
 
 	[Native]
@@ -598,7 +602,39 @@ namespace BlinkID
 		Michoacan,
 		NewYorkCity,
 		Tamaulipas,
-		Veracruz
+		Veracruz,
+		Chiapas,
+		Coahuila,
+		Durango,
+		GuerreroCocula,
+		GuerreroJuchitan,
+		GuerreroTepecoacuilco,
+		GuerreroTlacoapa,
+		Gujarat,
+		Hidalgo,
+		Karnataka,
+		Kerala,
+		KhyberPakhtunkhwa,
+		MadhyaPradesh,
+		Maharashtra,
+		Morelos,
+		Nayarit,
+		Oaxaca,
+		Puebla,
+		Punjab,
+		Queretaro,
+		SanLuisPotosi,
+		Sinaloa,
+		Sonora,
+		Tabasco,
+		TamilNadu,
+		Yucatan,
+		Zacatecas,
+		Aguascalientes,
+		BajaCaliforniaSur,
+		Campeche,
+		Colima,
+		QuintanaRooBenitoJuarez
 	}
 
 	[Native]
@@ -640,7 +676,18 @@ namespace BlinkID
 		ProfessionalDl,
 		TaxId,
 		WeaponPermit,
-		Visa
+		Visa,
+		BorderCrossingCard,
+		DriverCard,
+		GlobalEntryCard,
+		Mypolis,
+		NexusCard,
+		PassportCard,
+		ProofOfAgeCard,
+		RefugeeId,
+		TribalId,
+		VeteranId,
+		CitizenshipCertificate
 	}
 
 	[Native]
@@ -768,7 +815,8 @@ namespace BlinkID
 		ClassFiltered,
 		UnsupportedClass,
 		UnsupportedByLicense,
-		AwaitingOtherSide
+		AwaitingOtherSide,
+		NotScanned
 	}
 
 	[Native]
@@ -779,7 +827,8 @@ namespace BlinkID
 		MrzVisa,
 		MrzPassport,
 		PhotoId,
-		FullRecognition
+		FullRecognition,
+		BarcodeId
 	}
 
 	[Native]

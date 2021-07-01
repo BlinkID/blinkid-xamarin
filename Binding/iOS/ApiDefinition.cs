@@ -2442,6 +2442,14 @@ namespace BlinkID
 		[Export ("processingStatus", ArgumentSemantic.Assign)]
 		MBProcessingStatus ProcessingStatus { get; }
 
+        // @property (readonly, assign, nonatomic) MBProcessingStatus frontProcessingStatus;
+        [Export ("frontProcessingStatus", ArgumentSemantic.Assign)]
+        MBProcessingStatus FrontProcessingStatus { get; }
+
+        // @property (readonly, assign, nonatomic) MBProcessingStatus backProcessingStatus;
+        [Export ("backProcessingStatus", ArgumentSemantic.Assign)]
+        MBProcessingStatus BackProcessingStatus { get; }
+
 		// @property (readonly, assign, nonatomic) MBRecognitionMode recognitionMode;
 		[Export ("recognitionMode", ArgumentSemantic.Assign)]
 		MBRecognitionMode RecognitionMode { get; }
@@ -2495,6 +2503,14 @@ namespace BlinkID
         // @property (assign, nonatomic) BOOL scanCroppedDocumentImage;
 		[Export ("scanCroppedDocumentImage")]
 		bool ScanCroppedDocumentImage { get; set; }
+
+        // @property (assign, nonatomic) BOOL allowUncertainFrontSideScan;
+        [Export ("allowUncertainFrontSideScan")]
+        bool AllowUncertainFrontSideScan { get; set; }
+
+        // @property (assign, nonatomic) NSInteger maxAllowedMismatchesPerField;
+        [Export ("maxAllowedMismatchesPerField")]
+        nint MaxAllowedMismatchesPerField { get; set; }
     }
 
     // @protocol MBBlinkIdCombinedRecognizerDelegate <NSObject>

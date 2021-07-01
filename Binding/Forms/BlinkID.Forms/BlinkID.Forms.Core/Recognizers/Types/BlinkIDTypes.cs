@@ -2312,4 +2312,132 @@ namespace BlinkID.Forms.Core.Recognizers
         string GetValue(BarcodeElementKey key);
 
     }
+
+    /// <summary>
+    /// Result of the data matching algorithm for scanned parts/sides of the document.
+    /// </summary>
+    public enum DataMatchResult
+    {
+        /// <summary>
+        /// Data matching has not been performed.
+        /// </summary>
+        NotPerformed,
+        /// <summary>
+        /// Data does not match.
+        /// </summary>
+        Failed,
+        /// <summary>
+        /// Data match.
+        /// </summary>
+        Success
+    }
+
+    public interface IImageExtensionFactors
+    {
+        /// <summary>
+        /// Gets the image extension factor relative to full image height in UP direction.
+        /// </summary>
+        /// <value>Up factor.</value>
+        float UpFactor { get; }
+
+        /// <summary>
+        /// Gets the image extension factor relative to full image height in RIGHT direction..
+        /// </summary>
+        /// <value>The right factor.</value>
+        float RightFactor { get; }
+
+        /// <summary>
+        /// Gets image extension factor relative to full image height in DOWN direction.
+        /// </summary>
+        /// <value>Down factor.</value>
+        float DownFactor { get; }
+
+        /// <summary>
+        /// Gets the image extension factor relative to full image height in LEFT direction.
+        /// </summary>
+        /// <value>The left factor.</value>
+        float LeftFactor { get; }
+    }
+
+    /// <summary>
+    /// Image extension factors factory. Use this to create an instance of IImageExtensionFactors.
+    /// </summary>
+    public interface IImageExtensionFactorsFactory
+    {
+        /// <summary>
+        /// Creates the image extension factors.
+        /// </summary>
+        /// <returns>The image extension factors.</returns>
+        /// <param name="upFactor">image extension factor relative to full image height in UP direction</param>
+        /// <param name="downFactor">image extension factor relative to full image height in DOWN direction</param>
+        /// <param name="leftFactor">image extension factor relative to full image width in LEFT direction</param>
+        /// <param name="rightFactor">image extension factor relative to full image width in RIGHT direction</param>
+        IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0.0f, float downFactor = 0.0f, float leftFactor = 0.0f, float rightFactor = 0.0f);
+    }
+
+     /// <summary>
+    /// Represents the type of scanned barcode
+    /// </summary>
+    public enum BarcodeType
+    {
+        /// <summary>
+        /// No barcode was scanned
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// QR code was scanned
+        /// </summary>
+        QRCode,
+
+        /// <summary>
+        /// Data Matrix 2D barcode was scanned
+        /// </summary>
+        DataMatrix,
+
+        /// <summary>
+        /// UPC E barcode was scanned
+        /// </summary>
+        UPCE,
+
+        /// <summary>
+        /// UPC A barcode was scanned
+        /// </summary>
+        UPCA,
+
+        /// <summary>
+        /// EAN 8 barcode was scanned
+        /// </summary>
+        EAN8,
+
+        /// <summary>
+        /// EAN 13 barcode was scanned
+        /// </summary>
+        EAN13,
+
+        /// <summary>
+        /// Code 128 barcode was scanned
+        /// </summary>
+        Code128,
+
+        /// <summary>
+        /// Code 39 barcode was scanned
+        /// </summary>
+        Code39,
+
+        /// <summary>
+        /// ITF barcode was scanned
+        /// </summary>
+        ITF,
+
+        /// <summary>
+        /// Aztec 2D barcode was scanned
+        /// </summary>
+        Aztec,
+
+        /// <summary>
+        /// PDF417 2D barcode was scanned
+        /// </summary>
+        PDF417
+    }
 }

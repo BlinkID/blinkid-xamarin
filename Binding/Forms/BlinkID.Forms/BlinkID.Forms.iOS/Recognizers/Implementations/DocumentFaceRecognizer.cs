@@ -21,11 +21,14 @@ namespace BlinkID.Forms.iOS.Recognizers
         public IDocumentFaceRecognizerResult Result => result;
 
         
+        
         public DocumentFaceDetectorType DetectorType 
         { 
             get => (DocumentFaceDetectorType)nativeRecognizer.DetectorType; 
             set => nativeRecognizer.DetectorType = (MBDocumentFaceDetectorType)value;
         }
+        
+        
         
         public int FaceImageDpi 
         { 
@@ -33,11 +36,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FaceImageDpi = value;
         }
         
+        
+        
         public int FullDocumentImageDpi 
         { 
             get => (int)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
+        
+        
         
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
@@ -45,11 +52,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
+        
+        
         public int NumStableDetectionsThreshold 
         { 
             get => (int)nativeRecognizer.NumStableDetectionsThreshold; 
             set => nativeRecognizer.NumStableDetectionsThreshold = value;
         }
+        
+        
         
         public bool ReturnFaceImage 
         { 
@@ -57,11 +68,14 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFaceImage = value;
         }
         
+        
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
+        
         
     }
 
