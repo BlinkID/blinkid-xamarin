@@ -21,11 +21,14 @@ namespace BlinkID.Forms.iOS.Recognizers
         public IVisaRecognizerResult Result => result;
 
         
+        
         public bool DetectGlare 
         { 
             get => nativeRecognizer.DetectGlare; 
             set => nativeRecognizer.DetectGlare = value;
         }
+        
+        
         
         public int FaceImageDpi 
         { 
@@ -33,11 +36,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FaceImageDpi = value;
         }
         
+        
+        
         public int FullDocumentImageDpi 
         { 
             get => (int)nativeRecognizer.FullDocumentImageDpi; 
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
+        
+        
         
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
@@ -45,17 +52,22 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
         
+        
+        
         public bool ReturnFaceImage 
         { 
             get => nativeRecognizer.ReturnFaceImage; 
             set => nativeRecognizer.ReturnFaceImage = value;
         }
         
+        
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
+        
         
     }
 

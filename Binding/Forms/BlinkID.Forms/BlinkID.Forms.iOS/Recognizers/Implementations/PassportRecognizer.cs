@@ -21,11 +21,14 @@ namespace BlinkID.Forms.iOS.Recognizers
         public IPassportRecognizerResult Result => result;
 
         
+        
         public bool AnonymizeNetherlandsMrz 
         { 
             get => nativeRecognizer.AnonymizeNetherlandsMrz; 
             set => nativeRecognizer.AnonymizeNetherlandsMrz = value;
         }
+        
+        
         
         public bool DetectGlare 
         { 
@@ -33,11 +36,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.DetectGlare = value;
         }
         
+        
+        
         public int FaceImageDpi 
         { 
             get => (int)nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = value;
         }
+        
+        
         
         public int FullDocumentImageDpi 
         { 
@@ -45,11 +52,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
+        
+        
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
             get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
+        
+        
         
         public bool ReturnFaceImage 
         { 
@@ -57,17 +68,22 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFaceImage = value;
         }
         
+        
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
         
+        
+        
         public bool SignResult 
         { 
             get => nativeRecognizer.SignResult; 
             set => nativeRecognizer.SignResult = value;
         }
+        
         
     }
 

@@ -1,7 +1,6 @@
 ﻿using BlinkID.Forms.Droid.Recognizers;
 using BlinkID.Forms.Core.Recognizers;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ImageExtensionFactorsFactory))]
 [assembly: Xamarin.Forms.Dependency(typeof(RecognitionModeFilterFactory))]
 namespace BlinkID.Forms.Droid.Recognizers
 {
@@ -82,29 +81,6 @@ namespace BlinkID.Forms.Droid.Recognizers
 
         public string Conditions => nativeDlDetailedInfo.Conditions;
 
-    }
-
-    public sealed class ImageExtensionFactors : IImageExtensionFactors
-    {
-        public Com.Microblink.Entities.Recognizers.Blinkid.Imageoptions.Extension.ImageExtensionFactors NativeImageExtensionFactors { get; }
-
-        public ImageExtensionFactors(Com.Microblink.Entities.Recognizers.Blinkid.Imageoptions.Extension.ImageExtensionFactors nativeExtentionFactors)
-        {
-            NativeImageExtensionFactors = nativeExtentionFactors;
-        }
-
-        public float UpFactor => NativeImageExtensionFactors.UpFactor;
-        public float RightFactor => NativeImageExtensionFactors.RightFactor;
-        public float DownFactor => NativeImageExtensionFactors.DownFactor;
-        public float LeftFactor => NativeImageExtensionFactors.LeftFactor;
-    }
-
-    public sealed class ImageExtensionFactorsFactory : IImageExtensionFactorsFactory
-    {
-        public IImageExtensionFactors CreateImageExtensionFactors(float upFactor = 0, float downFactor = 0, float leftFactor = 0, float rightFactor = 0)
-        {
-            return new ImageExtensionFactors(new Com.Microblink.Entities.Recognizers.Blinkid.Imageoptions.Extension.ImageExtensionFactors(upFactor, downFactor, leftFactor, rightFactor));
-        }
     }
 
     public sealed class ClassInfo : IClassInfo

@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOWaLMUMW+4CSRlPH5nVsy5f+xFjYutJX80GcvEyclw+SM7cjBwSazdaGilBWPcwulKICq141a1XBnYLt5nSyhDrP+PNnId8bqFT1ic1A71TubT8iroMgkbLhW7lnjNgPDyuw/2aqsS8U/pkkk8YgekN0IZm5M/0q1CSLtAehIswt5CoFtYcG1DIuGnaTvVNoRGUu7+HaVXAmxGFENiITmrOpLXFSJXFRdyBQHd3rfLgBDzIEPvTIGoGVD0ZUFFziRMkk+om4QIQE8bYHx0L8WFNbkXf5WMw2hlf3cUJmDOI04Xx1FYrTYKlbam6Q+5OsEHXjTIt5";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVPparkA+LDfGyYOg6cMrpH1VAxKg4/hxJd+sZ+LfTDiiARlwrDVpO4SFEQXxoms2hRP0Ir4eJh+rTiaQXCZrnNHSd7VjKgsw+iDzbjKy4JokKifz0ZYeMDLu4BvzdRKeXM4X2BJ15YuTTm43VKGBcXXirmT+7yE/xpQzkH9H6wkO3q4kzlDq38dYuq0IIOgVlNd+dhP7OoI+rjrWiRFds9ZpgieBa5igh6Dck6qBZmZdTyqRTHVNoikzaHnDHY2wrlnptZX1Eihd/h4eypOOXL5L7ROs7v7yClFDEGNyFZtFBa/+CpZaa4GTeu6oKgetPQQ2SleEsKg==";
             }
             else
             {
-                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3ORtGZDC+pgWPewByA2mcAQzqNk16/kWSp2nLRQjfkEuG9yGoE/K0LrodsEN7Al0N7WPru283evPr/SeAo6r28d9ctFxOdHMT/FZIbSE5cEhVCXABiq9jHegOrfRcCpHF2C2yyiqnzFkP2vYDvfkmVJaGssG3isYCB57Oz3HSW5DkORMbQjkFtiHIZvcUZGRMMBkeT1TmK1YwVz85q6XMgC3+QMLOhpbNsYZg2DsO1kgC6PcTmkdwweXNoXJw+9i7gfKw7M/4u3LCcXCoPpBilJJND+BW+Qr9L+zDj2t8WnxCOa5yAUiED9QlTss086BIkmxov3Fs";
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3PothwzEeJq78CAjevTsub3sPOZo6P+9AzBIoO5QOR96yGE8YeEsVQRBu4qgvi8Xxqyt7r2juzRr/EBiYNdUAtbR4qBRUsrFYOyBjJ8UzqNJYsCRubqwS+jO2tHCHeiIQultnuo25otREh0b71IWNpKC8PUml8n5FvkJaq23y7qP7kulYb48HHCLFdUvu1L4ZQz46v6X1FQZ9YJ++gj93xW0i4fqja8Cxdy1FckGnRA57GaRqTRWrtzzMyf37UrpMN7CEV+KGr9YU0se7DkpfYeMKm6K3auTdrsSjo7FO6AycvdPE0RmzQ68V+b3DsDmgbE+gQLoIIw==";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed

@@ -2434,13 +2434,6 @@ namespace BlinkIDFormsSample.Droid
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_instructionsTextAppearance = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_instructionsTextAppearance;
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOffDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOffDrawable;
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOnDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkCardScanLineOverlay_mb_torchOnDrawable;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_errorHookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_errorHookColor;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_flipCardColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_flipCardColor;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_hookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_hookColor;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_overlayColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_overlayColor;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_scanLineColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_scanLineColor;
-			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_viewfinderAspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkidCameraOverlay_mb_viewfinderAspectRatio;
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay;
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardBackDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardBackDrawable;
 			global::BlinkID.Forms.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardFrontDrawable = global::BlinkIDFormsSample.Droid.Resource.Styleable.BlinkIdReticleOverlay_mb_cardFrontDrawable;
@@ -2856,6 +2849,13 @@ namespace BlinkIDFormsSample.Droid
 			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_reverseLayout;
 			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_spanCount = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_spanCount;
 			global::BlinkID.Forms.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::BlinkIDFormsSample.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_errorHookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_errorHookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_flipCardColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_flipCardColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_hookColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_hookColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_overlayColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_overlayColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_scanLineColor = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_scanLineColor;
+			global::BlinkID.Forms.Droid.Resource.Styleable.ScanLineViewfinder_mb_viewfinderAspectRatio = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScanLineViewfinder_mb_viewfinderAspectRatio;
 			global::BlinkID.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
 			global::BlinkID.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
 			global::BlinkID.Forms.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::BlinkIDFormsSample.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
@@ -22862,33 +22862,6 @@ namespace BlinkIDFormsSample.Droid
 			// aapt resource value: 5
 			public const int BlinkCardScanLineOverlay_mb_torchOnDrawable = 5;
 			
-			// aapt resource value: { 0x7F03025E,0x7F030263,0x7F030268,0x7F03026D,0x7F030274,0x7F03027A }
-			public static int[] BlinkidCameraOverlay = new int[] {
-					2130903646,
-					2130903651,
-					2130903656,
-					2130903661,
-					2130903668,
-					2130903674};
-			
-			// aapt resource value: 0
-			public const int BlinkidCameraOverlay_mb_errorHookColor = 0;
-			
-			// aapt resource value: 1
-			public const int BlinkidCameraOverlay_mb_flipCardColor = 1;
-			
-			// aapt resource value: 2
-			public const int BlinkidCameraOverlay_mb_hookColor = 2;
-			
-			// aapt resource value: 3
-			public const int BlinkidCameraOverlay_mb_overlayColor = 3;
-			
-			// aapt resource value: 4
-			public const int BlinkidCameraOverlay_mb_scanLineColor = 4;
-			
-			// aapt resource value: 5
-			public const int BlinkidCameraOverlay_mb_viewfinderAspectRatio = 5;
-			
 			// aapt resource value: { 0x7F030255,0x7F030256,0x7F030260,0x7F030261,0x7F030262,0x7F03026A,0x7F03026B,0x7F03026E,0x7F03026F,0x7F030270,0x7F030271,0x7F030272,0x7F030276,0x7F030278,0x7F030279 }
 			public static int[] BlinkIdReticleOverlay = new int[] {
 					2130903637,
@@ -27321,6 +27294,33 @@ namespace BlinkIDFormsSample.Droid
 			
 			// aapt resource value: 11
 			public const int RecyclerView_stackFromEnd = 11;
+			
+			// aapt resource value: { 0x7F03025E,0x7F030263,0x7F030268,0x7F03026D,0x7F030274,0x7F03027A }
+			public static int[] ScanLineViewfinder = new int[] {
+					2130903646,
+					2130903651,
+					2130903656,
+					2130903661,
+					2130903668,
+					2130903674};
+			
+			// aapt resource value: 0
+			public const int ScanLineViewfinder_mb_errorHookColor = 0;
+			
+			// aapt resource value: 1
+			public const int ScanLineViewfinder_mb_flipCardColor = 1;
+			
+			// aapt resource value: 2
+			public const int ScanLineViewfinder_mb_hookColor = 2;
+			
+			// aapt resource value: 3
+			public const int ScanLineViewfinder_mb_overlayColor = 3;
+			
+			// aapt resource value: 4
+			public const int ScanLineViewfinder_mb_scanLineColor = 4;
+			
+			// aapt resource value: 5
+			public const int ScanLineViewfinder_mb_viewfinderAspectRatio = 5;
 			
 			// aapt resource value: { 0x7F03019F }
 			public static int[] ScrimInsetsFrameLayout = new int[] {

@@ -21,11 +21,14 @@ namespace BlinkID.Forms.iOS.Recognizers
         public IBlinkIdRecognizerResult Result => result;
 
         
+        
         public bool AllowBlurFilter 
         { 
             get => nativeRecognizer.AllowBlurFilter; 
             set => nativeRecognizer.AllowBlurFilter = value;
         }
+        
+        
         
         public bool AllowUnparsedMrzResults 
         { 
@@ -33,11 +36,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.AllowUnparsedMrzResults = value;
         }
         
+        
+        
         public bool AllowUnverifiedMrzResults 
         { 
             get => nativeRecognizer.AllowUnverifiedMrzResults; 
             set => nativeRecognizer.AllowUnverifiedMrzResults = value;
         }
+        
+        
         
         public AnonymizationMode AnonymizationMode 
         { 
@@ -45,11 +52,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.AnonymizationMode = (MBAnonymizationMode)value;
         }
         
+        
+        
         public int FaceImageDpi 
         { 
             get => (int)nativeRecognizer.FaceImageDpi; 
             set => nativeRecognizer.FaceImageDpi = value;
         }
+        
+        
         
         public int FullDocumentImageDpi 
         { 
@@ -57,11 +68,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.FullDocumentImageDpi = value;
         }
         
+        
+        
         public IImageExtensionFactors FullDocumentImageExtensionFactors 
         { 
             get => new ImageExtensionFactors(nativeRecognizer.FullDocumentImageExtensionFactors); 
             set => nativeRecognizer.FullDocumentImageExtensionFactors = (value as ImageExtensionFactors).NativeFactors;
         }
+        
+        
         
         public float PaddingEdge 
         { 
@@ -69,11 +84,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.PaddingEdge = value;
         }
         
+        
+        
         public IRecognitionModeFilter RecognitionModeFilter 
         { 
             get => new RecognitionModeFilter(nativeRecognizer.RecognitionModeFilter); 
             set => nativeRecognizer.RecognitionModeFilter = (value as RecognitionModeFilter).NativeFilter;
         }
+        
+        
         
         public bool ReturnFaceImage 
         { 
@@ -81,11 +100,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnFaceImage = value;
         }
         
+        
+        
         public bool ReturnFullDocumentImage 
         { 
             get => nativeRecognizer.ReturnFullDocumentImage; 
             set => nativeRecognizer.ReturnFullDocumentImage = value;
         }
+        
+        
         
         public bool ReturnSignatureImage 
         { 
@@ -93,11 +116,15 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.ReturnSignatureImage = value;
         }
         
+        
+        
         public bool ScanCroppedDocumentImage 
         { 
             get => nativeRecognizer.ScanCroppedDocumentImage; 
             set => nativeRecognizer.ScanCroppedDocumentImage = value;
         }
+        
+        
         
         public int SignatureImageDpi 
         { 
@@ -105,11 +132,14 @@ namespace BlinkID.Forms.iOS.Recognizers
             set => nativeRecognizer.SignatureImageDpi = value;
         }
         
+        
+        
         public bool ValidateResultCharacters 
         { 
             get => nativeRecognizer.ValidateResultCharacters; 
             set => nativeRecognizer.ValidateResultCharacters = value;
         }
+        
         
     }
 

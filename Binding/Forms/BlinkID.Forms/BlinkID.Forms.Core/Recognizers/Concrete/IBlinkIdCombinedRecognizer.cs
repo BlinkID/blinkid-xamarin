@@ -16,6 +16,16 @@
         bool AllowBlurFilter { get; set; }
         
         /// <summary>
+        /// Proceed with scanning the back side even if the front side result is uncertain.
+        /// This only works for still images - video feeds will ignore this setting.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool AllowUncertainFrontSideScan { get; set; }
+        
+        /// <summary>
         /// Defines whether returning of unparsed MRZ (Machine Readable Zone) results is allowed
         /// 
         ///  
@@ -73,6 +83,15 @@
         /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
+        
+        /// <summary>
+        /// Configure the number of characters per field that are allowed to be inconsistent in data match.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to '0'
+        /// </summary>
+        int MaxAllowedMismatchesPerField { get; set; }
         
         /// <summary>
         /// Pading is a minimum distance from the edge of the frame and is defined as a percentage of the frame width. Default value is 0.0f and in that case
@@ -209,6 +228,11 @@
         IImageAnalysisResult BackImageAnalysisResult { get; }
         
         /// <summary>
+        /// Status of the last back side recognition process. 
+        /// </summary>
+        ProcessingStatus BackProcessingStatus { get; }
+        
+        /// <summary>
         /// Defines the data extracted from the back side visual inspection zone. 
         /// </summary>
         IVizResult BackVizResult { get; }
@@ -311,6 +335,11 @@
         /// Defines possible color and moire statuses determined from scanned front image. 
         /// </summary>
         IImageAnalysisResult FrontImageAnalysisResult { get; }
+        
+        /// <summary>
+        /// Status of the last front side recognition process. 
+        /// </summary>
+        ProcessingStatus FrontProcessingStatus { get; }
         
         /// <summary>
         /// Defines the data extracted from the front side visual inspection zone. 

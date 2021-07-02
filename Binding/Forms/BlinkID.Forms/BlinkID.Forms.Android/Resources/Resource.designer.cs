@@ -7735,33 +7735,6 @@ namespace BlinkID.Forms.Droid
 			// aapt resource value: 5
 			public static int BlinkCardScanLineOverlay_mb_torchOnDrawable = 5;
 			
-			// aapt resource value: { 0x7F030157,0x7F03015C,0x7F030161,0x7F030166,0x7F03016D,0x7F030173 }
-			public static int[] BlinkidCameraOverlay = new int[] {
-					2130903383,
-					2130903388,
-					2130903393,
-					2130903398,
-					2130903405,
-					2130903411};
-			
-			// aapt resource value: 0
-			public static int BlinkidCameraOverlay_mb_errorHookColor = 0;
-			
-			// aapt resource value: 1
-			public static int BlinkidCameraOverlay_mb_flipCardColor = 1;
-			
-			// aapt resource value: 2
-			public static int BlinkidCameraOverlay_mb_hookColor = 2;
-			
-			// aapt resource value: 3
-			public static int BlinkidCameraOverlay_mb_overlayColor = 3;
-			
-			// aapt resource value: 4
-			public static int BlinkidCameraOverlay_mb_scanLineColor = 4;
-			
-			// aapt resource value: 5
-			public static int BlinkidCameraOverlay_mb_viewfinderAspectRatio = 5;
-			
 			// aapt resource value: { 0x7F03014E,0x7F03014F,0x7F030159,0x7F03015A,0x7F03015B,0x7F030163,0x7F030164,0x7F030167,0x7F030168,0x7F030169,0x7F03016A,0x7F03016B,0x7F03016F,0x7F030171,0x7F030172 }
 			public static int[] BlinkIdReticleOverlay = new int[] {
 					2130903374,
@@ -9520,6 +9493,33 @@ namespace BlinkID.Forms.Droid
 			
 			// aapt resource value: 11
 			public static int RecyclerView_stackFromEnd = 11;
+			
+			// aapt resource value: { 0x7F030157,0x7F03015C,0x7F030161,0x7F030166,0x7F03016D,0x7F030173 }
+			public static int[] ScanLineViewfinder = new int[] {
+					2130903383,
+					2130903388,
+					2130903393,
+					2130903398,
+					2130903405,
+					2130903411};
+			
+			// aapt resource value: 0
+			public static int ScanLineViewfinder_mb_errorHookColor = 0;
+			
+			// aapt resource value: 1
+			public static int ScanLineViewfinder_mb_flipCardColor = 1;
+			
+			// aapt resource value: 2
+			public static int ScanLineViewfinder_mb_hookColor = 2;
+			
+			// aapt resource value: 3
+			public static int ScanLineViewfinder_mb_overlayColor = 3;
+			
+			// aapt resource value: 4
+			public static int ScanLineViewfinder_mb_scanLineColor = 4;
+			
+			// aapt resource value: 5
+			public static int ScanLineViewfinder_mb_viewfinderAspectRatio = 5;
 			
 			// aapt resource value: { 0x7F030101 }
 			public static int[] ScrimInsetsFrameLayout = new int[] {
