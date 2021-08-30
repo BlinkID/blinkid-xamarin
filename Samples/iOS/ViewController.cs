@@ -28,7 +28,7 @@ namespace iOS
             customDelegate = new CustomDelegate(this);
 
             // set license key for iOS with bundle ID com.microblink.sample
-            MBMicroblinkSDK.SharedInstance().SetLicenseKey("sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVPparkA+LDfGyYOg6cMrpH1VAxKg4/hxJd+sZ+LfTDiiARlwrDVpO4SFEQXxoms2hRP0Ir4eJh+rTiaQXCZrnNHSd7VjKgsw+iDzbjKy4JokKifz0ZYeMDLu4BvzdRKeXM4X2BJ15YuTTm43VKGBcXXirmT+7yE/xpQzkH9H6wkO3q4kzlDq38dYuq0IIOgVlNd+dhP7OoI+rjrWiRFds9ZpgieBa5igh6Dck6qBZmZdTyqRTHVNoikzaHnDHY2wrlnptZX1Eihd/h4eypOOXL5L7ROs7v7yClFDEGNyFZtFBa/+CpZaa4GTeu6oKgetPQQ2SleEsKg==", null);
+            MBMicroblinkSDK.SharedInstance().SetLicenseKey("sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOjalnIUAO6GSoXBJSnE8F0QDNJHKEMH7o9ipBUa6gs9JVUn1xhlm+gU+CE8M5dfpDJ5dThQAwhdat7lEBlhqCWhhVnaFAwhRPzmGoBT5DPJH+/j0bMsP52KFNDIQyjJ56+N/rtC1NQc0A/5weRzGQ0mJCESXhL1iCYi/ewtO8VmzBIMsPHcbtNKVqSabeqBOvjKVdwCDodUHYD4gxp+Z5QGjWEUTqqubZcRckHLEq+55y3IRpBev7y2ZfrwTPTBvkg6icvXZzpYl9G7UQnJfsx90JCFnGbFwkzgtCyG0D4EgWxpW2TRBZU9REHXXGZqh9BdHGCmv", null);
 		}
 
 		public override void DidReceiveMemoryWarning ()

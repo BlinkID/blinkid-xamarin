@@ -47,7 +47,7 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Java.Interop" />
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>packages\BlinkID.Android.Binding.5.12.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.Android.Binding.5.13.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Xamarin.AndroidX.MultiDex">

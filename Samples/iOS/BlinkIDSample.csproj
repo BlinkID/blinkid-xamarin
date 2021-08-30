@@ -92,7 +92,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="iOSBinding">
-      <HintPath>packages\BlinkID.iOS.Binding.5.12.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>packages\BlinkID.iOS.Binding.5.13.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Common.dll" />
     <Reference Include="System.Buffers">

@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVPparkA+LDfGyYOg6cMrpH1VAxKg4/hxJd+sZ+LfTDiiARlwrDVpO4SFEQXxoms2hRP0Ir4eJh+rTiaQXCZrnNHSd7VjKgsw+iDzbjKy4JokKifz0ZYeMDLu4BvzdRKeXM4X2BJ15YuTTm43VKGBcXXirmT+7yE/xpQzkH9H6wkO3q4kzlDq38dYuq0IIOgVlNd+dhP7OoI+rjrWiRFds9ZpgieBa5igh6Dck6qBZmZdTyqRTHVNoikzaHnDHY2wrlnptZX1Eihd/h4eypOOXL5L7ROs7v7yClFDEGNyFZtFBa/+CpZaa4GTeu6oKgetPQQ2SleEsKg==";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOjalnIUAO6GSoXBJSnE8F0QDNJHKEMH7o9ipBUa6gs9JVUn1xhlm+gU+CE8M5dfpDJ5dThQAwhdat7lEBlhqCWhhVnaFAwhRPzmGoBT5DPJH+/j0bMsP52KFNDIQyjJ56+N/rtC1NQc0A/5weRzGQ0mJCESXhL1iCYi/ewtO8VmzBIMsPHcbtNKVqSabeqBOvjKVdwCDodUHYD4gxp+Z5QGjWEUTqqubZcRckHLEq+55y3IRpBev7y2ZfrwTPTBvkg6icvXZzpYl9G7UQnJfsx90JCFnGbFwkzgtCyG0D4EgWxpW2TRBZU9REHXXGZqh9BdHGCmv";
             }
             else
             {
-                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3PothwzEeJq78CAjevTsub3sPOZo6P+9AzBIoO5QOR96yGE8YeEsVQRBu4qgvi8Xxqyt7r2juzRr/EBiYNdUAtbR4qBRUsrFYOyBjJ8UzqNJYsCRubqwS+jO2tHCHeiIQultnuo25otREh0b71IWNpKC8PUml8n5FvkJaq23y7qP7kulYb48HHCLFdUvu1L4ZQz46v6X1FQZ9YJ++gj93xW0i4fqja8Cxdy1FckGnRA57GaRqTRWrtzzMyf37UrpMN7CEV+KGr9YU0se7DkpfYeMKm6K3auTdrsSjo7FO6AycvdPE0RmzQ68V+b3DsDmgbE+gQLoIIw==";
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3Oitiw6TT2FGkiyJFlAhM8pExgH/ZF5IuOoC/DbKHoiR382JaMb+r7NDBTzi88CBCEGTbXlCknk+hJObhf+9SOOJyV9scpqUqGgudxZCbR7Ao8QVhwb7XavkyHr+6j1COdVVFlV105JVZF2y7TTB/c6qKl1YLlEPsHcgQJIR15cWeLaSrM9SDq3cW66fdVqjrmXTlZOpo3r6Kzc5LWa+B/kFt7oEJGC3+E8RVD0L/BM6W0vQvCFrgz2XMss7AmHyHugG2t7xId3TBcx9Jct+EcEjICkuJ3KnzdNj8OlVIHcVAlEcLcqx90wxL";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed

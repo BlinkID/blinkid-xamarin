@@ -493,7 +493,7 @@ namespace BlinkID
 		Sudan,
 		Suriname,
 		SvalbardAndJanMayen,
-		Swaziland,
+		Eswatini,
 		Syria,
 		Tajikistan,
 		Tanzania,

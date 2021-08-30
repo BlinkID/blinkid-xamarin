@@ -2149,223 +2149,214 @@ namespace BlinkID.Forms.Droid
 			public static int mb_blinkid_status_bg = 2131034196;
 			
 			// aapt resource value: 0x7F050055
-			public static int mb_blinkid_status_bg_error = 2131034197;
+			public static int mb_blue = 2131034197;
 			
 			// aapt resource value: 0x7F050056
-			public static int mb_blinkid_status_text = 2131034198;
+			public static int mb_blue_dark = 2131034198;
 			
 			// aapt resource value: 0x7F050057
-			public static int mb_blue = 2131034199;
+			public static int mb_default_frame = 2131034199;
 			
 			// aapt resource value: 0x7F050058
-			public static int mb_blue_dark = 2131034200;
+			public static int mb_default_selfie_overlay_shape_border_color = 2131034200;
 			
 			// aapt resource value: 0x7F050059
-			public static int mb_default_frame = 2131034201;
+			public static int mb_default_selfie_overlay_shape_inner_color = 2131034201;
 			
 			// aapt resource value: 0x7F05005A
-			public static int mb_default_selfie_overlay_shape_border_color = 2131034202;
+			public static int mb_default_selfie_overlay_shape_outer_color = 2131034202;
 			
 			// aapt resource value: 0x7F05005B
-			public static int mb_default_selfie_overlay_shape_inner_color = 2131034203;
+			public static int mb_max_quality_ocr_color = 2131034203;
 			
 			// aapt resource value: 0x7F05005C
-			public static int mb_default_selfie_overlay_shape_outer_color = 2131034204;
+			public static int mb_med_quality_ocr_color = 2131034204;
 			
 			// aapt resource value: 0x7F05005D
-			public static int mb_document_detection_quad = 2131034205;
+			public static int mb_min_quality_ocr_color = 2131034205;
 			
 			// aapt resource value: 0x7F05005E
-			public static int mb_max_quality_ocr_color = 2131034206;
+			public static int mb_mrz_point_color = 2131034206;
 			
 			// aapt resource value: 0x7F05005F
-			public static int mb_med_quality_ocr_color = 2131034207;
+			public static int mb_overlay_camera_translucent = 2131034207;
 			
 			// aapt resource value: 0x7F050060
-			public static int mb_min_quality_ocr_color = 2131034208;
+			public static int mb_recognized_frame = 2131034208;
 			
 			// aapt resource value: 0x7F050061
-			public static int mb_mrz_point_color = 2131034209;
+			public static int mb_snackbar_bg = 2131034209;
 			
 			// aapt resource value: 0x7F050062
-			public static int mb_overlay_camera_translucent = 2131034210;
+			public static int mb_status_background = 2131034210;
 			
 			// aapt resource value: 0x7F050063
-			public static int mb_recognized_frame = 2131034211;
+			public static int mb_status_foreground = 2131034211;
 			
 			// aapt resource value: 0x7F050064
-			public static int mb_snackbar_bg = 2131034212;
+			public static int mb_transparent = 2131034212;
 			
 			// aapt resource value: 0x7F050065
-			public static int mb_status_background = 2131034213;
+			public static int mb_viewfinder_inner_splash = 2131034213;
 			
 			// aapt resource value: 0x7F050066
-			public static int mb_status_foreground = 2131034214;
+			public static int mb_viewfinder_inner_transparent = 2131034214;
 			
 			// aapt resource value: 0x7F050067
-			public static int mb_transparent = 2131034215;
+			public static int mb_white = 2131034215;
 			
 			// aapt resource value: 0x7F050068
-			public static int mb_viewfinder_inner_splash = 2131034216;
+			public static int mtrl_bottom_nav_colored_item_tint = 2131034216;
 			
 			// aapt resource value: 0x7F050069
-			public static int mb_viewfinder_inner_transparent = 2131034217;
+			public static int mtrl_bottom_nav_item_tint = 2131034217;
 			
 			// aapt resource value: 0x7F05006A
-			public static int mb_white = 2131034218;
+			public static int mtrl_btn_bg_color_disabled = 2131034218;
 			
 			// aapt resource value: 0x7F05006B
-			public static int mtrl_bottom_nav_colored_item_tint = 2131034219;
+			public static int mtrl_btn_bg_color_selector = 2131034219;
 			
 			// aapt resource value: 0x7F05006C
-			public static int mtrl_bottom_nav_item_tint = 2131034220;
+			public static int mtrl_btn_ripple_color = 2131034220;
 			
 			// aapt resource value: 0x7F05006D
-			public static int mtrl_btn_bg_color_disabled = 2131034221;
+			public static int mtrl_btn_stroke_color_selector = 2131034221;
 			
 			// aapt resource value: 0x7F05006E
-			public static int mtrl_btn_bg_color_selector = 2131034222;
+			public static int mtrl_btn_text_btn_ripple_color = 2131034222;
 			
 			// aapt resource value: 0x7F05006F
-			public static int mtrl_btn_ripple_color = 2131034223;
+			public static int mtrl_btn_text_color_disabled = 2131034223;
 			
 			// aapt resource value: 0x7F050070
-			public static int mtrl_btn_stroke_color_selector = 2131034224;
+			public static int mtrl_btn_text_color_selector = 2131034224;
 			
 			// aapt resource value: 0x7F050071
-			public static int mtrl_btn_text_btn_ripple_color = 2131034225;
+			public static int mtrl_btn_transparent_bg_color = 2131034225;
 			
 			// aapt resource value: 0x7F050072
-			public static int mtrl_btn_text_color_disabled = 2131034226;
+			public static int mtrl_chip_background_color = 2131034226;
 			
 			// aapt resource value: 0x7F050073
-			public static int mtrl_btn_text_color_selector = 2131034227;
+			public static int mtrl_chip_close_icon_tint = 2131034227;
 			
 			// aapt resource value: 0x7F050074
-			public static int mtrl_btn_transparent_bg_color = 2131034228;
+			public static int mtrl_chip_ripple_color = 2131034228;
 			
 			// aapt resource value: 0x7F050075
-			public static int mtrl_chip_background_color = 2131034229;
+			public static int mtrl_chip_text_color = 2131034229;
 			
 			// aapt resource value: 0x7F050076
-			public static int mtrl_chip_close_icon_tint = 2131034230;
+			public static int mtrl_fab_ripple_color = 2131034230;
 			
 			// aapt resource value: 0x7F050077
-			public static int mtrl_chip_ripple_color = 2131034231;
+			public static int mtrl_scrim_color = 2131034231;
 			
 			// aapt resource value: 0x7F050078
-			public static int mtrl_chip_text_color = 2131034232;
+			public static int mtrl_tabs_colored_ripple_color = 2131034232;
 			
 			// aapt resource value: 0x7F050079
-			public static int mtrl_fab_ripple_color = 2131034233;
+			public static int mtrl_tabs_icon_color_selector = 2131034233;
 			
 			// aapt resource value: 0x7F05007A
-			public static int mtrl_scrim_color = 2131034234;
+			public static int mtrl_tabs_icon_color_selector_colored = 2131034234;
 			
 			// aapt resource value: 0x7F05007B
-			public static int mtrl_tabs_colored_ripple_color = 2131034235;
+			public static int mtrl_tabs_legacy_text_color_selector = 2131034235;
 			
 			// aapt resource value: 0x7F05007C
-			public static int mtrl_tabs_icon_color_selector = 2131034236;
-			
-			// aapt resource value: 0x7F05007D
-			public static int mtrl_tabs_icon_color_selector_colored = 2131034237;
+			public static int mtrl_tabs_ripple_color = 2131034236;
 			
 			// aapt resource value: 0x7F05007E
-			public static int mtrl_tabs_legacy_text_color_selector = 2131034238;
+			public static int mtrl_textinput_default_box_stroke_color = 2131034238;
 			
 			// aapt resource value: 0x7F05007F
-			public static int mtrl_tabs_ripple_color = 2131034239;
-			
-			// aapt resource value: 0x7F050081
-			public static int mtrl_textinput_default_box_stroke_color = 2131034241;
-			
-			// aapt resource value: 0x7F050082
-			public static int mtrl_textinput_disabled_color = 2131034242;
-			
-			// aapt resource value: 0x7F050083
-			public static int mtrl_textinput_filled_box_default_background_color = 2131034243;
-			
-			// aapt resource value: 0x7F050084
-			public static int mtrl_textinput_hovered_box_stroke_color = 2131034244;
+			public static int mtrl_textinput_disabled_color = 2131034239;
 			
 			// aapt resource value: 0x7F050080
-			public static int mtrl_text_btn_text_color_selector = 2131034240;
+			public static int mtrl_textinput_filled_box_default_background_color = 2131034240;
+			
+			// aapt resource value: 0x7F050081
+			public static int mtrl_textinput_hovered_box_stroke_color = 2131034241;
+			
+			// aapt resource value: 0x7F05007D
+			public static int mtrl_text_btn_text_color_selector = 2131034237;
+			
+			// aapt resource value: 0x7F050082
+			public static int notification_action_color_filter = 2131034242;
+			
+			// aapt resource value: 0x7F050083
+			public static int notification_icon_bg_color = 2131034243;
+			
+			// aapt resource value: 0x7F050084
+			public static int notification_material_background_media_default_color = 2131034244;
 			
 			// aapt resource value: 0x7F050085
-			public static int notification_action_color_filter = 2131034245;
+			public static int primary_dark_material_dark = 2131034245;
 			
 			// aapt resource value: 0x7F050086
-			public static int notification_icon_bg_color = 2131034246;
+			public static int primary_dark_material_light = 2131034246;
 			
 			// aapt resource value: 0x7F050087
-			public static int notification_material_background_media_default_color = 2131034247;
+			public static int primary_material_dark = 2131034247;
 			
 			// aapt resource value: 0x7F050088
-			public static int primary_dark_material_dark = 2131034248;
+			public static int primary_material_light = 2131034248;
 			
 			// aapt resource value: 0x7F050089
-			public static int primary_dark_material_light = 2131034249;
+			public static int primary_text_default_material_dark = 2131034249;
 			
 			// aapt resource value: 0x7F05008A
-			public static int primary_material_dark = 2131034250;
+			public static int primary_text_default_material_light = 2131034250;
 			
 			// aapt resource value: 0x7F05008B
-			public static int primary_material_light = 2131034251;
+			public static int primary_text_disabled_material_dark = 2131034251;
 			
 			// aapt resource value: 0x7F05008C
-			public static int primary_text_default_material_dark = 2131034252;
+			public static int primary_text_disabled_material_light = 2131034252;
 			
 			// aapt resource value: 0x7F05008D
-			public static int primary_text_default_material_light = 2131034253;
+			public static int ripple_material_dark = 2131034253;
 			
 			// aapt resource value: 0x7F05008E
-			public static int primary_text_disabled_material_dark = 2131034254;
+			public static int ripple_material_light = 2131034254;
 			
 			// aapt resource value: 0x7F05008F
-			public static int primary_text_disabled_material_light = 2131034255;
+			public static int secondary_text_default_material_dark = 2131034255;
 			
 			// aapt resource value: 0x7F050090
-			public static int ripple_material_dark = 2131034256;
+			public static int secondary_text_default_material_light = 2131034256;
 			
 			// aapt resource value: 0x7F050091
-			public static int ripple_material_light = 2131034257;
+			public static int secondary_text_disabled_material_dark = 2131034257;
 			
 			// aapt resource value: 0x7F050092
-			public static int secondary_text_default_material_dark = 2131034258;
+			public static int secondary_text_disabled_material_light = 2131034258;
 			
 			// aapt resource value: 0x7F050093
-			public static int secondary_text_default_material_light = 2131034259;
+			public static int switch_thumb_disabled_material_dark = 2131034259;
 			
 			// aapt resource value: 0x7F050094
-			public static int secondary_text_disabled_material_dark = 2131034260;
+			public static int switch_thumb_disabled_material_light = 2131034260;
 			
 			// aapt resource value: 0x7F050095
-			public static int secondary_text_disabled_material_light = 2131034261;
+			public static int switch_thumb_material_dark = 2131034261;
 			
 			// aapt resource value: 0x7F050096
-			public static int switch_thumb_disabled_material_dark = 2131034262;
+			public static int switch_thumb_material_light = 2131034262;
 			
 			// aapt resource value: 0x7F050097
-			public static int switch_thumb_disabled_material_light = 2131034263;
+			public static int switch_thumb_normal_material_dark = 2131034263;
 			
 			// aapt resource value: 0x7F050098
-			public static int switch_thumb_material_dark = 2131034264;
+			public static int switch_thumb_normal_material_light = 2131034264;
 			
 			// aapt resource value: 0x7F050099
-			public static int switch_thumb_material_light = 2131034265;
+			public static int tooltip_background_dark = 2131034265;
 			
 			// aapt resource value: 0x7F05009A
-			public static int switch_thumb_normal_material_dark = 2131034266;
-			
-			// aapt resource value: 0x7F05009B
-			public static int switch_thumb_normal_material_light = 2131034267;
-			
-			// aapt resource value: 0x7F05009C
-			public static int tooltip_background_dark = 2131034268;
-			
-			// aapt resource value: 0x7F05009D
-			public static int tooltip_background_light = 2131034269;
+			public static int tooltip_background_light = 2131034266;
 			
 			static Color()
 			{
