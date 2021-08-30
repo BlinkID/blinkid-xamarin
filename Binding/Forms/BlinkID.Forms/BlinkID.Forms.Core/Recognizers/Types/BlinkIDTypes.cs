@@ -611,7 +611,7 @@ namespace BlinkID.Forms.Core.Recognizers
         Sudan,
         Suriname,
         SvalbardAndJanMayen,
-        Swaziland,
+        Eswatini,
         Syria,
         Tajikistan,
         Tanzania,
