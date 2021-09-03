@@ -86,7 +86,7 @@
       <HintPath>..\packages\Xamarin.Forms.5.0.0.2012\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="iOSBinding">
-      <HintPath>..\packages\BlinkID.iOS.Binding.5.13.0\lib\xamarinios10\iOSBinding.dll</HintPath>
+      <HintPath>..\packages\BlinkCard.iOS.Binding.2.4.0\lib\xamarinios10\iOSBinding.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
       <HintPath>..\packages\BlinkID.Forms.Core.5.13.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
@@ -95,6 +95,12 @@
       <HintPath>..\packages\BlinkID.Forms.iOS.5.13.0\lib\xamarinios10\BlinkID.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Common.dll" />
+    <Reference Include="BlinkCard.Forms.Core">
+      <HintPath>..\packages\BlinkCard.Forms.Core.2.4.0\lib\netstandard1.0\BlinkCard.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkCard">
+      <HintPath>..\packages\BlinkCard.Forms.iOS.2.4.0\lib\xamarinios10\BlinkCard.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />

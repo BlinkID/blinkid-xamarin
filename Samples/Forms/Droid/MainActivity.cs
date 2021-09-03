@@ -9,9 +9,10 @@ using BlinkID.Forms.Droid;
 namespace BlinkIDApp
 {
 	[Activity (Label = "BlinkIDFormsSample.Droid", Icon = "@drawable/icon", HardwareAccelerated = true, MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, global::BlinkID.Forms.Droid.IMicroblinkScannerAndroidHostActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity, global::BlinkID.Forms.Droid.IMicroblinkScannerAndroidHostActivity, BlinkCard.Forms.Droid.IMicroblinkScannerAndroidHostActivity
 	{
         public MicroblinkScannerImplementation currentScannerImplementation;
+        public BlinkCard.Forms.Droid.MicroblinkScannerImplementation currentBlinkCardImplementation;
 
         /// <summary>
         /// Returns the host activity that is currently in use.
@@ -20,14 +21,8 @@ namespace BlinkIDApp
         /// <value>The host activity.</value>
         public Activity HostActivity => this;
 
-        /// <summary>
-        /// Gets the scan activity request code. You can define your custom request code
-        /// so that it will not interfere with request codes your app uses with other
-        /// activities.
-        /// </summary>
-        /// <value>The scan activity request code.</value>
-        public int ScanActivityRequestCode => 101;
-
+        int BlinkID.Forms.Droid.IMicroblinkScannerAndroidHostActivity.ScanActivityRequestCode => 100;
+        int BlinkCard.Forms.Droid.IMicroblinkScannerAndroidHostActivity.ScanActivityRequestCode => 101;
         protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -36,6 +31,7 @@ namespace BlinkIDApp
             // global property MicroblinkScannerFactoryImplementation.AndroidHostActivity.
             // Without this, android implementation will not be able to start scanning activity.
             MicroblinkScannerFactoryImplementation.AndroidHostActivity = this;
+            BlinkCard.Forms.Droid.MicroblinkScannerFactoryImplementation.AndroidHostActivity = this;
 
 			// Set our view from the "main" layout resource
 			RequestedOrientation = ScreenOrientation.Portrait;
@@ -56,8 +52,15 @@ namespace BlinkIDApp
         /// </summary>
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
+
             base.OnActivityResult(requestCode, resultCode, data);
-            currentScannerImplementation.OnActivityResult(requestCode, resultCode, data);
+            if(requestCode == 100)
+            {
+                currentScannerImplementation.OnActivityResult(requestCode, resultCode, data);
+            }else if(requestCode == 101)
+            {
+                currentBlinkCardImplementation.OnActivityResult(requestCode, resultCode, data);
+            }
         }
 
         /// <summary>
@@ -69,6 +72,11 @@ namespace BlinkIDApp
         public void ScanningStarted(MicroblinkScannerImplementation implementation)
         {
             currentScannerImplementation = implementation;
+        }
+
+        public void ScanningStarted(BlinkCard.Forms.Droid.MicroblinkScannerImplementation implementation)
+        {
+            currentBlinkCardImplementation = implementation;
         }
     }
 }

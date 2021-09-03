@@ -1,4 +1,5 @@
 ﻿using System;
+using BlinkCard.Forms.Core.Recognizers;
 using BlinkID.Forms.Core;
 using BlinkID.Forms.Core.Overlays;
 using BlinkID.Forms.Core.Recognizers;
@@ -20,20 +21,19 @@ namespace BlinkIDApp
         IBlinkIdCombinedRecognizer blinkidRecognizer;
 
         /// <summary>
-        /// USDL recognizer will be used for scanning barcode from back side of United States' driver's licenses.
+        /// Microblink scanner is used for scanning the credit cards
         /// </summary>
-        //IUsdlRecognizer usdlRecognizer;
+        BlinkCard.Forms.Core.IMicroblinkScanner blinkCard;
 
         /// <summary>
-        /// This success frame grabber recognizer will wrap usdlRecognizer and will contain camera frame of the moment
-        /// when wrapped recognizer finished its recognition.
+        /// BlinkCard recognizer will be used for automatic detection and data extraction from the supported document.
         /// </summary>
-        //ISuccessFrameGrabberRecognizer usdlSuccessFrameGrabberRecognizer;
+        IBlinkCardRecognizer blinkCardRecognizer;
 
         public BlinkIDPage ()
         {
             InitializeComponent ();
-
+            initializeBlinkCard();
             // before obtaining any of the recognizer's implementations from DependencyService, it is required
             // to obtain instance of IMicroblinkScanner and set the license key.
             // Failure to do so will crash your app.
@@ -78,7 +78,7 @@ namespace BlinkIDApp
                     // will contain result
 
                     // if specific recognizer's result's state is Valid, then it contains data recognized from image
-                    if (blinkidRecognizer.Result.ResultState == RecognizerResultState.Valid)
+                    if (blinkidRecognizer.Result.ResultState == BlinkID.Forms.Core.Recognizers.RecognizerResultState.Valid)
                     {
                         var blinkidResult = blinkidRecognizer.Result;
                         stringResult =
@@ -165,6 +165,79 @@ namespace BlinkIDApp
 
         }
 
+        private void initializeBlinkCard()
+        {
+            // before obtaining any of the recognizer's implementations from DependencyService, it is required
+            // to obtain instance of IMicroblinkScanner and set the license key.
+            // Failure to do so will crash your app.
+            var microblinkFactory = DependencyService.Get<BlinkCard.Forms.Core.IMicroblinkScannerFactory>();
+
+            // license keys are different for iOS and Android and depend on iOS bundleID/Android application ID
+            // in your app, you may obtain the correct license key for your platform via DependencyService from
+            // your Droid/iOS projects
+            string licenseKey;
+
+            // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP6dpSuS/37rVPvGgnEXtW6n0WYNXlN/0i1f88yoVpcC6wVI7C9/PwW96iHudfFxZtXdYuU3G3FGWKgCcqkSdZwRtiHrFeYz8beVEwPAGbLMPGidJ8qm5ZtgfLYHJ5NqR0qfIfqKTIDlsGzUY2D2qp3KUfYcscbf9JftuQdMpQ8VfQ8eu0+x1aUckcowsgAfq8/CTF3cpaSF1mBKMCO+idtTRWI8B52aZZDeybQ==";
+            }
+            else
+            {
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdb5ZkGlTu623Pixsw037mGhBUOlKf9FyC46r0aJfr+2FJclONWXQv/Xlj27pDDhp07b66EWvmCZeP9oUM7zUHo17x8A4DC8nIZhxCsRgz5FLeMD7opEa+XVTb3/kxNOc8zNZ2XSG0Pw9VTxYf/74hEC7mVhYMIK+4Nf94HM5hujNJInjb5BRLBqrje6tcOlqgSDdQGBkCIre9FOLJDgVtyq41HIwC4cxSS/ryg==";
+            }
+
+            // since DependencyService requires implementations to have default constructor, a factory is needed
+            // to construct implementation of IMicroblinkScanner with given license key
+            blinkCard = microblinkFactory.CreateMicroblinkScanner(licenseKey, true);
+
+            // subscribe to scanning done message
+            MessagingCenter.Subscribe<BlinkCard.Forms.Core.Messages.ScanningDoneMessage>(this, BlinkCard.Forms.Core.Messages.ScanningDoneMessageId, (sender) => {
+                ImageSource fullDocumentFirstImageSource = null;
+                ImageSource fullDocumentSecondImageSource = null;
+
+                string stringResult = "No valid results.";
+
+                // if user cancelled scanning, sender.ScanningCancelled will be true
+                if (sender.ScanningCancelled)
+                {
+                    stringResult = "Scanning cancelled";
+                }
+                else
+                {
+                    // otherwise, one or more recognizers used in RecognizerCollection (see StartScan method below)
+                    // will contain result
+
+                    // if specific recognizer's result's state is Valid, then it contains data recognized from image
+                    if (blinkCardRecognizer.Result.ResultState == BlinkCard.Forms.Core.Recognizers.RecognizerResultState.Valid)
+                    {
+                        var blinkCard = blinkCardRecognizer.Result;
+                        stringResult =
+                            "BlinkCard recognizer result:\n" +
+                            BuildResult(blinkCard.CardNumber, "Card number") +
+                            BuildResult(blinkCard.CardNumberValid, "Card number valid") +
+                            BuildResult(blinkCard.CardNumberPrefix, "Card number prefix") +
+                            BuildResult(blinkCard.Iban, "IBAN") +
+                            BuildResult(blinkCard.Owner, "Owner") +
+                            BuildResult(blinkCard.ExpiryDate, "Expiry date") +
+                            BuildResult(blinkCard.Cvv, "CVV");
+
+                        fullDocumentFirstImageSource = blinkCard.FirstSideFullDocumentImage;
+                        fullDocumentSecondImageSource = blinkCard.SecondSideFullDocumentImage;
+                    }
+
+                }
+
+                // updating the UI must be performed on main thread
+                Device.BeginInvokeOnMainThread(() => {
+                    resultsEditor.Text = stringResult;
+                    fullDocumentFrontImage.Source = fullDocumentFirstImageSource;
+                    fullDocumentBackImage.Source = fullDocumentSecondImageSource;
+                });
+
+            });
+        }
+
         private string BuildResult(string result, string propertyName)
         {
             if (result == null || result.Length == 0)
@@ -195,7 +268,7 @@ namespace BlinkIDApp
             return propertyName + ": " + result + "\n";
         }
 
-        private string BuildResult(IDate result, string propertyName)
+        private string BuildResult(BlinkID.Forms.Core.Recognizers.IDate result, string propertyName)
         {
             if (result == null || result.Year == 0)
             {
@@ -204,6 +277,39 @@ namespace BlinkIDApp
 
             DateTime date = new DateTime(result.Year, result.Month, result.Day);
             return propertyName + ": " + date.ToShortDateString() + "\n";
+        }
+
+        private string BuildResult(BlinkCard.Forms.Core.Recognizers.IDate result, string propertyName)
+        {
+            if (result == null || result.Year == 0)
+            {
+                return "";
+            }
+
+            return propertyName + ": "+ result.Month + "/"+ result.Year + "\n";
+        }
+
+        /// <summary>
+        /// Button click event handler that will start the scanning procedure.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        void StartBlinkCard(object sender, EventArgs e)
+        {
+            blinkCardRecognizer = DependencyService.Get<IBlinkCardRecognizer>(DependencyFetchTarget.NewInstance);
+            blinkCardRecognizer.ReturnFullDocumentImage = true;
+
+            // first create a recognizer collection from all recognizers that you want to use in recognition
+            // if some recognizer is wrapped with SuccessFrameGrabberRecognizer, then you should use only the wrapped one
+            var recognizerCollection = DependencyService.Get<BlinkCard.Forms.Core.Recognizers.IRecognizerCollectionFactory>().CreateRecognizerCollection(blinkCardRecognizer);
+
+            // using recognizerCollection, create overlay settings that will define the UI that will be used
+            // there are several available overlay settings classes in Microblink.Forms.Core.Overlays namespace
+            // document overlay settings is best for scanning identity documents
+            var blinkCardOverlaySettings = DependencyService.Get<BlinkCard.Forms.Core.Overlays.IBlinkCardOverlaySettingsFactory>().CreateBlinkCardOverlaySettings(recognizerCollection);
+
+            // start scanning
+            blinkCard.Scan(blinkCardOverlaySettings);
         }
 
         /// <summary>
@@ -227,7 +333,7 @@ namespace BlinkIDApp
 
             // first create a recognizer collection from all recognizers that you want to use in recognition
             // if some recognizer is wrapped with SuccessFrameGrabberRecognizer, then you should use only the wrapped one
-            var recognizerCollection = DependencyService.Get<IRecognizerCollectionFactory>().CreateRecognizerCollection(blinkidRecognizer/*, usdlSuccessFrameGrabberRecognizer*/);
+            var recognizerCollection = DependencyService.Get<BlinkID.Forms.Core.Recognizers.IRecognizerCollectionFactory>().CreateRecognizerCollection(blinkidRecognizer/*, usdlSuccessFrameGrabberRecognizer*/);
 
             // using recognizerCollection, create overlay settings that will define the UI that will be used
             // there are several available overlay settings classes in Microblink.Forms.Core.Overlays namespace

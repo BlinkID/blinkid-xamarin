@@ -224,6 +224,15 @@
     <Reference Include="Xamarin.Google.Guava.ListenableFuture">
       <HintPath>..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.2\lib\monoandroid50\Xamarin.Google.Guava.ListenableFuture.dll</HintPath>
     </Reference>
+    <Reference Include="BlinkCardAARBinding">
+      <HintPath>..\packages\BlinkCard.Android.Binding.2.4.0\lib\monoandroid10.0\BlinkCardAARBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkCard.Forms.Core">
+      <HintPath>..\packages\BlinkCard.Forms.Core.2.4.0\lib\netstandard1.0\BlinkCard.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkCard">
+      <HintPath>..\packages\BlinkCard.Forms.Android.2.4.0\lib\monoandroid10.0\BlinkCard.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
