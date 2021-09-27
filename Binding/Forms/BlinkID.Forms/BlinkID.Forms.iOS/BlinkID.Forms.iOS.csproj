@@ -103,9 +103,9 @@ https://github.com/BlinkID/blinkid-ios/releases/tag/v5.13.0</PackageReleaseNotes
       <Project>{A9648E1B-2D6D-42A7-AAEC-15E5A2189CF0}</Project>
       <Name>BlinkID.Forms.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\iOS\iOSBinding.csproj">
+    <ProjectReference Include="..\..\..\iOS\BlinkID.iOSBinding.csproj">
       <Project>{DE7ABFD3-59C1-4966-84CF-35064D54C98A}</Project>
-      <Name>iOSBinding</Name>
+      <Name>BlinkID.iOSBinding</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

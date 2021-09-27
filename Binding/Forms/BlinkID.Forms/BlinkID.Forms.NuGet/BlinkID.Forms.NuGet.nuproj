@@ -15,7 +15,7 @@
     <RootNamespace>BlinkID</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>BlinkID.Forms.NuGet</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Owners>Microblink</Owners>
     <Copyright>Microblink</Copyright>
     <Title>BlinkID</Title>
