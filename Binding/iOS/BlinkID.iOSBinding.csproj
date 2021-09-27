@@ -8,7 +8,7 @@
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>iOSBinding</RootNamespace>
-    <AssemblyName>iOSBinding</AssemblyName>
+    <AssemblyName>BlinkID.iOSBinding</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <PackageId>BlinkID.iOS.Binding</PackageId>
     <PackageVersion>5.13.0</PackageVersion>
