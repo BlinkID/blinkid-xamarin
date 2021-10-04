@@ -138,6 +138,7 @@ namespace BlinkID.Forms.Droid.Recognizers
         public string Employer => nativeResult.Employer;
         public bool Expired => nativeResult.IsExpired;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
+        public string FathersName => nativeResult.FathersName;
         public string FirstName => nativeResult.FirstName;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FullDocumentImage.ConvertToBitmap()) : null;
         public string FullName => nativeResult.FullName;
@@ -146,6 +147,7 @@ namespace BlinkID.Forms.Droid.Recognizers
         public string LastName => nativeResult.LastName;
         public string LocalizedName => nativeResult.LocalizedName;
         public string MaritalStatus => nativeResult.MaritalStatus;
+        public string MothersName => nativeResult.MothersName;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;
