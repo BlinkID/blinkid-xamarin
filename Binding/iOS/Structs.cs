@@ -255,7 +255,8 @@ namespace BlinkID
 		GreenCard,
 		MysPassIMM13P,
 		Dl,
-		InternalTravelDocument
+		InternalTravelDocument,
+		BorderCrossingCard
 	}
 
 	[Native]

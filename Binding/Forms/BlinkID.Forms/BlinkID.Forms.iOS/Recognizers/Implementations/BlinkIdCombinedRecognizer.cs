@@ -206,6 +206,7 @@ namespace BlinkID.Forms.iOS.Recognizers
         public string Employer => nativeResult.Employer;
         public bool Expired => nativeResult.Expired;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
+        public string FathersName => nativeResult.FathersName;
         public string FirstName => nativeResult.FirstName;
         public IImageAnalysisResult FrontImageAnalysisResult => new ImageAnalysisResult(nativeResult.FrontImageAnalysisResult);
         public ProcessingStatus FrontProcessingStatus => (ProcessingStatus)nativeResult.FrontProcessingStatus;
@@ -217,6 +218,7 @@ namespace BlinkID.Forms.iOS.Recognizers
         public string LastName => nativeResult.LastName;
         public string LocalizedName => nativeResult.LocalizedName;
         public string MaritalStatus => nativeResult.MaritalStatus;
+        public string MothersName => nativeResult.MothersName;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
         public string Nationality => nativeResult.Nationality;
         public string PersonalIdNumber => nativeResult.PersonalIdNumber;

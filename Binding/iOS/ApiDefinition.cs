@@ -898,6 +898,10 @@ namespace BlinkID
         // -(UIInterfaceOrientationMask)getOptimalHudOrientation;
         [Export ("getOptimalHudOrientation")]
         UIInterfaceOrientationMask OptimalHudOrientation { get; }
+
+        // -(NSString * _Nonnull)toJson;
+		[Export ("toJson")]
+		string ToJson { get; }
     }
 
     // @interface MBFrameGrabberRecognizer : MBRecognizer <NSCopying>
@@ -1850,6 +1854,14 @@ namespace BlinkID
 		[Export ("fullName")]
 		string FullName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nonnull fathersName;
+		[Export ("fathersName")]
+		string FathersName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull mothersName;
+		[Export ("mothersName")]
+		string MothersName { get; }
+
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
 		[Export ("additionalNameInformation")]
 		string AdditionalNameInformation { get; }
@@ -2138,6 +2150,14 @@ namespace BlinkID
 		[NullAllowed, Export ("lastName")]
 		string LastName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable fathersName;
+		[NullAllowed, Export ("fathersName")]
+		string FathersName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable mothersName;
+		[NullAllowed, Export ("mothersName")]
+		string MothersName { get; }
+
 		// @property (readonly, nonatomic) NSString * _Nullable sex;
 		[NullAllowed, Export ("sex")]
 		string Sex { get; }
@@ -2345,6 +2365,14 @@ namespace BlinkID
 		// @property (readonly, nonatomic) NSString * _Nullable lastName;
 		[NullAllowed, Export ("lastName")]
 		string LastName { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable fathersName;
+		[NullAllowed, Export ("fathersName")]
+		string FathersName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable mothersName;
+		[NullAllowed, Export ("mothersName")]
+		string MothersName { get; }
 
 		// @property (readonly, nonatomic) NSString * _Nullable sex;
 		[NullAllowed, Export ("sex")]
