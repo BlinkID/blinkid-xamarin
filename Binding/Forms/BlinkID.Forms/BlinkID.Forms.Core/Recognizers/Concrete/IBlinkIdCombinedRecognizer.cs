@@ -327,6 +327,11 @@
         Xamarin.Forms.ImageSource FaceImage { get; }
         
         /// <summary>
+        /// The father's name of the document owner. 
+        /// </summary>
+        string FathersName { get; }
+        
+        /// <summary>
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
@@ -380,6 +385,11 @@
         /// The marital status of the document owner. 
         /// </summary>
         string MaritalStatus { get; }
+        
+        /// <summary>
+        /// The mother's name of the document owner. 
+        /// </summary>
+        string MothersName { get; }
         
         /// <summary>
         /// The data extracted from the machine readable zone 

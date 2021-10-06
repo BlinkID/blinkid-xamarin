@@ -65,7 +65,6 @@ namespace BlinkID.Forms.iOS.Recognizers
 
         public int Age => nativeMrzResult.Age;
     }
-
     public sealed class ImageExtensionFactors : IImageExtensionFactors
     {
         public MBImageExtensionFactors NativeFactors { get; }

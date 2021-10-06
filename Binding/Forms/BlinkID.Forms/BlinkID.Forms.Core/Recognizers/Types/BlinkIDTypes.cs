@@ -29,7 +29,11 @@ namespace BlinkID.Forms.Core.Recognizers
         /// <summary>
         /// Malaysian PASS type IMM13P
         /// </summary>
-        MalaysianPassIMM13P
+        MalaysianPassIMM13P,
+        /// <summary>
+        /// Border crossing card
+        /// </summary>
+        BorderCrossingCard
     }
 
     /// <summary>
