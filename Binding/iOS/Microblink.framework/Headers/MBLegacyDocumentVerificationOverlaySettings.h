@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Settings class containing UI information
  */
-MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
+MB_CLASS_AVAILABLE_IOS(8.0) MB_CLASS_DEPRECATED("Use MBBlinkIdOverlaySettings.") MB_FINAL
+@interface MBLegacyDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
 
 /**
  * Returns/sets user instructions that are shown above camera preview while the first side of the

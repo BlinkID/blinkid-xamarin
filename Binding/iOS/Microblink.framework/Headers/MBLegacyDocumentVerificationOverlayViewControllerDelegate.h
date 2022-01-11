@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBDocumentVerificationOverlayViewController.h"
+#import "MBLegacyDocumentVerificationOverlayViewController.h"
 #import "MBRecognizerRunnerViewController.h"
 #import "MBRecognizerResult.h"
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Protocol for obtaining scanning results
  */
-@protocol MBDocumentVerificationOverlayViewControllerDelegate <NSObject>
+@protocol MBLegacyDocumentVerificationOverlayViewControllerDelegate <NSObject>
 @required
 /**
  * Scanning library did output scanning results
@@ -36,14 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
  */
-- (void)documentVerificationOverlayViewControllerDidFinishScanning:(nonnull MBDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
+- (void)legacyDocumentVerificationOverlayViewControllerDidFinishScanning:(nonnull MBLegacyDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
 
 /**
  * Scanning library was closed, usually by the user pressing close button and cancelling the scan
  *
  *  @param documentVerificationOverlayViewController Scanning view controller responsible for scanning
  */
-- (void)documentVerificationOverlayViewControllerDidTapClose:(nonnull MBDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController;
+- (void)legacyDocumentVerificationOverlayViewControllerDidTapClose:(nonnull MBLegacyDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController;
 
 @optional
 /**
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param documentVerificationOverlayViewController documentVerificationOverlayViewController Scanning view controller responsible for scanning
  */
-- (void)documentVerificationOverlayViewControllerDidFinishScanningFirstSide:(nonnull MBDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController;
+- (void)legacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide:(nonnull MBLegacyDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController;
 
 /**
  * Scanning library did output high resolution image
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
  */
-- (void)documentVerificationOverlayViewControllerDidCaptureHighResolutionImage:(nonnull MBDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController highResImage:(MBImage *)highResImage state:(MBDocumentVerificationHighResImageState)state;
+- (void)legacyDocumentVerificationOverlayViewControllerDidCaptureHighResolutionImage:(nonnull MBLegacyDocumentVerificationOverlayViewController *)documentVerificationOverlayViewController highResImage:(MBImage *)highResImage state:(MBLegacyDocumentVerificationHighResImageState)state;
 
 @end
 
