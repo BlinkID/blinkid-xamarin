@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -30,19 +30,25 @@
     <CrashReportingEnabled>false</CrashReportingEnabled>
     <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
     <OnDemandResourcesInitialInstallTags></OnDemandResourcesInitialInstallTags>
+    <MtouchInterpreter></MtouchInterpreter>
+    <BuildIpa></BuildIpa>
+    <IpaIncludeArtwork></IpaIncludeArtwork>
+    <IpaMetadata></IpaMetadata>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
-    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchLink>SdkOnly</MtouchLink>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -51,10 +57,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaIncludeArtwork></IpaIncludeArtwork>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,369 +79,370 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchLink>SdkOnly</MtouchLink>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="System.Drawing.Common.dll" />
     <Reference Include="Microsoft.Win32.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\Microsoft.Win32.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\mscorlib.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\netstandard.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\netstandard.dll</HintPath>
     </Reference>
     <Reference Include="System.AppContext">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.AppContext.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.AppContext.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Concurrent">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.Concurrent.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Collections.Concurrent.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Collections.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.NonGeneric">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.NonGeneric.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Collections.NonGeneric.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Specialized">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.Specialized.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.Composition.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Collections.Specialized.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ComponentModel.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.EventBasedAsync">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.EventBasedAsync.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ComponentModel.EventBasedAsync.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ComponentModel.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.TypeConverter">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.TypeConverter.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ComponentModel.TypeConverter.dll</HintPath>
     </Reference>
     <Reference Include="System.Console">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Console.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Common">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Data.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Data.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Data.Common.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Contracts">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Contracts.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Debug">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Debug.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.Debug.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.FileVersionInfo">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.FileVersionInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Process">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Process.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.Process.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.StackTrace">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.StackTrace.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TextWriterTraceListener">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tools">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Tools.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.Tools.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.TraceSource">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.TraceSource.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.TraceSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Tracing.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Diagnostics.Tracing.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Drawing.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Drawing.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Drawing.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Dynamic.Runtime">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Dynamic.Runtime.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Dynamic.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Calendars">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.Calendars.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Globalization.Calendars.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="System.Globalization.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression.FileSystem">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.FileSystem.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Globalization.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.ZipFile">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.ZipFile.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.Compression.ZipFile.dll</HintPath>
     </Reference>
     <Reference Include="System.IO">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.DriveInfo">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.DriveInfo.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.FileSystem.DriveInfo.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.FileSystem.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Watcher">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.Watcher.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.FileSystem.Watcher.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.IsolatedStorage">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.IsolatedStorage.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.IsolatedStorage.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.MemoryMappedFiles">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.MemoryMappedFiles.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.MemoryMappedFiles.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Pipes">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Pipes.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.Pipes.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.UnmanagedMemoryStream">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.UnmanagedMemoryStream.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.UnmanagedMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Expressions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Expressions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Linq.Expressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Parallel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Parallel.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Linq.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq.Queryable">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Queryable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Http.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Linq.Queryable.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NameResolution">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.NameResolution.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.NameResolution.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.NetworkInformation">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.NetworkInformation.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.NetworkInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Ping">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Ping.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Ping.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Requests">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Requests.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Requests.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Security">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Security.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Security.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Sockets">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Sockets.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Sockets.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebHeaderCollection">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebHeaderCollection.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.WebHeaderCollection.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets.Client">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebSockets.Client.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.WebSockets.Client.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.WebSockets">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebSockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Numerics.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.WebSockets.dll</HintPath>
     </Reference>
     <Reference Include="System.ObjectModel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ObjectModel.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.Extensions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Reflection.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Reflection.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Reader">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.Reader.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Resources.Reader.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.ResourceManager">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.ResourceManager.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Resources.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Resources.Writer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.Writer.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Resources.Writer.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.VisualC">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.CompilerServices.VisualC.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Extensions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Handles">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Handles.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Handles.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.InteropServices.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.InteropServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Numerics">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Numerics.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Serialization.Formatters.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Json">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Json.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Serialization.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Serialization.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Xml">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Xml.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Serialization.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Claims">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Claims.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Claims.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Csp">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Csp.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Cryptography.Csp.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Encoding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Cryptography.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Primitives.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Principal">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Principal.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.Principal.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.SecureString">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.SecureString.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Web">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ServiceModel.Web.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Security.SecureString.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.Encoding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Text.Encoding.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.Encoding.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.Encoding.Extensions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Text.Encoding.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.RegularExpressions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Text.RegularExpressions.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Overlapped">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Overlapped.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.Overlapped.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Tasks.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Parallel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Tasks.Parallel.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.Tasks.Parallel.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Thread">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Thread.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.Thread.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.ThreadPool">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.ThreadPool.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.ThreadPool.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Timer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Timer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Transactions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Transactions.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Threading.Timer.dll</HintPath>
     </Reference>
     <Reference Include="System.ValueTuple">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.Linq.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Web.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.ReaderWriter">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.ReaderWriter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Serialization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.Serialization.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.ReaderWriter.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XDocument.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XmlDocument.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.XmlDocument.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XmlSerializer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XmlSerializer.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.XmlSerializer.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XPath.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.XPath.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath.XDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XPath.XDocument.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="BlinkID.iOSBinding">
-      <HintPath>..\packages\BlinkID.iOS.Binding.5.14.0\lib\xamarinios10\BlinkID.iOSBinding.dll</HintPath>
+    <Reference Include="mscorlib">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.1\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
+    <Reference Include="BlinkID.iOSBinding">
+      <HintPath>..\packages\BlinkID.iOS.Binding.5.15.0\lib\xamarinios10\BlinkID.iOSBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common.dll" />
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.iOS.5.14.0\lib\xamarinios10\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.iOS.5.15.0\lib\xamarinios10\BlinkID.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -460,5 +468,5 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.targets')" />
 </Project>
