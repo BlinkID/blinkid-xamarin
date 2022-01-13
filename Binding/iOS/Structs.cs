@@ -871,6 +871,7 @@ namespace BlinkID
 		None = 0,
 		AAMVACompliant,
 		ArgentinaID,
+		ArgentinaAlienID,
 		ArgentinaDL,
 		ColombiaID,
 		ColombiaDL,
