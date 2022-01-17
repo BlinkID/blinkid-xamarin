@@ -58,7 +58,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Java.Interop" />
     <Reference Include="FormsViewGroup">
       <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\FormsViewGroup.dll</HintPath>
     </Reference>
