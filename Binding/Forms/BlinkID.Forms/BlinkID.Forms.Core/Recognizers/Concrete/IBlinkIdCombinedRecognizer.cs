@@ -50,7 +50,7 @@
         /// 
         ///  
         ///
-        /// By default, this is set to 'MBAnonymizationModeFullResult'
+        /// By default, this is set to 'FullResult'
         /// </summary>
         AnonymizationMode AnonymizationMode { get; set; }
         
@@ -80,7 +80,7 @@
         /// @see ImageExtensionFactors
         ///  
         ///
-        /// By default, this is set to '{0.0f, 0.0f, 0.0f, 0.0f}'
+        /// By default, this is set to '[0.0, 0.0, 0.0, 0.0]'
         /// </summary>
         IImageExtensionFactors FullDocumentImageExtensionFactors { get; set; }
         
@@ -100,7 +100,7 @@
         /// 
         ///  
         ///
-        /// By default, this is set to '0.0f'
+        /// By default, this is set to '0.0'
         /// </summary>
         float PaddingEdge { get; set; }
         

@@ -5,10 +5,8 @@ using CoreGraphics;
 using CoreMedia;
 using CoreVideo;
 using Foundation;
-using BlinkID;
 using ObjCRuntime;
 using UIKit;
-// using System.Runtime.InteropServices;
 
 namespace BlinkID
 {
@@ -16,7 +14,8 @@ namespace BlinkID
 	delegate void MBBlock ();
 
     // @interface MBMicroblinkApp : NSObject
-    [BaseType(typeof(NSObject))]
+    [iOS (8,0)]
+    [BaseType (typeof(NSObject))]
     interface MBMicroblinkApp
     {
         // @property (nonatomic) NSString * language;
@@ -37,32 +36,32 @@ namespace BlinkID
 
 		// +(instancetype)sharedInstance __attribute__((swift_name("shared()")));
         [Static]
-        [Export("sharedInstance")]
-        MBMicroblinkApp SharedInstance();
+        [Export ("sharedInstance")]
+        MBMicroblinkApp SharedInstance ();
 
         // -(void)setDefaultLanguage;
         [Export ("setDefaultLanguage")]
-        void SetDefaultLanguage();
+        void SetDefaultLanguage ();
 
         // -(void)pushStatusBarStyle:(UIStatusBarStyle)statusBarStyle;
         [Export ("pushStatusBarStyle:")]
-        void PushStatusBarStyle(UIStatusBarStyle statusBarStyle);
+        void PushStatusBarStyle (UIStatusBarStyle statusBarStyle);
 
         // -(void)popStatusBarStyle;
         [Export ("popStatusBarStyle")]
-        void PopStatusBarStyle();
+        void PopStatusBarStyle ();
 
         // -(void)pushStatusBarHidden:(BOOL)hidden;
         [Export ("pushStatusBarHidden:")]
-        void PushStatusBarHidden(bool hidden);
+        void PushStatusBarHidden (bool hidden);
 
         // -(void)popStatusBarHidden;
         [Export ("popStatusBarHidden")]
-        void PopStatusBarHidden();
+        void PopStatusBarHidden ();
 
         // -(void)setHelpShown:(BOOL)value;
         [Export ("setHelpShown:")]
-        void SetHelpShown(bool value);
+        void SetHelpShown (bool value);
 
         // -(BOOL)isHelpShown;
         [Export ("isHelpShown")]
@@ -71,12 +70,12 @@ namespace BlinkID
         // +(NSBundle *)getDefaultResourcesBundle;
         [Static]
         [Export ("getDefaultResourcesBundle")]
-        NSBundle DefaultResourcesBundle();
+        NSBundle DefaultResourcesBundle { get; }
     }
 
        // @interface MBCameraSettings : NSObject <NSCopying>
     [iOS (8,0)]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBCameraSettings : INSCopying
     {
         // @property (assign, nonatomic) MBCameraPreset cameraPreset;
@@ -198,17 +197,17 @@ namespace BlinkID
         // @required -(void)overlayViewControllerWillCloseCamera:(MBOverlayViewController *)overlayViewController;
         [Abstract]
         [Export ("overlayViewControllerWillCloseCamera:")]
-        void OverlayViewControllerWillCloseCamera(MBOverlayViewController overlayViewController);
+        void OverlayViewControllerWillCloseCamera (MBOverlayViewController overlayViewController);
 
         // @required -(BOOL)overlayViewControllerShouldDisplayTorch:(MBOverlayViewController *)overlayViewController;
         [Abstract]
         [Export ("overlayViewControllerShouldDisplayTorch:")]
-        bool OverlayViewControllerShouldDisplayTorch(MBOverlayViewController overlayViewController);
+        bool OverlayViewControllerShouldDisplayTorch (MBOverlayViewController overlayViewController);
 
         // @required -(BOOL)overlayViewController:(MBOverlayViewController *)overlayViewController willSetTorch:(BOOL)isTorchOn;
         [Abstract]
         [Export ("overlayViewController:willSetTorch:")]
-        bool OverlayViewController(MBOverlayViewController overlayViewController, bool isTorchOn);
+        bool OverlayViewController (MBOverlayViewController overlayViewController, bool isTorchOn);
 
         // @required -(BOOL)shouldDisplayHelpButton;
         [Abstract]
@@ -235,25 +234,32 @@ namespace BlinkID
 
     // @interface MBOverlayViewController : UIViewController
     
-    [BaseType(typeof(UIViewController))]
+    [BaseType (typeof(UIViewController))]
     [DisableDefaultCtor]
     interface MBOverlayViewController
     {
         // @property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> * _Nullable recognizerRunnerViewController;
-        [NullAllowed, Export("recognizerRunnerViewController", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("recognizerRunnerViewController", ArgumentSemantic.Weak)]
         IMBOverlayContainerViewController RecognizerRunnerViewController { get; set; }
     }
 
     // @interface MBViewControllerFactory : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBViewControllerFactory
     {
-        // +(UIViewController<MBRecognizerRunnerViewController> * _Nullable)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController * _Nonnull)overlayViewController;
+        // +(UIViewController<MBRecognizerRunnerViewController> * _Nullable)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController * _Nonnull)overlayViewController __attribute__((swift_name("recognizerRunnerViewController(withOverlayViewController:)")));
         [Static]
         [Export ("recognizerRunnerViewControllerWithOverlayViewController:")]
-        IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
+        IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController (MBOverlayViewController overlayViewController);
     }
+
+	partial interface Constants
+	{
+		// extern NSString *const MBLicenseErrorNotification;
+		[Field ("MBLicenseErrorNotification", "__Internal")]
+		NSString MBLicenseErrorNotification { get; }
+	}
 
     // typedef void (^MBLicenseErrorBlock)(MBLicenseError);
 	delegate void MBLicenseErrorBlock (MBLicenseError arg0);
@@ -263,7 +269,7 @@ namespace BlinkID
 	[BaseType (typeof(NSObject))]
 	interface MBMicroblinkSDK
 	{
-		// +(instancetype _Nonnull)sharedInstance;
+		// +(instancetype _Nonnull)sharedInstance __attribute__((swift_name("shared()")));
 		[Static]
 		[Export ("sharedInstance")]
 		MBMicroblinkSDK SharedInstance ();
@@ -271,10 +277,6 @@ namespace BlinkID
 		// @property (assign, nonatomic) BOOL showTrialLicenseWarning;
 		[Export ("showTrialLicenseWarning")]
 		bool ShowTrialLicenseWarning { get; set; }
-
-		// @property (nonatomic, strong) NSBundle * _Nonnull resourcesBundle;
-		[Export ("resourcesBundle", ArgumentSemantic.Strong)]
-		NSBundle ResourcesBundle { get; set; }
 
 		// -(void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer errorCallback:(MBLicenseErrorBlock _Nullable)errorCallback;
 		[Export ("setLicenseBuffer:errorCallback:")]
@@ -305,47 +307,94 @@ namespace BlinkID
 		[Export ("buildVersionString")]
 		string BuildVersionString { get; }
 
-		// +(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error;
+		// +(BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError * _Nullable * _Nullable)error __attribute__((swift_error("none")));
 		[Static]
 		[Export ("isScanningUnsupportedForCameraType:error:")]
 		bool IsScanningUnsupportedForCameraType (MBCameraType type, [NullAllowed] out NSError error);
+	}
+
+    // @interface MBProductIntegrationInfo : NSObject
+	[iOS (9,0)]
+	[BaseType (typeof(NSObject))]
+	interface MBProductIntegrationInfo
+	{
+		// +(instancetype _Nonnull)sharedInstance __attribute__((swift_name("shared()")));
+		[Static]
+		[Export ("sharedInstance")]
+		MBProductIntegrationInfo SharedInstance ();
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull product;
+		[Export ("product", ArgumentSemantic.Strong)]
+		string Product { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull productVersion;
+		[Export ("productVersion", ArgumentSemantic.Strong)]
+		string ProductVersion { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull packageName;
+		[Export ("packageName", ArgumentSemantic.Strong)]
+		string PackageName { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull platform;
+		[Export ("platform", ArgumentSemantic.Strong)]
+		string Platform { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull osVersion;
+		[Export ("osVersion", ArgumentSemantic.Strong)]
+		string OsVersion { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull device;
+		[Export ("device", ArgumentSemantic.Strong)]
+		string Device { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull userId;
+		[Export ("userId", ArgumentSemantic.Strong)]
+		string UserId { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull licensee;
+		[Export ("licensee", ArgumentSemantic.Strong)]
+		string Licensee { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * _Nonnull licenseId;
+		[Export ("licenseId", ArgumentSemantic.Strong)]
+		string LicenseId { get; }
 	}
 
     [Static]
     partial interface Constants
     {
         // extern const MBExceptionName MBIllegalModificationException;
-        [Field("MBIllegalModificationException", "__Internal")]
+        [Field ("MBIllegalModificationException", "__Internal")]
         NSString MBIllegalModificationException { get; }
 
         // extern const MBExceptionName MBInvalidLicenseKeyException;
-        [Field("MBInvalidLicenseKeyException", "__Internal")]
+        [Field ("MBInvalidLicenseKeyException", "__Internal")]
         NSString MBInvalidLicenseKeyException { get; }
 
         // extern const MBExceptionName MBInvalidLicenseeKeyException;
-        [Field("MBInvalidLicenseeKeyException", "__Internal")]
+        [Field ("MBInvalidLicenseeKeyException", "__Internal")]
         NSString MBInvalidLicenseeKeyException { get; }
 
         // extern const MBExceptionName MBInvalidLicenseResourceException;
-        [Field("MBInvalidLicenseResourceException", "__Internal")]
+        [Field ("MBInvalidLicenseResourceException", "__Internal")]
         NSString MBInvalidLicenseResourceException { get; }
 
         // extern const MBExceptionName MBInvalidBundleException;
-        [Field("MBInvalidBundleException", "__Internal")]
+        [Field ("MBInvalidBundleException", "__Internal")]
         NSString MBInvalidBundleException { get; }
 
         // extern const MBExceptionName MBMissingSettingsException;
-        [Field("MBMissingSettingsException", "__Internal")]
+        [Field ("MBMissingSettingsException", "__Internal")]
         NSString MBMissingSettingsException { get; }
 
         // extern const MBExceptionName MBInvalidArgumentException;
-        [Field("MBInvalidArgumentException", "__Internal")]
+        [Field ("MBInvalidArgumentException", "__Internal")]
         NSString MBInvalidArgumentException { get; }
     }
 
     // @interface MBImage : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBImage
     {
         // @property (readonly, nonatomic) UIImage * _Nonnull image;
@@ -379,17 +428,17 @@ namespace BlinkID
         // +(instancetype _Nonnull)imageWithUIImage:(UIImage * _Nonnull)image;
         [Static]
         [Export ("imageWithUIImage:")]
-        MBImage ImageWithUIImage(UIImage image);
+        MBImage ImageWithUIImage (UIImage image);
 
         // +(instancetype _Nonnull)imageWithCmSampleBuffer:(CMSampleBufferRef _Nonnull)buffer;
         [Static]
         [Export ("imageWithCmSampleBuffer:")]
-        unsafe MBImage ImageWithCmSampleBuffer(CMSampleBuffer buffer);
+        unsafe MBImage ImageWithCmSampleBuffer (CMSampleBuffer buffer);
 
-        // +(instancetype _Nonnull)imageWithCvPixelBuffer:(CVPixelBufferRef _Nonnull)buffer;
+        // +(instancetype _Nonnull)imageWithCvPixelBuffer:(CVPixelBufferRef _Nonnull)buffer orientation:(UIImageOrientation)orientation;
 		[Static]
-		[Export ("imageWithCvPixelBuffer:")]
-		MBImage ImageWithCvPixelBuffer (CVPixelBuffer buffer);
+		[Export ("imageWithCvPixelBuffer:orientation:")]
+		MBImage ImageWithCvPixelBuffer (CVPixelBuffer buffer, UIImageOrientation orientation);
     }
 
         // @protocol MBNativeResult
@@ -398,28 +447,28 @@ namespace BlinkID
     {
         // @required -(NSObject * _Nullable)nativeResult;
         [Abstract]
-        [NullAllowed, Export("nativeResult")]
+        [NullAllowed, Export ("nativeResult")]
         NSObject NativeResult { get; }
 
         // @required -(NSString * _Nullable)stringResult;
         [Abstract]
-        [NullAllowed, Export("stringResult")]
+        [NullAllowed, Export ("stringResult")]
         string StringResult { get; }
     }
 
     // @interface MBDateResult : NSObject <MBNativeResult>
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDateResult : MBNativeResult
     {
         // -(instancetype _Nonnull)initWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString __attribute__((objc_designated_initializer));
         [Export ("initWithDay:month:year:originalDateString:")]
         [DesignatedInitializer]
-        IntPtr Constructor(nint day, nint month, nint year, [NullAllowed] string originalDateString);
+        IntPtr Constructor (nint day, nint month, nint year, [NullAllowed] string originalDateString);
 
         // @property (readonly, nonatomic) NSString * _Nullable originalDateString;
-        [NullAllowed, Export("originalDateString")]
+        [NullAllowed, Export ("originalDateString")]
         string OriginalDateString { get; }
 
         // @property (readonly, nonatomic) NSDate * _Nonnull date;
@@ -441,213 +490,161 @@ namespace BlinkID
         // +(instancetype _Nonnull)dateResultWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year originalDateString:(NSString * _Nullable)originalDateString;
         [Static]
         [Export ("dateResultWithDay:month:year:originalDateString:")]
-        MBDateResult DateResultWithDay(nint day, nint month, nint year, [NullAllowed] string originalDateString);
+        MBDateResult DateResultWithDay (nint day, nint month, nint year, [NullAllowed] string originalDateString);
     }
 
     // @protocol MBDebugRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBDebugRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugImage:(MBImage * _Nonnull)image;
         [Abstract]
         [Export ("recognizerRunnerViewController:didOutputDebugImage:")]
-        void DidOutputDebugImage(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBImage image);
+        void DidOutputDebugImage (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBImage image);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didOutputDebugText:(NSString * _Nonnull)text;
         [Abstract]
         [Export ("recognizerRunnerViewController:didOutputDebugText:")]
-        void DidOutputDebugText(IMBRecognizerRunnerViewController recognizerRunnerViewController, string text);
+        void DidOutputDebugText (IMBRecognizerRunnerViewController recognizerRunnerViewController, string text);
     }
 
     // @protocol MBDetectionRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBDetectionRecognizerRunnerViewControllerDelegate
     {
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayableQuad:(MBDisplayableQuadDetection * _Nonnull)displayableQuad;
         [Export ("recognizerRunnerViewController:didFinishDetectionWithDisplayableQuad:")]
-        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayableQuadDetection displayableQuad);
+        void RecognizerRunnerViewController (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayableQuadDetection displayableQuad);
 
         // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishDetectionWithDisplayablePoints:(MBDisplayablePointsDetection * _Nonnull)displayablePoints;
         [Export ("recognizerRunnerViewController:didFinishDetectionWithDisplayablePoints:")]
-        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayablePointsDetection displayablePoints);
+        void RecognizerRunnerViewController (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBDisplayablePointsDetection displayablePoints);
 
         // @optional -(void)recognizerRunnerViewControllerDidFailDetection:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Export ("recognizerRunnerViewControllerDidFailDetection:")]
-        void RecognizerRunnerViewControllerDidFailDetection(IMBRecognizerRunnerViewController recognizerRunnerViewController);
-    }
-
-    // @interface MBDewarpPolicy : NSObject
-    [iOS (8,0)]
-    [BaseType (typeof(NSObject))]
-    interface MBDewarpPolicy
-    {
-    }
-
-    // @interface MBFixedDewarpPolicy : MBDewarpPolicy
-    [iOS (8,0)]
-    [BaseType (typeof(MBDewarpPolicy))]
-    interface MBFixedDewarpPolicy
-    {
-        // -(instancetype _Nonnull)initWithDewarpHeight:(NSUInteger)dewarpHeight __attribute__((objc_designated_initializer));
-        [Export ("initWithDewarpHeight:")]
-        [DesignatedInitializer]
-        IntPtr Constructor (nint dewarpHeight);
-
-        // @property (readonly, assign, nonatomic) NSUInteger dewarpHeight;
-        [Export ("dewarpHeight")]
-        nint DewarpHeight { get; }
-    }
-
-    // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
-    [iOS (8,0)]
-    [BaseType (typeof(MBDewarpPolicy))]
-    interface MBDPIBasedDewarpPolicy
-    {
-        // -(instancetype _Nonnull)initWithDesiredDPI:(NSUInteger)desiredDPI __attribute__((objc_designated_initializer));
-        [Export ("initWithDesiredDPI:")]
-        [DesignatedInitializer]
-        IntPtr Constructor (nint desiredDPI);
-
-        // @property (readonly, assign, nonatomic) NSUInteger desiredDPI;
-        [Export ("desiredDPI")]
-        nint DesiredDPI { get; }
-    }
-
-    // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
-    [iOS (8,0)]
-    [BaseType (typeof(MBDewarpPolicy))]
-    interface MBNoUpScalingDewarpPolicy
-    {
-        // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSUInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
-        [Export ("initWithMaxAllowedDewarpHeight:")]
-        [DesignatedInitializer]
-        IntPtr Constructor (nint maxAllowedDewarpHeight);
-
-        // @property (readonly, assign, nonatomic) NSUInteger maxAllowedDewarpHeight;
-        [Export ("maxAllowedDewarpHeight")]
-        nint MaxAllowedDewarpHeight { get; }
+        void RecognizerRunnerViewControllerDidFailDetection (IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @protocol MBOcrRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBOcrRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didObtainOcrResult:(MBOcrLayout * _Nonnull)ocrResult withResultName:(NSString * _Nonnull)resultName;
         [Abstract]
         [Export ("recognizerRunnerViewController:didObtainOcrResult:withResultName:")]
-        void DidObtainOcrResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBOcrLayout ocrResult, string resultName);
+        void DidObtainOcrResult (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBOcrLayout ocrResult, string resultName);
     }
 
     // @protocol MBGlareRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBGlareRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishGlareDetectionWithResult:(BOOL)glareFound;
         [Abstract]
         [Export ("recognizerRunnerViewController:didFinishGlareDetectionWithResult:")]
-        void DidFinishGlareDetectionWithResult(IMBRecognizerRunnerViewController recognizerRunnerViewController, bool glareFound);
+        void DidFinishGlareDetectionWithResult (IMBRecognizerRunnerViewController recognizerRunnerViewController, bool glareFound);
     }
 
     // @protocol MBFirstSideFinishedRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBFirstSideFinishedRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerDidFinishRecognitionOfFirstSide:")]
-        void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide (IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @interface MBRecognizerRunnerViewControllerMetadataDelegates : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBRecognizerRunnerViewControllerMetadataDelegates
     {
-        [Wrap("WeakDebugRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakDebugRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBDebugRecognizerRunnerViewControllerDelegate DebugRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBDebugRecognizerRunnerViewControllerDelegate> _Nullable debugRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("debugRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("debugRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDebugRecognizerRunnerViewControllerDelegate { get; set; }
 
-        [Wrap("WeakDetectionRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakDetectionRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBDetectionRecognizerRunnerViewControllerDelegate DetectionRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBDetectionRecognizerRunnerViewControllerDelegate> _Nullable detectionRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("detectionRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("detectionRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDetectionRecognizerRunnerViewControllerDelegate { get; set; }
 
-        [Wrap("WeakOcrRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakOcrRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBOcrRecognizerRunnerViewControllerDelegate OcrRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBOcrRecognizerRunnerViewControllerDelegate> _Nullable ocrRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("ocrRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("ocrRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakOcrRecognizerRunnerViewControllerDelegate { get; set; }
 
-        [Wrap("WeakGlareRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakGlareRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBGlareRecognizerRunnerViewControllerDelegate GlareRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBGlareRecognizerRunnerViewControllerDelegate> _Nullable glareRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("glareRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("glareRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakGlareRecognizerRunnerViewControllerDelegate { get; set; }
 
-        [Wrap("WeakFirstSideFinishedRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakFirstSideFinishedRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBFirstSideFinishedRecognizerRunnerViewControllerDelegate FirstSideFinishedRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBFirstSideFinishedRecognizerRunnerViewControllerDelegate> _Nullable firstSideFinishedRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("firstSideFinishedRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("firstSideFinishedRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakFirstSideFinishedRecognizerRunnerViewControllerDelegate { get; set; }
     }
 
     // @protocol MBRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewControllerUnauthorizedCamera:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerUnauthorizedCamera:")]
-        void RecognizerRunnerViewControllerUnauthorizedCamera(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerUnauthorizedCamera (IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFindError:(NSError * _Nonnull)error;
         [Abstract]
         [Export ("recognizerRunnerViewController:didFindError:")]
-        void RecognizerRunnerViewController(IMBRecognizerRunnerViewController recognizerRunnerViewController, NSError error);
+        void RecognizerRunnerViewController (IMBRecognizerRunnerViewController recognizerRunnerViewController, NSError error);
 
         // @required -(void)recognizerRunnerViewControllerDidClose:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerDidClose:")]
-        void RecognizerRunnerViewControllerDidClose(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidClose (IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerWillPresentHelp:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerWillPresentHelp:")]
-        void RecognizerRunnerViewControllerWillPresentHelp(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerWillPresentHelp (IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidResumeScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerDidResumeScanning:")]
-        void RecognizerRunnerViewControllerDidResumeScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidResumeScanning (IMBRecognizerRunnerViewController recognizerRunnerViewController);
 
         // @required -(void)recognizerRunnerViewControllerDidStopScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController;
         [Abstract]
         [Export ("recognizerRunnerViewControllerDidStopScanning:")]
-        void RecognizerRunnerViewControllerDidStopScanning(IMBRecognizerRunnerViewController recognizerRunnerViewController);
+        void RecognizerRunnerViewControllerDidStopScanning (IMBRecognizerRunnerViewController recognizerRunnerViewController);
     }
 
     // @interface MBRecognizerResult : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerResult
     {
@@ -658,151 +655,151 @@ namespace BlinkID
 
     // @protocol MBScanningRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBScanningRecognizerRunnerViewControllerDelegate
     {
         // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishScanningWithState:(MBRecognizerResultState)state;
         [Abstract]
         [Export ("recognizerRunnerViewController:didFinishScanningWithState:")]
-        void DidFinishScanningWithState(IMBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
+        void DidFinishScanningWithState (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
     }
 
     // @protocol MBDebugRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBDebugRecognizerRunnerDelegate
     {
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didOutputDebugImage:(MBImage * _Nonnull)image;
         [Export ("recognizerRunner:didOutputDebugImage:")]
-        void DidOutputDebugImage(MBRecognizerRunner recognizerRunner, MBImage image);
+        void DidOutputDebugImage (MBRecognizerRunner recognizerRunner, MBImage image);
 
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didOutputDebugText:(NSString * _Nonnull)text;
         [Export ("recognizerRunner:didOutputDebugText:")]
-        void DidOutputDebugText(MBRecognizerRunner recognizerRunner, string text);
+        void DidOutputDebugText (MBRecognizerRunner recognizerRunner, string text);
     }
 
     // @protocol MBDetectionRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBDetectionRecognizerRunnerDelegate
     {
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishDetectionWithDisplayableQuad:(MBDisplayableQuadDetection * _Nonnull)displayableQuad;
         [Export ("recognizerRunner:didFinishDetectionWithDisplayableQuad:")]
-        void RecognizerRunner(MBRecognizerRunner recognizerRunner, MBDisplayableQuadDetection displayableQuad);
+        void RecognizerRunner (MBRecognizerRunner recognizerRunner, MBDisplayableQuadDetection displayableQuad);
 
         // @optional -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishDetectionWithDisplayablePoints:(MBDisplayablePointsDetection * _Nonnull)displayablePoints;
         [Export ("recognizerRunner:didFinishDetectionWithDisplayablePoints:")]
-        void RecognizerRunner(MBRecognizerRunner recognizerRunner, MBDisplayablePointsDetection displayablePoints);
+        void RecognizerRunner (MBRecognizerRunner recognizerRunner, MBDisplayablePointsDetection displayablePoints);
 
         // @optional -(void)recognizerRunnerDidFailDetection:(MBRecognizerRunner * _Nonnull)recognizerRunner;
         [Export ("recognizerRunnerDidFailDetection:")]
-        void RecognizerRunnerDidFailDetection(MBRecognizerRunner recognizerRunner);
+        void RecognizerRunnerDidFailDetection (MBRecognizerRunner recognizerRunner);
     }
 
     // @protocol MBOcrRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBOcrRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didObtainOcrResult:(MBOcrLayout * _Nonnull)ocrResult withResultName:(NSString * _Nonnull)resultName;
         [Abstract]
         [Export ("recognizerRunner:didObtainOcrResult:withResultName:")]
-        void DidObtainOcrResult(MBRecognizerRunner recognizerRunner, MBOcrLayout ocrResult, string resultName);
+        void DidObtainOcrResult (MBRecognizerRunner recognizerRunner, MBOcrLayout ocrResult, string resultName);
     }
 
     // @protocol MBGlareRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBGlareRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishGlareDetectionWithResult:(BOOL)glareFound;
         [Abstract]
         [Export ("recognizerRunner:didFinishGlareDetectionWithResult:")]
-        void DidFinishGlareDetectionWithResult(MBRecognizerRunner recognizerRunner, bool glareFound);
+        void DidFinishGlareDetectionWithResult (MBRecognizerRunner recognizerRunner, bool glareFound);
     }
 
     // @protocol MBFirstSideFinishedRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBFirstSideFinishedRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunnerDidFinishRecognitionOfFirstSide:(MBRecognizerRunner * _Nonnull)recognizerRunner;
         [Abstract]
         [Export ("recognizerRunnerDidFinishRecognitionOfFirstSide:")]
-        void RecognizerRunnerDidFinishRecognitionOfFirstSide(MBRecognizerRunner recognizerRunner);
+        void RecognizerRunnerDidFinishRecognitionOfFirstSide (MBRecognizerRunner recognizerRunner);
     }
 
     // @interface MBRecognizerRunnerMetadataDelegates : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBRecognizerRunnerMetadataDelegates
     {
-        [Wrap("WeakDebugRecognizerRunnerDelegate")]
+        [Wrap ("WeakDebugRecognizerRunnerDelegate")]
         [NullAllowed]
         MBDebugRecognizerRunnerDelegate DebugRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBDebugRecognizerRunnerDelegate> _Nullable debugRecognizerRunnerDelegate;
-        [NullAllowed, Export("debugRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("debugRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDebugRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakDetectionRecognizerRunnerDelegate")]
+        [Wrap ("WeakDetectionRecognizerRunnerDelegate")]
         [NullAllowed]
         MBDetectionRecognizerRunnerDelegate DetectionRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBDetectionRecognizerRunnerDelegate> _Nullable detectionRecognizerRunnerDelegate;
-        [NullAllowed, Export("detectionRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("detectionRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDetectionRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakOcrRecognizerRunnerDelegate")]
+        [Wrap ("WeakOcrRecognizerRunnerDelegate")]
         [NullAllowed]
         MBOcrRecognizerRunnerDelegate OcrRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBOcrRecognizerRunnerDelegate> _Nullable ocrRecognizerRunnerDelegate;
-        [NullAllowed, Export("ocrRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("ocrRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakOcrRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakGlareRecognizerRunnerDelegate")]
+        [Wrap ("WeakGlareRecognizerRunnerDelegate")]
         [NullAllowed]
         MBGlareRecognizerRunnerDelegate GlareRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBGlareRecognizerRunnerDelegate> _Nullable glareRecognizerRunnerDelegate;
-        [NullAllowed, Export("glareRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("glareRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakGlareRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakFirstSideFinishedRecognizerRunnerDelegate")]
+        [Wrap ("WeakFirstSideFinishedRecognizerRunnerDelegate")]
         [NullAllowed]
         MBFirstSideFinishedRecognizerRunnerDelegate FirstSideFinishedRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBFirstSideFinishedRecognizerRunnerDelegate> _Nullable firstSideFinishedRecognizerRunnerDelegate;
-        [NullAllowed, Export("firstSideFinishedRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("firstSideFinishedRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakFirstSideFinishedRecognizerRunnerDelegate { get; set; }
     }
 
     // @protocol MBScanningRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBScanningRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state;
         [Abstract]
         [Export ("recognizerRunner:didFinishScanningWithState:")]
-        void DidFinishScanningWithState(MBRecognizerRunner recognizerRunner, MBRecognizerResultState state);
+        void DidFinishScanningWithState (MBRecognizerRunner recognizerRunner, MBRecognizerResultState state);
     }
 
     // @protocol MBImageProcessingRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBImageProcessingRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishProcessingImage:(MBImage * _Nonnull)image;
         [Abstract]
         [Export ("recognizerRunner:didFinishProcessingImage:")]
-        void DidFinishProcessingImage(MBRecognizerRunner recognizerRunner, MBImage image);
+        void DidFinishProcessingImage (MBRecognizerRunner recognizerRunner, MBImage image);
     }
 
     // @protocol MBStringProcessingRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBStringProcessingRecognizerRunnerDelegate
     {
         // @required -(void)recognizerRunner:(MBRecognizerRunner * _Nonnull)recognizerRunner didFinishProcessingString:(NSString * _Nonnull)string;
@@ -813,7 +810,7 @@ namespace BlinkID
 
     // @interface MBRecognizerRunner : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerRunner
     {
@@ -821,78 +818,74 @@ namespace BlinkID
         [Export ("metadataDelegates", ArgumentSemantic.Strong)]
         MBRecognizerRunnerMetadataDelegates MetadataDelegates { get; }
 
-        [Wrap("WeakScanningRecognizerRunnerDelegate")]
+        [Wrap ("WeakScanningRecognizerRunnerDelegate")]
         [NullAllowed]
         MBScanningRecognizerRunnerDelegate ScanningRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBScanningRecognizerRunnerDelegate> _Nullable scanningRecognizerRunnerDelegate;
-        [NullAllowed, Export("scanningRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("scanningRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakScanningRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakImageProcessingRecognizerRunnerDelegate")]
+        [Wrap ("WeakImageProcessingRecognizerRunnerDelegate")]
         [NullAllowed]
         MBImageProcessingRecognizerRunnerDelegate ImageProcessingRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBImageProcessingRecognizerRunnerDelegate> _Nullable imageProcessingRecognizerRunnerDelegate;
-        [NullAllowed, Export("imageProcessingRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("imageProcessingRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakImageProcessingRecognizerRunnerDelegate { get; set; }
 
-        [Wrap("WeakStringProcessingRecognizerRunnerDelegate")]
+        [Wrap ("WeakStringProcessingRecognizerRunnerDelegate")]
         [NullAllowed]
         MBStringProcessingRecognizerRunnerDelegate StringProcessingRecognizerRunnerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBStringProcessingRecognizerRunnerDelegate> _Nullable stringProcessingRecognizerRunnerDelegate;
-        [NullAllowed, Export("stringProcessingRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("stringProcessingRecognizerRunnerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakStringProcessingRecognizerRunnerDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithRecognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection __attribute__((objc_designated_initializer));
         [Export ("initWithRecognizerCollection:")]
         [DesignatedInitializer]
-        IntPtr Constructor(MBRecognizerCollection recognizerCollection);
+        IntPtr Constructor (MBRecognizerCollection recognizerCollection);
 
         // -(void)resetState;
         [Export ("resetState")]
-        void ResetState();
+        void ResetState ();
 
         // -(void)resetState:(BOOL)hard;
         [Export ("resetState:")]
-        void ResetState(bool hard);
+        void ResetState (bool hard);
 
         // -(void)cancelProcessing;
         [Export ("cancelProcessing")]
-        void CancelProcessing();
+        void CancelProcessing ();
 
         // -(void)processImage:(MBImage * _Nonnull)image;
         [Export ("processImage:")]
-        void ProcessImage(MBImage image);
+        void ProcessImage (MBImage image);
 
         // -(void)processString:(NSString * _Nonnull)string;
         [Export ("processString:")]
-        void ProcessString(string @string);
+        void ProcessString (string @string);
 
         // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
         [Export ("reconfigureRecognizers:")]
-        void ReconfigureRecognizers(MBRecognizerCollection recognizerCollection);
+        void ReconfigureRecognizers (MBRecognizerCollection recognizerCollection);
     }
 
     // @interface MBEntity : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBEntity
     {
     }
 
     // @interface MBRecognizer : MBEntity
     
-    [BaseType(typeof(MBEntity))]
+    [BaseType (typeof(MBEntity))]
     interface MBRecognizer
     {
-        // @property (getter = isEnabled, nonatomic) BOOL enabled;
-        [Export ("enabled")]
-        bool Enabled { [Bind("isEnabled")] get; set; }
-
         // @property (readonly, nonatomic, weak) MBRecognizerResult * _Nullable baseResult;
-        [NullAllowed, Export("baseResult", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("baseResult", ArgumentSemantic.Weak)]
         MBRecognizerResult BaseResult { get; }
 
         // -(UIInterfaceOrientationMask)getOptimalHudOrientation;
@@ -906,13 +899,13 @@ namespace BlinkID
 
     // @interface MBFrameGrabberRecognizer : MBRecognizer <NSCopying>
     
-    [BaseType(typeof(MBRecognizer))]
+    [BaseType (typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBFrameGrabberRecognizer : INSCopying
     {
-        // -(instancetype _Nonnull)initWithFrameGrabberDelegate:(id<MBFrameGrabberRecognizerDelegate> _Nonnull)frameGrabberDelegate;
+        // -(instancetype _Nonnull)initWithFrameGrabberDelegate:(id<MBFrameGrabberRecognizerDelegate> _Nonnull)frameGrabberDelegate __attribute__((swift_name("init(frameGrabberDelegate:)")));
         [Export ("initWithFrameGrabberDelegate:")]
-        IntPtr Constructor(MBFrameGrabberRecognizerDelegate frameGrabberDelegate);
+        IntPtr Constructor (MBFrameGrabberRecognizerDelegate frameGrabberDelegate);
 
         // @property (assign, nonatomic) BOOL grabFocusedFrames;
         [Export ("grabFocusedFrames")]
@@ -925,18 +918,18 @@ namespace BlinkID
 
     // @protocol MBFrameGrabberRecognizerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBFrameGrabberRecognizerDelegate
     {
         // @required -(void)onFrameAvailable:(MBImage * _Nonnull)cameraFrame isFocused:(BOOL)focused frameQuality:(CGFloat)frameQuality;
         [Abstract]
         [Export ("onFrameAvailable:isFocused:frameQuality:")]
-        void IsFocused(MBImage cameraFrame, bool focused, nfloat frameQuality);
+        void IsFocused (MBImage cameraFrame, bool focused, nfloat frameQuality);
     }
 
     // @interface MBSuccessFrameGrabberRecognizerResult : MBRecognizerResult <NSCopying>
     
-    [BaseType(typeof(MBRecognizerResult))]
+    [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizerResult : INSCopying
     {
@@ -947,14 +940,14 @@ namespace BlinkID
 
     // @interface MBSuccessFrameGrabberRecognizer : MBRecognizer <NSCopying>
     
-    [BaseType(typeof(MBRecognizer))]
+    [BaseType (typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizer : INSCopying
     {
-        // -(instancetype _Nonnull)initWithRecognizer:(MBRecognizer * _Nonnull)recognizer __attribute__((objc_designated_initializer));
+        // -(instancetype _Nonnull)initWithRecognizer:(MBRecognizer * _Nonnull)recognizer __attribute__((swift_name("init(recognizer:)"))) __attribute__((objc_designated_initializer));
         [Export ("initWithRecognizer:")]
         [DesignatedInitializer]
-        IntPtr Constructor(MBRecognizer recognizer);
+        IntPtr Constructor (MBRecognizer recognizer);
 
         // @property (readonly, nonatomic, strong) MBSuccessFrameGrabberRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
@@ -965,9 +958,28 @@ namespace BlinkID
         MBRecognizer SlaveRecognizer { get; }
     }
 
+    // @protocol MBFullDocumentImageResult
+    [Protocol]
+    interface IMBFullDocumentImageResult
+    {
+        // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentImage;
+        [Abstract]
+        [NullAllowed, Export ("fullDocumentImage")]
+        MBImage FullDocumentImage { get; }
+    }
+
+    // @protocol MBFaceImageResult
+    [Protocol]
+    interface IMBFaceImageResult
+    {
+        // @required @property (readonly, nonatomic) MBImage * _Nullable faceImage;
+        [Abstract]
+        [NullAllowed, Export ("faceImage")]
+        MBImage FaceImage { get; }
+    }
+
     // @interface MBQuadrangle : NSObject
-    
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBQuadrangle
     {
         // @property (assign, nonatomic) CGPoint upperLeft;
@@ -988,7 +1000,7 @@ namespace BlinkID
 
         // -(instancetype _Nonnull)initWithUpperLeft:(CGPoint)upperLeft upperRight:(CGPoint)upperRight lowerLeft:(CGPoint)lowerLeft lowerRight:(CGPoint)lowerRight;
         [Export ("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
-        IntPtr Constructor(CGPoint upperLeft, CGPoint upperRight, CGPoint lowerLeft, CGPoint lowerRight);
+        IntPtr Constructor (CGPoint upperLeft, CGPoint upperRight, CGPoint lowerLeft, CGPoint lowerRight);
 
         // -(NSArray * _Nonnull)toPointsArray;
         [Export ("toPointsArray")]
@@ -996,7 +1008,7 @@ namespace BlinkID
 
         // -(instancetype _Nonnull)quadrangleWithTransformation:(CGAffineTransform)transform;
         [Export ("quadrangleWithTransformation:")]
-        MBQuadrangle QuadrangleWithTransformation(CGAffineTransform transform);
+        MBQuadrangle QuadrangleWithTransformation (CGAffineTransform transform);
 
         // -(CGPoint)center;
         [Export ("center")]
@@ -1005,51 +1017,30 @@ namespace BlinkID
 
     // @interface MBMrtdSpecification : NSObject <NSCopying>
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBMrtdSpecification : INSCopying
     {
         // +(instancetype _Nonnull)createFromPreset:(MBMrtdSpecificationPreset)preset;
         [Static]
         [Export ("createFromPreset:")]
-        MBMrtdSpecification CreateFromPreset(MBMrtdSpecificationPreset preset);
-    }
-
-    // @interface MBTemplatingClass : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    interface MBTemplatingClass
-    {
-        // -(void)setTemplatingClassifier:(id<MBTemplatingClassifier> _Nullable)templatingClassifier;
-        [Export ("setTemplatingClassifier:")]
-        void SetTemplatingClassifier([NullAllowed] MBTemplatingClassifier templatingClassifier);
-    }
-
-    // @protocol MBTemplatingClassifier <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface MBTemplatingClassifier
-    {
-        // @required -(BOOL)classify;
-        [Abstract]
-        [Export ("classify")]
-        bool Classify();
+        MBMrtdSpecification CreateFromPreset (MBMrtdSpecificationPreset preset);
     }
 
     // @interface MBTemplatingRecognizerResult : MBRecognizerResult
     
-    [BaseType(typeof(MBRecognizerResult))]
+    [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizerResult
     {
         // @property (readonly, nonatomic, strong) MBTemplatingClass * _Nullable templatingClass;
-        [NullAllowed, Export("templatingClass", ArgumentSemantic.Strong)]
+        [NullAllowed, Export ("templatingClass", ArgumentSemantic.Strong)]
         MBTemplatingClass TemplatingClass { get; }
     }
 
     // @interface MBTemplatingRecognizer : MBRecognizer
     
-    [BaseType(typeof(MBRecognizer))]
+    [BaseType (typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizer
     {
@@ -1062,264 +1053,12 @@ namespace BlinkID
         bool UseGlareDetector { get; set; }
 
         // @property (readonly, nonatomic, strong) NSArray<__kindof MBTemplatingClass *> * _Nullable templatingClasses;
-        [NullAllowed, Export("templatingClasses", ArgumentSemantic.Strong)]
+        [NullAllowed, Export ("templatingClasses", ArgumentSemantic.Strong)]
         MBTemplatingClass[] TemplatingClasses { get; }
 
         // -(void)setTemplatingClasses:(NSArray<__kindof MBTemplatingClass *> * _Nullable)templatingClasses;
         [Export ("setTemplatingClasses:")]
         void SetTemplatingClasses([NullAllowed] MBTemplatingClass[] templatingClasses);
-    }
-
-    // @interface MBProcessorResult : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBProcessorResult
-    {
-        // @property (readonly, assign, nonatomic) MBProcessorResultState resultState;
-        [Export ("resultState", ArgumentSemantic.Assign)]
-        MBProcessorResultState ResultState { get; }
-    }
-
-    // @interface MBProcessor : MBEntity
-    
-    [BaseType(typeof(MBEntity))]
-    interface MBProcessor
-    {
-        // @property (readonly, nonatomic, weak) MBProcessorResult * _Nullable baseResult;
-        [NullAllowed, Export("baseResult", ArgumentSemantic.Weak)]
-        MBProcessorResult BaseResult { get; }
-    }
-
-    // @interface MBOcrLayout : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBOcrLayout
-    {
-        // @property (nonatomic) CGRect box;
-        [Export ("box", ArgumentSemantic.Assign)]
-        CGRect Box { get; set; }
-
-        // @property (nonatomic) NSArray<MBOcrBlock *> * _Nonnull blocks;
-        [Export ("blocks", ArgumentSemantic.Assign)]
-        MBOcrBlock[] Blocks { get; set; }
-
-        // @property (nonatomic) CGAffineTransform transform;
-        [Export ("transform", ArgumentSemantic.Assign)]
-        CGAffineTransform Transform { get; set; }
-
-        // @property (nonatomic) BOOL transformInvalid;
-        [Export ("transformInvalid")]
-        bool TransformInvalid { get; set; }
-
-        // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export ("position", ArgumentSemantic.Assign)]
-        MBPosition Position { get; set; }
-
-        // @property (nonatomic) BOOL flipped;
-        [Export ("flipped")]
-        bool Flipped { get; set; }
-
-        // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray<MBOcrBlock *> * _Nonnull)ocrBlocks transform:(CGAffineTransform)transform box:(CGRect)box flipped:(BOOL)flipped __attribute__((objc_designated_initializer));
-        [Export ("initWithOcrBlocks:transform:box:flipped:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(MBOcrBlock[] ocrBlocks, CGAffineTransform transform, CGRect box, bool flipped);
-
-        // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray * _Nonnull)ocrBlocks;
-        [Export ("initWithOcrBlocks:")]
-        IntPtr Constructor(MBOcrBlock[] ocrBlocks);
-
-        // -(NSString * _Nonnull)string;
-        [Export ("string")]
-        string String { get; }
-    }
-
-    // @interface MBOcrBlock : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBOcrBlock
-    {
-        // @property (nonatomic) NSArray<MBOcrLine *> * _Nonnull lines;
-        [Export ("lines", ArgumentSemantic.Assign)]
-        MBOcrLine[] Lines { get; set; }
-
-        // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export ("position", ArgumentSemantic.Assign)]
-        MBPosition Position { get; set; }
-
-        // -(instancetype _Nonnull)initWithOcrLines:(NSArray<MBOcrLine *> * _Nonnull)ocrLines position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
-        [Export ("initWithOcrLines:position:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(MBOcrLine[] ocrLines, MBPosition position);
-
-        // -(NSString * _Nonnull)string;
-        [Export ("string")]
-        string String { get; }
-    }
-
-    // @interface MBOcrLine : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBOcrLine
-    {
-        // @property (nonatomic) NSArray<MBCharWithVariants *> * _Nonnull chars;
-        [Export ("chars", ArgumentSemantic.Assign)]
-        MBCharWithVariants[] Chars { get; set; }
-
-        // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export ("position", ArgumentSemantic.Assign)]
-        MBPosition Position { get; set; }
-
-        // -(instancetype _Nonnull)initWithOcrChars:(NSArray<MBCharWithVariants *> * _Nonnull)ocrChars position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
-        [Export ("initWithOcrChars:position:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(MBCharWithVariants[] ocrChars, MBPosition position);
-
-        // -(NSString * _Nonnull)string;
-        [Export ("string")]
-        string String { get; }
-    }
-
-    // @interface MBCharWithVariants : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBCharWithVariants
-    {
-        // @property (nonatomic) MBOcrChar * _Nonnull character;
-        [Export ("character", ArgumentSemantic.Assign)]
-        MBOcrChar Character { get; set; }
-
-        // @property (nonatomic) NSSet * _Nonnull variants;
-        [Export ("variants", ArgumentSemantic.Assign)]
-        NSSet Variants { get; set; }
-
-        // -(instancetype _Nonnull)initWithValue:(MBOcrChar * _Nonnull)character __attribute__((objc_designated_initializer));
-        [Export ("initWithValue:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(MBOcrChar character);
-    }
-
-    // @interface MBOcrChar : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBOcrChar
-    {
-        // @property (nonatomic) unichar value;
-        [Export ("value")]
-        ushort Value { get; set; }
-
-        // @property (nonatomic) MBPosition * _Nonnull position;
-        [Export ("position", ArgumentSemantic.Assign)]
-        MBPosition Position { get; set; }
-
-        // @property (nonatomic) CGFloat height;
-        [Export ("height")]
-        nfloat Height { get; set; }
-
-        // @property (getter = isUncertain, nonatomic) BOOL uncertain;
-        [Export ("uncertain")]
-        bool Uncertain { [Bind("isUncertain")] get; set; }
-
-        // @property (nonatomic) NSInteger quality;
-        [Export ("quality")]
-        nint Quality { get; set; }
-
-        // @property (nonatomic) MBOcrFont font;
-        [Export ("font", ArgumentSemantic.Assign)]
-        MBOcrFont Font { get; set; }
-
-        // -(instancetype _Nonnull)initWithValue:(unichar)value position:(MBPosition * _Nonnull)position height:(CGFloat)height __attribute__((objc_designated_initializer));
-        [Export ("initWithValue:position:height:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(ushort value, MBPosition position, nfloat height);
-    }
-
-    // @interface MBPosition : NSObject
-    
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface MBPosition
-    {
-        // @property (nonatomic) CGPoint ul;
-        [Export ("ul", ArgumentSemantic.Assign)]
-        CGPoint Ul { get; set; }
-
-        // @property (nonatomic) CGPoint ur;
-        [Export ("ur", ArgumentSemantic.Assign)]
-        CGPoint Ur { get; set; }
-
-        // @property (nonatomic) CGPoint ll;
-        [Export ("ll", ArgumentSemantic.Assign)]
-        CGPoint Ll { get; set; }
-
-        // @property (nonatomic) CGPoint lr;
-        [Export ("lr", ArgumentSemantic.Assign)]
-        CGPoint Lr { get; set; }
-
-        // -(instancetype _Nonnull)initWithUpperLeft:(CGPoint)ul upperRight:(CGPoint)ur lowerLeft:(CGPoint)ll lowerRight:(CGPoint)lr __attribute__((objc_designated_initializer));
-        [Export ("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
-        [DesignatedInitializer]
-        IntPtr Constructor(CGPoint ul, CGPoint ur, CGPoint ll, CGPoint lr);
-
-        // -(MBPosition * _Nonnull)positionWithOffset:(CGPoint)offset;
-        [Export ("positionWithOffset:")]
-        MBPosition PositionWithOffset(CGPoint offset);
-
-        // -(CGRect)rect;
-        [Export ("rect")]
-        CGRect Rect { get; }
-
-        // -(CGPoint)center;
-        [Export ("center")]
-        CGPoint Center { get; }
-
-        // -(CGFloat)height;
-        [Export ("height")]
-        nfloat Height { get; }
-    }
-
-    // @interface MBImageReturnProcessorResult : MBProcessorResult <NSCopying>
-    
-    [BaseType(typeof(MBProcessorResult))]
-    [DisableDefaultCtor]
-    interface MBImageReturnProcessorResult : INSCopying
-    {
-        // @property (readonly, nonatomic, strong) MBImage * _Nullable rawImage;
-        [NullAllowed, Export("rawImage", ArgumentSemantic.Strong)]
-        MBImage RawImage { get; }
-
-        // @property (readonly, nonatomic, strong) NSData * _Nullable encodedImage;
-        [NullAllowed, Export("encodedImage", ArgumentSemantic.Strong)]
-        NSData EncodedImage { get; }
-    }
-
-    // @interface MBImageReturnProcessor : MBProcessor <NSCopying>
-    
-    [BaseType(typeof(MBProcessor))]
-    interface MBImageReturnProcessor : INSCopying
-    {
-        // @property (readonly, nonatomic, strong) MBImageReturnProcessorResult * _Nonnull result;
-        [Export ("result", ArgumentSemantic.Strong)]
-        MBImageReturnProcessorResult Result { get; }
-
-        // @property (assign, nonatomic) BOOL encodeImage;
-        [Export ("encodeImage")]
-        bool EncodeImage { get; set; }
-    }
-
-    // @protocol MBFaceImageResult
-    [Protocol]
-    interface IMBFaceImageResult
-    {
-        // @required @property (readonly, nonatomic) MBImage * _Nullable faceImage;
-        [Abstract]
-        [NullAllowed, Export("faceImage")]
-        MBImage FaceImage { get; }
     }
 
     // @protocol MBSignatureImageResult
@@ -1328,18 +1067,8 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable signatureImage;
         [Abstract]
-        [NullAllowed, Export("signatureImage")]
+        [NullAllowed, Export ("signatureImage")]
         MBImage SignatureImage { get; }
-    }
-
-    // @protocol MBFullDocumentImageResult
-    [Protocol]
-    interface IMBFullDocumentImageResult
-    {
-        // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentImage;
-        [Abstract]
-        [NullAllowed, Export("fullDocumentImage")]
-        MBImage FullDocumentImage { get; }
     }
 
     // @protocol MBFaceImage
@@ -1391,16 +1120,6 @@ namespace BlinkID
         [Export ("age")]
         int Age { get; set; }
     }
-
-    // @protocol MBDocumentExpirationCheckResult
-	[Protocol]
-	interface IMBDocumentExpirationCheckResult
-	{
-		// @required -(BOOL)isExpired;
-		[Abstract]
-		[Export ("isExpired")]
-		bool Expired { get; }
-	}
 
    // @interface MBMrzResult : NSObject
 	[iOS (8,0)]
@@ -1513,11 +1232,11 @@ namespace BlinkID
 		string NationalityName { get; }
 	}
 
-    // @interface MBClassInfo : NSObject
+    // @interface MBClassInfo : NSObject <NSSecureCoding>
 	[iOS (8,0)]
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
-	interface MBClassInfo
+	interface MBClassInfo : INSSecureCoding
 	{
 		// @property (readonly, assign, nonatomic) MBCountry country;
 		[Export ("country", ArgumentSemantic.Assign)]
@@ -1568,7 +1287,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFaceImage;
         [Abstract]
-        [NullAllowed, Export("encodedFaceImage")]
+        [NullAllowed, Export ("encodedFaceImage")]
         NSData EncodedFaceImage { get; }
     }
 
@@ -1608,7 +1327,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable digitalSignature;
         [Abstract]
-        [NullAllowed, Export("digitalSignature")]
+        [NullAllowed, Export ("digitalSignature")]
         NSData DigitalSignature { get; }
 
         // @required @property (readonly, nonatomic) NSUInteger digitalSignatureVersion;
@@ -1623,12 +1342,12 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentFrontImage;
         [Abstract]
-        [NullAllowed, Export("fullDocumentFrontImage")]
+        [NullAllowed, Export ("fullDocumentFrontImage")]
         MBImage FullDocumentFrontImage { get; }
 
         // @required @property (readonly, nonatomic) MBImage * _Nullable fullDocumentBackImage;
         [Abstract]
-        [NullAllowed, Export("fullDocumentBackImage")]
+        [NullAllowed, Export ("fullDocumentBackImage")]
         MBImage FullDocumentBackImage { get; }
     }
 
@@ -1638,7 +1357,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedSignatureImage;
         [Abstract]
-        [NullAllowed, Export("encodedSignatureImage")]
+        [NullAllowed, Export ("encodedSignatureImage")]
         NSData EncodedSignatureImage { get; }
     }
 
@@ -1648,12 +1367,12 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFullDocumentFrontImage;
         [Abstract]
-        [NullAllowed, Export("encodedFullDocumentFrontImage")]
+        [NullAllowed, Export ("encodedFullDocumentFrontImage")]
         NSData EncodedFullDocumentFrontImage { get; }
 
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFullDocumentBackImage;
         [Abstract]
-        [NullAllowed, Export("encodedFullDocumentBackImage")]
+        [NullAllowed, Export ("encodedFullDocumentBackImage")]
         NSData EncodedFullDocumentBackImage { get; }
     }
 
@@ -1854,14 +1573,6 @@ namespace BlinkID
 		[Export ("fullName")]
 		string FullName { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nonnull fathersName;
-		[Export ("fathersName")]
-		string FathersName { get; }
-
-		// @property (readonly, nonatomic) NSString * _Nonnull mothersName;
-		[Export ("mothersName")]
-		string MothersName { get; }
-
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
 		[Export ("additionalNameInformation")]
 		string AdditionalNameInformation { get; }
@@ -1981,6 +1692,14 @@ namespace BlinkID
 		[Export ("fullName")]
 		string FullName { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nonnull fathersName;
+		[Export ("fathersName")]
+		string FathersName { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull mothersName;
+		[Export ("mothersName")]
+		string MothersName { get; }
+
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalNameInformation;
 		[Export ("additionalNameInformation")]
 		string AdditionalNameInformation { get; }
@@ -2057,6 +1776,10 @@ namespace BlinkID
 		[Export ("documentAdditionalNumber")]
 		string DocumentAdditionalNumber { get; }
 
+        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
+		[NullAllowed, Export ("documentOptionalAdditionalNumber")]
+		string DocumentOptionalAdditionalNumber { get; }
+
 		// @property (readonly, nonatomic) NSString * _Nonnull additionalPersonalIdNumber;
 		[Export ("additionalPersonalIdNumber")]
 		string AdditionalPersonalIdNumber { get; }
@@ -2072,10 +1795,6 @@ namespace BlinkID
 		// @property (readonly, assign, nonatomic) BOOL empty;
 		[Export ("empty")]
 		bool Empty { get; }
-
-        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
-		[Export ("documentOptionalAdditionalNumber")]
-		string DocumentOptionalAdditionalNumber { get; }
 	}
 
     // @interface MBRecognitionModeFilter : NSObject <NSCopying>
@@ -2106,6 +1825,16 @@ namespace BlinkID
 		// @property (assign, nonatomic) BOOL enableFullDocumentRecognition;
 		[Export ("enableFullDocumentRecognition")]
 		bool EnableFullDocumentRecognition { get; set; }
+	}
+
+    // @protocol MBDocumentExpirationCheckResult
+	[Protocol]
+	interface IMBDocumentExpirationCheckResult
+	{
+		// @required -(BOOL)isExpired;
+		[Abstract]
+		[Export ("isExpired")]
+		bool Expired { get; }
 	}
 
    // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, IMBAgeResult>
@@ -2777,7 +2506,7 @@ namespace BlinkID
 
     // @protocol MBMrzFilter <NSObject>
     [Protocol]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBMrzFilter
     {
         // @required -(BOOL)mrzFilter;
@@ -2792,7 +2521,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) MBImage * _Nullable mrzImage;
         [Abstract]
-        [NullAllowed, Export("mrzImage")]
+        [NullAllowed, Export ("mrzImage")]
         MBImage MrzImage { get; }
     }
 
@@ -2802,7 +2531,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedMrzImage;
         [Abstract]
-        [NullAllowed, Export("encodedMrzImage")]
+        [NullAllowed, Export ("encodedMrzImage")]
         NSData EncodedMrzImage { get; }
     }
 
@@ -2932,7 +2661,7 @@ namespace BlinkID
     {
         // @required @property (readonly, nonatomic) NSData * _Nullable encodedFullDocumentImage;
         [Abstract]
-        [NullAllowed, Export("encodedFullDocumentImage")]
+        [NullAllowed, Export ("encodedFullDocumentImage")]
         NSData EncodedFullDocumentImage { get; }
     }
 
@@ -3044,6 +2773,358 @@ namespace BlinkID
         // @property (assign, nonatomic) NSUInteger numStableDetectionsThreshold;
         [Export ("numStableDetectionsThreshold")]
         nint NumStableDetectionsThreshold { get; set; }
+    }
+
+    // @interface MBProcessorResult : NSObject
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBProcessorResult
+    {
+        // @property (readonly, assign, nonatomic) MBProcessorResultState resultState;
+        [Export ("resultState", ArgumentSemantic.Assign)]
+        MBProcessorResultState ResultState { get; }
+    }
+
+    // @interface MBProcessor : MBEntity
+    
+    [BaseType (typeof(MBEntity))]
+    interface MBProcessor
+    {
+        // @property (readonly, nonatomic, weak) MBProcessorResult * _Nullable baseResult;
+        [NullAllowed, Export ("baseResult", ArgumentSemantic.Weak)]
+        MBProcessorResult BaseResult { get; }
+    }
+
+    // @interface MBOcrLayout : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBOcrLayout
+    {
+        // @property (nonatomic) CGRect box;
+        [Export ("box", ArgumentSemantic.Assign)]
+        CGRect Box { get; set; }
+
+        // @property (nonatomic) NSArray<MBOcrBlock *> * _Nonnull blocks;
+        [Export ("blocks", ArgumentSemantic.Assign)]
+        MBOcrBlock[] Blocks { get; set; }
+
+        // @property (nonatomic) CGAffineTransform transform;
+        [Export ("transform", ArgumentSemantic.Assign)]
+        CGAffineTransform Transform { get; set; }
+
+        // @property (nonatomic) BOOL transformInvalid;
+        [Export ("transformInvalid")]
+        bool TransformInvalid { get; set; }
+
+        // @property (nonatomic) MBPosition * _Nonnull position;
+        [Export ("position", ArgumentSemantic.Assign)]
+        MBPosition Position { get; set; }
+
+        // @property (nonatomic) BOOL flipped;
+        [Export ("flipped")]
+        bool Flipped { get; set; }
+
+        // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray<MBOcrBlock *> * _Nonnull)ocrBlocks transform:(CGAffineTransform)transform box:(CGRect)box flipped:(BOOL)flipped __attribute__((objc_designated_initializer));
+        [Export ("initWithOcrBlocks:transform:box:flipped:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(MBOcrBlock[] ocrBlocks, CGAffineTransform transform, CGRect box, bool flipped);
+
+        // -(instancetype _Nonnull)initWithOcrBlocks:(NSArray * _Nonnull)ocrBlocks;
+        [Export ("initWithOcrBlocks:")]
+        IntPtr Constructor(MBOcrBlock[] ocrBlocks);
+
+        // -(NSString * _Nonnull)string;
+        [Export ("string")]
+        string String { get; }
+    }
+
+    // @interface MBOcrBlock : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBOcrBlock
+    {
+        // @property (nonatomic) NSArray<MBOcrLine *> * _Nonnull lines;
+        [Export ("lines", ArgumentSemantic.Assign)]
+        MBOcrLine[] Lines { get; set; }
+
+        // @property (nonatomic) MBPosition * _Nonnull position;
+        [Export ("position", ArgumentSemantic.Assign)]
+        MBPosition Position { get; set; }
+
+        // -(instancetype _Nonnull)initWithOcrLines:(NSArray<MBOcrLine *> * _Nonnull)ocrLines position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
+        [Export ("initWithOcrLines:position:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(MBOcrLine[] ocrLines, MBPosition position);
+
+        // -(NSString * _Nonnull)string;
+        [Export ("string")]
+        string String { get; }
+    }
+
+    // @interface MBOcrLine : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBOcrLine
+    {
+        // @property (nonatomic) NSArray<MBCharWithVariants *> * _Nonnull chars;
+        [Export ("chars", ArgumentSemantic.Assign)]
+        MBCharWithVariants[] Chars { get; set; }
+
+        // @property (nonatomic) MBPosition * _Nonnull position;
+        [Export ("position", ArgumentSemantic.Assign)]
+        MBPosition Position { get; set; }
+
+        // -(instancetype _Nonnull)initWithOcrChars:(NSArray<MBCharWithVariants *> * _Nonnull)ocrChars position:(MBPosition * _Nonnull)position __attribute__((objc_designated_initializer));
+        [Export ("initWithOcrChars:position:")]
+        [DesignatedInitializer]
+        IntPtr Constructor(MBCharWithVariants[] ocrChars, MBPosition position);
+
+        // -(NSString * _Nonnull)string;
+        [Export ("string")]
+        string String { get; }
+    }
+
+    // @interface MBCharWithVariants : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBCharWithVariants
+    {
+        // @property (nonatomic) MBOcrChar * _Nonnull character;
+        [Export ("character", ArgumentSemantic.Assign)]
+        MBOcrChar Character { get; set; }
+
+        // @property (nonatomic) NSSet * _Nonnull variants;
+        [Export ("variants", ArgumentSemantic.Assign)]
+        NSSet Variants { get; set; }
+
+        // -(instancetype _Nonnull)initWithValue:(MBOcrChar * _Nonnull)character __attribute__((objc_designated_initializer));
+        [Export ("initWithValue:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (MBOcrChar character);
+    }
+
+    // @interface MBOcrChar : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBOcrChar
+    {
+        // @property (nonatomic) unichar value;
+        [Export ("value")]
+        ushort Value { get; set; }
+
+        // @property (nonatomic) MBPosition * _Nonnull position;
+        [Export ("position", ArgumentSemantic.Assign)]
+        MBPosition Position { get; set; }
+
+        // @property (nonatomic) CGFloat height;
+        [Export ("height")]
+        nfloat Height { get; set; }
+
+        // @property (getter = isUncertain, nonatomic) BOOL uncertain;
+        [Export ("uncertain")]
+        bool Uncertain { [Bind("isUncertain")] get; set; }
+
+        // @property (nonatomic) NSInteger quality;
+        [Export ("quality")]
+        nint Quality { get; set; }
+
+        // @property (nonatomic) MBOcrFont font;
+        [Export ("font", ArgumentSemantic.Assign)]
+        MBOcrFont Font { get; set; }
+
+        // -(instancetype _Nonnull)initWithValue:(unichar)value position:(MBPosition * _Nonnull)position height:(CGFloat)height __attribute__((objc_designated_initializer));
+        [Export ("initWithValue:position:height:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (ushort value, MBPosition position, nfloat height);
+    }
+
+    // @interface MBPosition : NSObject
+    
+    [BaseType (typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface MBPosition
+    {
+        // @property (nonatomic) CGPoint ul;
+        [Export ("ul", ArgumentSemantic.Assign)]
+        CGPoint Ul { get; set; }
+
+        // @property (nonatomic) CGPoint ur;
+        [Export ("ur", ArgumentSemantic.Assign)]
+        CGPoint Ur { get; set; }
+
+        // @property (nonatomic) CGPoint ll;
+        [Export ("ll", ArgumentSemantic.Assign)]
+        CGPoint Ll { get; set; }
+
+        // @property (nonatomic) CGPoint lr;
+        [Export ("lr", ArgumentSemantic.Assign)]
+        CGPoint Lr { get; set; }
+
+        // -(instancetype _Nonnull)initWithUpperLeft:(CGPoint)ul upperRight:(CGPoint)ur lowerLeft:(CGPoint)ll lowerRight:(CGPoint)lr __attribute__((objc_designated_initializer));
+        [Export ("initWithUpperLeft:upperRight:lowerLeft:lowerRight:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (CGPoint ul, CGPoint ur, CGPoint ll, CGPoint lr);
+
+        // -(MBPosition * _Nonnull)positionWithOffset:(CGPoint)offset;
+        [Export ("positionWithOffset:")]
+        MBPosition PositionWithOffset (CGPoint offset);
+
+        // -(CGRect)rect;
+        [Export ("rect")]
+        CGRect Rect { get; }
+
+        // -(CGPoint)center;
+        [Export ("center")]
+        CGPoint Center { get; }
+
+        // -(CGFloat)height;
+        [Export ("height")]
+        nfloat Height { get; }
+    }
+
+    // @interface MBParserGroupProcessorResult : MBProcessorResult <NSCopying>
+	[BaseType (typeof(MBProcessorResult))]
+	[DisableDefaultCtor]
+	interface MBParserGroupProcessorResult : INSCopying
+	{
+		// @property (readonly, nonatomic, strong) MBOcrLayout * _Nonnull ocrLayout;
+		[Export ("ocrLayout", ArgumentSemantic.Strong)]
+		MBOcrLayout OcrLayout { get; }
+	}
+
+	// @interface MBParserGroupProcessor : MBProcessor <NSCopying>
+	[BaseType (typeof(MBProcessor))]
+	[DisableDefaultCtor]
+	interface MBParserGroupProcessor : INSCopying
+	{
+		// @property (readonly, nonatomic, strong) MBParserGroupProcessorResult * _Nonnull result;
+		[Export ("result", ArgumentSemantic.Strong)]
+		MBParserGroupProcessorResult Result { get; }
+
+		// @property (assign, nonatomic) BOOL oneOptionalElementInGroupShouldBeValid;
+		[Export ("oneOptionalElementInGroupShouldBeValid")]
+		bool OneOptionalElementInGroupShouldBeValid { get; set; }
+	}
+
+        // @interface MBImageReturnProcessorResult : MBProcessorResult <NSCopying>
+    
+    [BaseType (typeof(MBProcessorResult))]
+    [DisableDefaultCtor]
+    interface MBImageReturnProcessorResult : INSCopying
+    {
+        // @property (readonly, nonatomic, strong) MBImage * _Nullable rawImage;
+        [NullAllowed, Export ("rawImage", ArgumentSemantic.Strong)]
+        MBImage RawImage { get; }
+
+        // @property (readonly, nonatomic, strong) NSData * _Nullable encodedImage;
+        [NullAllowed, Export ("encodedImage", ArgumentSemantic.Strong)]
+        NSData EncodedImage { get; }
+    }
+
+    // @interface MBImageReturnProcessor : MBProcessor <NSCopying>
+    [BaseType (typeof(MBProcessor))]
+    interface MBImageReturnProcessor : INSCopying
+    {
+        // @property (readonly, nonatomic, strong) MBImageReturnProcessorResult * _Nonnull result;
+        [Export ("result", ArgumentSemantic.Strong)]
+        MBImageReturnProcessorResult Result { get; }
+
+        // @property (assign, nonatomic) BOOL encodeImage;
+        [Export ("encodeImage")]
+        bool EncodeImage { get; set; }
+    }
+
+    // @interface MBProcessorGroup : NSObject
+	[iOS (8,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBProcessorGroup
+	{
+		// -(instancetype _Nonnull)initWithProcessingLocation:(CGRect)processingLocation dewarpPolicy:(MBDewarpPolicy * _Nonnull)dewarpPolicy andProcessors:(NSArray<__kindof MBProcessor *> * _Nonnull)processors __attribute__((objc_designated_initializer));
+		[Export ("initWithProcessingLocation:dewarpPolicy:andProcessors:")]
+		[DesignatedInitializer]
+		IntPtr Constructor (CGRect processingLocation, MBDewarpPolicy dewarpPolicy, MBProcessor[] processors);
+
+		// @property (readonly, nonatomic, strong) NSArray<__kindof MBProcessor *> * _Nonnull processors;
+		[Export ("processors", ArgumentSemantic.Strong)]
+		MBProcessor[] Processors { get; }
+	}
+
+    // @interface MBTemplatingClass : NSObject
+    [BaseType (typeof(NSObject))]
+    interface MBTemplatingClass
+    {
+        // -(void)setTemplatingClassifier:(id<MBTemplatingClassifier> _Nullable)templatingClassifier;
+        [Export ("setTemplatingClassifier:")]
+        void SetTemplatingClassifier([NullAllowed] MBTemplatingClassifier templatingClassifier);
+    }
+
+    // @protocol MBTemplatingClassifier <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface MBTemplatingClassifier
+    {
+        // @required -(BOOL)classify;
+        [Abstract]
+        [Export ("classify")]
+        bool Classify();
+    }
+
+    // @interface MBDewarpPolicy : NSObject
+    [iOS (8,0)]
+    [BaseType (typeof(NSObject))]
+    interface MBDewarpPolicy
+    {
+    }
+
+    // @interface MBFixedDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBFixedDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithDewarpHeight:(NSUInteger)dewarpHeight __attribute__((objc_designated_initializer));
+        [Export ("initWithDewarpHeight:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nint dewarpHeight);
+
+        // @property (readonly, assign, nonatomic) NSUInteger dewarpHeight;
+        [Export ("dewarpHeight")]
+        nint DewarpHeight { get; }
+    }
+
+    // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBDPIBasedDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithDesiredDPI:(NSUInteger)desiredDPI __attribute__((objc_designated_initializer));
+        [Export ("initWithDesiredDPI:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nint desiredDPI);
+
+        // @property (readonly, assign, nonatomic) NSUInteger desiredDPI;
+        [Export ("desiredDPI")]
+        nint DesiredDPI { get; }
+    }
+
+    // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
+    [iOS (8,0)]
+    [BaseType (typeof(MBDewarpPolicy))]
+    interface MBNoUpScalingDewarpPolicy
+    {
+        // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSUInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
+        [Export ("initWithMaxAllowedDewarpHeight:")]
+        [DesignatedInitializer]
+        IntPtr Constructor (nint maxAllowedDewarpHeight);
+
+        // @property (readonly, assign, nonatomic) NSUInteger maxAllowedDewarpHeight;
+        [Export ("maxAllowedDewarpHeight")]
+        nint MaxAllowedDewarpHeight { get; }
     }
 
     // @interface MBUsdlRecognizerResult : MBRecognizerResult <NSCopying>
@@ -3167,14 +3248,14 @@ namespace BlinkID
 
     // @interface MBBaseOverlayViewController : MBOverlayViewController
     
-    [BaseType(typeof(MBOverlayViewController))]
+    [BaseType (typeof(MBOverlayViewController))]
     interface MBBaseOverlayViewController
     {
     }
 
     // @interface MBRecognizerCollection : NSObject <NSCopying>
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerCollection : INSCopying
     {
@@ -3206,11 +3287,11 @@ namespace BlinkID
 
     // @interface MBOverlaySettings : NSObject <NSCopying>
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBOverlaySettings : INSCopying
     {
         // @property (nonatomic, strong) NSString * _Nullable language;
-        [NullAllowed, Export("language", ArgumentSemantic.Strong)]
+        [NullAllowed, Export ("language", ArgumentSemantic.Strong)]
         string Language { get; set; }
 
         // @property (nonatomic, strong) MBCameraSettings * _Nonnull cameraSettings;
@@ -3220,7 +3301,7 @@ namespace BlinkID
 
     // @interface MBBaseOverlaySettings : MBOverlaySettings
     
-    [BaseType(typeof(MBOverlaySettings))]
+    [BaseType (typeof(MBOverlaySettings))]
     interface MBBaseOverlaySettings
     {
         // @property (assign, nonatomic) BOOL autorotateOverlay;
@@ -3236,7 +3317,7 @@ namespace BlinkID
         nuint SupportedOrientations { get; set; }
 
         // @property (nonatomic, strong) NSString * _Nullable soundFilePath;
-        [NullAllowed, Export("soundFilePath", ArgumentSemantic.Strong)]
+        [NullAllowed, Export ("soundFilePath", ArgumentSemantic.Strong)]
         string SoundFilePath { get; set; }
 
         // @property (assign, nonatomic) BOOL displayCancelButton;
@@ -3250,7 +3331,7 @@ namespace BlinkID
 
     // @interface MBCustomOverlayViewController : MBOverlayViewController
     
-    [BaseType(typeof(MBOverlayViewController))]
+    [BaseType (typeof(MBOverlayViewController))]
     interface MBCustomOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBRecognizerCollection * _Nonnull recognizerCollection;
@@ -3265,26 +3346,26 @@ namespace BlinkID
         [Export ("metadataDelegates", ArgumentSemantic.Strong)]
         MBRecognizerRunnerViewControllerMetadataDelegates MetadataDelegates { get; set; }
 
-        [Wrap("WeakScanningRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakScanningRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBScanningRecognizerRunnerViewControllerDelegate ScanningRecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBScanningRecognizerRunnerViewControllerDelegate> _Nullable scanningRecognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("scanningRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("scanningRecognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakScanningRecognizerRunnerViewControllerDelegate { get; set; }
 
-        [Wrap("WeakRecognizerRunnerViewControllerDelegate")]
+        [Wrap ("WeakRecognizerRunnerViewControllerDelegate")]
         [NullAllowed]
         MBRecognizerRunnerViewControllerDelegate RecognizerRunnerViewControllerDelegate { get; set; }
 
         // @property (nonatomic, weak) id<MBRecognizerRunnerViewControllerDelegate> _Nullable recognizerRunnerViewControllerDelegate;
-        [NullAllowed, Export("recognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("recognizerRunnerViewControllerDelegate", ArgumentSemantic.Weak)]
         NSObject WeakRecognizerRunnerViewControllerDelegate { get; set; }
 
         // -(instancetype _Nonnull)initWithRecognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection cameraSettings:(MBCameraSettings * _Nonnull)cameraSettings __attribute__((objc_designated_initializer));
         [Export ("initWithRecognizerCollection:cameraSettings:")]
         [DesignatedInitializer]
-        IntPtr Constructor(MBRecognizerCollection recognizerCollection, MBCameraSettings cameraSettings);
+        IntPtr Constructor (MBRecognizerCollection recognizerCollection, MBCameraSettings cameraSettings);
 
         // @property (nonatomic) CGRect scanningRegion;
         [Export ("scanningRegion", ArgumentSemantic.Assign)]
@@ -3304,42 +3385,42 @@ namespace BlinkID
 
         // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
         [Export ("reconfigureRecognizers:")]
-        void ReconfigureRecognizers(MBRecognizerCollection recognizerCollection);
+        void ReconfigureRecognizers (MBRecognizerCollection recognizerCollection);
     }
 
     // @interface MBSubview : UIView
     
-    [BaseType(typeof(UIView))]
+    [BaseType (typeof(UIView))]
     interface MBSubview
     {
-        [Wrap("WeakDelegate")]
+        [Wrap ("WeakDelegate")]
         [NullAllowed]
         MBSubviewDelegate Delegate { get; set; }
 
         // @property (nonatomic, weak) id<MBSubviewDelegate> _Nullable delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; set; }
     }
 
     // @protocol MBSubviewDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBSubviewDelegate
     {
         // @required -(void)subviewAnimationDidStart:(MBSubview * _Nonnull)subview;
         [Abstract]
         [Export ("subviewAnimationDidStart:")]
-        void SubviewAnimationDidStart(MBSubview subview);
+        void SubviewAnimationDidStart (MBSubview subview);
 
         // @required -(void)subviewAnimationDidFinish:(MBSubview * _Nonnull)subview;
         [Abstract]
         [Export ("subviewAnimationDidFinish:")]
-        void SubviewAnimationDidFinish(MBSubview subview);
+        void SubviewAnimationDidFinish (MBSubview subview);
     }
 
     // @interface MBDisplayableObject : NSObject
     
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBDisplayableObject
     {
         // @property (assign, nonatomic) CGAffineTransform transform;
@@ -3349,14 +3430,14 @@ namespace BlinkID
 
     // @interface MBDisplayableDetection : MBDisplayableObject
     
-    [BaseType(typeof(MBDisplayableObject))]
+    [BaseType (typeof(MBDisplayableObject))]
     [DisableDefaultCtor]
     interface MBDisplayableDetection
     {
         // -(instancetype _Nonnull)initWithDetectionStatus:(MBDetectionStatus)status __attribute__((objc_designated_initializer));
         [Export ("initWithDetectionStatus:")]
         [DesignatedInitializer]
-        IntPtr Constructor(MBDetectionStatus status);
+        IntPtr Constructor (MBDetectionStatus status);
 
         // @property (readonly, assign, nonatomic) MBDetectionStatus detectionStatus;
         [Export ("detectionStatus", ArgumentSemantic.Assign)]
@@ -3365,7 +3446,7 @@ namespace BlinkID
 
     // @interface MBDisplayablePointsDetection : MBDisplayableDetection
     
-    [BaseType(typeof(MBDisplayableDetection))]
+    [BaseType (typeof(MBDisplayableDetection))]
     interface MBDisplayablePointsDetection
     {
         // @property (nonatomic) NSArray * _Nonnull points;
@@ -3375,18 +3456,18 @@ namespace BlinkID
 
     // @protocol MBPointDetectorSubview <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface IMBPointDetectorSubview
     {
         // @required -(void)detectionFinishedWithDisplayablePoints:(MBDisplayablePointsDetection *)displayablePointsDetection;
         [Abstract]
         [Export ("detectionFinishedWithDisplayablePoints:")]
-        void DetectionFinishedWithDisplayablePoints(MBDisplayablePointsDetection displayablePointsDetection);
+        void DetectionFinishedWithDisplayablePoints (MBDisplayablePointsDetection displayablePointsDetection);
     }
 
     // @interface MBDotsSubview : MBSubview <MBPointDetectorSubview>
     
-    [BaseType(typeof(MBSubview))]
+    [BaseType (typeof(MBSubview))]
     interface MBDotsSubview : IMBPointDetectorSubview
     {
         // @property (nonatomic, strong) CAShapeLayer * _Nonnull dotsLayer;
@@ -3412,12 +3493,12 @@ namespace BlinkID
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
         [Export ("initWithFrame:")]
         [DesignatedInitializer]
-        IntPtr Constructor(CGRect frame);
+        IntPtr Constructor (CGRect frame);
     }
 
     // @interface MBDotsResultSubview : MBSubview <MBPointDetectorSubview, MBOcrLayoutSubview>
     
-    [BaseType(typeof(MBSubview))]
+    [BaseType (typeof(MBSubview))]
     interface MBDotsResultSubview : IMBPointDetectorSubview
     {
         // @property (nonatomic, strong) UIColor * _Nonnull foregroundColor;
@@ -3443,7 +3524,7 @@ namespace BlinkID
 
         // @interface MBDisplayableQuadDetection : MBDisplayableDetection
     
-    [BaseType(typeof(MBDisplayableDetection))]
+    [BaseType (typeof(MBDisplayableDetection))]
     interface MBDisplayableQuadDetection
     {
         // @property (nonatomic, strong) MBQuadrangle * _Nonnull detectionLocation;
@@ -3453,33 +3534,33 @@ namespace BlinkID
 
     // @interface MBTapToFocusSubview : MBSubview
     
-    [BaseType(typeof(MBSubview))]
+    [BaseType (typeof(MBSubview))]
     interface MBTapToFocusSubview
     {
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
         [Export ("initWithFrame:")]
         [DesignatedInitializer]
-        IntPtr Constructor(CGRect frame);
+        IntPtr Constructor (CGRect frame);
 
         // -(void)willFocusAtPoint:(CGPoint)point;
         [Export ("willFocusAtPoint:")]
-        void WillFocusAtPoint(CGPoint point);
+        void WillFocusAtPoint (CGPoint point);
     }
 
     // @protocol MBResultSubview <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
+    [BaseType (typeof(NSObject))]
     interface MBResultSubview
     {
         // @required -(void)scanningFinishedWithState:(MBRecognizerResultState)state;
         [Abstract]
         [Export ("scanningFinishedWithState:")]
-        void ScanningFinishedWithState(MBRecognizerResultState state);
+        void ScanningFinishedWithState (MBRecognizerResultState state);
     }
 
     // @interface MBGlareStatusSubview : MBSubview
     
-    [BaseType(typeof(MBSubview))]
+    [BaseType (typeof(MBSubview))]
     [DisableDefaultCtor]
     interface MBGlareStatusSubview
     {
@@ -3490,16 +3571,16 @@ namespace BlinkID
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
         [Export ("initWithFrame:")]
         [DesignatedInitializer]
-        IntPtr Constructor(CGRect frame);
+        IntPtr Constructor (CGRect frame);
 
         // -(void)glareDetectionFinishedWithResult:(BOOL)glareFound;
         [Export ("glareDetectionFinishedWithResult:")]
-        void GlareDetectionFinishedWithResult(bool glareFound);
+        void GlareDetectionFinishedWithResult (bool glareFound);
     }
 
     // @interface MBBaseOcrOverlaySettings : MBBaseOverlaySettings
     
-    [BaseType(typeof(MBBaseOverlaySettings))]
+    [BaseType (typeof(MBBaseOverlaySettings))]
     interface MBBaseOcrOverlaySettings
     {
         // @property (nonatomic) BOOL showOcrDots;
@@ -3509,7 +3590,7 @@ namespace BlinkID
 
     // @interface MBDocumentOverlaySettings : MBBaseOcrOverlaySettings
     
-    [BaseType(typeof(MBBaseOcrOverlaySettings))]
+    [BaseType (typeof(MBBaseOcrOverlaySettings))]
     interface MBDocumentOverlaySettings
     {
         // @property (nonatomic, strong) NSString * _Nonnull tooltipText;
@@ -3522,47 +3603,46 @@ namespace BlinkID
     }
 
     // @interface MBDocumentOverlayViewController : MBBaseOverlayViewController
-    
-    [BaseType(typeof(MBBaseOverlayViewController))]
+    [BaseType (typeof(MBBaseOverlayViewController))]
     interface MBDocumentOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBDocumentOverlaySettings * _Nonnull settings;
         [Export ("settings", ArgumentSemantic.Strong)]
         MBDocumentOverlaySettings Settings { get; }
 
-        [Wrap("WeakDelegate")]
+        [Wrap ("WeakDelegate")]
         [NullAllowed]
-        MBDocumentOverlayViewControllerDelegate Delegate { get; }
+        MBLegacyDocumentOverlayViewControllerDelegate Delegate { get; }
 
-        // @property (readonly, nonatomic, weak) id<MBDocumentOverlayViewControllerDelegate> _Nullable delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        // @property (readonly, nonatomic, weak) id<MBLegacyDocumentOverlayViewControllerDelegate> _Nullable delegate;
+        [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; }
 
-        // -(instancetype _Nonnull)initWithSettings:(MBDocumentOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBDocumentOverlayViewControllerDelegate> _Nonnull)delegate;
+        // -(instancetype _Nonnull)initWithSettings:(MBDocumentOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBLegacyDocumentOverlayViewControllerDelegate> _Nonnull)delegate;
         [Export ("initWithSettings:recognizerCollection:delegate:")]
-        IntPtr Constructor(MBDocumentOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBDocumentOverlayViewControllerDelegate @delegate);
+        IntPtr Constructor(MBDocumentOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBLegacyDocumentOverlayViewControllerDelegate @delegate);
     }
 
-    // @protocol MBDocumentOverlayViewControllerDelegate <NSObject>
+    // @protocol MBLegacyDocumentOverlayViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface MBDocumentOverlayViewControllerDelegate
+    [BaseType (typeof(NSObject))]
+    interface MBLegacyDocumentOverlayViewControllerDelegate
     {
         // @required -(void)documentOverlayViewControllerDidFinishScanning:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
         [Export ("documentOverlayViewControllerDidFinishScanning:state:")]
-        void DocumentOverlayViewControllerDidFinishScanning(MBDocumentOverlayViewController documentOverlayViewController, MBRecognizerResultState state);
+        void DocumentOverlayViewControllerDidFinishScanning (MBDocumentOverlayViewController documentOverlayViewController, MBRecognizerResultState state);
 
         // @required -(void)documentOverlayViewControllerDidTapClose:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController;
         [Abstract]
         [Export ("documentOverlayViewControllerDidTapClose:")]
-        void DocumentOverlayViewControllerDidTapClose(MBDocumentOverlayViewController documentOverlayViewController);
+        void DocumentOverlayViewControllerDidTapClose (MBDocumentOverlayViewController documentOverlayViewController);
     }
 
-    // @interface MBDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
+    // @interface MBLegacyDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
     [iOS (8,0)]
     [BaseType (typeof(MBBaseOcrOverlaySettings))]
-    interface MBDocumentVerificationOverlaySettings
+    interface MBLegacyDocumentVerificationOverlaySettings
     {
         // @property (nonatomic, strong) NSString * _Nonnull firstSideInstructions;
         [Export ("firstSideInstructions", ArgumentSemantic.Strong)]
@@ -3605,46 +3685,46 @@ namespace BlinkID
         UIImage SecondSideInstructionsImage { get; set; }
     }
 
-    // @interface MBDocumentVerificationOverlayViewController : MBBaseOverlayViewController
+    // @interface MBLegacyDocumentVerificationOverlayViewController : MBBaseOverlayViewController
     
-    [BaseType(typeof(MBBaseOverlayViewController))]
-    interface MBDocumentVerificationOverlayViewController
+    [BaseType (typeof(MBBaseOverlayViewController))]
+    interface MBLegacyDocumentVerificationOverlayViewController
     {
         // @property (readonly, nonatomic, strong) MBDocumentVerificationOverlaySettings * _Nonnull settings;
         [Export ("settings", ArgumentSemantic.Strong)]
-        MBDocumentVerificationOverlaySettings Settings { get; }
+        MBLegacyDocumentVerificationOverlaySettings Settings { get; }
 
-        [Wrap("WeakDelegate")]
+        [Wrap ("WeakDelegate")]
         [NullAllowed]
-        MBDocumentVerificationOverlayViewControllerDelegate Delegate { get; }
+        MBLegacyDocumentVerificationOverlayViewControllerDelegate Delegate { get; }
 
-        // @property (readonly, nonatomic, weak) id<MBDocumentVerificationOverlayViewControllerDelegate> _Nullable delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        // @property (readonly, nonatomic, weak) id<MBLegacyDocumentVerificationOverlayViewControllerDelegate> _Nullable delegate;
+        [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; }
 
-        // -(instancetype _Nonnull)initWithSettings:(MBDocumentVerificationOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBDocumentVerificationOverlayViewControllerDelegate> _Nonnull)delegate;
+        // -(instancetype _Nonnull)initWithSettings:(MBDocumentVerificationOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBLegacyDocumentVerificationOverlayViewControllerDelegate> _Nonnull)delegate;
         [Export ("initWithSettings:recognizerCollection:delegate:")]
-        IntPtr Constructor(MBDocumentVerificationOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBDocumentVerificationOverlayViewControllerDelegate @delegate);
+        IntPtr Constructor(MBLegacyDocumentVerificationOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBLegacyDocumentVerificationOverlayViewControllerDelegate @delegate);
     }
 
-    // @protocol MBDocumentVerificationOverlayViewControllerDelegate <NSObject>
+    // @protocol MBLegacyDocumentVerificationOverlayViewControllerDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface MBDocumentVerificationOverlayViewControllerDelegate
+    [BaseType (typeof(NSObject))]
+    interface MBLegacyDocumentVerificationOverlayViewControllerDelegate
     {
-        // @required -(void)documentVerificationOverlayViewControllerDidFinishScanning:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
+        // @required -(void)legacyDocumentVerificationOverlayViewControllerDidFinishScanning:(MBLegacyDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
-        [Export ("documentVerificationOverlayViewControllerDidFinishScanning:state:")]
-        void DocumentVerificationOverlayViewControllerDidFinishScanning (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state);
+        [Export ("legacyDocumentVerificationOverlayViewControllerDidFinishScanning:state:")]
+        void LegacyDocumentVerificationOverlayViewControllerDidFinishScanning (MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state);
 
-        // @required -(void)documentVerificationOverlayViewControllerDidTapClose:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
+        // @required -(void)legacyDocumentVerificationOverlayViewControllerDidTapClose:(MBLegacyDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
         [Abstract]
-        [Export ("documentVerificationOverlayViewControllerDidTapClose:")]
-        void DocumentVerificationOverlayViewControllerDidTapClose (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
+        [Export ("legacyDocumentVerificationOverlayViewControllerDidTapClose:")]
+        void LegacyDocumentVerificationOverlayViewControllerDidTapClose (MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
 
-        // @optional -(void)documentVerificationOverlayViewControllerDidFinishScanningFirstSide:(MBDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
-        [Export ("documentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
-        void DocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
+        // @optional -(void)legacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide:(MBLegacyDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
+        [Export ("legacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
+        void LegacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
     }
 
     // @interface MBBlinkIdOverlayViewController : MBBaseOverlayViewController
@@ -3742,6 +3822,14 @@ namespace BlinkID
 		[Export ("sidesNotMatchingMessage", ArgumentSemantic.Strong)]
 		string SidesNotMatchingMessage { get; set; }
 
+        // @property (nonatomic, strong) NSString * _Nonnull dataMismatchTitle;
+		[Export ("dataMismatchTitle", ArgumentSemantic.Strong)]
+		string DataMismatchTitle { get; set; }
+
+		// @property (nonatomic, strong) NSString * _Nonnull dataMismatchMessage;
+		[Export ("dataMismatchMessage", ArgumentSemantic.Strong)]
+		string DataMismatchMessage { get; set; }
+
 		// @property (nonatomic, strong) NSString * _Nonnull unsupportedDocumentTitle;
 		[Export ("unsupportedDocumentTitle", ArgumentSemantic.Strong)]
 		string UnsupportedDocumentTitle { get; set; }
@@ -3765,7 +3853,7 @@ namespace BlinkID
 
     // @interface MBDocumentSubview : MBSubview
 
-    [BaseType(typeof(MBSubview))]
+    [BaseType (typeof(MBSubview))]
     interface MBDocumentSubview
     {
         // @property (nonatomic) UIView * _Nonnull viewfinderView;
@@ -3783,13 +3871,13 @@ namespace BlinkID
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame __attribute__((objc_designated_initializer));
         [Export ("initWithFrame:")]
         [DesignatedInitializer]
-        IntPtr Constructor(CGRect frame);
+        IntPtr Constructor (CGRect frame);
     }
 
-    // @interface MBDocumentVerificationSubview : MBSubview
+    // @interface MBLegacyDocumentVerificationSubview : MBSubview
     
-    [BaseType(typeof(MBSubview))]
-    interface MBDocumentVerificationSubview
+    [BaseType (typeof(MBSubview))]
+    interface MBLegacyDocumentVerificationSubview
     {
         // @property (nonatomic) UILabel * _Nonnull helpLabel;
         [Export ("helpLabel", ArgumentSemantic.Assign)]
@@ -3803,30 +3891,30 @@ namespace BlinkID
         [Export ("animateHelp")]
         void AnimateHelp();
 
-        [Wrap("WeakDocumentVerificationSubviewDelegate")]
+        [Wrap ("WeakDocumentVerificationSubviewDelegate")]
         [NullAllowed]
-        MBDocumentVerificationSubviewDelegate DocumentVerificationSubviewDelegate { get; set; }
+        MBLegacyDocumentVerificationSubviewDelegate DocumentVerificationSubviewDelegate { get; set; }
 
-        // @property (nonatomic, weak) id<MBDocumentVerificationSubviewDelegate> _Nullable documentVerificationSubviewDelegate;
-        [NullAllowed, Export("documentVerificationSubviewDelegate", ArgumentSemantic.Weak)]
+        // @property (nonatomic, weak) id<MBLegacyDocumentVerificationSubviewDelegate> _Nullable documentVerificationSubviewDelegate;
+        [NullAllowed, Export ("documentVerificationSubviewDelegate", ArgumentSemantic.Weak)]
         NSObject WeakDocumentVerificationSubviewDelegate { get; set; }
     }
 
-    // @protocol MBDocumentVerificationSubviewDelegate <NSObject>
+    // @protocol MBLegacyDocumentVerificationSubviewDelegate <NSObject>
     [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface MBDocumentVerificationSubviewDelegate
+    [BaseType (typeof(NSObject))]
+    interface MBLegacyDocumentVerificationSubviewDelegate
     {
-        // @required -(void)documentVerificationSubviewDidFinishAnimation:(MBDocumentVerificationSubview * _Nonnull)documentVerificationSubview;
+        // @required -(void)documentVerificationSubviewDidFinishAnimation:(MBLegacyDocumentVerificationSubview * _Nonnull)documentVerificationSubview;
         [Abstract]
         [Export ("documentVerificationSubviewDidFinishAnimation:")]
-        void DocumentVerificationSubviewDidFinishAnimation(MBDocumentVerificationSubview documentVerificationSubview);
+        void DocumentVerificationSubviewDidFinishAnimation (MBLegacyDocumentVerificationSubview documentVerificationSubview);
     }
 
-    // @interface MBDocumentVerificationInstructionsSubview : MBSubview
+    // @interface MBLegacyDocumentVerificationInstructionsSubview : MBSubview
     
-    [BaseType(typeof(MBSubview))]
-    interface MBDocumentVerificationInstructionsSubview
+    [BaseType (typeof(MBSubview))]
+    interface MBLegacyDocumentVerificationInstructionsSubview
     {
         // @property (nonatomic) UILabel * _Nonnull instructionsLabel;
         [Export ("instructionsLabel", ArgumentSemantic.Assign)]

@@ -9,21 +9,21 @@ namespace BlinkID.Forms.iOS.Overlays.Implementations
 {
     public sealed class DocumentVerificationOverlaySettings : RecognizerCollectionOverlaySettings, IDocumentVerificationOverlaySettings
     {
-        readonly MBDocumentVerificationOverlaySettings nativeOverlaySettings;
+        readonly MBLegacyDocumentVerificationOverlaySettings nativeOverlaySettings;
 
         // this ensures GC does not collect delegate proxy while it is used by ObjC
         DocumentVerificationVCDelegate vcDelegate;
         
         public DocumentVerificationOverlaySettings(IRecognizerCollection recognizerCollection)
-            : base(new MBDocumentVerificationOverlaySettings(), recognizerCollection)
+            : base(new MBLegacyDocumentVerificationOverlaySettings(), recognizerCollection)
         {
-            nativeOverlaySettings = NativeOverlaySettings as MBDocumentVerificationOverlaySettings;
+            nativeOverlaySettings = NativeOverlaySettings as MBLegacyDocumentVerificationOverlaySettings;
         }
 
         public override MBOverlayViewController CreateOverlayViewController(IOverlayVCDelegate overlayVCDelegate)
         {
             vcDelegate = new DocumentVerificationVCDelegate(overlayVCDelegate);
-            return new MBDocumentVerificationOverlayViewController(nativeOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, vcDelegate);
+            return new MBLegacyDocumentVerificationOverlayViewController(nativeOverlaySettings, (RecognizerCollection as RecognizerCollection).NativeRecognizerCollection, vcDelegate);
         }
 
         public string FirstSideSplashMessage { 
@@ -81,7 +81,7 @@ namespace BlinkID.Forms.iOS.Overlays.Implementations
         }
     }
 
-    public sealed class DocumentVerificationVCDelegate : MBDocumentVerificationOverlayViewControllerDelegate
+    public sealed class DocumentVerificationVCDelegate : MBLegacyDocumentVerificationOverlayViewControllerDelegate
     {
         IOverlayVCDelegate vcDelegate;
 
@@ -90,12 +90,12 @@ namespace BlinkID.Forms.iOS.Overlays.Implementations
             vcDelegate = overlayVCDelegate;
         }
 
-        public override void DocumentVerificationOverlayViewControllerDidFinishScanning(MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state)
+        public override void LegacyDocumentVerificationOverlayViewControllerDidFinishScanning(MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBRecognizerResultState state)
         {
             vcDelegate.ScanningFinished(documentVerificationOverlayViewController, state);
         }
 
-        public override void DocumentVerificationOverlayViewControllerDidTapClose(MBDocumentVerificationOverlayViewController documentVerificationOverlayViewController)
+        public override void LegacyDocumentVerificationOverlayViewControllerDidTapClose(MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController)
         {
             vcDelegate.CloseButtonTapped(documentVerificationOverlayViewController);
         }

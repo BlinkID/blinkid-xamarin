@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.props')" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props')" />
   <Import Project="..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -41,6 +41,15 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BlinkID">
+      <HintPath>..\packages\BlinkID.Forms.Android.5.15.0\lib\monoandroid10.0\BlinkID.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkID.Forms.Core">
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BlinkIDAARBinding">
+      <HintPath>..\packages\BlinkID.Android.Binding.5.15.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Java.Interop" />
     <Reference Include="Xamarin.AndroidX.MultiDex">
@@ -140,7 +149,7 @@
       <HintPath>..\packages\Xamarin.AndroidX.Legacy.Support.Core.Utils.1.0.0.10\lib\monoandroid90\Xamarin.AndroidX.Legacy.Support.Core.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidX.Media">
-      <HintPath>..\packages\Xamarin.AndroidX.Media.1.4.2.2\lib\monoandroid90\Xamarin.AndroidX.Media.dll</HintPath>
+      <HintPath>..\packages\Xamarin.AndroidX.Media.1.4.3\lib\monoandroid90\Xamarin.AndroidX.Media.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidX.RecyclerView">
       <HintPath>..\packages\Xamarin.AndroidX.RecyclerView.1.2.1.3\lib\monoandroid90\Xamarin.AndroidX.RecyclerView.dll</HintPath>
@@ -154,8 +163,11 @@
     <Reference Include="Xamarin.AndroidX.Legacy.Support.Core.UI">
       <HintPath>..\packages\Xamarin.AndroidX.Legacy.Support.Core.UI.1.0.0.11\lib\monoandroid90\Xamarin.AndroidX.Legacy.Support.Core.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.Browser">
-      <HintPath>..\packages\Xamarin.AndroidX.Browser.1.3.0.8\lib\monoandroid90\Xamarin.AndroidX.Browser.dll</HintPath>
+    <Reference Include="Xamarin.AndroidX.Concurrent.Futures">
+      <HintPath>..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\lib\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Google.Guava.ListenableFuture">
+      <HintPath>..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.5\lib\monoandroid90\Xamarin.Google.Guava.ListenableFuture.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidX.Legacy.Support.V4">
       <HintPath>..\packages\Xamarin.AndroidX.Legacy.Support.V4.1.0.0.10\lib\monoandroid90\Xamarin.AndroidX.Legacy.Support.V4.dll</HintPath>
@@ -173,25 +185,22 @@
       <HintPath>..\packages\Xamarin.AndroidX.MediaRouter.1.2.5.2\lib\monoandroid90\Xamarin.AndroidX.MediaRouter.dll</HintPath>
     </Reference>
     <Reference Include="FormsViewGroup">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\MonoAndroid10.0\FormsViewGroup.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\FormsViewGroup.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\MonoAndroid10.0\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.Android">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\MonoAndroid10.0\Xamarin.Forms.Platform.Android.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\Xamarin.Forms.Platform.Android.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\MonoAndroid10.0\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.5.0.0.2125\lib\MonoAndroid10.0\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.5.0.0.2291\lib\MonoAndroid10.0\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidX.Annotation.Experimental">
       <HintPath>..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\lib\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.ConstraintLayout.Solver">
-      <HintPath>..\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.5\lib\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Solver.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.AndroidX.Lifecycle.ViewModelSavedState">
       <HintPath>..\packages\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.2.3.1.3\lib\monoandroid90\Xamarin.AndroidX.Lifecycle.ViewModelSavedState.dll</HintPath>
@@ -199,385 +208,10 @@
     <Reference Include="Xamarin.AndroidX.DynamicAnimation">
       <HintPath>..\packages\Xamarin.AndroidX.DynamicAnimation.1.0.0.10\lib\monoandroid90\Xamarin.AndroidX.DynamicAnimation.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.AndroidX.ConstraintLayout">
-      <HintPath>..\packages\Xamarin.AndroidX.ConstraintLayout.2.1.1.2\lib\monoandroid90\Xamarin.AndroidX.ConstraintLayout.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.AndroidX.ViewPager2">
       <HintPath>..\packages\Xamarin.AndroidX.ViewPager2.1.0.0.12\lib\monoandroid90\Xamarin.AndroidX.ViewPager2.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Google.Guava.ListenableFuture">
-      <HintPath>..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.4\lib\monoandroid90\Xamarin.Google.Guava.ListenableFuture.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics.Vectors" />
-    <Reference Include="Xamarin.AndroidX.ConstraintLayout.Core">
-      <HintPath>..\packages\Xamarin.AndroidX.ConstraintLayout.Core.1.0.1.2\lib\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Tracing.Tracing">
-      <HintPath>..\packages\Xamarin.AndroidX.Tracing.Tracing.1.0.0.3\lib\monoandroid90\Xamarin.AndroidX.Tracing.Tracing.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Navigation.Common">
-      <HintPath>..\packages\Xamarin.AndroidX.Navigation.Common.2.3.5.3\lib\monoandroid90\Xamarin.AndroidX.Navigation.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Navigation.Runtime">
-      <HintPath>..\packages\Xamarin.AndroidX.Navigation.Runtime.2.3.5.3\lib\monoandroid90\Xamarin.AndroidX.Navigation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Preference">
-      <HintPath>..\packages\Xamarin.AndroidX.Preference.1.1.1.11\lib\monoandroid90\Xamarin.AndroidX.Preference.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Navigation.UI">
-      <HintPath>..\packages\Xamarin.AndroidX.Navigation.UI.2.3.5.3\lib\monoandroid90\Xamarin.AndroidX.Navigation.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.AndroidX.Concurrent.Futures">
-      <HintPath>..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\lib\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.dll</HintPath>
-    </Reference>
-    <Reference Include="BlinkIDAARBinding">
-      <HintPath>..\packages\BlinkID.Android.Binding.5.14.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\BlinkID.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Win32.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\Microsoft.Win32.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\netstandard.dll</HintPath>
-    </Reference>
-    <Reference Include="System.AppContext">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.AppContext.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Concurrent">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.Concurrent.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.NonGeneric">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.NonGeneric.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Specialized">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Collections.Specialized.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.Composition.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.EventBasedAsync">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.EventBasedAsync.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.TypeConverter">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ComponentModel.TypeConverter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Console">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.Common">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Data.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Contracts">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Contracts.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Debug">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Debug.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.FileVersionInfo">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.FileVersionInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Process">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Process.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.StackTrace">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.StackTrace.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.TextWriterTraceListener">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Tools">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Tools.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.TraceSource">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.TraceSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Tracing">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Diagnostics.Tracing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Drawing.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Dynamic.Runtime">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Dynamic.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Calendars">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.Calendars.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Globalization.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression.FileSystem">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.FileSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression.ZipFile">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Compression.ZipFile.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.DriveInfo">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.DriveInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Watcher">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.FileSystem.Watcher.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.IsolatedStorage">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.IsolatedStorage.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.MemoryMappedFiles">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.MemoryMappedFiles.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Pipes">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.Pipes.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.UnmanagedMemoryStream">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.IO.UnmanagedMemoryStream.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Expressions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Expressions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Parallel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Parallel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Queryable">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Linq.Queryable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.NameResolution">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.NameResolution.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.NetworkInformation">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.NetworkInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Ping">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Ping.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Requests">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Requests.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Security">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Sockets">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.Sockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebHeaderCollection">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebHeaderCollection.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebSockets.Client">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebSockets.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebSockets">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Net.WebSockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ObjectModel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Reflection.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.Reader">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.Reader.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.ResourceManager">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.ResourceManager.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.Writer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Resources.Writer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.VisualC">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.CompilerServices.VisualC.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Handles">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Handles.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.InteropServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Numerics">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Formatters">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Formatters.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Json">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Xml">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Runtime.Serialization.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Claims">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Claims.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Algorithms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Csp">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Csp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Cryptography.X509Certificates.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.Principal.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.SecureString">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Security.SecureString.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Web">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ServiceModel.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.Extensions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.Encoding.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.RegularExpressions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Text.RegularExpressions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Overlapped">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Overlapped.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Parallel">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Tasks.Parallel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Thread">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Thread.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.ThreadPool">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.ThreadPool.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Timer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Threading.Timer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Transactions">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Transactions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.ReaderWriter">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.ReaderWriter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Serialization">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XmlDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XmlDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XmlSerializer">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XmlSerializer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XPath">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XPath.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XPath.XDocument">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.14.0\lib\netstandard2.0\System.Xml.XPath.XDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.5.14.0\lib\monoandroid10.0\BlinkID.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -610,13 +244,12 @@
   <ItemGroup>
     <ProguardConfiguration Include="proguard.cfg" />
   </ItemGroup>
-  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets')" />
-  <Import Project="..\packages\Xamarin.AndroidX.ConstraintLayout.Core.1.0.1.2\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Core.targets" Condition="Exists('..\packages\Xamarin.AndroidX.ConstraintLayout.Core.1.0.1.2\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Core.targets')" />
-  <Import Project="..\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.5\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Solver.targets" Condition="Exists('..\packages\Xamarin.AndroidX.ConstraintLayout.Solver.2.0.4.5\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Solver.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.MultiDex.2.0.1.10\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets" Condition="Exists('..\packages\Xamarin.AndroidX.MultiDex.2.0.1.10\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets')" />
+  <Import Project="..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\build\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\build\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.targets')" />
+  <Import Project="..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.5\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets" Condition="Exists('..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.5\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Annotation.1.2.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Annotation.1.2.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.11\build\monoandroid90\Xamarin.AndroidX.Arch.Core.Common.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Arch.Core.Common.2.1.0.11\build\monoandroid90\Xamarin.AndroidX.Arch.Core.Common.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Arch.Core.Runtime.2.1.0.11\build\monoandroid90\Xamarin.AndroidX.Arch.Core.Runtime.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Arch.Core.Runtime.2.1.0.11\build\monoandroid90\Xamarin.AndroidX.Arch.Core.Runtime.targets')" />
@@ -662,13 +295,11 @@
   <Import Project="..\packages\Xamarin.AndroidX.Transition.1.4.1.3\build\monoandroid90\Xamarin.AndroidX.Transition.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Transition.1.4.1.3\build\monoandroid90\Xamarin.AndroidX.Transition.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.ViewPager2.1.0.0.12\build\monoandroid90\Xamarin.AndroidX.ViewPager2.targets" Condition="Exists('..\packages\Xamarin.AndroidX.ViewPager2.1.0.0.12\build\monoandroid90\Xamarin.AndroidX.ViewPager2.targets')" />
   <Import Project="..\packages\Xamarin.Google.Android.Material.1.4.0.4\build\monoandroid90\Xamarin.Google.Android.Material.targets" Condition="Exists('..\packages\Xamarin.Google.Android.Material.1.4.0.4\build\monoandroid90\Xamarin.Google.Android.Material.targets')" />
-  <Import Project="..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.4\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets" Condition="Exists('..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.4\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets')" />
-  <Import Project="..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\build\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Concurrent.Futures.1.1.0.5\build\monoandroid90\Xamarin.AndroidX.Concurrent.Futures.targets')" />
-  <Import Project="..\packages\Xamarin.AndroidX.Browser.1.3.0.8\build\monoandroid90\Xamarin.AndroidX.Browser.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Browser.1.3.0.8\build\monoandroid90\Xamarin.AndroidX.Browser.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.MediaRouter.1.2.5.2\build\monoandroid90\Xamarin.AndroidX.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.AndroidX.MediaRouter.1.2.5.2\build\monoandroid90\Xamarin.AndroidX.MediaRouter.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2125\build\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Navigation.Common.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.Common.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Navigation.Common.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.Common.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Navigation.Runtime.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.Runtime.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Navigation.Runtime.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.Runtime.targets')" />
+  <Import Project="..\packages\Xamarin.AndroidX.Media.1.4.3\build\monoandroid90\Xamarin.AndroidX.Media.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Media.1.4.3\build\monoandroid90\Xamarin.AndroidX.Media.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Preference.1.1.1.11\build\monoandroid90\Xamarin.AndroidX.Preference.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Preference.1.1.1.11\build\monoandroid90\Xamarin.AndroidX.Preference.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Navigation.UI.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.UI.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Navigation.UI.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.UI.targets')" />
 </Project>

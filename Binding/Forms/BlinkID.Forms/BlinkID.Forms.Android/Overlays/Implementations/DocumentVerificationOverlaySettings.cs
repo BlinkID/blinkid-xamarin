@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Content;
 using Com.Microblink.Uisettings;
-using Com.Microblink.Fragment.Overlay.Blinkid.Documentverification;
+using Com.Microblink.Fragment.Overlay.Blinkid.Legacy.Documentverification;
 using BlinkID.Forms.Core.Overlays;
 using BlinkID.Forms.Core.Recognizers;
 using BlinkID.Forms.Droid.Overlays.Implementations;
@@ -14,8 +14,8 @@ namespace BlinkID.Forms.Droid.Overlays.Implementations
     {
         public override UISettings NativeUISettings { 
             get {
-                var concreteUISettings = (DocumentVerificationUISettings)base.NativeUISettings;
-                var overlayStringsBuilder = new DocumentVerificationOverlayStrings.Builder(Android.App.Application.Context);
+                var concreteUISettings = (LegacyDocumentVerificationUISettings)base.NativeUISettings;
+                var overlayStringsBuilder = new LegacyDocumentVerificationOverlayStrings.Builder(Android.App.Application.Context);
                 if (FirstSideSplashMessage != null) {
                     overlayStringsBuilder.SetFrontSideSplashText(FirstSideSplashMessage);
                 }
@@ -49,7 +49,7 @@ namespace BlinkID.Forms.Droid.Overlays.Implementations
         public string ScanningDoneSplashMessage { get; set; }
 
         public DocumentVerificationOverlaySettings(IRecognizerCollection recognizerCollection)
-            : base(new DocumentVerificationUISettings((recognizerCollection as RecognizerCollection).NativeRecognizerBundle), recognizerCollection)
+            : base(new LegacyDocumentVerificationUISettings((recognizerCollection as RecognizerCollection).NativeRecognizerBundle), recognizerCollection)
         {}
     }
 

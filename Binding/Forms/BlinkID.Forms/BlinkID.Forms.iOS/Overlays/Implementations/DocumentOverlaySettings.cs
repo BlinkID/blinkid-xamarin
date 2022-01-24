@@ -35,7 +35,7 @@ namespace BlinkID.Forms.iOS.Overlays
         }
     }
 
-    public sealed class DocumentOverlayVCDelegate : MBDocumentOverlayViewControllerDelegate
+    public sealed class DocumentOverlayVCDelegate : MBLegacyDocumentOverlayViewControllerDelegate
     {
         readonly IOverlayVCDelegate overlayVCDelegate;
 

@@ -297,6 +297,11 @@ namespace BlinkID.Forms.Core.Recognizers
         ArgentinaID,
 
         /// <summary>
+        /// ArgentinaAlienID document was scanned
+        /// </summary>
+        ArgentinaAlienID,
+
+        /// <summary>
         /// Argentina driver license document was scanned
         /// </summary>
         ArgentinaDL,

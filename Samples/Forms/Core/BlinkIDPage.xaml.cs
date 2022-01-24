@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVPF6LM3WzvI3u5tsXqekYSJBa5pkSGvzVxbBxu5PNgzZo+WYxRrjG39GyGE1CNnX8Bhvo39+0yFZ2pl/XD6MoXXRXOogVqOMBLf8yl+rxVbbnKzlcPE0n5pqHZWo8PGadYITOS42mezD/D7PCj6BrIyVV8TbVY1pFAqV3hcPARuKuqZhP/nmqOXlWgoRXRiQY7lP8rUG/0P7/bYNuFgVzNrMLpG/MlohcpWs5xEXxAFZtjsu7R/RaLK3gy3iqQiS93aFsPxvhS4duZxL0tvIk24UVLZKJGa8s1kjdInd6TwsXI/yjEU4GrEGy18pHNugU/O4LYJn0";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOCaLN+znAu4nfcb0/mnli/na+549J6MAPuLHM5wSRLuQ3ZRyR/5AVi7fuAsD0qcVkKbIh351vzPlCt7RC086O6IE6P2d04cCYeRZW50ZZOmFoNzHEiqx7Pz9RDyo18kWy3rtm5EwtPHwrbTtdfcoUmv6h46p0pDbd+Yh7qhjl2N5S3Gx/saQkLqyhE2Ar0YBCUrtzvvV8c/D6stAXA+1kZxcztzINGHbG43v3fC6R531JdIXZw0Sr1sWImml6dPye2BbUtXFb+vzaK9eo0Txe9RSWuG68ZtxQta2oJSfW023fjz0wf8FCytoWb+ytOyaI30KWMrx";
             }
             else
             {
-                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3PENBYPcgQyNAWoAhT49B9XZTzvmhelubT1DLrQv2gSKgT0VPQtpomSEaK1CNrHs8UvI4w/2tUUAiSY0ZPFjLkBknMn/mrKgQnqib2kM5JKk4RK95OlJohl9sTPhsf3N8JXwwq+RRXqapu1CcydxwSSHMlkYXM5P1jpJFljacv7ndKZGpMAhNpxqQYxs40YodlsM2NsOzPvJqskMNV8bi7pPN7ACY0Y9Bl/DigGuf7D6RfBY0pG2siwWlWsRMMSH9f46suJRFYmU8aFZ1wBjegy5+3xZDUYHr9MTWBMiPNlaEyJDbyMHMC+nUwvhbVnkZfeiRrL3y";
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3ODtBZAk+sSwcpS71ZoW3dERhDzlEXiXlc4J4RIGtrh1rCqu/FFttOB5419GxWIKugwDHKwRGtAnIBRGiS0tctZ2YIDdEgq+o1FwmHPZfExMTLBS+H7fk8ZaPvrIuKgjPYQKqMx6oP0nnzXodO9opy0oCDvFY+iopa5lfBkRG3+x+cjgd30ggqeELxr4+facF9jvndW0CoB5Cjcbmkimr2UdQPam+s+kSL8MpggO8URIK9edBVwUHfByt94KZjFUnecxO2N/mMwD/K5ZZ6luRjxwVVSiCr2mUGGnTd6wwfwg4caBw2sdUDGdvDPWclAzoDPa0/YKw";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
