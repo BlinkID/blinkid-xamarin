@@ -45,7 +45,7 @@
       <HintPath>..\packages\BlinkID.Forms.Android.5.15.0\lib\monoandroid10.0\BlinkID.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard2.0\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.15.0\lib\netstandard1.0\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkIDAARBinding">
       <HintPath>..\packages\BlinkID.Android.Binding.5.15.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
@@ -244,7 +244,6 @@
   <ItemGroup>
     <ProguardConfiguration Include="proguard.cfg" />
   </ItemGroup>
-  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.10.0\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets')" />
