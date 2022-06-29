@@ -14,7 +14,6 @@
 #import "MBCombinedRecognizer.h"
 
 #import "MBGlareDetection.h"
-#import "MBDigitalSignature.h"
 
 #import "MBDocumentFaceDetectorType.h"
 
@@ -36,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  * MRTD Combined recognizer is used for scanning both front and back side of generic IDs.
  */
 MB_CLASS_AVAILABLE_IOS(8.0) MB_CLASS_DEPRECATED("Use MBBlinkIdCombinedRecognizer with mrz_id, mrz_visa, mrz_passport rights.") MB_FINAL
-@interface MBMrtdCombinedRecognizer : MBRecognizer<NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi>
+@interface MBMrtdCombinedRecognizer : MBRecognizer<NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi>
 
 MB_INIT
 

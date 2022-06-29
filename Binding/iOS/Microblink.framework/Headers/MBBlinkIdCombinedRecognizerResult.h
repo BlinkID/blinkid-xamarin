@@ -14,7 +14,6 @@
 #import "MBRecognitionMode.h"
 
 #import "MBCombinedRecognizerResult.h"
-#import "MBDigitalSignatureResult.h"
 
 #import "MBFaceImageResult.h"
 #import "MBEncodedFaceImageResult.h"
@@ -29,6 +28,7 @@
 
 #import "MBAgeResult.h"
 #import "MBDocumentExpirationCheckResult.h"
+#import "MBDataMatchDetailedInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Recognizer which can scan front and back side of the United States driver license.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
+@interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
 
 MB_INIT_UNAVAILABLE
 
@@ -114,6 +114,11 @@ MB_INIT_UNAVAILABLE
  * The additional address information of the document owner.
  */
 @property (nonatomic, readonly, nullable) NSString *additionalAddressInformation;
+
+/**
+ * The one more additional address information of the document owner.
+ */
+@property (nonatomic, readonly, nullable) NSString *additionalOptionalAddressInformation;
 
 /**
  * The place of birth of the document owner.
@@ -234,6 +239,26 @@ MB_INIT_UNAVAILABLE
  * Recognition mode used to scan current document.
  */
 @property (nonatomic, readonly, assign) MBRecognitionMode recognitionMode;
+
+/**
+ * The front raw camera frame.
+ */
+@property (nonatomic, readonly, nullable) MBImage *frontCameraFrame;
+
+/**
+ * The back raw camera frame.
+ */
+@property (nonatomic, readonly, nullable) MBImage *backCameraFrame;
+
+/**
+ * The barcode raw camera frame.
+ */
+@property (nonatomic, readonly, nullable) MBImage *barcodeCameraFrame;
+
+/**
+ * Detailed info on data match.
+ */
+@property (nonatomic, readonly, nullable) MBDataMatchDetailedInfo *dataMatchDetailedInfo;
 
 @end
 

@@ -8,8 +8,6 @@
 #import "MBRecognizer.h"
 #import "MBPassportRecognizerResult.h"
 
-#import "MBDigitalSignature.h"
-
 #import "MBGlareDetection.h"
 #import "MBFaceImage.h"
 #import "MBEncodeFaceImage.h"
@@ -25,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 * Recognizer which can scan all passports with MRZ.
 */
 MB_CLASS_AVAILABLE_IOS(8.0) MB_CLASS_DEPRECATED("Use MBBlinkIdRecognizer or MBBlinkIdCombinedRecognizer with mrz_passport right.") MB_FINAL
-@interface MBPassportRecognizer : MBRecognizer<NSCopying, MBDigitalSignature, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+@interface MBPassportRecognizer : MBRecognizer<NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
 
 MB_INIT
 
