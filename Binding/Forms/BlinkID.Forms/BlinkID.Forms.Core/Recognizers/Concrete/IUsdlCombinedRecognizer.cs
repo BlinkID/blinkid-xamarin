@@ -48,12 +48,6 @@
         bool ReturnFullDocumentImage { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether recognition result should be signed.
-        /// </summary>
-        /// <value><c>true</c> if sign result; otherwise, <c>false</c>.</value>
-        bool SignResult { get; set; }
-
-        /// <summary>
         /// Gets the result.
         /// </summary>
         /// <value>The result.</value>
@@ -65,17 +59,6 @@
     /// </summary>
     public interface IUsdlCombinedRecognizerResult : IRecognizerResult
     {
-        /// <summary>
-        /// Gets the digital signature of the recognition result. Available only if enabled with SignResult property.
-        /// </summary>
-        /// <value>The digital signature.</value>
-        byte[] DigitalSignature { get; }
-
-        /// <summary>
-        /// Gets the version of the digital signature. Available only if enabled with signResult property.
-        /// </summary>
-        /// <value>The digital signature version.</value>
-        int DigitalSignatureVersion { get; }
 
         /// <summary>
         /// Returns true if data from scanned parts/sides of the document match,

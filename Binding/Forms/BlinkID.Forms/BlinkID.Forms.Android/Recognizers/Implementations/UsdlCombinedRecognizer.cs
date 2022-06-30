@@ -35,7 +35,6 @@ namespace BlinkID.Forms.Droid.Recognizers
             get => (int)nativeRecognizer.NumStableDetectionsThreshold;
             set => nativeRecognizer.NumStableDetectionsThreshold = (int)value;
         }
-        public bool SignResult { get => nativeRecognizer.ShouldSignResult(); set => nativeRecognizer.SetSignResult(value); }
     }
 
     public sealed class UsdlCombinedRecognizerResult : RecognizerResult, IUsdlCombinedRecognizerResult
@@ -55,10 +54,6 @@ namespace BlinkID.Forms.Droid.Recognizers
         public byte[] RawData => nativeResult.GetRawData();
 
         public string[] OptionalElements => nativeResult.GetOptionalElements();
-
-        public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
-
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
 
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
 

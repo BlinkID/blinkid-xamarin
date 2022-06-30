@@ -1,7 +1,7 @@
 ﻿using System;
 using Android.Content;
 using Com.Microblink.Uisettings;
-using Com.Microblink.Fragment.Overlay.Blinkid.Legacy.Documentverification;
+using Com.Microblink.Fragment.Overlay.blinkid.legacy.documentverification;
 using BlinkID.Forms.Core.Overlays;
 using BlinkID.Forms.Core.Recognizers;
 using BlinkID.Forms.Droid.Overlays.Implementations;

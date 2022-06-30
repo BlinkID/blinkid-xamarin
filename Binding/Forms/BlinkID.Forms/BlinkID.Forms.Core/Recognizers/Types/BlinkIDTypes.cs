@@ -763,7 +763,10 @@ namespace BlinkID.Forms.Core.Recognizers
         BajaCaliforniaSur,
         Campeche,
         Colima,
-        QuintanaRooBenitoJuarez
+        QuintanaRooBenitoJuarez,
+        QuintanaRoo,
+        QuintanaRooSolidaridad,
+        Tlaxcala
     }
 
     /// <summary>
@@ -818,7 +821,8 @@ namespace BlinkID.Forms.Core.Recognizers
         RefugeeId,
         TribalId,
         VeteranId,
-        CitizenshipCertificate
+        CitizenshipCertificate,
+        MyNumberCard
     }
 
     /// <summary>
