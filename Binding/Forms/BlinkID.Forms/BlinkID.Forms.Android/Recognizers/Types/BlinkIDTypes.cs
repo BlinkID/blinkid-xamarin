@@ -83,6 +83,25 @@ namespace BlinkID.Forms.Droid.Recognizers
 
     }
 
+    public sealed class DataMatchDetailedInfo : IDataMatchDetailedInfo
+    {
+        Com.Microblink.Entities.Recognizers.Blinkid.Generic.DataMatchDetailedInfo nativeDataMatchDetailedInfo;
+
+        public DataMatchDetailedInfo(Com.Microblink.Entities.Recognizers.Blinkid.Generic.DataMatchDetailedInfo nativeDataMatchDetailedInfo)
+        {
+            this.nativeDataMatchDetailedInfo = nativeDataMatchDetailedInfo;
+        }
+
+        public DataMatchResult DataMatchResult => (DataMatchResult)nativeDataMatchDetailedInfo.DataMatchResult.Ordinal();
+
+        public DataMatchResult DocumentNumber => (DataMatchResult)nativeDataMatchDetailedInfo.DocumentNumber.Ordinal();
+
+        public DataMatchResult DateOfBirth => (DataMatchResult)nativeDataMatchDetailedInfo.DateOfBirth.Ordinal();
+
+        public DataMatchResult DateOfExpiry => (DataMatchResult)nativeDataMatchDetailedInfo.DateOfExpiry.Ordinal();
+
+    }
+
     public sealed class ClassInfo : IClassInfo
     {
         Com.Microblink.Entities.Recognizers.Blinkid.Generic.Classinfo.ClassInfo nativeClassInfo;
@@ -249,6 +268,8 @@ namespace BlinkID.Forms.Droid.Recognizers
         public string Address => nativeVizResult.Address;
 
         public string AdditionalAddressInformation => nativeVizResult.AdditionalAddressInformation;
+
+        public string AdditionalOptionalAddressInformation => nativeVizResult.AdditionalOptionalAddressInformation;
 
         public string PlaceOfBirth => nativeVizResult.PlaceOfBirth;
 
