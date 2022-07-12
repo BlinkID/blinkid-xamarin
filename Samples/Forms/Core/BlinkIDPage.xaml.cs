@@ -47,11 +47,11 @@ namespace BlinkIDApp
             // both these license keys are demo license keys for bundleID/applicationID com.microblink.sample
             if (Device.RuntimePlatform == Device.iOS)
             {
-                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38JVOCaLN+znAu4nfcb0/mnli/na+549J6MAPuLHM5wSRLuQ3ZRyR/5AVi7fuAsD0qcVkKbIh351vzPlCt7RC086O6IE6P2d04cCYeRZW50ZZOmFoNzHEiqx7Pz9RDyo18kWy3rtm5EwtPHwrbTtdfcoUmv6h46p0pDbd+Yh7qhjl2N5S3Gx/saQkLqyhE2Ar0YBCUrtzvvV8c/D6stAXA+1kZxcztzINGHbG43v3fC6R531JdIXZw0Sr1sWImml6dPye2BbUtXFb+vzaK9eo0Txe9RSWuG68ZtxQta2oJSfW023fjz0wf8FCytoWb+ytOyaI30KWMrx";
+                licenseKey = "sRwAAAEVY29tLm1pY3JvYmxpbmsuc2FtcGxl1BIcP4FpSuS/38KlOx6IMzWbmaGEGiaL7eNSyKVwZjeUMW3Ax8aKh+quw2aZ4K4wKk+HtsAqjaGiGJSKWfeqZ/hXXpX3Kd7PRq/86AF3lpVWOZPN6FzUB6FVm7jYfVBUag4hYYxvq70616zMDQyaAItml02PvEL8OKbKbBxEYmVzBVpq3ew4JoHyRAaOJQfc9WEKrP4HYd8q4s15+HB/KO24IUVBabZggHMj2hOyAEM7p9dWpA/Q+n6C49w35xLfmcJrjSP0qE25bdTUMMEwhu6xiYmYdtMrqJkwCEIjzEQ04bEB3XWskZl3+AD5kUQH8qyhuEELR/mvbmvwxMBpwpM=";
             }
             else
             {
-                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9U3ODtBZAk+sSwcpS71ZoW3dERhDzlEXiXlc4J4RIGtrh1rCqu/FFttOB5419GxWIKugwDHKwRGtAnIBRGiS0tctZ2YIDdEgq+o1FwmHPZfExMTLBS+H7fk8ZaPvrIuKgjPYQKqMx6oP0nnzXodO9opy0oCDvFY+iopa5lfBkRG3+x+cjgd30ggqeELxr4+facF9jvndW0CoB5Cjcbmkimr2UdQPam+s+kSL8MpggO8URIK9edBVwUHfByt94KZjFUnecxO2N/mMwD/K5ZZ6luRjxwVVSiCr2mUGGnTd6wwfwg4caBw2sdUDGdvDPWclAzoDPa0/YKw";
+                licenseKey = "sRwAAAAVY29tLm1pY3JvYmxpbmsuc2FtcGxlU9kJdZhZkGlTu9XHO2NAYCTJu9HOlw2X8YBcLYJksLu/PLhh/D0Kwyw2SAOoV3XwuA15Ssv+AjZNu+utedIBuTWMZqTF6gUAw3jckxHbjOKwJYBiXd+MhUHRvZpVh0yxMaemhdUH03dbnVuxNYIG/VITBH8eNpSXgq791+bnv+mO4tLY6Du05H0YbIto5GUfX3fNaQrcgON2foaK6IwyqxT3WXRXvX9MVnLbeliCZmdvS4L8d3l18NZiIVyQYTCnrJnMCyvla7tMpGQ9Bu5w3uFepZGpjNMwXxs0hNtHo65geA8o+LXmqnDMfNjUOVdau7H+E+h2p4udg4HG1PrSP1g=";
             }
 
             // since DependencyService requires implementations to have default constructor, a factory is needed
@@ -90,6 +90,7 @@ namespace BlinkIDApp
                             BuildResult(blinkidResult.AdditionalNameInformation, "Additional name info") +
                             BuildResult(blinkidResult.Address, "Address") +
                             BuildResult(blinkidResult.AdditionalAddressInformation, "Additional address info") +
+                            BuildResult(blinkidResult.AdditionalOptionalAddressInformation, "Additional optional address info") +
                             BuildResult(blinkidResult.DocumentNumber, "Document number") +
                             BuildResult(blinkidResult.DocumentAdditionalNumber, "Additional document number") +
                             BuildResult(blinkidResult.Sex, "Sex") +
@@ -105,7 +106,12 @@ namespace BlinkIDApp
                             BuildResult(blinkidResult.Profession, "Profession") +
                             BuildResult(blinkidResult.Race, "Race") +
                             BuildResult(blinkidResult.Religion, "Religion") +
-                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status");
+                            BuildResult(blinkidResult.ResidentialStatus, "Residential Status") +
+                            BuildResult(" ", "Data Match Detailed Info") +
+                            BuildResult(blinkidResult.DataMatchDetailedInfo.DataMatchResult.ToString(), "> Data Match Result") +
+                            BuildResult(blinkidResult.DataMatchDetailedInfo.DateOfBirth.ToString(), "> Date Of Birth") +
+                            BuildResult(blinkidResult.DataMatchDetailedInfo.DateOfExpiry.ToString(), "> Date Of Expiry") +
+                            BuildResult(blinkidResult.DataMatchDetailedInfo.DocumentNumber.ToString(), "> Document Number");
 
                         IDriverLicenseDetailedInfo licenceInfo = blinkidResult.DriverLicenseDetailedInfo;
                         if (licenceInfo != null)

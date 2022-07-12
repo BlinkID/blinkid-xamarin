@@ -106,6 +106,24 @@ namespace BlinkID.Forms.iOS.Recognizers
         public string Conditions => nativeDlDetailedInfo.Conditions;
     }
 
+    public sealed class DataMatchDetailedInfo : IDataMatchDetailedInfo
+    {
+        MBDataMatchDetailedInfo nativeDataMatchDetailedInfo;
+
+        public DataMatchDetailedInfo(MBDataMatchDetailedInfo nativeDataMatchDetailedInfo)
+        {
+            this.nativeDataMatchDetailedInfo = nativeDataMatchDetailedInfo;
+        }
+
+        public DataMatchResult DataMatchResult => (DataMatchResult)nativeDataMatchDetailedInfo.DataMatchResult;
+
+        public DataMatchResult DateOfBirth => (DataMatchResult)nativeDataMatchDetailedInfo.DateOfBirth;
+
+        public DataMatchResult DateOfExpiry => (DataMatchResult)nativeDataMatchDetailedInfo.DateOfExpiry;
+
+        public DataMatchResult DocumentNumber => (DataMatchResult)nativeDataMatchDetailedInfo.DocumentNumber;
+    }
+
     public sealed class ClassInfo : IClassInfo
     {
         MBClassInfo nativeClassInfo;
@@ -254,6 +272,8 @@ namespace BlinkID.Forms.iOS.Recognizers
         public string Address => nativeVizResult.Address;
 
         public string AdditionalAddressInformation => nativeVizResult.AdditionalAddressInformation;
+
+        public string AdditionalOptionalAddressInformation => nativeVizResult.AdditionalOptionalAddressInformation;
 
         public string PlaceOfBirth => nativeVizResult.PlaceOfBirth;
 

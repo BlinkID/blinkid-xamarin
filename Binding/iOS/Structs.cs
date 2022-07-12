@@ -635,7 +635,10 @@ namespace BlinkID
 		BajaCaliforniaSur,
 		Campeche,
 		Colima,
-		QuintanaRooBenitoJuarez
+		QuintanaRooBenitoJuarez,
+		QuintanaRoo,
+		QuintanaRooSolidaridad,
+		Tlaxcala
 	}
 
 	[Native]
@@ -688,7 +691,8 @@ namespace BlinkID
 		RefugeeId,
 		TribalId,
 		VeteranId,
-		CitizenshipCertificate
+		CitizenshipCertificate,
+		MyNumberCard
 	}
 
 	[Native]
@@ -1116,7 +1120,7 @@ namespace BlinkID
 	}
 
 	[Native]
-	public enum MBDocumentVerificationHighResImageState : ulong
+	public enum MBLegacyDocumentVerificationHighResImageState : ulong
 	{
 		FrontSide,
 		BackSideSide

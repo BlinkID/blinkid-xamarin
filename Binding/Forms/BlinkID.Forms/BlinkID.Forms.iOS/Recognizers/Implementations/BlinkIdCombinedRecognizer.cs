@@ -134,18 +134,18 @@ namespace BlinkID.Forms.iOS.Recognizers
         
         
         
-        public bool ScanCroppedDocumentImage 
+        public bool SaveCameraFrames 
         { 
-            get => nativeRecognizer.ScanCroppedDocumentImage; 
-            set => nativeRecognizer.ScanCroppedDocumentImage = value;
+            get => nativeRecognizer.SaveCameraFrames; 
+            set => nativeRecognizer.SaveCameraFrames = value;
         }
         
         
         
-        public bool SignResult 
+        public bool ScanCroppedDocumentImage 
         { 
-            get => nativeRecognizer.SignResult; 
-            set => nativeRecognizer.SignResult = value;
+            get => nativeRecognizer.ScanCroppedDocumentImage; 
+            set => nativeRecognizer.ScanCroppedDocumentImage = value;
         }
         
         
@@ -185,19 +185,21 @@ namespace BlinkID.Forms.iOS.Recognizers
         }
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
+        public string AdditionalOptionalAddressInformation => nativeResult.AdditionalOptionalAddressInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public Xamarin.Forms.ImageSource BackCameraFrame => nativeResult.BackCameraFrame != null ? Utils.ConvertUIImage(nativeResult.BackCameraFrame.Image) : null;
         public IImageAnalysisResult BackImageAnalysisResult => new ImageAnalysisResult(nativeResult.BackImageAnalysisResult);
         public ProcessingStatus BackProcessingStatus => (ProcessingStatus)nativeResult.BackProcessingStatus;
         public IVizResult BackVizResult => new VizResult(nativeResult.BackVizResult);
+        public Xamarin.Forms.ImageSource BarcodeCameraFrame => nativeResult.BarcodeCameraFrame != null ? Utils.ConvertUIImage(nativeResult.BarcodeCameraFrame.Image) : null;
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => new ClassInfo(nativeResult.ClassInfo);
+        public IDataMatchDetailedInfo DataMatchDetailedInfo => new DataMatchDetailedInfo(nativeResult.DataMatchDetailedInfo);
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;
         public bool DateOfExpiryPermanent => nativeResult.DateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue != null ? new Date(nativeResult.DateOfIssue) : null;
-        public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
         public string DocumentNumber => nativeResult.DocumentNumber;
@@ -208,6 +210,7 @@ namespace BlinkID.Forms.iOS.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public string FathersName => nativeResult.FathersName;
         public string FirstName => nativeResult.FirstName;
+        public Xamarin.Forms.ImageSource FrontCameraFrame => nativeResult.FrontCameraFrame != null ? Utils.ConvertUIImage(nativeResult.FrontCameraFrame.Image) : null;
         public IImageAnalysisResult FrontImageAnalysisResult => new ImageAnalysisResult(nativeResult.FrontImageAnalysisResult);
         public ProcessingStatus FrontProcessingStatus => (ProcessingStatus)nativeResult.FrontProcessingStatus;
         public IVizResult FrontVizResult => new VizResult(nativeResult.FrontVizResult);

@@ -77,14 +77,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         }
         
         
-        
-        public bool SignResult 
-        { 
-            get => nativeRecognizer.SignResult; 
-            set => nativeRecognizer.SignResult = value;
-        }
-        
-        
     }
 
     public sealed class PassportRecognizerResult : RecognizerResult, IPassportRecognizerResult
@@ -95,8 +87,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentImage => nativeResult.FullDocumentImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentImage.Image) : null;
         public IMrzResult MrzResult => new MrzResult(nativeResult.MrzResult);
