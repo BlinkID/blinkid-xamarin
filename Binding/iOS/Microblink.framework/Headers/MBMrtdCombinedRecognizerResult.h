@@ -13,15 +13,12 @@
 #import "MBMrzResult.h"
 
 #import "MBFaceImageResult.h"
-#import "MBDigitalSignatureResult.h"
 #import "MBCombinedFullDocumentImageResult.h"
 
 #import "MBEncodedFaceImageResult.h"
 #import "MBEncodedSignatureImageResult.h"
 #import "MBEncodedCombinedFullDocumentImageResult.h"
 #import "MBEncodedMrzImageResult.h"
-
-#import "MBDigitalSignatureResult.h"
 
 #import <Foundation/Foundation.h>
 
@@ -31,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Class representing values obtained when scanning both front and back side of Croatian ID.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBMrtdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult, MBDigitalSignatureResult>
+@interface MBMrtdCombinedRecognizerResult : MBRecognizerResult<NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
 
 MB_INIT_UNAVAILABLE
 

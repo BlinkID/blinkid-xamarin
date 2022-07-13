@@ -101,14 +101,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         }
         
         
-        
-        public bool SignResult 
-        { 
-            get => nativeRecognizer.SignResult; 
-            set => nativeRecognizer.SignResult = value;
-        }
-        
-        
     }
 
     public sealed class MrtdCombinedRecognizerResult : RecognizerResult, IMrtdCombinedRecognizerResult
@@ -119,8 +111,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         {
             this.nativeResult = nativeResult;
         }
-        public byte[] DigitalSignature => nativeResult.DigitalSignature != null ? nativeResult.DigitalSignature.ToArray() : null;
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertUIImage(nativeResult.FaceImage.Image) : null;
         public Xamarin.Forms.ImageSource FullDocumentBackImage => nativeResult.FullDocumentBackImage != null ? Utils.ConvertUIImage(nativeResult.FullDocumentBackImage.Image) : null;

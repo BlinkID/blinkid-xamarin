@@ -110,6 +110,10 @@ namespace BlinkID
         [Export ("cameraMirroredVertically")]
         bool CameraMirroredVertically { get; set; }
 
+        // @property (nonatomic) CGFloat previewZoomScale;
+		[Export ("previewZoomScale")]
+		nfloat PreviewZoomScale { get; set; }
+
         // -(NSString *)calcSessionPreset;
         [Export ("calcSessionPreset")]
         string CalcSessionPreset { get; }
@@ -493,6 +497,30 @@ namespace BlinkID
         MBDateResult DateResultWithDay (nint day, nint month, nint year, [NullAllowed] string originalDateString);
     }
 
+    // @interface MBSignedPayload : NSObject
+	[iOS (11,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBSignedPayload
+	{
+		// @property (readonly, nonatomic) NSString * _Nullable payload;
+		[NullAllowed, Export ("payload")]
+		string Payload { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable signature;
+		[NullAllowed, Export ("signature")]
+		string Signature { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable signatureVersion;
+		[NullAllowed, Export ("signatureVersion")]
+		string SignatureVersion { get; }
+
+		// -(instancetype _Nonnull)initWithPayload:(NSString * _Nonnull)payload signature:(NSString * _Nonnull)signature signatureVersion:(NSString * _Nonnull)signatureVersion __attribute__((objc_designated_initializer));
+		[Export ("initWithPayload:signature:signatureVersion:")]
+		[DesignatedInitializer]
+		IntPtr Constructor (string payload, string signature, string signatureVersion);
+	}
+
     // @protocol MBDebugRecognizerRunnerViewControllerDelegate <NSObject>
     [Protocol, Model]
     [BaseType (typeof(NSObject))]
@@ -640,6 +668,10 @@ namespace BlinkID
         [Abstract]
         [Export ("recognizerRunnerViewControllerDidStopScanning:")]
         void RecognizerRunnerViewControllerDidStopScanning (IMBRecognizerRunnerViewController recognizerRunnerViewController);
+
+        // @optional -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController willSetTorch:(BOOL)isTorchOn;
+		[Export ("recognizerRunnerViewController:willSetTorch:")]
+		void RecognizerRunnerViewController (IMBRecognizerRunnerViewController recognizerRunnerViewController, bool isTorchOn);
     }
 
     // @interface MBRecognizerResult : NSObject
@@ -651,6 +683,10 @@ namespace BlinkID
         // @property (readonly, assign, nonatomic) MBRecognizerResultState resultState;
         [Export ("resultState", ArgumentSemantic.Assign)]
         MBRecognizerResultState ResultState { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull resultStateString;
+		[Export ("resultStateString")]
+		string ResultStateString { get; }
     }
 
     // @protocol MBScanningRecognizerRunnerViewControllerDelegate <NSObject>
@@ -658,11 +694,22 @@ namespace BlinkID
     [BaseType (typeof(NSObject))]
     interface MBScanningRecognizerRunnerViewControllerDelegate
     {
-        // @required -(void)recognizerRunnerViewController:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController didFinishScanningWithState:(MBRecognizerResultState)state;
+        // @required -(void)recognizerRunnerViewControllerDidFinishScanning:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController state:(MBRecognizerResultState)state;
         [Abstract]
-        [Export ("recognizerRunnerViewController:didFinishScanningWithState:")]
+        [Export ("recognizerRunnerViewControllerDidFinishScanning:state:")]
         void DidFinishScanningWithState (IMBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
     }
+
+    // @protocol MBFrameRecognitionRecognizerRunnerViewControllerDelegate <NSObject>
+	[Protocol, Model]
+	[BaseType (typeof(NSObject))]
+	interface MBFrameRecognitionRecognizerRunnerViewControllerDelegate
+	{
+		// @required -(void)recognizerRunnerViewControllerDidFinishFrameRecognition:(UIViewController<MBRecognizerRunnerViewController> * _Nonnull)recognizerRunnerViewController state:(MBRecognizerResultState)state;
+		[Abstract]
+		[Export ("recognizerRunnerViewControllerDidFinishFrameRecognition:state:")]
+		void DidFinishFrameRecognition (MBRecognizerRunnerViewController recognizerRunnerViewController, MBRecognizerResultState state);
+	}
 
     // @protocol MBDebugRecognizerRunnerDelegate <NSObject>
     [Protocol, Model]
@@ -891,10 +938,6 @@ namespace BlinkID
         // -(UIInterfaceOrientationMask)getOptimalHudOrientation;
         [Export ("getOptimalHudOrientation")]
         UIInterfaceOrientationMask OptimalHudOrientation { get; }
-
-        // -(NSString * _Nonnull)toJson;
-		[Export ("toJson")]
-		string ToJson { get; }
     }
 
     // @interface MBFrameGrabberRecognizer : MBRecognizer <NSCopying>
@@ -1321,21 +1364,6 @@ namespace BlinkID
         bool EncodeFaceImage { get; set; }
     }
 
-    // @protocol MBDigitalSignatureResult
-    [Protocol]
-    interface IMBDigitalSignatureResult
-    {
-        // @required @property (readonly, nonatomic) NSData * _Nullable digitalSignature;
-        [Abstract]
-        [NullAllowed, Export ("digitalSignature")]
-        NSData DigitalSignature { get; }
-
-        // @required @property (readonly, nonatomic) NSUInteger digitalSignatureVersion;
-        [Abstract]
-        [Export ("digitalSignatureVersion")]
-        nint DigitalSignatureVersion { get; }
-    }
-
     // @protocol MBCombinedFullDocumentImageResult
     [Protocol]
     interface IMBCombinedFullDocumentImageResult
@@ -1401,16 +1429,6 @@ namespace BlinkID
         [Abstract]
         [Export ("combinedResult")]
         IMBCombinedRecognizerResult CombinedResult { get; }
-    }
-
-    // @protocol MBDigitalSignature
-    [Protocol]
-    interface IMBDigitalSignature
-    {
-        // @required @property (assign, nonatomic) BOOL signResult;
-        [Abstract]
-        [Export ("signResult")]
-        bool SignResult { get; set; }
     }
 
     // @protocol MBEncodeFullDocumentImage
@@ -1487,6 +1505,10 @@ namespace BlinkID
         // @property (readonly, nonatomic) NSString * _Nullable conditions;
 		[NullAllowed, Export ("conditions")]
 		string Conditions { get; }
+
+        // @property (readonly, nonatomic) NSArray<MBVehicleClassInfo *> * _Nullable vehicleClassesInfo;
+		[NullAllowed, Export ("vehicleClassesInfo")]
+		MBVehicleClassInfo[] VehicleClassesInfo { get; }
     }
 
     // @interface MBImageAnalysisResult : NSObject
@@ -1716,8 +1738,12 @@ namespace BlinkID
 		[Export ("additionalAddressInformation")]
 		string AdditionalAddressInformation { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
-		[Export ("placeOfBirth")]
+        // @property (readonly, nonatomic) NSString * _Nullable additionalOptionalAddressInformation;
+        [NullAllowed, Export("additionalOptionalAddressInformation")]
+        string AdditionalOptionalAddressInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nonnull placeOfBirth;
+        [Export ("placeOfBirth")]
 		string PlaceOfBirth { get; }
 
 		// @property (readonly, nonatomic) NSString * _Nonnull nationality;
@@ -1837,8 +1863,8 @@ namespace BlinkID
 		bool Expired { get; }
 	}
 
-   // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, IMBAgeResult>
-	[iOS (8,0)]
+    // @interface MBBlinkIdRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
+    [iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
 	interface MBBlinkIdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
@@ -1903,8 +1929,12 @@ namespace BlinkID
 		[NullAllowed, Export ("additionalAddressInformation")]
 		string AdditionalAddressInformation { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
-		[NullAllowed, Export ("placeOfBirth")]
+        // @property (readonly, nonatomic) NSString * _Nullable additionalOptionalAddressInformation;
+        [NullAllowed, Export("additionalOptionalAddressInformation")]
+        string AdditionalOptionalAddressInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export ("placeOfBirth")]
 		string PlaceOfBirth { get; }
 
 		// @property (readonly, nonatomic) NSString * _Nullable nationality;
@@ -1943,8 +1973,12 @@ namespace BlinkID
 		[NullAllowed, Export ("documentAdditionalNumber")]
 		string DocumentAdditionalNumber { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
-		[NullAllowed, Export ("issuingAuthority")]
+        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
+        [NullAllowed, Export("documentOptionalAdditionalNumber")]
+        string DocumentOptionalAdditionalNumber { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable issuingAuthority;
+        [NullAllowed, Export ("issuingAuthority")]
 		string IssuingAuthority { get; }
 
 		// @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
@@ -1979,17 +2013,30 @@ namespace BlinkID
 		[Export ("recognitionMode", ArgumentSemantic.Assign)]
 		MBRecognitionMode RecognitionMode { get; }
 
-        // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
-		[NullAllowed, Export ("documentOptionalAdditionalNumber")]
-		string DocumentOptionalAdditionalNumber { get; }
+        // @property (readonly, nonatomic) MBImage * _Nullable cameraFrame;
+		[NullAllowed, Export ("cameraFrame")]
+		MBImage CameraFrame { get; }
+
+		// @property (readonly, nonatomic) MBImage * _Nullable barcodeCameraFrame;
+		[NullAllowed, Export ("barcodeCameraFrame")]
+		MBImage BarcodeCameraFrame { get; }
 	}
 
+    // @protocol MBCameraFrames
+    [Protocol]
+    interface IMBCameraFrames
+    {
+        // @required @property (assign, nonatomic) BOOL saveCameraFrames;
+        [Abstract]
+        [Export("saveCameraFrames")]
+        bool SaveCameraFrames { get; set; }
+    }
 
-    // @interface MBBlinkIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
-	[iOS (8,0)]
+    // @interface MBBlinkIdRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage, MBCameraFrames>
+    [iOS (8,0)]
 	[BaseType (typeof(MBRecognizer))]
-	interface MBBlinkIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage
-	{
+	interface MBBlinkIdRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage, IMBCameraFrames
+    {
 		// @property (readonly, nonatomic, strong) MBBlinkIdRecognizerResult * _Nonnull result;
 		[Export ("result", ArgumentSemantic.Strong)]
 		MBBlinkIdRecognizerResult Result { get; }
@@ -2053,11 +2100,33 @@ namespace BlinkID
 		void OnBarcodeScanningStarted ();
     }
 
-    // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBDigitalSignatureResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, IMBAgeResult>
-	[iOS (8,0)]
+    // @interface MBDataMatchDetailedInfo : NSObject
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBDataMatchDetailedInfo
+	{
+		// -(MBDataMatchResult)getDataMatchResult;
+		[Export ("getDataMatchResult")]
+		MBDataMatchResult DataMatchResult { get; }
+
+		// -(MBDataMatchResult)getDateOfBirth;
+		[Export ("getDateOfBirth")]
+		MBDataMatchResult DateOfBirth { get; }
+
+		// -(MBDataMatchResult)getDateOfExpiry;
+		[Export ("getDateOfExpiry")]
+		MBDataMatchResult DateOfExpiry { get; }
+
+		// -(MBDataMatchResult)getDocumentNumber;
+		[Export ("getDocumentNumber")]
+		MBDataMatchResult DocumentNumber { get; }
+	}
+
+    // @interface MBBlinkIdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
+    [iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
+	interface MBBlinkIdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
 	{
 		// @property (readonly, nonatomic) NSString * _Nullable address;
 		[NullAllowed, Export ("address")]
@@ -2119,8 +2188,12 @@ namespace BlinkID
 		[NullAllowed, Export ("additionalAddressInformation")]
 		string AdditionalAddressInformation { get; }
 
-		// @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
-		[NullAllowed, Export ("placeOfBirth")]
+        // @property (readonly, nonatomic) NSString * _Nullable additionalOptionalAddressInformation;
+        [NullAllowed, Export("additionalOptionalAddressInformation")]
+        string AdditionalOptionalAddressInformation { get; }
+
+        // @property (readonly, nonatomic) NSString * _Nullable placeOfBirth;
+        [NullAllowed, Export ("placeOfBirth")]
 		string PlaceOfBirth { get; }
 
 		// @property (readonly, nonatomic) NSString * _Nullable nationality;
@@ -2214,12 +2287,28 @@ namespace BlinkID
         // @property (readonly, nonatomic) NSString * _Nullable documentOptionalAdditionalNumber;
 		[NullAllowed, Export ("documentOptionalAdditionalNumber")]
 		string DocumentOptionalAdditionalNumber { get; }
+
+        // @property (readonly, nonatomic) MBImage * _Nullable frontCameraFrame;
+		[NullAllowed, Export ("frontCameraFrame")]
+		MBImage FrontCameraFrame { get; }
+
+		// @property (readonly, nonatomic) MBImage * _Nullable backCameraFrame;
+		[NullAllowed, Export ("backCameraFrame")]
+		MBImage BackCameraFrame { get; }
+
+		// @property (readonly, nonatomic) MBImage * _Nullable barcodeCameraFrame;
+		[NullAllowed, Export ("barcodeCameraFrame")]
+		MBImage BarcodeCameraFrame { get; }
+
+		// @property (readonly, nonatomic) MBDataMatchDetailedInfo * _Nullable dataMatchDetailedInfo;
+		[NullAllowed, Export ("dataMatchDetailedInfo")]
+		MBDataMatchDetailedInfo DataMatchDetailedInfo { get; }
 	}
 
-    // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
+    // @interface MBBlinkIdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizer))]
-    interface MBBlinkIdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBDigitalSignature, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage
+    interface MBBlinkIdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage, IMBCameraFrames
     {
         // @property (readonly, nonatomic, strong) MBBlinkIdCombinedRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
@@ -2568,21 +2657,21 @@ namespace BlinkID
         bool EncodeMrzImage { get; set; }
     }
 
-   // @interface MBMrtdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult, MBDigitalSignatureResult>
+   // @interface MBMrtdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
-	interface MBMrtdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBDigitalSignatureResult
+	interface MBMrtdCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
 	{
 		// @property (readonly, nonatomic, strong) MBMrzResult * _Nonnull mrzResult;
 		[Export ("mrzResult", ArgumentSemantic.Strong)]
 		MBMrzResult MrzResult { get; }
 	}
 
-	// @interface MBMrtdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBDigitalSignature, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi>
+	// @interface MBMrtdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizer))]
-	interface MBMrtdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBDigitalSignature, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi
+	interface MBMrtdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi
 	{
 		// @property (readonly, nonatomic, strong) MBMrtdCombinedRecognizerResult * _Nonnull result;
 		[Export ("result", ArgumentSemantic.Strong)]
@@ -2613,7 +2702,7 @@ namespace BlinkID
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBPassportRecognizerResult : INSCopying, IMBDigitalSignatureResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
+    interface MBPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
     {
         // @property (readonly, nonatomic) MBMrzResult * _Nonnull mrzResult;
         [Export ("mrzResult")]
@@ -2623,7 +2712,7 @@ namespace BlinkID
     // @interface MBPassportRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizer))]
-    interface MBPassportRecognizer : INSCopying, IMBDigitalSignature, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
+    interface MBPassportRecognizer : INSCopying, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
     {
         // @property (readonly, nonatomic, strong) MBPassportRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
@@ -2665,11 +2754,39 @@ namespace BlinkID
         NSData EncodedFullDocumentImage { get; }
     }
 
-    // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBDigitalSignatureResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult, IMBAgeResult>
+    // @interface MBVehicleClassInfo : NSObject
+	[iOS (9,0)]
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface MBVehicleClassInfo
+	{
+		// @property (readonly, nonatomic) NSString * _Nonnull vehicleClass;
+		[Export ("vehicleClass")]
+		string VehicleClass { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nonnull licenceType;
+		[Export ("licenceType")]
+		string LicenceType { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull effectiveDate;
+		[Export ("effectiveDate")]
+		MBDateResult EffectiveDate { get; }
+
+		// @property (readonly, nonatomic) MBDateResult * _Nonnull expiryDate;
+		[Export ("expiryDate")]
+		MBDateResult ExpiryDate { get; }
+
+		// -(instancetype _Nonnull)initWithVehicleClass:(NSString * _Nonnull)vehicleClass licenceType:(NSString * _Nonnull)licenceType effectiveDate:(MBDateResult * _Nonnull)effectiveDate expiryDate:(MBDateResult * _Nonnull)expiryDate __attribute__((objc_designated_initializer));
+		[Export ("initWithVehicleClass:licenceType:effectiveDate:expiryDate:")]
+		[DesignatedInitializer]
+		IntPtr Constructor (string vehicleClass, string licenceType, MBDateResult effectiveDate, MBDateResult expiryDate);
+	}
+
+    // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult, IMBAgeResult>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
-    interface MBUsdlCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBDigitalSignatureResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult, IMBAgeResult
+    interface MBUsdlCombinedRecognizerResult : INSCopying, MBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult, IMBAgeResult
     {
         // @property (readonly, nonatomic) NSString * _Nullable firstName;
         [NullAllowed, Export ("firstName")]
@@ -2735,7 +2852,7 @@ namespace BlinkID
         [Export ("isUncertain")]
         bool IsUncertain { get; }
 
-        // -(NSString * _Nullable)getField:(MBUsdlKeys)usdlKey __attribute__((deprecated("")));
+        // -(NSString * _Nullable)getField:(MBUsdlKeys)usdlKey;
         [Export ("getField:")]
         [return: NullAllowed]
         string GetField (MBUsdlKeys usdlKey);
@@ -2745,10 +2862,10 @@ namespace BlinkID
         string[] OptionalElements { get; }
     }
 
-    // @interface MBUsdlCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBDigitalSignature, MBFullDocumentImageExtensionFactors>
+    // @interface MBUsdlCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBFullDocumentImageExtensionFactors>
     [iOS (8,0)]
     [BaseType (typeof(MBRecognizer))]
-    interface MBUsdlCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBDigitalSignature, IMBFullDocumentImageExtensionFactors
+    interface MBUsdlCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageExtensionFactors
     {
         // @property (readonly, nonatomic, strong) MBUsdlCombinedRecognizerResult * _Nonnull result;
         [Export ("result", ArgumentSemantic.Strong)]
@@ -3087,12 +3204,12 @@ namespace BlinkID
     [BaseType (typeof(MBDewarpPolicy))]
     interface MBFixedDewarpPolicy
     {
-        // -(instancetype _Nonnull)initWithDewarpHeight:(NSUInteger)dewarpHeight __attribute__((objc_designated_initializer));
+        // -(instancetype _Nonnull)initWithDewarpHeight:(NSInteger)dewarpHeight __attribute__((objc_designated_initializer));
         [Export ("initWithDewarpHeight:")]
         [DesignatedInitializer]
         IntPtr Constructor (nint dewarpHeight);
 
-        // @property (readonly, assign, nonatomic) NSUInteger dewarpHeight;
+        // @property (readonly, assign, nonatomic) NSInteger dewarpHeight;
         [Export ("dewarpHeight")]
         nint DewarpHeight { get; }
     }
@@ -3102,7 +3219,7 @@ namespace BlinkID
     [BaseType (typeof(MBDewarpPolicy))]
     interface MBDPIBasedDewarpPolicy
     {
-        // -(instancetype _Nonnull)initWithDesiredDPI:(NSUInteger)desiredDPI __attribute__((objc_designated_initializer));
+        // -(instancetype _Nonnull)initWithDesiredDPI:(NSInteger)desiredDPI __attribute__((objc_designated_initializer));
         [Export ("initWithDesiredDPI:")]
         [DesignatedInitializer]
         IntPtr Constructor (nint desiredDPI);
@@ -3117,7 +3234,7 @@ namespace BlinkID
     [BaseType (typeof(MBDewarpPolicy))]
     interface MBNoUpScalingDewarpPolicy
     {
-        // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSUInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
+        // -(instancetype _Nonnull)initWithMaxAllowedDewarpHeight:(NSInteger)maxAllowedDewarpHeight __attribute__((objc_designated_initializer));
         [Export ("initWithMaxAllowedDewarpHeight:")]
         [DesignatedInitializer]
         IntPtr Constructor (nint maxAllowedDewarpHeight);
@@ -3251,6 +3368,9 @@ namespace BlinkID
     [BaseType (typeof(MBOverlayViewController))]
     interface MBBaseOverlayViewController
     {
+        // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
+		[Export ("reconfigureRecognizers:")]
+		void ReconfigureRecognizers (MBRecognizerCollection recognizerCollection);
     }
 
     // @interface MBRecognizerCollection : NSObject <NSCopying>
@@ -3312,9 +3432,9 @@ namespace BlinkID
         [Export ("showStatusBar")]
         bool ShowStatusBar { get; set; }
 
-        // @property (assign, nonatomic) NSUInteger supportedOrientations;
+        // @property (assign, nonatomic) UIInterfaceOrientationMask supportedOrientations;
         [Export ("supportedOrientations")]
-        nuint SupportedOrientations { get; set; }
+        UIInterfaceOrientationMask SupportedOrientations { get; set; }
 
         // @property (nonatomic, strong) NSString * _Nullable soundFilePath;
         [NullAllowed, Export ("soundFilePath", ArgumentSemantic.Strong)]
@@ -3379,9 +3499,9 @@ namespace BlinkID
         [Export ("showStatusBar")]
         bool ShowStatusBar { get; set; }
 
-        // @property (assign, nonatomic) NSUInteger supportedOrientations;
+        // @property (assign, nonatomic) UIInterfaceOrientationMask supportedOrientations;
         [Export ("supportedOrientations")]
-        nuint SupportedOrientations { get; set; }
+        UIInterfaceOrientationMask SupportedOrientations { get; set; }
 
         // -(void)reconfigureRecognizers:(MBRecognizerCollection * _Nonnull)recognizerCollection;
         [Export ("reconfigureRecognizers:")]
@@ -3597,9 +3717,17 @@ namespace BlinkID
         [Export ("tooltipText", ArgumentSemantic.Strong)]
         string TooltipText { get; set; }
 
+        // @property (nonatomic, strong) NSString * _Nonnull glareStatusMessage;
+		[Export ("glareStatusMessage", ArgumentSemantic.Strong)]
+		string GlareStatusMessage { get; set; }
+
         // @property (assign, nonatomic) BOOL showTooltip;
         [Export ("showTooltip")]
         bool ShowTooltip { get; set; }
+
+        // @property (assign, nonatomic) BOOL captureHighResImage;
+		[Export ("captureHighResImage")]
+		bool CaptureHighResImage { get; set; }
     }
 
     // @interface MBDocumentOverlayViewController : MBBaseOverlayViewController
@@ -3612,21 +3740,21 @@ namespace BlinkID
 
         [Wrap ("WeakDelegate")]
         [NullAllowed]
-        MBLegacyDocumentOverlayViewControllerDelegate Delegate { get; }
+        MBDocumentOverlayViewControllerDelegate Delegate { get; }
 
-        // @property (readonly, nonatomic, weak) id<MBLegacyDocumentOverlayViewControllerDelegate> _Nullable delegate;
+        // @property (readonly, nonatomic, weak) id<MBDocumentOverlayViewControllerDelegate> _Nullable delegate;
         [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; }
 
-        // -(instancetype _Nonnull)initWithSettings:(MBDocumentOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBLegacyDocumentOverlayViewControllerDelegate> _Nonnull)delegate;
+        // -(instancetype _Nonnull)initWithSettings:(MBDocumentOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBDocumentOverlayViewControllerDelegate> _Nonnull)delegate;
         [Export ("initWithSettings:recognizerCollection:delegate:")]
-        IntPtr Constructor(MBDocumentOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBLegacyDocumentOverlayViewControllerDelegate @delegate);
+        IntPtr Constructor(MBDocumentOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBDocumentOverlayViewControllerDelegate @delegate);
     }
 
-    // @protocol MBLegacyDocumentOverlayViewControllerDelegate <NSObject>
+    // @protocol MBDocumentOverlayViewControllerDelegate <NSObject>
     [Protocol, Model]
     [BaseType (typeof(NSObject))]
-    interface MBLegacyDocumentOverlayViewControllerDelegate
+    interface MBDocumentOverlayViewControllerDelegate
     {
         // @required -(void)documentOverlayViewControllerDidFinishScanning:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController state:(MBRecognizerResultState)state;
         [Abstract]
@@ -3637,6 +3765,10 @@ namespace BlinkID
         [Abstract]
         [Export ("documentOverlayViewControllerDidTapClose:")]
         void DocumentOverlayViewControllerDidTapClose (MBDocumentOverlayViewController documentOverlayViewController);
+
+        // @optional -(void)documentOverlayViewControllerDidCaptureHighResolutionImage:(MBDocumentOverlayViewController * _Nonnull)documentOverlayViewController highResImage:(MBImage * _Nonnull)highResImage;
+		[Export ("documentOverlayViewControllerDidCaptureHighResolutionImage:highResImage:")]
+		void DocumentOverlayViewControllerDidCaptureHighResolutionImage (MBDocumentOverlayViewController documentOverlayViewController, MBImage highResImage);
     }
 
     // @interface MBLegacyDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
@@ -3683,6 +3815,10 @@ namespace BlinkID
         // @property (nonatomic, strong) UIImage * _Nonnull secondSideInstructionsImage;
         [Export ("secondSideInstructionsImage", ArgumentSemantic.Strong)]
         UIImage SecondSideInstructionsImage { get; set; }
+
+        // @property (assign, nonatomic) BOOL captureHighResImage;
+		[Export ("captureHighResImage")]
+		bool CaptureHighResImage { get; set; }
     }
 
     // @interface MBLegacyDocumentVerificationOverlayViewController : MBBaseOverlayViewController
@@ -3690,7 +3826,7 @@ namespace BlinkID
     [BaseType (typeof(MBBaseOverlayViewController))]
     interface MBLegacyDocumentVerificationOverlayViewController
     {
-        // @property (readonly, nonatomic, strong) MBDocumentVerificationOverlaySettings * _Nonnull settings;
+        // @property (readonly, nonatomic, strong) MBLegacyDocumentVerificationOverlaySettings * _Nonnull settings;
         [Export ("settings", ArgumentSemantic.Strong)]
         MBLegacyDocumentVerificationOverlaySettings Settings { get; }
 
@@ -3702,7 +3838,7 @@ namespace BlinkID
         [NullAllowed, Export ("delegate", ArgumentSemantic.Weak)]
         NSObject WeakDelegate { get; }
 
-        // -(instancetype _Nonnull)initWithSettings:(MBDocumentVerificationOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBLegacyDocumentVerificationOverlayViewControllerDelegate> _Nonnull)delegate;
+        // -(instancetype _Nonnull)initWithSettings:(MBLegacyDocumentVerificationOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBLegacyDocumentVerificationOverlayViewControllerDelegate> _Nonnull)delegate;
         [Export ("initWithSettings:recognizerCollection:delegate:")]
         IntPtr Constructor(MBLegacyDocumentVerificationOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBLegacyDocumentVerificationOverlayViewControllerDelegate @delegate);
     }
@@ -3725,6 +3861,10 @@ namespace BlinkID
         // @optional -(void)legacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide:(MBLegacyDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController;
         [Export ("legacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide:")]
         void LegacyDocumentVerificationOverlayViewControllerDidFinishScanningFirstSide (MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController);
+
+        // @optional -(void)legacyDocumentVerificationOverlayViewControllerDidCaptureHighResolutionImage:(MBLegacyDocumentVerificationOverlayViewController * _Nonnull)documentVerificationOverlayViewController highResImage:(MBImage * _Nonnull)highResImage state:(MBLegacyDocumentVerificationHighResImageState)state;
+		[Export ("legacyDocumentVerificationOverlayViewControllerDidCaptureHighResolutionImage:highResImage:state:")]
+		void LegacyDocumentVerificationOverlayViewControllerDidCaptureHighResolutionImage (MBLegacyDocumentVerificationOverlayViewController documentVerificationOverlayViewController, MBImage highResImage, MBLegacyDocumentVerificationHighResImageState state);
     }
 
     // @interface MBBlinkIdOverlayViewController : MBBaseOverlayViewController
@@ -3849,6 +3989,10 @@ namespace BlinkID
 		// @property (nonatomic, strong) NSString * _Nonnull retryButtonText;
 		[Export ("retryButtonText", ArgumentSemantic.Strong)]
 		string RetryButtonText { get; set; }
+
+        // @property (nonatomic, strong) NSString * _Nonnull errorMandatoryFieldMissing;
+		[Export ("errorMandatoryFieldMissing", ArgumentSemantic.Strong)]
+		string ErrorMandatoryFieldMissing { get; set; }
 	}
 
     // @interface MBDocumentSubview : MBSubview

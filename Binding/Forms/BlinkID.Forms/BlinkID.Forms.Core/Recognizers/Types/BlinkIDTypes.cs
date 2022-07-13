@@ -258,6 +258,35 @@ namespace BlinkID.Forms.Core.Recognizers
     }
 
     /// <summary>
+    /// Detailed info of a document data match.
+    /// </summary>
+    public interface IDataMatchDetailedInfo
+    {
+        /// <summary>
+        /// Returns result of the data matching algorithm for scanned parts/sides of the document.
+        /// </summary>
+        /// <value>Result of the data matching algorithm for scanned parts/sides of the document.</value>
+        DataMatchResult DataMatchResult  { get; }
+
+        /// <summary>
+        /// The result of data match on document number field.
+        /// </summary>
+        /// <value>The result of data match on document number field.</value>
+        DataMatchResult DocumentNumber { get; }
+
+        /// <summary>
+        /// The result of data match on date of birth field.
+        /// </summary>
+        /// <value>The result of data match on date of birth field.</value>
+        DataMatchResult DateOfBirth { get; }
+
+        /// <summary>
+        /// The result of data match on date of expiry field.
+        /// </summary>The result of data match on date of expiry field.</value>
+        DataMatchResult DateOfExpiry { get ; }
+    }
+
+    /// <summary>
     /// Possible supported detectors for documents containing face image.
     /// </summary>
     public enum DocumentFaceDetectorType
@@ -763,7 +792,10 @@ namespace BlinkID.Forms.Core.Recognizers
         BajaCaliforniaSur,
         Campeche,
         Colima,
-        QuintanaRooBenitoJuarez
+        QuintanaRooBenitoJuarez,
+        QuintanaRoo,
+        QuintanaRooSolidaridad,
+        Tlaxcala
     }
 
     /// <summary>
@@ -818,7 +850,8 @@ namespace BlinkID.Forms.Core.Recognizers
         RefugeeId,
         TribalId,
         VeteranId,
-        CitizenshipCertificate
+        CitizenshipCertificate,
+        MyNumberCard
     }
 
     /// <summary>
@@ -1148,6 +1181,12 @@ namespace BlinkID.Forms.Core.Recognizers
         /// </summary>
         /// <value>The additional address information of the document owner.</value>
         string AdditionalAddressInformation { get; }
+
+        /// <summary>
+        /// Gets the one more additional address information of the document owner.
+        /// </summary>
+        /// <value>The one more additional address information of the document owner.</value>
+        string AdditionalOptionalAddressInformation { get; }
 
         /// <summary>
         /// Gets the place of birth of the document owner.

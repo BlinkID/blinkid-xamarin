@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <Import Project="..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.5.0.0.2291\build\Xamarin.Forms.props')" />
   <Import Project="..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('..\packages\Xamarin.AndroidX.Migration.1.0.8\build\monoandroid90\Xamarin.AndroidX.Migration.props')" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -17,18 +17,18 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <PackageId>BlinkID.Forms.Android</PackageId>
-    <PackageVersion>5.15.0</PackageVersion>
+    <PackageVersion>5.17.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
     <Summary>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - Android implementation for Xamarin Forms.</Description>
-    <ReleaseVersion>4.0.0</ReleaseVersion>
+    <ReleaseVersion>5.17.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
-    <PackageReleaseNotes>Updated for BlinkID Android SDK v5.15.0
+    <PackageReleaseNotes>Updated for BlinkID Android SDK v5.17.0
 
-https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-android/releases/tag/v5.17.0</PackageReleaseNotes>
     <!-- Workaround for build error  -->
     <DesignTimeBuild>false</DesignTimeBuild>
   </PropertyGroup>
@@ -202,7 +202,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
     <Reference Include="Xamarin.AndroidX.Annotation.Experimental">
       <HintPath>..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\lib\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.dll</HintPath>
     </Reference>
-    <Reference Include="mscorlib" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Xamarin.AndroidX.ConstraintLayout.Core">
@@ -285,7 +284,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
     <AndroidResource Include="Resources\raw\beep.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Annotation.Experimental.1.1.0.3\build\monoandroid90\Xamarin.AndroidX.Annotation.Experimental.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.ConstraintLayout.Core.1.0.1.2\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Core.targets" Condition="Exists('..\packages\Xamarin.AndroidX.ConstraintLayout.Core.1.0.1.2\build\monoandroid90\Xamarin.AndroidX.ConstraintLayout.Core.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.MultiDex.2.0.1.10\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets" Condition="Exists('..\packages\Xamarin.AndroidX.MultiDex.2.0.1.10\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets')" />
@@ -342,4 +340,5 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
   <Import Project="..\packages\Xamarin.AndroidX.Preference.1.1.1.11\build\monoandroid90\Xamarin.AndroidX.Preference.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Preference.1.1.1.11\build\monoandroid90\Xamarin.AndroidX.Preference.targets')" />
   <Import Project="..\packages\Xamarin.AndroidX.Navigation.UI.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.UI.targets" Condition="Exists('..\packages\Xamarin.AndroidX.Navigation.UI.2.3.5.3\build\monoandroid90\Xamarin.AndroidX.Navigation.UI.targets')" />
   <Import Project="..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.5\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets" Condition="Exists('..\packages\Xamarin.Google.Guava.ListenableFuture.1.0.0.5\build\monoandroid90\Xamarin.Google.Guava.ListenableFuture.targets')" />
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

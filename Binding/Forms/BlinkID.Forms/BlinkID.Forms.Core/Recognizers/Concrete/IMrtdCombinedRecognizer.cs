@@ -105,15 +105,6 @@
         /// </summary>
         bool ReturnFullDocumentImage { get; set; }
         
-        /// <summary>
-        /// Whether or not recognition result should be signed.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool SignResult { get; set; }
-        
 
         /// <summary>
         /// Gets the result.
@@ -125,16 +116,6 @@
     /// Result object for IMrtdCombinedRecognizer.
     /// </summary>
     public interface IMrtdCombinedRecognizerResult : IRecognizerResult {
-        
-        /// <summary>
-        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
-        /// </summary>
-        byte[] DigitalSignature { get; }
-        
-        /// <summary>
-        /// Version of the digital signature. Available only if enabled with signResult property. 
-        /// </summary>
-        int DigitalSignatureVersion { get; }
         
         /// <summary>
         /// Returns DataMatchResultSuccess if data from scanned parts/sides of the document match,

@@ -93,6 +93,12 @@ namespace BlinkID.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public bool SaveCameraFrames 
+        { 
+            get => nativeRecognizer.ShouldSaveCameraFrames(); 
+            set => nativeRecognizer.SetSaveCameraFrames(value);
+        }
+        
         public bool ScanCroppedDocumentImage 
         { 
             get => nativeRecognizer.ShouldScanCroppedDocumentImage(); 
@@ -123,9 +129,12 @@ namespace BlinkID.Forms.Droid.Recognizers
         }
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
+        public string AdditionalOptionalAddressInformation => nativeResult.AdditionalOptionalAddressInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public Xamarin.Forms.ImageSource BarcodeCameraFrame => nativeResult.BarcodeCameraFrame != null ? Utils.ConvertAndroidBitmap(nativeResult.BarcodeCameraFrame.ConvertToBitmap()) : null;
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
+        public Xamarin.Forms.ImageSource CameraFrame => nativeResult.CameraFrame != null ? Utils.ConvertAndroidBitmap(nativeResult.CameraFrame.ConvertToBitmap()) : null;
         public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;

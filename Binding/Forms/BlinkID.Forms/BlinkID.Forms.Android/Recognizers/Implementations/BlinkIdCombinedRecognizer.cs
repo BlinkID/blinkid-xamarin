@@ -105,16 +105,16 @@ namespace BlinkID.Forms.Droid.Recognizers
             set => nativeRecognizer.SetReturnSignatureImage(value);
         }
         
+        public bool SaveCameraFrames 
+        { 
+            get => nativeRecognizer.ShouldSaveCameraFrames(); 
+            set => nativeRecognizer.SetSaveCameraFrames(value);
+        }
+        
         public bool ScanCroppedDocumentImage 
         { 
             get => nativeRecognizer.ShouldScanCroppedDocumentImage(); 
             set => nativeRecognizer.SetScanCroppedDocumentImage(value);
-        }
-        
-        public bool SignResult 
-        { 
-            get => nativeRecognizer.ShouldSignResult(); 
-            set => nativeRecognizer.SetSignResult(value);
         }
         
         public int SignatureImageDpi 
@@ -147,19 +147,21 @@ namespace BlinkID.Forms.Droid.Recognizers
         }
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
+        public string AdditionalOptionalAddressInformation => nativeResult.AdditionalOptionalAddressInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public Xamarin.Forms.ImageSource BackCameraFrame => nativeResult.BackCameraFrame != null ? Utils.ConvertAndroidBitmap(nativeResult.BackCameraFrame.ConvertToBitmap()) : null;
         public IImageAnalysisResult BackImageAnalysisResult => new ImageAnalysisResult(nativeResult.BackImageAnalysisResult);
         public ProcessingStatus BackProcessingStatus => (ProcessingStatus)nativeResult.BackProcessingStatus.Ordinal();
         public IVizResult BackVizResult => new VizResult(nativeResult.BackVizResult);
+        public Xamarin.Forms.ImageSource BarcodeCameraFrame => nativeResult.BarcodeCameraFrame != null ? Utils.ConvertAndroidBitmap(nativeResult.BarcodeCameraFrame.ConvertToBitmap()) : null;
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
         public IClassInfo ClassInfo => nativeResult.ClassInfo != null ? new ClassInfo(nativeResult.ClassInfo) : null;
+        public IDataMatchDetailedInfo DataMatchDetailedInfo => new DataMatchDetailedInfo(nativeResult.DataMatchDetailedInfo);
         public IDate DateOfBirth => nativeResult.DateOfBirth.Date != null ? new Date(nativeResult.DateOfBirth.Date) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry.Date != null ? new Date(nativeResult.DateOfExpiry.Date) : null;
         public bool DateOfExpiryPermanent => nativeResult.IsDateOfExpiryPermanent;
         public IDate DateOfIssue => nativeResult.DateOfIssue.Date != null ? new Date(nativeResult.DateOfIssue.Date) : null;
-        public byte[] DigitalSignature => nativeResult.GetDigitalSignature();
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
         public string DocumentAdditionalNumber => nativeResult.DocumentAdditionalNumber;
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch.Ordinal();
         public string DocumentNumber => nativeResult.DocumentNumber;
@@ -170,6 +172,7 @@ namespace BlinkID.Forms.Droid.Recognizers
         public Xamarin.Forms.ImageSource FaceImage => nativeResult.FaceImage != null ? Utils.ConvertAndroidBitmap(nativeResult.FaceImage.ConvertToBitmap()) : null;
         public string FathersName => nativeResult.FathersName;
         public string FirstName => nativeResult.FirstName;
+        public Xamarin.Forms.ImageSource FrontCameraFrame => nativeResult.FrontCameraFrame != null ? Utils.ConvertAndroidBitmap(nativeResult.FrontCameraFrame.ConvertToBitmap()) : null;
         public IImageAnalysisResult FrontImageAnalysisResult => new ImageAnalysisResult(nativeResult.FrontImageAnalysisResult);
         public ProcessingStatus FrontProcessingStatus => (ProcessingStatus)nativeResult.FrontProcessingStatus.Ordinal();
         public IVizResult FrontVizResult => new VizResult(nativeResult.FrontVizResult);

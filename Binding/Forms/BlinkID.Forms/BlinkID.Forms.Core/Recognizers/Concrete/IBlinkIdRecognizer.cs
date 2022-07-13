@@ -122,6 +122,16 @@
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
+        /// Configure the recognizer to save the raw camera frames.
+        /// This significantly increases memory consumption.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool SaveCameraFrames { get; set; }
+        
+        /// <summary>
         /// Configure the recognizer to only work on already cropped and dewarped images.
         /// This only works for still images - video feeds will ignore this setting.
         /// 
@@ -174,6 +184,11 @@
         string AdditionalNameInformation { get; }
         
         /// <summary>
+        /// The one more additional address information of the document owner. 
+        /// </summary>
+        string AdditionalOptionalAddressInformation { get; }
+        
+        /// <summary>
         /// The address of the document owner. 
         /// </summary>
         string Address { get; }
@@ -186,9 +201,19 @@
         int Age { get; }
         
         /// <summary>
+        /// The barcode raw camera frame. 
+        /// </summary>
+        Xamarin.Forms.ImageSource BarcodeCameraFrame { get; }
+        
+        /// <summary>
         /// Defines the data extracted from the barcode. 
         /// </summary>
         IBarcodeResult BarcodeResult { get; }
+        
+        /// <summary>
+        /// The raw camera frame. 
+        /// </summary>
+        Xamarin.Forms.ImageSource CameraFrame { get; }
         
         /// <summary>
         /// The classification information. 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.props')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
+  <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.props" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.props')" />
   <PropertyGroup>
     <AndroidSdkBuildToolsVersion Condition="'$(AndroidSdkBuildToolsVersion)' == ''">28.0.3</AndroidSdkBuildToolsVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -16,18 +16,18 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <PackageId>BlinkID.Android.Binding</PackageId>
-    <PackageVersion>5.15.0</PackageVersion>
+    <PackageVersion>5.17.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated to BlinkID Android SDK v5.15.0
+    <PackageReleaseNotes>Updated to BlinkID Android SDK v5.17.0
 
-https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseNotes>
+https://github.com/BlinkID/blinkid-android/releases/tag/v5.17.0</PackageReleaseNotes>
     <Summary>A small, but powerful ID scanning library - native Android SDK binding package.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - native Android SDK binding package.</Description>
     <PackOnBuild>true</PackOnBuild>
-    <ReleaseVersion>4.0.0</ReleaseVersion>
+    <ReleaseVersion>5.17.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -149,7 +149,6 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
     </LibraryProjectZip>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
-  <Import Project="..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.MultiDex.2.0.1.1\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.MultiDex.2.0.1.1\build\monoandroid90\Xamarin.AndroidX.MultiDex.targets')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Migration.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.Migration.targets')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Annotation.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.Annotation.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Annotation.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.Annotation.targets')" />
@@ -175,4 +174,5 @@ https://github.com/BlinkID/blinkid-android/releases/tag/v5.15.0</PackageReleaseN
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.ViewPager.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.ViewPager.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.ViewPager.1.0.0.1\build\monoandroid90\Xamarin.AndroidX.ViewPager.targets')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Fragment.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.Fragment.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.Fragment.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.Fragment.targets')" />
   <Import Project="..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.AppCompat.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.AppCompat.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\Xamarin.AndroidX.AppCompat.1.1.0.1\build\monoandroid90\Xamarin.AndroidX.AppCompat.targets')" />
+  <Import Project="..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\Forms\BlinkID.Forms\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

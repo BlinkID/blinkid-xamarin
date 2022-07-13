@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <NoStdLib>false</NoStdLib>
@@ -10,11 +10,8 @@
     <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
-    <PackageReference Include="BlinkID.Forms.Core" Version="5.15.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+    <PackageReference Include="BlinkID.Forms.Core" Version="5.17.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="BlinkID.Forms" />

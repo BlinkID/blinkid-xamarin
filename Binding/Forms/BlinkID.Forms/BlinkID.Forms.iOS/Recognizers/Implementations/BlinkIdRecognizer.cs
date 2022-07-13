@@ -118,6 +118,14 @@ namespace BlinkID.Forms.iOS.Recognizers
         
         
         
+        public bool SaveCameraFrames 
+        { 
+            get => nativeRecognizer.SaveCameraFrames; 
+            set => nativeRecognizer.SaveCameraFrames = value;
+        }
+        
+        
+        
         public bool ScanCroppedDocumentImage 
         { 
             get => nativeRecognizer.ScanCroppedDocumentImage; 
@@ -153,9 +161,12 @@ namespace BlinkID.Forms.iOS.Recognizers
         }
         public string AdditionalAddressInformation => nativeResult.AdditionalAddressInformation;
         public string AdditionalNameInformation => nativeResult.AdditionalNameInformation;
+        public string AdditionalOptionalAddressInformation => nativeResult.AdditionalOptionalAddressInformation;
         public string Address => nativeResult.Address;
         public int Age => (int)nativeResult.Age;
+        public Xamarin.Forms.ImageSource BarcodeCameraFrame => nativeResult.BarcodeCameraFrame != null ? Utils.ConvertUIImage(nativeResult.BarcodeCameraFrame.Image) : null;
         public IBarcodeResult BarcodeResult => new BarcodeResult(nativeResult.BarcodeResult);
+        public Xamarin.Forms.ImageSource CameraFrame => nativeResult.CameraFrame != null ? Utils.ConvertUIImage(nativeResult.CameraFrame.Image) : null;
         public IClassInfo ClassInfo => new ClassInfo(nativeResult.ClassInfo);
         public IDate DateOfBirth => nativeResult.DateOfBirth != null ? new Date(nativeResult.DateOfBirth) : null;
         public IDate DateOfExpiry => nativeResult.DateOfExpiry != null ? new Date(nativeResult.DateOfExpiry) : null;

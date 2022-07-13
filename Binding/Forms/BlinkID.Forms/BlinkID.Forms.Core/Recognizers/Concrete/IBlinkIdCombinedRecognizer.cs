@@ -141,6 +141,16 @@
         bool ReturnSignatureImage { get; set; }
         
         /// <summary>
+        /// Configure the recognizer to save the raw camera frames.
+        /// This significantly increases memory consumption.
+        /// 
+        ///  
+        ///
+        /// By default, this is set to 'false'
+        /// </summary>
+        bool SaveCameraFrames { get; set; }
+        
+        /// <summary>
         /// Configure the recognizer to only work on already cropped and dewarped images.
         /// This only works for still images - video feeds will ignore this setting.
         /// 
@@ -149,15 +159,6 @@
         /// By default, this is set to 'false'
         /// </summary>
         bool ScanCroppedDocumentImage { get; set; }
-        
-        /// <summary>
-        /// Whether or not recognition result should be signed.
-        /// 
-        ///  
-        ///
-        /// By default, this is set to 'false'
-        /// </summary>
-        bool SignResult { get; set; }
         
         /// <summary>
         /// Property for setting DPI for signature images
@@ -211,6 +212,11 @@
         string AdditionalNameInformation { get; }
         
         /// <summary>
+        /// The one more additional address information of the document owner. 
+        /// </summary>
+        string AdditionalOptionalAddressInformation { get; }
+        
+        /// <summary>
         /// The address of the document owner. 
         /// </summary>
         string Address { get; }
@@ -221,6 +227,11 @@
         /// @return current age of the document owner in years or -1 if date of birth is unknown. 
         /// </summary>
         int Age { get; }
+        
+        /// <summary>
+        /// The back raw camera frame. 
+        /// </summary>
+        Xamarin.Forms.ImageSource BackCameraFrame { get; }
         
         /// <summary>
         /// Defines possible color and moire statuses determined from scanned back image. 
@@ -238,6 +249,11 @@
         IVizResult BackVizResult { get; }
         
         /// <summary>
+        /// The barcode raw camera frame. 
+        /// </summary>
+        Xamarin.Forms.ImageSource BarcodeCameraFrame { get; }
+        
+        /// <summary>
         /// Defines the data extracted from the barcode. 
         /// </summary>
         IBarcodeResult BarcodeResult { get; }
@@ -246,6 +262,11 @@
         /// The classification information. 
         /// </summary>
         IClassInfo ClassInfo { get; }
+        
+        /// <summary>
+        /// Detailed info on data match. 
+        /// </summary>
+        IDataMatchDetailedInfo DataMatchDetailedInfo { get; }
         
         /// <summary>
         /// The date of birth of the document owner. 
@@ -266,16 +287,6 @@
         /// The date of issue of the document. 
         /// </summary>
         IDate DateOfIssue { get; }
-        
-        /// <summary>
-        /// Digital signature of the recognition result. Available only if enabled with signResult property. 
-        /// </summary>
-        byte[] DigitalSignature { get; }
-        
-        /// <summary>
-        /// Version of the digital signature. Available only if enabled with signResult property. 
-        /// </summary>
-        int DigitalSignatureVersion { get; }
         
         /// <summary>
         /// The additional number of the document. 
@@ -335,6 +346,11 @@
         /// The first name of the document owner. 
         /// </summary>
         string FirstName { get; }
+        
+        /// <summary>
+        /// The front raw camera frame. 
+        /// </summary>
+        Xamarin.Forms.ImageSource FrontCameraFrame { get; }
         
         /// <summary>
         /// Defines possible color and moire statuses determined from scanned front image. 

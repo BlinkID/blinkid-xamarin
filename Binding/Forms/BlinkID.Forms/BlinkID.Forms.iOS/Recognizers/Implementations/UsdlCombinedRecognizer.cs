@@ -25,7 +25,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         public bool ReturnFaceImage { get => nativeRecognizer.ReturnFaceImage; set => nativeRecognizer.ReturnFaceImage = value; }
         public int FullDocumentImageDpi { get => (int)nativeRecognizer.FullDocumentImageDpi; set => nativeRecognizer.FullDocumentImageDpi = value; }
         public bool ReturnFullDocumentImage { get => nativeRecognizer.ReturnFullDocumentImage; set => nativeRecognizer.ReturnFullDocumentImage = value; }
-        public bool SignResult { get => nativeRecognizer.SignResult; set => nativeRecognizer.SignResult = value; }
         public int NumStableDetectionsThreshold { get => (int)nativeRecognizer.NumStableDetectionsThreshold; set => nativeRecognizer.NumStableDetectionsThreshold = value; }
         public IImageExtensionFactors FullDocumentImageExtensionFactors
         {
@@ -79,10 +78,6 @@ namespace BlinkID.Forms.iOS.Recognizers
         public byte[] RawData => nativeResult.Data.ToArray();
 
         public string[] OptionalElements => nativeResult.OptionalElements;
-
-        public byte[] DigitalSignature => nativeResult.DigitalSignature.ToArray();
-
-        public int DigitalSignatureVersion => (int)nativeResult.DigitalSignatureVersion;
 
         public DataMatchResult DocumentDataMatch => (DataMatchResult)nativeResult.DocumentDataMatch;
 
