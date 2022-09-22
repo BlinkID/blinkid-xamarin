@@ -19,6 +19,7 @@
     <AssemblyName>BlinkIDFormsSample.Droid</AssemblyName>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidSdkBuildToolsVersion>30.0.3</AndroidSdkBuildToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -204,16 +205,16 @@
     </Reference>
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="BlinkIDAARBinding">
-      <HintPath>..\packages\BlinkID.Android.Binding.5.17.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Android.Binding.5.19.0\lib\monoandroid10.0\BlinkIDAARBinding.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="BlinkID.Forms.Core">
-      <HintPath>..\packages\BlinkID.Forms.Core.5.17.0\lib\netstandard2.1\BlinkID.Forms.Core.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Core.5.19.0\lib\netstandard2.1\BlinkID.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="BlinkID">
-      <HintPath>..\packages\BlinkID.Forms.Android.5.17.0\lib\monoandroid10.0\BlinkID.dll</HintPath>
+      <HintPath>..\packages\BlinkID.Forms.Android.5.19.0\lib\monoandroid10.0\BlinkID.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
   </ItemGroup>
