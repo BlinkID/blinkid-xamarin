@@ -795,7 +795,8 @@ namespace BlinkID.Forms.Core.Recognizers
         QuintanaRooBenitoJuarez,
         QuintanaRoo,
         QuintanaRooSolidaridad,
-        Tlaxcala
+        Tlaxcala,
+        QuintanaRooCozumel
     }
 
     /// <summary>
@@ -851,7 +852,10 @@ namespace BlinkID.Forms.Core.Recognizers
         TribalId,
         VeteranId,
         CitizenshipCertificate,
-        MyNumberCard
+        MyNumberCard,
+        ConsularPassport,
+        MinorsPassport,
+        MinorsPublicServicesCard
     }
 
     /// <summary>
