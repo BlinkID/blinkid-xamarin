@@ -4,15 +4,15 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>BlinkID.Forms.Core</PackageId>
-    <PackageVersion>5.17.0</PackageVersion>
+    <PackageVersion>5.19.0</PackageVersion>
     <Authors>Microblink</Authors>
     <Owners>Microblink</Owners>
     <PackageProjectUrl>https://github.com/blinkid/blinkid-xamarin</PackageProjectUrl>
-    <PackageReleaseNotes>Updated for BlinkID Android and iOS SDKs v5.17.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated for BlinkID Android and iOS SDKs v5.19.0</PackageReleaseNotes>
     <Summary>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Summary>
     <Title>BlinkID</Title>
     <Description>A small, but powerful ID scanning library - abstractions library for Xamarin Forms.</Description>
-    <ReleaseVersion>5.17.0</ReleaseVersion>
+    <ReleaseVersion>5.19.0</ReleaseVersion>
     <Configurations>Release;Debug</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
