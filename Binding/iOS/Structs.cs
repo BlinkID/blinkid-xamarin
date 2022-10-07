@@ -638,7 +638,8 @@ namespace BlinkID
 		QuintanaRooBenitoJuarez,
 		QuintanaRoo,
 		QuintanaRooSolidaridad,
-		Tlaxcala
+		Tlaxcala,
+		QuintanaRooCozumel
 	}
 
 	[Native]
@@ -692,7 +693,10 @@ namespace BlinkID
 		TribalId,
 		VeteranId,
 		CitizenshipCertificate,
-		MyNumberCard
+		MyNumberCard,
+		ConsularPassport,
+		MinorsPassport,
+		MinorsPublicServicesCard
 	}
 
 	[Native]
