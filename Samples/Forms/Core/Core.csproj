@@ -10,8 +10,8 @@
     <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
-    <PackageReference Include="BlinkID.Forms.Core" Version="5.17.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="BlinkID.Forms.Core" Version="5.19.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="BlinkID.Forms" />

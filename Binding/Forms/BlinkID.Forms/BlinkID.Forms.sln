@@ -41,6 +41,6 @@ Global
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
 		$0.VersionControlPolicy = $1
-		version = 5.17.0
+		version = 5.19.0
 	EndGlobalSection
 EndGlobal

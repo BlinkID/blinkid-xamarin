@@ -14,7 +14,7 @@ namespace BlinkID
 	delegate void MBBlock ();
 
     // @interface MBMicroblinkApp : NSObject
-    [iOS (8,0)]
+    [iOS (11,0)]
     [BaseType (typeof(NSObject))]
     interface MBMicroblinkApp
     {
@@ -74,7 +74,7 @@ namespace BlinkID
     }
 
        // @interface MBCameraSettings : NSObject <NSCopying>
-    [iOS (8,0)]
+    [iOS (11,0)]
     [BaseType (typeof(NSObject))]
     interface MBCameraSettings : INSCopying
     {
@@ -2381,7 +2381,7 @@ namespace BlinkID
 		void OnCombinedBarcodeScanningStarted ();
     }
 
-    // @interface MBIdBarcodeRecognizerResult : MBRecognizerResult <NSCopying>
+    // @interface MBIdBarcodeRecognizerResult : MBRecognizerResult <NSCopying, MBAgeResult, MBDocumentExpirationCheckResult>
 	[iOS (8,0)]
 	[BaseType (typeof(MBRecognizerResult))]
 	[DisableDefaultCtor]
